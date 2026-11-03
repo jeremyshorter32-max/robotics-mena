@@ -1,0 +1,14 @@
+# Netlify deploys this folder as-is. No build step.
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/vendor/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
