@@ -1,7 +1,7 @@
 # Robotics MENA website
 
 Static site rebuilt from the Claude Design project "Robotics MENA" (v5 pages).
-Every push to `main` deploys to Netlify automatically.
+Hosted on GitHub Pages at https://roboticsmena.com. Every push to `main` goes live automatically within a minute or two.
 
 | Page | File | URL |
 |---|---|---|
@@ -16,6 +16,8 @@ Every push to `main` deploys to Netlify automatically.
 - `mena-map.js` — the D3 map used on Home and Map.
 - `image-slot.js` — image placeholders (e.g. the spotlight photo on Home).
 - `vendor/` — local copies of React 18.3.1, D3 7.9.0, topojson-client 3.1.0, world-atlas 2.0.2, Babel standalone 7.29.0.
+
+`CNAME` holds the custom domain; `.nojekyll` tells GitHub Pages to serve files as-is.
 
 Useful URL options: `?lang=ar` (Arabic, right-to-left), `?theme=light|dark`.
 
