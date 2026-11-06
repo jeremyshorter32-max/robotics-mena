@@ -1,7 +1,18 @@
 # Robotics MENA website
 
 Static site rebuilt from the Claude Design project "Robotics MENA" (v5 pages).
-Hosted on GitHub Pages at https://roboticsmena.com. Every push to `main` goes live automatically within a minute or two.
+Hosted on GitHub Pages at https://roboticsmena.com. Every push to `main` runs the **Deploy site** GitHub Action, which publishes it within a minute or two.
+
+## Password protection (private preview)
+
+While in private preview, every page is encrypted behind a password screen (StatiCrypt) and search engines are told not to index it.
+
+- **Password:** the `SITE_PASSWORD` repository secret (Settings → Secrets and variables → Actions). Change it there, then re-run the Deploy site action.
+- **Launch publicly:** add a repository *variable* `PUBLIC_LAUNCH` = `true` (same settings page, Variables tab), then re-run the action.
+- **Safety:** if `SITE_PASSWORD` is missing and `PUBLIC_LAUNCH` isn't `true`, the deploy fails instead of publishing unprotected.
+- The source files in this repo are readable on GitHub while the repo is public; the password protects the website, not the repo.
+
+Build locally: `SITE_PASSWORD=test ./scripts/build-site.sh` (output in `_site/`).
 
 | Page | File | URL |
 |---|---|---|
