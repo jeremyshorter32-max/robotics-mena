@@ -46,19 +46,19 @@
         .pin:hover .core{r:7}
         .ring{fill:none;stroke:var(--accent);stroke-width:1.25;transform-box:fill-box;transform-origin:center;animation:p 2.6s cubic-bezier(.2,.6,.3,1) infinite}
         @keyframes p{0%{transform:scale(.5);opacity:.95}100%{transform:scale(3.2);opacity:0}}
-        .lbl{font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.1em;fill:var(--fg-muted);text-transform:uppercase;pointer-events:none;paint-order:stroke;stroke:var(--map-land-mena);stroke-width:3px;stroke-linejoin:round}
-        .lbl.ar{font:500 12px 'Readex Pro',sans-serif;letter-spacing:0}
-        .cnt{font:600 11px 'IBM Plex Mono',monospace;fill:var(--fg);pointer-events:none;font-variant-numeric:tabular-nums}
+        .lbl{font:500 10px 'DM Mono','IBM Plex Mono',monospace;letter-spacing:.1em;fill:var(--fg-muted);text-transform:uppercase;pointer-events:none;paint-order:stroke;stroke:var(--map-land-mena);stroke-width:3px;stroke-linejoin:round}
+        .lbl.ar{font:500 12px 'Inter','Noto Sans Arabic',sans-serif;letter-spacing:0}
+        .cnt{font:600 11px 'DM Mono','IBM Plex Mono',monospace;fill:var(--fg);pointer-events:none;font-variant-numeric:tabular-nums}
         .bar{position:absolute;bottom:16px;inset-inline-start:16px;display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap}
         .bar[hidden]{display:none}
         .grp{display:flex;background:var(--bg-raised);border:1px solid var(--line-strong);box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(18,18,26,.08)}
-        .grp button{height:40px;min-width:40px;padding:0 12px;border:0;border-inline-end:1px solid var(--line);background:transparent;color:var(--fg);font:500 13px 'Readex Pro',sans-serif;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
+        .grp button{height:40px;min-width:40px;padding:0 12px;border:0;border-inline-end:1px solid var(--line);background:transparent;color:var(--fg);font:500 13px 'Inter','Noto Sans Arabic',sans-serif;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
         .grp button:last-child{border-inline-end:0}
         .grp button:hover:not(:disabled){background:var(--bg-hover)}
         .grp button:disabled{color:var(--fg-subtle);opacity:.45;cursor:default}
         .grp button:focus-visible{outline:2px solid var(--accent-text);outline-offset:-2px}
         .grp button.rs[data-on]{color:var(--accent-text)}
-        .scale{display:flex;flex-direction:column;gap:4px;padding:6px 10px;background:var(--bg-glass,var(--bg-raised));border:1px solid var(--line);font:500 11px 'IBM Plex Mono',monospace;color:var(--fg-muted)}
+        .scale{display:flex;flex-direction:column;gap:4px;padding:6px 10px;background:var(--bg-glass,var(--bg-raised));border:1px solid var(--line);font:500 11px 'DM Mono','IBM Plex Mono',monospace;color:var(--fg-muted)}
         .scale i{display:block;height:6px;border:1.5px solid var(--fg-muted);border-top:0}
         @media (prefers-reduced-motion:reduce){.ring{animation:none;opacity:.6;transform:scale(1.6)}}
       </style><svg role="group"></svg>
@@ -270,7 +270,7 @@
       const pts = this.pins().map(p => { const xy = proj([p.lon, p.lat]); return { ...p, x: xy[0], y: xy[1] }; });
       if (hero) {
         pts.forEach((p, i) => {
-          out += `<circle cx="${p.x}" cy="${p.y}" r="2.5" fill="var(--accent)" opacity=".9"/>`;
+          out += `<circle cx="${p.x}" cy="${p.y}" r="2.5" fill="${p.n ? 'var(--accent)' : 'var(--pin, var(--accent))'}" opacity=".9"/>`;
           if (p.n || i % 4 === 0) out += `<circle class="ring" cx="${p.x}" cy="${p.y}" r="5" style="animation-delay:${(i * 0.43) % 2.6}s"/>`;
         });
       } else {
@@ -288,13 +288,13 @@
               + (isNew ? `<circle class="ring" cx="${c.x}" cy="${c.y}" r="6"/>` : '')
               + (isSel ? `<circle cx="${c.x}" cy="${c.y}" r="13" fill="none" stroke="var(--fg)" stroke-width="1.5"/>` : '')
               + `<circle class="hit" cx="${c.x}" cy="${c.y}" r="14" fill="transparent"/>`
-              + `<circle class="core" cx="${c.x}" cy="${c.y}" r="5.5" fill="var(--accent)" stroke="var(--bg-raised)" stroke-width="2"/></g>`;
+              + `<circle class="core" cx="${c.x}" cy="${c.y}" r="5.5" fill="${isNew || isSel ? 'var(--accent)' : 'var(--pin, var(--accent))'}" stroke="var(--bg-raised)" stroke-width="2"/></g>`;
           } else {
             const r = 12 + Math.sqrt(n) * 3.2;
             out += `<g class="pin" tabindex="0" role="button" aria-label="${n} deployments — activate to zoom in" data-ids="${ids.join(',')}">`
               + (isNew ? `<circle class="ring" cx="${c.x}" cy="${c.y}" r="${r * .6}"/>` : '')
-              + `<circle cx="${c.x}" cy="${c.y}" r="${r + 4}" fill="var(--accent-soft)"/>`
-              + `<circle class="hit" cx="${c.x}" cy="${c.y}" r="${r}" fill="var(--bg-raised)" stroke="${isSel ? 'var(--fg)' : 'var(--accent)'}" stroke-width="${isSel ? 2 : 1.5}"/>`
+              + `<circle cx="${c.x}" cy="${c.y}" r="${r + 4}" fill="${isNew ? 'var(--accent-soft)' : 'var(--pin-soft, var(--accent-soft))'}"/>`
+              + `<circle class="hit" cx="${c.x}" cy="${c.y}" r="${r}" fill="var(--bg-raised)" stroke="${isSel ? 'var(--fg)' : (isNew ? 'var(--accent)' : 'var(--pin, var(--accent))')}" stroke-width="${isSel ? 2 : 1.5}"/>`
               + `<text class="cnt" x="${c.x}" y="${c.y + 4}" text-anchor="middle">${n}</text></g>`;
           }
         }

@@ -46,8 +46,8 @@ npx --yes staticrypt@3.5.4 _site/*.html -d _site \
   --template-placeholder "Password" \
   --template-remember "Remember me on this device for 30 days" \
   --template-error "Incorrect password" \
-  --template-color-primary "#5B3DF5" \
-  --template-color-secondary "#F2F3F7"
+  --template-color-primary "#D65336" \
+  --template-color-secondary "#F7F5EF"
 
 # Ask crawlers not to index the password screen itself.
 sed -i 's#<head>#<head><meta name="robots" content="noindex, nofollow">#' _site/*.html

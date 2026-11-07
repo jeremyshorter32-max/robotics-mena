@@ -1,0 +1,15 @@
+/* Robotics MENA V2 · Production design token starting point · Zarid requires commercial font licensing */
+:root {
+ --rm-ink:#12212B; --rm-paper:#F7F5EF; --rm-surface:#FFFFFF;
+ --rm-signal:#D65336; --rm-signal-text:#B54127; --rm-data:#166773; --rm-telemetry:#92D4CB;
+ --rm-line:#D7DCD8; --rm-muted:#52616A;
+ --rm-font-display:'29LT Zarid Sans','Inter','Noto Sans Arabic',sans-serif;
+ --rm-font-body:'29LT Zarid Sans','Inter','Noto Sans Arabic',sans-serif;
+ --rm-font-data:'DM Mono','IBM Plex Mono',ui-monospace,monospace;
+ --rm-radius:3px; --rm-max-content:1360px;
+}
+[data-theme='dark'] { --rm-ink:#F7F5EF; --rm-paper:#12212B; --rm-surface:#1B303B; --rm-muted:#B8C7CB; --rm-line:#39515C; --rm-signal-text:#F28B70; --rm-data:#92D4CB; }
+[lang='ar'],[dir='rtl'] {font-family:var(--rm-font-body); letter-spacing:normal; line-height:1.65;}
+.rm-data {font-family:var(--rm-font-data); font-variant-numeric:tabular-nums;}
+.rm-kicker {font-family:var(--rm-font-data); letter-spacing:.13em; text-transform:uppercase;}
+[dir='rtl'] .rm-kicker {font-family:var(--rm-font-body);letter-spacing:normal;text-transform:none;}

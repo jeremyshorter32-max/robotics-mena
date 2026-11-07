@@ -12,23 +12,23 @@
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Readex+Pro:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap">
 <script src="/vendor/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"></script>
 <script src="/vendor/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67"></script>
 <script src="/image-slot.js"></script>
 <style>
-html,body{margin:0;padding:0;background:#F2F3F7}
+html,body{margin:0;padding:0;background:#F7F5EF}
 *{box-sizing:border-box}
-[data-rm]{--font-sans:'Readex Pro',system-ui,sans-serif;--font-label:'IBM Plex Mono',ui-monospace,monospace;--font-num:'IBM Plex Mono',ui-monospace,monospace;--label-track:.08em;--label-case:uppercase;--track-tight:-0.028em;--lh-display:1.05;--lh-body:1.5;--fade-dir:to right;--gutter:64px;--gap:24px;--grid:repeat(12,minmax(0,1fr));--span-label:1 / span 3;--span-main:4 / -1;--sec-pad:88px;--d-desk:flex;--d-nav:flex;--d-mob:none;--fs-display:88px;--fs-h2:32px;--hero-pad:128px;--stats-cols:repeat(4,minmax(0,1fr));--brief-cols:72px minmax(0,1fr) 240px;--brief-meta:3;--map-h:560px;--panel-pos:absolute;--panel-w:384px;--panel-top:24px;--panel-end:24px;--panel-margin:0;--panel-maxh:calc(100% - 48px);--spot-cols:minmax(0,7fr) minmax(0,5fr);--ev-cols:112px minmax(0,1fr) 128px 112px 176px;--ev-tail:flex;--two-cols:minmax(0,1fr) minmax(0,1fr);--card-w:400px;--rail-pad:max(var(--gutter),calc((100vw - 1440px) / 2 + var(--gutter)));--three-cols:repeat(3,minmax(0,1fr));--rail-order:1;--rail-flex:1 1 0;--rail-h:64px;--rail-bt:0;--rail-mx:0;--rail-px:0;--chip-wrap:wrap;--chip-lbl:flex;--fs-page:56px;--dos-pad:32px;--aside-bs:1px solid var(--line);--aside-bt:0}
-[data-rm][dir=rtl]{--font-sans:'Readex Pro',system-ui,sans-serif;--font-label:'Readex Pro',sans-serif;--font-num:'Readex Pro','IBM Plex Mono',sans-serif;--label-track:0;--label-case:none;--track-tight:0;--lh-display:1.28;--lh-body:1.75;--fade-dir:to left}
+[data-rm]{--font-sans:'29LT Zarid Sans','Inter','Noto Sans Arabic',system-ui,sans-serif;--font-label:'DM Mono','IBM Plex Mono',ui-monospace,monospace;--font-num:'DM Mono','IBM Plex Mono',ui-monospace,monospace;--label-track:.12em;--label-case:uppercase;--track-tight:-0.035em;--lh-display:1.05;--lh-body:1.5;--fade-dir:to right;--gutter:64px;--gap:24px;--grid:repeat(12,minmax(0,1fr));--span-label:1 / span 3;--span-main:4 / -1;--sec-pad:88px;--d-desk:flex;--d-nav:flex;--d-mob:none;--fs-display:88px;--fs-h2:32px;--hero-pad:128px;--stats-cols:repeat(4,minmax(0,1fr));--brief-cols:72px minmax(0,1fr) 240px;--brief-meta:3;--map-h:560px;--panel-pos:absolute;--panel-w:384px;--panel-top:24px;--panel-end:24px;--panel-margin:0;--panel-maxh:calc(100% - 48px);--spot-cols:minmax(0,7fr) minmax(0,5fr);--ev-cols:112px minmax(0,1fr) 128px 112px 176px;--ev-tail:flex;--two-cols:minmax(0,1fr) minmax(0,1fr);--card-w:400px;--rail-pad:max(var(--gutter),calc((100vw - 1440px) / 2 + var(--gutter)));--three-cols:repeat(3,minmax(0,1fr));--rail-order:1;--rail-flex:1 1 0;--rail-h:64px;--rail-bt:0;--rail-mx:0;--rail-px:0;--chip-wrap:wrap;--chip-lbl:flex;--fs-page:56px;--dos-pad:32px;--aside-bs:1px solid var(--line);--aside-bt:0}
+[data-rm][dir=rtl]{--font-sans:'29LT Zarid Sans','Noto Sans Arabic','Inter',sans-serif;--font-label:'29LT Zarid Sans','Noto Sans Arabic',sans-serif;--font-num:'Noto Sans Arabic','DM Mono',sans-serif;--label-track:0;--label-case:none;--track-tight:0;--lh-display:1.3;--lh-body:1.65;--fade-dir:to left}
 @media (max-width:1180px){[data-rm][dir]{--d-nav:none;--span-label:1 / -1;--span-main:1 / -1;--fs-display:64px;--hero-pad:96px;--three-cols:minmax(0,1fr);--ev-cols:88px minmax(0,1fr) auto;--ev-tail:none;--panel-pos:relative;--panel-w:auto;--panel-top:auto;--panel-end:auto;--panel-margin:16px var(--gutter);--panel-maxh:none;--rail-order:3;--rail-flex:1 1 100%;--rail-h:44px;--rail-bt:1px solid var(--line);--rail-mx:0 calc(var(--gutter) * -1);--rail-px:var(--gutter)}}
 @media (max-width:900px){[data-rm][dir]{--gutter:20px;--gap:16px;--grid:repeat(4,minmax(0,1fr));--span-label:1 / -1;--span-main:1 / -1;--sec-pad:56px;--d-desk:none;--d-mob:flex;--fs-display:44px;--fs-h2:28px;--hero-pad:40px;--stats-cols:repeat(2,minmax(0,1fr));--brief-cols:40px minmax(0,1fr);--brief-meta:2;--map-h:460px;--panel-pos:relative;--panel-w:auto;--spot-cols:minmax(0,1fr);--ev-cols:64px minmax(0,1fr);--ev-tail:none;--two-cols:minmax(0,1fr);--three-cols:minmax(0,1fr);--fade-dir:to bottom;--ev-btn-col:2;--card-w:84vw;--chip-wrap:nowrap;--chip-lbl:none;--fs-page:36px;--dos-pad:20px;--aside-bs:0;--aside-bt:1px solid var(--line)}}
-[data-theme=dark]{--bg:#0B0B12;--bg-raised:#14141D;--bg-hover:#1D1E29;--bg-glass:rgba(11,11,18,.82);--fg:#EEF0F6;--fg-muted:#A9ADBD;--fg-subtle:#82869A;--line:#23242F;--line-strong:#363848;--sand:#3CCBE6;--sand-soft:rgba(60,203,230,.08);--dot:rgba(238,240,246,.08);--frame:rgba(139,116,255,.09);--mark:#FFFFFF;--map-sea:#0D0D15;--map-land:#171822;--map-land-mena:#232535;--map-border:#3A3D52;--map-coast:#5A5E78;color-scheme:dark}
-[data-theme=light]{--bg:#F2F3F7;--bg-raised:#FFFFFF;--bg-hover:#E7E9EF;--bg-glass:rgba(242,243,247,.86);--fg:#12121A;--fg-muted:#4E5160;--fg-subtle:#5F6377;--line:#DCDEE6;--line-strong:#C9CCD8;--sand:#007A96;--sand-soft:rgba(0,122,150,.08);--dot:rgba(18,18,26,.10);--frame:rgba(91,61,245,.06);--mark:#5B3DF5;--map-sea:#EDEFF4;--map-land:#E1E4EC;--map-land-mena:#FFFFFF;--map-border:#C2C7D4;--map-coast:#8F96AB;color-scheme:light}
-[data-theme=dark][data-accent=violet]{--accent:#8B74FF;--accent-text:#A493FF;--accent-ink:#0B0820;--accent-soft:rgba(139,116,255,.16)}
-[data-theme=dark][data-accent=cyan]{--accent:#3CCBE6;--accent-text:#5ED6EC;--accent-ink:#04161B;--accent-soft:rgba(60,203,230,.14)}
-[data-theme=light][data-accent=violet]{--accent:#5B3DF5;--accent-text:#4F2FE8;--accent-ink:#FFFFFF;--accent-soft:rgba(91,61,245,.10)}
-[data-theme=light][data-accent=cyan]{--accent:#007A96;--accent-text:#006E87;--accent-ink:#FFFFFF;--accent-soft:rgba(0,122,150,.10)}
+[data-theme=dark]{--bg:#12212B;--bg-raised:#1B303B;--bg-hover:#233A47;--bg-glass:rgba(18,33,43,.88);--fg:#F7F5EF;--fg-muted:#B8C7CB;--fg-subtle:#93A6AC;--line:#2C4450;--line-strong:#39515C;--sand:#92D4CB;--sand-soft:rgba(146,212,203,.10);--pin:#92D4CB;--pin-soft:rgba(146,212,203,.16);--dot:rgba(247,245,239,.08);--frame:rgba(146,212,203,.07);--mark:#F7F5EF;--mark-point:#D65336;--map-sea:#0F1D26;--map-land:#1B303B;--map-land-mena:#24404D;--map-border:#3E5966;--map-coast:#6E8A93;color-scheme:dark}
+[data-theme=light]{--bg:#F7F5EF;--bg-raised:#FFFFFF;--bg-hover:#EFECE4;--bg-glass:rgba(247,245,239,.88);--fg:#12212B;--fg-muted:#52616A;--fg-subtle:#5D6A71;--line:#D7DCD8;--line-strong:#BEC7C3;--sand:#166773;--sand-soft:rgba(22,103,115,.08);--pin:#166773;--pin-soft:rgba(22,103,115,.14);--dot:rgba(18,33,43,.10);--frame:rgba(18,33,43,.05);--mark:#12212B;--mark-point:#D65336;--map-sea:#EFECE4;--map-land:#E4E2DA;--map-land-mena:#FFFFFF;--map-border:#C5CCC8;--map-coast:#8D9A99;color-scheme:light}
+[data-theme=dark][data-accent=violet]{--accent:#C24A2F;--accent-text:#F28B70;--accent-ink:#FFFFFF;--accent-soft:rgba(214,83,54,.18)}
+[data-theme=dark][data-accent=cyan]{--accent:#92D4CB;--accent-text:#92D4CB;--accent-ink:#12212B;--accent-soft:rgba(146,212,203,.14)}
+[data-theme=light][data-accent=violet]{--accent:#C24A2F;--accent-text:#B54127;--accent-ink:#FFFFFF;--accent-soft:rgba(214,83,54,.10)}
+[data-theme=light][data-accent=cyan]{--accent:#166773;--accent-text:#166773;--accent-ink:#FFFFFF;--accent-soft:rgba(22,103,115,.10)}
 [data-rm] a{color:inherit;text-decoration:none}
 [data-rm] a:hover{color:var(--accent-text)}
 [data-rm] :focus-visible{outline:2px solid var(--accent-text);outline-offset:2px}
@@ -44,13 +44,13 @@ html,body{margin:0;padding:0;background:#F2F3F7}
 <nav aria-label="Primary" style="position:sticky;top:0;z-index:50;background:var(--bg-glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)">
   <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:flex;flex-wrap:wrap;align-items:center;column-gap:32px">
     <a href="{{ homeHref }}" style="order:0;height:64px;display:flex;align-items:center;gap:12px;flex:none">
-      <svg aria-hidden="true" viewBox="0 0 100 100" width="28" height="28" style="display:block;flex:none"><g fill="none" stroke="var(--mark)" stroke-width="9.6" stroke-linejoin="miter" stroke-linecap="square"><path d="M31 7H61L84 26V37"/><path d="M91 65V73L73 91H59"/><path d="M43 91H31L9 70V59"/><path d="M9 42V29L29 9"/></g><path d="M25 72L47 46L70 58" fill="none" stroke="var(--mark)" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/><circle cx="25" cy="72" r="5" fill="var(--bg)"/><circle cx="47" cy="46" r="5" fill="var(--bg)"/><circle cx="70" cy="58" r="5.7" fill="var(--mark)"/></svg>
+      <svg aria-hidden="true" viewBox="0 0 100 100" width="30" height="30" style="display:block;flex:none"><g fill="none" stroke="var(--mark)" stroke-width="9.6" stroke-linejoin="miter" stroke-linecap="square"><path d="M31 7H61L84 26V37"/><path d="M91 65V73L73 91H59"/><path d="M43 91H31L9 70V59"/><path d="M9 42V29L29 9"/></g><path d="M26 71L49 45L69 56" fill="none" stroke="var(--mark)" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/><path d="M68 56L87 53" fill="none" stroke="var(--mark)" stroke-width="7" stroke-linecap="round"/><circle cx="26" cy="71" r="9" fill="var(--mark)"/><circle cx="26" cy="71" r="4.4" fill="var(--bg)"/><circle cx="49" cy="45" r="9" fill="var(--mark)"/><circle cx="49" cy="45" r="4.4" fill="var(--bg)"/><circle cx="49" cy="69" r="4.1" fill="var(--mark-point)"/></svg><span aria-hidden="true" style="width:1.5px;height:22px;background:var(--mark-point);flex:none"></span>
       <span style="font-weight:600;font-size:16px;letter-spacing:var(--track-tight)">{{ t.brand }}</span>
     </a>
     <div style="order:2;height:64px;margin-inline-start:auto;display:flex;align-items:center;gap:8px">
-      <button onClick="{{ toggleTheme }}" aria-label="{{ themeAria }}" style="height:36px;padding:0 12px;background:transparent;border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;font-size:13px;color:var(--fg-muted)">{{ themeLabel }}</button>
-      <button onClick="{{ toggleLang }}" lang="{{ otherLang }}" style="height:36px;padding:0 12px;background:transparent;border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;font-size:14px;font-family:{{ otherFont }}">{{ t.langSwitch }}</button>
-      <a href="#newsletter" onClick="{{ goNewsletter }}" style="display:var(--d-desk);align-items:center;height:36px;padding:0 16px;background:var(--accent);color:var(--accent-ink);border-radius:2px;font-size:14px;font-weight:600;white-space:nowrap">{{ t.subscribe }}</a>
+      <button onClick="{{ toggleTheme }}" aria-label="{{ themeAria }}" style="height:36px;padding:0 12px;background:transparent;border:1px solid var(--line-strong);border-radius:3px;cursor:pointer;font-size:13px;color:var(--fg-muted)">{{ themeLabel }}</button>
+      <button onClick="{{ toggleLang }}" lang="{{ otherLang }}" style="height:36px;padding:0 12px;background:transparent;border:1px solid var(--line-strong);border-radius:3px;cursor:pointer;font-size:14px;font-family:{{ otherFont }}">{{ t.langSwitch }}</button>
+      <a href="#newsletter" onClick="{{ goNewsletter }}" style="display:var(--d-desk);align-items:center;height:36px;padding:0 16px;background:var(--accent);color:var(--accent-ink);border-radius:3px;font-size:14px;font-weight:600;white-space:nowrap">{{ t.subscribe }}</a>
     </div>
     <div ref="{{ tabRail }}" data-rail="" role="navigation" aria-label="{{ t.sections }}" style="order:var(--rail-order);flex:var(--rail-flex);min-width:0;position:relative;margin:var(--rail-mx);padding-inline:var(--rail-px);border-top:var(--rail-bt);height:var(--rail-h);display:flex;gap:20px;overflow-x:auto;scrollbar-width:none;white-space:nowrap">
       <sc-for list="{{ nav }}" as="n" hint-placeholder-count="6">
@@ -74,14 +74,14 @@ html,body{margin:0;padding:0;background:#F2F3F7}
       <h1 style="margin:0;font-size:var(--fs-display);line-height:var(--lh-display);letter-spacing:var(--track-tight);font-weight:600;text-wrap:balance">{{ t.h1a }}<span style="display:block;color:var(--fg-muted)">{{ t.h1b }}</span></h1>
       <p style="margin:0;max-width:600px;font-size:19px;line-height:1.55;color:var(--fg-muted);text-wrap:pretty">{{ t.dek }}</p>
       <div style="position:relative;max-width:640px">
-        <label style="display:flex;align-items:center;gap:12px;height:56px;padding:0 16px;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:2px">
+        <label style="display:flex;align-items:center;gap:12px;height:56px;padding:0 16px;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:3px">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="color:var(--fg-subtle);flex:none"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg>
           <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">{{ t.searchPh }}</span>
           <input ref="{{ searchRef }}" type="search" value="{{ q }}" onChange="{{ onQ }}" placeholder="{{ t.searchPh }}" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="{{ qOpen }}" aria-controls="rm-results" onKeyDown="{{ onSearchKey }}" style="flex:1;min-width:0;height:100%;background:transparent;border:0;outline:none;font-size:16px">
-          <kbd style="display:var(--d-desk);font:500 12px var(--font-num);color:var(--fg-subtle);border:1px solid var(--line-strong);padding:2px 8px;border-radius:2px">/</kbd>
+          <kbd style="display:var(--d-desk);font:500 12px var(--font-num);color:var(--fg-subtle);border:1px solid var(--line-strong);padding:2px 8px;border-radius:3px">/</kbd>
         </label>
         <sc-if value="{{ hasQ }}" hint-placeholder-val="{{ false }}">
-          <div id="rm-results" role="listbox" aria-label="{{ t.searchPh }}" style="position:absolute;z-index:20;top:60px;inset-inline:0;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:2px;box-shadow:0 24px 48px rgba(0,0,0,.35);max-height:420px;overflow:auto;padding:8px 0">
+          <div id="rm-results" role="listbox" aria-label="{{ t.searchPh }}" style="position:absolute;z-index:20;top:60px;inset-inline:0;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:3px;box-shadow:0 24px 48px rgba(0,0,0,.35);max-height:420px;overflow:auto;padding:8px 0">
             <sc-for list="{{ results }}" as="g">
               <div role="presentation" style="padding:8px 16px 4px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ g.label }}</div>
               <sc-for list="{{ g.items }}" as="r">
@@ -96,7 +96,7 @@ html,body{margin:0;padding:0;background:#F2F3F7}
       </div>
       <div style="display:var(--d-desk);flex-wrap:wrap;align-items:center;gap:8px;margin-top:-16px">
         <span style="font-size:13px;color:var(--fg-subtle);margin-inline-end:4px">{{ t.tryLbl }}</span>
-        <sc-for list="{{ suggest }}" as="s" hint-placeholder-count="4"><button onClick="{{ s.go }}" style="height:32px;padding:0 12px;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:2px;font-size:13px;color:var(--fg-muted);cursor:pointer;transition:border-color .15s,color .15s" style-hover="border-color:var(--fg);color:var(--fg)">{{ s.label }}</button></sc-for>
+        <sc-for list="{{ suggest }}" as="s" hint-placeholder-count="4"><button onClick="{{ s.go }}" style="height:32px;padding:0 12px;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:3px;font-size:13px;color:var(--fg-muted);cursor:pointer;transition:border-color .15s,color .15s" style-hover="border-color:var(--fg);color:var(--fg)">{{ s.label }}</button></sc-for>
       </div>
     </div>
   </div>
@@ -126,8 +126,8 @@ html,body{margin:0;padding:0;background:#F2F3F7}
     </header>
     <div style="display:flex;align-items:center;gap:8px">
       <span aria-live="polite" style="font:500 13px var(--font-num);color:var(--fg-muted);min-width:64px;text-align:end;margin-inline-end:8px">{{ briefPos }}</span>
-      <button onClick="{{ briefPrev }}" aria-disabled="{{ briefPrevDis }}" aria-label="{{ t.prev }}" style="width:44px;height:44px;border:1px solid var(--line-strong);background:var(--bg-raised);color:var(--fg);cursor:{{ briefPrevCur }};display:grid;place-items:center;border-radius:2px;font-size:18px;opacity:{{ briefPrevOp }}" style-hover="border-color:var(--fg)">{{ prevArrow }}</button>
-      <button onClick="{{ briefNext }}" aria-disabled="{{ briefNextDis }}" aria-label="{{ t.next }}" style="width:44px;height:44px;border:1px solid var(--line-strong);background:var(--bg-raised);color:var(--fg);cursor:{{ briefNextCur }};display:grid;place-items:center;border-radius:2px;font-size:18px;opacity:{{ briefNextOp }}" style-hover="border-color:var(--fg)">{{ nextArrow }}</button>
+      <button onClick="{{ briefPrev }}" aria-disabled="{{ briefPrevDis }}" aria-label="{{ t.prev }}" style="width:44px;height:44px;border:1px solid var(--line-strong);background:var(--bg-raised);color:var(--fg);cursor:{{ briefPrevCur }};display:grid;place-items:center;border-radius:3px;font-size:18px;opacity:{{ briefPrevOp }}" style-hover="border-color:var(--fg)">{{ prevArrow }}</button>
+      <button onClick="{{ briefNext }}" aria-disabled="{{ briefNextDis }}" aria-label="{{ t.next }}" style="width:44px;height:44px;border:1px solid var(--line-strong);background:var(--bg-raised);color:var(--fg);cursor:{{ briefNextCur }};display:grid;place-items:center;border-radius:3px;font-size:18px;opacity:{{ briefNextOp }}" style-hover="border-color:var(--fg)">{{ nextArrow }}</button>
     </div>
   </div>
   <ol ref="{{ briefRail }}" onScroll="{{ briefScroll }}" data-rail="" tabindex="0" aria-label="{{ t.s1 }}" style="list-style:none;margin:40px 0 0;padding:0 var(--rail-pad) 4px;display:grid;grid-auto-flow:column;grid-auto-columns:var(--card-w);gap:var(--gap);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--rail-pad);scrollbar-width:none;outline-offset:-2px">
@@ -135,7 +135,7 @@ html,body{margin:0;padding:0;background:#F2F3F7}
       <li style="scroll-snap-align:start;display:flex;flex-direction:column;gap:20px;padding:28px;background:var(--bg-raised);border:1px solid var(--line);border-top:2px solid var(--fg);min-height:400px;min-width:0">
         <sc-if value="{{ b.hasImg }}"><figure style="margin:-28px -28px 0;position:relative;aspect-ratio:16 / 10;overflow:hidden;background:var(--bg-hover);border-bottom:1px solid var(--line)">
           <img src="{{ b.img }}" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
-          <figcaption style="position:absolute;inset-inline-start:0;bottom:0;padding:3px 8px;background:rgba(11,11,18,.72);color:#EEF0F6;font:400 11px/16px var(--font-num)">{{ b.credit }}</figcaption>
+          <figcaption style="position:absolute;inset-inline-start:0;bottom:0;padding:3px 8px;background:rgba(18,33,43,.80);color:#F7F5EF;font:400 11px/16px var(--font-num)">{{ b.credit }}</figcaption>
         </figure></sc-if>
         <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
           <span style="font:500 28px/32px var(--font-num);color:var(--fg-subtle)">{{ b.idx }}</span>
@@ -170,14 +170,14 @@ html,body{margin:0;padding:0;background:#F2F3F7}
       <h2 style="margin:0;font-size:var(--fs-h2);line-height:1.15;letter-spacing:var(--track-tight);font-weight:600">{{ t.s2 }}</h2>
       <p style="margin:0;color:var(--fg-muted)">{{ t.s2sub }}</p>
     </header>
-    <div style="grid-column:var(--span-main);align-self:end;display:flex;justify-content:flex-end"><a href="{{ mapFullHref }}" style="display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border:1px solid var(--fg);border-radius:2px;font-size:14px;font-weight:500;white-space:nowrap">{{ t.mapOpen }} <span aria-hidden="true">{{ arrow }}</span></a></div>
+    <div style="grid-column:var(--span-main);align-self:end;display:flex;justify-content:flex-end"><a href="{{ mapFullHref }}" style="display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border:1px solid var(--fg);border-radius:3px;font-size:14px;font-weight:500;white-space:nowrap">{{ t.mapOpen }} <span aria-hidden="true">{{ arrow }}</span></a></div>
   </div>
   <div style="position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)">
     <div ref="{{ mapRef }}" style="height:var(--map-h);position:relative;background:var(--map-sea)">
       <sc-if value="{{ mapNear }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="mena-map" from="./mena-map.js" mode="full" dir="{{ dir }}" pins="{{ mapPins }}" selected="{{ selId }}" focus="{{ fCountry }}" pad-end="{{ padEnd }}" label="{{ t.s2 }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import></sc-if>
       <div style="position:absolute;top:16px;inset-inline-start:16px;font:400 12px/16px var(--font-num);color:var(--fg-subtle);background:var(--bg-glass);padding:6px 10px;border:1px solid var(--line);display:var(--d-nav);white-space:nowrap">{{ t.mapHelp }}</div>
     </div>
-    <aside style="position:var(--panel-pos);top:var(--panel-top);inset-inline-end:var(--panel-end);margin:var(--panel-margin);width:var(--panel-w);max-height:var(--panel-maxh);overflow:auto;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:2px">
+    <aside style="position:var(--panel-pos);top:var(--panel-top);inset-inline-end:var(--panel-end);margin:var(--panel-margin);width:var(--panel-w);max-height:var(--panel-maxh);overflow:auto;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:3px">
       <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)">
         <span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ panelTitle }}</span>
         <span style="font:500 12px var(--font-num);color:var(--fg-muted)">{{ showing }}</span>
@@ -191,7 +191,7 @@ html,body{margin:0;padding:0;background:#F2F3F7}
               <h3 style="margin:0;font-size:22px;line-height:1.3;font-weight:600;letter-spacing:var(--track-tight)">{{ sel.robot }}</h3>
               <div style="font-size:13px;color:var(--fg-muted)">{{ sel.typeLabel }} · {{ sel.sector }}</div>
             </div>
-            <button onClick="{{ clearSel }}" aria-label="{{ t.close }}" style="width:32px;height:32px;flex:none;background:transparent;border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;color:var(--fg-muted)">✕</button>
+            <button onClick="{{ clearSel }}" aria-label="{{ t.close }}" style="width:32px;height:32px;flex:none;background:transparent;border:1px solid var(--line-strong);border-radius:3px;cursor:pointer;color:var(--fg-muted)">✕</button>
           </div>
           <dl style="margin:0;display:grid;grid-template-columns:88px minmax(0,1fr);row-gap:12px;column-gap:16px;font-size:14px;border-top:1px solid var(--line);padding-top:16px">
             <dt style="color:var(--fg-subtle)">{{ t.operator }}</dt><dd style="margin:0;display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="width:24px;height:24px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ sel.opBadge.bg }};font:600 9px/1 var(--font-num);letter-spacing:.02em;color:var(--fg)"><sc-if value="{{ sel.opBadge.hasImg }}"><img src="{{ sel.opBadge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:{{ sel.opBadge.fit }};padding:{{ sel.opBadge.pad }};display:block"></sc-if><sc-if value="{{ sel.opBadge.noImg }}">{{ sel.opBadge.mono }}</sc-if></span>{{ sel.operator }}</dd>
@@ -235,7 +235,7 @@ html,body{margin:0;padding:0;background:#F2F3F7}
         <h2 style="margin:0;font-size:var(--fs-h2);line-height:1.15;letter-spacing:var(--track-tight);font-weight:600">{{ t.pCompare }}</h2>
         <p style="margin:0;color:var(--fg-muted);text-wrap:pretty">{{ t.pCompareSub }}</p>
       </header>
-      <a href="{{ policyHref }}" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;background:var(--fg);color:var(--bg);border-radius:2px;font-size:14px;font-weight:600;white-space:nowrap">{{ t.pOpenDossiers }} <span aria-hidden="true">{{ arrow }}</span></a>
+      <a href="{{ policyHref }}" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;background:var(--fg);color:var(--bg);border-radius:3px;font-size:14px;font-weight:600;white-space:nowrap">{{ t.pOpenDossiers }} <span aria-hidden="true">{{ arrow }}</span></a>
     </div>
     <div data-rail="" tabindex="0" style="overflow-x:auto;border:1px solid var(--line-strong);background:var(--bg)">
         <div role="table" aria-label="{{ t.pCompare }}" style="min-width:980px">
@@ -283,7 +283,7 @@ html,body{margin:0;padding:0;background:#F2F3F7}
         </sc-for>
       </dl>
       <div style="font-size:12px;color:var(--fg-subtle)">{{ t.spotSrc }}</div>
-      <a href="#newsletter" onClick="{{ goNewsletter }}" style="align-self:flex-start;display:inline-flex;gap:8px;align-items:center;height:44px;padding:0 20px;background:var(--fg);color:var(--bg);border-radius:2px;font-size:14px;font-weight:600">{{ t.spotRead }} <span aria-hidden="true">{{ arrow }}</span></a>
+      <a href="#newsletter" onClick="{{ goNewsletter }}" style="align-self:flex-start;display:inline-flex;gap:8px;align-items:center;height:44px;padding:0 20px;background:var(--fg);color:var(--bg);border-radius:3px;font-size:14px;font-weight:600">{{ t.spotRead }} <span aria-hidden="true">{{ arrow }}</span></a>
     </article>
   </div>
 </section>
@@ -297,8 +297,8 @@ html,body{margin:0;padding:0;background:#F2F3F7}
       <p style="margin:0;font-size:17px;color:var(--fg-muted)">{{ t.nlDek }}</p>
       <sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
         <form onSubmit="{{ subscribe }}" style="display:flex;gap:8px;flex-wrap:wrap">
-          <label style="flex:1;min-width:220px"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">{{ t.nlPh }}</span><input type="email" required="" value="{{ email }}" onChange="{{ onEmail }}" placeholder="{{ t.nlPh }}" style="width:100%;height:48px;padding:0 16px;background:var(--bg);border:1px solid var(--line-strong);border-radius:2px;font-size:16px;outline-offset:0"></label>
-          <button type="submit" style="height:48px;padding:0 24px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:2px;font-size:15px;font-weight:600;cursor:pointer">{{ t.nlBtn }}</button>
+          <label style="flex:1;min-width:220px"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">{{ t.nlPh }}</span><input type="email" required="" value="{{ email }}" onChange="{{ onEmail }}" placeholder="{{ t.nlPh }}" style="width:100%;height:48px;padding:0 16px;background:var(--bg);border:1px solid var(--line-strong);border-radius:3px;font-size:16px;outline-offset:0"></label>
+          <button type="submit" style="height:48px;padding:0 24px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:3px;font-size:15px;font-weight:600;cursor:pointer">{{ t.nlBtn }}</button>
         </form>
       </sc-if>
       <sc-if value="{{ subscribed }}"><p role="status" style="margin:0;padding:14px 16px;border:1px solid var(--accent);color:var(--fg);font-size:15px">{{ t.nlDone }}</p></sc-if>
