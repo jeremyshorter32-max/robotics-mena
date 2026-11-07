@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Robotics MENA — Robotics across the Middle East <meta name="viewport" content="width=device-width, initial-scale=1">amp; North Africa</title>
 <meta name="description" content="A curated, sourced record of who is building and deploying robotics, physical AI and automation across the Middle East and North Africa.">
-<script>/*@config {"page":"home","nav":["brief","map","data","spotlight","newsletter"],"t":{"en":{"s4n":"03 · Policy & data","s8n":"04 · Spotlight","s9n":"05 · Newsletter"},"ar":{"s4n":"03 · السياسات والبيانات","s8n":"04 · تحت الضوء","s9n":"05 · النشرة"}}}*/</script>
+<script>/*@config {"page":"home","nav":["brief","map","spotlight","newsletter"],"t":{"en":{"s8n":"03 · Spotlight","s9n":"04 · Newsletter"},"ar":{"s8n":"03 · تحت الضوء","s9n":"04 · النشرة"}}}*/</script>
 <script src="/support.js"></script>
 </head>
 <body>
@@ -232,37 +232,6 @@ html,body{margin:0;padding:0;background:#F7F5EF}
     <span style="display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:50%;border:1px solid var(--accent);background:var(--accent-soft)"></span>{{ t.legCluster }}</span>
     <span style="display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:50%;border:1px solid var(--accent);opacity:.6"></span>{{ t.legNew }}</span>
     <span style="margin-inline-start:auto;font-family:var(--font-num)">{{ t.mapSource }} · {{ statsUpd }}</span>
-  </div>
-</section>
-
-<section id="data" data-screen-label="04 Policy snapshot" style="border-top:1px solid var(--line);padding:var(--sec-pad) 0;background:var(--bg-raised)">
-  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:flex;flex-direction:column;gap:24px">
-    <div style="display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-end;justify-content:space-between">
-      <header style="display:flex;flex-direction:column;gap:8px;max-width:720px">
-        <div style="margin-bottom:4px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.s4n }}</div>
-        <h2 style="margin:0;font-size:var(--fs-h2);line-height:1.15;letter-spacing:var(--track-tight);font-weight:600">{{ t.pCompare }}</h2>
-        <p style="margin:0;color:var(--fg-muted);text-wrap:pretty">{{ t.pCompareSub }}</p>
-      </header>
-      <a href="{{ policyHref }}" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;background:var(--fg);color:var(--bg);border-radius:3px;font-size:14px;font-weight:600;white-space:nowrap">{{ t.pOpenDossiers }} <span aria-hidden="true">{{ arrow }}</span></a>
-    </div>
-    <div data-rail="" tabindex="0" style="overflow-x:auto;border:1px solid var(--line-strong);background:var(--bg)">
-        <div role="table" aria-label="{{ t.pCompare }}" style="min-width:980px">
-          <div role="row" style="display:grid;grid-template-columns:minmax(150px,1fr) minmax(170px,1.1fr) minmax(240px,1.9fr) 112px minmax(140px,1fr) minmax(140px,1fr);gap:var(--gap);padding:12px 20px;border-bottom:1px solid var(--fg);font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">
-            <sc-for list="{{ t.pCols }}" as="h"><span role="columnheader">{{ h }}</span></sc-for>
-          </div>
-          <sc-for list="{{ cmp }}" as="r" hint-placeholder-count="8">
-            <div role="row" style="display:grid;grid-template-columns:minmax(150px,1fr) minmax(170px,1.1fr) minmax(240px,1.9fr) 112px minmax(140px,1fr) minmax(140px,1fr);gap:var(--gap);align-items:start;padding:16px 20px;border-bottom:1px solid var(--line);background:{{ r.bg }};font-size:14px">
-              <span role="rowheader"><button onClick="{{ r.pick }}" aria-disabled="{{ r.noPick }}" style="display:inline-flex;align-items:center;gap:8px;padding:0;background:transparent;border:0;cursor:{{ r.cur }};font-size:14px;font-weight:600;text-align:start" style-hover="color:var(--accent-text)"><span style="font:500 12px/16px var(--font-num);letter-spacing:.06em;border:1px solid var(--line-strong);padding:2px 6px;color:var(--fg-muted);font-weight:500">{{ r.cc }}</span>{{ r.name }}</button></span>
-              <span role="cell" style="display:flex;gap:8px;align-items:flex-start"><span aria-hidden="true" style="flex:none;margin-top:6px;width:8px;height:8px;transform:rotate(45deg);background:{{ r.dotBg }};border:1px solid {{ r.dotBd }}"></span><span style="color:{{ r.roboFg }}">{{ r.robo }}</span></span>
-              <span role="cell" style="display:flex;flex-direction:column;gap:2px"><span style="font:500 17px/24px var(--font-num);color:var(--fg)">{{ r.v }}</span><span style="font-size:13px;color:var(--fg-muted)">{{ r.what }}</span></span>
-              <span role="cell" style="display:flex;flex-direction:column;gap:2px"><span style="font:500 15px/24px var(--font-num)">{{ r.due }}</span><span style="font-size:12px;color:var(--fg-subtle)">{{ r.away }}</span></span>
-              <span role="cell" style="display:flex;align-items:center;gap:10px;padding-top:4px"><span style="flex:1;height:6px;background:var(--line)"><span style="display:block;height:100%;width:{{ r.dw }};background:var(--sand)"></span></span><span style="font:500 13px var(--font-num);min-width:36px;text-align:end">{{ r.dep }}</span></span>
-              <span role="cell" style="display:flex;align-items:center;gap:10px;padding-top:4px"><span style="flex:1;height:6px;background:var(--line)"><span style="display:block;height:100%;width:{{ r.cw }};background:var(--sand)"></span></span><span style="font:500 13px var(--font-num);min-width:36px;text-align:end">{{ r.co }}</span></span>
-            </div>
-          </sc-for>
-        </div>
-      </div>
-      <p style="margin:0;font-size:12px;color:var(--fg-subtle);text-wrap:pretty">{{ t.pCmpSrc }}</p>
   </div>
 </section>
 
