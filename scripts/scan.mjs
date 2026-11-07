@@ -48,7 +48,9 @@ const Findings = z.object({
   })),
   deployments: z.array(z.object({
     title: z.string().describe('Short description of the robots and the job, e.g. "Goods-to-person AMR fleet"'),
-    title_ar: z.string(), operator: z.string().describe('Organisation running the robots'), operator_ar: z.string(),
+    title_ar: z.string(), operator: z.string().describe('Organisation running the robots, or the company entering the market'), operator_ar: z.string(),
+    kind: z.enum(['rollout', 'deployment', 'entrant']).describe('rollout = an operator deploying robots across its assets; deployment = a specific new deployment going live; entrant = a robotics company entering the market'),
+    summary: z.string().describe('One factual sentence, under 30 words, with the key numbers'), summary_ar: z.string(),
     type: z.enum(keys(ROBOT_TYPES)), sector: z.enum(keys(SECTORS)), country: Country,
     site: z.string().describe('Facility and city, e.g. "Fulfilment centre, JAFZA, Dubai"'), site_ar: z.string(),
     lat: z.number().describe('Approximate latitude of the site or city'), lon: z.number().describe('Approximate longitude'),
@@ -182,7 +184,7 @@ function merge(found) {
     // New entries get the "Added this week" marker; last week's lose it.
     if (first) { data.deployments.forEach(x => { x.is_new = false; }); first = false; }
     const id = nextId(data.deployments, 'd');
-    data.deployments.push({ id, title: d.title, title_ar: d.title_ar, operator: d.operator, operator_ar: d.operator_ar, logo: '', type: d.type, sector: d.sector, country: d.country, site: d.site, site_ar: d.site_ar, lat: Math.round(d.lat * 100) / 100, lon: Math.round(d.lon * 100) / 100, date: d.date, is_new: true, source: d.source, source_url: d.source_url, added: today });
+    data.deployments.push({ id, title: d.title, title_ar: d.title_ar, operator: d.operator, operator_ar: d.operator_ar, logo: '', kind: d.kind, summary: d.summary, summary_ar: d.summary_ar, type: d.type, sector: d.sector, country: d.country, site: d.site, site_ar: d.site_ar, lat: Math.round(d.lat * 100) / 100, lon: Math.round(d.lon * 100) / 100, date: d.date, is_new: true, source: d.source, source_url: d.source_url, added: today });
     seenUrls.add(normUrl(d.source_url));
     report.added.deployments.push({ id, ...d });
   }

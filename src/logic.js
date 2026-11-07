@@ -85,9 +85,10 @@ class Component extends DCLogic {
   TYPES = { humanoid: ['Humanoid', 'روبوت بشري'], arm: ['Industrial arm', 'ذراع صناعية'], amr: ['AMR', 'روبوت متنقل ذاتي'], drone: ['Drone', 'طائرة مسيّرة'], av: ['Autonomous vehicle', 'مركبة ذاتية القيادة'], quadruped: ['Quadruped', 'رباعي الأرجل'], service: ['Service robot', 'روبوت خدمة'] };
   CATS = { humanoid: ['Humanoid', 'روبوتات بشرية'], arm: ['Industrial arms', 'أذرع صناعية'], amr: ['AMRs', 'روبوتات متنقلة'], drone: ['Drones', 'مسيّرات'], av: ['Autonomous mobility', 'تنقّل ذاتي'], integrator: ['Integrators', 'مُدمِجو أنظمة'], software: ['Software / AI', 'برمجيات وذكاء اصطناعي'] };
   STAGES = { seed: ['Seed', 'تأسيسية', 1], a: ['Series A', 'الجولة أ', 2], b: ['Series B', 'الجولة ب', 3], growth: ['Growth', 'نمو', 4], corp: ['Established', 'شركة راسخة', 5] };
+  DKINDS = { rollout: ['Rollout', 'توسّع في النشر'], deployment: ['New deployment', 'نشر جديد'], entrant: ['New entrant', 'دخول جديد للسوق'] };
   ETYPES = { expo: ['Expo', 'معرض'], conference: ['Conference', 'مؤتمر'], meetup: ['Meetup', 'لقاء'], competition: ['Competition', 'مسابقة'] };
 
-  DEP = window.RM_DATA.deployments.map(d => ({ id: d.id, type: d.type, sector: d.sector, cc: d.country, lat: d.lat, lon: d.lon, date: d.date, n: !!d.is_new, robot: [d.title, d.title_ar || d.title], op: [d.operator, d.operator_ar || d.operator], site: [d.site, d.site_ar || d.site], src: d.source, logo: d.logo || '' }));
+  DEP = window.RM_DATA.deployments.map(d => ({ id: d.id, type: d.type, sector: d.sector, cc: d.country, lat: d.lat, lon: d.lon, date: d.date, n: !!d.is_new, robot: [d.title, d.title_ar || d.title], op: [d.operator, d.operator_ar || d.operator], site: [d.site, d.site_ar || d.site], src: d.source, logo: d.logo || '', kind: d.kind || 'deployment', sum: [d.summary || '', d.summary_ar || d.summary || ''], url: d.source_url || '' }));
 
   BRIEF = window.RM_DATA.brief.map(b => [b.country, b.date, b.source, b.title, b.title_ar || b.title, b.takeaway, b.takeaway_ar || b.takeaway, b.image || '', b.image_credit || '', b.source_url || '']);
 
@@ -270,7 +271,7 @@ class Component extends DCLogic {
       s1n: '01 · The Brief', s1: 'This week’s five signals', s1sub: 'What moved in MENA robotics, and why it matters to buyers.', s1week: 'Week 45 · 2 – 8 Nov 2026', takeaway: 'Takeaway', source: 'Source',
       s2n: '02 · Deployments', s2: 'Deployments map', s2sub: 'Every robot we can verify, working on a real site in the region.',
       fCountry: 'Country', fSector: 'Sector', fType: 'Robot type', all: 'All', clearAll: 'Clear filters',
-      panelLatest: 'Latest deployments', panelRecord: 'Deployment record', showing: '{a} of {b}',
+      panelLatest: 'Latest deployments & entrants', panelRecord: 'Deployment record', showing: '{a} of {b}',
       operator: 'Operator', site: 'Site', country: 'Country', date: 'Live since', close: 'Close', newLbl: 'New this week',
       pickHint: 'Select a pin or a row to open its record.', mapHelp: 'Drag to pan · Pinch or Ctrl + scroll to zoom · 0 resets',
       legPin: 'Deployment', legCluster: 'Cluster: select to zoom', legNew: 'Added this week', mapSource: 'Robotics MENA tracker · 1 primary source per record · Boundaries: Natural Earth · Updated 30 Oct 2026',
@@ -320,7 +321,7 @@ class Component extends DCLogic {
       s1n: '01 · الموجز', s1: 'خمس إشارات هذا الأسبوع', s1sub: 'ما الذي تغيّر في قطاع الروبوتات بالمنطقة، ولماذا يهمّ المشترين.', s1week: 'الأسبوع 45 · 2 – 8 نوفمبر 2026', takeaway: 'الخلاصة', source: 'المصدر',
       s2n: '02 · عمليات النشر', s2: 'خريطة عمليات النشر', s2sub: 'كل روبوت أمكننا التحقق منه، يعمل في موقع حقيقي في المنطقة.',
       fCountry: 'الدولة', fSector: 'القطاع', fType: 'نوع الروبوت', all: 'الكل', clearAll: 'مسح الفلاتر',
-      panelLatest: 'أحدث عمليات النشر', panelRecord: 'سجل عملية النشر', showing: '{a} من {b}',
+      panelLatest: 'أحدث عمليات النشر والوافدين الجدد', panelRecord: 'سجل عملية النشر', showing: '{a} من {b}',
       operator: 'المشغّل', site: 'الموقع', country: 'الدولة', date: 'يعمل منذ', close: 'إغلاق', newLbl: 'جديد هذا الأسبوع',
       pickHint: 'اختر نقطة أو صفاً لفتح السجل.', mapHelp: 'اسحب للتحريك · قرّب بإصبعين أو Ctrl مع التمرير · 0 لإعادة الضبط',
       legPin: 'عملية نشر', legCluster: 'مجموعة: اخترها للتكبير', legNew: 'أُضيف هذا الأسبوع', mapSource: 'متتبّع روبوتكس مينا · مصدر أصلي لكل سجل · الحدود: Natural Earth · حُدّث 30 أكتوبر 2026',
@@ -460,7 +461,8 @@ class Component extends DCLogic {
         if (o.website) extra.push(link(o.website, d.visit));
         D.deployments.filter(x => opMatch(x.operator, o.name)).forEach(x => rel.push({ badge: this.badgeOf(x.operator, this.opLogo(x.operator, x.logo)), label: tr(x, 'title'), sub: tr(x, 'site') + ' · ' + fdate(x.date), open: () => this.setState({ dbTab: 'deployments', dbSel: x.id }) }));
       } else if (tab === 'deployments') {
-        fields.push([F.operator, tr(o, 'operator')], [F.site, tr(o, 'site')], [F.country, r.c4], [F.sector, r.c3], [F.type, r.c2], [F.date, r.c5]);
+        fields.push([ar ? 'النوع' : 'Kind', (this.DKINDS[o.kind] || this.DKINDS.deployment)[L]], [F.operator, tr(o, 'operator')], [F.site, tr(o, 'site')], [F.country, r.c4], [F.sector, r.c3], [F.type, r.c2], [F.date, r.c5]);
+        desc = tr(o, 'summary');
         D.companies.filter(x => opMatch(o.operator, x.name)).forEach(x => rel.push({ badge: this.badgeOf(x.name, x.logo), label: tr(x, 'name'), sub: (this.CATS[x.category] || ['', ''])[L] + ' · ' + cn(x.country), open: () => this.setState({ dbTab: 'companies', dbSel: x.id }) }));
         extra.push({ url: this.pageHref('map'), label: d.onMap });
       } else if (tab === 'countries') {
@@ -568,8 +570,8 @@ class Component extends DCLogic {
       anyFilter: !!(S.fCountry || S.fSector || S.fType), clearFilters: () => this.setState({ fCountry: '', fSector: '', fType: '', sel: null }) };
     const pinOf = d => ({ id: d.id, lat: d.lat, lon: d.lon, cc: d.cc, n: d.n, label: d.robot[L] + ', ' + d.site[L] });
     const selD = S.sel && this.DEP.find(d => d.id === S.sel);
-    const sel = selD ? { icon: this.ICON[selD.type], robot: selD.robot[L], typeLabel: this.TYPES[selD.type][L], sector: this.SECTORS[selD.sector][L], operator: selD.op[L], opBadge: this.badgeOf(selD.op[0], this.opLogo(selD.op[0], selD.logo)), site: selD.site[L], country: ccName(selD.cc), date: fdate(selD.date), srcLine: t.source + ': ' + selD.src, isNew: selD.n } : {};
-    const panelList = depF.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, this.PAGE === 'home' ? 4 : (narrow && !S.mapAll ? 5 : 8)).map(d => ({ icon: this.ICON[d.type], robot: d.robot[L], site: d.site[L], date: fdate(d.date), isNew: d.n, pick: () => this.setState({ sel: d.id }) }));
+    const sel = selD ? { icon: this.ICON[selD.type], robot: selD.robot[L], typeLabel: this.TYPES[selD.type][L], sector: this.SECTORS[selD.sector][L], operator: selD.op[L], opBadge: this.badgeOf(selD.op[0], this.opLogo(selD.op[0], selD.logo)), site: selD.site[L], country: ccName(selD.cc), date: fdate(selD.date), srcLine: t.source + ': ' + selD.src, isNew: selD.n, kindLabel: (this.DKINDS[selD.kind] || this.DKINDS.deployment)[L], summary: selD.sum[L], hasSummary: !!selD.sum[L], srcUrl: selD.url, hasUrl: !!selD.url, noUrl: !selD.url } : {};
+    const panelList = depF.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, this.PAGE === 'home' ? 4 : (narrow && !S.mapAll ? 5 : 8)).map(d => ({ icon: this.ICON[d.type], robot: d.robot[L], site: d.site[L], kindLabel: (this.DKINDS[d.kind] || this.DKINDS.deployment)[L], op: d.op[L], date: fdate(d.date), isNew: d.n, pick: () => this.setState({ sel: d.id }) }));
 
     // directory
     let co = this.CO.map((c, i) => ({ c, i })).filter(({ c }) => !S.dCat || c[3] === S.dCat);

@@ -120,19 +120,21 @@ html,body{margin:0;padding:0;background:#F7F5EF}
           <div style="display:flex;gap:16px;align-items:flex-start">
             <div style="width:56px;height:56px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;color:var(--fg)"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ sel.icon }}"></path></svg></div>
             <div style="display:flex;flex-direction:column;gap:6px;min-width:0;flex:1">
+              <span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--sand)">{{ sel.kindLabel }}</span>
               <sc-if value="{{ sel.isNew }}"><span style="align-self:flex-start;font:600 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--accent-ink);background:var(--accent);padding:2px 6px">{{ t.newLbl }}</span></sc-if>
               <h3 style="margin:0;font-size:22px;line-height:1.3;font-weight:600;letter-spacing:var(--track-tight)">{{ sel.robot }}</h3>
               <div style="font-size:13px;color:var(--fg-muted)">{{ sel.typeLabel }} · {{ sel.sector }}</div>
             </div>
             <button onClick="{{ clearSel }}" aria-label="{{ t.close }}" style="width:32px;height:32px;flex:none;background:transparent;border:1px solid var(--line-strong);border-radius:3px;cursor:pointer;color:var(--fg-muted)">✕</button>
           </div>
+          <sc-if value="{{ sel.hasSummary }}"><p style="margin:0;font-size:14px;line-height:1.55;color:var(--fg-muted)">{{ sel.summary }}</p></sc-if>
           <dl style="margin:0;display:grid;grid-template-columns:88px minmax(0,1fr);row-gap:12px;column-gap:16px;font-size:14px;border-top:1px solid var(--line);padding-top:16px">
             <dt style="color:var(--fg-subtle)">{{ t.operator }}</dt><dd style="margin:0;display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="width:24px;height:24px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ sel.opBadge.bg }};font:600 9px/1 var(--font-num);letter-spacing:.02em;color:var(--fg)"><sc-if value="{{ sel.opBadge.hasImg }}"><img src="{{ sel.opBadge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:{{ sel.opBadge.fit }};padding:{{ sel.opBadge.pad }};display:block"></sc-if><sc-if value="{{ sel.opBadge.noImg }}">{{ sel.opBadge.mono }}</sc-if></span>{{ sel.operator }}</dd>
             <dt style="color:var(--fg-subtle)">{{ t.site }}</dt><dd style="margin:0">{{ sel.site }}</dd>
             <dt style="color:var(--fg-subtle)">{{ t.country }}</dt><dd style="margin:0">{{ sel.country }}</dd>
             <dt style="color:var(--fg-subtle)">{{ t.date }}</dt><dd style="margin:0;font-family:var(--font-num);font-size:13px">{{ sel.date }}</dd>
           </dl>
-          <div style="padding:12px 0 0;border-top:1px solid var(--line);font-size:13px;color:var(--fg-subtle)">{{ sel.srcLine }}</div>
+          <div style="padding:12px 0 0;border-top:1px solid var(--line);font-size:13px;color:var(--fg-subtle)"><sc-if value="{{ sel.hasUrl }}"><a href="{{ sel.srcUrl }}" target="_blank" rel="noopener noreferrer" style="color:var(--accent-text)">{{ sel.srcLine }} {{ arrow }}</a></sc-if><sc-if value="{{ sel.noUrl }}">{{ sel.srcLine }}</sc-if></div>
         </article>
       </sc-if>
       <sc-if value="{{ noSel }}" hint-placeholder-val="{{ true }}">
@@ -141,7 +143,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
             <li style="border-bottom:1px solid var(--line)">
               <button onClick="{{ d.pick }}" style="display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:12px;align-items:start;width:100%;padding:14px 20px;background:transparent;border:0;cursor:pointer;text-align:start;transition:background .15s" style-hover="background:var(--bg-hover)">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg-muted);margin-top:2px"><path d="{{ d.icon }}"></path></svg>
-                <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:500;color:var(--fg)">{{ d.robot }}</span><span style="font-size:12px;color:var(--fg-subtle)">{{ d.site }}</span></span>
+                <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:500;color:var(--fg)">{{ d.robot }}</span><span style="font-size:12px;color:var(--fg-subtle)"><span style="color:var(--sand)">{{ d.kindLabel }}</span> · {{ d.op }} · {{ d.site }}</span></span>
                 <span style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><span style="font:400 12px var(--font-num);color:var(--fg-subtle);white-space:nowrap">{{ d.date }}</span><sc-if value="{{ d.isNew }}"><span style="width:6px;height:6px;transform:rotate(45deg);background:var(--accent)"></span></sc-if></span>
               </button>
             </li>

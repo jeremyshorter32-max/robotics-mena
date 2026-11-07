@@ -32,7 +32,8 @@ D.deployments.forEach((d, i) => {
   oneOf(d.type, ROBOT_TYPES, w, 'type'); oneOf(d.sector, SECTORS, w, 'sector');
   if (!countryCodes.has(d.country)) errors.push(`${w}: country "${d.country}" is not in countries.json`);
   if (!(typeof d.lat === 'number' && d.lat > 5 && d.lat < 45 && typeof d.lon === 'number' && d.lon > -20 && d.lon < 65)) errors.push(`${w}: lat/lon ${d.lat},${d.lon} is outside the MENA map area`);
-  date(d.date, w, 'date'); date(d.added, w, 'added', true); logo(d.logo, w); url(d.source_url, w, 'source_url');
+  date(d.date, w, 'date'); date(d.added, w, 'added', true); logo(d.logo, w);
+  if (d.kind && !['rollout', 'deployment', 'entrant'].includes(d.kind)) errors.push(`${w}: kind "${d.kind}" must be rollout, deployment or entrant`); url(d.source_url, w, 'source_url');
 });
 uniq(D.deployments, 'id', 'deployments');
 
