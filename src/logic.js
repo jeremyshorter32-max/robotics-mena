@@ -419,6 +419,7 @@ class Component extends DCLogic {
     const c = a && window.RM_DATA.companies.find(x => x.logo && (a.includes(x.name.toLowerCase()) || x.name.toLowerCase().includes(a)));
     return c ? c.logo : '';
   }
+  flagUrl(cc) { return cc ? '/media/flags/' + String(cc).toLowerCase() + '.svg' : ''; }
   dbOpen(tab, id) { this._dbReturn = document.activeElement; this.setState({ dbTab: tab, dbSel: id }); }
   dbVals(c) {
     const { S, lang, ar, L, num, fdate, ccName, narrow, t } = c;
@@ -593,16 +594,16 @@ class Component extends DCLogic {
     // policy
     const pcK = this.POLICY[S.pc] ? S.pc : 'AE', PD = this.POLICY[pcK], RD = Object.fromEntries(this.READY.map(r => [r[0], r]));
     const dueTxt = d => d == null ? t.noDate : (Array.isArray(d) ? digits(d[L]) : t.byYr.replace('{y}', yr(d)));
-    const pTabs = this.PCC.map(c => ({ ...this.chip(ccName(c), '', c === pcK, () => this.setState({ pc: c })), cc: c, id: 'rm-ptab-' + c, ti: c === pcK ? '0' : '-1' }));
+    const pTabs = this.PCC.map(c => ({ ...this.chip(ccName(c), '', c === pcK, () => this.setState({ pc: c })), cc: c, flag: this.flagUrl(c), id: 'rm-ptab-' + c, ti: c === pcK ? '0' : '-1' }));
     const pc = {
-      cc: pcK, name: ccName(pcK), summary: PD.sum[L],
+      cc: pcK, flag: this.flagUrl(pcK), name: ccName(pcK), summary: PD.sum[L],
       stats: [[num(RD[pcK][1]), t.pStDep], [num(RD[pcK][2]), t.pStCo], [num(PD.progs.length), t.pStProg]].map(x => ({ v: x[0], l: x[1] })),
       progs: PD.progs.map(p => { const sc = this.SCOPES[p[5]]; return { name: p[L], issuer: p[2 + L], yr: yr(p[4]), scope: sc[L], tagFg: sc[2] ? 'var(--accent-text)' : 'var(--fg-muted)', tagBd: sc[2] ? 'var(--accent)' : 'var(--line-strong)', kpis: p[6].map(k => ({ v: digits(k[L]), what: k[2 + L], by: dueTxt(k[4]) })) }; }),
       feat: { name: PD.feat.name[L], dek: PD.feat.dek[L], why: PD.feat.why[L], note: PD.feat.note ? PD.feat.note[L] : '', hasNote: !!(PD.feat.note && PD.feat.note[L]), facts: PD.feat.facts.map(f => ({ k: f[L], v: digits(f[2 + L]) })), ms: PD.feat.ms.map(m => ({ d: digits(m[L]), t: m[2 + L] })) },
       pubs: PD.pubs.map(u => ({ title: u[L], pub: u[2 + L], type: u[4 + L], yr: digits(u[6]), url: u[7], hasUrl: !!u[7], noUrl: !u[7] }))
     };
     const mxD = Math.max(...this.READY.map(r => r[1])), mxC = Math.max(...this.READY.map(r => r[2]));
-    const cmp = this.READY.map(r => { const c = r[0], P2 = this.POLICY[c]; const base = { cc: c, name: ccName(c), dep: num(r[1]), co: num(r[2]), dw: (r[1] / mxD * 100).toFixed(1) + '%', cw: (r[2] / mxC * 100).toFixed(1) + '%', bg: c === pcK ? 'var(--accent-soft)' : 'transparent' };
+    const cmp = this.READY.map(r => { const c = r[0], P2 = this.POLICY[c]; const base = { cc: c, flag: this.flagUrl(c), name: ccName(c), dep: num(r[1]), co: num(r[2]), dw: (r[1] / mxD * 100).toFixed(1) + '%', cw: (r[2] / mxC * 100).toFixed(1) + '%', bg: c === pcK ? 'var(--accent-soft)' : 'transparent' };
       if (!P2) return { ...base, robo: t.notProfiled, roboFg: 'var(--fg-subtle)', dotBg: 'transparent', dotBd: 'var(--line-strong)', v: 'None set', what: '', due: 'n/a', away: '', pick: () => {}, noPick: 'true', cur: 'default' };
       const k = P2.progs[P2.head[0]][6][P2.head[1]], d = k[4];
       return { ...base, robo: P2.robo[L], roboFg: P2.robo[2] ? 'var(--fg)' : 'var(--fg-muted)', dotBg: P2.robo[2] === 2 ? 'var(--accent)' : 'transparent', dotBd: P2.robo[2] ? 'var(--accent)' : 'var(--line-strong)', v: digits(k[L]), what: k[2 + L], due: typeof d === 'number' ? yr(d) : (d == null ? t.noDate : digits(d[L])), away: typeof d === 'number' ? t.away.replace('{n}', num(d - 2026)) : (d == null ? t.noDate : ''), pick: () => { this.setState({ pc: c }); this.go('strategies', c); }, noPick: 'false', cur: 'pointer' }; });
