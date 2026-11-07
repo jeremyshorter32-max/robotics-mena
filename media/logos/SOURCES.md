@@ -52,6 +52,10 @@ Each file was taken from the organisation's official website (or Wikimedia Commo
 | adipec.png | ADIPEC | https://www.adipec.com/images/favicon/apple-touch-icon.png?v=1.01 |
 | dubai-airshow.png | Dubai Airshow | https://knect365.imgix.net/uploads/apple-touch-icon-dce15a5a24b6f95eb7d5117a0ad7e2f4.png |
 | itsa.png | Industrial Transformation Saudi | https://industrialtransformationsaudi.com/wp-content/uploads/2024/03/ITSA-Logo-Unofficial-w-stroke-300x300.png |
+| taurob.png | Taurob | https://www.taurob.com/wp-content/uploads/2022/11/Taurob-logo-2022-190522A.svg (wordmark only, "a Dietsmann Group Company" line removed) |
+| unitree.png | Unitree Robotics | https://www.unitree.com/unitree-favicon.svg |
+| seaowl.png | SeaOwl | https://seaowlgroup.com/wp-content/uploads/2020/07/Logo-seaowl.svg |
+| aiq.png | AIQ | https://aiq.ae/wp-content/themes/aiq/assets/img/aiq-logo.svg |
 
 Ai Everything MEA Egypt reuses ai-everything.png (same brand). The Dubai World Congress for Self-Driving Transport uses rta.png (organised by Dubai's RTA).
 

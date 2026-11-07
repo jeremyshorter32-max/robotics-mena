@@ -4,7 +4,7 @@ class Component extends DCLogic {
   pref(k) { try { return window.localStorage.getItem('rm-' + k); } catch (e) { return null; } }
   savePref(k, v) { try { window.localStorage.setItem('rm-' + k, v); } catch (e) {} }
   urlTidy = (() => { try { ['lang', 'theme'].forEach(k => { const v = this.qp.get(k); if (v) this.savePref(k, v); }); const u = new URL(window.location.href); ['lang', 'theme', 'accent'].forEach(k => u.searchParams.delete(k)); let p = u.pathname.replace(/index\.html$/, '').replace(/\.html$/, ''); if (u.hash === '#top') u.hash = ''; const next = p + u.search + u.hash; if (next !== window.location.pathname + window.location.search + window.location.hash) window.history.replaceState(window.history.state, '', next); } catch (e) {} return true; })();
-  state = { active: 'brief', rails: { brief: { i: 0, n: 0, end: false }, strat: { i: 0, n: 0, end: false } }, lang: null, theme: null, q: '', fCountry: '', fSector: '', fType: '', sel: null, dCat: '', dSort: 'featured', eType: '', eCountry: '', tab: 'company', submitted: false, dbTab: this.qp.get('tab') || 'companies', dbSel: this.qp.get('id') || null, dbQ: this.qp.get('q') || '', dbCountry: '', dbFacet: '', dbSort: '', dbAll: false, dbCopied: false, dAll: false, mapAll: false, mapNear: false, pc: (this.qp.get('c') || 'AE').toUpperCase(), email: '', subscribed: !!this.pref('subscriber'), added: {}, w: window.innerWidth };
+  state = { active: 'brief', rails: { brief: { i: 0, n: 0, end: false }, strat: { i: 0, n: 0, end: false } }, lang: null, theme: null, q: '', fCountry: '', fSector: '', fType: '', sel: null, dCat: '', dSort: 'featured', eType: '', eCountry: '', tab: 'company', submitted: false, dbTab: this.qp.get('tab') || 'companies', dbSel: this.qp.get('id') || null, dbQ: this.qp.get('q') || '', dbCountry: '', dbFacet: '', dbSort: '', dbAll: false, dbCopied: false, dAll: false, mapAll: false, mapNear: false, pc: (this.qp.get('c') || 'AE').toUpperCase(), email: '', subscribed: !!this.pref('subscriber'), rpTl: null, rpFleet: 'all', rpFleetOpen: null, rpClaims: {}, rpLb: -1, rpCh: '', rpSrcAll: false, added: {}, w: window.innerWidth };
   searchRef = React.createRef();
   briefRail = React.createRef(); stratRail = React.createRef(); tabRail = React.createRef();
   NAV_IDS = window.RM_PAGE.nav;
@@ -44,10 +44,30 @@ class Component extends DCLogic {
     window.addEventListener('resize', this.onResize);
     this.onSpy = () => { if (this.spyRaf) return; this.spyRaf = requestAnimationFrame(() => { this.spyRaf = 0; let cur = this.NAV_IDS[0]; for (const id of this.NAV_IDS) { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= this.navH() + 32) cur = id; } if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = this.NAV_IDS[this.NAV_IDS.length - 1]; if (cur !== this.state.active) this.setState({ active: cur }); }); };
     window.addEventListener('scroll', this.onSpy, { passive: true });
+    if (this.PAGE === 'spotlight') {
+      this.onRp = () => { if (this.rpRaf) return; this.rpRaf = requestAnimationFrame(() => { this.rpRaf = 0; const h = document.documentElement; const p = Math.min(1, h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight)); const bar = document.getElementById('rm-rp-bar'); if (bar) bar.style.transform = 'scaleX(' + p.toFixed(4) + ')'; let cur = ''; document.querySelectorAll('[data-ch]').forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight * 0.3) cur = el.getAttribute('data-ch'); }); if (cur && cur !== this.state.rpCh) this.setState({ rpCh: cur }); }); };
+      window.addEventListener('scroll', this.onRp, { passive: true });
+      this.onLbKey = e => { if (!(this.state.rpLb >= 0)) return; const n = this._lbN || 1; if (e.key === 'Escape') { e.preventDefault(); this.lbClose(); } else if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); const fwd = (e.key === 'ArrowRight') !== (document.documentElement.dir === 'rtl' || !!document.querySelector('[data-rm][dir=rtl]')); this.setState({ rpLb: (this.state.rpLb + (fwd ? 1 : -1) + n) % n }); } };
+      window.addEventListener('keydown', this.onLbKey);
+      setTimeout(() => { this.rpSetup(); this.onRp(); }, 50);
+    }
     if ('IntersectionObserver' in window && this.mapRef.current) { this.mapIO = new IntersectionObserver(([en]) => { if (en.isIntersecting) { this.setState({ mapNear: true }); this.mapIO.disconnect(); } }, { rootMargin: '800px 0px' }); this.mapIO.observe(this.mapRef.current); } else this.setState({ mapNear: true });
     setTimeout(() => { this.railUpdate('brief'); this.railUpdate('strat'); this.onSpy(); }, 300);
   }
-  componentDidUpdate() {
+  tlGo(k, focus) { this.setState({ rpTl: k }, () => { const b = document.getElementById('rm-tl-' + k); if (!b) return; if (focus) b.focus({ preventScroll: true }); const tr = b.closest('[role=toolbar]'); if (tr) { const br = b.getBoundingClientRect(), rr = tr.getBoundingClientRect(); const d = br.left + br.width / 2 - (rr.left + rr.width / 2); tr.scrollBy({ left: d, behavior: this.reduced ? 'auto' : 'smooth' }); } }); }
+  lbClose() { this.setState({ rpLb: -1 }, () => { const r = this._lbReturn; if (r && document.contains(r)) r.focus(); }); }
+  rpSetup() {
+    if (this.PAGE !== 'spotlight') return;
+    const els = document.querySelectorAll('[data-reveal]:not([data-obs])');
+    if (!els.length) return;
+    if (this.reduced || !('IntersectionObserver' in window)) { els.forEach(el => { el.setAttribute('data-obs', ''); el.setAttribute('data-in', ''); }); return; }
+    if (!this.rpIO) this.rpIO = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.setAttribute('data-in', ''); this.rpIO.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    els.forEach(el => { el.setAttribute('data-obs', ''); this.rpIO.observe(el); });
+  }
+  componentDidUpdate(pp, ps) {
+    this.rpSetup();
+    if (this.PAGE === 'spotlight' && ps && (ps.rpLb == null || ps.rpLb < 0) && this.state.rpLb >= 0) { const b = document.getElementById('rm-lb-close'); b && b.focus(); }
+    if (this.PAGE === 'spotlight') document.body.style.overflow = this.state.rpLb >= 0 ? 'hidden' : '';
     if (this.PAGE === 'database') {
       const key = this.state.dbTab + '|' + (this.state.dbSel || '');
       if (this._dbKey !== key) {
@@ -65,7 +85,7 @@ class Component extends DCLogic {
   railStep(el) { const li = el.querySelector('li'); return li ? li.getBoundingClientRect().width + (parseFloat(getComputedStyle(el).columnGap) || 0) : el.clientWidth; }
   railUpdate(k) { const el = this.railEl(k); if (!el) return; const x = Math.abs(el.scrollLeft), n = el.querySelectorAll('li').length, i = Math.round(x / this.railStep(el)), end = x + el.clientWidth >= el.scrollWidth - 4; const o = this.state.rails[k]; if (o.i !== i || o.n !== n || o.end !== end) this.setState(s => ({ rails: { ...s.rails, [k]: { i, n, end } } })); }
   railMove(k, d) { const el = this.railEl(k); if (!el) return; const r = this.state.rails[k]; if ((d < 0 && r.i === 0) || (d > 0 && r.end)) return; const rtl = getComputedStyle(el).direction === 'rtl'; el.scrollBy({ left: d * this.railStep(el) * (rtl ? -1 : 1), behavior: this.reduced ? 'auto' : 'smooth' }); }
-  componentWillUnmount() { this.mapIO && this.mapIO.disconnect(); window.removeEventListener('scroll', this.onSpy); window.removeEventListener('rm:pin', this.onPin); window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.onResize); }
+  componentWillUnmount() { this.rpIO && this.rpIO.disconnect(); this.onRp && window.removeEventListener('scroll', this.onRp); this.onLbKey && window.removeEventListener('keydown', this.onLbKey); this.mapIO && this.mapIO.disconnect(); window.removeEventListener('scroll', this.onSpy); window.removeEventListener('rm:pin', this.onPin); window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.onResize); }
 
   go(id, c) { const el = document.getElementById(id); if (!el) { window.location.href = this.pageHref(id, c); return; } window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - this.navH() - 8, behavior: this.reduced ? 'auto' : 'smooth' }); }
 
@@ -537,12 +557,57 @@ class Component extends DCLogic {
     const narrow = S.w <= 900;
     const ids = this.NAV_IDS;
     this.qsCur = '';
+    const RMD0 = window.RM_DATA;
     const st = this.STORIES.find(x => x.id === this.qp.get('s')) || this.STORIES[0];
-    const tx = o => o ? (ar ? (o.ar || o.en || '') : (o.en || '')) : '';
-    const blk = b => ({ isP: b.t === 'p', isH: b.t === 'h', isImg: b.t === 'img', isQ: b.t === 'quote', isStats: b.t === 'stats', isList: b.t === 'list', text: digits(tx(b)), src: b.src || '', maxw: b.maxw || '100%', alt: tx(b.alt), cap: tx(b.cap), credit: tx(b.credit), who: tx(b.who), items: (b.items || []).map(i => ({ v: digits(i.v || ''), label: digits(tx(i)) })) });
-    const story = st ? { kicker: tx(st.kicker), title: tx(st.title), dek: tx(st.dek), date: fdate(st.date), by: tx(st.by), read: digits(t.storyRead.replace('{n}', st.read_min)), hero: st.hero.src, heroAlt: tx(st.hero.alt), heroCap: tx(st.hero.cap), heroCredit: tx(st.hero.credit) } : {};
-    const storyBody = st ? st.body.map(blk) : [], storyTeaser = st ? storyBody.slice(0, st.gate_after) : [];
-    const storySources = st ? st.sources.map((x, i) => ({ n: nf.format(i + 1), name: x.name, title: x.title, date: x.date ? fdate(x.date) : '', url: x.url })) : [];
+    const tx = o => o == null ? '' : typeof o === 'string' ? o : (ar ? (o.ar || o.en || '') : (o.en || ''));
+    const R = (st && st.report) || null, U = R ? R.ui : {}, ut = k => tx(U[k]);
+    const dfmY = new Intl.DateTimeFormat(loc, { month: 'short', year: 'numeric', timeZone: 'UTC' });
+    const fd = d => !d ? '' : d.length === 4 ? yr(+d) : d.length === 7 ? dfmY.format(new Date(d + '-15T12:00:00Z')) : fdate(d);
+    const srcOf = n => st && n ? st.sources[n - 1] : null;
+    const gallery = [];
+    const addImg = (src, cap, credit, alt) => { if (!src) return -1; let k = gallery.findIndex(g => g.src === src); if (k < 0) { gallery.push({ src, cap, credit, alt }); k = gallery.length - 1; } return k; };
+    const lbOpen = k => e => { if (e) e.preventDefault(); this._lbReturn = document.activeElement; this.setState({ rpLb: k }); };
+    const story = st ? { kicker: tx(st.kicker), title: tx(st.title), dek: tx(st.dek), date: fdate(st.date), by: tx(st.by), read: digits(t.storyRead.replace('{n}', st.read_min)), hero: st.hero.src, heroAlt: tx(st.hero.alt), heroCap: tx(st.hero.cap), heroCredit: tx(st.hero.credit), label: R ? tx(R.label) : '' } : {};
+    if (st) story.open = lbOpen(addImg(st.hero.src, story.heroCap, story.heroCredit, story.heroAlt));
+    const fleetOn = S.rpFleet || 'all', inSvc = { live: 1, deploying: 1, delivered: 1 };
+    const stColor = k => inSvc[k] ? 'var(--sand)' : k === 'trial' ? 'var(--fg-muted)' : 'var(--accent-text)';
+    const blk = b => {
+      const o = { isP: b.t === 'p' && !b.lead, isLead: b.t === 'p' && !!b.lead, isH: b.t === 'h', isImg: b.t === 'img', isQ: b.t === 'quote', isStats: b.t === 'stats', isList: b.t === 'list', text: digits(tx(b)), src: b.src || '', maxw: b.maxw || '100%', alt: tx(b.alt), cap: tx(b.cap), credit: tx(b.credit), who: tx(b.who),
+        items: (b.items || []).map(x => { const m = /^([^\d]*)([\d.]+)(.*)$/.exec(x.v || ''); const n = m ? parseFloat(m[2]) : NaN; return { v: digits(x.v || ''), label: digits(tx(x)), el: m && Number.isInteger(n) ? React.createElement(this.Ticker, { value: n, fmt: v => digits(m[1] + num(v) + m[3]), key: lang + x.v }) : digits(x.v || '') }; }),
+        isW: b.t === 'w', wCompare: b.w === 'compare', wAttacks: b.w === 'attacks', wTimeline: b.w === 'timeline', wFleet: b.w === 'fleet', wClaims: b.w === 'claims', wWatch: b.w === 'watch', wProviders: b.w === 'providers' };
+      if (b.t === 'img') o.open = lbOpen(addImg(b.src, o.cap, o.credit, o.alt));
+      return o;
+    };
+    const chapters = R ? R.chapters.map((c, ci) => ({ id: 'ch-' + c.id, key: c.id, n: digits(c.n), title: tx(c.title), blocks: c.blocks.map(blk), teaser: ci < R.gate_after, show: ci < R.gate_after || S.subscribed, mask: !S.subscribed && ci < R.gate_after ? 'linear-gradient(to bottom,#000 35%,transparent 92%)' : 'none', maxh: !S.subscribed && ci < R.gate_after ? '560px' : 'none', locked: !S.subscribed && ci >= R.gate_after })) : [];
+    const rpCh = S.rpCh || (chapters[0] && chapters[0].key);
+    const rail = chapters.map(c => { const on = rpCh === c.key; return { n: c.n, title: c.title, href: '#' + c.id, locked: c.locked, op: c.locked ? '.55' : '1', cur: on ? 'true' : 'false', color: on ? 'var(--fg)' : 'var(--fg-subtle)', bd: on ? 'var(--accent)' : 'var(--line)', w: on ? '24px' : '12px', go: e => { e.preventDefault(); this.go(document.getElementById(c.id) ? c.id : 'gate'); } }; });
+    const glance = R ? R.glance.map(g => ({ label: tx(g), el: React.createElement(this.Ticker, { value: g.n, fmt: v => digits(tx(g.pre) + num(v) + tx(g.suf)), key: lang + g.n + tx(g) }) })) : [];
+    const findings = R ? R.findings.map((f, i) => ({ n: nf2.format(i + 1), title: tx(f.title), text: tx(f) })) : [];
+    const compare = R ? R.compare.map(c => ({ tag: tx(c.tag), title: tx(c.title), sub: tx(c.sub), items: c.items.map(x => ({ label: tx(x) })), bd: c.physical ? 'var(--accent)' : 'var(--line-strong)', bg: c.physical ? 'var(--accent-soft)' : 'transparent', mark: c.physical ? 'var(--accent)' : 'var(--fg-subtle)' })) : [];
+    const atk = R ? R.attacks : null;
+    const attacks = atk ? atk.items.map(a => { const x = srcOf(a.src); return { date: fdate(a.date), text: digits(tx(a)), dot: a.recovery ? 'var(--sand)' : 'var(--accent)', url: x ? x.url : '', srcName: x ? x.name : '' }; }) : [];
+    const gauge = atk ? { lbl: tx(atk.gaugeLbl), now: atk.now + '%', target: atk.target + '%', nowTxt: digits(atk.now + '%'), targetTxt: digits(atk.target + '%'), nowLbl: tx(atk.nowLbl), targetLbl: tx(atk.targetLbl) } : {};
+    const tlI = Math.min(S.rpTl == null ? 6 : S.rpTl, R ? R.timeline.length - 1 : 0);
+    const timeline = R ? R.timeline.map((m, k) => { const on = k === tlI; return { date: fd(m.date), title: tx(m.title), on: on ? 'true' : 'false', dot: on ? 'var(--accent)' : m.future ? 'var(--bg)' : 'var(--fg)', ring: on ? '0 0 0 6px var(--accent-soft)' : 'none', bd: m.future ? '2px dashed var(--fg-subtle)' : '2px solid ' + (on ? 'var(--accent)' : 'var(--fg)'), color: on ? 'var(--fg)' : 'var(--fg-subtle)', pick: () => this.tlGo(k), ti: on ? '0' : '-1', id: 'rm-tl-' + k }; }) : [];
+    const tlM = R ? R.timeline[tlI] : null, tlX = tlM ? srcOf(tlM.src) : null;
+    const tl = tlM ? { date: fd(tlM.date), title: tx(tlM.title), text: digits(tx(tlM)), img: tlM.img || '', hasImg: !!tlM.img, url: tlX ? tlX.url : '', srcName: tlX ? tlX.name : '', pos: digits(nf.format(tlI + 1) + ' / ' + nf.format(R.timeline.length)), future: !!tlM.future, prev: () => this.tlGo(Math.max(0, tlI - 1)), next: () => this.tlGo(Math.min(R.timeline.length - 1, tlI + 1)), atStart: tlI === 0, atEnd: tlI === R.timeline.length - 1, fill: (tlI / Math.max(1, R.timeline.length - 1) * 100) + '%' } : {};
+    const onTlKey = e => { if (!R) return; let d = 0; if (e.key === 'ArrowRight') d = ar ? -1 : 1; if (e.key === 'ArrowLeft') d = ar ? 1 : -1; if (!d) return; e.preventDefault(); const k = Math.max(0, Math.min(R.timeline.length - 1, tlI + d)); this.tlGo(k, true); };
+    const fleetAll = R ? R.fleet : [];
+    const fleetChips = [['all', ut('all')], ['in', ut('inService')], ['coming', ut('coming')]].map(([k, label]) => { const n = fleetAll.filter(f => k === 'all' || (k === 'in') === !!inSvc[f.status]).length; const on = fleetOn === k; return { label, n: num(n), pressed: on ? 'true' : 'false', bg: on ? 'var(--fg)' : 'transparent', fg: on ? 'var(--bg)' : 'var(--fg-muted)', pick: () => this.setState({ rpFleet: k }) }; });
+    const fleet = fleetAll.filter(f => fleetOn === 'all' || (fleetOn === 'in') === !!inSvc[f.status]).map(f => { const open = S.rpFleetOpen === f.id; const x = srcOf(f.src); return { id: f.id, name: tx(f.name), maker: f.maker, kind: tx(f.kind), where: tx(f.where), text: tx(f), fact: digits(tx(f.fact)), status: tx(R.status[f.status]), sc: stColor(f.status), pulse: f.status === 'live' || f.status === 'deploying' ? 'rm-live 1.6s ease-in-out infinite' : 'none', img: f.img || '', hasImg: !!f.img, open, expanded: open ? 'true' : 'false', toggle: () => this.setState({ rpFleetOpen: open ? null : f.id }), bd: open ? 'var(--fg)' : 'var(--line-strong)', chev: open ? '−' : '+', url: x ? x.url : '', srcName: x ? x.name : '', href: f.co ? '/database?tab=companies&id=' + f.co : '', hasCo: !!f.co && !!RMD0.companies.find(c => c.id === f.co), pid: 'rm-fl-' + f.id }; });
+    const opened = S.rpClaims || {};
+    const claims = R ? R.claims.map(c => { const open = !!opened[c.id]; const x = srcOf(c.src); return { claim: digits(tx(c.claim)), who: tx(c.who), tag: tx(c.tag), lvl: tx(R.levels[c.level - 1]), segs: [1, 2, 3, 4].map(k => ({ bg: k <= c.level ? (c.level <= 1 ? 'var(--accent)' : c.level === 2 ? 'var(--accent-text)' : 'var(--sand)') : 'var(--line)', d: (k * 90) + 'ms' })), text: digits(tx(c)), open, expanded: open ? 'true' : 'false', toggle: () => this.setState(st0 => ({ rpClaims: Object.assign({}, st0.rpClaims, { [c.id]: !open }) })), chev: open ? '−' : '+', url: x ? x.url : '', srcName: x ? x.name : '', pid: 'rm-cl-' + c.id }; }) : [];
+    const segCol = lv => k => ({ bg: k <= lv ? (lv <= 1 ? 'var(--accent)' : lv === 2 ? 'var(--accent-text)' : 'var(--sand)') : 'var(--line)' });
+    const claimKey = R ? R.levels.map((l, i) => ({ label: tx(l), segs: [1, 2, 3, 4].map(segCol(i + 1)) })) : [];
+    const nowMs = Date.now();
+    const watch = R ? R.watch.map(w => { const days = w.due ? Math.ceil((Date.parse(w.due + 'T23:59:59Z') - nowMs) / 864e5) : null; return { text: tx(w), when: tx(w.when), status: tx(R.watchStatus[w.status]), sc: w.status === 'due' ? 'var(--accent-text)' : w.status === 'trial' ? 'var(--sand)' : 'var(--fg-subtle)', hasDays: days != null, days: days == null ? '' : days >= 0 ? digits(ut('daysLeft').replace('{n}', num(days))) : ut('overdue'), pct: days == null ? '0%' : Math.max(4, Math.min(100, 100 - days / 365 * 100)) + '%' }; }) : [];
+    const providers = R ? R.providers.map(pv => { const c = RMD0.companies.find(x => x.id === pv.id); const fl = (pv.fleet || []).map(fid => fleetAll.find(f => f.id === fid)).filter(Boolean); return { has: !!c, name: c ? (ar ? (c.name_ar || c.name) : c.name) : pv.id, badge: this.badgeOf(c ? c.name : pv.id, c ? c.logo : ''), cat: c ? (this.CATS[c.category] || [c.category, c.category])[L] : '', summary: c ? (ar ? (c.summary_ar || c.summary) : c.summary) : '', role: tx(pv), href: '/database?tab=companies&id=' + pv.id, robots: fl.map(f => ({ name: tx(f.name), sc: stColor(f.status), status: tx(R.status[f.status]) })), hasRobots: fl.length > 0 }; }) : [];
+    const allSrc = st ? st.sources.map((x, i) => ({ n: nf.format(i + 1), name: x.name, title: x.title, date: x.date ? fdate(x.date) : '', url: x.url })) : [];
+    const storySources = S.rpSrcAll ? allSrc : allSrc.slice(0, 6);
+    const srcToggle = { more: allSrc.length > 6, label: S.rpSrcAll ? ut('showFewer') : ut('showAll').replace('{n}', num(allSrc.length)), go: () => this.setState(s0 => ({ rpSrcAll: !s0.rpSrcAll })), expanded: S.rpSrcAll ? 'true' : 'false' };
+    const lbK = S.rpLb != null && S.rpLb >= 0 && S.rpLb < gallery.length ? S.rpLb : -1;
+    const lb = lbK >= 0 ? Object.assign({ open: true, pos: digits(nf.format(lbK + 1) + ' / ' + nf.format(gallery.length)), close: () => this.lbClose(), prev: () => this.setState({ rpLb: (lbK - 1 + gallery.length) % gallery.length }), next: () => this.setState({ rpLb: (lbK + 1) % gallery.length }) }, gallery[lbK]) : { open: false };
+    this._lbN = gallery.length;
     const storyRelated = st ? (st.related || []).map(r => ({ label: tx(r), href: r.href })) : [];
     const activeNav = this.PAGE === 'home' ? (S.active === 'brief' ? 'brief' : '') : this.PAGE;
     const nav = ['brief', 'map', 'database', 'policy', 'events', 'submit'].map((id, i) => { const on = activeNav === id; const local = this.PAGE === 'home' && id === 'brief'; return { id, label: t.pages[i], href: local ? '#brief' : this.pageHref(id, id === 'policy' ? S.pc : ''), cur: on ? 'page' : 'false', color: on ? 'var(--fg)' : 'var(--fg-muted)', bd: on ? 'var(--accent)' : 'transparent', go: e => { if (local) { e.preventDefault(); this.go(id); } } }; });
@@ -670,7 +735,7 @@ class Component extends DCLogic {
         if (this.SIGNUP_URL) { try { fetch(this.SIGNUP_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ email: em, source: this.PAGE === 'spotlight' && st ? 'spotlight:' + st.id : this.PAGE, lang }) }).catch(() => {}); } catch (e2) {} }
         this.setState({ subscribed: true });
       },
-      story, storyTeaser, storyBody, storySources, storyRelated, hasStory: !!st, storyHref: st ? '/spotlight?s=' + st.id : '/spotlight',
+      story, storySources, storyRelated, hasStory: !!st, chapters, rail, glance, findings, compare, attacks, gauge, timeline, tl, onTlKey, fleetChips, fleet, claims, watch, providers, srcToggle, lb, rpU: Object.fromEntries(Object.keys(U).map(k => [k, ut(k)])), notLocked: S.subscribed, isLocked: !S.subscribed, fleetEmpty: fleet.length === 0, claimKey, storyHref: st ? '/spotlight?s=' + st.id : '/spotlight',
       homeHref: this.PAGE === 'home' ? '/' : this.pageHref('top'), policyHref: this.pageHref('policy', S.pc), mapFullHref: this.pageHref('map'), submitHref: this.pageHref('submit'),
       pTabs, pc, cmp, pTabId: 'rm-ptab-' + pcK,
       goCompare: e => { e.preventDefault(); this.go('compare'); },
