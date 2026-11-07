@@ -100,7 +100,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
                 <div style="display:flex;flex-direction:column;gap:4px;min-width:0">
                   <sc-if value="{{ e.hasUrl }}"><a href="{{ e.url }}" target="_blank" rel="noopener noreferrer" style="font-size:15px;font-weight:600;color:var(--fg)" style-hover="color:var(--accent-text)">{{ e.name }} <span aria-hidden="true" style="font-weight:400;color:var(--fg-subtle)">{{ arrow }}</span></a></sc-if>
                   <sc-if value="{{ e.noUrl }}"><span style="font-size:15px;font-weight:600">{{ e.name }}</span></sc-if>
-                  <span style="font-size:13px;color:var(--fg-muted)">{{ e.place }}<sc-if value="{{ e.tbc }}"><span style="color:var(--sand);margin-inline-start:8px">{{ t.tbc }}</span></sc-if></span>
+                  <span style="font-size:13px;color:var(--fg-muted)"><sc-if value="{{ e.hasFlag }}"><img src="{{ e.flag }}" alt="{{ e.cname }}" title="{{ e.cname }}" loading="lazy" style="width:18px;height:13.5px;object-fit:cover;vertical-align:-2px;margin-inline-end:6px;border:1px solid var(--line);border-radius:1px"></sc-if>{{ e.place }}<sc-if value="{{ e.tbc }}"><span style="color:var(--sand);margin-inline-start:8px">{{ t.tbc }}</span></sc-if></span>
                   <sc-if value="{{ e.hasWhy }}"><span style="font-size:13px;line-height:1.5;color:var(--fg-muted);max-width:640px"><span style="color:var(--sand);font-weight:500">{{ e.whyLbl }}</span> {{ e.why }}</span></sc-if>
                 </div>
                 </div>

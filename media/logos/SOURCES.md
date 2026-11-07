@@ -55,5 +55,21 @@ Each file was taken from the organisation's official website (or Wikimedia Commo
 
 Ai Everything MEA Egypt reuses ai-everything.png (same brand). The Dubai World Congress for Self-Driving Transport uses rta.png (organised by Dubai's RTA).
 
+Deployment operators:
+
+| File | Operator | Source |
+|---|---|---|
+| uber.png | Uber | Wikimedia Commons, "Uber logo 2018.svg" (public domain) |
+| dp-world.png | DP World | https://www.dpworld.com/ (site icon) |
+| pdo.png | Petroleum Development Oman | https://www.pdo.co.om/ |
+| dubai-municipality.png | Dubai Municipality | https://www.dm.gov.ae/ |
+| rakta.png | RAK Transport Authority | https://www.rakta.gov.ae/ |
+| agibot.png | AgiBot | https://www.agibot.com/ (icon only) |
+| tga.png | Transport General Authority (Saudi Arabia) | https://www.tga.gov.sa/ |
+| riyadh-municipality.png | Riyadh Municipality | https://www.alriyadh.gov.sa/ |
+| hercules-robots.png | Hercules Robots | https://herculesrobots.com/ |
+
+No logo found (sites block automated access or no usable file): Security Forces Hospital, Roads General Authority, General Authority for the Care of the Two Holy Mosques, Kuwait Ministry of Health, Algeria's forestry directorate (DGF), Ibn Firnas Center, X-GEN.
+
 Not found: LEAP, DeepFest, Cityscape Global and WHX (their sites block automated downloads); interpack MEA and the Emirates Robotics Competition (no confirmed own logo). Add a file here and set `logo` in `data/events.json` to use one.
 No usable logo found for FalconViz, Sager Drones, AutoGo, Sinaha Technology, Apollo Go, Tulip Technologies, X-GEN or Enova Robotics (no confirmed official site, or no logo file on it); they show initials.
