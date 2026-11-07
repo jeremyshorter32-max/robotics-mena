@@ -78,5 +78,13 @@
     "target_year": null,
     "headline_target": "",
     "in_compare_table": false
+  },
+  {
+    "code": "DZ",
+    "name": "Algeria",
+    "name_ar": "الجزائر",
+    "target_year": null,
+    "headline_target": "",
+    "in_compare_table": false
   }
 ]
