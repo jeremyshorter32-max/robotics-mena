@@ -12,7 +12,7 @@ SALT="fe91cbfea197c5c38048c73f478b0de4"
 
 rm -rf _site
 mkdir _site
-cp -r *.js vendor CNAME .nojekyll .image-slots.state.json _site/
+cp -r *.js vendor CNAME .nojekyll .image-slots.state.json favicon.ico _site/
 cp redirects/*.html _site/
 cp -r media _site/
 node scripts/validate-data.mjs
@@ -40,15 +40,16 @@ printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
 npx --yes staticrypt@3.5.4 _site/*.html -d _site \
   --password "$SITE_PASSWORD" --short --salt "$SALT" --config false \
   --remember 30 \
-  --template-title "Robotics MENA · Private preview" \
+  --template-title "Private preview" \
   --template-instructions "This site is in private preview. Enter the password to continue." \
   --template-button "Enter" \
   --template-placeholder "Password" \
   --template-remember "Remember me on this device for 30 days" \
   --template-error "Incorrect password" \
-  --template-color-primary "#5B4BF5" \
+  --template-color-primary "#5B3DF5" \
   --template-color-secondary "#F2F3F7"
 
 # Ask crawlers not to index the password screen itself.
 sed -i 's#<head>#<head><meta name="robots" content="noindex, nofollow">#' _site/*.html
+node scripts/brand-password-page.cjs
 echo "Encrypted $(ls _site/*.html | wc -l) pages."

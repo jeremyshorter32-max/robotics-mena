@@ -1,0 +1,25 @@
+/* Robotics MENA — Option 1A / production tokens */
+:root {
+  --rm-bg: #F2F3F7; --rm-surface: #FFFFFF; --rm-hover: #E7E9EF;
+  --rm-ink: #12121A; --rm-muted: #4E5160; --rm-subtle: #5F6377;
+  --rm-border: #DCDEE6; --rm-border-strong: #C9CCD8;
+  --rm-accent: #5B3DF5; --rm-accent-text: #4F2FE8;
+  --rm-data: #007A96;
+  --rm-font-ui: "Readex Pro", "Noto Sans Arabic", sans-serif;
+  --rm-font-data: "IBM Plex Mono", monospace;
+  --rm-radius: 2px;
+}
+[data-theme="dark"] {
+  --rm-bg: #0B0B12; --rm-surface: #14141D; --rm-hover: #1D1E29;
+  --rm-ink: #EEF0F6; --rm-muted: #A9ADBD; --rm-subtle: #82869A;
+  --rm-border: #23242F; --rm-border-strong: #363848;
+  --rm-accent: #8B74FF; --rm-accent-text: #A493FF;
+  --rm-data: #3CCBE6;
+}
+html[dir="rtl"] { direction: rtl; }
+.rm-eyebrow { font-family: var(--rm-font-data); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+html[dir="rtl"] .rm-eyebrow { font-family: var(--rm-font-ui); letter-spacing: 0; text-transform: none; }
+.rm-heading { font-family: var(--rm-font-ui); font-weight: 600; line-height: 1.05; letter-spacing: -.028em; }
+html[dir="rtl"] .rm-heading { line-height: 1.28; letter-spacing: 0; }
+.rm-card { background: var(--rm-surface); border: 1px solid var(--rm-border); border-top: 2px solid var(--rm-ink); border-radius: 2px; }
+.rm-data { font-family: var(--rm-font-data); font-variant-numeric: tabular-nums; }

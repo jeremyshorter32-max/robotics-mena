@@ -424,7 +424,6 @@ class Component extends DCLogic {
     const c = a && window.RM_DATA.companies.find(x => x.logo && (a.includes(x.name.toLowerCase()) || x.name.toLowerCase().includes(a)));
     return c ? c.logo : '';
   }
-  flagOf(cc) { return cc ? '/media/flags/' + cc.toLowerCase() + '.svg' : ''; }
   dbOpen(tab, id) { this._dbReturn = document.activeElement; this.setState({ dbTab: tab, dbSel: id }); }
   dbVals(c) {
     const { S, lang, ar, L, num, fdate, ccName, narrow, t } = c;
@@ -439,7 +438,7 @@ class Component extends DCLogic {
     const recs = {
       companies: D.companies.map(o => ({ o, badge: this.badgeOf(o.name, o.logo), id: o.id, cc: o.country, facet: o.category, date: o.added, name: tr(o, 'name'), alt: ar ? o.name : (o.name_ar || ''), c2: (this.CATS[o.category] || [o.category, o.category])[L], c3: cn(o.country), c4: (this.STAGES[o.stage] || [o.stage, o.stage])[L], c5: o.added ? fdate(o.added) : '—', size: 0 })),
       deployments: D.deployments.map(o => ({ o, badge: this.badgeOf(o.operator, this.opLogo(o.operator, o.logo)), id: o.id, cc: o.country, facet: o.type, date: o.date, name: tr(o, 'title'), alt: tr(o, 'operator') + (o.site ? ' · ' + tr(o, 'site') : ''), c2: (this.TYPES[o.type] || [o.type, o.type])[L], c3: (this.SECTORS[o.sector] || [o.sector, o.sector])[L], c4: cn(o.country), c5: fdate(o.date), size: 0 })),
-      countries: D.countries.map(o => { const dn = D.deployments.filter(x => x.country === o.code).length, cn2 = D.companies.filter(x => x.country === o.code).length; return { o, badge: this.badgeOf(o.name, this.flagOf(o.code), 'cover'), id: o.code, cc: o.code, facet: '', date: '', name: tr(o, 'name'), alt: ar ? o.name : o.name_ar, c2: num(dn), c3: num(cn2), c4: o.headline_target || '—', c5: o.target_year ? String(o.target_year) : '—', size: dn }; }),
+      countries: D.countries.map(o => { const dn = D.deployments.filter(x => x.country === o.code).length, cn2 = D.companies.filter(x => x.country === o.code).length; return { o, badge: this.badgeOf(o.code, ''), id: o.code, cc: o.code, facet: '', date: '', name: tr(o, 'name'), alt: ar ? o.name : o.name_ar, c2: num(dn), c3: num(cn2), c4: o.headline_target || '—', c5: o.target_year ? String(o.target_year) : '—', size: dn }; }),
       events: D.events.map(o => ({ o, badge: this.badgeOf(o.name, o.logo), id: o.id, cc: o.country, facet: o.type, date: o.start, name: tr(o, 'name'), alt: tr(o, 'venue') || '', c2: (this.ETYPES[o.type] || [o.type, o.type])[L], c3: tr(o, 'city'), c4: cn(o.country), c5: range(o), size: 0 }))
     };
     const all = recs[tab];
@@ -583,7 +582,7 @@ class Component extends DCLogic {
     if (S.dSort === 'az') co.sort((a, b) => a.c[L].localeCompare(b.c[L], lang));
     if (S.dSort === 'newest') co.sort((a, b) => b.c[5].localeCompare(a.c[5]));
     if (S.dSort === 'stage') co.sort((a, b) => this.STAGES[b.c[4]][2] - this.STAGES[a.c[4]][2]);
-    const companies = co.map(({ c }) => ({ name: c[L], alt: c[1 - L], altLang: ar ? 'en' : 'ar', altFont: ar ? "'IBM Plex Sans',sans-serif" : "'IBM Plex Sans Arabic',sans-serif", mono: c[0].split(/[\s&]+/).filter(w => /^[A-Z]/.test(w)).slice(0, 2).map(w => w[0]).join(''), cc: c[2], country: ccName(c[2]), cat: this.CATS[c[3]][L], icon: this.ICON[c[3]], stage: this.STAGES[c[4]][L], desc: c[6 + L], since: t.listed + ' ' + fdate(c[5]) }));
+    const companies = co.map(({ c }) => ({ name: c[L], alt: c[1 - L], altLang: ar ? 'en' : 'ar', altFont: 'var(--font-sans)', mono: c[0].split(/[\s&]+/).filter(w => /^[A-Z]/.test(w)).slice(0, 2).map(w => w[0]).join(''), cc: c[2], country: ccName(c[2]), cat: this.CATS[c[3]][L], icon: this.ICON[c[3]], stage: this.STAGES[c[4]][L], desc: c[6 + L], since: t.listed + ' ' + fdate(c[5]) }));
     const dChips = [this.chip(t.all, num(this.CO.length), !S.dCat, () => this.setState({ dCat: '' }))].concat(Object.keys(this.CATS).map(k => this.chip(this.CATS[k][L], num(this.CO.filter(c => c[3] === k).length), S.dCat === k, () => this.setState(st => ({ dCat: st.dCat === k ? '' : k })))));
 
     // readiness
@@ -629,7 +628,7 @@ class Component extends DCLogic {
 
     return {
       t: tt, lang, dir: ar ? 'rtl' : 'ltr', theme, accent, arrow, nav, ...rv('brief'), ...rv('strat'), briefRail: this.briefRail, stratRail: this.stratRail, tabRail: this.tabRail, prevArrow: ar ? '→' : '←', nextArrow: ar ? '←' : '→',
-      otherLang: ar ? 'en' : 'ar', otherFont: ar ? "'IBM Plex Sans',sans-serif" : "'IBM Plex Sans Arabic',sans-serif",
+      otherLang: ar ? 'en' : 'ar', otherFont: 'var(--font-sans)',
       themeLabel: theme === 'dark' ? (ar ? 'فاتح' : 'Light') : (ar ? 'داكن' : 'Dark'), themeAria: ar ? 'تبديل المظهر' : 'Switch colour theme',
       toggleTheme: () => { const v = theme === 'dark' ? 'light' : 'dark'; this.savePref('theme', v); this.setState({ theme: v }); },
       toggleLang: () => { const v = ar ? 'en' : 'ar'; this.savePref('lang', v); this.setState({ lang: v }); },

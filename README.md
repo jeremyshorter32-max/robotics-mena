@@ -21,7 +21,8 @@ Every push to `main` runs the **Deploy site** GitHub Action, which builds the si
 - `redirects/*.html`: small pages that forward old addresses (`/directory` now opens the database's Companies tab).
 - `pages/*.html`: each page's layout. `@config` and `@logic` markers are filled in at build time.
 - `scripts/build-site.sh`: checks the data, assembles the pages into `_site/`, then encrypts them behind the password (see below).
-- `media/logos/`: square logo tiles for real organisations (sources in `media/logos/SOURCES.md`); `media/flags/`: country flags (flag-icons, MIT). Set an entry's `logo` to `/media/logos/<file>.png`; entries without one show their initials.
+- `media/logos/`: square logo tiles for real organisations (sources in `media/logos/SOURCES.md`). Set an entry's `logo` to `/media/logos/<file>.png`; entries without one show their initials.
+- `media/brand/`, `favicon.ico`, `partials/`: brand identity 1A (logo mark, favicons, share image, password-screen branding). The full brand pack (guide, tokens, README) is in `docs/brand/`.
 - `support.js`, `mena-map.js`, `image-slot.js`, `vendor/`: runtime, map, image placeholders, and local copies of React, D3, topojson and the world map.
 
 Language and theme are remembered in the visitor's browser, so links stay clean. Old-style links (`?lang=ar`, `index.html#top`) still work and are tidied in the address bar.
