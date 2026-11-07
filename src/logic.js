@@ -282,7 +282,7 @@ class Component extends DCLogic {
       p1: 'Deployments tracked', p2: 'Companies listed', p3: 'Headline target horizon', readySrc: 'Source: Robotics MENA tracker · 7 Nov 2026', readySrc3: 'Source: national strategy documents · see below',
       s5: 'National strategies', s5sub: 'The programmes setting targets for robotics, AI and autonomy.', agency: 'Lead agency', launched: 'Launched',
       s6n: '05 · Talent', s6: 'Labs & talent', s6sub: 'Where the region trains, researches and competes.',
-      s7n: '06 · Events', s7: 'Events calendar', s7sub: 'The next 90 days. Dates confirmed with organisers unless marked.', addCal: 'Add to calendar', added: 'Saved .ics', tbc: 'Dates TBC', later: 'Further out', noEvents: 'No events match these filters.',
+      s7n: '06 · Events', s7: 'Events calendar', s7sub: 'Robotics and physical-AI events across MENA through 2027, from dedicated shows to big expos with a robotics angle. Dates are from organisers unless marked TBC.', addCal: 'Add to calendar', added: 'Saved .ics', tbc: 'Dates TBC', later: 'Further out', noEvents: 'No events match these filters.',
       s8n: '07 · Spotlight', spotKicker: 'Deployment case study',
       spotTitle: '140 robots, one night shift: inside the KEZAD warehouse that redrew its floor plan',
       spotDek: 'Qafila Logistics moved from a 12-robot pilot to a full AMR operation in nine months. We walked the floor, read the procurement file and asked what broke.',
@@ -332,7 +332,7 @@ class Component extends DCLogic {
       p1: 'عمليات النشر المرصودة', p2: 'الشركات المدرجة', p3: 'أفق الهدف الوطني الرئيسي', readySrc: 'المصدر: متتبّع روبوتكس مينا · 7 نوفمبر 2026', readySrc3: 'المصدر: وثائق الاستراتيجيات الوطنية · انظر أدناه',
       s5: 'الاستراتيجيات الوطنية', s5sub: 'البرامج التي تضع أهداف الروبوتات والذكاء الاصطناعي والقيادة الذاتية.', agency: 'الجهة المسؤولة', launched: 'سنة الإطلاق',
       s6n: '05 · المواهب', s6: 'المختبرات والمواهب', s6sub: 'أين تتدرّب المنطقة وتبحث وتتنافس.',
-      s7n: '06 · الفعاليات', s7: 'تقويم الفعاليات', s7sub: 'الأيام التسعون المقبلة. التواريخ مؤكدة مع المنظّمين ما لم يُذكر غير ذلك.', addCal: 'أضف إلى التقويم', added: 'حُفظ الملف', tbc: 'التواريخ قيد التأكيد', later: 'لاحقاً', noEvents: 'لا فعاليات تطابق هذه المرشّحات.',
+      s7n: '06 · الفعاليات', s7: 'تقويم الفعاليات', s7sub: 'فعاليات الروبوتات والذكاء الاصطناعي المادي في المنطقة حتى نهاية 2027، من المعارض المتخصصة إلى المعارض الكبرى ذات الصلة بالروبوتات. التواريخ من المنظّمين ما لم يُذكر أنها قيد التأكيد.', addCal: 'أضف إلى التقويم', added: 'حُفظ الملف', tbc: 'التواريخ قيد التأكيد', later: 'لاحقاً', noEvents: 'لا فعاليات تطابق هذه المرشّحات.',
       s8n: '07 · تحت الضوء', spotKicker: 'دراسة حالة',
       spotTitle: '140 روبوتاً ونوبة ليلية واحدة: داخل مستودع في كيزاد أعاد رسم مخططه',
       spotDek: 'انتقلت قافلة للخدمات اللوجستية من تجربة بـ12 روبوتاً إلى تشغيل كامل خلال تسعة أشهر. تجوّلنا في الموقع وقرأنا ملف المشتريات وسألنا عمّا تعطّل.',
@@ -613,7 +613,7 @@ class Component extends DCLogic {
     const evF = this.EVENTS.filter(e => (!S.eType || e[10] === S.eType) && (!S.eCountry || e[9] === S.eCountry));
     const mm = {};
     evF.forEach(e => { const k = e[1].slice(0, 7); (mm[k] = mm[k] || []).push(e); });
-    const months = Object.keys(mm).sort().map(k => ({ label: dfm.format(D(k + '-01')), rows: mm[k].map(e => ({ days: num(D(e[1]).getUTCDate()) + (e[1] !== e[2] ? '–' + num(D(e[2]).getUTCDate()) : ''), mon: df2.format(D(e[1])), name: e[3 + L], city: e[5 + L], venue: e[7 + L], cc: e[9], type: this.ETYPES[e[10]][L], tbc: !!e[11], badge: this.badgeOf(e[3], e[12]), why: e[13 + L], hasWhy: !!e[13 + L], whyLbl: ar ? 'لماذا يهمّ قطاع الروبوتات:' : 'Why it matters for robotics:', url: e[15], hasUrl: !!e[15], noUrl: !e[15], addLabel: S.added[e[0]] ? '✓ ' + t.added : t.addCal, add: () => this.ics(e) })) }));
+    const months = Object.keys(mm).sort().map(k => ({ label: dfm.format(D(k + '-01')), rows: mm[k].map(e => ({ days: (e[11] && e[1] === e[2] && e[1].endsWith('-01')) ? (ar ? 'يُحدَّد' : 'TBC') : num(D(e[1]).getUTCDate()) + (e[1] !== e[2] ? '–' + num(D(e[2]).getUTCDate()) : ''), mon: df2.format(D(e[1])), name: e[3 + L], city: e[5 + L], venue: e[7 + L], place: [e[7 + L], e[5 + L]].filter(Boolean).join(' · '), cc: e[9], type: this.ETYPES[e[10]][L], tbc: !!e[11], badge: this.badgeOf(e[3], e[12]), why: e[13 + L], hasWhy: !!e[13 + L], whyLbl: ar ? 'لماذا يهمّ قطاع الروبوتات:' : 'Why it matters for robotics:', url: e[15], hasUrl: !!e[15], noUrl: !e[15], addLabel: S.added[e[0]] ? '✓ ' + t.added : t.addCal, add: () => this.ics(e) })) }));
     const evChips = [this.chip(t.all, num(this.EVENTS.length), !S.eType, () => this.setState({ eType: '' }))].concat(Object.keys(this.ETYPES).map(k => this.chip(this.ETYPES[k][L], num(this.EVENTS.filter(e => e[10] === k).length), S.eType === k, () => this.setState(st => ({ eType: st.eType === k ? '' : k })))));
     const evCChips = [this.chip(t.all, '', !S.eCountry, () => this.setState({ eCountry: '' }))].concat([...new Set(this.EVENTS.map(e => e[9]))].map(c => this.chip(ccName(c), '', S.eCountry === c, () => this.setState(st => ({ eCountry: st.eCountry === c ? '' : c })))));
     const later = this.LATER.map(e => ({ name: e[L], city: e[2 + L], mon: new Intl.DateTimeFormat(loc, { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(D(e[4])) + (ar ? ' (قيد التأكيد)' : ' (TBC)') }));
@@ -646,7 +646,7 @@ class Component extends DCLogic {
       panels, targets, axis0: yr(2026), axis1: yr(2033), axis2: yr(2040),
       strats: this.STRATS.map(s => ({ cc: s[0], country: ccName(s[0]), p: s[1 + L], tgt: digits(s[3 + L]), agency: s[5 + L], yr: yr(+s[7]), srcLine: t.source + ': ' + s[8] })),
       labs: this.LABS.map(g => ({ title: g[L], items: g[2].map(l => ({ name: l[L], city: l[2 + L], note: l[4 + L] })) })),
-      evChips, evCChips, months, noEvents: !months.length, later,
+      evChips, evCChips, months, noEvents: !months.length, later, hasLater: later.length > 0,
       spotStats: t.spotStats.map(s => ({ v: digits(s[0]), label: s[1] })),
       sample: this.BRIEF.map((b, i) => ({ idx: nf2.format(i + 1), title: b[3 + L] })),
       email: S.email, onEmail: e => this.setState({ email: e.target.value }), subscribed: S.subscribed, notSubscribed: !S.subscribed,
