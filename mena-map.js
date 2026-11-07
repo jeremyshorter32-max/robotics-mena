@@ -7,14 +7,14 @@
   const MENA = new Set(['784','682','634','048','414','512','818','504','400','788','012','434','368','422','887','376','275','760','729','478','732']);
   const CC = { AE:'784', SA:'682', QA:'634', BH:'048', KW:'414', OM:'512', EG:'818', MA:'504', JO:'400', TN:'788', DZ:'012', LY:'434', IQ:'368', LB:'422', YE:'887', SY:'760', SD:'729', MR:'478', PS:'275' };
   const NAMES = {'784':['UAE','الإمارات'],'682':['Saudi Arabia','السعودية'],'634':['Qatar','قطر'],'818':['Egypt','مصر'],'504':['Morocco','المغرب'],'512':['Oman','عُمان'],'400':['Jordan','الأردن'],'414':['Kuwait','الكويت'],'788':['Tunisia','تونس'],'012':['Algeria','الجزائر'],'434':['Libya','ليبيا'],'368':['Iraq','العراق'],'887':['Yemen','اليمن'],'729':['Sudan','السودان'],'048':['Bahrain','البحرين']};
-  // The GCC is the map's centre of gravity: a globe-style (orthographic) view centred on the Gulf keeps
-  // the GCC largest in the middle while Egypt, the Levant and the Maghreb stay visible towards the edges.
+  // The GCC is the map's centre of gravity: the view is centred on the Gulf, wide enough that Egypt,
+  // the Levant and the Maghreb stay visible. Mercator keeps every country's shape true at these latitudes.
   const GCC = [49, 25.5];
   const REGION = [[GCC[0] - 62, GCC[1] - 16], [GCC[0] + 62, GCC[1] + 22]];
   // Phones start closer in on the GCC (Levant to Oman); the Maghreb is a pan or zoom-out away.
   const REGION_NARROW = [[GCC[0] - 22, GCC[1] - 14], [GCC[0] + 22, GCC[1] + 14]];
   const LIMIT = [[-40, -20], [140, 62]];
-  const globe = b => d3.geoOrthographic().clipAngle(90).rotate([-(b[0][0] + b[1][0]) / 2, -(b[0][1] + b[1][1]) / 2]);
+  const flat = b => d3.geoMercator().rotate([-(b[0][0] + b[1][0]) / 2, 0]);
   const MIN_SPAN = 0.8, NS_R = 26;
   const cache = {};
   const libs = () => new Promise(r => { const t = () => (window.d3 && window.topojson) ? r() : setTimeout(t, 40); t(); });
@@ -238,11 +238,13 @@
       const center = p => { const b = this.bbox; return p([(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2]); };
       if (hero) {
         // Gulf sits in the open space beside the headline; the rest of MENA extends behind the text.
-        const wide = w > 900, R = wide ? Math.min(w * 0.82, h * 1.9) : w * 1.7;
+        const wide = w > 900, R = wide ? Math.min(w * 1.7, h * 2.6) : w * 2.6;
         const tx = wide ? (rtl ? w * 0.29 : w * 0.71) : w * 0.5, ty = wide ? h * 0.56 : h * 0.78;
-        proj = d3.geoOrthographic().clipAngle(90).rotate([-GCC[0], -GCC[1]]).scale(R).translate([tx, ty]);
+        const hb = [[GCC[0] - 62, GCC[1] - 16], [GCC[0] + 62, GCC[1] + 22]];
+        proj = flat(hb).fitWidth(R, { type: 'MultiPoint', coordinates: hb });
+        const c = proj(GCC), tr = proj.translate(); proj.translate([tr[0] + tx - c[0], tr[1] + ty - c[1]]);
       } else {
-        proj = globe(this.bbox).fitExtent(ext, obj);
+        proj = flat(this.bbox).fitExtent(ext, obj);
         
         const c = center(proj), tr = proj.translate(), cx = (ext[0][0] + ext[1][0]) / 2, cy = (ext[0][1] + ext[1][1]) / 2;
         proj.translate([tr[0] + cx - c[0], tr[1] + cy - c[1]]);
@@ -250,7 +252,7 @@
       this.proj = proj;
       const path = d3.geoPath(proj);
       const tl = proj.invert([-40, -40]), br = proj.invert([w + 40, h + 40]);
-      const vis = () => true; // the globe's own clipping hides the far side
+      const vis = () => true; // draw every country (cheap at this detail level)
       const fcc = CC[this.getAttribute('focus')];
       const k = proj.scale() / 400;
       let out = '';
