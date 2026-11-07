@@ -14,6 +14,7 @@ rm -rf _site
 mkdir _site
 cp -r *.js vendor CNAME .nojekyll .image-slots.state.json _site/
 cp redirects/*.html _site/
+cp -r media _site/
 node scripts/validate-data.mjs
 node scripts/assemble.cjs _site
 

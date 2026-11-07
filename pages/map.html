@@ -128,7 +128,7 @@ html,body{margin:0;padding:0;background:#F2F3F7}
             <button onClick="{{ clearSel }}" aria-label="{{ t.close }}" style="width:32px;height:32px;flex:none;background:transparent;border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;color:var(--fg-muted)">✕</button>
           </div>
           <dl style="margin:0;display:grid;grid-template-columns:88px minmax(0,1fr);row-gap:12px;column-gap:16px;font-size:14px;border-top:1px solid var(--line);padding-top:16px">
-            <dt style="color:var(--fg-subtle)">{{ t.operator }}</dt><dd style="margin:0">{{ sel.operator }}</dd>
+            <dt style="color:var(--fg-subtle)">{{ t.operator }}</dt><dd style="margin:0;display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="width:24px;height:24px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ sel.opBadge.bg }};font:600 9px/1 var(--font-num);letter-spacing:.02em;color:var(--fg)"><sc-if value="{{ sel.opBadge.hasImg }}"><img src="{{ sel.opBadge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:{{ sel.opBadge.fit }};padding:{{ sel.opBadge.pad }};display:block"></sc-if><sc-if value="{{ sel.opBadge.noImg }}">{{ sel.opBadge.mono }}</sc-if></span>{{ sel.operator }}</dd>
             <dt style="color:var(--fg-subtle)">{{ t.site }}</dt><dd style="margin:0">{{ sel.site }}</dd>
             <dt style="color:var(--fg-subtle)">{{ t.country }}</dt><dd style="margin:0">{{ sel.country }}</dd>
             <dt style="color:var(--fg-subtle)">{{ t.date }}</dt><dd style="margin:0;font-family:var(--font-num);font-size:13px">{{ sel.date }}</dd>

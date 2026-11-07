@@ -13,6 +13,7 @@
     "end": "2026-11-20",
     "dates_confirmed": false,
     "url": "",
+    "logo": "/media/logos/robotech.png",
     "source": "",
     "added": ""
   },
@@ -30,6 +31,7 @@
     "end": "2026-11-25",
     "dates_confirmed": true,
     "url": "",
+    "logo": "",
     "source": "",
     "added": ""
   },
@@ -47,6 +49,7 @@
     "end": "2026-12-11",
     "dates_confirmed": true,
     "url": "",
+    "logo": "/media/logos/gitex.png",
     "source": "",
     "added": ""
   },
@@ -64,6 +67,7 @@
     "end": "2026-12-15",
     "dates_confirmed": false,
     "url": "",
+    "logo": "",
     "source": "",
     "added": ""
   },
@@ -81,6 +85,7 @@
     "end": "2027-01-14",
     "dates_confirmed": false,
     "url": "",
+    "logo": "",
     "source": "",
     "added": ""
   },
@@ -98,6 +103,7 @@
     "end": "2027-01-21",
     "dates_confirmed": false,
     "url": "",
+    "logo": "/media/logos/ai-everything.png",
     "source": "",
     "added": ""
   },
@@ -116,6 +122,7 @@
     "dates_confirmed": false,
     "tentative": true,
     "url": "",
+    "logo": "",
     "source": "",
     "added": ""
   },
@@ -134,6 +141,7 @@
     "dates_confirmed": false,
     "tentative": true,
     "url": "",
+    "logo": "/media/logos/aim-congress.png",
     "source": "",
     "added": ""
   }

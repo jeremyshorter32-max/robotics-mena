@@ -9,6 +9,7 @@
     "summary": "Humanoid manufacturer with a Riyadh factory and public showroom.",
     "summary_ar": "مصنّع روبوتات بشرية بمصنع ومعرض عام في الرياض.",
     "website": "",
+    "logo": "/media/logos/qss.png",
     "source": "",
     "source_url": "",
     "added": "2026-10-28"
@@ -23,6 +24,7 @@
     "summary": "Boston Dynamics’ UAE partner: sales, integration and service for Spot and Stretch.",
     "summary_ar": "شريك بوسطن داينامكس في الإمارات: مبيعات وتكامل وخدمة لروبوتَي Spot وStretch.",
     "website": "",
+    "logo": "/media/logos/analog.png",
     "source": "",
     "source_url": "",
     "added": "2026-10-21"
@@ -37,6 +39,7 @@
     "summary": "Arabic-speaking service humanoids for government and retail front desks.",
     "summary_ar": "روبوتات بشرية ناطقة بالعربية لمكاتب الاستقبال الحكومية والتجارية.",
     "website": "",
+    "logo": "",
     "source": "",
     "source_url": "",
     "added": "2026-09-14"
@@ -51,6 +54,7 @@
     "summary": "Robotic arms for construction sites: rebar tying, drilling, finishing.",
     "summary_ar": "أذرع روبوتية لمواقع البناء: ربط حديد التسليح والحفر والتشطيب.",
     "website": "",
+    "logo": "",
     "source": "",
     "source_url": "",
     "added": "2026-08-02"
@@ -65,6 +69,7 @@
     "summary": "Operates autonomous ride-hailing and shuttle services.",
     "summary_ar": "تشغّل خدمات نقل وحافلات ذاتية القيادة.",
     "website": "",
+    "logo": "",
     "source": "",
     "source_url": "",
     "added": "2026-06-20"
@@ -79,6 +84,7 @@
     "summary": "Inspection drones and analytics for towers and infrastructure.",
     "summary_ar": "مسيّرات فحص وتحليلات للأبراج والبنية التحتية.",
     "website": "",
+    "logo": "",
     "source": "",
     "source_url": "",
     "added": "2026-07-11"
@@ -93,6 +99,7 @@
     "summary": "Low-cost AMRs engineered for high-heat, high-dust warehouses.",
     "summary_ar": "روبوتات متنقلة منخفضة التكلفة مصممة لمستودعات الحرارة والغبار.",
     "website": "",
+    "logo": "",
     "source": "",
     "source_url": "",
     "added": "2026-10-12"
@@ -107,6 +114,7 @@
     "summary": "Welding and palletising cells for North African automotive suppliers.",
     "summary_ar": "خلايا لحام وتكديس لموردي قطاع السيارات في شمال أفريقيا.",
     "website": "",
+    "logo": "",
     "source": "",
     "source_url": "",
     "added": "2026-10-26"
@@ -121,6 +129,7 @@
     "summary": "Licensed last-mile delivery drone network.",
     "summary_ar": "شبكة مرخّصة لتوصيل الميل الأخير بالمسيّرات.",
     "website": "",
+    "logo": "",
     "source": "",
     "source_url": "",
     "added": "2026-05-30"
@@ -135,6 +144,7 @@
     "summary": "Designs, installs and supports warehouse and port automation.",
     "summary_ar": "تصمّم أنظمة أتمتة المستودعات والموانئ وتركّبها وتدعمها.",
     "website": "",
+    "logo": "",
     "source": "",
     "source_url": "",
     "added": "2026-04-18"
@@ -149,6 +159,7 @@
     "summary": "Vision models for robot perception in Arabic-script environments.",
     "summary_ar": "نماذج رؤية حاسوبية لإدراك الروبوتات في بيئات الكتابة العربية.",
     "website": "",
+    "logo": "",
     "source": "",
     "source_url": "",
     "added": "2026-09-01"
@@ -163,6 +174,7 @@
     "summary": "Orchestration software for mixed-vendor robot fleets.",
     "summary_ar": "برمجيات لإدارة أساطيل روبوتات متعددة المورّدين.",
     "website": "",
+    "logo": "",
     "source": "",
     "source_url": "",
     "added": "2026-10-05"

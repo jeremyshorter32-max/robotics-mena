@@ -116,10 +116,13 @@ html,body{margin:0;padding:0;background:#F2F3F7}
         <sc-for list="{{ db.rows }}" as="r" hint-placeholder-count="8">
           <li style="border-bottom:1px solid var(--line)">
             <button onClick="{{ r.open }}" style="width:100%;display:grid;grid-template-columns:{{ db.rowCols }};gap:4px var(--gap);align-items:center;padding:16px 0;background:transparent;border:0;text-align:start;color:var(--fg);cursor:pointer;font:inherit" style-hover="background:var(--bg-raised)">
+              <span style="display:flex;gap:14px;align-items:center;min-width:0">
+              <span aria-hidden="true" style="width:40px;height:40px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ r.badge.bg }};font:600 13px/1 var(--font-num);letter-spacing:.02em;color:var(--fg)"><sc-if value="{{ r.badge.hasImg }}"><img src="{{ r.badge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:{{ r.badge.fit }};padding:{{ r.badge.pad }};display:block"></sc-if><sc-if value="{{ r.badge.noImg }}">{{ r.badge.mono }}</sc-if></span>
               <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
                 <span style="font-size:15px;font-weight:600;line-height:1.35">{{ r.name }}</span>
                 <span style="font-size:13px;color:var(--fg-subtle);line-height:1.4;overflow:hidden;text-overflow:ellipsis">{{ r.alt }}</span>
                 <span style="display:{{ db.metaDisp }};font-size:12px;color:var(--fg-muted);margin-top:4px">{{ r.c2 }} · {{ r.c4 }} · {{ r.c5 }}</span>
+              </span>
               </span>
               <span style="display:{{ db.colDisp }};font-size:14px;color:var(--fg-muted)">{{ r.c2 }}</span>
               <span style="display:{{ db.colDisp }};font-size:14px;color:var(--fg-muted)">{{ r.c3 }}</span>
@@ -140,10 +143,13 @@ html,body{margin:0;padding:0;background:#F2F3F7}
   <div onClick="{{ db.close }}" style="position:fixed;inset:0;z-index:100;background:rgba(10,10,20,.45);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);display:flex;align-items:flex-start;justify-content:center;padding:6vh 16px 16px;overflow-y:auto">
     <div id="rm-db-card" role="dialog" aria-modal="true" aria-labelledby="rm-db-card-title" onClick="{{ db.stop }}" style="position:relative;width:100%;max-width:640px;background:var(--bg);color:var(--fg);border:1px solid var(--line-strong);box-shadow:0 24px 64px rgba(0,0,0,.25);display:flex;flex-direction:column">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:24px 24px 0">
+        <div style="display:flex;gap:16px;align-items:flex-start;min-width:0">
+        <span aria-hidden="true" style="width:64px;height:64px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ db.card.badge.bg }};font:600 18px/1 var(--font-num);letter-spacing:.02em;color:var(--fg)"><sc-if value="{{ db.card.badge.hasImg }}"><img src="{{ db.card.badge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:{{ db.card.badge.fit }};padding:{{ db.card.badge.pad }};display:block"></sc-if><sc-if value="{{ db.card.badge.noImg }}">{{ db.card.badge.mono }}</sc-if></span>
         <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
           <span style="display:flex;align-items:center;gap:8px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--accent-text)">{{ db.card.kind }}<sc-if value="{{ db.card.hasCc }}"><span style="font:500 12px/16px var(--font-num);letter-spacing:.06em;border:1px solid var(--line-strong);padding:1px 6px;color:var(--fg-muted)">{{ db.card.cc }}</span></sc-if></span>
           <h2 id="rm-db-card-title" style="margin:0;font-size:26px;line-height:1.2;letter-spacing:var(--track-tight);font-weight:600">{{ db.card.title }}</h2>
           <span style="font-size:14px;color:var(--fg-subtle)">{{ db.card.alt }}</span>
+        </div>
         </div>
         <button id="rm-db-close" onClick="{{ db.close }}" aria-label="{{ db.t.close }}" style="flex:none;width:40px;height:40px;display:grid;place-items:center;background:transparent;border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;color:var(--fg)" style-hover="border-color:var(--fg)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
       </div>
@@ -159,7 +165,7 @@ html,body{margin:0;padding:0;background:#F2F3F7}
       <sc-if value="{{ db.card.hasRel }}">
         <div style="margin:20px 24px 0;display:flex;flex-direction:column">
           <h3 style="margin:0 0 4px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ db.card.relTitle }}</h3>
-          <sc-for list="{{ db.card.rel }}" as="x"><button onClick="{{ x.open }}" style="display:flex;flex-direction:column;gap:2px;padding:10px 0;background:transparent;border:0;border-bottom:1px solid var(--line);text-align:start;cursor:pointer;color:var(--fg);font:inherit" style-hover="color:var(--accent-text)"><span style="font-size:14px;font-weight:600">{{ x.label }}</span><span style="font-size:12px;color:var(--fg-subtle)">{{ x.sub }}</span></button></sc-for>
+          <sc-for list="{{ db.card.rel }}" as="x"><button onClick="{{ x.open }}" style="display:flex;align-items:center;gap:12px;padding:10px 0;background:transparent;border:0;border-bottom:1px solid var(--line);text-align:start;cursor:pointer;color:var(--fg);font:inherit" style-hover="color:var(--accent-text)"><span aria-hidden="true" style="width:28px;height:28px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ x.badge.bg }};font:600 10px/1 var(--font-num);letter-spacing:.02em;color:var(--fg)"><sc-if value="{{ x.badge.hasImg }}"><img src="{{ x.badge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:{{ x.badge.fit }};padding:{{ x.badge.pad }};display:block"></sc-if><sc-if value="{{ x.badge.noImg }}">{{ x.badge.mono }}</sc-if></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:600">{{ x.label }}</span><span style="font-size:12px;color:var(--fg-subtle)">{{ x.sub }}</span></span></button></sc-for>
         </div>
       </sc-if>
       <div style="margin:20px 0 0;padding:16px 24px 24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center">

@@ -87,7 +87,7 @@ class Component extends DCLogic {
   STAGES = { seed: ['Seed', 'تأسيسية', 1], a: ['Series A', 'الجولة أ', 2], b: ['Series B', 'الجولة ب', 3], growth: ['Growth', 'نمو', 4], corp: ['Established', 'شركة راسخة', 5] };
   ETYPES = { expo: ['Expo', 'معرض'], conference: ['Conference', 'مؤتمر'], meetup: ['Meetup', 'لقاء'], competition: ['Competition', 'مسابقة'] };
 
-  DEP = window.RM_DATA.deployments.map(d => ({ id: d.id, type: d.type, sector: d.sector, cc: d.country, lat: d.lat, lon: d.lon, date: d.date, n: !!d.is_new, robot: [d.title, d.title_ar || d.title], op: [d.operator, d.operator_ar || d.operator], site: [d.site, d.site_ar || d.site], src: d.source }));
+  DEP = window.RM_DATA.deployments.map(d => ({ id: d.id, type: d.type, sector: d.sector, cc: d.country, lat: d.lat, lon: d.lon, date: d.date, n: !!d.is_new, robot: [d.title, d.title_ar || d.title], op: [d.operator, d.operator_ar || d.operator], site: [d.site, d.site_ar || d.site], src: d.source, logo: d.logo || '' }));
 
   BRIEF = [
     ['SA','2026-10-28','QSS AI & Robotics','QSS AI & Robotics opens a humanoid factory and public showroom in Riyadh','كيو إس إس تفتتح مصنعاً للروبوتات البشرية ومعرضاً عاماً في الرياض','Saudi buyers can now inspect locally assembled humanoids before procurement, a shorter path from pilot to purchase order.','بات بإمكان المشترين في السعودية معاينة روبوتات بشرية مجمّعة محلياً قبل الشراء، ما يختصر الطريق من التجربة إلى أمر الشراء.'],
@@ -126,7 +126,7 @@ class Component extends DCLogic {
       ['World Robot Olympiad national rounds','الأولمبياد العالمي للروبوت: التصفيات الوطنية','Regional','إقليمي','Student robotics pipeline','مسار طلابي في الروبوتات']]]
   ];
 
-  EVENTS = window.RM_DATA.events.filter(e => !e.tentative).map(e => [e.id, e.start, e.end, e.name, e.name_ar || e.name, e.city, e.city_ar || e.city, e.venue, e.venue_ar || e.venue, e.country, e.type, e.dates_confirmed ? 0 : 1]);
+  EVENTS = window.RM_DATA.events.filter(e => !e.tentative).map(e => [e.id, e.start, e.end, e.name, e.name_ar || e.name, e.city, e.city_ar || e.city, e.venue, e.venue_ar || e.venue, e.country, e.type, e.dates_confirmed ? 0 : 1, e.logo || '']);
   LATER = window.RM_DATA.events.filter(e => e.tentative).map(e => [e.name, e.name_ar || e.name, e.city, e.city_ar || e.city, e.start]);
 
   PCC = ['AE', 'SA', 'QA', 'EG', 'MA', 'OM'];
@@ -410,6 +410,21 @@ class Component extends DCLogic {
       dossier: 'فتح ملف الدولة', onMap: 'عرض على الخريطة', noSource: 'لم يُسجَّل المصدر بعد', added: 'أضيف في', recordLink: 'نسخ رابط هذا السجل', copied: 'تم نسخ الرابط'
     }
   };
+  badgeOf(name, img, fit) {
+    const words = String(name || '').replace(/\(.*?\)/g, ' ').split(/[\s&\-–/]+/).filter(Boolean);
+    const caps = words.filter(w => /^[A-Z0-9]/.test(w));
+    const first = words[0] || '';
+    const mono = (/^[A-Z0-9&]{2,4}$/.test(first) ? first : ((caps.length ? caps : words).slice(0, 2).map(w => w[0]).join('') || '?')).toUpperCase();
+    // Logos in media/logos are pre-made square tiles, so every image fills the badge.
+    return { img: img || '', hasImg: !!img, noImg: !img, mono, fit: 'cover', pad: '0', bg: img ? 'transparent' : 'var(--sand-soft)' };
+  }
+  opLogo(operator, own) {
+    if (own) return own;
+    const a = String(operator || '').toLowerCase();
+    const c = a && window.RM_DATA.companies.find(x => x.logo && (a.includes(x.name.toLowerCase()) || x.name.toLowerCase().includes(a)));
+    return c ? c.logo : '';
+  }
+  flagOf(cc) { return cc ? '/media/flags/' + cc.toLowerCase() + '.svg' : ''; }
   dbOpen(tab, id) { this._dbReturn = document.activeElement; this.setState({ dbTab: tab, dbSel: id }); }
   dbVals(c) {
     const { S, lang, ar, L, num, fdate, ccName, narrow, t } = c;
@@ -422,10 +437,10 @@ class Component extends DCLogic {
     const opMatch = (op, name) => { const a = lc(op), b = lc(name); return !!a && !!b && (a.includes(b) || b.includes(a)); };
     const range = e => e.end && e.end !== e.start ? fdate(e.start) + ' – ' + fdate(e.end) : fdate(e.start);
     const recs = {
-      companies: D.companies.map(o => ({ o, id: o.id, cc: o.country, facet: o.category, date: o.added, name: tr(o, 'name'), alt: ar ? o.name : (o.name_ar || ''), c2: (this.CATS[o.category] || [o.category, o.category])[L], c3: cn(o.country), c4: (this.STAGES[o.stage] || [o.stage, o.stage])[L], c5: o.added ? fdate(o.added) : '—', size: 0 })),
-      deployments: D.deployments.map(o => ({ o, id: o.id, cc: o.country, facet: o.type, date: o.date, name: tr(o, 'title'), alt: tr(o, 'operator') + (o.site ? ' · ' + tr(o, 'site') : ''), c2: (this.TYPES[o.type] || [o.type, o.type])[L], c3: (this.SECTORS[o.sector] || [o.sector, o.sector])[L], c4: cn(o.country), c5: fdate(o.date), size: 0 })),
-      countries: D.countries.map(o => { const dn = D.deployments.filter(x => x.country === o.code).length, cn2 = D.companies.filter(x => x.country === o.code).length; return { o, id: o.code, cc: o.code, facet: '', date: '', name: tr(o, 'name'), alt: ar ? o.name : o.name_ar, c2: num(dn), c3: num(cn2), c4: o.headline_target || '—', c5: o.target_year ? String(o.target_year) : '—', size: dn }; }),
-      events: D.events.map(o => ({ o, id: o.id, cc: o.country, facet: o.type, date: o.start, name: tr(o, 'name'), alt: tr(o, 'venue') || '', c2: (this.ETYPES[o.type] || [o.type, o.type])[L], c3: tr(o, 'city'), c4: cn(o.country), c5: range(o), size: 0 }))
+      companies: D.companies.map(o => ({ o, badge: this.badgeOf(o.name, o.logo), id: o.id, cc: o.country, facet: o.category, date: o.added, name: tr(o, 'name'), alt: ar ? o.name : (o.name_ar || ''), c2: (this.CATS[o.category] || [o.category, o.category])[L], c3: cn(o.country), c4: (this.STAGES[o.stage] || [o.stage, o.stage])[L], c5: o.added ? fdate(o.added) : '—', size: 0 })),
+      deployments: D.deployments.map(o => ({ o, badge: this.badgeOf(o.operator, this.opLogo(o.operator, o.logo)), id: o.id, cc: o.country, facet: o.type, date: o.date, name: tr(o, 'title'), alt: tr(o, 'operator') + (o.site ? ' · ' + tr(o, 'site') : ''), c2: (this.TYPES[o.type] || [o.type, o.type])[L], c3: (this.SECTORS[o.sector] || [o.sector, o.sector])[L], c4: cn(o.country), c5: fdate(o.date), size: 0 })),
+      countries: D.countries.map(o => { const dn = D.deployments.filter(x => x.country === o.code).length, cn2 = D.companies.filter(x => x.country === o.code).length; return { o, badge: this.badgeOf(o.name, this.flagOf(o.code), 'cover'), id: o.code, cc: o.code, facet: '', date: '', name: tr(o, 'name'), alt: ar ? o.name : o.name_ar, c2: num(dn), c3: num(cn2), c4: o.headline_target || '—', c5: o.target_year ? String(o.target_year) : '—', size: dn }; }),
+      events: D.events.map(o => ({ o, badge: this.badgeOf(o.name, o.logo), id: o.id, cc: o.country, facet: o.type, date: o.start, name: tr(o, 'name'), alt: tr(o, 'venue') || '', c2: (this.ETYPES[o.type] || [o.type, o.type])[L], c3: tr(o, 'city'), c4: cn(o.country), c5: range(o), size: 0 }))
     };
     const all = recs[tab];
     const q = lc(S.dbQ).trim();
@@ -450,25 +465,25 @@ class Component extends DCLogic {
         fields.push([F.category, r.c2], [F.country, r.c3], [F.stage, r.c4], [F.listed, r.c5]);
         desc = tr(o, 'summary');
         if (o.website) extra.push(link(o.website, d.visit));
-        D.deployments.filter(x => opMatch(x.operator, o.name)).forEach(x => rel.push({ label: tr(x, 'title'), sub: tr(x, 'site') + ' · ' + fdate(x.date), open: () => this.setState({ dbTab: 'deployments', dbSel: x.id }) }));
+        D.deployments.filter(x => opMatch(x.operator, o.name)).forEach(x => rel.push({ badge: this.badgeOf(x.operator, this.opLogo(x.operator, x.logo)), label: tr(x, 'title'), sub: tr(x, 'site') + ' · ' + fdate(x.date), open: () => this.setState({ dbTab: 'deployments', dbSel: x.id }) }));
       } else if (tab === 'deployments') {
         fields.push([F.operator, tr(o, 'operator')], [F.site, tr(o, 'site')], [F.country, r.c4], [F.sector, r.c3], [F.type, r.c2], [F.date, r.c5]);
-        D.companies.filter(x => opMatch(o.operator, x.name)).forEach(x => rel.push({ label: tr(x, 'name'), sub: (this.CATS[x.category] || ['', ''])[L] + ' · ' + cn(x.country), open: () => this.setState({ dbTab: 'companies', dbSel: x.id }) }));
+        D.companies.filter(x => opMatch(o.operator, x.name)).forEach(x => rel.push({ badge: this.badgeOf(x.name, x.logo), label: tr(x, 'name'), sub: (this.CATS[x.category] || ['', ''])[L] + ' · ' + cn(x.country), open: () => this.setState({ dbTab: 'companies', dbSel: x.id }) }));
         extra.push({ url: this.pageHref('map'), label: d.onMap });
       } else if (tab === 'countries') {
         const ev = D.events.filter(x => x.country === o.code && x.start >= today).length;
         fields.push([F.deployments, r.c2], [F.companies, r.c3], [F.events, num(ev)], [F.target, r.c4], [F.year, r.c5]);
         desc = this.POLICY[o.code] ? this.POLICY[o.code].sum[L] : '';
         if (this.POLICY[o.code]) extra.push({ url: this.pageHref('policy', o.code), label: d.dossier });
-        D.companies.filter(x => x.country === o.code).forEach(x => rel.push({ label: tr(x, 'name'), sub: d.kind.companies + ' · ' + (this.CATS[x.category] || ['', ''])[L], open: () => this.setState({ dbTab: 'companies', dbSel: x.id }) }));
-        D.deployments.filter(x => x.country === o.code).forEach(x => rel.push({ label: tr(x, 'title'), sub: d.kind.deployments + ' · ' + fdate(x.date), open: () => this.setState({ dbTab: 'deployments', dbSel: x.id }) }));
+        D.companies.filter(x => x.country === o.code).forEach(x => rel.push({ badge: this.badgeOf(x.name, x.logo), label: tr(x, 'name'), sub: d.kind.companies + ' · ' + (this.CATS[x.category] || ['', ''])[L], open: () => this.setState({ dbTab: 'companies', dbSel: x.id }) }));
+        D.deployments.filter(x => x.country === o.code).forEach(x => rel.push({ badge: this.badgeOf(x.operator, this.opLogo(x.operator, x.logo)), label: tr(x, 'title'), sub: d.kind.deployments + ' · ' + fdate(x.date), open: () => this.setState({ dbTab: 'deployments', dbSel: x.id }) }));
       } else {
         fields.push([F.dates, r.c5], [F.etype, r.c2], [F.city, r.c3], [F.venue, tr(o, 'venue') || '—'], [F.country, r.c4], [F.status, o.tentative ? d.status.tent : o.dates_confirmed ? d.status.ok : d.status.tbc]);
         if (o.url) extra.push(link(o.url, d.visit));
       }
       const hasSrc = !!(srcName || srcUrl);
       card = {
-        kind: d.kind[tab], title: r.name, alt: r.alt, cc: r.cc || '', hasCc: !!r.cc, desc, hasDesc: !!desc,
+        kind: d.kind[tab], badge: r.badge, title: r.name, alt: r.alt, cc: r.cc || '', hasCc: !!r.cc, desc, hasDesc: !!desc,
         fields: fields.filter(f => f[1]).map(f => ({ k: f[0], v: f[1] })),
         srcLine: hasSrc ? d.source + ': ' + (srcName || srcUrl.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]) : d.noSource,
         srcUrl, hasSrcUrl: !!srcUrl, openSrc: d.open,
@@ -489,7 +504,7 @@ class Component extends DCLogic {
         onFacet: e => this.setState({ dbFacet: e.target.value }),
         sort, sortOpts: (tab === 'countries' ? ['size', 'az'] : ['recent', 'az']).map(k => opt(k, k === 'recent' && tab === 'events' ? (ar ? 'الأقرب' : 'Soonest') : d.sorts[k], sort)), onSort: e => this.setState({ dbSort: e.target.value }),
         showing: d.showing.replace('{a}', num(rows.length)).replace('{b}', num(all.length)),
-        rows: shown.map(x => ({ id: x.id, name: x.name, alt: x.alt, c2: x.c2, c3: x.c3, c4: x.c4, c5: x.c5, cc: x.cc, open: () => this.dbOpen(tab, x.id) })),
+        rows: shown.map(x => ({ id: x.id, badge: x.badge, name: x.name, alt: x.alt, c2: x.c2, c3: x.c3, c4: x.c4, c5: x.c5, cc: x.cc, open: () => this.dbOpen(tab, x.id) })),
         empty: !rows.length, filtered: !!(q || S.dbCountry || S.dbFacet), clear: () => this.setState({ dbQ: '', dbCountry: '', dbFacet: '' }),
         more: rows.length > shown.length, moreLbl: d.more.replace('{n}', num(rows.length)), showAll: () => this.setState({ dbAll: true }),
         rowCols: narrow ? 'minmax(0,1fr) auto' : 'minmax(0,2.4fr) minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,.9fr)', colDisp: narrow ? 'none' : 'block', metaDisp: narrow ? 'block' : 'none', headDisp: narrow ? 'none' : 'grid',
@@ -560,7 +575,7 @@ class Component extends DCLogic {
       anyFilter: !!(S.fCountry || S.fSector || S.fType), clearFilters: () => this.setState({ fCountry: '', fSector: '', fType: '', sel: null }) };
     const pinOf = d => ({ id: d.id, lat: d.lat, lon: d.lon, cc: d.cc, n: d.n, label: d.robot[L] + ', ' + d.site[L] });
     const selD = S.sel && this.DEP.find(d => d.id === S.sel);
-    const sel = selD ? { icon: this.ICON[selD.type], robot: selD.robot[L], typeLabel: this.TYPES[selD.type][L], sector: this.SECTORS[selD.sector][L], operator: selD.op[L], site: selD.site[L], country: ccName(selD.cc), date: fdate(selD.date), srcLine: t.source + ': ' + selD.src, isNew: selD.n } : {};
+    const sel = selD ? { icon: this.ICON[selD.type], robot: selD.robot[L], typeLabel: this.TYPES[selD.type][L], sector: this.SECTORS[selD.sector][L], operator: selD.op[L], opBadge: this.badgeOf(selD.op[0], this.opLogo(selD.op[0], selD.logo)), site: selD.site[L], country: ccName(selD.cc), date: fdate(selD.date), srcLine: t.source + ': ' + selD.src, isNew: selD.n } : {};
     const panelList = depF.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, this.PAGE === 'home' ? 4 : (narrow && !S.mapAll ? 5 : 8)).map(d => ({ icon: this.ICON[d.type], robot: d.robot[L], site: d.site[L], date: fdate(d.date), isNew: d.n, pick: () => this.setState({ sel: d.id }) }));
 
     // directory
@@ -602,7 +617,7 @@ class Component extends DCLogic {
     const evF = this.EVENTS.filter(e => (!S.eType || e[10] === S.eType) && (!S.eCountry || e[9] === S.eCountry));
     const mm = {};
     evF.forEach(e => { const k = e[1].slice(0, 7); (mm[k] = mm[k] || []).push(e); });
-    const months = Object.keys(mm).sort().map(k => ({ label: dfm.format(D(k + '-01')), rows: mm[k].map(e => ({ days: num(D(e[1]).getUTCDate()) + (e[1] !== e[2] ? '–' + num(D(e[2]).getUTCDate()) : ''), mon: df2.format(D(e[1])), name: e[3 + L], city: e[5 + L], venue: e[7 + L], cc: e[9], type: this.ETYPES[e[10]][L], tbc: !!e[11], addLabel: S.added[e[0]] ? '✓ ' + t.added : t.addCal, add: () => this.ics(e) })) }));
+    const months = Object.keys(mm).sort().map(k => ({ label: dfm.format(D(k + '-01')), rows: mm[k].map(e => ({ days: num(D(e[1]).getUTCDate()) + (e[1] !== e[2] ? '–' + num(D(e[2]).getUTCDate()) : ''), mon: df2.format(D(e[1])), name: e[3 + L], city: e[5 + L], venue: e[7 + L], cc: e[9], type: this.ETYPES[e[10]][L], tbc: !!e[11], badge: this.badgeOf(e[3], e[12]), addLabel: S.added[e[0]] ? '✓ ' + t.added : t.addCal, add: () => this.ics(e) })) }));
     const evChips = [this.chip(t.all, num(this.EVENTS.length), !S.eType, () => this.setState({ eType: '' }))].concat(Object.keys(this.ETYPES).map(k => this.chip(this.ETYPES[k][L], num(this.EVENTS.filter(e => e[10] === k).length), S.eType === k, () => this.setState(st => ({ eType: st.eType === k ? '' : k })))));
     const evCChips = [this.chip(t.all, '', !S.eCountry, () => this.setState({ eCountry: '' }))].concat([...new Set(this.EVENTS.map(e => e[9]))].map(c => this.chip(ccName(c), '', S.eCountry === c, () => this.setState(st => ({ eCountry: st.eCountry === c ? '' : c })))));
     const later = this.LATER.map(e => ({ name: e[L], city: e[2 + L], mon: new Intl.DateTimeFormat(loc, { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(D(e[4])) + (ar ? ' (قيد التأكيد)' : ' (TBC)') }));

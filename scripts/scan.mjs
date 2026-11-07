@@ -167,7 +167,7 @@ function merge(found) {
     if (!isUrl(c.source_url)) { skip('Company', c.name, 'no source link'); continue; }
     if (!ensureCountry(c.country)) { skip('Company', c.name, `country ${c.country} not covered`); continue; }
     let id = slug(c.name) || 'company'; while (data.companies.some(x => x.id === id)) id += '-2';
-    data.companies.push({ id, name: c.name, name_ar: c.name_ar, country: c.country, category: c.category, stage: c.stage, summary: c.summary, summary_ar: c.summary_ar, website: isUrl(c.website) ? c.website : '', source: c.source, source_url: c.source_url, added: today });
+    data.companies.push({ id, name: c.name, name_ar: c.name_ar, country: c.country, category: c.category, stage: c.stage, summary: c.summary, summary_ar: c.summary_ar, website: isUrl(c.website) ? c.website : '', logo: '', source: c.source, source_url: c.source_url, added: today });
     seenUrls.add(normUrl(c.source_url));
     report.added.companies.push(c);
   }
@@ -182,7 +182,7 @@ function merge(found) {
     // New entries get the "Added this week" marker; last week's lose it.
     if (first) { data.deployments.forEach(x => { x.is_new = false; }); first = false; }
     const id = nextId(data.deployments, 'd');
-    data.deployments.push({ id, title: d.title, title_ar: d.title_ar, operator: d.operator, operator_ar: d.operator_ar, type: d.type, sector: d.sector, country: d.country, site: d.site, site_ar: d.site_ar, lat: Math.round(d.lat * 100) / 100, lon: Math.round(d.lon * 100) / 100, date: d.date, is_new: true, source: d.source, source_url: d.source_url, added: today });
+    data.deployments.push({ id, title: d.title, title_ar: d.title_ar, operator: d.operator, operator_ar: d.operator_ar, logo: '', type: d.type, sector: d.sector, country: d.country, site: d.site, site_ar: d.site_ar, lat: Math.round(d.lat * 100) / 100, lon: Math.round(d.lon * 100) / 100, date: d.date, is_new: true, source: d.source, source_url: d.source_url, added: today });
     seenUrls.add(normUrl(d.source_url));
     report.added.deployments.push({ id, ...d });
   }
@@ -194,7 +194,7 @@ function merge(found) {
     if (!ensureCountry(e.country)) { skip('Event', e.name, `country ${e.country} not covered`); continue; }
     const id = nextId(data.events.filter(x => /^e\d+$/.test(x.id)), 'e');
     const end = ISO_DATE.test(e.end) && e.end >= e.start ? e.end : e.start;
-    data.events.push({ id, name: e.name, name_ar: e.name_ar, type: e.type, country: e.country, city: e.city, city_ar: e.city_ar, venue: e.venue, venue_ar: e.venue_ar, start: e.start, end, dates_confirmed: e.dates_confirmed, url: e.url, source: e.source, added: today });
+    data.events.push({ id, name: e.name, name_ar: e.name_ar, type: e.type, country: e.country, city: e.city, city_ar: e.city_ar, venue: e.venue, venue_ar: e.venue_ar, start: e.start, end, dates_confirmed: e.dates_confirmed, url: e.url, logo: '', source: e.source, added: today });
     report.added.events.push({ id, ...e });
   }
 }
