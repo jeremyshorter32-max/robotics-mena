@@ -9,7 +9,7 @@
     "summary": "Dubai distributor of Pudu, Unitree and AgiBot robots; opened UAE's first humanoid robot showroom on Sheikh Zayed Road.",
     "summary_ar": "موزّع في دبي لروبوتات بودو ويونيتري وأجيبوت، افتتح أول صالة عرض للروبوتات البشرية في الإمارات على شارع الشيخ زايد.",
     "website": "https://yslootahrobotics.com/",
-    "logo": "",
+    "logo": "/media/logos/ys-lootah-robotics.png",
     "source": "The National",
     "source_url": "https://www.thenationalnews.com/news/uae/2026/11/06/uae-opens-its-first-humanoid-robotics-showroom-as-dubai-races-to-200000-robots/",
     "added": "2026-11-07"
@@ -39,7 +39,7 @@
     "summary": "UAE-based warehouse automation provider building robotic fulfilment and sorting centres, including a 200-robot Saudi Post deployment.",
     "summary_ar": "مزوّد إماراتي لأتمتة المستودعات يبني مراكز تنفيذ وفرز روبوتية، منها نشر 200 روبوت لدى البريد السعودي.",
     "website": "https://www.iqrobotics.com/",
-    "logo": "",
+    "logo": "/media/logos/iq-robotics.png",
     "source": "EnterpriseAM",
     "source_url": "https://enterpriseam.com/ksa/2026/09/22/uaes-iq-robotics-sets-up-saudi-hq-to-launch-robotic-fulfillment-operations/",
     "added": "2026-11-07"
@@ -54,7 +54,7 @@
     "summary": "Dubai developer of autonomous patrol robots/vehicles deployed with Dubai Police, plus autonomous sweepers for Abu Dhabi.",
     "summary_ar": "شركة في دبي تطوّر روبوتات ومركبات دوريات ذاتية القيادة تعمل مع شرطة دبي، إضافة إلى كناسات ذاتية لأبوظبي.",
     "website": "https://micropolis.ai/",
-    "logo": "",
+    "logo": "/media/logos/micropolis-robotics.png",
     "source": "GlobeNewswire (via The Manila Times)",
     "source_url": "https://www.manilatimes.net/2026/10/06/tmt-newswire/globenewswire/micropolis-robotics-dpr2-autonomous-patrols-lead-dubai-polices-proud-of-uae-cycling-race/2439959",
     "added": "2026-11-07"
@@ -69,7 +69,7 @@
     "summary": "Operates commercial fully driverless robotaxis in Abu Dhabi and Dubai via Uber, plus Ras Al Khaimah operations.",
     "summary_ar": "تشغّل خدمات روبوتاكسي تجارية ذاتية القيادة بالكامل في أبوظبي ودبي عبر أوبر، إضافة إلى عمليات في رأس الخيمة.",
     "website": "https://www.weride.ai/",
-    "logo": "",
+    "logo": "/media/logos/weride.png",
     "source": "GlobeNewswire (via Yahoo Finance)",
     "source_url": "https://finance.yahoo.com/technology/ai/articles/weride-named-among-chinas-top-021800480.html",
     "added": "2026-11-07"
@@ -84,7 +84,7 @@
     "summary": "Meituan's drone delivery unit running DCAA-approved food delivery flights in Dubai Silicon Oasis via the Keeta app.",
     "summary_ar": "وحدة التوصيل بالطائرات المسيّرة التابعة لميتوان، تشغّل رحلات توصيل طعام معتمدة من هيئة دبي للطيران المدني في واحة دبي للسيليكون.",
     "website": "https://www.keetadrone.com/",
-    "logo": "",
+    "logo": "/media/logos/keeta-drone.png",
     "source": "Zawya",
     "source_url": "https://www.zawya.com/en/press-release/companies-news/keeta-drone-resumes-drone-delivery-operations-in-dubai-475216",
     "added": "2026-11-07"
@@ -99,7 +99,7 @@
     "summary": "US inspection-robot maker with a UAE base under NextGen FDI, deploying robots and AI across ADNOC operations.",
     "summary_ar": "شركة أمريكية لروبوتات الفحص لها قاعدة في الإمارات ضمن برنامج NextGen FDI، تنشر روبوتات وذكاء اصطناعي في عمليات أدنوك.",
     "website": "https://www.geckorobotics.com/",
-    "logo": "",
+    "logo": "/media/logos/gecko-robotics.png",
     "source": "The National",
     "source_url": "https://www.thenationalnews.com/future/technology/2026/08/25/gecko-robotics-uae-adnoc/",
     "added": "2026-11-07"
@@ -174,7 +174,7 @@
     "summary": "UK humanoid maker running the Humanoid Lounge showroom in Riyadh with QSS, its exclusive Saudi partner.",
     "summary_ar": "شركة بريطانية لصناعة الروبوتات البشرية تدير صالة عرض Humanoid Lounge في الرياض مع شريكها الحصري في السعودية QSS.",
     "website": "https://thehumanoid.ai",
-    "logo": "",
+    "logo": "/media/logos/humanoid.png",
     "source": "Humanoid",
     "source_url": "https://thehumanoid.ai/humanoid-and-qss-ai-robotics-launch-menas-first-humanoid-robotics-showroom/",
     "added": "2026-11-07"
@@ -189,7 +189,7 @@
     "summary": "Riyadh startup operating licensed mid-size autonomous delivery vehicles for same-neighbourhood deliveries, starting in Al Falah.",
     "summary_ar": "شركة ناشئة في الرياض تشغّل مركبات توصيل ذاتية القيادة متوسطة الحجم ومرخّصة للتوصيل داخل الأحياء، بدءاً من حي الفلاح.",
     "website": "https://www.usenero.com",
-    "logo": "",
+    "logo": "/media/logos/nero.png",
     "source": "Arab Founders",
     "source_url": "https://arabfounders.net/en/nero-autonomous-delivery-vehicles-riyadh-permit/",
     "added": "2026-11-07"
@@ -204,7 +204,7 @@
     "summary": "Test-operating its NURI outdoor delivery robot in Saudi Arabia and in talks with MOMRAH on residential deployments.",
     "summary_ar": "تختبر تشغيل روبوت التوصيل الخارجي NURI في السعودية وتتفاوض مع وزارة البلديات والإسكان على نشره في المجمعات السكنية.",
     "website": "https://www.naverlabs.com",
-    "logo": "",
+    "logo": "/media/logos/naver-labs.png",
     "source": "Seoul Economic Daily",
     "source_url": "https://en.sedaily.com/technology/2026/08/04/naver-to-export-robot-platform-to-saudi-arabia",
     "added": "2026-11-07"
@@ -234,7 +234,7 @@
     "summary": "Riyadh-based UAV solutions company and official DJI Enterprise dealer in Saudi Arabia, incl. drone docks and counter-drone.",
     "summary_ar": "شركة حلول طائرات مسيّرة مقرها الرياض والوكيل المعتمد لـ DJI Enterprise في السعودية، بما في ذلك محطات الإرساء ومكافحة المسيّرات.",
     "website": "https://9tenthsco.com",
-    "logo": "",
+    "logo": "/media/logos/ninetenths.png",
     "source": "NineTenths",
     "source_url": "https://9tenthsco.com/about-us-ninetenths/",
     "added": "2026-11-07"
@@ -279,7 +279,7 @@
     "summary": "Cairo startup designing and manufacturing AI-powered industrial robotic arms for welding, material handling and warehouse automation.",
     "summary_ar": "شركة ناشئة في القاهرة تصمم وتصنّع أذرعًا روبوتية صناعية مدعومة بالذكاء الاصطناعي للحام ومناولة المواد وأتمتة المستودعات.",
     "website": "https://www.raedbots.com",
-    "logo": "",
+    "logo": "/media/logos/raedbots.png",
     "source": "Wamda",
     "source_url": "https://www.wamda.com/2026/04/raedbots-launches-egypt-industrial-robotics-manufacturer",
     "added": "2026-11-07"
@@ -294,7 +294,7 @@
     "summary": "Egyptian robotics firm that unveiled an autonomous AI harvesting robot and its Bennu multipurpose mobile platform.",
     "summary_ar": "شركة روبوتات مصرية كشفت عن روبوت حصاد ذاتي بالذكاء الاصطناعي ومنصتها المتنقلة متعددة الأغراض «بينو».",
     "website": "https://egrobots.com",
-    "logo": "",
+    "logo": "/media/logos/egrobots.png",
     "source": "Wamda",
     "source_url": "https://www.wamda.com/2026/05/egrobots-unveils-ai-powered-harvesting-robot-built-entirely-egyptian-engineers",
     "added": "2026-11-07"
@@ -309,7 +309,7 @@
     "summary": "Moroccan medtech group supplying, installing and maintaining interconnected surgical robots across AKDITAL's hospital network.",
     "summary_ar": "مجموعة مغربية للتكنولوجيا الطبية تورّد وتركّب وتصون روبوتات جراحية مترابطة في شبكة مستشفيات أكديتال.",
     "website": "https://t2s.group",
-    "logo": "",
+    "logo": "/media/logos/t2s-group.png",
     "source": "Hespress FR",
     "source_url": "https://fr.hespress.com/490357-contrat-cadre-t2s-group-akdital-pour-deployer-la-chirurgie-robot-assistee-et-la-telechirurgie-au-maroc.html",
     "added": "2026-11-07"
@@ -324,7 +324,7 @@
     "summary": "Operates commercial robotaxi service in Doha with Mowasalat via the Karwa app, piloting fully driverless rides.",
     "summary_ar": "تشغّل خدمة سيارات أجرة ذاتية القيادة تجارية في الدوحة مع مواصلات عبر تطبيق كروة، وتجرّب رحلات دون سائق.",
     "website": "https://www.pony.ai",
-    "logo": "",
+    "logo": "/media/logos/pony-ai.png",
     "source": "Gasgoo",
     "source_url": "https://autonews.gasgoo.com/articles/market-industry/2097907362995453952",
     "added": "2026-11-07"
@@ -339,7 +339,7 @@
     "summary": "Omani drone operator providing inspections and surveys and the Middle East's first oil-and-gas cargo drone service.",
     "summary_ar": "مشغّل عُماني للطائرات المسيّرة يقدّم الفحص والمسح وأول خدمة شحن بالطائرات المسيّرة لقطاع النفط والغاز في الشرق الأوسط.",
     "website": "https://esbaar.com",
-    "logo": "",
+    "logo": "/media/logos/esbaar.png",
     "source": "STAT Times",
     "source_url": "https://www.stattimes.com/amp/air-cargo/esbaar-launches-middle-easts-first-oil-and-gas-cargo-drone-1357755",
     "added": "2026-11-07"
