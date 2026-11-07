@@ -61,7 +61,8 @@ const Findings = z.object({
     name: z.string(), name_ar: z.string(), type: z.enum(keys(EVENT_TYPES)), country: Country,
     city: z.string(), city_ar: z.string(), venue: z.string(), venue_ar: z.string(),
     start: IsoDate, end: IsoDate, dates_confirmed: z.boolean(),
-    url: z.string().describe('Official event page URL'), source: z.string()
+    url: z.string().describe('Official event page URL'), source: z.string(),
+    relevance: z.string().describe('One sentence on why it matters for robotics, only if not obvious from the name; else empty'), relevance_ar: z.string()
   }))
 });
 
@@ -196,7 +197,7 @@ function merge(found) {
     if (!ensureCountry(e.country)) { skip('Event', e.name, `country ${e.country} not covered`); continue; }
     const id = nextId(data.events.filter(x => /^e\d+$/.test(x.id)), 'e');
     const end = ISO_DATE.test(e.end) && e.end >= e.start ? e.end : e.start;
-    data.events.push({ id, name: e.name, name_ar: e.name_ar, type: e.type, country: e.country, city: e.city, city_ar: e.city_ar, venue: e.venue, venue_ar: e.venue_ar, start: e.start, end, dates_confirmed: e.dates_confirmed, url: e.url, logo: '', source: e.source, added: today });
+    data.events.push({ id, name: e.name, name_ar: e.name_ar, type: e.type, country: e.country, city: e.city, city_ar: e.city_ar, venue: e.venue, venue_ar: e.venue_ar, start: e.start, end, dates_confirmed: e.dates_confirmed, url: e.url, logo: '', relevance: e.relevance, relevance_ar: e.relevance_ar, source: e.source, added: today });
     report.added.events.push({ id, ...e });
   }
 }

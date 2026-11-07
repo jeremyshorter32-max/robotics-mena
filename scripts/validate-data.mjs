@@ -44,6 +44,7 @@ D.events.forEach((e, i) => {
   if (e.country && !countryCodes.has(e.country)) errors.push(`${w}: country "${e.country}" is not in countries.json`);
   if (e.end && e.end < e.start) errors.push(`${w}: ends before it starts`);
   url(e.url, w, 'url'); logo(e.logo, w);
+  if (e.relevance && e.relevance.length > 220) errors.push(`${w}: relevance line is too long (keep it to one sentence)`);
 });
 uniq(D.events, 'id', 'events');
 

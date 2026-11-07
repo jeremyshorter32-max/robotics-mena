@@ -98,8 +98,10 @@ html,body{margin:0;padding:0;background:#F7F5EF}
                 <div style="display:flex;gap:12px;align-items:center;min-width:0">
                 <span aria-hidden="true" style="width:36px;height:36px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ e.badge.bg }};font:600 12px/1 var(--font-num);letter-spacing:.02em;color:var(--fg)"><sc-if value="{{ e.badge.hasImg }}"><img src="{{ e.badge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:{{ e.badge.fit }};padding:{{ e.badge.pad }};display:block"></sc-if><sc-if value="{{ e.badge.noImg }}">{{ e.badge.mono }}</sc-if></span>
                 <div style="display:flex;flex-direction:column;gap:4px;min-width:0">
-                  <span style="font-size:15px;font-weight:600">{{ e.name }}</span>
+                  <sc-if value="{{ e.hasUrl }}"><a href="{{ e.url }}" target="_blank" rel="noopener noreferrer" style="font-size:15px;font-weight:600;color:var(--fg)" style-hover="color:var(--accent-text)">{{ e.name }} <span aria-hidden="true" style="font-weight:400;color:var(--fg-subtle)">{{ arrow }}</span></a></sc-if>
+                  <sc-if value="{{ e.noUrl }}"><span style="font-size:15px;font-weight:600">{{ e.name }}</span></sc-if>
                   <span style="font-size:13px;color:var(--fg-muted)">{{ e.venue }} · {{ e.city }}<sc-if value="{{ e.tbc }}"><span style="color:var(--sand);margin-inline-start:8px">{{ t.tbc }}</span></sc-if></span>
+                  <sc-if value="{{ e.hasWhy }}"><span style="font-size:13px;line-height:1.5;color:var(--fg-muted);max-width:640px"><span style="color:var(--sand);font-weight:500">{{ e.whyLbl }}</span> {{ e.why }}</span></sc-if>
                 </div>
                 </div>
                 <span style="display:var(--ev-tail);font-size:13px;color:var(--fg-muted)">{{ e.type }}</span>
