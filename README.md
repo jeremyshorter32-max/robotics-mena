@@ -13,6 +13,7 @@ Every push to `main` runs the **Deploy site** GitHub Action, which builds the si
 | Policy & data | `pages/policy.html` | `/policy` (`?c=SA` etc. selects a country) |
 | Events | `pages/events.html` | `/events` |
 | Submit a record | `pages/submit.html` | `/submit` |
+| Spotlight analysis (email-gated) | `pages/spotlight.html` | `/spotlight?s=<story id>` |
 
 ## How the site is put together
 
@@ -28,6 +29,12 @@ Every push to `main` runs the **Deploy site** GitHub Action, which builds the si
 Language and theme are remembered in the visitor's browser, so links stay clean. Old-style links (`?lang=ar`, `index.html#top`) still work and are tidied in the address bar.
 
 **Preview locally:** `npm run build` (no password), then serve `_site/` with any static server that maps `/map` to `map.html`.
+
+## Spotlight analysis pieces
+
+`data/stories.json` holds the long-form pieces linked from the home Spotlight. Each has `id`, `title`, `dek`, `hero`, `body` blocks (`p`, `h`, `quote`, `img`, `stats`, `list`, each with `en`/`ar`), `sources` and `related`. Readers see the opening blocks (`gate_after`), then an email box that unlocks the rest. Images live in `media/spotlight/` (credits in `media/brief/SOURCES.md`).
+
+**Collecting emails:** the site has no backend, so sign-ups (here and in the home newsletter box) are only remembered in the reader's browser until you connect an email service. Put the service's form endpoint in `data/site.json` as `signup_url`; each sign-up is then POSTed there as JSON (`email`, `source`, `lang`).
 
 ## Database entries
 

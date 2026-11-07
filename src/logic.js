@@ -539,7 +539,7 @@ class Component extends DCLogic {
     this.qsCur = '';
     const st = this.STORIES.find(x => x.id === this.qp.get('s')) || this.STORIES[0];
     const tx = o => o ? (ar ? (o.ar || o.en || '') : (o.en || '')) : '';
-    const blk = b => ({ isP: b.t === 'p', isH: b.t === 'h', isImg: b.t === 'img', isQ: b.t === 'quote', isStats: b.t === 'stats', isList: b.t === 'list', text: digits(tx(b)), src: b.src || '', alt: tx(b.alt), cap: tx(b.cap), credit: tx(b.credit), who: tx(b.who), items: (b.items || []).map(i => ({ v: digits(i.v || ''), label: digits(tx(i)) })) });
+    const blk = b => ({ isP: b.t === 'p', isH: b.t === 'h', isImg: b.t === 'img', isQ: b.t === 'quote', isStats: b.t === 'stats', isList: b.t === 'list', text: digits(tx(b)), src: b.src || '', maxw: b.maxw || '100%', alt: tx(b.alt), cap: tx(b.cap), credit: tx(b.credit), who: tx(b.who), items: (b.items || []).map(i => ({ v: digits(i.v || ''), label: digits(tx(i)) })) });
     const story = st ? { kicker: tx(st.kicker), title: tx(st.title), dek: tx(st.dek), date: fdate(st.date), by: tx(st.by), read: digits(t.storyRead.replace('{n}', st.read_min)), hero: st.hero.src, heroAlt: tx(st.hero.alt), heroCap: tx(st.hero.cap), heroCredit: tx(st.hero.credit) } : {};
     const storyBody = st ? st.body.map(blk) : [], storyTeaser = st ? storyBody.slice(0, st.gate_after) : [];
     const storySources = st ? st.sources.map((x, i) => ({ n: nf.format(i + 1), name: x.name, title: x.title, date: x.date ? fdate(x.date) : '', url: x.url })) : [];

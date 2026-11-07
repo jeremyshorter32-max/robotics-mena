@@ -1,6 +1,379 @@
-[{"id":"gecko-adnoc-raptor","date":"2026-11-07","read_min":7,"gate_after":2,
-"kicker":{"en":"Analysis","ar":"تحليل"},"title":{"en":"Test title","ar":"عنوان"},"dek":{"en":"Dek","ar":"مقدمة"},"by":{"en":"Robotics MENA","ar":"روبوتكس مينا"},
-"hero":{"src":"/media/brief/gecko-adnoc-raptor.jpg","alt":{"en":"Raptor"},"cap":{"en":"Cap"},"credit":{"en":"Photo: X"}},
-"body":[{"t":"p","en":"Para one","ar":"فقرة"},{"t":"p","en":"Para two"},{"t":"h","en":"Heading"},{"t":"stats","items":[{"v":"50×","en":"cost"}]},{"t":"quote","en":"Quote","who":{"en":"Who"}},{"t":"list","items":[{"en":"a"},{"en":"b"}]},{"t":"img","src":"/media/brief/gecko-adnoc-raptor.jpg","alt":{"en":"x"},"cap":{"en":"cap"},"credit":{"en":"credit"}}],
-"sources":[{"name":"The National","title":"How wall-climbing robots…","date":"2026-11-04","url":"https://example.com"}],
-"related":[{"en":"Gecko Robotics","href":"/database?tab=companies&id=gecko-robotics"}]}]
+[
+ {
+  "id": "gecko-adnoc-raptor",
+  "date": "2026-11-07",
+  "read_min": 6,
+  "gate_after": 2,
+  "kicker": {
+   "en": "Analysis · Energy",
+   "ar": "تحليل · الطاقة"
+  },
+  "title": {
+   "en": "ADNOC’s real AI story at ADIPEC wasn’t the OpenAI deal. It was the robots.",
+   "ar": "قصة الذكاء الاصطناعي الحقيقية لأدنوك في أديبك لم تكن صفقة «أوبن إيه آي»، بل الروبوتات"
+  },
+  "dek": {
+   "en": "Wall-climbing crawlers, explosion-proof inspectors and remotely operated ships: after a year of war damage, the Gulf’s largest energy company is buying robots as infrastructure. It should now publish the results.",
+   "ar": "روبوتات تتسلّق الجدران، ومفتشون مقاومون للانفجار، وسفن تُشغَّل عن بُعد: بعد عام من أضرار الحرب، تشتري أكبر شركة طاقة في الخليج الروبوتات بوصفها بنية تحتية. وعليها الآن أن تنشر النتائج."
+  },
+  "by": {
+   "en": "Robotics MENA analysis",
+   "ar": "تحليل روبوتكس مينا"
+  },
+  "hero": {
+   "src": "/media/spotlight/gecko-raptor-adipec-2026.jpg",
+   "alt": {
+    "en": "Gecko Robotics Raptor wall-climbing inspection robot on a steel surface at ADIPEC, Abu Dhabi",
+    "ar": "روبوت الفحص «رابتور» من جيكو روبوتكس يتسلّق سطحاً فولاذياً في أديبك، أبوظبي"
+   },
+   "cap": {
+    "en": "Gecko’s Raptor at ADIPEC, Abu Dhabi, November 2026",
+    "ar": "«رابتور» من جيكو في أديبك، أبوظبي، نوفمبر 2026"
+   },
+   "credit": {
+    "en": "Photo: Victor Besa / The National",
+    "ar": "تصوير: فيكتور بيسا / ذا ناشونال"
+   }
+  },
+  "body": [
+   {
+    "t": "p",
+    "en": "When ADNOC signed with OpenAI and G42 at ADIPEC on 2 November, the headlines wrote themselves: the first energy company to deploy OpenAI’s Frontier agent platform. But Frontier is software for planners and traders. It does not climb, crawl or turn a valve. The more consequential story of the week was on the exhibition floor, clinging to a steel wall.",
+    "ar": "حين وقّعت أدنوك اتفاقها مع «أوبن إيه آي» و«جي 42» في معرض أديبك يوم 2 نوفمبر، كُتبت العناوين تلقائياً: أول شركة طاقة تعتمد منصة «فرونتير» للوكلاء الذكيين. لكن «فرونتير» برنامج للمخططين والمتداولين، لا يتسلّق ولا يزحف ولا يدير صماماً. أما القصة الأهم في ذلك الأسبوع فكانت على أرض المعرض، ملتصقة بجدار فولاذي."
+   },
+   {
+    "t": "p",
+    "en": "There, Gecko Robotics unveiled Raptor, a wall-climbing inspection robot that ADNOC is deploying across its facilities to find structural weaknesses and assess damage. Gecko says it is three to five times faster than its previous robot. On 5 November ADNOC Onshore signed a new agreement with Gecko to extend robotic inspection across its field operations.",
+    "ar": "هناك كشفت «جيكو روبوتكس» عن «رابتور»، روبوت فحص يتسلّق الجدران تنشره أدنوك في منشآتها لرصد مواطن الضعف الإنشائي وتقييم الأضرار. وتقول جيكو إنه أسرع بثلاث إلى خمس مرات من روبوتها السابق. وفي 5 نوفمبر وقّعت أدنوك البرية اتفاقية جديدة مع جيكو لتوسيع الفحص الروبوتي في عملياتها الميدانية."
+   },
+   {
+    "t": "h",
+    "en": "Why inspection, why now",
+    "ar": "لماذا الفحص، ولماذا الآن"
+   },
+   {
+    "t": "p",
+    "en": "The timing is not abstract. In March and April, Iranian missiles and drones struck ADNOC assets. A drone attack set fire to the Shah gas field on 16 March and suspended operations. Habshan was hit repeatedly, and on 3 April falling debris killed a contractor’s engineer and injured four others. Fires broke out at the Ruwais refinery. ADNOC Gas says it restored 60% of Habshan’s processing capacity soon after and is aiming for 80% by the end of 2026.",
+    "ar": "التوقيت ليس تفصيلاً. ففي مارس وأبريل ضربت صواريخ ومسيّرات إيرانية أصولاً لأدنوك: أشعل هجوم بمسيّرة حريقاً في حقل شاه للغاز في 16 مارس وأوقف عملياته، وتعرّضت حبشان لضربات متكررة، وفي 3 أبريل قتل حطام متساقط مهندساً لدى أحد المقاولين وأصاب أربعة آخرين، واندلعت حرائق في مصفاة الرويس. وتقول أدنوك للغاز إنها استعادت 60% من الطاقة المعالجة في حبشان بعد ذلك بوقت قصير، وتستهدف 80% بنهاية 2026."
+   },
+   {
+    "t": "p",
+    "en": "Every metre of damaged steel has to be checked before it carries pressure again. Done the old way, that means scaffolding, rope access, shutdowns and inspectors who are in short supply. Gecko’s crawlers read wall thickness with sensors and sound waves while the plant keeps running. “Robotics are essential to ensure that resilience and readiness is possible in a world where we don’t have a lot of these skilled workforces,” Gecko’s chief executive, Jake Loosararian, told The National.",
+    "ar": "كل متر من الفولاذ المتضرر يجب فحصه قبل أن يعود لتحمّل الضغط. وبالطريقة التقليدية يعني ذلك سقالات وحبالاً وإيقافاً للتشغيل ومفتشين تقلّ أعدادهم. أما روبوتات جيكو فتقيس سماكة الجدران بأجهزة الاستشعار والموجات الصوتية بينما تواصل المنشأة عملها. وقال الرئيس التنفيذي لجيكو، جيك لوساراريان، لصحيفة ذا ناشونال إن «الروبوتات ضرورية لضمان المرونة والجاهزية في عالم لا تتوفر فيه أعداد كافية من العمالة الماهرة»."
+   },
+   {
+    "t": "img",
+    "src": "/media/spotlight/gecko-crawler-wall.jpg",
+    "alt": {
+     "en": "Gecko Robotics crawler robot on a steel display wall at a trade show",
+     "ar": "روبوت زاحف من جيكو روبوتكس على جدار فولاذي في معرض"
+    },
+    "cap": {
+     "en": "A Gecko crawler detects corrosion in places that are hard to reach by hand.",
+     "ar": "روبوت زاحف من جيكو يرصد التآكل في أماكن يصعب الوصول إليها يدوياً."
+    },
+    "credit": {
+     "en": "Photo: Cody Combs / The National",
+     "ar": "تصوير: كودي كومبس / ذا ناشونال"
+    }
+   },
+   {
+    "t": "h",
+    "en": "Not a pilot programme",
+    "ar": "ليس برنامجاً تجريبياً"
+   },
+   {
+    "t": "p",
+    "en": "What sets ADNOC apart is how quickly it commits at scale. ADNOC Gas first used Gecko’s robots in 2023. In April 2024 it signed a contract worth up to AED110 million with Gecko and Al Masaood Energy; Gecko reported that the pilot raised asset coverage by 99.6% and projected a one-third cut in lost-time injuries from removing scaffolding. In November 2025 came a three-year programme with AIQ that ADNOC Gas says could save more than $300 million in maintenance and inspection over five years. Gecko now says it deploys tens of robots a day in the region.",
+    "ar": "ما يميّز أدنوك هو سرعة التزامها بالتوسّع. فقد استخدمت أدنوك للغاز روبوتات جيكو لأول مرة في 2023، ووقّعت في أبريل 2024 عقداً تصل قيمته إلى 110 ملايين درهم مع جيكو والمسعود للطاقة؛ وأفادت جيكو بأن التجربة رفعت تغطية الأصول بنسبة 99.6%، وتوقعت خفض الإصابات المؤدية إلى توقف العمل بمقدار الثلث بفضل الاستغناء عن السقالات. ثم جاء في نوفمبر 2025 برنامج مدته ثلاث سنوات مع «إيه آي كيو» تقول أدنوك للغاز إنه قد يوفّر أكثر من 300 مليون دولار في الصيانة والفحص خلال خمس سنوات. وتقول جيكو اليوم إنها تنشر عشرات الروبوتات يومياً في المنطقة."
+   },
+   {
+    "t": "quote",
+    "en": "“There aren’t a lot of proof-of-value meetings; there’s very much a ‘let’s scale it’ type of thinking.”",
+    "ar": "«لا توجد اجتماعات كثيرة لإثبات القيمة؛ بل هناك عقلية واضحة تقول: لنوسّع النطاق.»",
+    "who": {
+     "en": "Jake Loosararian, Gecko Robotics, on working with ADNOC (The National, August 2026)",
+     "ar": "جيك لوساراريان، جيكو روبوتكس، عن العمل مع أدنوك (ذا ناشونال، أغسطس 2026)"
+    }
+   },
+   {
+    "t": "p",
+    "en": "Gecko is only one supplier. At the Taweelah gas compression plant, an explosion-proof Taurob robot has been running autonomous inspections for gas leaks and hotspots since May, using LiDAR and thermal cameras. A heavier “operator” robot, ARGOS, designed to turn valves and read gauges, is due in service by the end of 2026. ADNOC Drilling’s AD-300 island rig, delivered in June nearly three months early, uses automated pipe handling. ADNOC L&S has ordered two 60-metre remotely operated landing craft, steered from a control centre in Mussafah. And according to the energy news site Attaqa, ADNOC Onshore has agreed to test Unitree robots, including humanoids, in its field operations.",
+    "ar": "وجيكو ليست سوى مورّد واحد. ففي محطة ضغط الغاز في الطويلة، يُجري روبوت «تاوروب» المقاوم للانفجار منذ مايو عمليات فحص ذاتية لرصد تسرّب الغاز والنقاط الساخنة باستخدام الليدار والكاميرات الحرارية. ومن المقرر أن يدخل روبوت «مشغّل» أثقل يُدعى «آرغوس»، مصمم لإدارة الصمامات وقراءة العدادات، الخدمة بنهاية 2026. وتستخدم منصة الحفر الجزرية «إيه دي-300» التابعة لأدنوك للحفر، التي سُلّمت في يونيو قبل موعدها بنحو ثلاثة أشهر، أنظمة آلية لمناولة الأنابيب. وطلبت أدنوك للإمداد والخدمات سفينتي إنزال بطول 60 متراً تُشغّلان عن بُعد من مركز تحكم في مصفح. وبحسب موقع «الطاقة»، وافقت أدنوك البرية على اختبار روبوتات «يونيتري»، ومنها روبوتات بشرية، في عملياتها الميدانية."
+   },
+   {
+    "t": "img",
+    "src": "/media/spotlight/taurob-inspector-taweelah.jpg",
+    "alt": {
+     "en": "Tracked Taurob inspection robot with an industrial plant behind it",
+     "ar": "روبوت الفحص «تاوروب» المجنزر وخلفه منشأة صناعية"
+    },
+    "cap": {
+     "en": "ADNOC’s Taurob inspector, deployed at the Taweelah gas compression plant in May 2026.",
+     "ar": "روبوت الفحص «تاوروب» من أدنوك، نُشر في محطة ضغط الغاز في الطويلة في مايو 2026."
+    },
+    "credit": {
+     "en": "Image: ADNOC, via JPT",
+     "ar": "الصورة: أدنوك، عبر JPT"
+    }
+   },
+   {
+    "t": "stats",
+    "items": [
+     {
+      "v": "AED110m",
+      "en": "Ceiling of ADNOC Gas’s 2024 Gecko contract",
+      "ar": "سقف عقد أدنوك للغاز مع جيكو في 2024"
+     },
+     {
+      "v": "$300m+",
+      "en": "Projected five-year savings, AIQ–Gecko programme (company claim)",
+      "ar": "وفورات متوقعة خلال خمس سنوات لبرنامج «إيه آي كيو» وجيكو (بحسب الشركة)"
+     },
+     {
+      "v": "70",
+      "en": "Robotics use cases “deployed or under development” (ADNOC)",
+      "ar": "حالة استخدام روبوتية «منشورة أو قيد التطوير» (أدنوك)"
+     }
+    ]
+   },
+   {
+    "t": "img",
+    "src": "/media/spotlight/adnocls-remote-landing-craft.jpg",
+    "alt": {
+     "en": "Rendering of a remotely operated landing craft at sea",
+     "ar": "تصوّر لسفينة إنزال تُشغَّل عن بُعد في البحر"
+    },
+    "cap": {
+     "en": "Rendering of the 60-metre remotely operated landing craft ordered by ADNOC L&S.",
+     "ar": "تصوّر لسفينة الإنزال بطول 60 متراً التي طلبتها أدنوك للإمداد والخدمات وتُشغَّل عن بُعد."
+    },
+    "credit": {
+     "en": "Image: ADNOC L&S",
+     "ar": "الصورة: أدنوك للإمداد والخدمات"
+    }
+   },
+   {
+    "t": "h",
+    "en": "The numbers deserve scrutiny",
+    "ar": "الأرقام تستحق التدقيق"
+   },
+   {
+    "t": "p",
+    "en": "Not all of this is as solid as the press releases suggest. Tayba Al Hashmi, chief executive of ADNOC Offshore, told an ADIPEC panel that the group has “70 robotics use cases deployed or under development”. That figure blends working robots with projects on paper, and no public breakdown exists. Raptor’s headline claims, up to 50 times faster than competitors’ robots and a 50-fold cut in data-collection cost, come from Gecko and have not been independently tested. Delivery dates drift too: ADNOC L&S said in November 2025 that its landing craft would arrive in late 2026, while its fleet team later pointed to mid-2027.",
+    "ar": "ليس كل ذلك متيناً كما توحي البيانات الصحفية. فقد قالت طيبة الهاشمي، الرئيسة التنفيذية لأدنوك البحرية، في جلسة بأديبك إن لدى المجموعة «70 حالة استخدام روبوتية منشورة أو قيد التطوير». هذا الرقم يخلط الروبوتات العاملة بمشاريع على الورق، ولا يوجد تفصيل علني له. كما أن أبرز ادعاءات «رابتور»، أي أنه أسرع بما يصل إلى 50 مرة من روبوتات المنافسين ويخفض تكلفة جمع البيانات 50 ضعفاً، صادرة عن جيكو ولم تُختبر بشكل مستقل. وتتبدّل مواعيد التسليم أيضاً: فقد قالت أدنوك للإمداد والخدمات في نوفمبر 2025 إن سفن الإنزال ستصل أواخر 2026، ثم أشار فريق أسطولها لاحقاً إلى منتصف 2027."
+   },
+   {
+    "t": "p",
+    "en": "Two figures are easy to confuse. Gecko’s $300 million US Navy deal is a contract ceiling, not guaranteed spending. ADNOC Gas’s $300 million is a projected saving. Neither is a measured result.",
+    "ar": "وهناك رقمان يسهل الخلط بينهما: صفقة جيكو مع البحرية الأمريكية بقيمة 300 مليون دولار هي سقف للعقد وليست إنفاقاً مضموناً، أما رقم أدنوك للغاز البالغ 300 مليون دولار فهو وفورات متوقعة. ولا أيّ منهما نتيجة مُقاسة."
+   },
+   {
+    "t": "h",
+    "en": "Our view",
+    "ar": "رأينا"
+   },
+   {
+    "t": "p",
+    "en": "ADNOC is doing what most operators in the region have not: buying robots as infrastructure rather than as demonstrations. The war turned inspection from a cost line into a question of resilience, and ADNOC moved accordingly. That is the right call. It will shape the Gulf’s robotics market more than any agent platform, because procurement at this scale builds the service crews, the data and possibly the local manufacturing that others can use.",
+    "ar": "تفعل أدنوك ما لم يفعله معظم المشغّلين في المنطقة: تشتري الروبوتات بوصفها بنية تحتية لا عروضاً توضيحية. فقد حوّلت الحرب الفحص من بند تكلفة إلى مسألة مرونة، وتحرّكت أدنوك وفقاً لذلك. وهذا هو القرار الصحيح، وسيشكّل سوق الروبوتات في الخليج أكثر من أي منصة وكلاء ذكيين، لأن الشراء بهذا الحجم يبني فرق الخدمة والبيانات وربما التصنيع المحلي الذي يمكن للآخرين البناء عليه."
+   },
+   {
+    "t": "p",
+    "en": "Gecko’s chief executive calls ADNOC “a technology company that happens to make oil and gas”. If so, it should report like one. Publish what the 70 use cases are and which are live. Report measured outcomes, such as inspection hours, shutdown days avoided and injuries, rather than projected savings. And say whether the UAE robot manufacturing discussed since 2025 is actually happening.",
+    "ar": "يصف الرئيس التنفيذي لجيكو أدنوك بأنها «شركة تكنولوجيا تصادف أنها تنتج النفط والغاز». وإن كان الأمر كذلك، فعليها أن تُفصح كشركة تكنولوجيا: أن تنشر ما هي حالات الاستخدام السبعون وأيّها يعمل فعلاً، وأن تعلن نتائج مُقاسة مثل ساعات الفحص وأيام التوقف التي تم تفاديها والإصابات، بدلاً من الوفورات المتوقعة، وأن توضح ما إذا كان تصنيع الروبوتات في الإمارات، المطروح منذ 2025، يحدث فعلاً."
+   },
+   {
+    "t": "h",
+    "en": "What we’re watching",
+    "ar": "ما نتابعه"
+   },
+   {
+    "t": "list",
+    "items": [
+     {
+      "en": "ARGOS, the heavy-duty operator robot, entering service at Taweelah by the end of 2026.",
+      "ar": "دخول «آرغوس»، روبوت التشغيل الثقيل، الخدمة في الطويلة بنهاية 2026."
+     },
+     {
+      "en": "How many Raptors ADNOC fields, and the first published damage-assessment results.",
+      "ar": "عدد روبوتات «رابتور» التي تنشرها أدنوك، وأول نتائج منشورة لتقييم الأضرار."
+     },
+     {
+      "en": "ADNOC Onshore’s trials of Unitree robots, including humanoids.",
+      "ar": "تجارب أدنوك البرية على روبوتات «يونيتري»، ومنها الروبوتات البشرية."
+     },
+     {
+      "en": "Delivery of the remotely operated landing craft: late 2026 or 2027.",
+      "ar": "تسليم سفن الإنزال المشغّلة عن بُعد: أواخر 2026 أم 2027."
+     },
+     {
+      "en": "Whether Gecko starts building robots in the UAE.",
+      "ar": "ما إذا كانت جيكو ستبدأ تصنيع الروبوتات في الإمارات."
+     }
+    ]
+   },
+   {
+    "t": "img",
+    "src": "/media/spotlight/adipec-2026-adnoc-humanoid.jpg",
+    "alt": {
+     "en": "Humanoid robot branded ADNOC Robotics on the ADIPEC 2026 exhibition floor",
+     "ar": "روبوت بشري يحمل علامة أدنوك للروبوتات في معرض أديبك 2026"
+    },
+    "cap": {
+     "en": "An ADNOC-branded humanoid at ADIPEC 2026.",
+     "ar": "روبوت بشري يحمل علامة أدنوك في أديبك 2026."
+    },
+    "credit": {
+     "en": "Photo: Erik Arazas / Emarat Al Youm",
+     "ar": "تصوير: إريك أرازاس / الإمارات اليوم"
+    },
+    "maxw": "380px"
+   },
+   {
+    "t": "p",
+    "en": "We will track each of these in the Robotics MENA database, and report back when the numbers arrive.",
+    "ar": "سنتابع كل ذلك في قاعدة بيانات روبوتكس مينا، ونعود إليكم حين تصل الأرقام."
+   }
+  ],
+  "sources": [
+   {
+    "name": "The National",
+    "title": "How wall-climbing robots could help Gulf energy producers recover from attacks",
+    "date": "2026-11-04",
+    "url": "https://www.thenationalnews.com/future/technology/2026/11/04/how-wall-climbing-robots-could-help-gulf-energy-producers-recover-from-attacks/"
+   },
+   {
+    "name": "ADNOC Group on X",
+    "title": "ADNOC Onshore and Gecko Robotics agreement signed at ADIPEC 2026",
+    "date": "2026-11-05",
+    "url": "https://x.com/ADNOCGroup/status/2118279593908142426"
+   },
+   {
+    "name": "The National",
+    "title": "ADNOC signs agreement with OpenAI and G42 to deploy Frontier AI",
+    "date": "2026-11-02",
+    "url": "https://thenationalnews.com/business/energy/2026/11/02/adnoc-signs-agreement-with-openai-and-g42-to-deploy-frontier-ai"
+   },
+   {
+    "name": "Khaleej Times",
+    "title": "Adnoc expands AI across energy operations, with 70 robotic use cases",
+    "date": "2026-11-03",
+    "url": "https://www.khaleejtimes.com/uae/adnoc-expansion-ai-robotics-energy-operations"
+   },
+   {
+    "name": "Attaqa (الطاقة)",
+    "title": "ADNOC Onshore agreement with Unitree to test robotics and humanoid technologies (Arabic)",
+    "date": "2026-11-04",
+    "url": "https://attaqa.net/?p=651656"
+   },
+   {
+    "name": "Emarat Al Youm",
+    "title": "Robots on show at ADIPEC 2026 (Arabic)",
+    "date": "2026-11-03",
+    "url": "https://www.emaratalyoum.com/business/local/2026-11-03-1.2098674"
+   },
+   {
+    "name": "The National",
+    "title": "Adnoc’s approach has made the UAE a ‘top five’ robotic country",
+    "date": "2026-08-25",
+    "url": "https://www.thenationalnews.com/future/technology/2026/08/25/gecko-robotics-uae-adnoc/"
+   },
+   {
+    "name": "The National",
+    "title": "Gecko Robotics chief says partnership with Adnoc and UAE stronger than ever",
+    "date": "2026-03-27",
+    "url": "https://www.thenationalnews.com/future/technology/2026/03/27/gecko-robotics-jake-loosararian-adnoc/"
+   },
+   {
+    "name": "Gecko Robotics",
+    "title": "US Navy IDIQ expansion",
+    "date": "2026-10-20",
+    "url": "https://www.geckorobotics.com/news/navy-idiq-expansion"
+   },
+   {
+    "name": "ADNOC Gas",
+    "title": "ADNOC Gas, AIQ and Gecko Robotics programme",
+    "date": "2025-11-02",
+    "url": "https://adnocgas.ae/en/news-and-media/press-releases/2025/gecko-aiq"
+   },
+   {
+    "name": "Gecko Robotics",
+    "title": "Gecko to help ADNOC Gas revolutionize asset operations and maintenance",
+    "date": "2024-04-29",
+    "url": "https://www.geckorobotics.com/news/gecko-to-help-adnoc-gas-revolutionize-asset-operations-and-maintenance"
+   },
+   {
+    "name": "Hydrocarbon Processing",
+    "title": "ADNOC deploys heavy-duty inspector robot for hazardous environments",
+    "date": "2026-05-21",
+    "url": "https://hydrocarbonprocessing.com/news/2026/05/adnoc-deploys-heavy-duty-inspector-robot-for-hazardous-environments/"
+   },
+   {
+    "name": "Interesting Engineering",
+    "title": "Heavy-duty robot takes over hazardous inspections at UAE gas plant",
+    "date": "2026-05-22",
+    "url": "https://interestingengineering.com/ai-robotics/heavy-duty-robot-uae-gas-plant"
+   },
+   {
+    "name": "JPT",
+    "title": "ADNOC Touts Robotic Deployment With More to Come",
+    "date": "2026-06-12",
+    "url": "https://jpt.spe.org/adnoc-touts-robotic-deployment-with-more-to-come"
+   },
+   {
+    "name": "OE Digital",
+    "title": "Walking Into the Future: ADNOC Drilling Unveils First AI-Powered Island Rig",
+    "date": "2026-06-25",
+    "url": "https://www.oedigital.com/news/540638-walking-into-the-future-adnoc-drilling-unveils-first-ai-powered-island-rig"
+   },
+   {
+    "name": "Zawya (ADNOC L&S release)",
+    "title": "ADNOC L&S unveils the UAE’s first autonomous offshore vessels",
+    "date": "2025-11-13",
+    "url": "https://www.zawya.com/en/press-release/companies-news/adnoc-ls-unveils-the-uaes-first-autonomous-offshore-vessels-to-enhance-operational-efficiency-and-increase-sustainability-503125"
+   },
+   {
+    "name": "OE Digital",
+    "title": "ADNOC L&S Presents UAE’s First Autonomous Offshore Vessels",
+    "date": "2025-11-14",
+    "url": "https://www.oedigital.com/news/532459-adnoc-l-s-presents-uae-s-first-autonomous-offshore-vessels"
+   },
+   {
+    "name": "Riviera",
+    "title": "ADNOC targets 5m barrels per day with AI fleet efficiency gains",
+    "date": "2025-12-18",
+    "url": "https://www.rivieramm.com/news-content-hub/adnoc-targets-5m-barrels-per-day-with-ai-fleet-efficiency-gains-87210"
+   },
+   {
+    "name": "gCaptain / Bloomberg",
+    "title": "Here’s a list of Gulf energy infrastructure damaged in Iran war",
+    "date": "2026-04-12",
+    "url": "https://gcaptain.com/heres-a-list-of-gulf-energy-infrastructure-damaged-in-iran-war/"
+   },
+   {
+    "name": "Khaleej Times",
+    "title": "Adnoc Gas to restore 80% of Habshan complex by 2026-end after attack damage",
+    "date": "2026-05-12",
+    "url": "https://www.khaleejtimes.com/business/adnoc-gas-says-it-will-restore-80-of-habshan-capacity-by-2026-end"
+   }
+  ],
+  "related": [
+   {
+    "en": "Gecko Robotics",
+    "ar": "جيكو روبوتكس",
+    "href": "/database?tab=companies&id=gecko-robotics"
+   },
+   {
+    "en": "Raptor at ADNOC (deployment)",
+    "ar": "رابتور في أدنوك (نشر)",
+    "href": "/database?tab=deployments&id=d03"
+   },
+   {
+    "en": "Deployments map",
+    "ar": "خريطة النشر",
+    "href": "/map"
+   }
+  ]
+ }
+]
