@@ -1,12 +1,13 @@
-# Brief images
+# Brief images (week 45 · 2 – 8 Nov 2026)
 
-Each image is the lead image from the story's primary announcement, cropped to 800×500 for the brief tiles. Credits are shown on each tile and the tile links to the source.
-They are published by the organisations for media coverage of these announcements; confirm usage rights with each owner before public launch.
+Each image is the lead image of the story it illustrates, cropped to 800×500. The credit is shown on the tile and the tile links to the story.
+Most are editorial photos owned by the publisher or a news agency: get permission (or licence them) before public launch, or replace them with press-kit images from the organisations named.
 
 | File | Credit | Source page |
 |---|---|---|
-| qss-humanoid-showroom.jpg | Humanoid | https://thehumanoid.ai/humanoid-and-qss-ai-robotics-launch-menas-first-humanoid-robotics-showroom/ |
-| tii-nvidia-lab.jpg | TII | https://www.tii.ae/news/abu-dhabis-tii-and-nvidia-launch-middle-easts-first-joint-ai-robotics-nvaitc-research-lab |
-| bfl-iq-robotics.jpg | IQ Robotics | https://www.iqholding.com/iq-robotics-expands-partnership-with-bfl-group/ |
-| eand-qualcomm.jpg | e& / GEC Newswire | https://gecnewswire.com/e-and-qualcomm-technologies-announce-new-collaboration/ |
-| analog-boston-dynamics.jpg | Analog | https://analog.io/news/physical-intelligence-on-four-legs |
+| lootah-humanoid-showroom.jpg | Chris Whiteoak / The National | https://www.thenationalnews.com/news/uae/2026/11/06/uae-opens-its-first-humanoid-robotics-showroom-as-dubai-races-to-200000-robots/ |
+| uber-driverless-uae.jpg | WAM via AGBI | https://www.agbi.com/transport/2026/11/uber-to-have-200-driverless-cars-on-uae-roads-this-year/ |
+| qmic-mwc-doha.jpg | QMIC | https://qmic.com/2026/11/04/qmic-showcases-qatar-built-cutting-edge-technologies-in-embodied-intelligence-and-smart-city-systems-at-mwc-doha-2026/ |
+| saudi-robotic-reconstruction.jpg | MedEdge MEA | https://mededgemea.com/saudi-arabia-marks-milestone-in-advanced-breast-reconstruction-surgery/ |
+
+X-GEN (Egypt) has no image: its publisher's image server blocks downloads, so the tile shows a branded panel instead.
