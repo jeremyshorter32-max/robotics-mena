@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Submit — Robotics MENA</title>
+<meta name="description" content="A curated, sourced record of who is building and deploying robotics, physical AI and automation across the Middle East and North Africa.">
+<script>/*@config {"page":"submit","nav":["submit"]}*/</script>
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Readex+Pro:wght@300;400;500;600;700&display=swap">
+<script src="/vendor/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"></script>
+<script src="/vendor/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67"></script>
+<script src="/image-slot.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#F2F3F7}
+*{box-sizing:border-box}
+[data-rm]{--font-sans:'Readex Pro',system-ui,sans-serif;--font-label:'IBM Plex Mono',ui-monospace,monospace;--font-num:'IBM Plex Mono',ui-monospace,monospace;--label-track:.08em;--label-case:uppercase;--track-tight:-0.028em;--lh-display:1.02;--lh-body:1.5;--fade-dir:to right;--gutter:64px;--gap:24px;--grid:repeat(12,minmax(0,1fr));--span-label:1 / span 3;--span-main:4 / -1;--sec-pad:88px;--d-desk:flex;--d-nav:flex;--d-mob:none;--fs-display:88px;--fs-h2:32px;--hero-pad:128px;--stats-cols:repeat(4,minmax(0,1fr));--brief-cols:72px minmax(0,1fr) 240px;--brief-meta:3;--map-h:720px;--panel-pos:absolute;--panel-w:384px;--panel-top:24px;--panel-end:24px;--panel-margin:0;--panel-maxh:calc(100% - 48px);--spot-cols:minmax(0,7fr) minmax(0,5fr);--ev-cols:112px minmax(0,1fr) 128px 112px 176px;--ev-tail:flex;--two-cols:minmax(0,1fr) minmax(0,1fr);--card-w:400px;--rail-pad:max(var(--gutter),calc((100vw - 1440px) / 2 + var(--gutter)));--three-cols:repeat(3,minmax(0,1fr));--rail-order:1;--rail-flex:1 1 0;--rail-h:64px;--rail-bt:0;--rail-mx:0;--rail-px:0;--chip-wrap:wrap;--chip-lbl:flex;--fs-page:56px;--dos-pad:32px;--aside-bs:1px solid var(--line);--aside-bt:0}
+[data-rm][dir=rtl]{--font-sans:'Readex Pro',system-ui,sans-serif;--font-label:'Readex Pro',sans-serif;--font-num:'Readex Pro','IBM Plex Mono',sans-serif;--label-track:0;--label-case:none;--track-tight:0;--lh-display:1.28;--lh-body:1.75;--fade-dir:to left}
+@media (max-width:1180px){[data-rm][dir]{--d-nav:none;--span-label:1 / -1;--span-main:1 / -1;--fs-display:64px;--hero-pad:96px;--three-cols:minmax(0,1fr);--ev-cols:88px minmax(0,1fr) auto;--ev-tail:none;--panel-pos:relative;--panel-w:auto;--panel-top:auto;--panel-end:auto;--panel-margin:16px var(--gutter);--panel-maxh:none;--rail-order:3;--rail-flex:1 1 100%;--rail-h:44px;--rail-bt:1px solid var(--line);--rail-mx:0 calc(var(--gutter) * -1);--rail-px:var(--gutter)}}
+@media (max-width:900px){[data-rm][dir]{--gutter:20px;--gap:16px;--grid:repeat(4,minmax(0,1fr));--span-label:1 / -1;--span-main:1 / -1;--sec-pad:56px;--d-desk:none;--d-mob:flex;--fs-display:44px;--fs-h2:28px;--hero-pad:40px;--stats-cols:repeat(2,minmax(0,1fr));--brief-cols:40px minmax(0,1fr);--brief-meta:2;--map-h:460px;--panel-pos:relative;--panel-w:auto;--spot-cols:minmax(0,1fr);--ev-cols:64px minmax(0,1fr);--ev-tail:none;--two-cols:minmax(0,1fr);--three-cols:minmax(0,1fr);--fade-dir:to bottom;--ev-btn-col:2;--card-w:84vw;--chip-wrap:nowrap;--chip-lbl:none;--fs-page:36px;--dos-pad:20px;--aside-bs:0;--aside-bt:1px solid var(--line)}}
+[data-theme=dark]{--bg:#0B0B12;--bg-raised:#14141D;--bg-hover:#1D1E29;--bg-glass:rgba(11,11,18,.82);--fg:#EEF0F6;--fg-muted:#A9ADBD;--fg-subtle:#82869A;--line:#23242F;--line-strong:#363848;--sand:#3CCBE6;--sand-soft:rgba(60,203,230,.08);--lattice:rgba(139,116,255,.07);--glow-a:rgba(139,116,255,.20);--glow-b:rgba(60,203,230,.12);--dot:rgba(238,240,246,.08);--khatam:rgba(139,116,255,.26);--map-sea:#0D0D15;--map-land:#171822;--map-land-mena:#232535;--map-border:#3A3D52;--map-coast:#5A5E78;color-scheme:dark}
+[data-theme=light]{--bg:#F2F3F7;--bg-raised:#FFFFFF;--bg-hover:#E7E9EF;--bg-glass:rgba(242,243,247,.86);--fg:#12121A;--fg-muted:#4E5160;--fg-subtle:#5F6377;--line:#DCDEE6;--line-strong:#C9CCD8;--sand:#007A96;--sand-soft:rgba(0,122,150,.08);--lattice:rgba(91,61,245,.06);--glow-a:rgba(91,61,245,.13);--glow-b:rgba(0,150,185,.10);--dot:rgba(18,18,26,.10);--khatam:rgba(91,61,245,.22);--map-sea:#EDEFF4;--map-land:#E1E4EC;--map-land-mena:#FFFFFF;--map-border:#C2C7D4;--map-coast:#8F96AB;color-scheme:light}
+[data-theme=dark][data-accent=violet]{--accent:#8B74FF;--accent-text:#A493FF;--accent-ink:#0B0820;--accent-soft:rgba(139,116,255,.16)}
+[data-theme=dark][data-accent=cyan]{--accent:#3CCBE6;--accent-text:#5ED6EC;--accent-ink:#04161B;--accent-soft:rgba(60,203,230,.14)}
+[data-theme=light][data-accent=violet]{--accent:#5B3DF5;--accent-text:#4F2FE8;--accent-ink:#FFFFFF;--accent-soft:rgba(91,61,245,.10)}
+[data-theme=light][data-accent=cyan]{--accent:#007A96;--accent-text:#006E87;--accent-ink:#FFFFFF;--accent-soft:rgba(0,122,150,.10)}
+[data-rm] a{color:inherit;text-decoration:none}
+[data-rm] a:hover{color:var(--accent-text)}
+[data-rm] :focus-visible{outline:2px solid var(--accent-text);outline-offset:2px}
+[data-rm] button,[data-rm] input,[data-rm] select,[data-rm] textarea{font:inherit;color:inherit}
+[data-rm] ::placeholder{color:var(--fg-subtle);opacity:1}
+[data-rail]::-webkit-scrollbar{display:none}
+@keyframes rm-live{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){[data-rm] *{transition:none!important;animation:none!important}}
+</style>
+</helmet>
+<div data-rm="" data-theme="{{ theme }}" data-accent="{{ accent }}" dir="{{ dir }}" lang="{{ lang }}" style="background:var(--bg);color:var(--fg);font-family:var(--font-sans);font-size:16px;line-height:var(--lh-body);font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;min-height:100vh">
+
+<nav aria-label="Primary" style="position:sticky;top:0;z-index:50;background:var(--bg-glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)">
+  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:flex;flex-wrap:wrap;align-items:center;column-gap:32px">
+    <a href="{{ homeHref }}" style="order:0;height:64px;display:flex;align-items:center;gap:12px;flex:none">
+      <span aria-hidden="true" style="width:24px;height:24px;position:relative;display:block;flex:none"><span style="position:absolute;inset:4px;border:1.5px solid var(--fg)"></span><span style="position:absolute;inset:4px;border:1.5px solid var(--fg);transform:rotate(45deg)"></span><span style="position:absolute;left:10px;top:10px;width:4px;height:4px;border-radius:50%;background:var(--accent)"></span></span>
+      <span style="font-weight:600;font-size:16px;letter-spacing:var(--track-tight)">{{ t.brand }}</span>
+    </a>
+    <div style="order:2;height:64px;margin-inline-start:auto;display:flex;align-items:center;gap:8px">
+      <button onClick="{{ toggleTheme }}" aria-label="{{ themeAria }}" style="height:36px;padding:0 12px;background:transparent;border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;font-size:13px;color:var(--fg-muted)">{{ themeLabel }}</button>
+      <button onClick="{{ toggleLang }}" lang="{{ otherLang }}" style="height:36px;padding:0 12px;background:transparent;border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;font-size:14px;font-family:{{ otherFont }}">{{ t.langSwitch }}</button>
+      <a href="#newsletter" onClick="{{ goNewsletter }}" style="display:var(--d-desk);align-items:center;height:36px;padding:0 16px;background:var(--accent);color:var(--accent-ink);border-radius:2px;font-size:14px;font-weight:600;white-space:nowrap">{{ t.subscribe }}</a>
+    </div>
+    <div ref="{{ tabRail }}" data-rail="" role="navigation" aria-label="{{ t.sections }}" style="order:var(--rail-order);flex:var(--rail-flex);min-width:0;position:relative;margin:var(--rail-mx);padding-inline:var(--rail-px);border-top:var(--rail-bt);height:var(--rail-h);display:flex;gap:20px;overflow-x:auto;scrollbar-width:none;white-space:nowrap">
+      <sc-for list="{{ nav }}" as="n" hint-placeholder-count="6">
+        <a href="{{ n.href }}" data-tab="{{ n.id }}" aria-current="{{ n.cur }}" onClick="{{ n.go }}" style="display:flex;align-items:center;gap:8px;height:var(--rail-h);flex:none;font-size:14px;color:{{ n.color }};border-bottom:2px solid {{ n.bd }};transition:color .15s,border-color .15s" style-hover="color:var(--fg)">{{ n.label }}</a>
+      </sc-for>
+    </div>
+  </div>
+</nav>
+
+<header id="top" data-screen-label="01 Page header" style="position:relative;overflow:hidden;isolation:isolate;border-bottom:1px solid var(--line)">
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 50% 90% at 88% 0%,var(--glow-a),transparent 70%),radial-gradient(ellipse 35% 70% at 100% 100%,var(--glow-b),transparent 70%)"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:repeating-linear-gradient(45deg,var(--lattice) 0 1px,transparent 1px 32px),repeating-linear-gradient(-45deg,var(--lattice) 0 1px,transparent 1px 32px);-webkit-mask-image:linear-gradient(var(--fade-dir),transparent 45%,#000);mask-image:linear-gradient(var(--fade-dir),transparent 45%,#000)"></div>
+  <div style="max-width:1440px;margin:0 auto;padding:48px var(--gutter) 56px;display:flex;flex-direction:column;gap:20px">
+    <nav aria-label="{{ t.crumbs }}">
+      <ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--fg-subtle)">
+        <li><a href="{{ homeHref }}" style="color:var(--fg-muted)">{{ t.crumbHome }}</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page" style="color:var(--fg)">{{ t.s10 }}</li>
+      </ol>
+    </nav>
+    <h1 style="margin:0;max-width:900px;font-size:var(--fs-page);line-height:1.08;letter-spacing:var(--track-tight);font-weight:600;text-wrap:balance">{{ t.s10 }}</h1>
+    <p style="margin:0;max-width:720px;font-size:19px;line-height:1.55;color:var(--fg-muted);text-wrap:pretty">{{ t.s10sub }}</p>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px"><span style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-num);color:var(--fg-subtle)"><span style="width:6px;height:6px;transform:rotate(45deg);background:var(--accent)"></span>{{ statsUpd }}</span></div>
+  </div>
+</header>
+
+<main>
+<section id="submit" data-screen-label="02 Submit" style="padding:48px 0 var(--sec-pad)">
+  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:var(--grid);column-gap:var(--gap);row-gap:32px">
+    <div style="grid-column:1 / -1;display:grid;grid-template-columns:var(--spot-cols);gap:32px var(--gap);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div role="tablist" aria-label="{{ t.s10 }}" style="display:flex;border-bottom:1px solid var(--line);overflow-x:auto;overflow-y:hidden;scrollbar-width:none">
+          <sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="3"><button role="tab" id="{{ tb.id }}" aria-controls="rm-tabpanel" tabindex="{{ tb.ti }}" aria-selected="{{ tb.pressed }}" onClick="{{ tb.onClick }}" onKeyDown="{{ onTabKey }}" style="height:48px;padding:0 16px;background:transparent;border:0;border-bottom:2px solid {{ tb.bd }};margin-bottom:-1px;color:{{ tb.fg }};font-size:15px;font-weight:500;cursor:pointer;white-space:nowrap;flex:none">{{ tb.label }}</button></sc-for>
+        </div>
+        <div id="rm-tabpanel" role="tabpanel" aria-labelledby="{{ tabId }}">
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submitForm }}" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px var(--gap)">
+            <sc-for list="{{ fields }}" as="f" hint-placeholder-count="6">
+              <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--fg-muted)"><span>{{ f.label }}<sc-if value="{{ f.req }}"><span aria-hidden="true" style="color:var(--fg-subtle)"> *</span></sc-if></span>
+                <input name="{{ f.name }}" required="{{ f.req }}" type="{{ f.type }}" placeholder="{{ f.ph }}" dir="{{ f.dir }}" style="height:44px;padding:0 12px;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:2px;font-size:15px;color:var(--fg)">
+              </label>
+            </sc-for>
+            <label style="grid-column:1 / -1;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--fg-muted)">{{ t.notes }}<textarea name="notes" rows="3" style="padding:12px;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:2px;font-size:15px;resize:vertical"></textarea></label>
+            <div style="grid-column:1 / -1;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+              <button type="submit" style="height:48px;padding:0 24px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:2px;font-size:15px;font-weight:600;cursor:pointer">{{ t.submitBtn }}</button>
+              <span style="font-size:12px;color:var(--fg-subtle)">{{ t.reqNote }}</span>
+            </div>
+          </form>
+        </sc-if>
+        <sc-if value="{{ submitted }}"><div role="status" style="padding:24px;border:1px solid var(--accent);display:flex;flex-direction:column;gap:12px;align-items:flex-start"><strong style="font-size:22px;font-weight:600">{{ t.submittedTitle }}</strong><span style="color:var(--fg-muted);font-size:15px">{{ t.submittedMsg }}</span><button onClick="{{ resetForm }}" style="height:36px;padding:0 14px;background:transparent;border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;font-size:13px">{{ t.another }}</button></div></sc-if>
+        </div>
+      </div>
+      <aside style="border-top:1px solid var(--fg);padding-top:16px;display:flex;flex-direction:column;gap:12px">
+        <h3 style="margin:0;font-size:15px;font-weight:600">{{ t.reviewTitle }}</h3>
+        <ol style="margin:0;padding-inline-start:20px;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--fg-muted)">
+          <sc-for list="{{ t.reviewSteps }}" as="r" hint-placeholder-count="3"><li>{{ r }}</li></sc-for>
+        </ol>
+        <p style="margin:0;font-size:13px;color:var(--fg-subtle)">{{ t.reviewNote }}</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer data-screen-label="03 Footer" style="position:relative;overflow:hidden;isolation:isolate;border-top:1px solid var(--line);padding:72px 0 40px;background:var(--bg)">
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(to bottom,transparent,var(--glow-a))"></div>
+  <svg aria-hidden="true" viewBox="0 0 200 200" fill="none" stroke="var(--khatam)" stroke-width="1" style="position:absolute;z-index:-1;pointer-events:none;width:680px;height:680px;bottom:-300px;inset-inline-end:-160px"><g vector-effect="non-scaling-stroke"><rect x="41" y="41" width="118" height="118" vector-effect="non-scaling-stroke"></rect><rect x="41" y="41" width="118" height="118" transform="rotate(45 100 100)" vector-effect="non-scaling-stroke"></rect><rect x="62" y="62" width="76" height="76" vector-effect="non-scaling-stroke"></rect><rect x="62" y="62" width="76" height="76" transform="rotate(45 100 100)" vector-effect="non-scaling-stroke"></rect><circle cx="100" cy="100" r="58" vector-effect="non-scaling-stroke" stroke-dasharray="2 6"></circle><circle cx="100" cy="100" r="2.5" fill="var(--accent)" stroke="none"></circle></g></svg>
+  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px var(--gap)">
+    <sc-for list="{{ t.foot }}" as="f" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <h3 style="margin:0;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ f.h }}</h3>
+        <p style="margin:0;font-size:14px;color:var(--fg-muted);text-wrap:pretty">{{ f.b }}</p>
+        <a href="{{ f.href }}" style="font-size:14px;border-bottom:1px solid var(--line-strong);align-self:flex-start;padding-bottom:2px">{{ f.l }}</a>
+      </div>
+    </sc-for>
+  </div>
+  <div style="max-width:1440px;margin:56px auto 0;padding:24px var(--gutter) 0;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;font-size:12px;color:var(--fg-subtle);border-top:1px solid var(--line)">
+    <span>{{ t.copyright }}</span><span>{{ t.demoNote }}</span>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;dark&quot;,&quot;light&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'dark'|'light'&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;violet&quot;,&quot;cyan&quot;],&quot;default&quot;:&quot;violet&quot;,&quot;tsType&quot;:&quot;'violet'|'cyan'&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;ar&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;'en'|'ar'&quot;,&quot;section&quot;:&quot;Language&quot;},&quot;arabicNumerals&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;latn&quot;,&quot;arab&quot;],&quot;default&quot;:&quot;latn&quot;,&quot;tsType&quot;:&quot;'latn'|'arab'&quot;,&quot;section&quot;:&quot;Language&quot;}}">/*@logic*/</script>
+</body>
+</html>

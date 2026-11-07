@@ -3,14 +3,23 @@
 # If SITE_PASSWORD is set, every page is encrypted behind a password screen.
 # If PUBLIC_LAUNCH=true, the site is published openly (no password).
 # If neither is set, the build stops, so the site is never published unprotected by accident.
+# DEV=1 builds an unprotected copy for local previews only (never used by the deploy workflow).
 set -euo pipefail
+cd "$(dirname "$0")/.."
 
 # Fixed salt (not secret) so "Remember me" keeps working across pages and deploys.
 SALT="fe91cbfea197c5c38048c73f478b0de4"
 
 rm -rf _site
 mkdir _site
-cp -r *.html *.js vendor CNAME .nojekyll .image-slots.state.json _site/
+cp -r *.js vendor CNAME .nojekyll .image-slots.state.json _site/
+node scripts/validate-data.mjs
+node scripts/assemble.cjs _site
+
+if [ "${DEV:-}" = "1" ]; then
+  echo "DEV=1: local preview build, no password."
+  exit 0
+fi
 
 if [ "${PUBLIC_LAUNCH:-}" = "true" ]; then
   echo "PUBLIC_LAUNCH=true: publishing without a password."

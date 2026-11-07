@@ -1,0 +1,64 @@
+name: Weekly database scan
+
+# Every Monday morning (UTC), search the web for new MENA robotics entries and open a pull request
+# with them for review. Nothing goes live until the pull request is merged.
+on:
+  schedule:
+    - cron: '23 4 * * 1'
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'How many days back to search'
+        default: '7'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Check the API key is set
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::ANTHROPIC_API_KEY secret is not set. Add it in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+      - name: Scan the web for new entries
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/scan.mjs --days "${{ inputs.days || '7' }}" --summary "$RUNNER_TEMP/summary.md"
+      - name: Check the data
+        run: node scripts/validate-data.mjs
+      - name: Open a pull request for review
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- data/; then
+            echo "No new entries this week."
+            exit 0
+          fi
+          branch="scan/$(date -u +%Y-%m-%d)-${{ github.run_id }}"
+          git config user.name "robotics-mena-scanner[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data/
+          git commit -m "Weekly scan: new database entries ($(date -u +%Y-%m-%d))"
+          git push -u origin "$branch"
+          gh pr create --base main --head "$branch" \
+            --title "Weekly scan: new database entries ($(date -u '+%d %b %Y'))" \
+            --body-file "$RUNNER_TEMP/summary.md"

@@ -1,263 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Policy <meta name="viewport" content="width=device-width, initial-scale=1">amp; data — Robotics MENA</title>
-<meta name="description" content="A curated, sourced record of who is building and deploying robotics, physical AI and automation across the Middle East and North Africa.">
-<script src="/support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Readex+Pro:wght@300;400;500;600;700&display=swap">
-<script src="/vendor/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"></script>
-<script src="/vendor/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67"></script>
-<script src="/image-slot.js"></script>
-<style>
-html,body{margin:0;padding:0;background:#F2F3F7}
-*{box-sizing:border-box}
-[data-rm]{--font-sans:'Readex Pro',system-ui,sans-serif;--font-label:'IBM Plex Mono',ui-monospace,monospace;--font-num:'IBM Plex Mono',ui-monospace,monospace;--label-track:.08em;--label-case:uppercase;--track-tight:-0.028em;--lh-display:1.02;--lh-body:1.5;--fade-dir:to right;--gutter:64px;--gap:24px;--grid:repeat(12,minmax(0,1fr));--span-label:1 / span 3;--span-main:4 / -1;--sec-pad:88px;--d-desk:flex;--d-nav:flex;--d-mob:none;--fs-display:88px;--fs-h2:32px;--hero-pad:128px;--stats-cols:repeat(4,minmax(0,1fr));--brief-cols:72px minmax(0,1fr) 240px;--brief-meta:3;--map-h:720px;--panel-pos:absolute;--panel-w:384px;--panel-top:24px;--panel-end:24px;--panel-margin:0;--panel-maxh:calc(100% - 48px);--spot-cols:minmax(0,7fr) minmax(0,5fr);--ev-cols:112px minmax(0,1fr) 128px 112px 176px;--ev-tail:flex;--two-cols:minmax(0,1fr) minmax(0,1fr);--card-w:400px;--rail-pad:max(var(--gutter),calc((100vw - 1440px) / 2 + var(--gutter)));--three-cols:repeat(3,minmax(0,1fr));--rail-order:1;--rail-flex:1 1 0;--rail-h:64px;--rail-bt:0;--rail-mx:0;--rail-px:0;--chip-wrap:wrap;--chip-lbl:flex;--fs-page:56px;--dos-pad:32px;--aside-bs:1px solid var(--line);--aside-bt:0}
-[data-rm][dir=rtl]{--font-sans:'Readex Pro',system-ui,sans-serif;--font-label:'Readex Pro',sans-serif;--font-num:'Readex Pro','IBM Plex Mono',sans-serif;--label-track:0;--label-case:none;--track-tight:0;--lh-display:1.28;--lh-body:1.75;--fade-dir:to left}
-@media (max-width:1180px){[data-rm][dir]{--d-nav:none;--span-label:1 / -1;--span-main:1 / -1;--fs-display:64px;--hero-pad:96px;--three-cols:minmax(0,1fr);--ev-cols:88px minmax(0,1fr) auto;--ev-tail:none;--panel-pos:relative;--panel-w:auto;--panel-top:auto;--panel-end:auto;--panel-margin:16px var(--gutter);--panel-maxh:none;--rail-order:3;--rail-flex:1 1 100%;--rail-h:44px;--rail-bt:1px solid var(--line);--rail-mx:0 calc(var(--gutter) * -1);--rail-px:var(--gutter)}}
-@media (max-width:900px){[data-rm][dir]{--gutter:20px;--gap:16px;--grid:repeat(4,minmax(0,1fr));--span-label:1 / -1;--span-main:1 / -1;--sec-pad:56px;--d-desk:none;--d-mob:flex;--fs-display:44px;--fs-h2:28px;--hero-pad:40px;--stats-cols:repeat(2,minmax(0,1fr));--brief-cols:40px minmax(0,1fr);--brief-meta:2;--map-h:460px;--panel-pos:relative;--panel-w:auto;--spot-cols:minmax(0,1fr);--ev-cols:64px minmax(0,1fr);--ev-tail:none;--two-cols:minmax(0,1fr);--three-cols:minmax(0,1fr);--fade-dir:to bottom;--ev-btn-col:2;--card-w:84vw;--chip-wrap:nowrap;--chip-lbl:none;--fs-page:36px;--dos-pad:20px;--aside-bs:0;--aside-bt:1px solid var(--line)}}
-[data-theme=dark]{--bg:#0B0B12;--bg-raised:#14141D;--bg-hover:#1D1E29;--bg-glass:rgba(11,11,18,.82);--fg:#EEF0F6;--fg-muted:#A9ADBD;--fg-subtle:#82869A;--line:#23242F;--line-strong:#363848;--sand:#3CCBE6;--sand-soft:rgba(60,203,230,.08);--lattice:rgba(139,116,255,.07);--glow-a:rgba(139,116,255,.20);--glow-b:rgba(60,203,230,.12);--dot:rgba(238,240,246,.08);--khatam:rgba(139,116,255,.26);--map-sea:#0D0D15;--map-land:#171822;--map-land-mena:#232535;--map-border:#3A3D52;--map-coast:#5A5E78;color-scheme:dark}
-[data-theme=light]{--bg:#F2F3F7;--bg-raised:#FFFFFF;--bg-hover:#E7E9EF;--bg-glass:rgba(242,243,247,.86);--fg:#12121A;--fg-muted:#4E5160;--fg-subtle:#5F6377;--line:#DCDEE6;--line-strong:#C9CCD8;--sand:#007A96;--sand-soft:rgba(0,122,150,.08);--lattice:rgba(91,61,245,.06);--glow-a:rgba(91,61,245,.13);--glow-b:rgba(0,150,185,.10);--dot:rgba(18,18,26,.10);--khatam:rgba(91,61,245,.22);--map-sea:#EDEFF4;--map-land:#E1E4EC;--map-land-mena:#FFFFFF;--map-border:#C2C7D4;--map-coast:#8F96AB;color-scheme:light}
-[data-theme=dark][data-accent=violet]{--accent:#8B74FF;--accent-text:#A493FF;--accent-ink:#0B0820;--accent-soft:rgba(139,116,255,.16)}
-[data-theme=dark][data-accent=cyan]{--accent:#3CCBE6;--accent-text:#5ED6EC;--accent-ink:#04161B;--accent-soft:rgba(60,203,230,.14)}
-[data-theme=light][data-accent=violet]{--accent:#5B3DF5;--accent-text:#4F2FE8;--accent-ink:#FFFFFF;--accent-soft:rgba(91,61,245,.10)}
-[data-theme=light][data-accent=cyan]{--accent:#007A96;--accent-text:#006E87;--accent-ink:#FFFFFF;--accent-soft:rgba(0,122,150,.10)}
-[data-rm] a{color:inherit;text-decoration:none}
-[data-rm] a:hover{color:var(--accent-text)}
-[data-rm] :focus-visible{outline:2px solid var(--accent-text);outline-offset:2px}
-[data-rm] button,[data-rm] input,[data-rm] select,[data-rm] textarea{font:inherit;color:inherit}
-[data-rm] ::placeholder{color:var(--fg-subtle);opacity:1}
-[data-rail]::-webkit-scrollbar{display:none}
-@keyframes rm-live{0%,100%{opacity:1}50%{opacity:.35}}
-@media (prefers-reduced-motion:reduce){[data-rm] *{transition:none!important;animation:none!important}}
-</style>
-</helmet>
-<div data-rm="" data-theme="{{ theme }}" data-accent="{{ accent }}" dir="{{ dir }}" lang="{{ lang }}" style="background:var(--bg);color:var(--fg);font-family:var(--font-sans);font-size:16px;line-height:var(--lh-body);font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;min-height:100vh">
 
-<nav aria-label="Primary" style="position:sticky;top:0;z-index:50;background:var(--bg-glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)">
-  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:flex;flex-wrap:wrap;align-items:center;column-gap:32px">
-    <a href="{{ homeHref }}" style="order:0;height:64px;display:flex;align-items:center;gap:12px;flex:none">
-      <span aria-hidden="true" style="width:24px;height:24px;position:relative;display:block;flex:none"><span style="position:absolute;inset:4px;border:1.5px solid var(--fg)"></span><span style="position:absolute;inset:4px;border:1.5px solid var(--fg);transform:rotate(45deg)"></span><span style="position:absolute;left:10px;top:10px;width:4px;height:4px;border-radius:50%;background:var(--accent)"></span></span>
-      <span style="font-weight:600;font-size:16px;letter-spacing:var(--track-tight)">{{ t.brand }}</span>
-    </a>
-    <div style="order:2;height:64px;margin-inline-start:auto;display:flex;align-items:center;gap:8px">
-      <button onClick="{{ toggleTheme }}" aria-label="{{ themeAria }}" style="height:36px;padding:0 12px;background:transparent;border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;font-size:13px;color:var(--fg-muted)">{{ themeLabel }}</button>
-      <button onClick="{{ toggleLang }}" lang="{{ otherLang }}" style="height:36px;padding:0 12px;background:transparent;border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;font-size:14px;font-family:{{ otherFont }}">{{ t.langSwitch }}</button>
-      <a href="#newsletter" onClick="{{ goNewsletter }}" style="display:var(--d-desk);align-items:center;height:36px;padding:0 16px;background:var(--accent);color:var(--accent-ink);border-radius:2px;font-size:14px;font-weight:600;white-space:nowrap">{{ t.subscribe }}</a>
-    </div>
-    <div ref="{{ tabRail }}" data-rail="" role="navigation" aria-label="{{ t.sections }}" style="order:var(--rail-order);flex:var(--rail-flex);min-width:0;position:relative;margin:var(--rail-mx);padding-inline:var(--rail-px);border-top:var(--rail-bt);height:var(--rail-h);display:flex;gap:20px;overflow-x:auto;scrollbar-width:none;white-space:nowrap">
-      <sc-for list="{{ nav }}" as="n" hint-placeholder-count="6">
-        <a href="{{ n.href }}" data-tab="{{ n.id }}" aria-current="{{ n.cur }}" onClick="{{ n.go }}" style="display:flex;align-items:center;gap:8px;height:var(--rail-h);flex:none;font-size:14px;color:{{ n.color }};border-bottom:2px solid {{ n.bd }};transition:color .15s,border-color .15s" style-hover="color:var(--fg)">{{ n.label }}</a>
-      </sc-for>
-    </div>
-  </div>
-</nav>
-
-<header id="top" data-screen-label="01 Page header" style="position:relative;overflow:hidden;isolation:isolate;border-bottom:1px solid var(--line)">
-  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 50% 90% at 88% 0%,var(--glow-a),transparent 70%),radial-gradient(ellipse 35% 70% at 100% 100%,var(--glow-b),transparent 70%)"></div>
-  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:repeating-linear-gradient(45deg,var(--lattice) 0 1px,transparent 1px 32px),repeating-linear-gradient(-45deg,var(--lattice) 0 1px,transparent 1px 32px);-webkit-mask-image:linear-gradient(var(--fade-dir),transparent 45%,#000);mask-image:linear-gradient(var(--fade-dir),transparent 45%,#000)"></div>
-  <div style="max-width:1440px;margin:0 auto;padding:48px var(--gutter) 56px;display:flex;flex-direction:column;gap:20px">
-    <nav aria-label="{{ t.crumbs }}">
-      <ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--fg-subtle)">
-        <li><a href="{{ homeHref }}" style="color:var(--fg-muted)">{{ t.crumbHome }}</a></li>
-        <li aria-hidden="true">/</li>
-        <li aria-current="page" style="color:var(--fg)">{{ t.crumbPolicy }}</li>
-      </ol>
-    </nav>
-    <h1 style="margin:0;max-width:900px;font-size:var(--fs-page);line-height:1.08;letter-spacing:var(--track-tight);font-weight:600;text-wrap:balance">{{ t.s4 }}</h1>
-    <p style="margin:0;max-width:720px;font-size:19px;line-height:1.55;color:var(--fg-muted);text-wrap:pretty">{{ t.s4sub }}</p>
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px"><span style="display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-num);color:var(--fg-subtle)"><span style="width:6px;height:6px;transform:rotate(45deg);background:var(--accent)"></span>{{ statsUpd }}</span></div>
-  </div>
-</header>
-
-<main>
-<section id="data" data-screen-label="02 Country dossiers" style="padding:40px 0 var(--sec-pad);background:var(--bg-raised)">
-  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:flex;flex-direction:column;gap:32px">
-    <div style="display:grid;grid-template-columns:var(--grid);column-gap:var(--gap);row-gap:24px">
-      <div style="grid-column:1 / -1;align-self:end;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;min-width:0">
-        <div role="tablist" aria-label="{{ t.pCountries }}" data-rail="" style="display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;min-width:0;max-width:100%">
-          <sc-for list="{{ pTabs }}" as="c" hint-placeholder-count="6"><button role="tab" id="{{ c.id }}" aria-selected="{{ c.pressed }}" aria-controls="strategies" tabindex="{{ c.ti }}" onClick="{{ c.onClick }}" onKeyDown="{{ onPTabKey }}" style="flex:none;height:40px;padding:0 14px;border:1px solid {{ c.bd }};background:{{ c.bg }};color:{{ c.fg }};border-radius:2px;font-size:14px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s,border-color .15s"><span style="font:500 12px/16px var(--font-num);letter-spacing:.06em;color:{{ c.nfg }}">{{ c.cc }}</span>{{ c.label }}</button></sc-for>
-        </div>
-        <a href="#compare" onClick="{{ goCompare }}" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--accent-text);white-space:nowrap">{{ t.pCompareLink }} <span aria-hidden="true">↓</span></a>
-      </div>
-    </div>
-
-    <div id="strategies" role="tabpanel" aria-labelledby="{{ pTabId }}" style="background:var(--bg);border:1px solid var(--line-strong)">
-      <div style="display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:flex-end;padding:var(--dos-pad);border-bottom:1px solid var(--line)">
-        <div style="display:flex;flex-direction:column;gap:8px;max-width:760px;min-width:0">
-          <div style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ pc.cc }} · {{ t.pDossier }}</div>
-          <h3 style="margin:0;font-size:var(--fs-h2);line-height:1.15;letter-spacing:var(--track-tight);font-weight:600">{{ pc.name }}</h3>
-          <p style="margin:0;font-size:17px;color:var(--fg-muted);text-wrap:pretty">{{ pc.summary }}</p>
-        </div>
-        <dl style="margin:0;display:flex;flex-wrap:wrap;gap:16px 40px">
-          <sc-for list="{{ pc.stats }}" as="st" hint-placeholder-count="3">
-            <div style="display:flex;flex-direction:column-reverse;gap:2px">
-              <dt style="font-size:13px;color:var(--fg-muted)">{{ st.l }}</dt>
-              <dd style="margin:0;font:500 32px/40px var(--font-num);letter-spacing:-0.02em">{{ st.v }}</dd>
-            </div>
-          </sc-for>
-        </dl>
-      </div>
-      <div style="display:grid;grid-template-columns:var(--spot-cols)">
-        <div style="padding:0 var(--dos-pad) var(--dos-pad);display:flex;flex-direction:column;min-width:0">
-          <h4 style="margin:0;padding:24px 0 12px;border-bottom:1px solid var(--fg);font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.pProgrammes }}</h4>
-          <sc-for list="{{ pc.progs }}" as="p" hint-placeholder-count="3">
-            <article style="padding:24px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:16px">
-              <div style="display:flex;justify-content:space-between;gap:12px 16px;align-items:flex-start;flex-wrap:wrap">
-                <div style="display:flex;flex-direction:column;gap:4px;min-width:0">
-                  <h5 style="margin:0;font-size:15px;font-weight:600;line-height:1.4">{{ p.name }}</h5>
-                  <span style="font-size:13px;color:var(--fg-muted)">{{ p.issuer }} · <span style="font-family:var(--font-num)">{{ p.yr }}</span></span>
-                </div>
-                <span style="flex:none;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);border:1px solid {{ p.tagBd }};padding:2px 8px;color:{{ p.tagFg }}">{{ p.scope }}</span>
-              </div>
-              <ul aria-label="{{ t.pTargets }}" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px">
-                <sc-for list="{{ p.kpis }}" as="k">
-                  <li style="background:var(--bg-raised);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:6px">
-                    <span style="font:500 24px/28px var(--font-num);letter-spacing:-0.02em;color:var(--fg)">{{ k.v }}</span>
-                    <span style="font-size:13px;line-height:1.4;color:var(--fg-muted);text-wrap:pretty;flex:1">{{ k.what }}</span>
-                    <span style="font:500 12px/16px var(--font-num);color:var(--sand)">{{ k.by }}</span>
-                  </li>
-                </sc-for>
-              </ul>
-            </article>
-          </sc-for>
-          <p style="margin:16px 0 0;font-size:12px;color:var(--fg-subtle)">{{ t.pKpiNote }}</p>
-        </div>
-        <aside style="padding:var(--dos-pad);border-inline-start:var(--aside-bs);border-top:var(--aside-bt);background:var(--bg-raised);display:flex;flex-direction:column;gap:20px;min-width:0">
-          <div style="display:flex;align-items:center;gap:10px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--accent-text)"><span style="width:6px;height:6px;transform:rotate(45deg);background:var(--accent)"></span>{{ t.pFeatured }}</div>
-          <h4 style="margin:0;font-size:22px;line-height:1.3;letter-spacing:var(--track-tight);font-weight:600;text-wrap:balance">{{ pc.feat.name }}</h4>
-          <p style="margin:0;font-size:15px;color:var(--fg-muted);text-wrap:pretty">{{ pc.feat.dek }}</p>
-          <dl style="margin:0;display:grid;grid-template-columns:112px minmax(0,1fr);gap:10px 16px;font-size:14px;border-top:1px solid var(--line);padding-top:16px">
-            <sc-for list="{{ pc.feat.facts }}" as="f" hint-placeholder-count="5"><dt style="color:var(--fg-subtle)">{{ f.k }}</dt><dd style="margin:0">{{ f.v }}</dd></sc-for>
-          </dl>
-          <div style="display:flex;flex-direction:column;gap:6px;padding:16px;background:var(--bg);border:1px solid var(--line)">
-            <span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--sand)">{{ t.pWhy }}</span>
-            <p style="margin:0;font-size:15px;line-height:1.5;text-wrap:pretty">{{ pc.feat.why }}</p>
-          </div>
-          <sc-if value="{{ pc.feat.hasNote }}"><p style="margin:0;padding:12px 14px;border:1px dashed var(--line-strong);font-size:13px;color:var(--fg-muted);text-wrap:pretty">{{ pc.feat.note }}</p></sc-if>
-          <div style="display:flex;flex-direction:column;gap:0">
-            <h5 style="margin:0 0 8px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.pMilestones }}</h5>
-            <ol style="list-style:none;margin:0;padding:0;border-inline-start:1px solid var(--line-strong)">
-              <sc-for list="{{ pc.feat.ms }}" as="m" hint-placeholder-count="3">
-                <li style="position:relative;padding:8px 0;padding-inline-start:20px;display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px;font-size:14px">
-                  <span aria-hidden="true" style="position:absolute;inset-inline-start:-4px;top:15px;width:7px;height:7px;transform:rotate(45deg);background:var(--sand)"></span>
-                  <span style="font:500 12px/20px var(--font-num);color:var(--fg-subtle)">{{ m.d }}</span><span style="color:var(--fg);text-wrap:pretty">{{ m.t }}</span>
-                </li>
-              </sc-for>
-            </ol>
-          </div>
-        </aside>
-      </div>
-      <div style="padding:8px var(--dos-pad) var(--dos-pad);border-top:1px solid var(--line)">
-        <h4 style="margin:0;padding:16px 0 4px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.pPubs }}</h4>
-        <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));column-gap:var(--gap)">
-          <sc-for list="{{ pc.pubs }}" as="u" hint-placeholder-count="4">
-            <li style="border-bottom:1px solid var(--line);padding:14px 0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;align-items:start">
-              <sc-if value="{{ u.hasUrl }}"><a href="{{ u.url }}" target="_blank" rel="noopener noreferrer" style="font-size:15px;font-weight:500;line-height:1.4;text-wrap:pretty">{{ u.title }} <span aria-hidden="true" style="color:var(--fg-subtle)">{{ arrow }}</span></a></sc-if>
-              <sc-if value="{{ u.noUrl }}"><span style="font-size:15px;font-weight:500;line-height:1.4">{{ u.title }}</span></sc-if>
-              <span style="font:500 12px/16px var(--font-label);color:var(--fg-muted);border:1px solid var(--line-strong);padding:2px 6px;white-space:nowrap">{{ u.type }}</span>
-              <span style="grid-column:1 / -1;font-size:13px;color:var(--fg-subtle)">{{ u.pub }} · <span style="font-family:var(--font-num)">{{ u.yr }}</span></span>
-            </li>
-          </sc-for>
-        </ul>
-      </div>
-    </div>
-
-    <div id="compare" style="display:flex;flex-direction:column;gap:16px;padding-top:24px">
-      <div style="display:flex;flex-direction:column;gap:6px;max-width:760px">
-        <h3 style="margin:0;font-size:22px;line-height:1.3;letter-spacing:var(--track-tight);font-weight:600">{{ t.pCompare }}</h3>
-        <p style="margin:0;color:var(--fg-muted);text-wrap:pretty">{{ t.pCompareSub }}</p>
-      </div>
-      <div data-rail="" tabindex="0" style="overflow-x:auto;border:1px solid var(--line-strong);background:var(--bg)">
-        <div role="table" aria-label="{{ t.pCompare }}" style="min-width:980px">
-          <div role="row" style="display:grid;grid-template-columns:minmax(150px,1fr) minmax(170px,1.1fr) minmax(240px,1.9fr) 112px minmax(140px,1fr) minmax(140px,1fr);gap:var(--gap);padding:12px 20px;border-bottom:1px solid var(--fg);font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">
-            <sc-for list="{{ t.pCols }}" as="h"><span role="columnheader">{{ h }}</span></sc-for>
-          </div>
-          <sc-for list="{{ cmp }}" as="r" hint-placeholder-count="8">
-            <div role="row" style="display:grid;grid-template-columns:minmax(150px,1fr) minmax(170px,1.1fr) minmax(240px,1.9fr) 112px minmax(140px,1fr) minmax(140px,1fr);gap:var(--gap);align-items:start;padding:16px 20px;border-bottom:1px solid var(--line);background:{{ r.bg }};font-size:14px">
-              <span role="rowheader"><button onClick="{{ r.pick }}" aria-disabled="{{ r.noPick }}" style="display:inline-flex;align-items:center;gap:8px;padding:0;background:transparent;border:0;cursor:{{ r.cur }};font-size:14px;font-weight:600;text-align:start" style-hover="color:var(--accent-text)"><span style="font:500 12px/16px var(--font-num);letter-spacing:.06em;border:1px solid var(--line-strong);padding:2px 6px;color:var(--fg-muted);font-weight:500">{{ r.cc }}</span>{{ r.name }}</button></span>
-              <span role="cell" style="display:flex;gap:8px;align-items:flex-start"><span aria-hidden="true" style="flex:none;margin-top:6px;width:8px;height:8px;transform:rotate(45deg);background:{{ r.dotBg }};border:1px solid {{ r.dotBd }}"></span><span style="color:{{ r.roboFg }}">{{ r.robo }}</span></span>
-              <span role="cell" style="display:flex;flex-direction:column;gap:2px"><span style="font:500 17px/24px var(--font-num);color:var(--fg)">{{ r.v }}</span><span style="font-size:13px;color:var(--fg-muted)">{{ r.what }}</span></span>
-              <span role="cell" style="display:flex;flex-direction:column;gap:2px"><span style="font:500 15px/24px var(--font-num)">{{ r.due }}</span><span style="font-size:12px;color:var(--fg-subtle)">{{ r.away }}</span></span>
-              <span role="cell" style="display:flex;align-items:center;gap:10px;padding-top:4px"><span style="flex:1;height:6px;background:var(--line)"><span style="display:block;height:100%;width:{{ r.dw }};background:var(--sand)"></span></span><span style="font:500 13px var(--font-num);min-width:36px;text-align:end">{{ r.dep }}</span></span>
-              <span role="cell" style="display:flex;align-items:center;gap:10px;padding-top:4px"><span style="flex:1;height:6px;background:var(--line)"><span style="display:block;height:100%;width:{{ r.cw }};background:var(--sand)"></span></span><span style="font:500 13px var(--font-num);min-width:36px;text-align:end">{{ r.co }}</span></span>
-            </div>
-          </sc-for>
-        </div>
-      </div>
-      <p style="margin:0;font-size:12px;color:var(--fg-subtle);text-wrap:pretty">{{ t.pCmpSrc }}</p>
-    </div>
-  </div>
-</section>
-
-<section id="newsletter" data-screen-label="03 Newsletter" style="position:relative;overflow:hidden;isolation:isolate;border-top:1px solid var(--line);padding:var(--sec-pad) 0;background:var(--bg-raised)">
-  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 55% 90% at 100% 50%,var(--glow-a),transparent 70%),radial-gradient(ellipse 40% 70% at 0% 100%,var(--glow-b),transparent 70%)"></div>
-  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:repeating-linear-gradient(45deg,var(--lattice) 0 1px,transparent 1px 32px),repeating-linear-gradient(-45deg,var(--lattice) 0 1px,transparent 1px 32px);-webkit-mask-image:linear-gradient(var(--fade-dir),transparent 30%,#000);mask-image:linear-gradient(var(--fade-dir),transparent 30%,#000)"></div>
-  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:var(--two-cols);gap:48px var(--gap);align-items:center">
-    <div style="display:flex;flex-direction:column;gap:24px;max-width:560px">
-      <div style="margin-bottom:4px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.s9n }}</div>
-      <h2 style="margin:0;font-size:var(--fs-h2);line-height:1.15;letter-spacing:var(--track-tight);font-weight:600;text-wrap:balance">{{ t.nlTitle }}</h2>
-      <p style="margin:0;font-size:17px;color:var(--fg-muted)">{{ t.nlDek }}</p>
-      <sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
-        <form onSubmit="{{ subscribe }}" style="display:flex;gap:8px;flex-wrap:wrap">
-          <label style="flex:1;min-width:220px"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">{{ t.nlPh }}</span><input type="email" required="" value="{{ email }}" onChange="{{ onEmail }}" placeholder="{{ t.nlPh }}" style="width:100%;height:48px;padding:0 16px;background:var(--bg);border:1px solid var(--line-strong);border-radius:2px;font-size:16px;outline-offset:0"></label>
-          <button type="submit" style="height:48px;padding:0 24px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:2px;font-size:15px;font-weight:600;cursor:pointer">{{ t.nlBtn }}</button>
-        </form>
-      </sc-if>
-      <sc-if value="{{ subscribed }}"><p role="status" style="margin:0;padding:14px 16px;border:1px solid var(--accent);color:var(--fg);font-size:15px">{{ t.nlDone }}</p></sc-if>
-      <div style="font-size:13px;color:var(--fg-subtle)">{{ t.nlMeta }}</div>
-    </div>
-    <div style="background:var(--bg);border:1px solid var(--line-strong);padding:32px;display:flex;flex-direction:column;gap:16px;max-width:560px;width:100%;justify-self:end">
-      <div style="display:flex;justify-content:space-between;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)"><span>{{ t.sampleLbl }}</span><span style="font-family:var(--font-num)">{{ t.sampleIssue }}</span></div>
-      <div style="font-size:22px;font-weight:600;letter-spacing:var(--track-tight);padding-bottom:16px;border-bottom:1px solid var(--fg)">{{ t.nlTitle }}</div>
-      <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
-        <sc-for list="{{ sample }}" as="b" hint-placeholder-count="5">
-          <li style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px"><span style="font:500 12px/20px var(--font-num);color:var(--fg-subtle)">{{ b.idx }}</span><span>{{ b.title }}</span></li>
-        </sc-for>
-      </ol>
-      <div style="font-size:12px;color:var(--fg-subtle)">{{ t.sampleFoot }}</div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer data-screen-label="04 Footer" style="position:relative;overflow:hidden;isolation:isolate;border-top:1px solid var(--line);padding:72px 0 40px;background:var(--bg)">
-  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(to bottom,transparent,var(--glow-a))"></div>
-  <svg aria-hidden="true" viewBox="0 0 200 200" fill="none" stroke="var(--khatam)" stroke-width="1" style="position:absolute;z-index:-1;pointer-events:none;width:680px;height:680px;bottom:-300px;inset-inline-end:-160px"><g vector-effect="non-scaling-stroke"><rect x="41" y="41" width="118" height="118" vector-effect="non-scaling-stroke"></rect><rect x="41" y="41" width="118" height="118" transform="rotate(45 100 100)" vector-effect="non-scaling-stroke"></rect><rect x="62" y="62" width="76" height="76" vector-effect="non-scaling-stroke"></rect><rect x="62" y="62" width="76" height="76" transform="rotate(45 100 100)" vector-effect="non-scaling-stroke"></rect><circle cx="100" cy="100" r="58" vector-effect="non-scaling-stroke" stroke-dasharray="2 6"></circle><circle cx="100" cy="100" r="2.5" fill="var(--accent)" stroke="none"></circle></g></svg>
-  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px var(--gap)">
-    <sc-for list="{{ t.foot }}" as="f" hint-placeholder-count="4">
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <h3 style="margin:0;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ f.h }}</h3>
-        <p style="margin:0;font-size:14px;color:var(--fg-muted);text-wrap:pretty">{{ f.b }}</p>
-        <a href="{{ f.href }}" style="font-size:14px;border-bottom:1px solid var(--line-strong);align-self:flex-start;padding-bottom:2px">{{ f.l }}</a>
-      </div>
-    </sc-for>
-  </div>
-  <div style="max-width:1440px;margin:56px auto 0;padding:24px var(--gutter) 0;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;font-size:12px;color:var(--fg-subtle);border-top:1px solid var(--line)">
-    <span>{{ t.copyright }}</span><span>{{ t.demoNote }}</span>
-  </div>
-</footer>
-</div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;dark&quot;,&quot;light&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'dark'|'light'&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;violet&quot;,&quot;cyan&quot;],&quot;default&quot;:&quot;violet&quot;,&quot;tsType&quot;:&quot;'violet'|'cyan'&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;ar&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;'en'|'ar'&quot;,&quot;section&quot;:&quot;Language&quot;},&quot;arabicNumerals&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;latn&quot;,&quot;arab&quot;],&quot;default&quot;:&quot;latn&quot;,&quot;tsType&quot;:&quot;'latn'|'arab'&quot;,&quot;section&quot;:&quot;Language&quot;}}">
 class Component extends DCLogic {
   qp = new URLSearchParams(window.location.search);
   pref(k) { try { return window.localStorage.getItem('rm-' + k); } catch (e) { return null; } }
   savePref(k, v) { try { window.localStorage.setItem('rm-' + k, v); } catch (e) {} }
   urlTidy = (() => { try { ['lang', 'theme'].forEach(k => { const v = this.qp.get(k); if (v) this.savePref(k, v); }); const u = new URL(window.location.href); ['lang', 'theme', 'accent'].forEach(k => u.searchParams.delete(k)); let p = u.pathname.replace(/index\.html$/, '').replace(/\.html$/, ''); if (u.hash === '#top') u.hash = ''; const next = p + u.search + u.hash; if (next !== window.location.pathname + window.location.search + window.location.hash) window.history.replaceState(window.history.state, '', next); } catch (e) {} return true; })();
-  state = { active: 'brief', rails: { brief: { i: 0, n: 0, end: false }, strat: { i: 0, n: 0, end: false } }, lang: null, theme: null, q: '', fCountry: '', fSector: '', fType: '', sel: null, dCat: '', dSort: 'featured', eType: '', eCountry: '', tab: 'company', submitted: false, dAll: false, mapAll: false, mapNear: false, pc: (this.qp.get('c') || 'AE').toUpperCase(), email: '', subscribed: false, added: {}, w: window.innerWidth };
+  state = { active: 'brief', rails: { brief: { i: 0, n: 0, end: false }, strat: { i: 0, n: 0, end: false } }, lang: null, theme: null, q: '', fCountry: '', fSector: '', fType: '', sel: null, dCat: '', dSort: 'featured', eType: '', eCountry: '', tab: 'company', submitted: false, dbTab: this.qp.get('tab') || 'companies', dbSel: this.qp.get('id') || null, dbQ: this.qp.get('q') || '', dbCountry: '', dbFacet: '', dbSort: '', dbAll: false, dbCopied: false, dAll: false, mapAll: false, mapNear: false, pc: (this.qp.get('c') || 'AE').toUpperCase(), email: '', subscribed: false, added: {}, w: window.innerWidth };
   searchRef = React.createRef();
   briefRail = React.createRef(); stratRail = React.createRef(); tabRail = React.createRef();
-  NAV_IDS = ['data'];
-  PAGE = 'policy';
-  PAGES = { policy: '/policy', strategies: '/policy', data: '/policy', compare: '/policy', directory: '/directory', events: '/events', submit: '/submit', map: '/map' };
+  NAV_IDS = window.RM_PAGE.nav;
+  PAGE = window.RM_PAGE.page;
+  PAGES = { policy: '/policy', strategies: '/policy', data: '/policy', compare: '/policy', directory: '/directory', events: '/events', submit: '/submit', map: '/map', database: '/database' };
   pageHref(id, c) { const q = this.qsCur || ''; const p = this.PAGES[id]; if (p) return p + q + (c && c !== 'AE' && p === '/policy' ? '?c=' + c : '') + (id === 'compare' ? '#compare' : ''); return id === 'top' ? '/' : '/#' + id; }
   mapRef = React.createRef();
   navH() { const n = document.querySelector('nav[aria-label=Primary]'); return n ? n.offsetHeight : 64; }
@@ -284,7 +36,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     this.onPin = e => this.setState({ sel: e.detail.id });
-    this.onKey = e => { if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { e.preventDefault(); this.searchRef.current && this.searchRef.current.focus(); } if (e.key === 'Escape' && this.state.q) this.setState({ q: '' }); };
+    this.onKey = e => { if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { e.preventDefault(); this.searchRef.current && this.searchRef.current.focus(); } if (e.key === 'Escape' && this.state.dbSel) { this.setState({ dbSel: null }); return; } if (e.key === 'Escape' && this.state.q) this.setState({ q: '' }); };
     if (/^#(map|search)/.test(location.hash)) this.setState({ mapNear: true });
     this.onResize = () => this.setState({ w: window.innerWidth });
     window.addEventListener('rm:pin', this.onPin);
@@ -296,6 +48,16 @@ class Component extends DCLogic {
     setTimeout(() => { this.railUpdate('brief'); this.railUpdate('strat'); this.onSpy(); }, 300);
   }
   componentDidUpdate() {
+    if (this.PAGE === 'database') {
+      const key = this.state.dbTab + '|' + (this.state.dbSel || '');
+      if (this._dbKey !== key) {
+        const wasOpen = this._dbKey && this._dbKey.split('|')[1]; this._dbKey = key;
+        try { const u = new URL(window.location.href); u.searchParams.set('tab', this.state.dbTab); if (this.state.dbSel) u.searchParams.set('id', this.state.dbSel); else u.searchParams.delete('id'); u.searchParams.delete('q'); window.history.replaceState(window.history.state, '', u.pathname + u.search); } catch (e) {}
+        document.body.style.overflow = this.state.dbSel ? 'hidden' : '';
+        if (this.state.dbSel) { const b = document.getElementById('rm-db-close'); b && b.focus(); const c = document.getElementById('rm-db-card'); c && (c.scrollTop = 0); }
+        else if (wasOpen && this._dbReturn && document.contains(this._dbReturn)) { this._dbReturn.focus(); }
+      }
+    }
     if (this.PAGE === 'policy' && this._lastPc !== this.state.pc) { const first = this._lastPc === undefined; this._lastPc = this.state.pc; if (!first && this.PAGE === 'policy') { try { const u = new URL(window.location.href); if (this.state.pc === 'AE') u.searchParams.delete('c'); else u.searchParams.set('c', this.state.pc); window.history.replaceState(window.history.state, '', u.pathname + u.search + u.hash); } catch (e) {} } }
     if (this._lastActive !== this.state.active) { this._lastActive = this.state.active; const rail = this.tabRail.current, a = rail && rail.querySelector('[data-tab="' + this.state.active + '"]'); if (a) { const rR = rail.getBoundingClientRect(), aR = a.getBoundingClientRect(); rail.scrollBy({ left: (aR.left + aR.width / 2) - (rR.left + rR.width / 2), behavior: this.reduced ? 'auto' : 'smooth' }); } }
   }
@@ -318,43 +80,14 @@ class Component extends DCLogic {
     integrator: 'M3.5 3.5h7v7h-7zM13.5 13.5h7v7h-7zM10.5 7h5.5v6.5M13.5 17H8v-6.5',
     software: 'M3.5 4.5h17v11h-17zM9 20h6M12 15.5V20M8.5 8.5L6.5 10l2 1.5M15.5 8.5l2 1.5-2 1.5M13 8l-2 4'
   };
-  CC = { AE: ['UAE', 'الإمارات'], SA: ['Saudi Arabia', 'السعودية'], QA: ['Qatar', 'قطر'], EG: ['Egypt', 'مصر'], MA: ['Morocco', 'المغرب'], OM: ['Oman', 'عُمان'], BH: ['Bahrain', 'البحرين'], JO: ['Jordan', 'الأردن'], KW: ['Kuwait', 'الكويت'], TN: ['Tunisia', 'تونس'] };
+  CC = Object.fromEntries(window.RM_DATA.countries.map(c => [c.code, [c.name, c.name_ar || c.name]]));
   SECTORS = { logistics: ['Logistics', 'اللوجستيات'], manufacturing: ['Manufacturing', 'التصنيع'], construction: ['Construction', 'البناء'], realestate: ['Real estate', 'العقارات'], hospitality: ['Hospitality', 'الضيافة'], healthcare: ['Healthcare', 'الرعاية الصحية'], security: ['Security', 'الأمن'], energy: ['Energy', 'الطاقة'], mobility: ['Mobility', 'التنقّل'] };
   TYPES = { humanoid: ['Humanoid', 'روبوت بشري'], arm: ['Industrial arm', 'ذراع صناعية'], amr: ['AMR', 'روبوت متنقل ذاتي'], drone: ['Drone', 'طائرة مسيّرة'], av: ['Autonomous vehicle', 'مركبة ذاتية القيادة'], quadruped: ['Quadruped', 'رباعي الأرجل'], service: ['Service robot', 'روبوت خدمة'] };
   CATS = { humanoid: ['Humanoid', 'روبوتات بشرية'], arm: ['Industrial arms', 'أذرع صناعية'], amr: ['AMRs', 'روبوتات متنقلة'], drone: ['Drones', 'مسيّرات'], av: ['Autonomous mobility', 'تنقّل ذاتي'], integrator: ['Integrators', 'مُدمِجو أنظمة'], software: ['Software / AI', 'برمجيات وذكاء اصطناعي'] };
   STAGES = { seed: ['Seed', 'تأسيسية', 1], a: ['Series A', 'الجولة أ', 2], b: ['Series B', 'الجولة ب', 3], growth: ['Growth', 'نمو', 4], corp: ['Established', 'شركة راسخة', 5] };
   ETYPES = { expo: ['Expo', 'معرض'], conference: ['Conference', 'مؤتمر'], meetup: ['Meetup', 'لقاء'], competition: ['Competition', 'مسابقة'] };
 
-  DEP = [
-    ['d01','amr','logistics','AE',25.01,55.07,'2026-10-24',1,'Goods-to-person AMR fleet','أسطول روبوتات متنقلة لانتقاء البضائع','BFL Group','مجموعة بي إف إل','Fulfilment centre, JAFZA, Dubai','مركز تجهيز الطلبات، جافزا، دبي','BFL Group announcement'],
-    ['d02','humanoid','manufacturing','SA',24.71,46.68,'2026-10-28',1,'Humanoid factory & public showroom','مصنع ومعرض عام للروبوتات البشرية','QSS AI & Robotics','كيو إس إس للذكاء الاصطناعي والروبوتات','Riyadh','الرياض','QSS announcement'],
-    ['d03','quadruped','energy','AE',24.36,54.50,'2026-09-12',0,'Spot inspection rounds','جولات فحص بروبوت Spot','Analog (Boston Dynamics partner)','أنالوج (شريك بوسطن داينامكس)','Substation, Mussafah, Abu Dhabi','محطة فرعية، مصفح، أبوظبي','Analog release'],
-    ['d04','av','mobility','AE',25.20,55.27,'2026-08-30',0,'Robotaxi pilot service','خدمة تجريبية لسيارات أجرة ذاتية القيادة','Dubai RTA & operator','هيئة الطرق والمواصلات في دبي','Jumeirah corridor, Dubai','ممر جميرا، دبي','RTA statement'],
-    ['d05','av','mobility','AE',24.49,54.60,'2026-07-15',0,'Autonomous ride-hailing','خدمة نقل ذاتية القيادة','Masar Mobility','مسار للتنقل','Yas Island, Abu Dhabi','جزيرة ياس، أبوظبي','Operator release'],
-    ['d06','amr','logistics','AE',24.75,54.68,'2026-10-02',0,'Pallet-moving AMRs','روبوتات متنقلة لنقل المنصّات','Qafila Logistics','قافلة للخدمات اللوجستية','KEZAD, Abu Dhabi','كيزاد، أبوظبي','Operator interview'],
-    ['d07','drone','realestate','AE',25.08,55.14,'2026-09-28',0,'Façade inspection drones','مسيّرات لفحص الواجهات','Falak Robotics','فلك للروبوتات','Dubai Marina towers','أبراج دبي مارينا','Falak Robotics'],
-    ['d08','humanoid','hospitality','AE',25.22,55.29,'2026-10-19',1,'Humanoid customer-service agents','روبوتات بشرية لخدمة المتعاملين','Hudhud Humanoids','هدهد للروبوتات البشرية','Service centre, Dubai','مركز خدمة، دبي','Hudhud Humanoids'],
-    ['d09','service','energy','AE',23.60,53.70,'2026-06-11',0,'Waterless solar-panel cleaning','تنظيف ألواح شمسية دون ماء','Dune Energy','ديون للطاقة','Al Dhafra solar plant','محطة الظفرة للطاقة الشمسية','Dune Energy'],
-    ['d10','drone','logistics','SA',21.54,39.17,'2026-09-03',0,'Last-mile delivery drones','مسيّرات توصيل للميل الأخير','Sanad Drones','سند للطائرات المسيّرة','Jeddah','جدة','Permit notice'],
-    ['d11','arm','construction','SA',27.95,35.30,'2026-08-20',0,'Rebar-tying robotic arms','أذرع روبوتية لربط حديد التسليح','Raqim Automation','رقيم للأتمتة','Coastal site, Tabuk Province','موقع ساحلي، منطقة تبوك','Raqim Automation'],
-    ['d12','arm','healthcare','SA',24.68,46.72,'2026-07-29',0,'Surgical robotics programme','برنامج الجراحة الروبوتية','Tertiary hospital','مستشفى تخصصي','Riyadh','الرياض','Hospital release'],
-    ['d13','quadruped','security','SA',24.76,46.64,'2026-10-14',1,'Quadruped station patrols','دوريات بروبوتات رباعية الأرجل','Metro operator','مشغّل المترو','Metro stations, Riyadh','محطات المترو، الرياض','Operator statement'],
-    ['d14','quadruped','energy','SA',26.40,50.10,'2026-05-18',0,'Plant inspection quadrupeds','روبوتات رباعية لفحص المنشآت','Eastern Province operator','مشغّل في المنطقة الشرقية','Processing plant, Dammam','منشأة معالجة، الدمام','Operator release'],
-    ['d15','av','logistics','SA',21.47,39.16,'2026-09-21',0,'Autonomous yard tractors','جرّارات ساحات ذاتية القيادة','Marsa Ports','مرسى للموانئ','Container terminal, Jeddah','محطة حاويات، جدة','Marsa Ports'],
-    ['d16','service','hospitality','QA',25.32,51.53,'2026-08-08',0,'Room-service delivery robots','روبوتات توصيل خدمة الغرف','Wadi Hospitality Group','مجموعة وادي للضيافة','West Bay hotels, Doha','فنادق الخليج الغربي، الدوحة','Wadi Hospitality'],
-    ['d17','amr','logistics','QA',25.00,51.60,'2026-10-09',0,'Cross-dock AMRs','روبوتات متنقلة للمناولة','Tarkeeb Integrators','تركيب لتكامل الأنظمة','Port logistics park, Doha','منطقة لوجستية، الدوحة','Tarkeeb'],
-    ['d18','service','realestate','QA',25.42,51.49,'2026-07-02',0,'Facility cleaning robots','روبوتات تنظيف المرافق','Facilities operator','مشغّل مرافق','Lusail','لوسيل','Operator release'],
-    ['d19','arm','healthcare','EG',30.04,31.24,'2026-06-25',0,'Automated hospital pharmacy','صيدلية مستشفى مؤتمتة','Noor Health','نور للرعاية الصحية','Cairo','القاهرة','Noor Health'],
-    ['d20','arm','construction','EG',30.02,31.70,'2026-09-15',0,'Bricklaying robot trial','تجربة روبوت لرصّ الطوب','Atlas Build','أطلس للبناء','New Administrative Capital','العاصمة الإدارية الجديدة','Atlas Build'],
-    ['d21','amr','logistics','MA',35.88,-5.50,'2026-08-12',0,'Port warehouse AMRs','روبوتات متنقلة لمستودعات الميناء','Nawa AMR','نوى للروبوتات المتنقلة','Tanger Med zone','منطقة طنجة المتوسط','Nawa AMR'],
-    ['d22','arm','manufacturing','MA',33.57,-7.59,'2026-10-26',1,'Welding cells, automotive line','خلايا لحام لخط إنتاج سيارات','Atlas Arms','أطلس للأذرع','Casablanca','الدار البيضاء','Atlas Arms'],
-    ['d23','drone','security','OM',24.36,56.73,'2026-07-21',0,'Perimeter-security drones','مسيّرات لتأمين المحيط','Port operator','مشغّل الميناء','Sohar port','ميناء صحار','Operator release'],
-    ['d24','drone','energy','OM',22.90,57.50,'2026-09-30',0,'Pipeline inspection drones','مسيّرات لفحص خطوط الأنابيب','Sahm Energy Services','سهم لخدمات الطاقة','Central Oman pipeline','خط أنابيب وسط عُمان','Operator release'],
-    ['d25','service','security','BH',26.22,50.58,'2026-08-27',0,'Mall patrol robots','روبوتات دوريات في مركز تجاري','Mall operator','مشغّل مركز تجاري','Manama','المنامة','Operator release'],
-    ['d26','humanoid','hospitality','KW',29.37,47.98,'2026-10-05',0,'Concierge humanoid','روبوت بشري للاستقبال','Retail group','مجموعة تجزئة','Kuwait City','مدينة الكويت','Operator release'],
-    ['d27','drone','realestate','JO',31.95,35.91,'2026-06-03',0,'Façade-cleaning drones','مسيّرات تنظيف الواجهات','Basira AI','بصيرة للذكاء الاصطناعي','Amman','عمّان','Basira AI'],
-    ['d28','service','healthcare','TN',36.80,10.18,'2026-05-30',0,'UV disinfection robots','روبوتات تعقيم بالأشعة فوق البنفسجية','University hospital','مستشفى جامعي','Tunis','تونس','Hospital release']
-  ].map(r => ({ id: r[0], type: r[1], sector: r[2], cc: r[3], lat: r[4], lon: r[5], date: r[6], n: !!r[7], robot: [r[8], r[9]], op: [r[10], r[11]], site: [r[12], r[13]], src: r[14] }));
+  DEP = window.RM_DATA.deployments.map(d => ({ id: d.id, type: d.type, sector: d.sector, cc: d.country, lat: d.lat, lon: d.lon, date: d.date, n: !!d.is_new, robot: [d.title, d.title_ar || d.title], op: [d.operator, d.operator_ar || d.operator], site: [d.site, d.site_ar || d.site], src: d.source }));
 
   BRIEF = [
     ['SA','2026-10-28','QSS AI & Robotics','QSS AI & Robotics opens a humanoid factory and public showroom in Riyadh','كيو إس إس تفتتح مصنعاً للروبوتات البشرية ومعرضاً عاماً في الرياض','Saudi buyers can now inspect locally assembled humanoids before procurement, a shorter path from pilot to purchase order.','بات بإمكان المشترين في السعودية معاينة روبوتات بشرية مجمّعة محلياً قبل الشراء، ما يختصر الطريق من التجربة إلى أمر الشراء.'],
@@ -364,22 +97,9 @@ class Component extends DCLogic {
     ['AE','2026-10-21','Analog','Analog confirmed as Boston Dynamics’ UAE partner','أنالوج شريكاً لبوسطن داينامكس في الإمارات','Spot and Stretch now have local sales, integration and service, removing the main blocker for enterprise pilots.','أصبح لروبوتَي Spot وStretch مبيعات وتكامل وخدمة محلية، وهو العائق الرئيسي أمام التجارب المؤسسية.']
   ];
 
-  CO = [
-    ['QSS AI & Robotics','كيو إس إس للذكاء الاصطناعي والروبوتات','SA','humanoid','growth','2026-10-28','Humanoid manufacturer with a Riyadh factory and public showroom.','مصنّع روبوتات بشرية بمصنع ومعرض عام في الرياض.'],
-    ['Analog','أنالوج','AE','integrator','corp','2026-10-21','Boston Dynamics’ UAE partner: sales, integration and service for Spot and Stretch.','شريك بوسطن داينامكس في الإمارات: مبيعات وتكامل وخدمة لروبوتَي Spot وStretch.'],
-    ['Hudhud Humanoids','هدهد للروبوتات البشرية','AE','humanoid','a','2026-09-14','Arabic-speaking service humanoids for government and retail front desks.','روبوتات بشرية ناطقة بالعربية لمكاتب الاستقبال الحكومية والتجارية.'],
-    ['Raqim Automation','رقيم للأتمتة','SA','arm','b','2026-08-02','Robotic arms for construction sites: rebar tying, drilling, finishing.','أذرع روبوتية لمواقع البناء: ربط حديد التسليح والحفر والتشطيب.'],
-    ['Masar Mobility','مسار للتنقل','AE','av','growth','2026-06-20','Operates autonomous ride-hailing and shuttle services.','تشغّل خدمات نقل وحافلات ذاتية القيادة.'],
-    ['Falak Robotics','فلك للروبوتات','AE','drone','b','2026-07-11','Inspection drones and analytics for towers and infrastructure.','مسيّرات فحص وتحليلات للأبراج والبنية التحتية.'],
-    ['Nawa AMR','نوى للروبوتات المتنقلة','EG','amr','seed','2026-10-12','Low-cost AMRs engineered for high-heat, high-dust warehouses.','روبوتات متنقلة منخفضة التكلفة مصممة لمستودعات الحرارة والغبار.'],
-    ['Atlas Arms','أطلس للأذرع','MA','arm','a','2026-10-26','Welding and palletising cells for North African automotive suppliers.','خلايا لحام وتكديس لموردي قطاع السيارات في شمال أفريقيا.'],
-    ['Sanad Drones','سند للطائرات المسيّرة','SA','drone','a','2026-05-30','Licensed last-mile delivery drone network.','شبكة مرخّصة لتوصيل الميل الأخير بالمسيّرات.'],
-    ['Tarkeeb Integrators','تركيب لتكامل الأنظمة','QA','integrator','corp','2026-04-18','Designs, installs and supports warehouse and port automation.','تصمّم أنظمة أتمتة المستودعات والموانئ وتركّبها وتدعمها.'],
-    ['Basira AI','بصيرة للذكاء الاصطناعي','JO','software','a','2026-09-01','Vision models for robot perception in Arabic-script environments.','نماذج رؤية حاسوبية لإدراك الروبوتات في بيئات الكتابة العربية.'],
-    ['Mizan Vision','ميزان للرؤية','EG','software','seed','2026-10-05','Orchestration software for mixed-vendor robot fleets.','برمجيات لإدارة أساطيل روبوتات متعددة المورّدين.']
-  ];
+  CO = window.RM_DATA.companies.map(c => [c.name, c.name_ar || c.name, c.country, c.category, c.stage, c.added, c.summary, c.summary_ar || c.summary]);
 
-  READY = [['AE',486,148,2032,'200k robots (Dubai)'],['SA',342,96,2030,'Top-15 AI nation'],['QA',118,31,2030,'QNV 2030'],['EG',96,54,2030,'AI 7.7% of GDP'],['MA',61,27,2030,'Digital Morocco 2030'],['OM',54,14,2040,'Vision 2040'],['BH',41,12,2030,'Vision 2030'],['JO',38,22,2027,'AI strategy']];
+  READY = window.RM_DATA.countries.filter(c => c.in_compare_table).map(c => [c.code, window.RM_DATA.deployments.filter(d => d.country === c.code).length, window.RM_DATA.companies.filter(x => x.country === c.code).length, c.target_year, c.headline_target]).sort((a, b) => b[1] - a[1]);
 
   STRATS = [
     ['AE','Dubai Robotics & Automation Program','برنامج دبي للروبوتات والأتمتة','Robotics to 9% of Dubai’s GDP; 200,000 robots over 10 years','رفع مساهمة الروبوتات إلى 9% من الناتج المحلي لدبي، و200 ألف روبوت خلال 10 سنوات','Government of Dubai','حكومة دبي','2022','Dubai Media Office'],
@@ -406,15 +126,8 @@ class Component extends DCLogic {
       ['World Robot Olympiad national rounds','الأولمبياد العالمي للروبوت: التصفيات الوطنية','Regional','إقليمي','Student robotics pipeline','مسار طلابي في الروبوتات']]]
   ];
 
-  EVENTS = [
-    ['e1','2026-11-18','2026-11-20','RoboTech Expo','روبوتك إكسبو','Doha','الدوحة','Exhibition centre','مركز المعارض','QA','expo',1],
-    ['e2','2026-11-25','2026-11-25','Robotics MENA Buyers’ Roundtable','طاولة روبوتكس مينا للمشترين','Riyadh','الرياض','Members venue','مقر الأعضاء','SA','meetup',0],
-    ['e3','2026-12-07','2026-12-11','GITEX Global','جيتكس جلوبال','Dubai','دبي','Expo City Dubai','مدينة إكسبو دبي','AE','expo',0],
-    ['e4','2026-12-15','2026-12-15','Physical AI Demo Day','يوم عروض الذكاء الاصطناعي المادي','Abu Dhabi','أبوظبي','Hub71','هب71','AE','meetup',1],
-    ['e5','2027-01-12','2027-01-14','National Robotics Olympiad finals','نهائيات الأولمبياد الوطني للروبوت','Cairo','القاهرة','University campus','حرم جامعي','EG','competition',1],
-    ['e6','2027-01-20','2027-01-21','Ai Everything Abu Dhabi','آي إيفري ثينغ أبوظبي','Abu Dhabi','أبوظبي','ADNEC','أدنيك','AE','conference',1]
-  ];
-  LATER = [['LEAP','ليب','Riyadh','الرياض','2027-02-09'],['AIM Congress','مؤتمر AIM','Dubai','دبي','2027-04-07']];
+  EVENTS = window.RM_DATA.events.filter(e => !e.tentative).map(e => [e.id, e.start, e.end, e.name, e.name_ar || e.name, e.city, e.city_ar || e.city, e.venue, e.venue_ar || e.venue, e.country, e.type, e.dates_confirmed ? 0 : 1]);
+  LATER = window.RM_DATA.events.filter(e => e.tentative).map(e => [e.name, e.name_ar || e.name, e.city, e.city_ar || e.city, e.start]);
 
   PCC = ['AE', 'SA', 'QA', 'EG', 'MA', 'OM'];
   SCOPES = { robotics: ['Robotics', 'روبوتات', 1], autonomy: ['Autonomy', 'قيادة ذاتية', 1], industry: ['Industrial automation', 'أتمتة صناعية', 1], ai: ['AI', 'ذكاء اصطناعي', 0], compute: ['Compute', 'حوسبة', 0], digital: ['Digital economy', 'اقتصاد رقمي', 0] };
@@ -570,7 +283,7 @@ class Component extends DCLogic {
       s3n: '03 · Directory', s3: 'Ecosystem directory', s3sub: 'Who is building robots, systems and robotics software in the region.', getListed: 'Get listed', sort: 'Sort',
       sortOpts: [['featured', 'Editor’s order'], ['az', 'A–Z'], ['newest', 'Recently added'], ['stage', 'Stage']], listed: 'Listed',
       s4n: '04 · Policy & data', s4: 'National strategies & readiness', s4sub: 'Country by country: the programmes that matter for robotics, what each target actually measures, when it is due, and how that compares with what is deployed on the ground.',
-      pages: ['Brief', 'Map', 'Directory', 'Policy', 'Events', 'Submit'], pOpenDossiers: 'Open country dossiers', mapOpen: 'Open the full map', crumbs: 'Breadcrumb', crumbHome: 'Home', crumbPolicy: 'Policy & data', pCountries: 'Countries', pDossier: 'Country dossier', pProgrammes: 'Programmes & targets', pTargets: 'Targets', pKpiNote: 'Each tile shows a published target: the number, what it measures, and the year it is due.', pFeatured: 'Featured initiative', pWhy: 'Why it matters for robotics', pMilestones: 'Milestones', pPubs: 'Publications & sources', pCompareLink: 'Compare all countries', pCompare: 'Compare countries', pCompareSub: 'Each country’s headline target (what it measures and when it is due) next to what we have verified on the ground. Select a country to open its dossier.', pCols: ['Country', 'Robotics-specific policy', 'Headline target · what it measures', 'Due', 'Deployments tracked', 'Companies listed'], pCmpSrc: 'Targets: national strategy documents and official announcements, linked in each dossier. Deployments and companies: Robotics MENA tracker, 30 Oct 2026. Bahrain and Jordan are tracked but not yet profiled.', pStDep: 'Deployments tracked', pStCo: 'Companies listed', pStProg: 'Programmes profiled', byYr: 'Due {y}', noDate: 'No date published', away: 'In {n} years', notProfiled: 'Not yet profiled',
+      pages: ['Brief', 'Map', 'Directory', 'Database', 'Policy', 'Events', 'Submit'], pOpenDossiers: 'Open country dossiers', mapOpen: 'Open the full map', crumbs: 'Breadcrumb', crumbHome: 'Home', crumbPolicy: 'Policy & data', pCountries: 'Countries', pDossier: 'Country dossier', pProgrammes: 'Programmes & targets', pTargets: 'Targets', pKpiNote: 'Each tile shows a published target: the number, what it measures, and the year it is due.', pFeatured: 'Featured initiative', pWhy: 'Why it matters for robotics', pMilestones: 'Milestones', pPubs: 'Publications & sources', pCompareLink: 'Compare all countries', pCompare: 'Compare countries', pCompareSub: 'Each country’s headline target (what it measures and when it is due) next to what we have verified on the ground. Select a country to open its dossier.', pCols: ['Country', 'Robotics-specific policy', 'Headline target · what it measures', 'Due', 'Deployments tracked', 'Companies listed'], pCmpSrc: 'Targets: national strategy documents and official announcements, linked in each dossier. Deployments and companies: Robotics MENA tracker, 30 Oct 2026. Bahrain and Jordan are tracked but not yet profiled.', pStDep: 'Deployments tracked', pStCo: 'Companies listed', pStProg: 'Programmes profiled', byYr: 'Due {y}', noDate: 'No date published', away: 'In {n} years', notProfiled: 'Not yet profiled',
       p1: 'Deployments tracked', p2: 'Companies listed', p3: 'Headline target horizon', readySrc: 'Source: Robotics MENA tracker · 30 Oct 2026', readySrc3: 'Source: national strategy documents · see below',
       s5: 'National strategies', s5sub: 'The programmes setting targets for robotics, AI and autonomy.', agency: 'Lead agency', launched: 'Launched',
       s6n: '05 · Talent', s6: 'Labs & talent', s6sub: 'Where the region trains, researches and competes.',
@@ -581,7 +294,7 @@ class Component extends DCLogic {
       spotQuote: '“We didn’t buy robots. We bought a different floor plan.”', spotWho: 'Director of operations, Qafila Logistics',
       spotStats: [['140', 'AMRs in production'], ['2.6×', 'Picks per labour-hour'], ['9 mo', 'Pilot to full operation']],
       spotSrc: 'Source: operator interview and site visit, October 2026', spotRead: 'Read the case study', spotCap: 'KEZAD, Abu Dhabi · Oct 2026', spotCredit: 'Photo: Robotics MENA',
-      s9n: 'Newsletter', nlTitle: 'The weekly MENA robotics brief', nlDek: 'Five signals every Monday, each with a takeaway and a primary source. Written for the people who sign the purchase orders.', nlPh: 'Work email', nlBtn: 'Subscribe', nlDone: 'You’re on the list. The next issue lands Monday.', nlMeta: 'Every Monday · 4-minute read · No ads, no sponsored slots · Unsubscribe in one click',
+      s9n: '08 · Newsletter', nlTitle: 'The weekly MENA robotics brief', nlDek: 'Five signals every Monday, each with a takeaway and a primary source. Written for the people who sign the purchase orders.', nlPh: 'Work email', nlBtn: 'Subscribe', nlDone: 'You’re on the list. The next issue lands Monday.', nlMeta: 'Every Monday · 4-minute read · No ads, no sponsored slots · Unsubscribe in one click',
       sampleLbl: 'Sample issue', sampleIssue: 'No. 44 · 2 Nov 2026', sampleFoot: '+ 3 deployments added to the map · 2 events this fortnight',
       s10n: '09 · Contribute', s10: 'Submit to the record', s10sub: 'Add a company, a deployment or an event. An editor verifies every entry before it is published.',
       tabs: ['A company', 'A deployment', 'An event'],
@@ -620,7 +333,7 @@ class Component extends DCLogic {
       s3n: '03 · الدليل', s3: 'دليل المنظومة', s3sub: 'من يصنع الروبوتات والأنظمة وبرمجيات الروبوتات في المنطقة.', getListed: 'أدرج شركتك', sort: 'ترتيب',
       sortOpts: [['featured', 'اختيار المحرّر'], ['az', 'أبجدياً'], ['newest', 'الأحدث إدراجاً'], ['stage', 'المرحلة']], listed: 'أُدرج',
       s4n: '04 · السياسات والبيانات', s4: 'الاستراتيجيات الوطنية والجاهزية', s4sub: 'دولة بدولة: البرامج المهمة للروبوتات، وما يقيسه كل هدف فعلاً، وموعد استحقاقه، ومقارنته بما هو منشور على أرض الواقع.',
-      pages: ['الموجز', 'الخريطة', 'الدليل', 'السياسات', 'الفعاليات', 'أضف'], pOpenDossiers: 'افتح ملفات الدول', mapOpen: 'افتح الخريطة الكاملة', crumbs: 'مسار التنقل', crumbHome: 'الرئيسية', crumbPolicy: 'السياسات والبيانات', pCountries: 'الدول', pDossier: 'ملف الدولة', pProgrammes: 'البرامج والأهداف', pTargets: 'الأهداف', pKpiNote: 'تعرض كل خانة هدفاً منشوراً: الرقم، وما يقيسه، وسنة استحقاقه.', pFeatured: 'مبادرة بارزة', pWhy: 'لماذا تهمّ قطاع الروبوتات', pMilestones: 'محطات رئيسية', pPubs: 'المنشورات والمصادر', pCompareLink: 'قارن بين جميع الدول', pCompare: 'مقارنة بين الدول', pCompareSub: 'الهدف الرئيسي لكل دولة (ما يقيسه وموعد استحقاقه) إلى جانب ما تحققنا منه ميدانياً. اختر دولة لفتح ملفها.', pCols: ['الدولة', 'سياسة خاصة بالروبوتات', 'الهدف الرئيسي · ما يقيسه', 'الاستحقاق', 'عمليات النشر المرصودة', 'الشركات المدرجة'], pCmpSrc: 'الأهداف: وثائق الاستراتيجيات الوطنية والإعلانات الرسمية، مع روابطها في كل ملف. عمليات النشر والشركات: متتبّع روبوتكس مينا، 30 أكتوبر 2026. البحرين والأردن مرصودتان ولم تُعدّ ملفاتهما بعد.', pStDep: 'عمليات نشر مرصودة', pStCo: 'شركات مدرجة', pStProg: 'برامج في الملف', byYr: 'الاستحقاق {y}', noDate: 'لم يُعلن موعد', away: 'بعد {n} سنوات', notProfiled: 'لم يُعدّ الملف بعد',
+      pages: ['الموجز', 'الخريطة', 'الدليل', 'البيانات', 'السياسات', 'الفعاليات', 'أضف'], pOpenDossiers: 'افتح ملفات الدول', mapOpen: 'افتح الخريطة الكاملة', crumbs: 'مسار التنقل', crumbHome: 'الرئيسية', crumbPolicy: 'السياسات والبيانات', pCountries: 'الدول', pDossier: 'ملف الدولة', pProgrammes: 'البرامج والأهداف', pTargets: 'الأهداف', pKpiNote: 'تعرض كل خانة هدفاً منشوراً: الرقم، وما يقيسه، وسنة استحقاقه.', pFeatured: 'مبادرة بارزة', pWhy: 'لماذا تهمّ قطاع الروبوتات', pMilestones: 'محطات رئيسية', pPubs: 'المنشورات والمصادر', pCompareLink: 'قارن بين جميع الدول', pCompare: 'مقارنة بين الدول', pCompareSub: 'الهدف الرئيسي لكل دولة (ما يقيسه وموعد استحقاقه) إلى جانب ما تحققنا منه ميدانياً. اختر دولة لفتح ملفها.', pCols: ['الدولة', 'سياسة خاصة بالروبوتات', 'الهدف الرئيسي · ما يقيسه', 'الاستحقاق', 'عمليات النشر المرصودة', 'الشركات المدرجة'], pCmpSrc: 'الأهداف: وثائق الاستراتيجيات الوطنية والإعلانات الرسمية، مع روابطها في كل ملف. عمليات النشر والشركات: متتبّع روبوتكس مينا، 30 أكتوبر 2026. البحرين والأردن مرصودتان ولم تُعدّ ملفاتهما بعد.', pStDep: 'عمليات نشر مرصودة', pStCo: 'شركات مدرجة', pStProg: 'برامج في الملف', byYr: 'الاستحقاق {y}', noDate: 'لم يُعلن موعد', away: 'بعد {n} سنوات', notProfiled: 'لم يُعدّ الملف بعد',
       p1: 'عمليات النشر المرصودة', p2: 'الشركات المدرجة', p3: 'أفق الهدف الوطني الرئيسي', readySrc: 'المصدر: متتبّع روبوتكس مينا · 30 أكتوبر 2026', readySrc3: 'المصدر: وثائق الاستراتيجيات الوطنية · انظر أدناه',
       s5: 'الاستراتيجيات الوطنية', s5sub: 'البرامج التي تضع أهداف الروبوتات والذكاء الاصطناعي والقيادة الذاتية.', agency: 'الجهة المسؤولة', launched: 'سنة الإطلاق',
       s6n: '05 · المواهب', s6: 'المختبرات والمواهب', s6sub: 'أين تتدرّب المنطقة وتبحث وتتنافس.',
@@ -631,7 +344,7 @@ class Component extends DCLogic {
       spotQuote: '«لم نشترِ روبوتات، بل اشترينا مخططاً جديداً للمستودع.»', spotWho: 'مدير العمليات، قافلة للخدمات اللوجستية',
       spotStats: [['140', 'روبوتاً متنقلاً في التشغيل'], ['2.6×', 'عمليات انتقاء لكل ساعة عمل'], ['9 أشهر', 'من التجربة إلى التشغيل الكامل']],
       spotSrc: 'المصدر: مقابلة مع المشغّل وزيارة ميدانية، أكتوبر 2026', spotRead: 'اقرأ دراسة الحالة', spotCap: 'كيزاد، أبوظبي · أكتوبر 2026', spotCredit: 'تصوير: روبوتكس مينا',
-      s9n: 'النشرة', nlTitle: 'الموجز الأسبوعي لروبوتات المنطقة', nlDek: 'خمس إشارات كل اثنين، لكل منها خلاصة ومصدر أصلي. مكتوبة لمن يوقّعون أوامر الشراء.', nlPh: 'بريد العمل', nlBtn: 'اشترك', nlDone: 'تم تسجيلك. يصلك العدد القادم يوم الاثنين.', nlMeta: 'كل اثنين · 4 دقائق قراءة · بلا إعلانات أو رعايات · إلغاء الاشتراك بنقرة',
+      s9n: '08 · النشرة', nlTitle: 'الموجز الأسبوعي لروبوتات المنطقة', nlDek: 'خمس إشارات كل اثنين، لكل منها خلاصة ومصدر أصلي. مكتوبة لمن يوقّعون أوامر الشراء.', nlPh: 'بريد العمل', nlBtn: 'اشترك', nlDone: 'تم تسجيلك. يصلك العدد القادم يوم الاثنين.', nlMeta: 'كل اثنين · 4 دقائق قراءة · بلا إعلانات أو رعايات · إلغاء الاشتراك بنقرة',
       sampleLbl: 'نموذج عدد', sampleIssue: 'العدد 44 · 2 نوفمبر 2026', sampleFoot: '+ 3 عمليات نشر أُضيفت إلى الخريطة · فعاليتان خلال أسبوعين',
       s10n: '09 · المساهمة', s10: 'أضف إلى السجل', s10sub: 'أضف شركة أو عملية نشر أو فعالية. يتحقق محرّر من كل إدخال قبل نشره.',
       tabs: ['شركة', 'عملية نشر', 'فعالية'],
@@ -652,6 +365,7 @@ class Component extends DCLogic {
       copyright: '© 2026 روبوتكس مينا · مستقلة وبلا إعلانات', demoNote: 'نموذج أولي: الإدخالات غير الأساسية أمثلة توضيحية.'
     }
   };
+  tPatch = (() => { const o = window.RM_PAGE.t || {}; for (const l in o) Object.assign(this.T[l], o[l]); return true; })();
 
   chip(label, n, active, onClick) {
     return { label, n, onClick, pressed: active ? 'true' : 'false', bd: active ? 'var(--fg)' : 'var(--line-strong)', bg: active ? 'var(--fg)' : 'transparent', fg: active ? 'var(--bg)' : 'var(--fg)', nfg: active ? 'var(--bg)' : 'var(--fg-subtle)' };
@@ -664,6 +378,127 @@ class Component extends DCLogic {
     this.setState(st => ({ added: { ...st.added, [e[0]]: true } }));
   }
 
+  // ---- Database page (/database): searchable tables + detail card ----
+  DB_TABS = ['companies', 'deployments', 'countries', 'events'];
+  DBT = {
+    en: {
+      title: 'Database', sub: 'Every company, deployment, country and event we track, in one searchable place. Click any row for the full record and its source.',
+      tabs: { companies: 'Companies', deployments: 'Deployments', countries: 'Countries', events: 'Events' },
+      search: 'Search this table', country: 'Country', all: 'All', anyCountry: 'All countries', sort: 'Sort',
+      facet: { companies: 'Category', deployments: 'Robot type', events: 'Event type' },
+      sorts: { recent: 'Most recent', az: 'A–Z', size: 'Most deployments' },
+      showing: 'Showing {a} of {b}', none: 'No entries match. Try a different search or clear the filters.', clear: 'Clear filters', more: 'Show all {n}',
+      cols: { companies: ['Company', 'Category', 'Country', 'Stage', 'Listed'], deployments: ['Deployment', 'Robot type', 'Sector', 'Country', 'Date'], countries: ['Country', 'Deployments', 'Companies', 'Headline target', 'Target year'], events: ['Event', 'Type', 'City', 'Country', 'Dates'] },
+      kind: { companies: 'Company', deployments: 'Deployment', countries: 'Country', events: 'Event' },
+      f: { country: 'Country', category: 'Category', stage: 'Stage', listed: 'Listed', website: 'Website', operator: 'Operator', site: 'Site', sector: 'Sector', type: 'Robot type', date: 'Date', deployments: 'Deployments tracked', companies: 'Companies listed', events: 'Upcoming events', target: 'Headline target', year: 'Target year', dates: 'Dates', city: 'City', venue: 'Venue', status: 'Status', etype: 'Type' },
+      status: { ok: 'Dates confirmed', tbc: 'Dates to be confirmed', tent: 'Provisional' },
+      source: 'Source', open: 'Open source', visit: 'Visit website', close: 'Close', related: { companies: 'Deployments', deployments: 'Operator in the directory', countries: 'In this country' },
+      dossier: 'Open country dossier', onMap: 'See on the map', noSource: 'Source not yet recorded', added: 'Added', recordLink: 'Copy link to this record', copied: 'Link copied'
+    },
+    ar: {
+      title: 'قاعدة البيانات', sub: 'كل الشركات وعمليات النشر والدول والفعاليات التي نتابعها، في مكان واحد قابل للبحث. اضغط أي صف لعرض السجل الكامل ومصدره.',
+      tabs: { companies: 'الشركات', deployments: 'عمليات النشر', countries: 'الدول', events: 'الفعاليات' },
+      search: 'ابحث في هذا الجدول', country: 'الدولة', all: 'الكل', anyCountry: 'كل الدول', sort: 'الترتيب',
+      facet: { companies: 'الفئة', deployments: 'نوع الروبوت', events: 'نوع الفعالية' },
+      sorts: { recent: 'الأحدث', az: 'أبجدياً', size: 'الأكثر نشراً' },
+      showing: 'عرض {a} من {b}', none: 'لا توجد نتائج مطابقة. جرّب بحثاً آخر أو امسح عوامل التصفية.', clear: 'مسح عوامل التصفية', more: 'عرض الكل ({n})',
+      cols: { companies: ['الشركة', 'الفئة', 'الدولة', 'المرحلة', 'تاريخ الإدراج'], deployments: ['عملية النشر', 'نوع الروبوت', 'القطاع', 'الدولة', 'التاريخ'], countries: ['الدولة', 'عمليات النشر', 'الشركات', 'الهدف الرئيسي', 'سنة الهدف'], events: ['الفعالية', 'النوع', 'المدينة', 'الدولة', 'التواريخ'] },
+      kind: { companies: 'شركة', deployments: 'عملية نشر', countries: 'دولة', events: 'فعالية' },
+      f: { country: 'الدولة', category: 'الفئة', stage: 'المرحلة', listed: 'تاريخ الإدراج', website: 'الموقع الإلكتروني', operator: 'الجهة المشغّلة', site: 'الموقع', sector: 'القطاع', type: 'نوع الروبوت', date: 'التاريخ', deployments: 'عمليات النشر المرصودة', companies: 'الشركات المدرجة', events: 'الفعاليات القادمة', target: 'الهدف الرئيسي', year: 'سنة الهدف', dates: 'التواريخ', city: 'المدينة', venue: 'المكان', status: 'الحالة', etype: 'النوع' },
+      status: { ok: 'تواريخ مؤكدة', tbc: 'التواريخ قيد التأكيد', tent: 'مبدئي' },
+      source: 'المصدر', open: 'فتح المصدر', visit: 'زيارة الموقع', close: 'إغلاق', related: { companies: 'عمليات النشر', deployments: 'الجهة المشغّلة في الدليل', countries: 'في هذه الدولة' },
+      dossier: 'فتح ملف الدولة', onMap: 'عرض على الخريطة', noSource: 'لم يُسجَّل المصدر بعد', added: 'أضيف في', recordLink: 'نسخ رابط هذا السجل', copied: 'تم نسخ الرابط'
+    }
+  };
+  dbOpen(tab, id) { this._dbReturn = document.activeElement; this.setState({ dbTab: tab, dbSel: id }); }
+  dbVals(c) {
+    const { S, lang, ar, L, num, fdate, ccName, narrow, t } = c;
+    const d = this.DBT[lang], D = window.RM_DATA, tab = this.DB_TABS.includes(S.dbTab) ? S.dbTab : 'companies';
+    const tr = (o, k) => (ar && o[k + '_ar']) || o[k] || '';
+    const cn = cc => (this.CC[cc] ? ccName(cc) : (cc || '—'));
+    const today = new Date().toISOString().slice(0, 10);
+    const in90 = new Date(Date.now() + 90 * 864e5).toISOString().slice(0, 10);
+    const lc = s => String(s || '').toLowerCase();
+    const opMatch = (op, name) => { const a = lc(op), b = lc(name); return !!a && !!b && (a.includes(b) || b.includes(a)); };
+    const range = e => e.end && e.end !== e.start ? fdate(e.start) + ' – ' + fdate(e.end) : fdate(e.start);
+    const recs = {
+      companies: D.companies.map(o => ({ o, id: o.id, cc: o.country, facet: o.category, date: o.added, name: tr(o, 'name'), alt: ar ? o.name : (o.name_ar || ''), c2: (this.CATS[o.category] || [o.category, o.category])[L], c3: cn(o.country), c4: (this.STAGES[o.stage] || [o.stage, o.stage])[L], c5: o.added ? fdate(o.added) : '—', size: 0 })),
+      deployments: D.deployments.map(o => ({ o, id: o.id, cc: o.country, facet: o.type, date: o.date, name: tr(o, 'title'), alt: tr(o, 'operator') + (o.site ? ' · ' + tr(o, 'site') : ''), c2: (this.TYPES[o.type] || [o.type, o.type])[L], c3: (this.SECTORS[o.sector] || [o.sector, o.sector])[L], c4: cn(o.country), c5: fdate(o.date), size: 0 })),
+      countries: D.countries.map(o => { const dn = D.deployments.filter(x => x.country === o.code).length, cn2 = D.companies.filter(x => x.country === o.code).length; return { o, id: o.code, cc: o.code, facet: '', date: '', name: tr(o, 'name'), alt: ar ? o.name : o.name_ar, c2: num(dn), c3: num(cn2), c4: o.headline_target || '—', c5: o.target_year ? String(o.target_year) : '—', size: dn }; }),
+      events: D.events.map(o => ({ o, id: o.id, cc: o.country, facet: o.type, date: o.start, name: tr(o, 'name'), alt: tr(o, 'venue') || '', c2: (this.ETYPES[o.type] || [o.type, o.type])[L], c3: tr(o, 'city'), c4: cn(o.country), c5: range(o), size: 0 }))
+    };
+    const all = recs[tab];
+    const q = lc(S.dbQ).trim();
+    const hay = r => lc([r.name, r.alt, r.c2, r.c3, r.c4, r.c5, ...Object.values(r.o).filter(v => typeof v === 'string')].join(' '));
+    let rows = all.filter(r => (!q || q.split(/\s+/).every(w => hay(r).includes(w))) && (!S.dbCountry || r.cc === S.dbCountry) && (!S.dbFacet || r.facet === S.dbFacet));
+    const sort = S.dbSort || (tab === 'countries' ? 'size' : 'recent');
+    if (sort === 'az') rows.sort((a, b) => a.name.localeCompare(b.name, lang));
+    else if (sort === 'size' || tab === 'countries' && sort === 'recent') rows.sort((a, b) => b.size - a.size || a.name.localeCompare(b.name, lang));
+    else rows.sort((a, b) => tab === 'events' ? (a.date || '').localeCompare(b.date || '') : (b.date || '').localeCompare(a.date || ''));
+    const LIMIT = 50, shown = S.dbAll ? rows : rows.slice(0, LIMIT);
+    const facetDict = { companies: this.CATS, deployments: this.TYPES, events: this.ETYPES }[tab];
+    const countriesIn = [...new Set(all.map(r => r.cc).filter(Boolean))].sort((a, b) => cn(a).localeCompare(cn(b), lang));
+    const opt = (v, label, cur) => ({ v, label, sel: v === cur });
+    // Detail card
+    let card = null;
+    const r = S.dbSel ? all.find(x => x.id === S.dbSel) : null;
+    if (r) {
+      const o = r.o, F = d.f, fields = [], rel = [];
+      const link = (url, label) => url ? { url, label } : null;
+      let desc = '', srcName = o.source || '', srcUrl = o.source_url || '', extra = [];
+      if (tab === 'companies') {
+        fields.push([F.category, r.c2], [F.country, r.c3], [F.stage, r.c4], [F.listed, r.c5]);
+        desc = tr(o, 'summary');
+        if (o.website) extra.push(link(o.website, d.visit));
+        D.deployments.filter(x => opMatch(x.operator, o.name)).forEach(x => rel.push({ label: tr(x, 'title'), sub: tr(x, 'site') + ' · ' + fdate(x.date), open: () => this.setState({ dbTab: 'deployments', dbSel: x.id }) }));
+      } else if (tab === 'deployments') {
+        fields.push([F.operator, tr(o, 'operator')], [F.site, tr(o, 'site')], [F.country, r.c4], [F.sector, r.c3], [F.type, r.c2], [F.date, r.c5]);
+        D.companies.filter(x => opMatch(o.operator, x.name)).forEach(x => rel.push({ label: tr(x, 'name'), sub: (this.CATS[x.category] || ['', ''])[L] + ' · ' + cn(x.country), open: () => this.setState({ dbTab: 'companies', dbSel: x.id }) }));
+        extra.push({ url: this.pageHref('map'), label: d.onMap });
+      } else if (tab === 'countries') {
+        const ev = D.events.filter(x => x.country === o.code && x.start >= today).length;
+        fields.push([F.deployments, r.c2], [F.companies, r.c3], [F.events, num(ev)], [F.target, r.c4], [F.year, r.c5]);
+        desc = this.POLICY[o.code] ? this.POLICY[o.code].sum[L] : '';
+        if (this.POLICY[o.code]) extra.push({ url: this.pageHref('policy', o.code), label: d.dossier });
+        D.companies.filter(x => x.country === o.code).forEach(x => rel.push({ label: tr(x, 'name'), sub: d.kind.companies + ' · ' + (this.CATS[x.category] || ['', ''])[L], open: () => this.setState({ dbTab: 'companies', dbSel: x.id }) }));
+        D.deployments.filter(x => x.country === o.code).forEach(x => rel.push({ label: tr(x, 'title'), sub: d.kind.deployments + ' · ' + fdate(x.date), open: () => this.setState({ dbTab: 'deployments', dbSel: x.id }) }));
+      } else {
+        fields.push([F.dates, r.c5], [F.etype, r.c2], [F.city, r.c3], [F.venue, tr(o, 'venue') || '—'], [F.country, r.c4], [F.status, o.tentative ? d.status.tent : o.dates_confirmed ? d.status.ok : d.status.tbc]);
+        if (o.url) extra.push(link(o.url, d.visit));
+      }
+      const hasSrc = !!(srcName || srcUrl);
+      card = {
+        kind: d.kind[tab], title: r.name, alt: r.alt, cc: r.cc || '', hasCc: !!r.cc, desc, hasDesc: !!desc,
+        fields: fields.filter(f => f[1]).map(f => ({ k: f[0], v: f[1] })),
+        srcLine: hasSrc ? d.source + ': ' + (srcName || srcUrl.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]) : d.noSource,
+        srcUrl, hasSrcUrl: !!srcUrl, openSrc: d.open,
+        added: o.added && tab !== 'companies' ? d.added + ' ' + fdate(o.added) : '', hasAdded: !!(o.added && tab !== 'companies'),
+        links: extra.filter(Boolean), hasLinks: extra.filter(Boolean).length > 0,
+        relTitle: tab === 'events' ? '' : d.related[tab], rel: rel.slice(0, 8), hasRel: rel.length > 0
+      };
+    }
+    const cols = d.cols[tab];
+    return {
+      db: {
+        t: d, tab, chev: ar ? '‹' : '›', cols: { c1: cols[0], c2: cols[1], c3: cols[2], c4: cols[3], c5: cols[4] },
+        tabs: this.DB_TABS.map(k => ({ ...this.chip(d.tabs[k], num(recs[k].length), k === tab, () => this.setState({ dbTab: k, dbFacet: '', dbCountry: '', dbSort: '', dbAll: false, dbSel: null })), id: 'rm-dbtab-' + k, ti: k === tab ? '0' : '-1' })),
+        q: S.dbQ, onQ: e => this.setState({ dbQ: e.target.value, dbAll: false }),
+        countryOpts: [opt('', d.anyCountry, S.dbCountry)].concat(countriesIn.map(cc => opt(cc, cn(cc), S.dbCountry))), country: S.dbCountry, onCountry: e => this.setState({ dbCountry: e.target.value }),
+        hasFacet: !!facetDict, facetLabel: d.facet[tab] || '', facet: S.dbFacet,
+        facetOpts: facetDict ? [opt('', d.all, S.dbFacet)].concat(Object.keys(facetDict).filter(k => all.some(r => r.facet === k)).map(k => opt(k, facetDict[k][L], S.dbFacet))) : [],
+        onFacet: e => this.setState({ dbFacet: e.target.value }),
+        sort, sortOpts: (tab === 'countries' ? ['size', 'az'] : ['recent', 'az']).map(k => opt(k, k === 'recent' && tab === 'events' ? (ar ? 'الأقرب' : 'Soonest') : d.sorts[k], sort)), onSort: e => this.setState({ dbSort: e.target.value }),
+        showing: d.showing.replace('{a}', num(rows.length)).replace('{b}', num(all.length)),
+        rows: shown.map(x => ({ id: x.id, name: x.name, alt: x.alt, c2: x.c2, c3: x.c3, c4: x.c4, c5: x.c5, cc: x.cc, open: () => this.dbOpen(tab, x.id) })),
+        empty: !rows.length, filtered: !!(q || S.dbCountry || S.dbFacet), clear: () => this.setState({ dbQ: '', dbCountry: '', dbFacet: '' }),
+        more: rows.length > shown.length, moreLbl: d.more.replace('{n}', num(rows.length)), showAll: () => this.setState({ dbAll: true }),
+        rowCols: narrow ? 'minmax(0,1fr) auto' : 'minmax(0,2.4fr) minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,.9fr)', colDisp: narrow ? 'none' : 'block', metaDisp: narrow ? 'block' : 'none', headDisp: narrow ? 'none' : 'grid',
+        open: !!card, card: card || {}, close: () => this.setState({ dbSel: null }), stop: e => e.stopPropagation(),
+        copy: () => { try { navigator.clipboard.writeText(window.location.href); this.setState({ dbCopied: true }); setTimeout(() => this.setState({ dbCopied: false }), 1600); } catch (e) {} },
+        copyLbl: S.dbCopied ? d.copied : d.recordLink
+      }
+    };
+  }
   renderVals() {
     const S = this.state, P = this.props;
     const lang = S.lang || this.qp.get('lang') || this.pref('lang') || P.lang || 'en', ar = lang === 'ar', L = ar ? 1 : 0;
@@ -685,13 +520,15 @@ class Component extends DCLogic {
     const ids = this.NAV_IDS;
     this.qsCur = '';
     const activeNav = this.PAGE === 'home' ? (S.active === 'brief' ? 'brief' : '') : this.PAGE;
-    const nav = ['brief', 'map', 'directory', 'policy', 'events', 'submit'].map((id, i) => { const on = activeNav === id; const local = this.PAGE === 'home' && id === 'brief'; return { id, label: t.pages[i], href: local ? '#brief' : this.pageHref(id, id === 'policy' ? S.pc : ''), cur: on ? 'page' : 'false', color: on ? 'var(--fg)' : 'var(--fg-muted)', bd: on ? 'var(--accent)' : 'transparent', go: e => { if (local) { e.preventDefault(); this.go(id); } } }; });
+    const nav = ['brief', 'map', 'directory', 'database', 'policy', 'events', 'submit'].map((id, i) => { const on = activeNav === id; const local = this.PAGE === 'home' && id === 'brief'; return { id, label: t.pages[i], href: local ? '#brief' : this.pageHref(id, id === 'policy' ? S.pc : ''), cur: on ? 'page' : 'false', color: on ? 'var(--fg)' : 'var(--fg-muted)', bd: on ? 'var(--accent)' : 'transparent', go: e => { if (local) { e.preventDefault(); this.go(id); } } }; });
     const pad2 = x => String(x).padStart(2, '0');
     const rv = k => { const r = S.rails[k]; const cur = r.end ? r.n : Math.min(r.n, r.i + 1); return { [k + 'Pos']: r.n ? pad2(cur) + ' / ' + pad2(r.n) : '', [k + 'Prev']: () => this.railMove(k, -1), [k + 'Next']: () => this.railMove(k, 1), [k + 'PrevOp']: r.i === 0 ? 0.35 : 1, [k + 'NextOp']: r.end ? 0.35 : 1, [k + 'PrevDis']: r.i === 0 ? 'true' : 'false', [k + 'NextDis']: r.end ? 'true' : 'false', [k + 'PrevCur']: r.i === 0 ? 'default' : 'pointer', [k + 'NextCur']: r.end ? 'default' : 'pointer', [k + 'Scroll']: () => this.railUpdate(k) }; };
 
     // stats
-    const upd = t.updated + ' ' + fdate('2026-10-30');
-    const stats = [[412, t.stCo], [1286, t.stDep], [19, t.stCt], [37, t.stEv]].map(([v, label], i) => ({ label, ps: i % (narrow ? 2 : 4) ? '24px' : '0', bd: i % (narrow ? 2 : 4) ? '1px solid var(--line)' : '0', el: React.createElement(this.Ticker, { value: v, fmt: num, key: lang + v }) }));
+    const RMD = window.RM_DATA, lastDate = [...RMD.deployments.map(x => x.added || x.date), ...RMD.companies.map(x => x.added)].filter(Boolean).sort().pop() || RMD.builtAt;
+    const upd = t.updated + ' ' + fdate(lastDate);
+    const todayIso = new Date().toISOString().slice(0, 10), in90Iso = new Date(Date.now() + 90 * 864e5).toISOString().slice(0, 10);
+    const stats = [[RMD.companies.length, t.stCo, 'companies'], [RMD.deployments.length, t.stDep, 'deployments'], [RMD.countries.length, t.stCt, 'countries'], [RMD.events.filter(e => (e.end || e.start) >= todayIso && e.start <= in90Iso).length, t.stEv, 'events']].map(([v, label, tabK], i) => ({ label, href: '/database?tab=' + tabK, ps: i % (narrow ? 2 : 4) ? '24px' : '0', bd: i % (narrow ? 2 : 4) ? '1px solid var(--line)' : '0', el: React.createElement(this.Ticker, { value: v, fmt: num, key: lang + v }) }));
 
     // search
     const q = S.q.trim().toLowerCase();
@@ -724,7 +561,7 @@ class Component extends DCLogic {
     const pinOf = d => ({ id: d.id, lat: d.lat, lon: d.lon, cc: d.cc, n: d.n, label: d.robot[L] + ', ' + d.site[L] });
     const selD = S.sel && this.DEP.find(d => d.id === S.sel);
     const sel = selD ? { icon: this.ICON[selD.type], robot: selD.robot[L], typeLabel: this.TYPES[selD.type][L], sector: this.SECTORS[selD.sector][L], operator: selD.op[L], site: selD.site[L], country: ccName(selD.cc), date: fdate(selD.date), srcLine: t.source + ': ' + selD.src, isNew: selD.n } : {};
-    const panelList = depF.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, narrow && !S.mapAll ? 5 : 8).map(d => ({ icon: this.ICON[d.type], robot: d.robot[L], site: d.site[L], date: fdate(d.date), isNew: d.n, pick: () => this.setState({ sel: d.id }) }));
+    const panelList = depF.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, this.PAGE === 'home' ? 4 : (narrow && !S.mapAll ? 5 : 8)).map(d => ({ icon: this.ICON[d.type], robot: d.robot[L], site: d.site[L], date: fdate(d.date), isNew: d.n, pick: () => this.setState({ sel: d.id }) }));
 
     // directory
     let co = this.CO.map((c, i) => ({ c, i })).filter(({ c }) => !S.dCat || c[3] === S.dCat);
@@ -793,7 +630,7 @@ class Component extends DCLogic {
       hasSel: !!selD, noSel: !selD, sel, clearSel: () => this.setState({ sel: null }), panelList,
       panelTitle: selD ? t.panelRecord : t.panelLatest, showing: t.showing.replace('{a}', num(depF.length)).replace('{b}', num(this.DEP.length)),
       dChips, companies, companiesShown: S.dAll ? companies : companies.slice(0, 9), dirMore: companies.length > 9, dirMoreLbl: S.dAll ? t.showFewer : t.showAll.replace('{n}', num(companies.length)), toggleDirAll: () => this.setState(st => ({ dAll: !st.dAll })),
-      mapRef: this.mapRef, mapNear: S.mapNear, mapMore: narrow && depF.length > 5, mapMoreLbl: S.mapAll ? t.showFewer : t.showAll.replace('{n}', num(Math.min(8, depF.length))), toggleMapAll: () => this.setState(st => ({ mapAll: !st.mapAll })),
+      mapRef: this.mapRef, mapNear: S.mapNear, mapMore: this.PAGE !== 'home' && narrow && depF.length > 5, mapMoreLbl: S.mapAll ? t.showFewer : t.showAll.replace('{n}', num(Math.min(8, depF.length))), toggleMapAll: () => this.setState(st => ({ mapAll: !st.mapAll })),
       dSort: S.dSort, onSort: e => this.setState({ dSort: e.target.value }), sortOpts: t.sortOpts.map(o => ({ v: o[0], label: o[1] })),
       panels, targets, axis0: yr(2026), axis1: yr(2033), axis2: yr(2040),
       strats: this.STRATS.map(s => ({ cc: s[0], country: ccName(s[0]), p: s[1 + L], tgt: digits(s[3 + L]), agency: s[5 + L], yr: yr(+s[7]), srcLine: t.source + ': ' + s[8] })),
@@ -810,10 +647,8 @@ class Component extends DCLogic {
       tabs, fields, tabId: 'rm-tab-' + S.tab,
       onTabKey: e => { const i = tabKeys.indexOf(S.tab), rtl = ar; let d = 0; if (e.key === 'ArrowRight') d = rtl ? -1 : 1; if (e.key === 'ArrowLeft') d = rtl ? 1 : -1; if (!d) return; e.preventDefault(); const k = tabKeys[(i + d + 3) % 3]; this.setState({ tab: k, submitted: false }, () => { const b = document.getElementById('rm-tab-' + k); b && b.focus(); }); },
       submitted: S.submitted, notSubmitted: !S.submitted,
-      submitForm: e => { e.preventDefault(); this.setState({ submitted: true }); }, resetForm: () => this.setState({ submitted: false })
+      submitForm: e => { e.preventDefault(); this.setState({ submitted: true }); }, resetForm: () => this.setState({ submitted: false }),
+      ...this.dbVals({ S, lang, ar, L, num, fdate, ccName, narrow, t })
     };
   }
 }
-</script>
-</body>
-</html>

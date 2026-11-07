@@ -1,0 +1,82 @@
+[
+  {
+    "code": "AE",
+    "name": "UAE",
+    "name_ar": "الإمارات",
+    "target_year": 2032,
+    "headline_target": "200k robots (Dubai)",
+    "in_compare_table": true
+  },
+  {
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "name_ar": "السعودية",
+    "target_year": 2030,
+    "headline_target": "Top-15 AI nation",
+    "in_compare_table": true
+  },
+  {
+    "code": "QA",
+    "name": "Qatar",
+    "name_ar": "قطر",
+    "target_year": 2030,
+    "headline_target": "QNV 2030",
+    "in_compare_table": true
+  },
+  {
+    "code": "EG",
+    "name": "Egypt",
+    "name_ar": "مصر",
+    "target_year": 2030,
+    "headline_target": "AI 7.7% of GDP",
+    "in_compare_table": true
+  },
+  {
+    "code": "MA",
+    "name": "Morocco",
+    "name_ar": "المغرب",
+    "target_year": 2030,
+    "headline_target": "Digital Morocco 2030",
+    "in_compare_table": true
+  },
+  {
+    "code": "OM",
+    "name": "Oman",
+    "name_ar": "عُمان",
+    "target_year": 2040,
+    "headline_target": "Vision 2040",
+    "in_compare_table": true
+  },
+  {
+    "code": "BH",
+    "name": "Bahrain",
+    "name_ar": "البحرين",
+    "target_year": 2030,
+    "headline_target": "Vision 2030",
+    "in_compare_table": true
+  },
+  {
+    "code": "JO",
+    "name": "Jordan",
+    "name_ar": "الأردن",
+    "target_year": 2027,
+    "headline_target": "AI strategy",
+    "in_compare_table": true
+  },
+  {
+    "code": "KW",
+    "name": "Kuwait",
+    "name_ar": "الكويت",
+    "target_year": null,
+    "headline_target": "",
+    "in_compare_table": false
+  },
+  {
+    "code": "TN",
+    "name": "Tunisia",
+    "name_ar": "تونس",
+    "target_year": null,
+    "headline_target": "",
+    "in_compare_table": false
+  }
+]
