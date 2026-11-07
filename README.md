@@ -16,7 +16,7 @@ Every push to `main` runs the **Deploy site** GitHub Action, which builds the si
 
 ## How the site is put together
 
-- `data/*.json`: **the database** (companies, deployments, events, countries). Every page reads from these files, so one edit updates the home stats, map, events, policy comparison and database at once.
+- `data/*.json`: **the database** (companies, deployments, events, countries) and `brief.json`, the home page's five signals (each with `image`, `image_credit` and `source_url`; images live in `media/brief/`, credits in `media/brief/SOURCES.md`). Every page reads from these files, so one edit updates the home stats, map, events, policy comparison and database at once.
 - `src/logic.js`: the shared page logic (rendering, translations, search, the database page).
 - `redirects/*.html`: small pages that forward old addresses (`/directory` now opens the database's Companies tab).
 - `pages/*.html`: each page's layout. `@config` and `@logic` markers are filled in at build time.

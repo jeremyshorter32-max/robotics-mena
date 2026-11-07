@@ -29,7 +29,7 @@ export const MENA = {
   YE: ['Yemen', 'اليمن'], IL: ['Israel', 'إسرائيل'], TR: ['Türkiye', 'تركيا'], IR: ['Iran', 'إيران']
 };
 
-export const DATA_FILES = ['companies', 'deployments', 'events', 'countries'];
+export const DATA_FILES = ['companies', 'deployments', 'events', 'countries', 'brief'];
 export const readData = name => JSON.parse(fs.readFileSync(path.join(ROOT, 'data', `${name}.json`), 'utf8'));
 export const writeData = (name, rows) => fs.writeFileSync(path.join(ROOT, 'data', `${name}.json`), JSON.stringify(rows, null, 2) + '\n');
 

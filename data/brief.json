@@ -1,0 +1,67 @@
+[
+  {
+    "id": "qss-humanoid-showroom",
+    "country": "SA",
+    "date": "2026-10-28",
+    "title": "QSS AI & Robotics opens a humanoid factory and public showroom in Riyadh",
+    "title_ar": "كيو إس إس تفتتح مصنعاً للروبوتات البشرية ومعرضاً عاماً في الرياض",
+    "takeaway": "Saudi buyers can now inspect locally assembled humanoids before procurement, a shorter path from pilot to purchase order.",
+    "takeaway_ar": "بات بإمكان المشترين في السعودية معاينة روبوتات بشرية مجمّعة محلياً قبل الشراء، ما يختصر الطريق من التجربة إلى أمر الشراء.",
+    "source": "Humanoid",
+    "source_url": "https://thehumanoid.ai/humanoid-and-qss-ai-robotics-launch-menas-first-humanoid-robotics-showroom/",
+    "image": "/media/brief/qss-humanoid-showroom.jpg",
+    "image_credit": "Humanoid"
+  },
+  {
+    "id": "tii-nvidia-lab",
+    "country": "AE",
+    "date": "2026-10-27",
+    "title": "TII and NVIDIA launch a joint AI & Robotics Lab in Abu Dhabi",
+    "title_ar": "معهد الابتكار التكنولوجي وإنفيديا يطلقان مختبراً مشتركاً للذكاء الاصطناعي والروبوتات في أبوظبي",
+    "takeaway": "Regional robotics teams gain simulation-first tooling and compute without leaving the UAE.",
+    "takeaway_ar": "تحصل فرق الروبوتات في المنطقة على أدوات محاكاة وقدرات حوسبة متقدمة دون مغادرة الإمارات.",
+    "source": "TII",
+    "source_url": "https://www.tii.ae/news/abu-dhabis-tii-and-nvidia-launch-middle-easts-first-joint-ai-robotics-nvaitc-research-lab",
+    "image": "/media/brief/tii-nvidia-lab.jpg",
+    "image_credit": "TII"
+  },
+  {
+    "id": "bfl-iq-robotics",
+    "country": "AE",
+    "date": "2026-10-24",
+    "title": "BFL Group scales warehouse robots at JAFZA",
+    "title_ar": "مجموعة بي إف إل توسّع استخدام روبوتات المستودعات في جافزا",
+    "takeaway": "Retail fulfilment is the region’s most mature robotics use case; this becomes the reference site other operators visit.",
+    "takeaway_ar": "تجهيز طلبات التجزئة هو أنضج استخدامات الروبوتات في المنطقة، وهذا هو الموقع المرجعي الذي سيزوره المشغّلون الآخرون.",
+    "source": "IQ Robotics",
+    "source_url": "https://www.iqholding.com/iq-robotics-expands-partnership-with-bfl-group/",
+    "image": "/media/brief/bfl-iq-robotics.jpg",
+    "image_credit": "IQ Robotics"
+  },
+  {
+    "id": "eand-qualcomm",
+    "country": "AE",
+    "date": "2026-10-23",
+    "title": "e& and Qualcomm partner on a physical AI platform",
+    "title_ar": "إي آند وكوالكوم تتعاونان على منصة للذكاء الاصطناعي المادي",
+    "takeaway": "Connectivity and on-device compute are being sold as one package; the telco is positioning itself as robotics infrastructure.",
+    "takeaway_ar": "يجري دمج الاتصال والحوسبة على الجهاز في حزمة واحدة، إذ يقدّم المشغّل نفسه بنيةً تحتيةً للروبوتات.",
+    "source": "e& release via GEC Newswire",
+    "source_url": "https://gecnewswire.com/e-and-qualcomm-technologies-announce-new-collaboration/",
+    "image": "/media/brief/eand-qualcomm.jpg",
+    "image_credit": "e& / GEC Newswire"
+  },
+  {
+    "id": "analog-boston-dynamics",
+    "country": "AE",
+    "date": "2026-10-21",
+    "title": "Analog confirmed as Boston Dynamics’ UAE partner",
+    "title_ar": "أنالوج شريكاً لبوسطن داينامكس في الإمارات",
+    "takeaway": "Spot and Stretch now have local sales, integration and service, removing the main blocker for enterprise pilots.",
+    "takeaway_ar": "أصبح لروبوتَي Spot وStretch مبيعات وتكامل وخدمة محلية، وهو العائق الرئيسي أمام التجارب المؤسسية.",
+    "source": "Analog",
+    "source_url": "https://analog.io/news/physical-intelligence-on-four-legs",
+    "image": "/media/brief/analog-boston-dynamics.jpg",
+    "image_credit": "Analog"
+  }
+]

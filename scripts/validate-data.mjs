@@ -5,7 +5,7 @@ import path from 'node:path';
 import { ROOT, SECTORS, ROBOT_TYPES, COMPANY_CATEGORIES, STAGES, EVENT_TYPES, MENA, ISO_DATE, readData } from './lib/taxonomy.mjs';
 
 const errors = [];
-const D = Object.fromEntries(['companies', 'deployments', 'events', 'countries'].map(n => [n, readData(n)]));
+const D = Object.fromEntries(['companies', 'deployments', 'events', 'countries', 'brief'].map(n => [n, readData(n)]));
 const countryCodes = new Set(D.countries.map(c => c.code));
 const need = (rec, where, keys) => keys.forEach(k => { if (rec[k] === undefined || rec[k] === null || rec[k] === '') errors.push(`${where}: missing "${k}"`); });
 const oneOf = (v, dictObj, where, field) => { if (!(v in dictObj)) errors.push(`${where}: ${field} "${v}" is not one of ${Object.keys(dictObj).join(', ')}`); };
@@ -46,5 +46,14 @@ D.events.forEach((e, i) => {
 });
 uniq(D.events, 'id', 'events');
 
+D.brief.forEach((b, i) => {
+  const w = `brief[${i}] ${b.id}`;
+  need(b, w, ['id', 'country', 'date', 'title', 'takeaway', 'source']);
+  if (!countryCodes.has(b.country)) errors.push(`${w}: country "${b.country}" is not in countries.json`);
+  date(b.date, w, 'date'); url(b.source_url, w, 'source_url');
+  if (b.image) { if (!/^\/media\/brief\/[a-z0-9._-]+\.(jpg|jpeg|png|webp)$/.test(b.image)) errors.push(`${w}: image must look like /media/brief/name.jpg`); else if (!fs.existsSync(path.join(ROOT, b.image))) errors.push(`${w}: image file ${b.image} does not exist`); if (!b.image_credit) errors.push(`${w}: image needs an image_credit`); }
+});
+uniq(D.brief, 'id', 'brief');
+
 if (errors.length) { console.error(`Data check failed (${errors.length} problem${errors.length > 1 ? 's' : ''}):\n- ` + errors.join('\n- ')); process.exit(1); }
-console.log(`Data check passed: ${D.companies.length} companies, ${D.deployments.length} deployments, ${D.events.length} events, ${D.countries.length} countries.`);
+console.log(`Data check passed: ${D.companies.length} companies, ${D.deployments.length} deployments, ${D.events.length} events, ${D.countries.length} countries, ${D.brief.length} brief items.`);

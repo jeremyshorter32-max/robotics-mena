@@ -89,13 +89,7 @@ class Component extends DCLogic {
 
   DEP = window.RM_DATA.deployments.map(d => ({ id: d.id, type: d.type, sector: d.sector, cc: d.country, lat: d.lat, lon: d.lon, date: d.date, n: !!d.is_new, robot: [d.title, d.title_ar || d.title], op: [d.operator, d.operator_ar || d.operator], site: [d.site, d.site_ar || d.site], src: d.source, logo: d.logo || '' }));
 
-  BRIEF = [
-    ['SA','2026-10-28','QSS AI & Robotics','QSS AI & Robotics opens a humanoid factory and public showroom in Riyadh','كيو إس إس تفتتح مصنعاً للروبوتات البشرية ومعرضاً عاماً في الرياض','Saudi buyers can now inspect locally assembled humanoids before procurement, a shorter path from pilot to purchase order.','بات بإمكان المشترين في السعودية معاينة روبوتات بشرية مجمّعة محلياً قبل الشراء، ما يختصر الطريق من التجربة إلى أمر الشراء.'],
-    ['AE','2026-10-27','TII','TII and NVIDIA launch a joint AI & Robotics Lab in Abu Dhabi','معهد الابتكار التكنولوجي وإنفيديا يطلقان مختبراً مشتركاً للذكاء الاصطناعي والروبوتات في أبوظبي','Regional robotics teams gain simulation-first tooling and compute without leaving the UAE.','تحصل فرق الروبوتات في المنطقة على أدوات محاكاة وقدرات حوسبة متقدمة دون مغادرة الإمارات.'],
-    ['AE','2026-10-24','BFL Group','BFL Group scales warehouse robots at JAFZA','مجموعة بي إف إل توسّع استخدام روبوتات المستودعات في جافزا','Retail fulfilment is the region’s most mature robotics use case; this becomes the reference site other operators visit.','تجهيز طلبات التجزئة هو أنضج استخدامات الروبوتات في المنطقة، وهذا هو الموقع المرجعي الذي سيزوره المشغّلون الآخرون.'],
-    ['AE','2026-10-23','e&','e& and Qualcomm partner on a physical AI platform','إي آند وكوالكوم تتعاونان على منصة للذكاء الاصطناعي المادي','Connectivity and on-device compute are being sold as one package; the telco is positioning itself as robotics infrastructure.','يجري دمج الاتصال والحوسبة على الجهاز في حزمة واحدة، إذ يقدّم المشغّل نفسه بنيةً تحتيةً للروبوتات.'],
-    ['AE','2026-10-21','Analog','Analog confirmed as Boston Dynamics’ UAE partner','أنالوج شريكاً لبوسطن داينامكس في الإمارات','Spot and Stretch now have local sales, integration and service, removing the main blocker for enterprise pilots.','أصبح لروبوتَي Spot وStretch مبيعات وتكامل وخدمة محلية، وهو العائق الرئيسي أمام التجارب المؤسسية.']
-  ];
+  BRIEF = window.RM_DATA.brief.map(b => [b.country, b.date, b.source, b.title, b.title_ar || b.title, b.takeaway, b.takeaway_ar || b.takeaway, b.image || '', b.image_credit || '', b.source_url || '']);
 
   CO = window.RM_DATA.companies.map(c => [c.name, c.name_ar || c.name, c.country, c.category, c.stage, c.added, c.summary, c.summary_ar || c.summary, c.id]);
 
@@ -639,7 +633,7 @@ class Component extends DCLogic {
       suggest: (ar ? ['روبوت بشري', 'الرياض', 'مسيّرات', 'جيتكس'] : ['Humanoid', 'Riyadh', 'Drones', 'GITEX']).map(label => ({ label, go: () => { this.setState({ q: label }); this.searchRef.current && this.searchRef.current.focus(); } })),
       onSearchKey: e => { if (e.key === 'ArrowDown') { const o = document.querySelector('#rm-results [role=option]'); if (o) { e.preventDefault(); o.focus(); } } },
       onOptKey: e => { const os = [...document.querySelectorAll('#rm-results [role=option]')], i = os.indexOf(e.currentTarget); if (e.key === 'ArrowDown' && os[i + 1]) { e.preventDefault(); os[i + 1].focus(); } else if (e.key === 'ArrowUp') { e.preventDefault(); (os[i - 1] || this.searchRef.current).focus(); } else if (e.key === 'Escape') { this.searchRef.current.focus(); } }, heroPins: JSON.stringify(this.DEP.map(pinOf)),
-      brief: this.BRIEF.map((b, i) => ({ idx: nf2.format(i + 1), cc: b[0], country: ccName(b[0]), date: fdate(b[1]), srcLine: t.source + ': ' + b[2], title: b[3 + L], take: b[5 + L] })),
+      brief: this.BRIEF.map((b, i) => ({ idx: nf2.format(i + 1), cc: b[0], country: ccName(b[0]), date: fdate(b[1]), srcLine: t.source + ': ' + b[2], title: b[3 + L], take: b[5 + L], img: b[7], hasImg: !!b[7], credit: (ar ? 'الصورة: ' : 'Image: ') + b[8], srcUrl: b[9], hasUrl: !!b[9], noUrl: !b[9] })),
       cChips, sChips, tChips, ...fx, mapPins: JSON.stringify(depF.map(pinOf)), selId: S.sel || '', fCountry: S.fCountry, padEnd: S.w <= 1180 ? '0' : '432',
       hasSel: !!selD, noSel: !selD, sel, clearSel: () => this.setState({ sel: null }), panelList,
       panelTitle: selD ? t.panelRecord : t.panelLatest, showing: t.showing.replace('{a}', num(depF.length)).replace('{b}', num(this.DEP.length)),
