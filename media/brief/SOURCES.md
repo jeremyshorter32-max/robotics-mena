@@ -10,3 +10,4 @@ Most are editorial photos owned by the publisher or a news agency: get permissio
 | qmic-mwc-doha.jpg | QMIC | https://qmic.com/2026/11/04/qmic-showcases-qatar-built-cutting-edge-technologies-in-embodied-intelligence-and-smart-city-systems-at-mwc-doha-2026/ |
 | saudi-robotic-reconstruction.jpg | MedEdge MEA | https://mededgemea.com/saudi-arabia-marks-milestone-in-advanced-breast-reconstruction-surgery/ |
 | xgen-egypt-robotics.jpg | X-GEN (promotional image) | Supplied by the site owner. A staged promotional composite, not a documentary photo, so the credit says so. |
+| gecko-adnoc-raptor.jpg (home Spotlight) | Victor Besa / The National | https://www.thenationalnews.com/future/technology/2026/11/04/how-wall-climbing-robots-could-help-gulf-energy-producers-recover-from-attacks/ |
