@@ -7,8 +7,14 @@
   const MENA = new Set(['784','682','634','048','414','512','818','504','400','788','012','434','368','422','887','376','275','760','729','478','732']);
   const CC = { AE:'784', SA:'682', QA:'634', BH:'048', KW:'414', OM:'512', EG:'818', MA:'504', JO:'400', TN:'788', DZ:'012', LY:'434', IQ:'368', LB:'422', YE:'887', SY:'760', SD:'729', MR:'478', PS:'275' };
   const NAMES = {'784':['UAE','الإمارات'],'682':['Saudi Arabia','السعودية'],'634':['Qatar','قطر'],'818':['Egypt','مصر'],'504':['Morocco','المغرب'],'512':['Oman','عُمان'],'400':['Jordan','الأردن'],'414':['Kuwait','الكويت'],'788':['Tunisia','تونس'],'012':['Algeria','الجزائر'],'434':['Libya','ليبيا'],'368':['Iraq','العراق'],'887':['Yemen','اليمن'],'729':['Sudan','السودان'],'048':['Bahrain','البحرين']};
-  const REGION = [[-17.5, 11], [61, 39.5]];
-  const LIMIT = [[-32, -2], [78, 52]];
+  // The GCC is the map's centre of gravity: a globe-style (orthographic) view centred on the Gulf keeps
+  // the GCC largest in the middle while Egypt, the Levant and the Maghreb stay visible towards the edges.
+  const GCC = [49, 25.5];
+  const REGION = [[GCC[0] - 62, GCC[1] - 16], [GCC[0] + 62, GCC[1] + 22]];
+  // Phones start closer in on the GCC (Levant to Oman); the Maghreb is a pan or zoom-out away.
+  const REGION_NARROW = [[GCC[0] - 22, GCC[1] - 14], [GCC[0] + 22, GCC[1] + 14]];
+  const LIMIT = [[-40, -20], [140, 62]];
+  const globe = b => d3.geoOrthographic().clipAngle(90).rotate([-(b[0][0] + b[1][0]) / 2, -(b[0][1] + b[1][1]) / 2]);
   const MIN_SPAN = 0.8, NS_R = 26;
   const cache = {};
   const libs = () => new Promise(r => { const t = () => (window.d3 && window.topojson) ? r() : setTimeout(t, 40); t(); });
@@ -146,9 +152,10 @@
     focusBox() {
       const cc = this.getAttribute('focus');
       const ps = this.pins().filter(p => !cc || p.cc === cc);
-      if (!cc || !ps.length) return REGION.map(p => p.slice());
+      if (!cc || !ps.length) return this.home();
       return this.padBox(ps, 4);
     }
+    home() { return ((this.clientWidth || window.innerWidth) < 700 ? REGION_NARROW : REGION).map(p => p.slice()); }
     padBox(ps, min) {
       let x0 = Math.min(...ps.map(p => p.lon)), x1 = Math.max(...ps.map(p => p.lon)), y0 = Math.min(...ps.map(p => p.lat)), y1 = Math.max(...ps.map(p => p.lat));
       const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, sx = Math.max(min, (x1 - x0) * 1.4), sy = Math.max(min * .6, (y1 - y0) * 1.4);
@@ -218,6 +225,7 @@
       if (!this.geo) return;
       const w = this.clientWidth, h = this.clientHeight;
       if (!w || !h) return;
+      if (!this.homed) { this.homed = true; this.bbox = this.focusBox(); }
       const hero = this.mode() === 'hero', rtl = this.getAttribute('dir') === 'rtl', pad = +this.getAttribute('pad-end') || 0;
       this.bar.hidden = hero;
       this.svg.setAttribute('aria-label', this.getAttribute('label') || 'Map');
@@ -229,12 +237,12 @@
       let proj;
       const center = p => { const b = this.bbox; return p([(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2]); };
       if (hero) {
-        proj = d3.geoMercator().fitWidth(Math.min(w * 0.98, w > 900 ? h * 2.1 : w * 1.1), obj);
-        const c = center(proj), tr = proj.translate();
-        const tx = w > 900 ? (rtl ? 12 + (w * 0.98 > h * 2.1 ? h * 1.05 : w * 0.49) : w - 12 - (w * 0.98 > h * 2.1 ? h * 1.05 : w * 0.49)) : w * 0.5, ty = w > 900 ? h * 0.58 : h * 0.76;
-        proj.translate([tr[0] + tx - c[0], tr[1] + ty - c[1]]);
+        // Gulf sits in the open space beside the headline; the rest of MENA extends behind the text.
+        const wide = w > 900, R = wide ? Math.min(w * 0.82, h * 1.9) : w * 1.7;
+        const tx = wide ? (rtl ? w * 0.29 : w * 0.71) : w * 0.5, ty = wide ? h * 0.56 : h * 0.78;
+        proj = d3.geoOrthographic().clipAngle(90).rotate([-GCC[0], -GCC[1]]).scale(R).translate([tx, ty]);
       } else {
-        proj = d3.geoMercator().fitExtent(ext, obj);
+        proj = globe(this.bbox).fitExtent(ext, obj);
         
         const c = center(proj), tr = proj.translate(), cx = (ext[0][0] + ext[1][0]) / 2, cy = (ext[0][1] + ext[1][1]) / 2;
         proj.translate([tr[0] + cx - c[0], tr[1] + cy - c[1]]);
@@ -242,7 +250,7 @@
       this.proj = proj;
       const path = d3.geoPath(proj);
       const tl = proj.invert([-40, -40]), br = proj.invert([w + 40, h + 40]);
-      const vis = f => { const [[a, b], [c, d]] = f.bb; return c >= tl[0] && a <= br[0] && d >= br[1] && b <= tl[1]; };
+      const vis = () => true; // the globe's own clipping hides the far side
       const fcc = CC[this.getAttribute('focus')];
       const k = proj.scale() / 400;
       let out = '';
