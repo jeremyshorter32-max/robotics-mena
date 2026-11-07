@@ -183,13 +183,16 @@ html,body{margin:0;padding:0;background:#F2F3F7}
 <script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;dark&quot;,&quot;light&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'dark'|'light'&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;violet&quot;,&quot;cyan&quot;],&quot;default&quot;:&quot;violet&quot;,&quot;tsType&quot;:&quot;'violet'|'cyan'&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;ar&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;'en'|'ar'&quot;,&quot;section&quot;:&quot;Language&quot;},&quot;arabicNumerals&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;latn&quot;,&quot;arab&quot;],&quot;default&quot;:&quot;latn&quot;,&quot;tsType&quot;:&quot;'latn'|'arab'&quot;,&quot;section&quot;:&quot;Language&quot;}}">
 class Component extends DCLogic {
   qp = new URLSearchParams(window.location.search);
+  pref(k) { try { return window.localStorage.getItem('rm-' + k); } catch (e) { return null; } }
+  savePref(k, v) { try { window.localStorage.setItem('rm-' + k, v); } catch (e) {} }
+  urlTidy = (() => { try { ['lang', 'theme'].forEach(k => { const v = this.qp.get(k); if (v) this.savePref(k, v); }); const u = new URL(window.location.href); ['lang', 'theme', 'accent'].forEach(k => u.searchParams.delete(k)); let p = u.pathname.replace(/index\.html$/, '').replace(/\.html$/, ''); if (u.hash === '#top') u.hash = ''; const next = p + u.search + u.hash; if (next !== window.location.pathname + window.location.search + window.location.hash) window.history.replaceState(window.history.state, '', next); } catch (e) {} return true; })();
   state = { active: 'brief', rails: { brief: { i: 0, n: 0, end: false }, strat: { i: 0, n: 0, end: false } }, lang: null, theme: null, q: '', fCountry: '', fSector: '', fType: '', sel: null, dCat: '', dSort: 'featured', eType: '', eCountry: '', tab: 'company', submitted: false, dAll: false, mapAll: false, mapNear: false, pc: (this.qp.get('c') || 'AE').toUpperCase(), email: '', subscribed: false, added: {}, w: window.innerWidth };
   searchRef = React.createRef();
   briefRail = React.createRef(); stratRail = React.createRef(); tabRail = React.createRef();
   NAV_IDS = ['map'];
   PAGE = 'map';
-  PAGES = { policy: 'policy.html', strategies: 'policy.html', data: 'policy.html', compare: 'policy.html', directory: 'directory.html', events: 'events.html', submit: 'submit.html', map: 'map.html' };
-  pageHref(id, c) { const q = this.qsCur || ''; const p = this.PAGES[id]; if (p) return p + q + (c && p === 'policy.html' ? '&c=' + c : '') + (id === 'compare' ? '#compare' : ''); return 'index.html' + q + '#' + id; }
+  PAGES = { policy: '/policy', strategies: '/policy', data: '/policy', compare: '/policy', directory: '/directory', events: '/events', submit: '/submit', map: '/map' };
+  pageHref(id, c) { const q = this.qsCur || ''; const p = this.PAGES[id]; if (p) return p + q + (c && c !== 'AE' && p === '/policy' ? '?c=' + c : '') + (id === 'compare' ? '#compare' : ''); return id === 'top' ? '/' : '/#' + id; }
   mapRef = React.createRef();
   navH() { const n = document.querySelector('nav[aria-label=Primary]'); return n ? n.offsetHeight : 64; }
   reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -227,7 +230,7 @@ class Component extends DCLogic {
     setTimeout(() => { this.railUpdate('brief'); this.railUpdate('strat'); this.onSpy(); }, 300);
   }
   componentDidUpdate() {
-    if (this.PAGE === 'policy' && this._lastPc !== this.state.pc) { const first = this._lastPc === undefined; this._lastPc = this.state.pc; if (!first) { try { const u = new URL(window.location.href); u.searchParams.set('c', this.state.pc); window.history.replaceState(window.history.state, '', u.pathname + u.search + u.hash); } catch (e) {} } }
+    if (this.PAGE === 'policy' && this._lastPc !== this.state.pc) { const first = this._lastPc === undefined; this._lastPc = this.state.pc; if (!first && this.PAGE === 'policy') { try { const u = new URL(window.location.href); if (this.state.pc === 'AE') u.searchParams.delete('c'); else u.searchParams.set('c', this.state.pc); window.history.replaceState(window.history.state, '', u.pathname + u.search + u.hash); } catch (e) {} } }
     if (this._lastActive !== this.state.active) { this._lastActive = this.state.active; const rail = this.tabRail.current, a = rail && rail.querySelector('[data-tab="' + this.state.active + '"]'); if (a) { const rR = rail.getBoundingClientRect(), aR = a.getBoundingClientRect(); rail.scrollBy({ left: (aR.left + aR.width / 2) - (rR.left + rR.width / 2), behavior: this.reduced ? 'auto' : 'smooth' }); } }
   }
   railEl(k) { return (k === 'brief' ? this.briefRail : this.stratRail).current; }
@@ -525,9 +528,9 @@ class Component extends DCLogic {
       submittedTitle: 'Received. Thank you.', submittedMsg: 'An editor will check it against the primary source and reply within five working days.', another: 'Submit another',
       reviewTitle: 'How editorial review works', reviewSteps: ['An editor checks every claim against a primary source.', 'We contact the company or operator to confirm.', 'Published with source and date; corrections are logged publicly.'], reviewNote: 'Listing is free and cannot be bought. We do not accept sponsored entries.',
       foot: [
-        { h: 'About', b: 'Robotics MENA is an independent, curated record of robotics, physical AI and automation across the Middle East and North Africa.', l: 'About the team', href: '#top' },
-        { h: 'Editorial & sourcing', b: 'Every number carries a source and a date. Claims without a primary source are not published. Corrections are logged.', l: 'Read the policy', href: 'submit.html' },
-        { h: 'Open data & API', b: 'Companies, deployments, events and strategies are available as open data (CC BY 4.0) and a read-only JSON API.', l: 'Explore the data', href: 'policy.html' },
+        { h: 'About', b: 'Robotics MENA is an independent, curated record of robotics, physical AI and automation across the Middle East and North Africa.', l: 'About the team', href: '/' },
+        { h: 'Editorial & sourcing', b: 'Every number carries a source and a date. Claims without a primary source are not published. Corrections are logged.', l: 'Read the policy', href: '/submit' },
+        { h: 'Open data & API', b: 'Companies, deployments, events and strategies are available as open data (CC BY 4.0) and a read-only JSON API.', l: 'Explore the data', href: '/policy' },
         { h: 'Contact', b: 'Tips, corrections and partnership enquiries go to the editors.', l: 'editors@roboticsmena.org', href: 'mailto:editors@roboticsmena.org' }
       ],
       copyright: '© 2026 Robotics MENA · Ad-free and independent', demoNote: 'Prototype: entries beyond the seed items are illustrative placeholders.'
@@ -575,9 +578,9 @@ class Component extends DCLogic {
       submittedTitle: 'وصلنا طلبك، شكراً لك.', submittedMsg: 'سيتحقق محرّر من المصدر الأصلي ويرد خلال خمسة أيام عمل.', another: 'أضف إدخالاً آخر',
       reviewTitle: 'كيف تعمل المراجعة التحريرية', reviewSteps: ['يتحقق محرّر من كل معلومة مقابل مصدر أصلي.', 'نتواصل مع الشركة أو المشغّل للتأكيد.', 'يُنشر الإدخال مع مصدره وتاريخه، وتُسجَّل التصحيحات علناً.'], reviewNote: 'الإدراج مجاني ولا يمكن شراؤه. لا نقبل إدخالات مموّلة.',
       foot: [
-        { h: 'عن المنصة', b: 'روبوتكس مينا سجلّ مستقل ومنسّق للروبوتات والذكاء الاصطناعي المادي والأتمتة في الشرق الأوسط وشمال أفريقيا.', l: 'تعرّف على الفريق', href: '#top' },
-        { h: 'السياسة التحريرية والمصادر', b: 'لكل رقم مصدر وتاريخ. لا ننشر أي معلومة دون مصدر أصلي، ونسجّل التصحيحات علناً.', l: 'اقرأ السياسة', href: 'submit.html' },
-        { h: 'البيانات المفتوحة والواجهة البرمجية', b: 'بيانات الشركات وعمليات النشر والفعاليات والاستراتيجيات متاحة مفتوحةً (CC BY 4.0) وعبر واجهة JSON للقراءة.', l: 'استكشف البيانات', href: 'policy.html' },
+        { h: 'عن المنصة', b: 'روبوتكس مينا سجلّ مستقل ومنسّق للروبوتات والذكاء الاصطناعي المادي والأتمتة في الشرق الأوسط وشمال أفريقيا.', l: 'تعرّف على الفريق', href: '/' },
+        { h: 'السياسة التحريرية والمصادر', b: 'لكل رقم مصدر وتاريخ. لا ننشر أي معلومة دون مصدر أصلي، ونسجّل التصحيحات علناً.', l: 'اقرأ السياسة', href: '/submit' },
+        { h: 'البيانات المفتوحة والواجهة البرمجية', b: 'بيانات الشركات وعمليات النشر والفعاليات والاستراتيجيات متاحة مفتوحةً (CC BY 4.0) وعبر واجهة JSON للقراءة.', l: 'استكشف البيانات', href: '/policy' },
         { h: 'تواصل معنا', b: 'للمعلومات والتصحيحات والشراكات، راسل فريق التحرير.', l: 'editors@roboticsmena.org', href: 'mailto:editors@roboticsmena.org' }
       ],
       copyright: '© 2026 روبوتكس مينا · مستقلة وبلا إعلانات', demoNote: 'نموذج أولي: الإدخالات غير الأساسية أمثلة توضيحية.'
@@ -597,8 +600,8 @@ class Component extends DCLogic {
 
   renderVals() {
     const S = this.state, P = this.props;
-    const lang = S.lang || this.qp.get('lang') || P.lang || 'en', ar = lang === 'ar', L = ar ? 1 : 0;
-    const theme = S.theme || this.qp.get('theme') || P.theme || 'light';
+    const lang = S.lang || this.qp.get('lang') || this.pref('lang') || P.lang || 'en', ar = lang === 'ar', L = ar ? 1 : 0;
+    const theme = S.theme || this.qp.get('theme') || this.pref('theme') || P.theme || 'light';
     const accent = this.qp.get('accent') || P.accent || 'violet';
     const nums = P.arabicNumerals || 'latn';
     const loc = ar ? (nums === 'arab' ? 'ar-EG-u-nu-arab' : 'ar-AE-u-nu-latn') : 'en-GB';
@@ -614,7 +617,7 @@ class Component extends DCLogic {
     const ccName = cc => this.CC[cc][L];
     const narrow = S.w <= 900;
     const ids = this.NAV_IDS;
-    this.qsCur = '?lang=' + lang + '&theme=' + theme;
+    this.qsCur = '';
     const activeNav = this.PAGE === 'home' ? (S.active === 'brief' ? 'brief' : '') : this.PAGE;
     const nav = ['brief', 'map', 'directory', 'policy', 'events', 'submit'].map((id, i) => { const on = activeNav === id; const local = this.PAGE === 'home' && id === 'brief'; return { id, label: t.pages[i], href: local ? '#brief' : this.pageHref(id, id === 'policy' ? S.pc : ''), cur: on ? 'page' : 'false', color: on ? 'var(--fg)' : 'var(--fg-muted)', bd: on ? 'var(--accent)' : 'transparent', go: e => { if (local) { e.preventDefault(); this.go(id); } } }; });
     const pad2 = x => String(x).padStart(2, '0');
@@ -710,8 +713,8 @@ class Component extends DCLogic {
       t: tt, lang, dir: ar ? 'rtl' : 'ltr', theme, accent, arrow, nav, ...rv('brief'), ...rv('strat'), briefRail: this.briefRail, stratRail: this.stratRail, tabRail: this.tabRail, prevArrow: ar ? '→' : '←', nextArrow: ar ? '←' : '→',
       otherLang: ar ? 'en' : 'ar', otherFont: ar ? "'IBM Plex Sans',sans-serif" : "'IBM Plex Sans Arabic',sans-serif",
       themeLabel: theme === 'dark' ? (ar ? 'فاتح' : 'Light') : (ar ? 'داكن' : 'Dark'), themeAria: ar ? 'تبديل المظهر' : 'Switch colour theme',
-      toggleTheme: () => this.setState({ theme: theme === 'dark' ? 'light' : 'dark' }),
-      toggleLang: () => this.setState({ lang: ar ? 'en' : 'ar' }),
+      toggleTheme: () => { const v = theme === 'dark' ? 'light' : 'dark'; this.savePref('theme', v); this.setState({ theme: v }); },
+      toggleLang: () => { const v = ar ? 'en' : 'ar'; this.savePref('lang', v); this.setState({ lang: v }); },
       goNewsletter: e => { e.preventDefault(); this.go('newsletter'); },
       goListed: e => { e.preventDefault(); this.setState({ tab: 'company', submitted: false }); this.go('submit'); },
       searchRef: this.searchRef, q: S.q, onQ: e => this.setState({ q: e.target.value }), hasQ: !!q, qOpen: q ? 'true' : 'false', results, noResults: !!q && !results.length,
@@ -734,7 +737,7 @@ class Component extends DCLogic {
       sample: this.BRIEF.map((b, i) => ({ idx: nf2.format(i + 1), title: b[3 + L] })),
       email: S.email, onEmail: e => this.setState({ email: e.target.value }), subscribed: S.subscribed, notSubscribed: !S.subscribed,
       subscribe: e => { e.preventDefault(); this.setState({ subscribed: true }); },
-      homeHref: this.PAGE === 'home' ? '#top' : this.pageHref('top'), policyHref: this.pageHref('policy', S.pc), mapFullHref: this.pageHref('map'), submitHref: this.pageHref('submit'),
+      homeHref: this.PAGE === 'home' ? '/' : this.pageHref('top'), policyHref: this.pageHref('policy', S.pc), mapFullHref: this.pageHref('map'), submitHref: this.pageHref('submit'),
       pTabs, pc, cmp, pTabId: 'rm-ptab-' + pcK,
       goCompare: e => { e.preventDefault(); this.go('compare'); },
       onPTabKey: e => { const i = this.PCC.indexOf(pcK); let d = 0; if (e.key === 'ArrowRight') d = ar ? -1 : 1; if (e.key === 'ArrowLeft') d = ar ? 1 : -1; if (!d) return; e.preventDefault(); const k = this.PCC[(i + d + this.PCC.length) % this.PCC.length]; this.setState({ pc: k }, () => { const b = document.getElementById('rm-ptab-' + k); b && b.focus(); }); },

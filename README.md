@@ -30,6 +30,7 @@ Build locally: `SITE_PASSWORD=test ./scripts/build-site.sh` (output in `_site/`)
 
 `CNAME` holds the custom domain; `.nojekyll` tells GitHub Pages to serve files as-is.
 
-Useful URL options: `?lang=ar` (Arabic, right-to-left), `?theme=light|dark`.
+Language and theme are remembered in the visitor's browser, so links stay clean (`/map`, not `map.html?lang=en&theme=light`).
+Old-style links such as `?lang=ar` or `index.html#top` still work and are tidied in the address bar. The Policy page keeps `?c=SA` etc. so a chosen country can be shared (UAE is the default and has no `?c`).
 
 Run locally: `python3 -m http.server` in this folder, then open http://localhost:8000.
