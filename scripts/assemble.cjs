@@ -7,7 +7,7 @@ const out = process.argv[2] || path.join(root, '_site');
 const read = f => fs.readFileSync(path.join(root, f), 'utf8');
 
 const data = {};
-for (const name of ['companies', 'deployments', 'events', 'countries', 'brief']) data[name] = JSON.parse(read(`data/${name}.json`));
+for (const name of ['companies', 'deployments', 'events', 'countries', 'brief', 'stories', 'site']) data[name] = JSON.parse(read(`data/${name}.json`));
 data.builtAt = new Date().toISOString().slice(0, 10);
 
 const logic = read('src/logic.js');

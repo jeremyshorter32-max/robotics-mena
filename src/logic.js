@@ -4,7 +4,7 @@ class Component extends DCLogic {
   pref(k) { try { return window.localStorage.getItem('rm-' + k); } catch (e) { return null; } }
   savePref(k, v) { try { window.localStorage.setItem('rm-' + k, v); } catch (e) {} }
   urlTidy = (() => { try { ['lang', 'theme'].forEach(k => { const v = this.qp.get(k); if (v) this.savePref(k, v); }); const u = new URL(window.location.href); ['lang', 'theme', 'accent'].forEach(k => u.searchParams.delete(k)); let p = u.pathname.replace(/index\.html$/, '').replace(/\.html$/, ''); if (u.hash === '#top') u.hash = ''; const next = p + u.search + u.hash; if (next !== window.location.pathname + window.location.search + window.location.hash) window.history.replaceState(window.history.state, '', next); } catch (e) {} return true; })();
-  state = { active: 'brief', rails: { brief: { i: 0, n: 0, end: false }, strat: { i: 0, n: 0, end: false } }, lang: null, theme: null, q: '', fCountry: '', fSector: '', fType: '', sel: null, dCat: '', dSort: 'featured', eType: '', eCountry: '', tab: 'company', submitted: false, dbTab: this.qp.get('tab') || 'companies', dbSel: this.qp.get('id') || null, dbQ: this.qp.get('q') || '', dbCountry: '', dbFacet: '', dbSort: '', dbAll: false, dbCopied: false, dAll: false, mapAll: false, mapNear: false, pc: (this.qp.get('c') || 'AE').toUpperCase(), email: '', subscribed: false, added: {}, w: window.innerWidth };
+  state = { active: 'brief', rails: { brief: { i: 0, n: 0, end: false }, strat: { i: 0, n: 0, end: false } }, lang: null, theme: null, q: '', fCountry: '', fSector: '', fType: '', sel: null, dCat: '', dSort: 'featured', eType: '', eCountry: '', tab: 'company', submitted: false, dbTab: this.qp.get('tab') || 'companies', dbSel: this.qp.get('id') || null, dbQ: this.qp.get('q') || '', dbCountry: '', dbFacet: '', dbSort: '', dbAll: false, dbCopied: false, dAll: false, mapAll: false, mapNear: false, pc: (this.qp.get('c') || 'AE').toUpperCase(), email: '', subscribed: !!this.pref('subscriber'), added: {}, w: window.innerWidth };
   searchRef = React.createRef();
   briefRail = React.createRef(); stratRail = React.createRef(); tabRail = React.createRef();
   NAV_IDS = window.RM_PAGE.nav;
@@ -90,6 +90,8 @@ class Component extends DCLogic {
 
   DEP = window.RM_DATA.deployments.map(d => ({ id: d.id, type: d.type, sector: d.sector, cc: d.country, lat: d.lat, lon: d.lon, date: d.date, n: !!d.is_new, robot: [d.title, d.title_ar || d.title], op: [d.operator, d.operator_ar || d.operator], site: [d.site, d.site_ar || d.site], src: d.source, logo: d.logo || '', kind: d.kind || 'deployment', sum: [d.summary || '', d.summary_ar || d.summary || ''], url: d.source_url || '' }));
 
+  STORIES = window.RM_DATA.stories || [];
+  SIGNUP_URL = (window.RM_DATA.site || {}).signup_url || '';
   BRIEF = window.RM_DATA.brief.map(b => [b.country, b.date, b.source, b.title, b.title_ar || b.title, b.takeaway, b.takeaway_ar || b.takeaway, b.image || '', b.image_credit || '', b.source_url || '']);
 
   CO = window.RM_DATA.companies.map(c => [c.name, c.name_ar || c.name, c.country, c.category, c.stage, c.added, c.summary, c.summary_ar || c.summary, c.id]);
@@ -288,7 +290,8 @@ class Component extends DCLogic {
       spotDek: 'Gecko Robotics is deploying its new Raptor inspection robots across ADNOC facilities to find structural weaknesses and assess damage, scanning assets with sensors and sound waves without taking them offline.',
       spotQuote: '“Robotics are essential to ensure that resilience and readiness is possible in a world where we don’t have a lot of these skilled workforces.”', spotWho: 'Jake Loosararian, chief executive, Gecko Robotics',
       spotStats: [['Tens', 'Robots deployed a day in the region'], ['3–5×', 'Faster than Gecko’s previous robot'], ['50×', 'Lower data-collection cost (company claim)']],
-      spotSrc: 'Source: The National, 4 Nov 2026. Raptor was unveiled at ADIPEC, Abu Dhabi.', spotRead: 'Read the story at The National', spotCap: 'Raptor at ADIPEC, Abu Dhabi · Nov 2026', spotCredit: 'Photo: Victor Besa / The National',
+      spotSrc: 'Source: The National, 4 Nov 2026. Raptor was unveiled at ADIPEC, Abu Dhabi.', spotRead: 'Read our analysis', spotCap: 'Raptor at ADIPEC, Abu Dhabi · Nov 2026', spotCredit: 'Photo: Victor Besa / The National',
+      storyCrumb: 'Spotlight', storyRead: '{n} min read', gateKicker: 'Free with the weekly brief', gateTitle: 'Keep reading: the full analysis, sources and images', gateDek: 'Enter your email to unlock this piece. You’ll also get the weekly MENA robotics brief: five signals every Monday. Unsubscribe any time.', gatePh: 'Email address', gateBtn: 'Unlock the analysis', gateNote: 'Email only. We never share your address.', storySources: 'Sources', storyRelated: 'In the Robotics MENA database', storyUnlocked: 'Unlocked. Thanks for subscribing.', storyBack: 'Back to home',
       spotAlt: 'Gecko Robotics Raptor wall-climbing inspection robot on a steel surface at ADIPEC, Abu Dhabi',
       s9n: '08 · Newsletter', nlTitle: 'The weekly MENA robotics brief', nlDek: 'Five signals every Monday, each with a takeaway and a primary source. Written for the people who sign the purchase orders.', nlPh: 'Work email', nlBtn: 'Subscribe', nlDone: 'You’re on the list. The next issue lands Monday.', nlMeta: 'Every Monday · 4-minute read · No ads, no sponsored slots · Unsubscribe in one click',
       sampleLbl: 'Sample issue', sampleIssue: 'No. 45 · 9 Nov 2026', sampleFoot: '+ 3 deployments added to the map · 2 events this fortnight',
@@ -339,7 +342,8 @@ class Component extends DCLogic {
       spotDek: 'تنشر جيكو روبوتكس روبوتات الفحص الجديدة «رابتور» في منشآت أدنوك لرصد مواطن الضعف الإنشائي وتقييم الأضرار، إذ تمسح الأصول بأجهزة الاستشعار والموجات الصوتية من دون إيقاف تشغيلها.',
       spotQuote: '«الروبوتات ضرورية لضمان المرونة والجاهزية في عالم لا تتوفر فيه أعداد كافية من العمالة الماهرة.»', spotWho: 'جيك لوساراريان، الرئيس التنفيذي لجيكو روبوتكس',
       spotStats: [['عشرات', 'روبوتات تُنشر يومياً في المنطقة'], ['3–5×', 'أسرع من روبوت جيكو السابق'], ['50×', 'خفض في تكلفة جمع البيانات (بحسب الشركة)']],
-      spotSrc: 'المصدر: ذا ناشونال، 4 نوفمبر 2026. كُشف عن «رابتور» في معرض أديبك، أبوظبي.', spotRead: 'اقرأ القصة في ذا ناشونال', spotCap: 'رابتور في أديبك، أبوظبي · نوفمبر 2026', spotCredit: 'تصوير: فيكتور بيسا / ذا ناشونال',
+      spotSrc: 'المصدر: ذا ناشونال، 4 نوفمبر 2026. كُشف عن «رابتور» في معرض أديبك، أبوظبي.', spotRead: 'اقرأ تحليلنا', spotCap: 'رابتور في أديبك، أبوظبي · نوفمبر 2026', spotCredit: 'تصوير: فيكتور بيسا / ذا ناشونال',
+      storyCrumb: 'تحت الضوء', storyRead: 'قراءة في {n} دقائق', gateKicker: 'مجاناً مع الموجز الأسبوعي', gateTitle: 'تابع القراءة: التحليل الكامل مع المصادر والصور', gateDek: 'أدخل بريدك الإلكتروني لفتح هذا المقال. ستصلك أيضاً نشرة روبوتات المنطقة الأسبوعية: خمس إشارات كل اثنين. يمكنك إلغاء الاشتراك في أي وقت.', gatePh: 'البريد الإلكتروني', gateBtn: 'افتح التحليل', gateNote: 'البريد الإلكتروني فقط. لا نشارك عنوانك مع أحد.', storySources: 'المصادر', storyRelated: 'في قاعدة بيانات روبوتكس مينا', storyUnlocked: 'تم الفتح. شكراً لاشتراكك.', storyBack: 'العودة إلى الرئيسية',
       spotAlt: 'روبوت الفحص «رابتور» من جيكو روبوتكس يتسلّق سطحاً فولاذياً في أديبك، أبوظبي',
       s9n: '08 · النشرة', nlTitle: 'الموجز الأسبوعي لروبوتات المنطقة', nlDek: 'خمس إشارات كل اثنين، لكل منها خلاصة ومصدر أصلي. مكتوبة لمن يوقّعون أوامر الشراء.', nlPh: 'بريد العمل', nlBtn: 'اشترك', nlDone: 'تم تسجيلك. يصلك العدد القادم يوم الاثنين.', nlMeta: 'كل اثنين · 4 دقائق قراءة · بلا إعلانات أو رعايات · إلغاء الاشتراك بنقرة',
       sampleLbl: 'نموذج عدد', sampleIssue: 'العدد 45 · 9 نوفمبر 2026', sampleFoot: '+ 3 عمليات نشر أُضيفت إلى الخريطة · فعاليتان خلال أسبوعين',
@@ -533,6 +537,13 @@ class Component extends DCLogic {
     const narrow = S.w <= 900;
     const ids = this.NAV_IDS;
     this.qsCur = '';
+    const st = this.STORIES.find(x => x.id === this.qp.get('s')) || this.STORIES[0];
+    const tx = o => o ? (ar ? (o.ar || o.en || '') : (o.en || '')) : '';
+    const blk = b => ({ isP: b.t === 'p', isH: b.t === 'h', isImg: b.t === 'img', isQ: b.t === 'quote', isStats: b.t === 'stats', isList: b.t === 'list', text: digits(tx(b)), src: b.src || '', alt: tx(b.alt), cap: tx(b.cap), credit: tx(b.credit), who: tx(b.who), items: (b.items || []).map(i => ({ v: digits(i.v || ''), label: digits(tx(i)) })) });
+    const story = st ? { kicker: tx(st.kicker), title: tx(st.title), dek: tx(st.dek), date: fdate(st.date), by: tx(st.by), read: digits(t.storyRead.replace('{n}', st.read_min)), hero: st.hero.src, heroAlt: tx(st.hero.alt), heroCap: tx(st.hero.cap), heroCredit: tx(st.hero.credit) } : {};
+    const storyBody = st ? st.body.map(blk) : [], storyTeaser = st ? storyBody.slice(0, st.gate_after) : [];
+    const storySources = st ? st.sources.map((x, i) => ({ n: nf.format(i + 1), name: x.name, title: x.title, date: x.date ? fdate(x.date) : '', url: x.url })) : [];
+    const storyRelated = st ? (st.related || []).map(r => ({ label: tx(r), href: r.href })) : [];
     const activeNav = this.PAGE === 'home' ? (S.active === 'brief' ? 'brief' : '') : this.PAGE;
     const nav = ['brief', 'map', 'database', 'policy', 'events', 'submit'].map((id, i) => { const on = activeNav === id; const local = this.PAGE === 'home' && id === 'brief'; return { id, label: t.pages[i], href: local ? '#brief' : this.pageHref(id, id === 'policy' ? S.pc : ''), cur: on ? 'page' : 'false', color: on ? 'var(--fg)' : 'var(--fg-muted)', bd: on ? 'var(--accent)' : 'transparent', go: e => { if (local) { e.preventDefault(); this.go(id); } } }; });
     const pad2 = x => String(x).padStart(2, '0');
@@ -653,7 +664,13 @@ class Component extends DCLogic {
       spotStats: t.spotStats.map(s => ({ v: digits(s[0]), label: s[1] })),
       sample: this.BRIEF.map((b, i) => ({ idx: nf2.format(i + 1), title: b[3 + L] })),
       email: S.email, onEmail: e => this.setState({ email: e.target.value }), subscribed: S.subscribed, notSubscribed: !S.subscribed,
-      subscribe: e => { e.preventDefault(); this.setState({ subscribed: true }); },
+      subscribe: e => {
+        e.preventDefault(); const em = (S.email || '').trim(); if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return;
+        this.savePref('subscriber', em);
+        if (this.SIGNUP_URL) { try { fetch(this.SIGNUP_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ email: em, source: this.PAGE === 'spotlight' && st ? 'spotlight:' + st.id : this.PAGE, lang }) }).catch(() => {}); } catch (e2) {} }
+        this.setState({ subscribed: true });
+      },
+      story, storyTeaser, storyBody, storySources, storyRelated, hasStory: !!st, storyHref: st ? '/spotlight?s=' + st.id : '/spotlight',
       homeHref: this.PAGE === 'home' ? '/' : this.pageHref('top'), policyHref: this.pageHref('policy', S.pc), mapFullHref: this.pageHref('map'), submitHref: this.pageHref('submit'),
       pTabs, pc, cmp, pTabId: 'rm-ptab-' + pcK,
       goCompare: e => { e.preventDefault(); this.go('compare'); },

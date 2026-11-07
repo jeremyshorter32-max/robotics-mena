@@ -1,0 +1,6 @@
+[{"id":"gecko-adnoc-raptor","date":"2026-11-07","read_min":7,"gate_after":2,
+"kicker":{"en":"Analysis","ar":"تحليل"},"title":{"en":"Test title","ar":"عنوان"},"dek":{"en":"Dek","ar":"مقدمة"},"by":{"en":"Robotics MENA","ar":"روبوتكس مينا"},
+"hero":{"src":"/media/brief/gecko-adnoc-raptor.jpg","alt":{"en":"Raptor"},"cap":{"en":"Cap"},"credit":{"en":"Photo: X"}},
+"body":[{"t":"p","en":"Para one","ar":"فقرة"},{"t":"p","en":"Para two"},{"t":"h","en":"Heading"},{"t":"stats","items":[{"v":"50×","en":"cost"}]},{"t":"quote","en":"Quote","who":{"en":"Who"}},{"t":"list","items":[{"en":"a"},{"en":"b"}]},{"t":"img","src":"/media/brief/gecko-adnoc-raptor.jpg","alt":{"en":"x"},"cap":{"en":"cap"},"credit":{"en":"credit"}}],
+"sources":[{"name":"The National","title":"How wall-climbing robots…","date":"2026-11-04","url":"https://example.com"}],
+"related":[{"en":"Gecko Robotics","href":"/database?tab=companies&id=gecko-robotics"}]}]
