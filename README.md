@@ -34,7 +34,7 @@ Each record type has a fixed set of fields. Categories must be one of the keys t
 
 ## Weekly scanner (automatic new entries)
 
-`.github/workflows/scan.yml` runs every Monday at 04:23 UTC, and can also be run by hand from the Actions tab.
+`.github/workflows/scan.yml` is built and tested offline, but **not switched on yet** (see To do). Once set up, it runs every Monday at 04:23 UTC and can also be run by hand from the Actions tab.
 
 1. **Research:** Claude (`claude-opus-5-5`) searches the web and reads articles about MENA robotics from the past week, in English and Arabic.
 2. **Extract:** a second call turns the findings into entries that must match the database schema exactly.
@@ -44,6 +44,17 @@ Each record type has a fixed set of fields. Categories must be one of the keys t
 Setup (one time): add an `ANTHROPIC_API_KEY` repository secret, and allow Actions to open pull requests (Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests").
 Test the merge step offline: `node scripts/scan.mjs --from-file findings.json`.
 If Claude declines a request for policy reasons, the scanner uses the API's server-side fallback (`fallbacks: "default"`).
+
+## To do
+
+- [ ] **Switch on the weekly scanner.**
+  1. Create a Claude API key at https://console.anthropic.com/settings/keys (add billing if asked).
+  2. Save it as the repository secret `ANTHROPIC_API_KEY` (Settings → Secrets and variables → Actions).
+  3. Settings → Actions → General → Workflow permissions: tick "Allow GitHub Actions to create and approve pull requests", then Save.
+  4. Do a first run by hand: Actions → Weekly database scan → Run workflow (try `days` = 30). Review the pull request it opens.
+  5. Turn on the weekly schedule: in `.github/workflows/scan.yml`, remove the `#` from the two `schedule` lines.
+
+  Estimated cost: roughly $1–3 per weekly run (web searches plus reading articles).
 
 ## Password protection (private preview)
 

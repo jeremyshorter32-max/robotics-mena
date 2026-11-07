@@ -2,9 +2,11 @@ name: Weekly database scan
 
 # Every Monday morning (UTC), search the web for new MENA robotics entries and open a pull request
 # with them for review. Nothing goes live until the pull request is merged.
+# TO DO: the weekly schedule is paused until the scanner is set up (see README, "To do").
+# To switch it on, remove the "#" from the two schedule lines below.
 on:
-  schedule:
-    - cron: '23 4 * * 1'
+  # schedule:
+  #   - cron: '23 4 * * 1'
   workflow_dispatch:
     inputs:
       days:
