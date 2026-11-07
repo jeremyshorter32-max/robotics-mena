@@ -9,7 +9,7 @@ class Component extends DCLogic {
   briefRail = React.createRef(); stratRail = React.createRef(); tabRail = React.createRef();
   NAV_IDS = window.RM_PAGE.nav;
   PAGE = window.RM_PAGE.page;
-  PAGES = { policy: '/policy', strategies: '/policy', data: '/policy', compare: '/policy', directory: '/directory', events: '/events', submit: '/submit', map: '/map', database: '/database' };
+  PAGES = { policy: '/policy', strategies: '/policy', data: '/policy', compare: '/policy', directory: '/database?tab=companies', events: '/events', submit: '/submit', map: '/map', database: '/database' };
   pageHref(id, c) { const q = this.qsCur || ''; const p = this.PAGES[id]; if (p) return p + q + (c && c !== 'AE' && p === '/policy' ? '?c=' + c : '') + (id === 'compare' ? '#compare' : ''); return id === 'top' ? '/' : '/#' + id; }
   mapRef = React.createRef();
   navH() { const n = document.querySelector('nav[aria-label=Primary]'); return n ? n.offsetHeight : 64; }
@@ -97,7 +97,7 @@ class Component extends DCLogic {
     ['AE','2026-10-21','Analog','Analog confirmed as Boston Dynamics’ UAE partner','أنالوج شريكاً لبوسطن داينامكس في الإمارات','Spot and Stretch now have local sales, integration and service, removing the main blocker for enterprise pilots.','أصبح لروبوتَي Spot وStretch مبيعات وتكامل وخدمة محلية، وهو العائق الرئيسي أمام التجارب المؤسسية.']
   ];
 
-  CO = window.RM_DATA.companies.map(c => [c.name, c.name_ar || c.name, c.country, c.category, c.stage, c.added, c.summary, c.summary_ar || c.summary]);
+  CO = window.RM_DATA.companies.map(c => [c.name, c.name_ar || c.name, c.country, c.category, c.stage, c.added, c.summary, c.summary_ar || c.summary, c.id]);
 
   READY = window.RM_DATA.countries.filter(c => c.in_compare_table).map(c => [c.code, window.RM_DATA.deployments.filter(d => d.country === c.code).length, window.RM_DATA.companies.filter(x => x.country === c.code).length, c.target_year, c.headline_target]).sort((a, b) => b[1] - a[1]);
 
@@ -283,7 +283,7 @@ class Component extends DCLogic {
       s3n: '03 · Directory', s3: 'Ecosystem directory', s3sub: 'Who is building robots, systems and robotics software in the region.', getListed: 'Get listed', sort: 'Sort',
       sortOpts: [['featured', 'Editor’s order'], ['az', 'A–Z'], ['newest', 'Recently added'], ['stage', 'Stage']], listed: 'Listed',
       s4n: '04 · Policy & data', s4: 'National strategies & readiness', s4sub: 'Country by country: the programmes that matter for robotics, what each target actually measures, when it is due, and how that compares with what is deployed on the ground.',
-      pages: ['Brief', 'Map', 'Directory', 'Database', 'Policy', 'Events', 'Submit'], pOpenDossiers: 'Open country dossiers', mapOpen: 'Open the full map', crumbs: 'Breadcrumb', crumbHome: 'Home', crumbPolicy: 'Policy & data', pCountries: 'Countries', pDossier: 'Country dossier', pProgrammes: 'Programmes & targets', pTargets: 'Targets', pKpiNote: 'Each tile shows a published target: the number, what it measures, and the year it is due.', pFeatured: 'Featured initiative', pWhy: 'Why it matters for robotics', pMilestones: 'Milestones', pPubs: 'Publications & sources', pCompareLink: 'Compare all countries', pCompare: 'Compare countries', pCompareSub: 'Each country’s headline target (what it measures and when it is due) next to what we have verified on the ground. Select a country to open its dossier.', pCols: ['Country', 'Robotics-specific policy', 'Headline target · what it measures', 'Due', 'Deployments tracked', 'Companies listed'], pCmpSrc: 'Targets: national strategy documents and official announcements, linked in each dossier. Deployments and companies: Robotics MENA tracker, 30 Oct 2026. Bahrain and Jordan are tracked but not yet profiled.', pStDep: 'Deployments tracked', pStCo: 'Companies listed', pStProg: 'Programmes profiled', byYr: 'Due {y}', noDate: 'No date published', away: 'In {n} years', notProfiled: 'Not yet profiled',
+      pages: ['Brief', 'Map', 'Database', 'Policy', 'Events', 'Submit'], pOpenDossiers: 'Open country dossiers', mapOpen: 'Open the full map', crumbs: 'Breadcrumb', crumbHome: 'Home', crumbPolicy: 'Policy & data', pCountries: 'Countries', pDossier: 'Country dossier', pProgrammes: 'Programmes & targets', pTargets: 'Targets', pKpiNote: 'Each tile shows a published target: the number, what it measures, and the year it is due.', pFeatured: 'Featured initiative', pWhy: 'Why it matters for robotics', pMilestones: 'Milestones', pPubs: 'Publications & sources', pCompareLink: 'Compare all countries', pCompare: 'Compare countries', pCompareSub: 'Each country’s headline target (what it measures and when it is due) next to what we have verified on the ground. Select a country to open its dossier.', pCols: ['Country', 'Robotics-specific policy', 'Headline target · what it measures', 'Due', 'Deployments tracked', 'Companies listed'], pCmpSrc: 'Targets: national strategy documents and official announcements, linked in each dossier. Deployments and companies: Robotics MENA tracker, 30 Oct 2026. Bahrain and Jordan are tracked but not yet profiled.', pStDep: 'Deployments tracked', pStCo: 'Companies listed', pStProg: 'Programmes profiled', byYr: 'Due {y}', noDate: 'No date published', away: 'In {n} years', notProfiled: 'Not yet profiled',
       p1: 'Deployments tracked', p2: 'Companies listed', p3: 'Headline target horizon', readySrc: 'Source: Robotics MENA tracker · 30 Oct 2026', readySrc3: 'Source: national strategy documents · see below',
       s5: 'National strategies', s5sub: 'The programmes setting targets for robotics, AI and autonomy.', agency: 'Lead agency', launched: 'Launched',
       s6n: '05 · Talent', s6: 'Labs & talent', s6sub: 'Where the region trains, researches and competes.',
@@ -309,7 +309,7 @@ class Component extends DCLogic {
       foot: [
         { h: 'About', b: 'Robotics MENA is an independent, curated record of robotics, physical AI and automation across the Middle East and North Africa.', l: 'About the team', href: '/' },
         { h: 'Editorial & sourcing', b: 'Every number carries a source and a date. Claims without a primary source are not published. Corrections are logged.', l: 'Read the policy', href: '/submit' },
-        { h: 'Open data & API', b: 'Companies, deployments, events and strategies are available as open data (CC BY 4.0) and a read-only JSON API.', l: 'Explore the data', href: '/policy' },
+        { h: 'Open data & API', b: 'Companies, deployments, events and strategies are available as open data (CC BY 4.0) and a read-only JSON API.', l: 'Explore the data', href: '/database' },
         { h: 'Contact', b: 'Tips, corrections and partnership enquiries go to the editors.', l: 'editors@roboticsmena.org', href: 'mailto:editors@roboticsmena.org' }
       ],
       copyright: '© 2026 Robotics MENA · Ad-free and independent', demoNote: 'Prototype: entries beyond the seed items are illustrative placeholders.'
@@ -333,7 +333,7 @@ class Component extends DCLogic {
       s3n: '03 · الدليل', s3: 'دليل المنظومة', s3sub: 'من يصنع الروبوتات والأنظمة وبرمجيات الروبوتات في المنطقة.', getListed: 'أدرج شركتك', sort: 'ترتيب',
       sortOpts: [['featured', 'اختيار المحرّر'], ['az', 'أبجدياً'], ['newest', 'الأحدث إدراجاً'], ['stage', 'المرحلة']], listed: 'أُدرج',
       s4n: '04 · السياسات والبيانات', s4: 'الاستراتيجيات الوطنية والجاهزية', s4sub: 'دولة بدولة: البرامج المهمة للروبوتات، وما يقيسه كل هدف فعلاً، وموعد استحقاقه، ومقارنته بما هو منشور على أرض الواقع.',
-      pages: ['الموجز', 'الخريطة', 'الدليل', 'البيانات', 'السياسات', 'الفعاليات', 'أضف'], pOpenDossiers: 'افتح ملفات الدول', mapOpen: 'افتح الخريطة الكاملة', crumbs: 'مسار التنقل', crumbHome: 'الرئيسية', crumbPolicy: 'السياسات والبيانات', pCountries: 'الدول', pDossier: 'ملف الدولة', pProgrammes: 'البرامج والأهداف', pTargets: 'الأهداف', pKpiNote: 'تعرض كل خانة هدفاً منشوراً: الرقم، وما يقيسه، وسنة استحقاقه.', pFeatured: 'مبادرة بارزة', pWhy: 'لماذا تهمّ قطاع الروبوتات', pMilestones: 'محطات رئيسية', pPubs: 'المنشورات والمصادر', pCompareLink: 'قارن بين جميع الدول', pCompare: 'مقارنة بين الدول', pCompareSub: 'الهدف الرئيسي لكل دولة (ما يقيسه وموعد استحقاقه) إلى جانب ما تحققنا منه ميدانياً. اختر دولة لفتح ملفها.', pCols: ['الدولة', 'سياسة خاصة بالروبوتات', 'الهدف الرئيسي · ما يقيسه', 'الاستحقاق', 'عمليات النشر المرصودة', 'الشركات المدرجة'], pCmpSrc: 'الأهداف: وثائق الاستراتيجيات الوطنية والإعلانات الرسمية، مع روابطها في كل ملف. عمليات النشر والشركات: متتبّع روبوتكس مينا، 30 أكتوبر 2026. البحرين والأردن مرصودتان ولم تُعدّ ملفاتهما بعد.', pStDep: 'عمليات نشر مرصودة', pStCo: 'شركات مدرجة', pStProg: 'برامج في الملف', byYr: 'الاستحقاق {y}', noDate: 'لم يُعلن موعد', away: 'بعد {n} سنوات', notProfiled: 'لم يُعدّ الملف بعد',
+      pages: ['الموجز', 'الخريطة', 'البيانات', 'السياسات', 'الفعاليات', 'أضف'], pOpenDossiers: 'افتح ملفات الدول', mapOpen: 'افتح الخريطة الكاملة', crumbs: 'مسار التنقل', crumbHome: 'الرئيسية', crumbPolicy: 'السياسات والبيانات', pCountries: 'الدول', pDossier: 'ملف الدولة', pProgrammes: 'البرامج والأهداف', pTargets: 'الأهداف', pKpiNote: 'تعرض كل خانة هدفاً منشوراً: الرقم، وما يقيسه، وسنة استحقاقه.', pFeatured: 'مبادرة بارزة', pWhy: 'لماذا تهمّ قطاع الروبوتات', pMilestones: 'محطات رئيسية', pPubs: 'المنشورات والمصادر', pCompareLink: 'قارن بين جميع الدول', pCompare: 'مقارنة بين الدول', pCompareSub: 'الهدف الرئيسي لكل دولة (ما يقيسه وموعد استحقاقه) إلى جانب ما تحققنا منه ميدانياً. اختر دولة لفتح ملفها.', pCols: ['الدولة', 'سياسة خاصة بالروبوتات', 'الهدف الرئيسي · ما يقيسه', 'الاستحقاق', 'عمليات النشر المرصودة', 'الشركات المدرجة'], pCmpSrc: 'الأهداف: وثائق الاستراتيجيات الوطنية والإعلانات الرسمية، مع روابطها في كل ملف. عمليات النشر والشركات: متتبّع روبوتكس مينا، 30 أكتوبر 2026. البحرين والأردن مرصودتان ولم تُعدّ ملفاتهما بعد.', pStDep: 'عمليات نشر مرصودة', pStCo: 'شركات مدرجة', pStProg: 'برامج في الملف', byYr: 'الاستحقاق {y}', noDate: 'لم يُعلن موعد', away: 'بعد {n} سنوات', notProfiled: 'لم يُعدّ الملف بعد',
       p1: 'عمليات النشر المرصودة', p2: 'الشركات المدرجة', p3: 'أفق الهدف الوطني الرئيسي', readySrc: 'المصدر: متتبّع روبوتكس مينا · 30 أكتوبر 2026', readySrc3: 'المصدر: وثائق الاستراتيجيات الوطنية · انظر أدناه',
       s5: 'الاستراتيجيات الوطنية', s5sub: 'البرامج التي تضع أهداف الروبوتات والذكاء الاصطناعي والقيادة الذاتية.', agency: 'الجهة المسؤولة', launched: 'سنة الإطلاق',
       s6n: '05 · المواهب', s6: 'المختبرات والمواهب', s6sub: 'أين تتدرّب المنطقة وتبحث وتتنافس.',
@@ -359,7 +359,7 @@ class Component extends DCLogic {
       foot: [
         { h: 'عن المنصة', b: 'روبوتكس مينا سجلّ مستقل ومنسّق للروبوتات والذكاء الاصطناعي المادي والأتمتة في الشرق الأوسط وشمال أفريقيا.', l: 'تعرّف على الفريق', href: '/' },
         { h: 'السياسة التحريرية والمصادر', b: 'لكل رقم مصدر وتاريخ. لا ننشر أي معلومة دون مصدر أصلي، ونسجّل التصحيحات علناً.', l: 'اقرأ السياسة', href: '/submit' },
-        { h: 'البيانات المفتوحة والواجهة البرمجية', b: 'بيانات الشركات وعمليات النشر والفعاليات والاستراتيجيات متاحة مفتوحةً (CC BY 4.0) وعبر واجهة JSON للقراءة.', l: 'استكشف البيانات', href: '/policy' },
+        { h: 'البيانات المفتوحة والواجهة البرمجية', b: 'بيانات الشركات وعمليات النشر والفعاليات والاستراتيجيات متاحة مفتوحةً (CC BY 4.0) وعبر واجهة JSON للقراءة.', l: 'استكشف البيانات', href: '/database' },
         { h: 'تواصل معنا', b: 'للمعلومات والتصحيحات والشراكات، راسل فريق التحرير.', l: 'editors@roboticsmena.org', href: 'mailto:editors@roboticsmena.org' }
       ],
       copyright: '© 2026 روبوتكس مينا · مستقلة وبلا إعلانات', demoNote: 'نموذج أولي: الإدخالات غير الأساسية أمثلة توضيحية.'
@@ -392,7 +392,7 @@ class Component extends DCLogic {
       kind: { companies: 'Company', deployments: 'Deployment', countries: 'Country', events: 'Event' },
       f: { country: 'Country', category: 'Category', stage: 'Stage', listed: 'Listed', website: 'Website', operator: 'Operator', site: 'Site', sector: 'Sector', type: 'Robot type', date: 'Date', deployments: 'Deployments tracked', companies: 'Companies listed', events: 'Upcoming events', target: 'Headline target', year: 'Target year', dates: 'Dates', city: 'City', venue: 'Venue', status: 'Status', etype: 'Type' },
       status: { ok: 'Dates confirmed', tbc: 'Dates to be confirmed', tent: 'Provisional' },
-      source: 'Source', open: 'Open source', visit: 'Visit website', close: 'Close', related: { companies: 'Deployments', deployments: 'Operator in the directory', countries: 'In this country' },
+      source: 'Source', open: 'Open source', visit: 'Visit website', close: 'Close', related: { companies: 'Deployments', deployments: 'Operator in the database', countries: 'In this country' },
       dossier: 'Open country dossier', onMap: 'See on the map', noSource: 'Source not yet recorded', added: 'Added', recordLink: 'Copy link to this record', copied: 'Link copied'
     },
     ar: {
@@ -406,7 +406,7 @@ class Component extends DCLogic {
       kind: { companies: 'شركة', deployments: 'عملية نشر', countries: 'دولة', events: 'فعالية' },
       f: { country: 'الدولة', category: 'الفئة', stage: 'المرحلة', listed: 'تاريخ الإدراج', website: 'الموقع الإلكتروني', operator: 'الجهة المشغّلة', site: 'الموقع', sector: 'القطاع', type: 'نوع الروبوت', date: 'التاريخ', deployments: 'عمليات النشر المرصودة', companies: 'الشركات المدرجة', events: 'الفعاليات القادمة', target: 'الهدف الرئيسي', year: 'سنة الهدف', dates: 'التواريخ', city: 'المدينة', venue: 'المكان', status: 'الحالة', etype: 'النوع' },
       status: { ok: 'تواريخ مؤكدة', tbc: 'التواريخ قيد التأكيد', tent: 'مبدئي' },
-      source: 'المصدر', open: 'فتح المصدر', visit: 'زيارة الموقع', close: 'إغلاق', related: { companies: 'عمليات النشر', deployments: 'الجهة المشغّلة في الدليل', countries: 'في هذه الدولة' },
+      source: 'المصدر', open: 'فتح المصدر', visit: 'زيارة الموقع', close: 'إغلاق', related: { companies: 'عمليات النشر', deployments: 'الجهة المشغّلة في قاعدة البيانات', countries: 'في هذه الدولة' },
       dossier: 'فتح ملف الدولة', onMap: 'عرض على الخريطة', noSource: 'لم يُسجَّل المصدر بعد', added: 'أضيف في', recordLink: 'نسخ رابط هذا السجل', copied: 'تم نسخ الرابط'
     }
   };
@@ -520,7 +520,7 @@ class Component extends DCLogic {
     const ids = this.NAV_IDS;
     this.qsCur = '';
     const activeNav = this.PAGE === 'home' ? (S.active === 'brief' ? 'brief' : '') : this.PAGE;
-    const nav = ['brief', 'map', 'directory', 'database', 'policy', 'events', 'submit'].map((id, i) => { const on = activeNav === id; const local = this.PAGE === 'home' && id === 'brief'; return { id, label: t.pages[i], href: local ? '#brief' : this.pageHref(id, id === 'policy' ? S.pc : ''), cur: on ? 'page' : 'false', color: on ? 'var(--fg)' : 'var(--fg-muted)', bd: on ? 'var(--accent)' : 'transparent', go: e => { if (local) { e.preventDefault(); this.go(id); } } }; });
+    const nav = ['brief', 'map', 'database', 'policy', 'events', 'submit'].map((id, i) => { const on = activeNav === id; const local = this.PAGE === 'home' && id === 'brief'; return { id, label: t.pages[i], href: local ? '#brief' : this.pageHref(id, id === 'policy' ? S.pc : ''), cur: on ? 'page' : 'false', color: on ? 'var(--fg)' : 'var(--fg-muted)', bd: on ? 'var(--accent)' : 'transparent', go: e => { if (local) { e.preventDefault(); this.go(id); } } }; });
     const pad2 = x => String(x).padStart(2, '0');
     const rv = k => { const r = S.rails[k]; const cur = r.end ? r.n : Math.min(r.n, r.i + 1); return { [k + 'Pos']: r.n ? pad2(cur) + ' / ' + pad2(r.n) : '', [k + 'Prev']: () => this.railMove(k, -1), [k + 'Next']: () => this.railMove(k, 1), [k + 'PrevOp']: r.i === 0 ? 0.35 : 1, [k + 'NextOp']: r.end ? 0.35 : 1, [k + 'PrevDis']: r.i === 0 ? 'true' : 'false', [k + 'NextDis']: r.end ? 'true' : 'false', [k + 'PrevCur']: r.i === 0 ? 'default' : 'pointer', [k + 'NextCur']: r.end ? 'default' : 'pointer', [k + 'Scroll']: () => this.railUpdate(k) }; };
 
@@ -535,7 +535,7 @@ class Component extends DCLogic {
     const hit = (...xs) => xs.some(x => x && x.toLowerCase().includes(q));
     let results = [];
     if (q) {
-      const co = this.CO.filter(c => hit(c[0], c[1], c[6], c[7], this.CATS[c[3]][L], ccName(c[2]))).slice(0, 4).map(c => ({ title: c[L], sub: this.CATS[c[3]][L] + ' · ' + ccName(c[2]), go: () => { this.setState({ q: '', dCat: '' }); this.go('directory'); } }));
+      const co = this.CO.filter(c => hit(c[0], c[1], c[6], c[7], this.CATS[c[3]][L], ccName(c[2]))).slice(0, 4).map(c => ({ title: c[L], sub: this.CATS[c[3]][L] + ' · ' + ccName(c[2]), go: () => { window.location.href = '/database?tab=companies&id=' + encodeURIComponent(c[8]); } }));
       const dp = this.DEP.filter(d => hit(d.robot[0], d.robot[1], d.op[0], d.op[1], d.site[0], d.site[1], this.TYPES[d.type][L], this.SECTORS[d.sector][L])).slice(0, 4).map(d => ({ title: d.robot[L], sub: d.site[L], go: () => { this.setState({ q: '', sel: d.id, fCountry: '', fSector: '', fType: '' }); this.go('map'); } }));
       const ev = this.EVENTS.filter(e => hit(e[3], e[4], e[5], e[6])).slice(0, 3).map(e => ({ title: e[3 + L], sub: e[5 + L] + ' · ' + fdate(e[1]), go: () => { this.setState({ q: '' }); this.go('events'); } }));
       const st0 = this.state; const st = this.STRATS.filter(s => hit(s[1], s[2], s[3], s[4], ccName(s[0]))).slice(0, 3).map(s => ({ title: s[1 + L], sub: ccName(s[0]), go: () => { this.setState({ q: '' }); this.setState({ pc: this.POLICY[s[0]] ? s[0] : st0.pc }); this.go('strategies', s[0]); } }));

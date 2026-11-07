@@ -9,16 +9,16 @@ Every push to `main` runs the **Deploy site** GitHub Action, which builds the si
 |---|---|---|
 | Home / weekly brief | `pages/index.html` | `/` |
 | Deployments map | `pages/map.html` | `/map` |
-| Company directory | `pages/directory.html` | `/directory` |
-| Database (search every record) | `pages/database.html` | `/database` (`?tab=companies\|deployments\|countries\|events&id=…` opens a record) |
+| Database: companies, deployments, countries, events | `pages/database.html` | `/database` (`?tab=companies\|deployments\|countries\|events&id=…` opens a record) |
 | Policy & data | `pages/policy.html` | `/policy` (`?c=SA` etc. selects a country) |
 | Events | `pages/events.html` | `/events` |
 | Submit a record | `pages/submit.html` | `/submit` |
 
 ## How the site is put together
 
-- `data/*.json`: **the database** (companies, deployments, events, countries). Every page reads from these files, so one edit updates the home stats, map, directory, events, policy comparison and database at once.
+- `data/*.json`: **the database** (companies, deployments, events, countries). Every page reads from these files, so one edit updates the home stats, map, events, policy comparison and database at once.
 - `src/logic.js`: the shared page logic (rendering, translations, search, the database page).
+- `redirects/*.html`: small pages that forward old addresses (`/directory` now opens the database's Companies tab).
 - `pages/*.html`: each page's layout. `@config` and `@logic` markers are filled in at build time.
 - `scripts/build-site.sh`: checks the data, assembles the pages into `_site/`, then encrypts them behind the password (see below).
 - `support.js`, `mena-map.js`, `image-slot.js`, `vendor/`: runtime, map, image placeholders, and local copies of React, D3, topojson and the world map.

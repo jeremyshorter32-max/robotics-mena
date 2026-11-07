@@ -13,6 +13,7 @@ SALT="fe91cbfea197c5c38048c73f478b0de4"
 rm -rf _site
 mkdir _site
 cp -r *.js vendor CNAME .nojekyll .image-slots.state.json _site/
+cp redirects/*.html _site/
 node scripts/validate-data.mjs
 node scripts/assemble.cjs _site
 
