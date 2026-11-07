@@ -9,5 +9,4 @@ Most are editorial photos owned by the publisher or a news agency: get permissio
 | uber-driverless-uae.jpg | WAM via AGBI | https://www.agbi.com/transport/2026/11/uber-to-have-200-driverless-cars-on-uae-roads-this-year/ |
 | qmic-mwc-doha.jpg | QMIC | https://qmic.com/2026/11/04/qmic-showcases-qatar-built-cutting-edge-technologies-in-embodied-intelligence-and-smart-city-systems-at-mwc-doha-2026/ |
 | saudi-robotic-reconstruction.jpg | MedEdge MEA | https://mededgemea.com/saudi-arabia-marks-milestone-in-advanced-breast-reconstruction-surgery/ |
-
-X-GEN (Egypt) has no image: its publisher's image server blocks downloads, so the tile shows a branded panel instead.
+| xgen-egypt-robotics.jpg | X-GEN (promotional image) | Supplied by the site owner. A staged promotional composite, not a documentary photo, so the credit says so. |
