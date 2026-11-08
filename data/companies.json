@@ -2741,5 +2741,47 @@
     },
     "image_url": "https://cdn.pudutech.com/Food_and_Beverage_ecca2bbd37.webp",
     "image_page": "https://www.pudurobotics.com/en"
+  },
+  {
+    "id": "vortexinfo",
+    "name": "VORTEXINFO",
+    "name_ar": "فورتكس إنفو",
+    "country": "AE",
+    "category": "amr",
+    "stage": "corp",
+    "summary": "Suzhou-based maker of autonomous street-sweeping robots and smart sanitation software; showed its L4 road-cleaning robot in Abu Dhabi in January 2026.",
+    "summary_ar": "شركة من سوجو تصنع روبوتات كنس الشوارع ذاتية القيادة وبرمجيات النظافة الذكية؛ عرضت روبوت تنظيف الطرق من المستوى الرابع في أبوظبي في يناير 2026.",
+    "website": "https://www.vortexinfo-tech.com/",
+    "logo": "/media/logos/vortexinfo.png",
+    "source": "WAM (Emirates News Agency)",
+    "source_url": "https://www.wam.ae/en/article/by8o6rc-china%E2%80%99s-vortexinfo-showcases-autonomous",
+    "added": "2026-11-08",
+    "hq": "CN",
+    "hq_city": "Suzhou",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "Showcased its Level 4 autonomous street-cleaning robot (1.5-tonne load, built for Gulf heat) at Abu Dhabi Sustainability Week in January 2026, and says it will grow in the Middle East through technology transfer and local partnerships. No customer contract in the region has been announced yet.",
+      "ar": "عرضت روبوت تنظيف الشوارع ذاتي القيادة من المستوى الرابع (حمولة 1.5 طن، مصمّم لحرارة الخليج) في أسبوع أبوظبي للاستدامة في يناير 2026، وتقول إنها ستتوسّع في الشرق الأوسط عبر نقل التقنية والشراكات المحلية. لم يُعلَن بعد عن أي عقد مع عميل في المنطقة."
+    },
+    "mena_source": "WAM (Emirates News Agency)",
+    "mena_source_url": "https://www.wam.ae/en/article/by8o6rc-china%E2%80%99s-vortexinfo-showcases-autonomous",
+    "mena_date": "2026-01-15",
+    "image": "/media/companies/vortexinfo.jpg",
+    "image_cap": {
+      "en": "A VORTEXINFO autonomous sweeper cleaning a tree-lined street",
+      "ar": "كنّاسة ذاتية القيادة من فورتكس إنفو تنظّف شارعاً تحفّه الأشجار"
+    },
+    "image_alt": {
+      "en": "A white compact autonomous street sweeper with side brushes parked on a road beside trees",
+      "ar": "كنّاسة شوارع بيضاء صغيرة ذاتية القيادة بفرش جانبية متوقفة على طريق بجانب الأشجار"
+    },
+    "image_credit": {
+      "en": "Image: VORTEXINFO",
+      "ar": "الصورة: فورتكس إنفو"
+    },
+    "image_url": "https://9645272.s21i.co99.net/4/ABUIABAEGAAg_ODwxAYoqMGcQzCgCziqBg.png",
+    "image_page": "https://www.vortexinfo-tech.com/"
   }
 ]

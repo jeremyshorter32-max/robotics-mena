@@ -115,3 +115,4 @@ No usable logo found for FalconViz, Sager Drones, AutoGo, Sinaha Technology, Apo
 | hilti.png | Hilti | https://www.hilti.com/static/ui/assets/images/hilti-logo.svg |
 | legend-robot.png | Legend Robot | existing file (not regenerated) |
 | pudu-robotics.png | Pudu Robotics | https://www.pudurobotics.com/_next/static/media/logo.851bf515.svg |
+| vortexinfo.png | VORTEXINFO | https://9645272.s21i.co99.net/4/4/ABUIABAEGAAg1qCSrQYo6ZyhzAcwl0A4qgc.png (white wordmark; V mark recoloured to brand blue on a white tile) |
