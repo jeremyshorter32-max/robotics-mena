@@ -34,7 +34,22 @@ class Component extends DCLogic {
     return React.createElement('span', { ref }, fmt(v));
   };
 
+  // Every link to another website opens in a new tab (cards, sources, events, reports, footer).
+  markExternal(root) {
+    (root || document).querySelectorAll('a[href]').forEach(a => {
+      const h = a.getAttribute('href') || '';
+      if (!/^https?:\/\//i.test(h)) return;
+      let ext = true; try { ext = new URL(h, window.location.href).origin !== window.location.origin; } catch (e) {}
+      if (!ext) return;
+      if (a.getAttribute('target') !== '_blank') a.setAttribute('target', '_blank');
+      const rel = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
+      ['noopener', 'noreferrer'].forEach(r => { if (!rel.includes(r)) rel.push(r); });
+      a.setAttribute('rel', rel.join(' '));
+    });
+  }
   componentDidMount() {
+    this.markExternal();
+    if ('MutationObserver' in window) { this.extMO = new MutationObserver(() => { if (this.extRaf) return; this.extRaf = requestAnimationFrame(() => { this.extRaf = 0; this.markExternal(); }); }); this.extMO.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] }); }
     this.onPin = e => this.setState({ sel: e.detail.id });
     this.onKey = e => { if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { e.preventDefault(); this.searchRef.current && this.searchRef.current.focus(); } if (e.key === 'Escape' && this.state.dbSel) { this.setState({ dbSel: null }); return; } if (e.key === 'Escape' && this.state.q) this.setState({ q: '' }); };
     if (/^#(map|search)/.test(location.hash)) this.setState({ mapNear: true });
@@ -85,7 +100,7 @@ class Component extends DCLogic {
   railStep(el) { const li = el.querySelector('li'); return li ? li.getBoundingClientRect().width + (parseFloat(getComputedStyle(el).columnGap) || 0) : el.clientWidth; }
   railUpdate(k) { const el = this.railEl(k); if (!el) return; const x = Math.abs(el.scrollLeft), n = el.querySelectorAll('li').length, i = Math.round(x / this.railStep(el)), end = x + el.clientWidth >= el.scrollWidth - 4; const o = this.state.rails[k]; if (o.i !== i || o.n !== n || o.end !== end) this.setState(s => ({ rails: { ...s.rails, [k]: { i, n, end } } })); }
   railMove(k, d) { const el = this.railEl(k); if (!el) return; const r = this.state.rails[k]; if ((d < 0 && r.i === 0) || (d > 0 && r.end)) return; const rtl = getComputedStyle(el).direction === 'rtl'; el.scrollBy({ left: d * this.railStep(el) * (rtl ? -1 : 1), behavior: this.reduced ? 'auto' : 'smooth' }); }
-  componentWillUnmount() { this.rpIO && this.rpIO.disconnect(); this.onRp && window.removeEventListener('scroll', this.onRp); this.onLbKey && window.removeEventListener('keydown', this.onLbKey); this.mapIO && this.mapIO.disconnect(); window.removeEventListener('scroll', this.onSpy); window.removeEventListener('rm:pin', this.onPin); window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.onResize); }
+  componentWillUnmount() { this.extMO && this.extMO.disconnect(); this.rpIO && this.rpIO.disconnect(); this.onRp && window.removeEventListener('scroll', this.onRp); this.onLbKey && window.removeEventListener('keydown', this.onLbKey); this.mapIO && this.mapIO.disconnect(); window.removeEventListener('scroll', this.onSpy); window.removeEventListener('rm:pin', this.onPin); window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.onResize); }
 
   go(id, c) { const el = document.getElementById(id); if (!el) { window.location.href = this.pageHref(id, c); return; } window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - this.navH() - 8, behavior: this.reduced ? 'auto' : 'smooth' }); }
 
