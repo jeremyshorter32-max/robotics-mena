@@ -57,5 +57,43 @@ D.brief.forEach((b, i) => {
 });
 uniq(D.brief, 'id', 'brief');
 
+// Spotlight research reports (data/stories.json): see .claude/skills/research-report/SKILL.md
+const stories = fs.existsSync(path.join(ROOT, 'data', 'stories.json')) ? readData('stories') : [];
+const coIds = new Set(D.companies.map(c => c.id));
+const bi = o => o && typeof o === 'object' && o.en ? true : false;
+const media = (v, w, dir) => { if (!v) return; if (!new RegExp(`^/media/${dir}/[a-z0-9._-]+\\.(jpg|jpeg|png|webp|pdf)$`).test(v)) errors.push(`${w}: "${v}" must be a file in /media/${dir}/`); else if (!fs.existsSync(path.join(ROOT, v))) errors.push(`${w}: file ${v} does not exist`); };
+stories.forEach((s, si) => {
+  const w = `stories[${si}] ${s.id}`;
+  need(s, w, ['id', 'date', 'title', 'dek', 'kicker', 'by', 'hero', 'sources', 'report']);
+  date(s.date, w, 'date');
+  ['title', 'dek', 'kicker', 'by'].forEach(k => { if (s[k] && !bi(s[k])) errors.push(`${w}: ${k} needs {en, ar}`); else if (s[k] && !s[k].ar) errors.push(`${w}: ${k} is missing Arabic`); });
+  if (s.hero) { media(s.hero.src, `${w} hero`, 'spotlight'); if (!s.hero.credit) errors.push(`${w}: hero needs a credit`); }
+  if (s.pdf) ['en', 'ar'].forEach(l => media(s.pdf[l], `${w} pdf.${l}`, 'reports'));
+  const nSrc = (s.sources || []).length;
+  (s.sources || []).forEach((x, i) => { need(x, `${w} sources[${i}]`, ['name', 'title', 'url']); url(x.url, `${w} sources[${i}]`, 'url'); date(x.date, `${w} sources[${i}]`, 'date', true); });
+  const R = s.report; if (!R) return;
+  const srcRef = (n, where) => { if (n != null && !(Number.isInteger(n) && n >= 1 && n <= nSrc)) errors.push(`${where}: src ${n} is not a valid source number (1–${nSrc})`); };
+  const widgets = { compare: 'compare', attacks: 'attacks', timeline: 'timeline', fleet: 'fleet', claims: 'claims', watch: 'watch', providers: 'providers' };
+  if (!Array.isArray(R.chapters) || !R.chapters.length) errors.push(`${w}: report.chapters is empty`);
+  (R.chapters || []).forEach((c, ci) => {
+    const cw = `${w} chapter ${c.id || ci}`;
+    need(c, cw, ['id', 'n', 'title', 'blocks']);
+    (c.blocks || []).forEach((b, bj) => {
+      const bw = `${cw} block ${bj}`;
+      if (!['p', 'h', 'quote', 'img', 'stats', 'list', 'w'].includes(b.t)) errors.push(`${bw}: unknown block type "${b.t}"`);
+      if (['p', 'h', 'quote'].includes(b.t) && !(b.en && b.ar)) errors.push(`${bw}: needs en and ar text`);
+      if (b.t === 'img') { media(b.src, bw, 'spotlight'); if (!b.credit) errors.push(`${bw}: image needs a credit`); }
+      if (b.t === 'w') { if (!widgets[b.w]) errors.push(`${bw}: unknown widget "${b.w}"`); else if (!R[b.w]) errors.push(`${bw}: widget "${b.w}" used but report.${b.w} is missing`); }
+    });
+  });
+  (R.attacks ? R.attacks.items : []).forEach((a, i) => { date(a.date, `${w} attacks[${i}]`, 'date'); srcRef(a.src, `${w} attacks[${i}]`); });
+  (R.timeline || []).forEach((m, i) => { if (!/^\d{4}(-\d{2}(-\d{2})?)?$/.test(m.date || '')) errors.push(`${w} timeline[${i}]: date must be YYYY, YYYY-MM or YYYY-MM-DD`); srcRef(m.src, `${w} timeline[${i}]`); if (m.img) media(m.img, `${w} timeline[${i}]`, 'spotlight'); });
+  (R.fleet || []).forEach((f, i) => { if (!(R.status || {})[f.status]) errors.push(`${w} fleet[${i}]: status "${f.status}" is not in report.status`); srcRef(f.src, `${w} fleet[${i}]`); if (f.img) media(f.img, `${w} fleet[${i}]`, 'spotlight'); if (f.co && !coIds.has(f.co)) errors.push(`${w} fleet[${i}]: company "${f.co}" is not in companies.json`); });
+  (R.claims || []).forEach((c, i) => { if (!(c.level >= 1 && c.level <= 4)) errors.push(`${w} claims[${i}]: level must be 1–4`); srcRef(c.src, `${w} claims[${i}]`); });
+  (R.providers || []).forEach((p, i) => { if (!coIds.has(p.id)) errors.push(`${w} providers[${i}]: "${p.id}" is not in companies.json (add the company first)`); });
+  (R.watch || []).forEach((x, i) => { if (!(R.watchStatus || {})[x.status]) errors.push(`${w} watch[${i}]: status "${x.status}" is not in report.watchStatus`); if (x.due) date(x.due, `${w} watch[${i}]`, 'due'); });
+});
+uniq(stories, 'id', 'stories');
+
 if (errors.length) { console.error(`Data check failed (${errors.length} problem${errors.length > 1 ? 's' : ''}):\n- ` + errors.join('\n- ')); process.exit(1); }
-console.log(`Data check passed: ${D.companies.length} companies, ${D.deployments.length} deployments, ${D.events.length} events, ${D.countries.length} countries, ${D.brief.length} brief items.`);
+console.log(`Data check passed: ${D.companies.length} companies, ${D.deployments.length} deployments, ${D.events.length} events, ${D.countries.length} countries, ${D.brief.length} brief items, ${stories.length} research report${stories.length === 1 ? '' : 's'}.`);

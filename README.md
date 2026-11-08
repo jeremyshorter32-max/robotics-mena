@@ -34,6 +34,12 @@ Language and theme are remembered in the visitor's browser, so links stay clean.
 
 `data/stories.json` holds the long-form pieces linked from the home Spotlight. Each has `id`, `title`, `dek`, `hero`, `body` blocks (`p`, `h`, `quote`, `img`, `stats`, `list`, each with `en`/`ar`), `sources` and `related`. Readers see the opening blocks (`gate_after`), then an email box that unlocks the rest. Images live in `media/spotlight/` (credits in `media/brief/SOURCES.md`).
 
+**New reports:** in a Claude Code session on this repo, ask for a research report on a topic (or type `/research-report <topic>`). The skill in `.claude/skills/research-report/` runs the research, writes the bilingual report data, adds the providers to the directory, makes the PDFs, tests and publishes. The newest report (first in `data/stories.json`) is the one shown on the home page Spotlight.
+
+**PDF edition:** `npm install`, then `node scripts/report-pdf.cjs <story id>` writes branded English and Arabic PDFs to `media/reports/`. Readers download them from the report once unlocked. Re-run it whenever the report data changes.
+
+**Preview locally:** `python3 scripts/serve-site.py _site` serves a build with clean URLs.
+
 **Collecting emails:** the site has no backend, so sign-ups (here and in the home newsletter box) are only remembered in the reader's browser until you connect an email service. Put the service's form endpoint in `data/site.json` as `signup_url`; each sign-up is then POSTed there as JSON (`email`, `source`, `lang`).
 
 ## Database entries

@@ -1276,6 +1276,62 @@
      ]
     }
    ]
+  },
+  "pdf": {
+   "en": "/media/reports/gecko-adnoc-raptor-en.pdf",
+   "ar": "/media/reports/gecko-adnoc-raptor-ar.pdf"
+  },
+  "home": {
+   "kicker": {
+    "en": "Field deployment",
+    "ar": "نشر ميداني"
+   },
+   "title": {
+    "en": "Wall-climbing robots go to work across ADNOC’s energy sites",
+    "ar": "روبوتات تتسلّق الجدران تعمل في منشآت أدنوك للطاقة"
+   },
+   "dek": {
+    "en": "Gecko Robotics is deploying its new Raptor inspection robots across ADNOC facilities to find structural weaknesses and assess damage, scanning assets with sensors and sound waves without taking them offline.",
+    "ar": "تنشر جيكو روبوتكس روبوتات الفحص الجديدة «رابتور» في منشآت أدنوك لرصد مواطن الضعف الإنشائي وتقييم الأضرار، إذ تمسح الأصول بأجهزة الاستشعار والموجات الصوتية من دون إيقاف تشغيلها."
+   },
+   "quote": {
+    "en": "“Robotics are essential to ensure that resilience and readiness is possible in a world where we don’t have a lot of these skilled workforces.”",
+    "ar": "«الروبوتات ضرورية لضمان المرونة والجاهزية في عالم لا تتوفر فيه أعداد كافية من العمالة الماهرة.»"
+   },
+   "who": {
+    "en": "Jake Loosararian, chief executive, Gecko Robotics",
+    "ar": "جيك لوساراريان، الرئيس التنفيذي لجيكو روبوتكس"
+   },
+   "stats": [
+    {
+     "v": "Tens",
+     "en": "Robots deployed a day in the region",
+     "ar": "روبوتات تُنشر يومياً في المنطقة"
+    },
+    {
+     "v": "3–5×",
+     "en": "Faster than Gecko’s previous robot",
+     "ar": "أسرع من روبوت جيكو السابق"
+    },
+    {
+     "v": "50×",
+     "en": "Lower data-collection cost (company claim)",
+     "ar": "خفض في تكلفة جمع البيانات (بحسب الشركة)"
+    }
+   ],
+   "src": {
+    "en": "Source: The National, 4 Nov 2026. Raptor was unveiled at ADIPEC, Abu Dhabi.",
+    "ar": "المصدر: ذا ناشونال، 4 نوفمبر 2026. كُشف عن «رابتور» في معرض أديبك، أبوظبي."
+   },
+   "img": "/media/brief/gecko-adnoc-raptor.jpg",
+   "cap": {
+    "en": "Raptor at ADIPEC, Abu Dhabi · Nov 2026",
+    "ar": "رابتور في أديبك، أبوظبي · نوفمبر 2026"
+   },
+   "credit": {
+    "en": "Photo: Victor Besa / The National",
+    "ar": "تصوير: فيكتور بيسا / ذا ناشونال"
+   }
   }
  }
 ]

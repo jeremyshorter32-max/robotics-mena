@@ -239,17 +239,17 @@ html,body{margin:0;padding:0;background:#F7F5EF}
   <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:var(--spot-cols);gap:48px var(--gap);align-items:start">
     <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
       <div style="position:relative;aspect-ratio:4 / 3;background:var(--bg-raised);overflow:hidden;border:1px solid var(--line)">
-        <img src="/media/brief/gecko-adnoc-raptor.jpg" alt="{{ t.spotAlt }}" width="1000" height="750" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+        <img src="{{ spot.img }}" alt="{{ spot.alt }}" width="1000" height="750" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
       </div>
-      <figcaption style="display:flex;justify-content:space-between;gap:16px;font:400 12px/16px var(--font-num);color:var(--fg-subtle)"><span>{{ t.spotCap }}</span><span>{{ t.spotCredit }}</span></figcaption>
+      <figcaption style="display:flex;justify-content:space-between;gap:16px;font:400 12px/16px var(--font-num);color:var(--fg-subtle)"><span>{{ spot.cap }}</span><span>{{ spot.credit }}</span></figcaption>
     </figure>
     <article style="display:flex;flex-direction:column;gap:24px">
-      <div style="margin-bottom:4px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.s8n }} · {{ t.spotKicker }}</div>
-      <h2 style="margin:0;font-size:var(--fs-h2);line-height:1.15;letter-spacing:var(--track-tight);font-weight:600;text-wrap:balance">{{ t.spotTitle }}</h2>
-      <p style="margin:0;font-size:17px;color:var(--fg-muted);text-wrap:pretty">{{ t.spotDek }}</p>
+      <div style="margin-bottom:4px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.s8n }} · {{ spot.kicker }}</div>
+      <h2 style="margin:0;font-size:var(--fs-h2);line-height:1.15;letter-spacing:var(--track-tight);font-weight:600;text-wrap:balance">{{ spot.title }}</h2>
+      <p style="margin:0;font-size:17px;color:var(--fg-muted);text-wrap:pretty">{{ spot.dek }}</p>
       <blockquote style="margin:0;padding-inline-start:24px;border-inline-start:2px solid var(--sand);display:flex;flex-direction:column;gap:8px">
-        <p style="margin:0;font-size:24px;line-height:1.35;letter-spacing:var(--track-tight);font-weight:500">{{ t.spotQuote }}</p>
-        <cite style="font-style:normal;font-size:13px;color:var(--fg-subtle)">{{ t.spotWho }}</cite>
+        <p style="margin:0;font-size:24px;line-height:1.35;letter-spacing:var(--track-tight);font-weight:500">{{ spot.quote }}</p>
+        <cite style="font-style:normal;font-size:13px;color:var(--fg-subtle)">{{ spot.who }}</cite>
       </blockquote>
       <dl style="margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--fg)">
         <sc-for list="{{ spotStats }}" as="s" hint-placeholder-count="3">
@@ -259,7 +259,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
           </div>
         </sc-for>
       </dl>
-      <div style="font-size:12px;color:var(--fg-subtle)">{{ t.spotSrc }}</div>
+      <div style="font-size:12px;color:var(--fg-subtle)">{{ spot.src }}</div>
       <a href="{{ storyHref }}" style="align-self:flex-start;display:inline-flex;gap:8px;align-items:center;height:44px;padding:0 20px;background:var(--fg);color:var(--bg);border-radius:3px;font-size:14px;font-weight:600">{{ t.spotRead }} <span aria-hidden="true">{{ arrow }}</span></a>
     </article>
   </div>
