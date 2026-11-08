@@ -4,7 +4,7 @@
     "name": "UAE",
     "name_ar": "الإمارات",
     "target_year": 2032,
-    "headline_target": "200k robots (Dubai)",
+    "headline_target": "200,000 robots provided across services, logistics and industry",
     "in_compare_table": true
   },
   {
@@ -12,7 +12,7 @@
     "name": "Saudi Arabia",
     "name_ar": "السعودية",
     "target_year": 2030,
-    "headline_target": "Top-15 AI nation",
+    "headline_target": "4,000 factories transformed into smart, automated facilities",
     "in_compare_table": true
   },
   {
@@ -20,7 +20,7 @@
     "name": "Qatar",
     "name_ar": "قطر",
     "target_year": 2030,
-    "headline_target": "QNV 2030",
+    "headline_target": "SIRI level 2 Qatari factories’ smart-industry readiness on the Smart Industry Readiness Index",
     "in_compare_table": true
   },
   {
@@ -28,7 +28,7 @@
     "name": "Egypt",
     "name_ar": "مصر",
     "target_year": 2030,
-    "headline_target": "AI 7.7% of GDP",
+    "headline_target": "20% industry’s share of GDP (about 13–14% today)",
     "in_compare_table": true
   },
   {
@@ -36,23 +36,23 @@
     "name": "Morocco",
     "name_ar": "المغرب",
     "target_year": 2030,
-    "headline_target": "Digital Morocco 2030",
+    "headline_target": "200,000 people trained and certified in AI",
     "in_compare_table": true
   },
   {
     "code": "OM",
     "name": "Oman",
     "name_ar": "عُمان",
-    "target_year": 2040,
-    "headline_target": "Vision 2040",
+    "target_year": 2027,
+    "headline_target": "Launch operation of autonomous electric vehicles after the Salalah Airport trial",
     "in_compare_table": true
   },
   {
     "code": "BH",
     "name": "Bahrain",
     "name_ar": "البحرين",
-    "target_year": 2030,
-    "headline_target": "Vision 2030",
+    "target_year": 2026,
+    "headline_target": "300 factories transformed into smart factories, assessed on the Smart Industry Readiness Index",
     "in_compare_table": true
   },
   {
@@ -60,16 +60,16 @@
     "name": "Jordan",
     "name_ar": "الأردن",
     "target_year": 2027,
-    "headline_target": "AI strategy",
+    "headline_target": "15,000 people trained in AI skills",
     "in_compare_table": true
   },
   {
     "code": "KW",
     "name": "Kuwait",
     "name_ar": "الكويت",
-    "target_year": null,
-    "headline_target": "",
-    "in_compare_table": false
+    "target_year": 2026,
+    "headline_target": "Regulations executive regulations setting licensing procedures, conditions and fees, due by 31 December",
+    "in_compare_table": true
   },
   {
     "code": "TN",
