@@ -124,7 +124,7 @@ Object.entries(policy).forEach(([cc, P]) => {
   });
   if (!P.progs || !P.progs.length) errors.push(`${w}: no programmes`);
   if (P.head && !(P.progs[P.head[0]] && (P.progs[P.head[0]][6] || [])[P.head[1]])) errors.push(`${w}: head points at a missing target`);
-  if (P.feat) { pair(P.feat.name, `${w} feat.name`); pair(P.feat.why, `${w} feat.why`); }
+  if (P.feat) { pair(P.feat.name, `${w} feat.name`); pair(P.feat.why, `${w} feat.why`); ['img', 'logo'].forEach(k => { const f = P.feat[k]; if (!f) return; if (!/^\/media\/policy\/[a-z0-9._-]+\.(jpg|jpeg|png|webp)$/.test(f)) errors.push(`${w} feat.${k}: must be a file in /media/policy/`); else if (!fs.existsSync(path.join(ROOT, f))) errors.push(`${w} feat.${k}: file ${f} does not exist`); }); if (P.feat.img && !(P.feat.img_credit && P.feat.img_credit[0])) errors.push(`${w} feat.img needs img_credit`); }
   const AREAS = ['av', 'drone', 'sandbox', 'incentive', 'ai', 'data', 'robot'], STATUS = ['in_force', 'draft', 'pilot', 'announced', 'suspended'];
   (P.regs || []).forEach((r, i) => { const rw = `${w} regs[${i}]`; if (!AREAS.includes(r.area)) errors.push(`${rw}: area "${r.area}" is not one of ${AREAS.join(', ')}`); if (!STATUS.includes(r.status)) errors.push(`${rw}: status "${r.status}" is not one of ${STATUS.join(', ')}`); if (!r.title || !r.title.en || !r.title.ar) errors.push(`${rw}: needs title.en and title.ar`); if (!r.summary || !r.summary.en || !r.summary.ar) errors.push(`${rw}: needs summary.en and summary.ar`); if (!r.url) errors.push(`${rw}: needs a source URL`); else url(r.url, rw, 'url'); });
   const depIds = new Set(D.deployments.map(d => d.id));
