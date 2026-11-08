@@ -19,3 +19,7 @@ Photos and logos for each country dossier's featured initiative, taken from offi
 | jo-feat.jpg | Photo: Petra | https://petra.gov.jo/en/news/klstrai-jordans-first-ai-compute-platform-hosted-operational-at-aqaba-digital-hub |
 | jo-logo.png | Ministry of Digital Economy and Entrepreneurship (logo) | https://www.modee.gov.jo/ebv4.0/root_storage/en/eb_homepage/modde-englishlogo-0.png |
 | kw-feat.jpg | Photo: KUNA | https://kuwaittimes.com/article/47983/kuwait/other-news/kuwait-cabinet-approves-draft-law-regulating-drones-and-light-aircraft/ |
+| tn-feat.jpg | Photo: La Presse de Tunisie | https://www.lapresse.tn/2026/09/30/industrie-4-0-trois-dispositifs-pour-diagnostiquer-accompagner-et-valoriser-les-entreprises/ |
+| tn-logo.png | Agency for the Promotion of Industry and Innovation (APII) (logo) | https://www.tunisieindustrie.nat.tn/fr/images/bg/banner.png |
+| dz-feat.jpg | Photo: Horizons | https://www.horizons.dz/2025/09/horizons-dz-regions-conservation-des-forets-de-blida-les-services-forestiers-renforces-par-un-drone-de-fabrication-algerienne/ |
+| dz-logo.png | Ministry of Agriculture, Rural Development and Fisheries (logo) | https://madr.gov.dz/wp-content/uploads/2018/11/Logo-MADRP.png |

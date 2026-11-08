@@ -75,16 +75,16 @@
     "code": "TN",
     "name": "Tunisia",
     "name_ar": "تونس",
-    "target_year": null,
-    "headline_target": "",
-    "in_compare_table": false
+    "target_year": 2027,
+    "headline_target": "TND 13.5bn automotive sector exports",
+    "in_compare_table": true
   },
   {
     "code": "DZ",
     "name": "Algeria",
     "name_ar": "الجزائر",
     "target_year": null,
-    "headline_target": "",
-    "in_compare_table": false
+    "headline_target": "140 more locally made Aurès 700 drones being contracted for the next fire season (35 in service today, 20 of them Aurès 700)",
+    "in_compare_table": true
   }
 ]

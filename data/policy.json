@@ -5286,5 +5286,1559 @@
     "url": "https://gulfnews.com/world/gulf/kuwait/kuwait-brings-drones-under-new-law-with-jail-terms-and-fines-up-to-kd5000-1.500672815"
    }
   ]
+ },
+ "TN": {
+  "sum": [
+   "Tunisia’s most robotics-relevant policy is an EU- and German-backed Industry 4.0 support programme for factories, sitting under export targets for its robot-using automotive and electronics sectors; its AI strategy for 2026–2030 has been presented only in outline.",
+   "أبرز سياسات تونس صلةً بالروبوتات برنامج لمرافقة المصانع نحو الصناعة 4.0 بدعم أوروبي وألماني، تحت أهداف تصدير لقطاعي السيارات والإلكترونيات المستخدمين للروبوتات؛ أما استراتيجية الذكاء الاصطناعي 2026–2030 فلم تُعرض إلا خطوطها العريضة."
+  ],
+  "robo": [
+   "Partly: Industry 4.0 support for factories, no robotics programme",
+   "جزئياً: مرافقة المصانع نحو الصناعة 4.0، دون برنامج خاص بالروبوتات",
+   1
+  ],
+  "head": [
+   1,
+   0
+  ],
+  "progs": [
+   [
+    "Towards Industry 4.0 in Tunisia (Hub, Label and TIMA)",
+    "نحو صناعة 4.0 في تونس (المركز الوطني والعلامة ومنصة TIMA)",
+    "Ministry of Industry, Mines & Energy and APII, with GIZ and the EU",
+    "وزارة الصناعة والمناجم والطاقة ووكالة النهوض بالصناعة والتجديد، بدعم من الوكالة الألمانية للتعاون الدولي والاتحاد الأوروبي",
+    2018,
+    "industry",
+    [
+     [
+      "No forward target",
+      "لا هدف مستقبلياً",
+      "the September 2026 programme published no budget or number of firms to reach",
+      "لم يُعلن برنامج سبتمبر 2026 عن ميزانية أو عن عدد المؤسسات المستهدفة",
+      null
+     ],
+     [
+      "~400",
+      "نحو 400",
+      "industrial firms supported since 2018 (result to date)",
+      "مؤسسة صناعية رافقها البرنامج منذ 2018 (حصيلة حتى الآن)",
+      null
+     ],
+     [
+      "2,900+",
+      "أكثر من 2,900",
+      "professionals trained (result to date)",
+      "مهني تلقّوا التكوين (حصيلة حتى الآن)",
+      null
+     ],
+     [
+      "5",
+      "5",
+      "Industry 4.0 competence centres operating (Sousse, Sfax, Bizerte, Sidi Thabet, Monastir)",
+      "مراكز كفاءات للصناعة 4.0 عاملة (سوسة وصفاقس وبنزرت وسيدي ثابت والمنستير)",
+      null
+     ]
+    ]
+   ],
+   [
+    "Automotive competitiveness pact and Automotive Smart City",
+    "ميثاق تنافسية قطاع السيارات ومشروع «المدينة الذكية للسيارات»",
+    "Ministry of Industry, Mines & Energy",
+    "وزارة الصناعة والمناجم والطاقة",
+    2025,
+    "industry",
+    [
+     [
+      "TND 13.5bn",
+      "13.5 مليار دينار",
+      "automotive sector exports",
+      "صادرات قطاع السيارات",
+      2027
+     ],
+     [
+      "150,000",
+      "150,000",
+      "jobs in the automotive sector",
+      "موطن شغل في قطاع السيارات",
+      2027
+     ],
+     [
+      "TND 1.3bn",
+      "1.3 مليار دينار",
+      "investment sought for the Automotive Smart City (electric and smart vehicles, embedded software)",
+      "استثمارات منشودة للمدينة الذكية للسيارات (السيارات الكهربائية والذكية والبرمجيات المدمجة)",
+      null
+     ]
+    ]
+   ],
+   [
+    "Electronics Industry Competitiveness Pact",
+    "ميثاق تنافسية قطاع الصناعات الإلكترونية",
+    "Ministry of Industry, Mines & Energy, with UTICA and the ELENTICA cluster",
+    "وزارة الصناعة والمناجم والطاقة مع الاتحاد التونسي للصناعة والتجارة والصناعات التقليدية وتجمّع ELENTICA",
+    2026,
+    "industry",
+    [
+     [
+      "TND 7bn",
+      "7 مليارات دينار",
+      "electronics exports, double the 2025 level of about TND 3.5bn",
+      "صادرات الصناعات الإلكترونية، أي ضعف مستوى 2025 البالغ نحو 3.5 مليار دينار",
+      2030
+     ],
+     [
+      "30,000",
+      "30,000",
+      "additional direct jobs, taking the sector above 100,000",
+      "موطن شغل مباشر إضافي ليتجاوز عدد العاملين في القطاع 100 ألف",
+      2030
+     ],
+     [
+      "55%",
+      "55%",
+      "national integration rate, from 35% in 2025",
+      "نسبة الاندماج المحلي، مقابل 35% في 2025",
+      2030
+     ],
+     [
+      "3%",
+      "3%",
+      "R&D spending as a share of sector turnover, from 1% in 2025",
+      "نسبة الإنفاق على البحث والتطوير من رقم معاملات القطاع، مقابل 1% في 2025",
+      2030
+     ]
+    ]
+   ],
+   [
+    "Industrial and Innovation Strategy, Horizon 2035",
+    "الاستراتيجية الوطنية للصناعة والتجديد في أفق 2035",
+    "Ministry of Industry, Mines & Energy",
+    "وزارة الصناعة والمناجم والطاقة",
+    2022,
+    "industry",
+    [
+     [
+      "19%",
+      "19%",
+      "manufacturing value added as a share of GDP (20% by 2035, from 15% in 2020)",
+      "حصة القيمة المضافة للصناعات المعملية من الناتج المحلي (20% في 2035، مقابل 15% في 2020)",
+      2030
+     ],
+     [
+      "US$25bn",
+      "25 مليار دولار",
+      "manufacturing exports ($36bn by 2035)",
+      "صادرات الصناعات المعملية (36 مليار دولار في 2035)",
+      2030
+     ],
+     [
+      "740,000",
+      "740,000",
+      "manufacturing jobs in firms of 10+ staff (840,000 by 2035)",
+      "موطن شغل في المؤسسات المعملية التي تشغّل 10 أشخاص فأكثر (840 ألفاً في 2035)",
+      2030
+     ]
+    ]
+   ],
+   [
+    "National AI Strategy 2026–2030",
+    "الاستراتيجية الوطنية للذكاء الاصطناعي 2026–2030",
+    "Ministry of Communication Technologies",
+    "وزارة تكنولوجيات الاتصال",
+    2026,
+    "ai",
+    [
+     [
+      "No published KPI",
+      "لا مؤشرات منشورة",
+      "only the broad lines were presented; priority sectors are digital health, agriculture, energy, transport and smart mobility, and digital administration",
+      "عُرضت الخطوط العريضة فقط؛ والقطاعات ذات الأولوية هي الصحة الرقمية والفلاحة والطاقة والنقل والتنقل الذكي والإدارة الرقمية",
+      [
+       "2026–2030",
+       "2026–2030"
+      ]
+     ]
+    ]
+   ],
+   [
+    "Startup Act and draft Startup Act 2.0",
+    "قانون المؤسسات الناشئة ومشروع «قانون المؤسسات الناشئة 2.0»",
+    "Ministry of Communication Technologies (Startup Tunisia)",
+    "وزارة تكنولوجيات الاتصال (Startup Tunisia)",
+    2018,
+    "digital",
+    [
+     [
+      "TND 10m",
+      "10 ملايين دينار",
+      "participatory-loan line for labelled startups proposed in the draft 2027 Finance Law",
+      "خط تمويل بقروض تشاركية للمؤسسات الناشئة الحاصلة على العلامة مقترح في مشروع قانون المالية لسنة 2027",
+      [
+       "2027–2028",
+       "2027–2028"
+      ]
+     ],
+     [
+      "~1,300",
+      "نحو 1,300",
+      "startups in Tunisia according to the minister (status, not a target)",
+      "مؤسسة ناشئة في تونس حسب الوزير (وضع قائم لا هدف)",
+      null
+     ]
+    ]
+   ]
+  ],
+  "feat": {
+   "name": [
+    "Towards Industry 4.0 in Tunisia",
+    "نحو صناعة 4.0 في تونس"
+   ],
+   "dek": [
+    "A Ministry of Industry initiative, run with German cooperation since 2018, that now offers factories a national Industry 4.0 hub at APII, a maturity-assessment tool and an Industry 4.0 label.",
+    "مبادرة لوزارة الصناعة تُنفَّذ مع التعاون الألماني منذ 2018، وتقدم اليوم للمصانع مركزاً وطنياً للصناعة 4.0 لدى وكالة النهوض بالصناعة والتجديد، وأداة لتقييم النضج الرقمي، وعلامة للصناعة 4.0."
+   ],
+   "facts": [
+    [
+     "Started",
+     "الانطلاق",
+     "2018; new support programme launched 30 September 2026 in Tunis",
+     "2018؛ وأُطلق برنامج المرافقة الجديد في 30 سبتمبر 2026 بتونس"
+    ],
+    [
+     "Owner",
+     "الجهة المالكة",
+     "Ministry of Industry, Mines & Energy (run by Equipment Minister Slah Zouari in an acting capacity), with APII",
+     "وزارة الصناعة والمناجم والطاقة (يتولى تسييرها وزير التجهيز صلاح الزواري)، مع وكالة النهوض بالصناعة والتجديد"
+    ],
+    [
+     "Tools",
+     "الأدوات",
+     "Industry 4.0 Hub, Industry 4.0 label, TIMA maturity assessment",
+     "المركز الوطني للصناعة 4.0، وعلامة الصناعة 4.0، وأداة TIMA لتقييم النضج الرقمي"
+    ],
+    [
+     "Results to date",
+     "الحصيلة حتى الآن",
+     "~400 firms supported, 2,900+ trained, 50 startups, 3 professional master’s degrees",
+     "نحو 400 مؤسسة مرافَقة، وأكثر من 2,900 متكوّن، و50 مؤسسة ناشئة، و3 ماجستيرات مهنية"
+    ],
+    [
+     "Funding",
+     "التمويل",
+     "€11m programme implemented by GIZ, per the EU ambassador",
+     "برنامج بقيمة 11 مليون يورو تنفذه الوكالة الألمانية للتعاون الدولي، حسب سفير الاتحاد الأوروبي"
+    ],
+    [
+     "Eligibility",
+     "الأهلية",
+     "Open to all Tunisian industrial firms; online application",
+     "مفتوح لكل المؤسسات الصناعية التونسية مع تقديم الترشحات عبر الإنترنت"
+    ]
+   ],
+   "why": [
+    "It is the only state channel that walks Tunisian factories through automation: a diagnostic first, then matched suppliers and support through five regional competence centres. For integrators and robot vendors, the Hub and the label are the obvious way to reach buyers in the automotive-component and electronics plants that the 2027 and 2030 export targets depend on, and Sousse-based Enova Robotics shows local robot makers already exist.",
+    "هو القناة الحكومية الوحيدة التي ترافق المصانع التونسية نحو الأتمتة: تشخيص أولاً، ثم ربط بالمزوّدين ودعم عبر خمسة مراكز كفاءات جهوية. وبالنسبة إلى مدمجي الأنظمة وبائعي الروبوتات، يمثل المركز الوطني والعلامة الطريق الأوضح للوصول إلى مصانع مكونات السيارات والإلكترونيات التي تعتمد عليها أهداف التصدير لعامَي 2027 و2030، فيما تثبت شركة «إينوفا روبوتيكس» في سوسة وجود مصنّعين محليين للروبوتات."
+   ],
+   "note": [
+    "The programme gives advice, diagnostics and recognition, not equipment grants; no budget or firm target was announced at the September 2026 launch. The 400-firm, 2,900-trainee and 50-startup figures are cumulative results since 2018, as stated by the ministry. The industry portfolio was being run on an acting basis by the Minister of Equipment at the time of the launch. The automotive and electronics targets come from separate sector pacts.",
+    "يقدم البرنامج الاستشارة والتشخيص والاعتراف، لا منحاً لاقتناء المعدات، ولم يُعلن عند إطلاقه في سبتمبر 2026 عن ميزانية أو عدد مستهدف من المؤسسات. وأرقام 400 مؤسسة و2,900 متكوّن و50 مؤسسة ناشئة حصيلة تراكمية منذ 2018 كما أعلنتها الوزارة. وكانت وزارة الصناعة عند الإطلاق تحت تسيير وزير التجهيز بالنيابة. أما أهداف السيارات والإلكترونيات فمصدرها ميثاقان قطاعيان منفصلان."
+   ],
+   "ms": [
+    [
+     "2018",
+     "2018",
+     "Ministry of Industry launches the “Towards Industry 4.0 in Tunisia” initiative with GIZ",
+     "وزارة الصناعة تطلق مبادرة «نحو صناعة 4.0 في تونس» مع الوكالة الألمانية للتعاون الدولي"
+    ],
+    [
+     "Sep 2019",
+     "سبتمبر 2019",
+     "First Industry 4.0 competence centre (CIDCI) created by Novation City, Sousse",
+     "إحداث أول مركز كفاءات للصناعة 4.0 (CIDCI) من قبل «نوفايشن سيتي» بسوسة"
+    ],
+    [
+     "Jul 2022",
+     "يوليو 2022",
+     "Industrial and Innovation Strategy 2035 launched",
+     "إطلاق الاستراتيجية الوطنية للصناعة والتجديد في أفق 2035"
+    ],
+    [
+     "Jul 2023",
+     "يوليو 2023",
+     "NEOTEX textile Industry 4.0 centre opens in Monastir",
+     "افتتاح مركز «NEOTEX» للصناعة 4.0 في قطاع النسيج بالمنستير"
+    ],
+    [
+     "Dec 2025",
+     "ديسمبر 2025",
+     "National Industry 4.0 Hub officially launched at APII",
+     "الإطلاق الرسمي للمركز الوطني للصناعة 4.0 لدى وكالة النهوض بالصناعة والتجديد"
+    ],
+    [
+     "Apr 2026",
+     "أبريل 2026",
+     "Electronics competitiveness pact signed, targeting TND 7bn of exports by 2030",
+     "توقيع ميثاق تنافسية الصناعات الإلكترونية بهدف 7 مليارات دينار من الصادرات بحلول 2030"
+    ],
+    [
+     "30 Sep 2026",
+     "30 سبتمبر 2026",
+     "Support programme launched with the Hub, the Industry 4.0 label and the TIMA tool",
+     "إطلاق برنامج المرافقة بالمركز الوطني وعلامة الصناعة 4.0 وأداة TIMA"
+    ],
+    [
+     "2027",
+     "2027",
+     "Automotive pact deadline: TND 13.5bn of exports and 150,000 jobs",
+     "أجل ميثاق السيارات: 13.5 مليار دينار من الصادرات و150 ألف موطن شغل"
+    ]
+   ],
+   "img": "/media/policy/tn-feat.jpg",
+   "img_cap": [
+    "The launch of the programme supporting Tunisian companies towards Industry 4.0, Tunis, 30 September 2026.",
+    "إطلاق برنامج مرافقة المؤسسات التونسية نحو الصناعة 4.0، تونس، 30 سبتمبر 2026."
+   ],
+   "img_alt": [
+    "Four officials seated in brown leather armchairs on a stage beneath a large screen reading “Programme d’accompagnement des entreprises vers l’Industrie 4.0”, with a gear and map-of-Tunisia graphic.",
+    "أربعة مسؤولين يجلسون على أرائك جلدية بنية فوق منصة، تحت شاشة كبيرة كُتب عليها «برنامج مرافقة المؤسسات نحو الصناعة 4.0» مع رسم لترس وخريطة تونس."
+   ],
+   "img_credit": [
+    "Photo: La Presse de Tunisie",
+    "الصورة: لابريس دو تونيزي"
+   ],
+   "img_url": "https://bunny-wp-pullzone-ngoswtmaoj.b-cdn.net/wp-content/uploads/2026/09/Industrie-4.0.jpg",
+   "img_page": "https://www.lapresse.tn/2026/09/30/industrie-4-0-trois-dispositifs-pour-diagnostiquer-accompagner-et-valoriser-les-entreprises/",
+   "logo": "/media/policy/tn-logo.png",
+   "logo_name": [
+    "Agency for the Promotion of Industry and Innovation (APII)",
+    "وكالة النهوض بالصناعة والتجديد"
+   ]
+  },
+  "pubs": [
+   [
+    "Industry 4.0: three tools to diagnose, support and recognise companies",
+    "الصناعة 4.0: ثلاث آليات لتشخيص المؤسسات ومرافقتها وتثمين تقدمها",
+    "La Presse de Tunisie (with TAP)",
+    "لابريس دو تونيزي (مع وكالة تونس إفريقيا للأنباء)",
+    "News",
+    "خبر",
+    "2026",
+    "https://www.lapresse.tn/2026/09/30/industrie-4-0-trois-dispositifs-pour-diagnostiquer-accompagner-et-valoriser-les-entreprises/"
+   ],
+   [
+    "“Industry 4.0”: a new programme to support companies launched",
+    "«الصناعة 4.0»: إطلاق برنامج جديد لمرافقة المؤسسات",
+    "La Presse de Tunisie",
+    "لابريس دو تونيزي",
+    "News",
+    "خبر",
+    "2026",
+    "https://www.lapresse.tn/2026/10/01/industrie-4-0-lancement-dun-nouveau-programme-daccompagnement-des-entreprises/"
+   ],
+   [
+    "Industry 4.0: more than 400 Tunisian companies supported towards smart industry",
+    "الصناعة 4.0: مرافقة أكثر من 400 مؤسسة تونسية نحو الصناعة الذكية",
+    "Managers",
+    "مانجرز",
+    "News",
+    "خبر",
+    "2026",
+    "https://managers.tn/2026/10/01/industrie-4-0-plus-de-400-entreprises-tunisiennes-accompagnees-vers-lindustrie-intelligente/"
+   ],
+   [
+    "Digital transition: national Industry 4.0 hub officially launched",
+    "التحول الرقمي: الإطلاق الرسمي للمركز الوطني للصناعة 4.0",
+    "La Presse de Tunisie",
+    "لابريس دو تونيزي",
+    "News",
+    "خبر",
+    "2025",
+    "https://www.lapresse.tn/2025/12/13/transition-numerique-le-hub-national-industrie-4-0-officiellement-lance/"
+   ],
+   [
+    "Industrial and Innovation Strategy, Horizon 2035 (final report)",
+    "الاستراتيجية الصناعية والتجديد في أفق 2035 (التقرير النهائي)",
+    "Ministry of Industry, Mines & Energy (hosted by the Ministry of Environment)",
+    "وزارة الصناعة والمناجم والطاقة (منشورة على موقع وزارة البيئة)",
+    "Strategy (French)",
+    "استراتيجية (بالفرنسية)",
+    "2022",
+    "https://environnement.gov.tn/fileadmin/Bibliotheque/SNTE/Strategie_Industrielle_et_Innovation_Horizon_2035.pdf"
+   ],
+   [
+    "Tunisia: an ambitious industrial policy and clear strategic axes for economic players",
+    "تونس: سياسة صناعية طموحة ومحاور استراتيجية واضحة للفاعلين الاقتصاديين",
+    "Webmanagercenter",
+    "ويب مانجر سنتر",
+    "News",
+    "خبر",
+    "2022",
+    "https://www.webmanagercenter.com/2022/07/06/489368/tunisie-une-politique-industrielle-ambitieuse-et-des-axes-strategiques-lisibles-pour-les-acteurs-economiques/"
+   ],
+   [
+    "A strategic pact to double electronics exports to TND 7bn by 2030",
+    "ميثاق استراتيجي لمضاعفة صادرات الصناعات الإلكترونية إلى 7 مليارات دينار بحلول 2030",
+    "Webmanagercenter (with TAP)",
+    "ويب مانجر سنتر (مع وكالة تونس إفريقيا للأنباء)",
+    "News",
+    "خبر",
+    "2026",
+    "https://www.webmanagercenter.com/2026/04/11/564613/tunisie-un-pacte-strategique-pour-doubler-les-exportations-des-industries-electroniques-a-7-milliards-de-dinars-dici-2030/"
+   ],
+   [
+    "Automotive Smart City: 150,000 jobs and TND 13.5bn of exports by 2027",
+    "المدينة الذكية للسيارات: 150 ألف موطن شغل و13.5 مليار دينار من الصادرات بحلول 2027",
+    "La Presse de Tunisie",
+    "لابريس دو تونيزي",
+    "News",
+    "خبر",
+    "2025",
+    "https://www.lapresse.tn/2025/03/04/automotive-smart-city-150-000-emplois-et-135-milliards-de-dinars-dexportations-dici-2027/"
+   ],
+   [
+    "TND 1.3bn for the Automotive Smart City: Tunisia speeds up its turn to the smart car",
+    "1.3 مليار دينار للمدينة الذكية للسيارات: تونس تسرّع تحولها نحو السيارة الذكية",
+    "Webdo",
+    "ويبدو",
+    "News",
+    "خبر",
+    "2026",
+    "https://www.webdo.tn/fr/actualite/national/13-milliard-de-dinars-pour-lautomotive-smart-city-la-tunisie-accelere-son-virage-vers-la-voiture-intelligente/395752/"
+   ],
+   [
+    "AI: Tunisia enters the global top 30 for scientific publications",
+    "الذكاء الاصطناعي: تونس ضمن أفضل 30 دولة عالمياً في النشر العلمي",
+    "La Presse de Tunisie",
+    "لابريس دو تونيزي",
+    "News",
+    "خبر",
+    "2026",
+    "https://www.lapresse.tn/2026/08/15/ia-la-tunisie-entre-dans-le-top-30-mondial-des-publications-scientifiques/"
+   ],
+   [
+    "Restricted ministerial council on the progress of digital transformation projects",
+    "مجلس وزاري مضيق حول تقدم مشاريع التحول الرقمي",
+    "Tunisie Numérique",
+    "تونس الرقمية",
+    "News",
+    "خبر",
+    "2026",
+    "https://www.tunisienumerique.com/conseil-ministeriel-restreint-consacre-au-suivi-de-lavancement-des-projets-de-transformation-numerique/"
+   ],
+   [
+    "The national AI strategy targets health, agriculture and digital sovereignty",
+    "الاستراتيجية الوطنية للذكاء الاصطناعي تراهن على الصحة والفلاحة والسيادة الرقمية",
+    "Webmanagercenter (with TAP)",
+    "ويب مانجر سنتر (مع وكالة تونس إفريقيا للأنباء)",
+    "News",
+    "خبر",
+    "2026",
+    "https://www.webmanagercenter.com/2026/05/25/567341/tunisie-la-strategie-nationale-de-lia-mise-sur-la-sante-lagriculture-et-la-souverainete-numerique/"
+   ],
+   [
+    "Digital sovereignty: the vagueness of Tunisia’s AI strategy",
+    "السيادة الرقمية: غموض استراتيجية تونس للذكاء الاصطناعي",
+    "L’Economiste Maghrébin",
+    "الإيكونوميست المغاربي",
+    "Analysis",
+    "تحليل",
+    "2026",
+    "https://www.leconomistemaghrebin.com/2026/08/17/souverainete-numerique-le-flou-de-la-strategie-ia-tunisienne/"
+   ],
+   [
+    "Tunisia 110th of 135 in the global responsible-AI ranking",
+    "تونس في المرتبة 110 من 135 في الترتيب العالمي للذكاء الاصطناعي المسؤول",
+    "Business News",
+    "بيزنس نيوز",
+    "News",
+    "خبر",
+    "2026",
+    "https://businessnews.com.tn/2026/07/13/la-tunisie-110e-sur-135-au-classement-mondial-de-lia-responsable-faute-de-strategie-nationale-le-retard-se-creuse/1409980/"
+   ],
+   [
+    "What will the future Startup Act 2.0 change for Tunisian startups?",
+    "ما الذي سيغيّره «قانون المؤسسات الناشئة 2.0» للمؤسسات الناشئة التونسية؟",
+    "La Presse de Tunisie",
+    "لابريس دو تونيزي",
+    "News",
+    "خبر",
+    "2026",
+    "https://www.lapresse.tn/2026/04/17/que-change-le-futur-startup-act-2-0-pour-les-startups-tunisiennes/"
+   ],
+   [
+    "A TND 10m financing line for labelled startups",
+    "خط تمويل بـ10 ملايين دينار لفائدة المؤسسات الناشئة الحاصلة على العلامة",
+    "Managers",
+    "مانجرز",
+    "News",
+    "خبر",
+    "2026",
+    "https://managers.tn/2026/10/16/une-ligne-de-financement-de-10-mdt-au-profit-des-startups-labellisees/"
+   ],
+   [
+    "Startup Act: label, benefits and AIR grants",
+    "قانون المؤسسات الناشئة: العلامة والامتيازات ومنح AIR",
+    "Startup Tunisia",
+    "Startup Tunisia",
+    "Official page",
+    "صفحة رسمية",
+    "2026",
+    "https://startup.gov.tn/en/home/startups"
+   ],
+   [
+    "Drones in Tunisia: measures to regulate their use",
+    "الطائرات المسيّرة في تونس: إجراءات لتنظيم استعمالها",
+    "Tuniscope",
+    "تونيسكوب",
+    "News",
+    "خبر",
+    "2025",
+    "https://www.tuniscope.com/article/417388/actualites/flash/drones-en-tunisie-191812"
+   ],
+   [
+    "Farmers authorised to use drones: Tunisian agriculture enters the digital age",
+    "الترخيص للفلاحين باستعمال الطائرات المسيّرة: الفلاحة التونسية تدخل العصر الرقمي",
+    "Tunisie Numérique",
+    "تونس الرقمية",
+    "News",
+    "خبر",
+    "2025",
+    "https://www.tunisienumerique.com/tunisie-autorisation-des-agriculteurs-a-utiliser-des-drones-lagriculture-tunisienne-a-lere-du-numerique/"
+   ],
+   [
+    "ARP: hearing on the bill on personal data protection",
+    "مجلس نواب الشعب: جلسة استماع حول مقترح قانون حماية المعطيات الشخصية",
+    "Business News",
+    "بيزنس نيوز",
+    "News",
+    "خبر",
+    "2026",
+    "https://businessnews.com.tn/2026/02/18/arp-audition-autour-du-projet-de-loi-sur-la-protection-des-donnees-personnelles/1388983/"
+   ],
+   [
+    "Data protection laws in Tunisia",
+    "قوانين حماية البيانات في تونس",
+    "DLA Piper",
+    "دي إل إيه بايبر",
+    "Legal guide",
+    "دليل قانوني",
+    "2026",
+    "https://www.dlapiperdataprotection.com/index.html?t=law&c=TN"
+   ],
+   [
+    "Tunisia: corporate tax credits and incentives",
+    "تونس: الحوافز والإعفاءات الضريبية للشركات",
+    "PwC Worldwide Tax Summaries",
+    "بي دبليو سي",
+    "Tax guide",
+    "دليل ضريبي",
+    "2026",
+    "https://taxsummaries.pwc.com/Tunisia/Corporate/Tax-credits-and-incentives"
+   ],
+   [
+    "30 years of industrial upgrading: 1995–2025 review",
+    "30 عاماً من التأهيل الصناعي: حصيلة 1995–2025",
+    "Upgrading Bureau (BMN), Ministry of Industry",
+    "مكتب التأهيل الصناعي، وزارة الصناعة",
+    "Official page",
+    "صفحة رسمية",
+    "2025",
+    "https://www.pmn.nat.tn/cadre-du-pmn/cadre-general"
+   ],
+   [
+    "The BCT announces the official launch of the regulatory sandbox",
+    "البنك المركزي يعلن الإطلاق الرسمي للبيئة التنظيمية التجريبية",
+    "Webmanagercenter (with TAP)",
+    "ويب مانجر سنتر (مع وكالة تونس إفريقيا للأنباء)",
+    "News",
+    "خبر",
+    "2020",
+    "https://www.webmanagercenter.com/2020/01/21/443813/la-bct-annonce-le-lancement-officiel-de-la-sandbox-reglementaire/"
+   ],
+   [
+    "Novation City in Sousse introduces Industry 4.0 in Tunisia with a dedicated competence centre",
+    "«نوفايشن سيتي» بسوسة تُدخل الصناعة 4.0 إلى تونس بمركز كفاءات مخصص",
+    "Kapitalis",
+    "كابيتاليس",
+    "News",
+    "خبر",
+    "2019",
+    "https://kapitalis.com/tunisie/2019/09/20/la-novation-city-de-sousse-introduit-lindustrie-4-0-en-tunisie-en-creant-un-centre-de-competences-dedie/"
+   ],
+   [
+    "Tunisia’s textile sector gets an Industry 4.0 competence centre",
+    "قطاع النسيج التونسي يحصل على مركز كفاءات للصناعة 4.0",
+    "L’Economiste Maghrébin",
+    "الإيكونوميست المغاربي",
+    "News",
+    "خبر",
+    "2023",
+    "https://www.leconomistemaghrebin.com/2023/07/21/le-secteur-du-textile-tunisien-se-dote-dun-centre-de-competences-4-0/"
+   ]
+  ],
+  "regs": [
+   {
+    "area": "drone",
+    "title": {
+     "en": "Draft regulatory text on drone use",
+     "ar": "مشروع نص ترتيبي لتنظيم استعمال الطائرات المسيّرة"
+    },
+    "body": {
+     "en": "Directorate General of Civil Aviation commission, with the Ministries of Defence and Transport",
+     "ar": "لجنة لدى الإدارة العامة للطيران المدني، بالتنسيق مع وزارتي الدفاع الوطني والنقل"
+    },
+    "year": 2025,
+    "status": "draft",
+    "summary": {
+     "en": "Drone use still needs case-by-case authorisation, and the Defence Minister told parliament in November 2025 that a draft text was finalised and sent out for opinions. Drafts have been announced since 2021 with no adoption found, so commercial drone services have no clear licensing route yet.",
+     "ar": "لا يزال استعمال الطائرات المسيّرة يتطلب ترخيصاً لكل حالة على حدة، وقد أعلن وزير الدفاع أمام البرلمان في نوفمبر 2025 أن مشروع نص قد استُكمل وأُحيل لإبداء الرأي. وتُعلن مشاريع مماثلة منذ 2021 دون أن نجد ما يفيد اعتماد أي منها، لذا لا يوجد بعد مسار واضح لترخيص خدمات المسيّرات التجارية."
+    },
+    "url": "https://www.tuniscope.com/article/417388/actualites/flash/drones-en-tunisie-191812",
+    "source": "Tuniscope",
+    "date": "2025-11-12"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "2026 Finance Law: drones for crop spraying",
+     "ar": "قانون المالية لسنة 2026: استعمال المسيّرات في رشّ المزروعات"
+    },
+    "body": {
+     "en": "Assembly of the Representatives of the People",
+     "ar": "مجلس نواب الشعب"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "An article of the 2026 Finance Law, adopted in December 2025, lets farmers use drones to spray crops, subject to authorisation from the competent authorities. It is the first legal opening for a civilian drone use case, a market for agricultural drone makers and operators.",
+     "ar": "يسمح فصل من قانون المالية لسنة 2026، صادق عليه البرلمان في ديسمبر 2025، للفلاحين باستعمال المسيّرات لرشّ المزروعات شرط الحصول على تراخيص السلطات المختصة. وهو أول انفتاح قانوني على استعمال مدني محدد للمسيّرات، ويفتح سوقاً لمصنّعي المسيّرات الفلاحية ومشغّليها."
+    },
+    "url": "https://www.tunisienumerique.com/tunisie-autorisation-des-agriculteurs-a-utiliser-des-drones-lagriculture-tunisienne-a-lere-du-numerique/",
+    "source": "Tunisie Numérique",
+    "date": "2025-12-04"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "Organic Law 2004-63 on personal data protection",
+     "ar": "القانون الأساسي عدد 63 لسنة 2004 المتعلق بحماية المعطيات الشخصية"
+    },
+    "body": {
+     "en": "National Authority for the Protection of Personal Data (INPDP)",
+     "ar": "الهيئة الوطنية لحماية المعطيات الشخصية"
+    },
+    "year": 2004,
+    "status": "in_force",
+    "summary": {
+     "en": "Makes personal-data protection a legal right and subjects processing to declaration or authorisation by the INPDP, including CCTV. Robots and drones with cameras that capture people fall under it.",
+     "ar": "يكرّس حماية المعطيات الشخصية حقاً قانونياً ويُخضع معالجتها للتصريح أو الترخيص لدى الهيئة الوطنية، بما في ذلك كاميرات المراقبة. وتخضع له الروبوتات والمسيّرات المجهزة بكاميرات تلتقط صور الأشخاص."
+    },
+    "url": "https://www.dlapiperdataprotection.com/index.html?t=law&c=TN",
+    "source": "DLA Piper",
+    "date": "2026-11-08"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "Draft organic law on personal data protection (MPs’ bill)",
+     "ar": "مقترح قانون أساسي لحماية المعطيات الشخصية (مبادرة نيابية)"
+    },
+    "body": {
+     "en": "Assembly of the Representatives of the People, Rights and Freedoms Committee",
+     "ar": "مجلس نواب الشعب، لجنة الحقوق والحريات"
+    },
+    "year": 2025,
+    "status": "draft",
+    "summary": {
+     "en": "A 132-article bill that would replace the 2004 law and create a new data protection authority with stronger sanctions. It was in committee hearings in 2026; no plenary vote was found.",
+     "ar": "مقترح من 132 فصلاً يعوّض قانون 2004 ويُحدث هيئة جديدة لحماية المعطيات بعقوبات أشد. وكان قيد جلسات الاستماع في اللجنة خلال 2026، ولم نعثر على تصويت في جلسة عامة."
+    },
+    "url": "https://businessnews.com.tn/2026/02/18/arp-audition-autour-du-projet-de-loi-sur-la-protection-des-donnees-personnelles/1388983/",
+    "source": "Business News",
+    "date": "2026-02-18"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "National AI Strategy 2026–2030",
+     "ar": "الاستراتيجية الوطنية للذكاء الاصطناعي 2026–2030"
+    },
+    "body": {
+     "en": "Ministry of Communication Technologies",
+     "ar": "وزارة تكنولوجيات الاتصال"
+    },
+    "year": 2026,
+    "status": "announced",
+    "summary": {
+     "en": "Its broad lines were presented to a ministerial council on 15 August 2026, with a rights-based approach and legal frameworks for responsible AI still being drafted. No full text, targets or binding AI rules have been published.",
+     "ar": "عُرضت خطوطها العريضة على مجلس وزاري في 15 أغسطس 2026، بمقاربة قائمة على الحقوق، فيما لا تزال الأطر القانونية للاستخدام المسؤول للذكاء الاصطناعي قيد الإعداد. ولم يُنشر نص كامل أو أهداف أو قواعد ملزمة."
+    },
+    "url": "https://www.lapresse.tn/2026/08/15/ia-la-tunisie-entre-dans-le-top-30-mondial-des-publications-scientifiques/",
+    "source": "La Presse de Tunisie",
+    "date": "2026-08-15"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Investment Law 2016-71 and its premiums",
+     "ar": "قانون الاستثمار عدد 71 لسنة 2016 ومنحه"
+    },
+    "body": {
+     "en": "Tunisian Investment Authority and APII",
+     "ar": "الهيئة التونسية للاستثمار ووكالة النهوض بالصناعة والتجديد"
+    },
+    "year": 2016,
+    "status": "in_force",
+    "summary": {
+     "en": "Offers investment premiums for value added and competitiveness, employability, regional development and sustainable development, alongside tax breaks for exporters. Automation equipment qualifies only as ordinary investment; nothing is earmarked for robotics.",
+     "ar": "يمنح منحاً استثمارية للقيمة المضافة والقدرة التنافسية وتنمية قابلية التشغيل والتنمية الجهوية والتنمية المستدامة، إلى جانب امتيازات جبائية للمصدّرين. ولا تستفيد معدات الأتمتة إلا بوصفها استثماراً عادياً، دون أي تخصيص للروبوتات."
+    },
+    "url": "https://taxsummaries.pwc.com/Tunisia/Corporate/Tax-credits-and-incentives",
+    "source": "PwC Worldwide Tax Summaries",
+    "date": "2026-06-29"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Industrial Upgrading Programme (PMN)",
+     "ar": "برنامج التأهيل الصناعي"
+    },
+    "body": {
+     "en": "Ministry of Industry (Upgrading Bureau, BMN)",
+     "ar": "وزارة الصناعة (مكتب التأهيل الصناعي)"
+    },
+    "year": 1995,
+    "status": "in_force",
+    "summary": {
+     "en": "Since 1995 it has given premiums to industrial firms that modernise production equipment and invest in software, quality, technology transfer and technical staff, with more than TND 14bn of investment approved by 2025. It is the closest grant route for factory automation, though not specific to robots.",
+     "ar": "يمنح منذ 1995 منحاً للمؤسسات الصناعية التي تحدّث معدات الإنتاج وتستثمر في البرمجيات والجودة ونقل التكنولوجيا والإطارات التقنية، وقد صادق على استثمارات تفوق 14 مليار دينار حتى 2025. وهو أقرب مسار دعم لأتمتة المصانع، وإن لم يكن خاصاً بالروبوتات."
+    },
+    "url": "https://www.pmn.nat.tn/cadre-du-pmn/cadre-general",
+    "source": "Upgrading Bureau (BMN), Ministry of Industry",
+    "date": "2026-11-08"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Startup Act and its label",
+     "ar": "قانون المؤسسات الناشئة وعلامته"
+    },
+    "body": {
+     "en": "Ministry of Communication Technologies (Startup Tunisia)",
+     "ar": "وزارة تكنولوجيات الاتصال (Startup Tunisia)"
+    },
+    "year": 2018,
+    "status": "in_force",
+    "summary": {
+     "en": "Labelled startups get 20 legal and tax measures plus reimbursable AIR grants of TND 30,000 for proofs of concept and up to TND 200,000 before Series A. Robotics startups qualify; a Startup Act 2.0 is being drafted.",
+     "ar": "تحصل المؤسسات الناشئة الحاصلة على العلامة على 20 إجراءً قانونياً وجبائياً ومنح AIR قابلة للاسترجاع بقيمة 30 ألف دينار لإثبات المفهوم وحتى 200 ألف دينار قبل جولة التمويل الأولى. ويحق لشركات الروبوتات الاستفادة منها، ويجري إعداد «قانون المؤسسات الناشئة 2.0»."
+    },
+    "url": "https://startup.gov.tn/en/home/startups",
+    "source": "Startup Tunisia",
+    "date": "2026-11-08"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Industry 4.0 Hub, label and TIMA assessment",
+     "ar": "المركز الوطني للصناعة 4.0 وعلامتها وأداة TIMA للتقييم"
+    },
+    "body": {
+     "en": "APII, Ministry of Industry, Mines & Energy",
+     "ar": "وكالة النهوض بالصناعة والتجديد، وزارة الصناعة والمناجم والطاقة"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "Since September 2026 any industrial firm can apply online for a digital-maturity diagnosis and tailored Industry 4.0 support, then earn a national label. It offers advice and matchmaking rather than money, giving automation vendors a route to qualified buyers.",
+     "ar": "منذ سبتمبر 2026 يمكن لأي مؤسسة صناعية أن تطلب عبر الإنترنت تشخيصاً لنضجها الرقمي ومرافقة مخصصة نحو الصناعة 4.0، ثم الحصول على علامة وطنية. ويقدم الاستشارة والربط بالمزوّدين لا التمويل، ما يمنح بائعي حلول الأتمتة طريقاً إلى مشترين مؤهلين."
+    },
+    "url": "https://www.lapresse.tn/2026/10/01/industrie-4-0-lancement-dun-nouveau-programme-daccompagnement-des-entreprises/",
+    "source": "La Presse de Tunisie",
+    "date": "2026-10-01"
+   }
+  ],
+  "score": {
+   "av_law": {
+    "v": 0,
+    "note": {
+     "en": "No law, draft or trial permit for autonomous vehicles was found; the Automotive Smart City concerns building smart cars, not putting them on public roads.",
+     "ar": "لم نعثر على قانون أو مشروع أو تصريح تجارب للمركبات ذاتية القيادة؛ ويتعلق مشروع المدينة الذكية للسيارات بتصنيع السيارات الذكية لا بتشغيلها على الطرق العامة."
+    },
+    "url": "https://www.webdo.tn/fr/actualite/national/13-milliard-de-dinars-pour-lautomotive-smart-city-la-tunisie-accelere-son-virage-vers-la-voiture-intelligente/395752/",
+    "source": "Webdo"
+   },
+   "robotaxi": {
+    "v": 0,
+    "note": {
+     "en": "No robotaxi pilot or service has been reported in Tunisia.",
+     "ar": "لم يُعلن عن أي تجربة أو خدمة لسيارات الأجرة ذاتية القيادة في تونس."
+    },
+    "url": "https://www.webdo.tn/fr/actualite/national/13-milliard-de-dinars-pour-lautomotive-smart-city-la-tunisie-accelere-son-virage-vers-la-voiture-intelligente/395752/",
+    "source": "Webdo"
+   },
+   "drones": {
+    "v": 1,
+    "note": {
+     "en": "Drones are restricted to case-by-case authorisation; a 2026 Finance Law article allows farm spraying with permits, but the general drone decree is still a draft and no delivery or BVLOS approvals exist.",
+     "ar": "يقتصر استعمال المسيّرات على تراخيص لكل حالة؛ ويسمح فصل في قانون المالية لسنة 2026 بالرشّ الفلاحي بترخيص، لكن النص العام لتنظيم المسيّرات لا يزال مشروعاً ولا توجد موافقات للتوصيل أو للطيران خارج مدى الرؤية."
+    },
+    "url": "https://www.tuniscope.com/article/417388/actualites/flash/drones-en-tunisie-191812",
+    "source": "Tuniscope"
+   },
+   "sandbox": {
+    "v": 0,
+    "note": {
+     "en": "The only regulatory sandbox, launched by the Central Bank in 2020, is for fintech; we found none open to robotics or autonomous systems.",
+     "ar": "البيئة التنظيمية التجريبية الوحيدة أطلقها البنك المركزي في 2020 وهي مخصصة للتكنولوجيا المالية؛ ولم نجد بيئة مفتوحة للروبوتات أو الأنظمة ذاتية التشغيل."
+    },
+    "url": "https://www.webmanagercenter.com/2020/01/21/443813/la-bct-annonce-le-lancement-officiel-de-la-sandbox-reglementaire/",
+    "source": "Webmanagercenter (with TAP)"
+   },
+   "incentives": {
+    "v": 1,
+    "note": {
+     "en": "Investment Law premiums, the industrial upgrading programme and Startup Act grants are general; the Industry 4.0 programme gives advice rather than grants, and nothing is earmarked for robots.",
+     "ar": "منح قانون الاستثمار وبرنامج التأهيل الصناعي ومنح قانون المؤسسات الناشئة عامة؛ ويقدم برنامج الصناعة 4.0 الاستشارة لا المنح، ولا شيء مخصص للروبوتات."
+    },
+    "url": "https://www.pmn.nat.tn/cadre-du-pmn/cadre-general",
+    "source": "Upgrading Bureau (BMN), Ministry of Industry"
+   },
+   "ai_rules": {
+    "v": 1,
+    "note": {
+     "en": "The 2004 personal data law is in force, but the AI strategy has only been presented in outline and no AI governance framework has been published.",
+     "ar": "قانون 2004 لحماية المعطيات الشخصية نافذ، لكن استراتيجية الذكاء الاصطناعي لم تُعرض إلا في خطوطها العريضة ولم يُنشر أي إطار لحوكمة الذكاء الاصطناعي."
+    },
+    "url": "https://www.lapresse.tn/2026/08/15/ia-la-tunisie-entre-dans-le-top-30-mondial-des-publications-scientifiques/",
+    "source": "La Presse de Tunisie"
+   }
+  }
+ },
+ "DZ": {
+  "sum": [
+   "Algeria has no robotics programme, but the state is now a real drone buyer: forest services are fielding locally made Aurès 700 drones under a defence-ministry licensing regime, while a national AI strategy moved into implementation in 2026.",
+   "لا تملك الجزائر برنامجاً للروبوتات، لكن الدولة باتت مشترياً فعلياً للطائرات المسيّرة: إذ تنشر مصالح الغابات طائرات «أوراس 700» المصنّعة محلياً في ظل نظام ترخيص تشرف عليه وزارة الدفاع الوطني، فيما دخلت الاستراتيجية الوطنية للذكاء الاصطناعي مرحلة التنفيذ في 2026."
+  ],
+  "robo": [
+   "Partly: industrial target and state drone fleets, no robotics plan",
+   "جزئياً: هدف صناعي وأساطيل حكومية من المسيّرات، دون خطة للروبوتات",
+   1
+  ],
+  "head": [
+   0,
+   0
+  ],
+  "progs": [
+   [
+    "Forest-fire drone surveillance (Aurès 700 fleet)",
+    "مراقبة حرائق الغابات بالطائرات المسيّرة (أسطول «أوراس 700»)",
+    "Directorate General of Forests (Ministry of Agriculture, Rural Development & Fisheries)",
+    "المديرية العامة للغابات (وزارة الفلاحة والتنمية الريفية والصيد البحري)",
+    2025,
+    "autonomy",
+    [
+     [
+      "140",
+      "140",
+      "more locally made Aurès 700 drones being contracted for the next fire season (35 in service today, 20 of them Aurès 700)",
+      "طائرة «أوراس 700» محلية الصنع إضافية يجري التعاقد عليها للموسم المقبل (35 طائرة في الخدمة حالياً، منها 20 من طراز «أوراس 700»)",
+      [
+       "2027 fire season",
+       "موسم حرائق 2027"
+      ]
+     ]
+    ],
+    [
+     "d09"
+    ]
+   ],
+   [
+    "National Artificial Intelligence Strategy",
+    "الاستراتيجية الوطنية للذكاء الاصطناعي",
+    "Ministry of Higher Education & Scientific Research (implementation lead)",
+    "وزارة التعليم العالي والبحث العلمي (الجهة المكلفة بالتنفيذ)",
+    2026,
+    "ai",
+    [
+     [
+      "50,000",
+      "50,000",
+      "AI specialists trained",
+      "متخصص مكوَّن في الذكاء الاصطناعي",
+      2030
+     ],
+     [
+      "1 model",
+      "نموذج واحد",
+      "large language model for Algerian tax legislation delivered (98% of source texts collected)",
+      "نموذج لغوي كبير خاص بالتشريع الجبائي الجزائري (جُمع 98% من النصوص المرجعية)",
+      [
+       "Within 4 months of 20 Oct 2026",
+       "في غضون 4 أشهر من 20 أكتوبر 2026"
+      ]
+     ],
+     [
+      "102",
+      "102",
+      "places in a new AI doctoral school run by three national computing schools",
+      "منصباً في مدرسة دكتوراه جديدة في الذكاء الاصطناعي تضم ثلاث مدارس وطنية للإعلام الآلي",
+      null
+     ]
+    ]
+   ],
+   [
+    "National Digital Transformation Strategy (SNTN-2030)",
+    "الاستراتيجية الوطنية للتحول الرقمي 2030",
+    "High Commission for Digitalisation",
+    "المحافظة السامية للرقمنة",
+    2025,
+    "digital",
+    [
+     [
+      "500,000",
+      "500,000",
+      "ICT specialists trained",
+      "متخصص مكوَّن في تكنولوجيا الإعلام والاتصال",
+      2030
+     ],
+     [
+      "20%",
+      "20%",
+      "digital sector's contribution to GDP",
+      "مساهمة القطاع الرقمي في الناتج المحلي الإجمالي",
+      2030
+     ],
+     [
+      "−40%",
+      "−40%",
+      "emigration of ICT specialists",
+      "هجرة المتخصصين في تكنولوجيا الإعلام والاتصال",
+      2030
+     ]
+    ]
+   ],
+   [
+    "Industrial revival under Investment Law 22-18",
+    "الإنعاش الصناعي في إطار قانون الاستثمار 22-18",
+    "Ministry of Industry, with the Algerian Investment Promotion Agency (AAPI)",
+    "وزارة الصناعة، مع الوكالة الجزائرية لترقية الاستثمار",
+    2022,
+    "industry",
+    [
+     [
+      "13%",
+      "13%",
+      "industry's share of GDP, a target set by the President",
+      "حصة الصناعة من الناتج المحلي الإجمالي، وهو هدف حدده رئيس الجمهورية",
+      2027
+     ]
+    ]
+   ],
+   [
+    "Startup ecosystem: labels, Algerian Startup Fund and the 20,000-startup goal",
+    "منظومة المؤسسات الناشئة: الوسوم وصندوق تمويل المؤسسات الناشئة وهدف 20 ألف مؤسسة ناشئة",
+    "Ministry of Knowledge Economy, Startups & Micro-enterprises",
+    "وزارة اقتصاد المعرفة والمؤسسات الناشئة والمؤسسات المصغرة",
+    2020,
+    "digital",
+    [
+     [
+      "20,000",
+      "20,000",
+      "startups created (from about 200 in 2019)",
+      "مؤسسة ناشئة يتم إنشاؤها (مقابل نحو 200 في 2019)",
+      [
+       "By the end of the current presidential term",
+       "بنهاية العهدة الرئاسية الحالية"
+      ]
+     ]
+    ]
+   ]
+  ],
+  "feat": {
+   "name": [
+    "Locally made drones for forest-fire surveillance",
+    "طائرات مسيّرة محلية الصنع لمراقبة حرائق الغابات"
+   ],
+   "dek": [
+    "The Directorate General of Forests is building a national drone fleet around the Aurès 700, a quadrotor made by the military-industry firm EDPSTA, inside a drone regime run by the defence ministry.",
+    "تبني المديرية العامة للغابات أسطولاً وطنياً من الطائرات المسيّرة قوامه «أوراس 700»، وهي طائرة رباعية المراوح تصنعها مؤسسة EDPSTA التابعة للصناعات العسكرية، ضمن نظام للمسيّرات تشرف عليه وزارة الدفاع الوطني."
+   ],
+   "facts": [
+    [
+     "Operator",
+     "الجهة المشغّلة",
+     "Directorate General of Forests (DGF), Ministry of Agriculture, Rural Development & Fisheries",
+     "المديرية العامة للغابات، وزارة الفلاحة والتنمية الريفية والصيد البحري"
+    ],
+    [
+     "Drone",
+     "الطائرة",
+     "Aurès 700 quadrotor for day and night surveillance, built by EDPSTA (Bousaâda), part of the military industries",
+     "«أوراس 700» رباعية المراوح للمراقبة ليلاً ونهاراً، من إنتاج مؤسسة EDPSTA (بوسعادة) التابعة للصناعات العسكرية"
+    ],
+    [
+     "Fleet (Oct 2026)",
+     "الأسطول (أكتوبر 2026)",
+     "35 drones in service, 20 of them Aurès 700, spread across the wilayas; 85 forestry agents trained",
+     "35 طائرة في الخدمة، منها 20 من طراز «أوراس 700»، موزعة على الولايات، مع تكوين 85 عوناً غابياً"
+    ],
+    [
+     "Next",
+     "الخطوة المقبلة",
+     "140 more Aurès 700 being contracted for the next season",
+     "التعاقد على 140 طائرة «أوراس 700» إضافية للموسم المقبل"
+    ],
+    [
+     "Rules",
+     "الإطار التنظيمي",
+     "Drones must be registered with the defence ministry's CNSAPB, which also licenses drone businesses",
+     "يجب تسجيل الطائرات لدى المركز الوطني لأنظمة الطائرات بدون طيار التابع لوزارة الدفاع الوطني، الذي يمنح أيضاً اعتماد أنشطة المسيّرات"
+    ]
+   ],
+   "why": [
+    "Forest services are the clearest civilian buyer of drones in Algeria, and their order book shows the state prefers locally made airframes from the military industries. Foreign vendors are most likely to find room in payloads such as thermal cameras, detection software and training. Under the 2025 drone order, importing or selling drones needs a CNSAPB licence. Robotics R&D sits mainly in research centres such as CDTA, whose robotics and industrial automation division has 16 staff.",
+    "تُعد مصالح الغابات أوضح مشترٍ مدني للطائرات المسيّرة في الجزائر، وتكشف طلبياتها أن الدولة تفضّل الهياكل المصنّعة محلياً لدى الصناعات العسكرية. وتبقى الفرص الأرجح أمام المورّدين الأجانب في الحمولات مثل الكاميرات الحرارية وبرمجيات الكشف والتكوين. ويشترط قرار 2025 الخاص بالمسيّرات الحصول على اعتماد من المركز الوطني لأي نشاط استيراد أو بيع. أما البحث والتطوير في الروبوتات فيتركز أساساً في مراكز البحث مثل مركز تنمية التكنولوجيات المتقدمة، الذي يضم قسمه للروبوتيك والأتمتة الصناعية 16 باحثاً وعوناً."
+   ],
+   "note": [
+    "Fleet figures shift between statements: in June 2026 a DGF director cited 35 operational drones and 80 more about to be acquired, while in October another official cited 140 under contract for next season; it is unclear whether the 80 are part of the 140. 'Next season' is our reading of the 2027 fire campaign, which normally runs from May to November. No budget or unit price has been published. The national AI strategy was examined by the government in May 2026; we found no published text, no 2024 version and no 'National AI Council'.",
+    "تتباين أرقام الأسطول بين التصريحات: ففي يونيو 2026 ذكر مدير بالمديرية 35 طائرة عاملة واقتناءً وشيكاً لـ80 أخرى، بينما ذكر مسؤول آخر في أكتوبر التعاقد على 140 طائرة للموسم المقبل، ولا يتضح إن كانت الـ80 جزءاً من الـ140. ونفهم «الموسم المقبل» على أنه حملة حرائق 2027 التي تمتد عادة من مايو إلى نوفمبر. ولم تُنشر أي ميزانية أو سعر للوحدة. أما الاستراتيجية الوطنية للذكاء الاصطناعي فقد درستها الحكومة في مايو 2026، ولم نعثر على نصها المنشور ولا على نسخة من 2024 ولا على «مجلس وطني للذكاء الاصطناعي»."
+   ],
+   "ms": [
+    [
+     "Jul 2021",
+     "يوليو 2021",
+     "Presidential Decree 21-285 sets the general framework for unmanned aircraft systems",
+     "المرسوم الرئاسي 21-285 يحدد الإطار العام لأنظمة الطائرات بدون طيار"
+    ],
+    [
+     "May 2025",
+     "مايو 2025",
+     "DGF adds drones and 360° thermal cameras to its fire-prevention plan",
+     "المديرية العامة للغابات تُدرج الطائرات المسيّرة والكاميرات الحرارية بزاوية 360 درجة في مخطط الوقاية من الحرائق"
+    ],
+    [
+     "Sep 2025",
+     "سبتمبر 2025",
+     "Blida forest conservation starts day and night patrols with an Aurès 700",
+     "محافظة الغابات لولاية البليدة تبدأ دوريات ليلية ونهارية بطائرة «أوراس 700»"
+    ],
+    [
+     "Nov 2025",
+     "نوفمبر 2025",
+     "Interministerial order in Official Journal No. 72 requires a CNSAPB licence for drone businesses",
+     "قرار وزاري مشترك في الجريدة الرسمية رقم 72 يشترط اعتماد المركز الوطني لممارسة أنشطة المسيّرات"
+    ],
+    [
+     "Dec 2025",
+     "ديسمبر 2025",
+     "Defence ministry's national drone centre (CNSAPB) enters service; owners told to declare drones",
+     "دخول المركز الوطني لأنظمة الطائرات بدون طيار التابع لوزارة الدفاع الوطني حيز الخدمة ودعوة المالكين إلى التصريح بطائراتهم"
+    ],
+    [
+     "Feb 2026",
+     "فبراير 2026",
+     "DGF agrees to supply drones to the field-crops institute (ITGC) for crop monitoring",
+     "المديرية العامة للغابات تتفق على تزويد المعهد التقني للزراعات الكبرى بطائرات مسيّرة لمتابعة المحاصيل"
+    ],
+    [
+     "Apr 2026",
+     "أبريل 2026",
+     "30 April deadline for declaring and registering drones",
+     "آخر أجل للتصريح بالطائرات المسيّرة وتسجيلها في 30 أبريل"
+    ],
+    [
+     "Jun 2026",
+     "يونيو 2026",
+     "35 drones operational for the 2026 fire campaign; EDPSTA shows the Aurès 700 at the Algiers International Fair; CRTI gets the first national drone-pilot training approval",
+     "35 طائرة مسيّرة عاملة في حملة حرائق 2026، وعرض «أوراس 700» في معرض الجزائر الدولي، وحصول مركز البحث في التكنولوجيات الصناعية على أول اعتماد وطني لتكوين طياري المسيّرات"
+    ],
+    [
+     "Oct 2026",
+     "أكتوبر 2026",
+     "DGF says 140 more Aurès 700 are being contracted for next season",
+     "المديرية العامة للغابات تعلن التعاقد على 140 طائرة «أوراس 700» إضافية للموسم المقبل"
+    ]
+   ],
+   "img": "/media/policy/dz-feat.jpg",
+   "img_cap": [
+    "An Aurès 700 drone, built in Algeria, before a night surveillance patrol with Blida forest conservation agents and security services, September 2025.",
+    "طائرة «أوراس 700» الجزائرية الصنع قبيل دورية مراقبة ليلية مع أعوان محافظة الغابات لولاية البليدة والمصالح الأمنية، سبتمبر 2025."
+   ],
+   "img_alt": [
+    "A black quadrotor drone sits on tarmac at night in front of a line of uniformed forestry agents and police officers, with city lights in the valley behind them.",
+    "طائرة مسيّرة سوداء رباعية المراوح موضوعة على الأرض ليلاً أمام صف من أعوان الغابات وعناصر الشرطة بالزي الرسمي، وخلفهم أضواء مدينة في الوادي."
+   ],
+   "img_credit": [
+    "Photo: Horizons",
+    "الصورة: أوريزون"
+   ],
+   "img_url": "https://www.horizons.dz/wp-content/uploads/2025/09/Conservation-des-forets-de-la-wilaya-de-Blida-DRONE.jpg",
+   "img_page": "https://www.horizons.dz/2025/09/horizons-dz-regions-conservation-des-forets-de-blida-les-services-forestiers-renforces-par-un-drone-de-fabrication-algerienne/",
+   "logo": "/media/policy/dz-logo.png",
+   "logo_name": [
+    "Ministry of Agriculture, Rural Development and Fisheries",
+    "وزارة الفلاحة والتنمية الريفية والصيد البحري"
+   ]
+  },
+  "pubs": [
+   [
+    "The DGF plans to acquire 140 locally made drones",
+    "المديرية العامة للغابات تعتزم اقتناء 140 طائرة بدون طيار محلية الصنع",
+    "Algérie Presse Service (APS)",
+    "وكالة الأنباء الجزائرية",
+    "Official news (French)",
+    "خبر رسمي (بالفرنسية)",
+    "2026",
+    "https://www.aps.dz/fr/algerie/sante-et-environnement/mvps7qyw-la-dgf-envisage-d-acquerir-140-drones-de-fabrication-locale"
+   ],
+   [
+    "The DGF plans to acquire 140 locally made drones (Arabic)",
+    "المديرية العامة للغابات تعتزم اقتناء 140 طائرة بدون طيار محلية الصنع",
+    "Algérie Presse Service (APS)",
+    "وكالة الأنباء الجزائرية",
+    "Official news (Arabic)",
+    "خبر رسمي (بالعربية)",
+    "2026",
+    "https://www.aps.dz/algerie/sante-et-environnement/mvpcs8x1-%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9-%D9%84%D9%84%D8%BA%D8%A7%D8%A8%D8%A7%D8%AA-%D8%AA%D8%B9%D8%AA%D8%B2%D9%85-%D8%A7%D9%82%D8%AA%D9%86%D8%A7%D8%A1-140-%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9-%D8%A8%D8%AF%D9%88%D9%86-%D8%B7%D9%8A%D8%A7%D8%B1-%D9%85%D8%AD%D9%84%D9%8A%D8%A9-%D8%A7%D9%84%D8%B5%D9%86%D8%B9"
+   ],
+   [
+    "The DGF deploys a reinforced national fire-prevention plan",
+    "المديرية العامة للغابات تنشر جهازاً وطنياً معززاً للوقاية والمكافحة",
+    "Algérie Presse Service (APS)",
+    "وكالة الأنباء الجزائرية",
+    "Official news",
+    "خبر رسمي",
+    "2026",
+    "https://www.aps.dz/fr/algerie/sante-et-environnement/mqp5slfz-la-dgf-deploie-un-dispositif-national-renforce-de-prevention-et-de-lutte"
+   ],
+   [
+    "Blida forest services reinforced with an Algerian-made drone",
+    "تعزيز مصالح الغابات في البليدة بطائرة مسيّرة جزائرية الصنع",
+    "Horizons",
+    "أوريزون",
+    "News",
+    "خبر",
+    "2025",
+    "https://www.horizons.dz/2025/09/horizons-dz-regions-conservation-des-forets-de-blida-les-services-forestiers-renforces-par-un-drone-de-fabrication-algerienne/"
+   ],
+   [
+    "Military industry: continuous investment in innovation and national integration",
+    "الصناعة العسكرية: استثمار متواصل في الابتكار وتعزيز الإدماج الوطني",
+    "Algérie Presse Service (APS)",
+    "وكالة الأنباء الجزائرية",
+    "Official news",
+    "خبر رسمي",
+    "2026",
+    "https://www.aps.dz/fr/economie/industrieenergie-et-mines/mqtll88x-industrie-militaire-un-investissement-continu-dans-l-innovation-et-l-integration-nationale"
+   ],
+   [
+    "Algeria: new conditions for manufacturing and acquiring drones",
+    "الجزائر: شروط جديدة لتصنيع الطائرات المسيّرة واقتنائها",
+    "Algérie Eco",
+    "الجزائر إيكو",
+    "News",
+    "خبر",
+    "2025",
+    "https://algerie-eco.com/2025/11/04/algerie-de-nouvelles-conditions-pour-la-fabrication-et-lacquisition-des-drones/"
+   ],
+   [
+    "National drone centre enters service: owners must declare their aircraft",
+    "المركز الوطني للمسيّرات يدخل الخدمة: على المالكين التصريح بطائراتهم",
+    "Algérie Eco",
+    "الجزائر إيكو",
+    "News",
+    "خبر",
+    "2025",
+    "https://algerie-eco.com/2025/12/04/le-centre-national-des-drones-entre-en-service-les-detenteurs-doivent-declarer-leurs-appareils/"
+   ],
+   [
+    "CRTI wins the first national approval to train drone pilots",
+    "مركز البحث في التكنولوجيات الصناعية يحصل على أول اعتماد وطني لتكوين طياري المسيّرات",
+    "Maghreb Émergent",
+    "مغرب إيمرجنت",
+    "News",
+    "خبر",
+    "2026",
+    "https://maghrebemergent.news/fr/le-crti-decroche-le-1er-agrement-national-pour-la-formation-de-pilotes-de-drones/"
+   ],
+   [
+    "Government meeting examines the national AI strategy",
+    "اجتماع للحكومة لدراسة الاستراتيجية الوطنية للذكاء الاصطناعي",
+    "Algérie Presse Service (APS), Prime Minister's Office statement",
+    "وكالة الأنباء الجزائرية، بيان مصالح الوزير الأول",
+    "Official statement",
+    "بيان رسمي",
+    "2026",
+    "https://www.aps.dz/fr/algerie/actualite-nationale/mpl9oi57-la-strategie-nationale-d-intelligence-artificielle-a-l-ordre-du-jour"
+   ],
+   [
+    "Algeria Moves to Implement National AI Strategy With Inter-Ministerial Roadmap",
+    "الجزائر تشرع في تنفيذ الاستراتيجية الوطنية للذكاء الاصطناعي بخارطة طريق مشتركة بين القطاعات",
+    "TechAfrica News",
+    "تك أفريكا نيوز",
+    "News",
+    "خبر",
+    "2026",
+    "https://techafricanews.com/2026/08/11/algeria-moves-to-implement-national-ai-strategy-with-inter-ministerial-roadmap/"
+   ],
+   [
+    "Second coordination meeting on the national AI strategy: 50,000 specialists by 2030",
+    "الاجتماع التنسيقي الثاني حول الاستراتيجية الوطنية للذكاء الاصطناعي: 50 ألف متخصص بحلول 2030",
+    "Algérie Presse Service (APS)",
+    "وكالة الأنباء الجزائرية",
+    "Official news",
+    "خبر رسمي",
+    "2026",
+    "https://www.aps.dz/fr/algerie/education-et-technologie/mtszxh7i-baddari-preside-la-deuxieme-reunion-de-coordination-sur-la-mise-en-%C5%93uvre-de-la-strategie-nationale-d-intelligence-artificielle"
+   ],
+   [
+    "Multisectoral meeting on implementing the national AI strategy (20 October)",
+    "اجتماع متعدد القطاعات لمتابعة تنفيذ الاستراتيجية الوطنية للذكاء الاصطناعي (20 أكتوبر)",
+    "Algérie Presse Service (APS)",
+    "وكالة الأنباء الجزائرية",
+    "Official news",
+    "خبر رسمي",
+    "2026",
+    "https://www.aps.dz/fr/algerie/education-et-technologie/mvh02ky5-reunion-multisectorielle-sur-le-suivi-de-la-mise-en-%C5%93uvre-de-la-strategie-nationale-de-l-ia"
+   ],
+   [
+    "Multisectoral meeting on implementing the national AI strategy (3 November)",
+    "اجتماع متعدد القطاعات لمتابعة تنفيذ الاستراتيجية الوطنية للذكاء الاصطناعي (3 نوفمبر)",
+    "Algérie Presse Service (APS)",
+    "وكالة الأنباء الجزائرية",
+    "Official news (Arabic)",
+    "خبر رسمي (بالعربية)",
+    "2026",
+    "https://www.aps.dz/algerie/education-et-technologie/mw0wnpfc-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D9%85%D8%AA%D8%B9%D8%AF%D8%AF-%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9%D8%A7%D8%AA-%D9%84%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A9-%D8%AA%D9%86%D9%81%D9%8A%D8%B0-%D8%A7%D9%84%D8%A5%D8%B3%D8%AA%D8%B1%D8%A7%D8%AA%D9%8A%D8%AC%D9%8A%D8%A9-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9-%D9%84%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A"
+   ],
+   [
+    "Artificial intelligence: the state launches the work",
+    "الذكاء الاصطناعي: الدولة تطلق الورشات",
+    "L'Algérie Aujourd'hui",
+    "الجزائر اليوم",
+    "Analysis",
+    "تحليل",
+    "2026",
+    "https://lalgerieaujourdhui.dz/intelligence-artificielle-letat-lance-les-chantiers/"
+   ],
+   [
+    "Algeria Aims for Full Digital Transformation by 2030 with New Strategy",
+    "الجزائر تستهدف تحولاً رقمياً شاملاً بحلول 2030 باستراتيجية جديدة",
+    "We Are Tech Africa",
+    "وي آر تك أفريكا",
+    "News",
+    "خبر",
+    "2025",
+    "https://www.wearetech.africa/en/fils-uk/news/tech/algeria-aims-for-full-digital-transformation-by-2030-with-new-strategy"
+   ],
+   [
+    "Efforts continue to raise industry to 13% of GDP by 2027",
+    "تواصل الجهود لرفع حصة الصناعة إلى 13% من الناتج المحلي بحلول 2027",
+    "Algérie Presse Service (APS)",
+    "وكالة الأنباء الجزائرية",
+    "Official news",
+    "خبر رسمي",
+    "2025",
+    "https://www.aps.dz/fr/economie/industrieenergie-et-mines/mh6rvjcp-les-efforts-se-poursuivent-pour-porter-la-part-du-secteur-a-13-pc-du-pib-a-l-horizon-2027"
+   ],
+   [
+    "More than 21,000 investment projects registered by end-March 2026",
+    "تسجيل أكثر من 21 ألف مشروع استثماري حتى نهاية مارس 2026",
+    "Horizons",
+    "أوريزون",
+    "News",
+    "خبر",
+    "2026",
+    "https://www.horizons.dz/2026/04/plus-de-21-000-projets-dinvestissement-enregistres-a-fin-mars-2026/"
+   ],
+   [
+    "President Tebboune Vows Creation of 20,000 Startups by End of Mandate",
+    "الرئيس تبون يتعهد بإنشاء 20 ألف مؤسسة ناشئة بنهاية عهدته",
+    "DzairTube",
+    "دزاير توب",
+    "News",
+    "خبر",
+    "2025",
+    "https://www.dzair-tube.dz/en/president-tebboune-vows-creation-of-20000-startups-by-end-of-mandate-positions-algeria-as-a-rising-innovation-hub/"
+   ],
+   [
+    "Startups and incubators in Algeria: up to 6 years of tax exemption",
+    "المؤسسات الناشئة والحاضنات في الجزائر: إعفاء ضريبي يصل إلى 6 سنوات",
+    "Maghreb Émergent",
+    "مغرب إيمرجنت",
+    "Explainer",
+    "شرح",
+    "2026",
+    "https://maghrebemergent.news/fr/start-up-et-incubateurs-en-algerie-jusqua-6-ans-dexoneration-fiscale-comment-en-beneficier/"
+   ],
+   [
+    "Personal data protection: what the new law changes",
+    "حماية المعطيات الشخصية: ما الذي يغيّره القانون الجديد",
+    "L'Algérie Aujourd'hui",
+    "الجزائر اليوم",
+    "News",
+    "خبر",
+    "2025",
+    "https://lalgerieaujourdhui.dz/protection-des-donnees-personnelles-ce-que-change-la-nouvelle-loi/"
+   ],
+   [
+    "Robotics and Industrial Automation Division",
+    "قسم الروبوتيك والأتمتة الصناعية",
+    "Centre for Development of Advanced Technologies (CDTA)",
+    "مركز تنمية التكنولوجيات المتقدمة",
+    "Official page",
+    "صفحة رسمية",
+    "2026",
+    "https://www.cdta.dz/en/research-and-technology/divisions/robotics-and-industrial-automation/"
+   ]
+  ],
+  "regs": [
+   {
+    "area": "drone",
+    "title": {
+     "en": "Presidential Decree 21-285 on unmanned aircraft systems",
+     "ar": "المرسوم الرئاسي 21-285 المتعلق بأنظمة الطائرات بدون طيار"
+    },
+    "body": {
+     "en": "Ministry of National Defence (National Centre for Unmanned Aircraft Systems, CNSAPB)",
+     "ar": "وزارة الدفاع الوطني (المركز الوطني لأنظمة الطائرات بدون طيار)"
+    },
+    "year": 2021,
+    "status": "in_force",
+    "summary": {
+     "en": "Sets the general framework for managing drones. Its national centre opened in December 2025, and every owner, company or public body had to declare and register drones by 30 April 2026 to fly them legally.",
+     "ar": "يحدد الإطار العام لتسيير الطائرات بدون طيار. وقد دخل مركزه الوطني الخدمة في ديسمبر 2025، وكان على كل مالك أو مؤسسة أو هيئة عمومية التصريح بطائراته وتسجيلها قبل 30 أبريل 2026 لاستعمالها بصفة قانونية."
+    },
+    "url": "https://algerie-eco.com/2025/12/04/le-centre-national-des-drones-entre-en-service-les-detenteurs-doivent-declarer-leurs-appareils/",
+    "source": "Algérie Eco",
+    "date": "2025-12-04"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "Interministerial order on drone manufacture, import, sale and services (Official Journal No. 72)",
+     "ar": "قرار وزاري مشترك يحدد شروط تصنيع الطائرات بدون طيار واستيرادها وبيعها وتقديم خدماتها (الجريدة الرسمية رقم 72)"
+    },
+    "body": {
+     "en": "Ministry of National Defence (CNSAPB), after consulting the Interior, Finance, Telecoms and Transport ministries",
+     "ar": "وزارة الدفاع الوطني (المركز الوطني)، بعد استشارة وزارات الداخلية والمالية والمواصلات السلكية واللاسلكية والنقل"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "Making, importing, exporting, selling, renting, maintaining or offering services with drones needs a two-year renewable licence from the CNSAPB, and every import or export needs a separate authorisation. Individuals may own only one drone for leisure, so foreign makers can only sell through licensed local operators.",
+     "ar": "يشترط تصنيع الطائرات بدون طيار أو استيرادها أو تصديرها أو بيعها أو تأجيرها أو صيانتها أو تقديم خدمات بها الحصول على اعتماد من المركز الوطني صالح لسنتين قابل للتجديد، كما تحتاج كل عملية استيراد أو تصدير إلى ترخيص مستقل. ولا يحق للأفراد اقتناء أكثر من طائرة واحدة للترفيه، فلا يمكن للمصنّعين الأجانب البيع إلا عبر متعاملين محليين معتمدين."
+    },
+    "url": "https://algerie-eco.com/2025/11/04/algerie-de-nouvelles-conditions-pour-la-fabrication-et-lacquisition-des-drones/",
+    "source": "Algérie Eco",
+    "date": "2025-11-04"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "First national approval for drone-pilot training (categories 1 and 2)",
+     "ar": "أول اعتماد وطني لتكوين طياري الطائرات بدون طيار (الفئتان 1 و2)"
+    },
+    "body": {
+     "en": "Ministry of Higher Education & Scientific Research (Research Centre in Industrial Technologies, CRTI)",
+     "ar": "وزارة التعليم العالي والبحث العلمي (مركز البحث في التكنولوجيات الصناعية)"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "In June 2026 the CRTI became the first body approved to train pilots of category 1 and 2 drones. It gives operators a recognised route to certified pilots for crop monitoring, inspection and mapping.",
+     "ar": "أصبح مركز البحث في التكنولوجيات الصناعية في يونيو 2026 أول هيئة معتمدة لتكوين طياري المسيّرات من الفئتين 1 و2. ويمنح ذلك المشغّلين مساراً معترفاً به للحصول على طيارين معتمدين لمتابعة المحاصيل والتفتيش ورسم الخرائط."
+    },
+    "url": "https://maghrebemergent.news/fr/le-crti-decroche-le-1er-agrement-national-pour-la-formation-de-pilotes-de-drones/",
+    "source": "Maghreb Émergent",
+    "date": "2026-06-04"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "National Artificial Intelligence Strategy",
+     "ar": "الاستراتيجية الوطنية للذكاء الاصطناعي"
+    },
+    "body": {
+     "en": "Ministry of Higher Education & Scientific Research, with an inter-ministerial follow-up committee",
+     "ar": "وزارة التعليم العالي والبحث العلمي، مع لجنة متابعة مشتركة بين القطاعات"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "Examined by the government in May 2026 and built on data, digital infrastructure and skills, it is now run through five thematic committees. It targets computing capacity, sovereign language models and training, but sets no binding rules for AI or robots.",
+     "ar": "درستها الحكومة في مايو 2026، وتقوم على البيانات والبنى التحتية الرقمية والكفاءات، ويجري تنفيذها عبر خمس لجان موضوعاتية. وتستهدف قدرات الحوسبة والنماذج اللغوية السيادية والتكوين، لكنها لا تضع قواعد ملزمة للذكاء الاصطناعي أو الروبوتات."
+    },
+    "url": "https://www.aps.dz/fr/algerie/education-et-technologie/mtszxh7i-baddari-preside-la-deuxieme-reunion-de-coordination-sur-la-mise-en-%C5%93uvre-de-la-strategie-nationale-d-intelligence-artificielle",
+    "source": "Algérie Presse Service (APS)",
+    "date": "2026-09-08"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "Law 18-07 on personal data protection, as amended by Law 25-11",
+     "ar": "القانون 18-07 المتعلق بحماية الأشخاص الطبيعيين في مجال معالجة المعطيات ذات الطابع الشخصي، المعدّل بالقانون 25-11"
+    },
+    "body": {
+     "en": "National Authority for the Protection of Personal Data (ANPDP)",
+     "ar": "السلطة الوطنية لحماية المعطيات ذات الطابع الشخصي"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "In force since August 2023 and amended in July 2025, it requires every data controller to appoint a data protection officer and keep processing and breach registers. Drones and robots with cameras or sensors that capture people fall under it.",
+     "ar": "نافذ منذ أغسطس 2023 وعُدّل في يوليو 2025، ويُلزم كل مسؤول عن المعالجة بتعيين مندوب لحماية المعطيات ومسك سجلات للمعالجة والانتهاكات. وتخضع له الطائرات المسيّرة والروبوتات المزوّدة بكاميرات أو مستشعرات تلتقط بيانات الأشخاص."
+    },
+    "url": "https://lalgerieaujourdhui.dz/protection-des-donnees-personnelles-ce-que-change-la-nouvelle-loi/",
+    "source": "L'Algérie Aujourd'hui",
+    "date": "2025-08-04"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "ANPDP rules on video surveillance in workplaces",
+     "ar": "قواعد السلطة الوطنية بشأن المراقبة بالفيديو في أماكن العمل"
+    },
+    "body": {
+     "en": "National Authority for the Protection of Personal Data (ANPDP)",
+     "ar": "السلطة الوطنية لحماية المعطيات ذات الطابع الشخصي"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "A March 2026 code of conduct caps storage of camera recordings at one year and requires prior authorisation from the wali for some installations. Security and inspection robots that film staff or visitors need to follow the same rules.",
+     "ar": "تحدد مدونة سلوك صدرت في مارس 2026 مدة الاحتفاظ بتسجيلات الكاميرات بسنة واحدة كحد أقصى، وتشترط ترخيصاً مسبقاً من الوالي لبعض التركيبات. وعلى روبوتات الحراسة والتفتيش التي تصوّر العمال أو الزوار الالتزام بالقواعد نفسها."
+    },
+    "url": "https://algerie-eco.com/2026/03/09/videosurveillance-au-travail-lanpdp-fixe-des-regles-pour-proteger-les-donnees-personnelles/",
+    "source": "Algérie Eco",
+    "date": "2026-03-09"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "National data governance framework (Presidential Decree 25-350)",
+     "ar": "الإطار الوطني لحوكمة البيانات (المرسوم الرئاسي 25-350)"
+    },
+    "body": {
+     "en": "Prime Minister's Office",
+     "ar": "مصالح الوزير الأول"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "Signed on 30 December 2025 and launched in February 2026, it sets legal, institutional and technical rules for collecting, storing and sharing public data. AI and robotics projects with public bodies will have to work within it.",
+     "ar": "وُقّع في 30 ديسمبر 2025 وأُطلق في فبراير 2026، ويضع قواعد قانونية ومؤسساتية وتقنية لجمع البيانات العمومية وتخزينها وتبادلها. وعلى مشاريع الذكاء الاصطناعي والروبوتات مع الهيئات العمومية العمل ضمن هذا الإطار."
+    },
+    "url": "https://www.wearetech.africa/en/fils-uk/news/tech/algeria-launches-national-framework-to-govern-public-data",
+    "source": "We Are Tech Africa",
+    "date": "2026-02-10"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Startup, scale-up and incubator labels with Finance Law 2026 tax exemptions",
+     "ar": "وسوم «مؤسسة ناشئة» و«مؤسسة متنامية» و«حاضنة» مع الإعفاءات الضريبية لقانون المالية 2026"
+    },
+    "body": {
+     "en": "Ministry of Knowledge Economy, Startups & Micro-enterprises; Directorate General of Taxes",
+     "ar": "وزارة اقتصاد المعرفة والمؤسسات الناشئة والمؤسسات المصغرة؛ المديرية العامة للضرائب"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "Labelled startups pay no income or corporate tax for four years, plus two more on renewal, and pay a reduced 5% customs duty on imported equipment. A scale-up label created in December 2025 covers firms growing at least 20% over three years. These help robotics startups, but are not tied to automation.",
+     "ar": "تُعفى المؤسسات الناشئة الحاملة للوسم من الضريبة على الدخل أو على أرباح الشركات لأربع سنوات، تضاف إليها سنتان عند التجديد، وتدفع رسوماً جمركية مخفضة بنسبة 5% على التجهيزات المستوردة. ويشمل وسم «المؤسسة المتنامية» المستحدث في ديسمبر 2025 الشركات التي نما رقم أعمالها بنسبة 20% على الأقل خلال ثلاث سنوات. وتفيد هذه الإجراءات المؤسسات الناشئة في الروبوتات، لكنها غير مرتبطة بالأتمتة."
+    },
+    "url": "https://maghrebemergent.news/fr/start-up-et-incubateurs-en-algerie-jusqua-6-ans-dexoneration-fiscale-comment-en-beneficier/",
+    "source": "Maghreb Émergent",
+    "date": "2026-04-13"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Investment Law 22-18",
+     "ar": "قانون الاستثمار 22-18"
+    },
+    "body": {
+     "en": "Algerian Investment Promotion Agency (AAPI) and its single window",
+     "ar": "الوكالة الجزائرية لترقية الاستثمار وشباكها الوحيد"
+    },
+    "year": 2022,
+    "status": "in_force",
+    "summary": {
+     "en": "The 2022 law gives domestic and foreign investors equal treatment and routes projects through AAPI's single window, which had registered more than 21,000 projects by March 2026. Its benefits apply to all sectors, with nothing earmarked for automation or robotics.",
+     "ar": "يمنح قانون 2022 المستثمرين المحليين والأجانب معاملة متساوية، ويمرّر المشاريع عبر الشباك الوحيد للوكالة التي سجّلت أكثر من 21 ألف مشروع حتى مارس 2026. وتسري مزاياه على جميع القطاعات، دون تخصيص للأتمتة أو الروبوتات."
+    },
+    "url": "https://www.aps.dz/fr/economie/commerce-et-service/mjoqm2d8-la-loi-sur-l-investissement-instaure-un-climat-d-investissement-stable-et-incitatif",
+    "source": "Algérie Presse Service (APS)",
+    "date": "2025-12-27"
+   }
+  ],
+  "score": {
+   "av_law": {
+    "v": 0,
+    "note": {
+     "en": "We found no law, draft or trial permit for autonomous vehicles; the new road code published in May 2026 covers conventional traffic and road safety.",
+     "ar": "لم نعثر على قانون أو مسودة أو تصريح اختبار للمركبات ذاتية القيادة، ويتناول قانون المرور الجديد المنشور في مايو 2026 حركة المرور التقليدية والسلامة المرورية."
+    },
+    "url": "https://www.aps.dz/fr/algerie/actualite-nationale/mpekq33o-publication-de-la-loi-portant-code-de-la-route",
+    "source": "Algérie Presse Service (APS)"
+   },
+   "robotaxi": {
+    "v": 0,
+    "note": {
+     "en": "No robotaxi pilot or service has been reported in Algeria.",
+     "ar": "لم يُعلن عن أي تجربة أو خدمة لسيارات الأجرة ذاتية القيادة في الجزائر."
+    },
+    "url": "https://www.aps.dz/fr/algerie/actualite-nationale/mpekq33o-publication-de-la-loi-portant-code-de-la-route",
+    "source": "Algérie Presse Service (APS)"
+   },
+   "drones": {
+    "v": 1,
+    "note": {
+     "en": "Drones must be registered with the defence ministry's CNSAPB, and businesses need its licence under a 2025 order; we found no delivery or beyond-visual-line-of-sight approvals.",
+     "ar": "يجب تسجيل الطائرات المسيّرة لدى المركز الوطني التابع لوزارة الدفاع الوطني، وتحتاج المؤسسات إلى اعتماده بموجب قرار 2025، ولم نعثر على أي موافقات للتوصيل أو للطيران خارج مدى الرؤية."
+    },
+    "url": "https://algerie-eco.com/2025/11/04/algerie-de-nouvelles-conditions-pour-la-fabrication-et-lacquisition-des-drones/",
+    "source": "Algérie Eco"
+   },
+   "sandbox": {
+    "v": 0,
+    "note": {
+     "en": "We found no regulatory sandbox or test zone for robotics or autonomous systems; support for young tech firms runs through labels, incubators and tax breaks.",
+     "ar": "لم نعثر على بيئة تنظيمية تجريبية أو منطقة اختبار للروبوتات أو الأنظمة ذاتية التشغيل، ويمر دعم الشركات التقنية الناشئة عبر الوسوم والحاضنات والإعفاءات الضريبية."
+    },
+    "url": "https://maghrebemergent.news/fr/start-up-et-incubateurs-en-algerie-jusqua-6-ans-dexoneration-fiscale-comment-en-beneficier/",
+    "source": "Maghreb Émergent"
+   },
+   "incentives": {
+    "v": 1,
+    "note": {
+     "en": "Only general incentives apply: startup-label tax exemptions, Algerian Startup Fund equity and Investment Law 22-18 benefits, with nothing earmarked for automation.",
+     "ar": "لا تتوفر إلا حوافز عامة: إعفاءات ضريبية للمؤسسات الحاملة للوسم، ومساهمات صندوق تمويل المؤسسات الناشئة في رأس المال، ومزايا قانون الاستثمار 22-18، دون تخصيص للأتمتة."
+    },
+    "url": "https://maghrebemergent.news/fr/start-up-et-incubateurs-en-algerie-jusqua-6-ans-dexoneration-fiscale-comment-en-beneficier/",
+    "source": "Maghreb Émergent"
+   },
+   "ai_rules": {
+    "v": 1,
+    "note": {
+     "en": "Law 18-07 on personal data is in force, amended in 2025, but the national AI strategy is an implementation plan, not a published AI governance or ethics framework.",
+     "ar": "القانون 18-07 لحماية المعطيات الشخصية نافذ وعُدّل في 2025، لكن الاستراتيجية الوطنية للذكاء الاصطناعي خطة تنفيذية وليست إطاراً منشوراً لحوكمة الذكاء الاصطناعي أو أخلاقياته."
+    },
+    "url": "https://lalgerieaujourdhui.dz/protection-des-donnees-personnelles-ce-que-change-la-nouvelle-loi/",
+    "source": "L'Algérie Aujourd'hui"
+   }
+  },
+  "deadlines": [
+   {
+    "date": "2026-11-11",
+    "en": "Execution of the AI strategy's data and infrastructure plan begins",
+    "ar": "بدء تنفيذ مخطط البيانات والبنى التحتية ضمن الاستراتيجية الوطنية للذكاء الاصطناعي",
+    "url": "https://www.aps.dz/fr/algerie/education-et-technologie/mw0zdv09-reunion-multisectorielle-pour-le-suivi-de-la-mise-en-%C5%93uvre-de-la-strategie-nationale-de-l-intelligence-artificielle"
+   }
+  ]
  }
 }
