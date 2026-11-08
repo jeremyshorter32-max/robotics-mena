@@ -349,6 +349,8 @@ class Component extends DCLogic {
   }
   MENA_CC = new Set(['AE', 'SA', 'QA', 'KW', 'BH', 'OM', 'EG', 'MA', 'TN', 'DZ', 'LY', 'JO', 'LB', 'IQ', 'SY', 'PS', 'YE', 'TR', 'IR']);
   isIntl(o) { return !!(o && o.hq && !this.MENA_CC.has(o.hq)); }
+  // Countdowns are shown in weeks: the site is updated weekly, so day counts would go stale between updates.
+  weeksTxt(d, ar, num) { const w = Math.round(d / 7); if (d <= 7 || w < 1) return ar ? 'هذا الأسبوع' : 'This week'; if (ar) return w === 1 ? 'خلال أسبوع' : w === 2 ? 'خلال أسبوعين' : w <= 10 ? 'خلال ' + num(w) + ' أسابيع' : 'خلال ' + num(w) + ' أسبوعاً'; return 'In ' + num(w) + ' week' + (w === 1 ? '' : 's'); }
   flagUrl(cc) { return cc ? '/media/flags/' + String(cc).toLowerCase() + '.svg' : ''; }
   dbOpen(tab, id) { this._dbReturn = document.activeElement; this.setState({ dbTab: tab, dbSel: id }); }
   dbVals(c) {
@@ -518,7 +520,7 @@ class Component extends DCLogic {
     const segCol = lv => k => ({ bg: k <= lv ? (lv <= 1 ? 'var(--accent)' : lv === 2 ? 'var(--accent-text)' : 'var(--sand)') : 'var(--line)' });
     const claimKey = R ? R.levels.map((l, i) => ({ label: tx(l), segs: [1, 2, 3, 4].map(segCol(i + 1)) })) : [];
     const nowMs = Date.now();
-    const watch = R ? R.watch.map(w => { const days = w.due ? Math.ceil((Date.parse(w.due + 'T23:59:59Z') - nowMs) / 864e5) : null; return { text: tx(w), when: tx(w.when), status: tx(R.watchStatus[w.status]), sc: w.status === 'due' ? 'var(--accent-text)' : w.status === 'trial' ? 'var(--sand)' : 'var(--fg-subtle)', hasDays: days != null, days: days == null ? '' : days >= 0 ? digits(ut('daysLeft').replace('{n}', num(days))) : ut('overdue'), pct: days == null ? '0%' : Math.max(4, Math.min(100, 100 - days / 365 * 100)) + '%' }; }) : [];
+    const watch = R ? R.watch.map(w => { const days = w.due ? Math.ceil((Date.parse(w.due + 'T23:59:59Z') - nowMs) / 864e5) : null; return { text: tx(w), when: tx(w.when), status: tx(R.watchStatus[w.status]), sc: w.status === 'due' ? 'var(--accent-text)' : w.status === 'trial' ? 'var(--sand)' : 'var(--fg-subtle)', hasDays: days != null, days: days == null ? '' : days >= 0 ? digits(this.weeksTxt(days, ar, num)) : ut('overdue'), pct: days == null ? '0%' : Math.max(4, Math.min(100, 100 - days / 365 * 100)) + '%' }; }) : [];
     const providers = R ? R.providers.map(pv => { const c = RMD0.companies.find(x => x.id === pv.id); const fl = (pv.fleet || []).map(fid => fleetAll.find(f => f.id === fid)).filter(Boolean); return { has: !!c, name: c ? (ar ? (c.name_ar || c.name) : c.name) : pv.id, badge: this.badgeOf(c ? c.name : pv.id, c ? c.logo : ''), cat: c ? (this.CATS[c.category] || [c.category, c.category])[L] : '', summary: c ? (ar ? (c.summary_ar || c.summary) : c.summary) : '', role: tx(pv), href: '/database?tab=companies&id=' + pv.id, robots: fl.map(f => ({ name: tx(f.name), sc: stColor(f.status), status: tx(R.status[f.status]) })), hasRobots: fl.length > 0 }; }) : [];
     const allSrc = st ? st.sources.map((x, i) => ({ n: nf.format(i + 1), name: x.name, title: x.title, date: x.date ? fdate(x.date) : '', url: x.url })) : [];
     const storySources = S.rpSrcAll ? allSrc : allSrc.slice(0, 6);
@@ -611,8 +613,7 @@ class Component extends DCLogic {
       (P2.deadlines || []).forEach(x => { const ms = Date.parse(x.date + 'T23:59:59Z'); if (ms >= todayMs) dl.push({ key: x.date, c, when: fdate(x.date), v: '', what: ar ? x.ar : x.en, prog: '', exact: true, days: Math.ceil((ms - todayMs) / 864e5), url: x.url }); });
     });
     dl.sort((a, b) => a.key.localeCompare(b.key) || ccName(a.c).localeCompare(ccName(b.c)));
-    // Countdowns in weeks: the site is updated weekly, so day counts would go stale between updates.
-    const wk = d => { const w = Math.round(d / 7); if (d <= 7 || w < 1) return ar ? 'هذا الأسبوع' : 'This week'; if (ar) return w === 1 ? 'خلال أسبوع' : w === 2 ? 'خلال أسبوعين' : w <= 10 ? 'خلال ' + num(w) + ' أسابيع' : 'خلال ' + num(w) + ' أسبوعاً'; return 'In ' + num(w) + ' week' + (w === 1 ? '' : 's'); };
+    const wk = d => this.weeksTxt(d, ar, num);
     const deadlines = dl.map(x => ({ ...x, flag: this.flagUrl(x.c), name: ccName(x.c), hasV: !!x.v, soon: x.exact ? wk(x.days) : x.yrs === 0 ? t.awayNow : x.yrs === 1 ? t.awayNext : t.away.replace('{n}', num(x.yrs)), hot: x.exact || x.yrs <= 1 ? 'var(--accent)' : 'var(--line-strong)', hotTxt: x.exact || x.yrs <= 1 ? 'var(--accent-text)' : 'var(--fg-subtle)', pick: () => { this.setState({ pc: x.c }); this.go('strategies', x.c); } }));
     const dlT = ar ? { title: 'المواعيد النهائية القادمة', sub: 'كل هدف ومهلة تنظيمية مؤرخة في ملفات الدول، من الأقرب إلى الأبعد. اختر بطاقة لفتح ملف الدولة.', prev: 'السابق', next: 'التالي' } : { title: 'Upcoming deadlines', sub: 'Every dated target and regulatory deadline in the country dossiers, soonest first. Select one to open its dossier.', prev: 'Earlier', next: 'Later' };
     const SW = ar ? ['غير متوفر', 'جزئي', 'متقدم'] : ['None', 'Partial', 'Strong'], SC = ['var(--line-strong)', 'var(--accent-text)', 'var(--sand)'];
