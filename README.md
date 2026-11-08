@@ -45,6 +45,7 @@ Language and theme are remembered in the visitor's browser, so links stay clean.
 ## Database entries
 
 Each record type has a fixed set of fields. Categories must be one of the keys the site already knows (`SECTORS`, `TYPES`, `CATS`, `STAGES`, `ETYPES` in `src/logic.js`), and countries must be in `data/countries.json`.
+**International suppliers:** companies headquartered outside MENA are listed when they have a concrete, sourced presence in the region (a deployment, contract, official pilot or local operation). Their records add `hq` (ISO country code), `hq_city`, `mena_countries` (every MENA country they're active in), and a `mena_link` ({en, ar}: one or two dated sentences on why they belong here) with `mena_source`, `mena_source_url` and `mena_date`. `country` stays their main MENA market. The database shows them with an "International" label, an Origin filter and a "Link to MENA" panel; flags for headquarters countries live in `media/flags/` (flag-icons, MIT).
 `npm run validate` checks everything. It also runs on every build, so a bad entry stops the deploy instead of breaking the live site.
 
 ## Weekly scanner (automatic new entries)

@@ -53,7 +53,8 @@ Rules to put in every research prompt:
 3. Add the `home` block (see the existing report): kicker, title, dek, quote, who, 3 stats, src line, img, cap and credit. The home Spotlight renders it.
 4. **Images:** save to `media/spotlight/<descriptive-name>.jpg`. Resize to at most 1600px wide, JPEG quality ~82, using `python3 -I` with PIL. Trim letterbox bars. The hero should be landscape. Portrait images get `"maxw": "380px"`. Add a row per image to `media/brief/SOURCES.md` (file, credit, source URL). Captions must say if an image is a render.
 5. **Providers:** every provider in `report.providers` must exist in `data/companies.json`. Add missing ones following the existing records, e.g. `gecko-robotics`, `taurob`:
-   - use a MENA country code for where they operate, and say the true HQ in the summary;
+   - set `country` to their main MENA market, `hq` to the real headquarters (ISO code) with `hq_city`, and `mena_countries` to every MENA country they're active in;
+   - for international companies (HQ outside MENA) add `mena_link` {en, ar}, one or two dated sentences on why they belong in a MENA directory, plus `mena_source`, `mena_source_url` and `mena_date`. Add the HQ flag to `media/flags/<cc>.svg` from flag-icons if it's missing;
    - use a valid category (humanoid, arm, amr, drone, av, integrator, software) and stage (seed, a, b, growth, corp);
    - add a logo at `media/logos/<id>.png`: official logo, trimmed and centred on a white 256×256 tile, plus a row in `media/logos/SOURCES.md`.
 6. Add `related` links (directory records, deployments, `/map`), and `pdf` paths `/media/reports/<id>-en.pdf` and `/media/reports/<id>-ar.pdf`.

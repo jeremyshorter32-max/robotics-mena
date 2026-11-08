@@ -409,7 +409,7 @@ class Component extends DCLogic {
       facet: { companies: 'Category', deployments: 'Robot type', events: 'Event type' },
       sorts: { recent: 'Most recent', az: 'A–Z', size: 'Most deployments' },
       showing: 'Showing {a} of {b}', none: 'No entries match. Try a different search or clear the filters.', clear: 'Clear filters', more: 'Show all {n}',
-      cols: { companies: ['Company', 'Category', 'Country', 'Stage', 'Listed'], deployments: ['Deployment', 'Robot type', 'Sector', 'Country', 'Date'], countries: ['Country', 'Deployments', 'Companies', 'Headline target', 'Target year'], events: ['Event', 'Type', 'City', 'Country', 'Dates'] },
+      cols: { companies: ['Company', 'Category', 'Active in', 'Stage', 'Listed'], deployments: ['Deployment', 'Robot type', 'Sector', 'Country', 'Date'], countries: ['Country', 'Deployments', 'Companies', 'Headline target', 'Target year'], events: ['Event', 'Type', 'City', 'Country', 'Dates'] },
       kind: { companies: 'Company', deployments: 'Deployment', countries: 'Country', events: 'Event' },
       f: { country: 'Country', category: 'Category', stage: 'Stage', listed: 'Listed', website: 'Website', operator: 'Operator', site: 'Site', sector: 'Sector', type: 'Robot type', date: 'Date', deployments: 'Deployments tracked', companies: 'Companies listed', events: 'Upcoming events', target: 'Headline target', year: 'Target year', dates: 'Dates', city: 'City', venue: 'Venue', status: 'Status', etype: 'Type' },
       status: { ok: 'Dates confirmed', tbc: 'Dates to be confirmed', tent: 'Provisional' },
@@ -423,7 +423,7 @@ class Component extends DCLogic {
       facet: { companies: 'الفئة', deployments: 'نوع الروبوت', events: 'نوع الفعالية' },
       sorts: { recent: 'الأحدث', az: 'أبجدياً', size: 'الأكثر نشراً' },
       showing: 'عرض {a} من {b}', none: 'لا توجد نتائج مطابقة. جرّب بحثاً آخر أو امسح عوامل التصفية.', clear: 'مسح عوامل التصفية', more: 'عرض الكل ({n})',
-      cols: { companies: ['الشركة', 'الفئة', 'الدولة', 'المرحلة', 'تاريخ الإدراج'], deployments: ['عملية النشر', 'نوع الروبوت', 'القطاع', 'الدولة', 'التاريخ'], countries: ['الدولة', 'عمليات النشر', 'الشركات', 'الهدف الرئيسي', 'سنة الهدف'], events: ['الفعالية', 'النوع', 'المدينة', 'الدولة', 'التواريخ'] },
+      cols: { companies: ['الشركة', 'الفئة', 'تنشط في', 'المرحلة', 'تاريخ الإدراج'], deployments: ['عملية النشر', 'نوع الروبوت', 'القطاع', 'الدولة', 'التاريخ'], countries: ['الدولة', 'عمليات النشر', 'الشركات', 'الهدف الرئيسي', 'سنة الهدف'], events: ['الفعالية', 'النوع', 'المدينة', 'الدولة', 'التواريخ'] },
       kind: { companies: 'شركة', deployments: 'عملية نشر', countries: 'دولة', events: 'فعالية' },
       f: { country: 'الدولة', category: 'الفئة', stage: 'المرحلة', listed: 'تاريخ الإدراج', website: 'الموقع الإلكتروني', operator: 'الجهة المشغّلة', site: 'الموقع', sector: 'القطاع', type: 'نوع الروبوت', date: 'التاريخ', deployments: 'عمليات النشر المرصودة', companies: 'الشركات المدرجة', events: 'الفعاليات القادمة', target: 'الهدف الرئيسي', year: 'سنة الهدف', dates: 'التواريخ', city: 'المدينة', venue: 'المكان', status: 'الحالة', etype: 'النوع' },
       status: { ok: 'تواريخ مؤكدة', tbc: 'التواريخ قيد التأكيد', tent: 'مبدئي' },
@@ -489,7 +489,7 @@ class Component extends DCLogic {
       let menaBox = null;
       let desc = '', srcName = o.source || '', srcUrl = o.source_url || '', extra = [];
       if (tab === 'companies') {
-        fields.push([F.category, r.c2], [OT.hq, (o.hq_city ? o.hq_city + ', ' : '') + cn(o.hq || o.country) + (r.intl ? ' · ' + OT.intl : '')], [OT.active, r.ccs.map(cn).join(ar ? '، ' : ', ')], [F.stage, r.c4], [F.listed, r.c5]);
+        fields.push([F.category, r.c2], [OT.hq, (o.hq_city && !ar ? o.hq_city + ', ' : '') + cn(o.hq || o.country) + (r.intl ? ' · ' + OT.intl : '')], [OT.active, r.ccs.map(cn).join(ar ? '، ' : ', ')], [F.stage, r.c4], [F.listed, r.c5]);
         if (o.mena_link) menaBox = { title: OT.menaTitle, text: ar ? (o.mena_link.ar || o.mena_link.en) : o.mena_link.en, src: OT.menaSrc + ': ' + (o.mena_source || (o.mena_source_url || '').replace(/^https?:\/\/(www\.)?/, '').split('/')[0]) + (o.mena_date ? ' · ' + fdate(o.mena_date) : ''), url: o.mena_source_url || '', hasUrl: !!o.mena_source_url, flag: this.flagUrl(o.hq), hq: cn(o.hq) };
         desc = tr(o, 'summary');
         if (o.website) extra.push(link(o.website, d.visit));

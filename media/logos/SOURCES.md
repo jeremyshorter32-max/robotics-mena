@@ -77,3 +77,30 @@ No logo found (sites block automated access or no usable file): Security Forces 
 
 Not found: LEAP, DeepFest, Cityscape Global and WHX (their sites block automated downloads); interpack MEA and the Emirates Robotics Competition (no confirmed own logo). Add a file here and set `logo` in `data/events.json` to use one.
 No usable logo found for FalconViz, Sager Drones, AutoGo, Sinaha Technology, Apollo Go, Tulip Technologies, X-GEN or Enova Robotics (no confirmed official site, or no logo file on it); they show initials.
+| joby-aviation.png | Joby Aviation | Inline SVG logo (mark + wordmark) in the header of https://www.jobyaviation.com/ |
+| archer-aviation.png | Archer Aviation | https://www.archer.com/favicon.svg |
+| ehang.png | EHang | https://www.ehang.com/images/logo_black.png |
+| aridge.png | Aridge (XPeng AeroHT) | https://ic-cdn-oss-ht-staticweb.aridge.com/logan-resource/cs/ht-official-site-intl/0.9.1-v0.9.1-22512/imgs/header/logo.svg (white wordmark recoloured black) |
+| neolix.png | Neolix | https://www.neolix.ai/icon.svg |
+| matternet.png | Matternet | https://images.squarespace-cdn.com/content/v1/6695c6f810dd274bb43320fb/1721091903919-VIGJS82WI8RJ0K15K6GD/Matternet_Logo_BLK.png (mark) |
+| einride.png | Einride | Inline SVG wordmark on https://www.einride.tech/ (white fill recoloured black) |
+| ocean-infinity.png | Ocean Infinity | https://oceaninfinity.com/wp-content/uploads/2024/06/logo.svg (white logo recoloured black) |
+| holon.png | HOLON | https://www.driveholon.com/static/sprites/global.2b35046f.svg (#holon wordmark symbol) |
+| tier-iv.png | TIER IV | https://tier4.co.jp/hubfs/files/images/logo.svg |
+| yutong.png | Yutong | https://en.yutong.com/res/template/en2023/resource/images/LOGO1.svg (white logo recoloured to Yutong blue #004EA2) |
+| momenta.png | Momenta | https://www.momenta.ai/images/Momenta_Logo.png |
+| geekplus.png | Geek+ | https://www.geekplus.com/hubfs/geek+%20logo%20transparent-1.png |
+| swisslog.png | Swisslog | https://www.swisslog.com/-/media/swisslog/images/system/swisslog-logo-small.png?rev=4d84689c69ff4a6399789ef4519b0c6c&hash=893650B9C729BE3F1316AF8D181E5266 |
+| autostore.png | AutoStore | https://www.autostoresystem.com/hubfs/Logos/AutoStore%20Logos%20(2025%20Update)/2025-02%20AutoStore%20Logo%20Landscape%20(red%20black).png |
+| gmt-robotics.png | GMT Robotics | https://gmtrobotics.com/wp-content/uploads/2025/02/gmt-logo-black.svg |
+| fieldai.png | FieldAI | https://cdn.prod.website-files.com/66f60ba0b55a2bf61129d179/693cb87d40912a056f3f3895_FAI_logo-horizontal-color_REVERSE.svg |
+| dexory.png | Dexory | https://www.dexory.com/ (inline header SVG, viewBox 0 0 119 30) |
+| addverb.png | Addverb | https://addverb.com/wp-content/themes/onepress-child/assets/images/logo.png |
+| boston-dynamics.png | Boston Dynamics | https://bostondynamics.com/wp-content/uploads/2023/03/Logo-v2.svg |
+| intuitive-surgical.png | Intuitive Surgical | Wikimedia Commons, 'Intuitive_Surgical_logo.svg' (https://upload.wikimedia.org/wikipedia/commons/0/01/Intuitive_Surgical_logo.svg) |
+| medtronic.png | Medtronic | https://news.medtronic.com/images/logo-en-rgb-bl.svg |
+| johnson-johnson-medtech.png | Johnson & Johnson MedTech | Wikimedia Commons, 'JNJ_Logo_New.svg' (via https://en.wikipedia.org/wiki/Special:FilePath/JNJ_Logo_New.svg) |
+| engineered-arts.png | Engineered Arts | https://media.engineeredarts.com/wp-content/uploads/2021/05/EA-logo-light.svg |
+| ubtech-robotics.png | UBTech Robotics | https://owebsite-cdn.ubtrobot.com/en/uploadfiles/logo.svg |
+| 1x-technologies.png | 1X Technologies | https://www.1x.tech/icons/1xLogo.svg |
+| softbank-robotics.png | SoftBank Robotics | https://www.softbankrobotics.com/wp-content/uploads/asset/img/common/logo.svg |

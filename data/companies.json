@@ -12,7 +12,12 @@
     "logo": "/media/logos/ys-lootah-robotics.png",
     "source": "The National",
     "source_url": "https://www.thenationalnews.com/news/uae/2026/11/06/uae-opens-its-first-humanoid-robotics-showroom-as-dubai-races-to-200000-robots/",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE"
+    ]
   },
   {
     "id": "analog",
@@ -27,7 +32,12 @@
     "logo": "/media/logos/analog.png",
     "source": "The Robot Report",
     "source_url": "https://www.therobotreport.com/boston-dynamics-partners-analog-deploy-robots-uae/",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "AE",
+    "hq_city": "Abu Dhabi",
+    "mena_countries": [
+      "AE"
+    ]
   },
   {
     "id": "iq-robotics",
@@ -42,7 +52,17 @@
     "logo": "/media/logos/iq-robotics.png",
     "source": "EnterpriseAM",
     "source_url": "https://enterpriseam.com/ksa/2026/09/22/uaes-iq-robotics-sets-up-saudi-hq-to-launch-robotic-fulfillment-operations/",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE",
+      "SA",
+      "KW",
+      "QA",
+      "OM",
+      "BH"
+    ]
   },
   {
     "id": "micropolis-robotics",
@@ -57,7 +77,12 @@
     "logo": "/media/logos/micropolis-robotics.png",
     "source": "GlobeNewswire (via The Manila Times)",
     "source_url": "https://www.manilatimes.net/2026/10/06/tmt-newswire/globenewswire/micropolis-robotics-dpr2-autonomous-patrols-lead-dubai-polices-proud-of-uae-cycling-race/2439959",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE"
+    ]
   },
   {
     "id": "weride",
@@ -72,7 +97,20 @@
     "logo": "/media/logos/weride.png",
     "source": "GlobeNewswire (via Yahoo Finance)",
     "source_url": "https://finance.yahoo.com/technology/ai/articles/weride-named-among-chinas-top-021800480.html",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "CN",
+    "hq_city": "Guangzhou",
+    "mena_countries": [
+      "AE",
+      "SA"
+    ],
+    "mena_link": {
+      "en": "Runs commercial robotaxis with Uber in Abu Dhabi (fully driverless since November 2025) and in Dubai, and expanded to Ras Al Khaimah in October 2025; it has also launched public robotaxi service in Riyadh.",
+      "ar": "تشغّل سيارات أجرة ذاتية القيادة تجارياً مع أوبر في أبوظبي (دون سائق بالكامل منذ نوفمبر 2025) وفي دبي، وتوسّعت إلى رأس الخيمة في أكتوبر 2025، كما أطلقت خدمة أجرة ذاتية القيادة للجمهور في الرياض."
+    },
+    "mena_source": "Yahoo Finance (GlobeNewswire)",
+    "mena_source_url": "https://finance.yahoo.com/technology/ai/articles/weride-named-among-chinas-top-021800480.html",
+    "mena_date": "2026-07-17"
   },
   {
     "id": "keeta-drone",
@@ -87,7 +125,19 @@
     "logo": "/media/logos/keeta-drone.png",
     "source": "Zawya",
     "source_url": "https://www.zawya.com/en/press-release/companies-news/keeta-drone-resumes-drone-delivery-operations-in-dubai-475216",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "CN",
+    "hq_city": "Beijing",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "Resumed Dubai Civil Aviation Authority-approved drone food deliveries in Dubai in September 2026, flying from Silicon Central Mall in Dubai Silicon Oasis through the Keeta app; the company calls Dubai its primary international market.",
+      "ar": "استأنفت في سبتمبر 2026 توصيل الطعام بالطائرات المسيّرة في دبي بموافقة هيئة دبي للطيران المدني، انطلاقاً من سيليكون سنترال مول في واحة دبي للسيليكون عبر تطبيق كيتا، وتعدّ الشركة دبي سوقها الدولية الرئيسية."
+    },
+    "mena_source": "Zawya (press release)",
+    "mena_source_url": "https://www.zawya.com/en/press-release/companies-news/keeta-drone-resumes-drone-delivery-operations-in-dubai-475216",
+    "mena_date": "2026-09-02"
   },
   {
     "id": "gecko-robotics",
@@ -102,7 +152,19 @@
     "logo": "/media/logos/gecko-robotics.png",
     "source": "The National",
     "source_url": "https://www.thenationalnews.com/future/technology/2026/08/25/gecko-robotics-uae-adnoc/",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "US",
+    "hq_city": "Pittsburgh",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "Set up an international base in the UAE under the Ministry of Economy's NextGen FDI programme and in 2025 signed three deals with ADNOC to use its inspection robots and AI across the company's operations.",
+      "ar": "أنشأت قاعدة دولية في الإمارات ضمن برنامج NextGen FDI التابع لوزارة الاقتصاد، ووقّعت في 2025 ثلاث اتفاقيات مع أدنوك لاستخدام روبوتات الفحص والذكاء الاصطناعي في عمليات الشركة."
+    },
+    "mena_source": "The National",
+    "mena_source_url": "https://www.thenationalnews.com/future/technology/2026/08/25/gecko-robotics-uae-adnoc/",
+    "mena_date": "2026-08-25"
   },
   {
     "id": "autogo",
@@ -117,7 +179,12 @@
     "logo": "",
     "source": "PR Newswire (via Yahoo Finance)",
     "source_url": "https://finance.yahoo.com/news/baidus-apollo-k2s-autogo-commence-110000650.html",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "AE",
+    "hq_city": "Abu Dhabi",
+    "mena_countries": [
+      "AE"
+    ]
   },
   {
     "id": "sinaha-technology",
@@ -132,7 +199,12 @@
     "logo": "",
     "source": "WAM (Emirates News Agency)",
     "source_url": "https://www.wam.ae/en/article/c31xc7g-adipec-2026-reflects-uaes-economic-technological",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "AE",
+    "hq_city": "Abu Dhabi",
+    "mena_countries": [
+      "AE"
+    ]
   },
   {
     "id": "apollo-go",
@@ -147,7 +219,19 @@
     "logo": "",
     "source": "PR Newswire (via Yahoo Finance)",
     "source_url": "https://finance.yahoo.com/technology/ai/articles/baidus-apollo-goes-live-uber-063000554.html",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "CN",
+    "hq_city": "Beijing",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "Offers fully driverless robotaxi rides in Dubai through its own app since March 2026 and on Uber since August 2026, and runs a fully driverless service in Abu Dhabi with K2's AutoGo on Yas Island since January 2026.",
+      "ar": "تقدّم رحلات أجرة ذاتية القيادة دون سائق بالكامل في دبي عبر تطبيقها الخاص منذ مارس 2026 وعبر أوبر منذ أغسطس 2026، وتشغّل خدمة مماثلة في أبوظبي مع أوتو غو التابعة لـK2 في جزيرة ياس منذ يناير 2026."
+    },
+    "mena_source": "Yahoo Finance (PR Newswire)",
+    "mena_source_url": "https://finance.yahoo.com/technology/ai/articles/baidus-apollo-goes-live-uber-063000554.html",
+    "mena_date": "2026-08-20"
   },
   {
     "id": "qss-ai-robotics",
@@ -162,7 +246,12 @@
     "logo": "/media/logos/qss.png",
     "source": "Arab News",
     "source_url": "https://www.arabnews.com/node/2640176",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "SA",
+    "hq_city": "Riyadh",
+    "mena_countries": [
+      "SA"
+    ]
   },
   {
     "id": "humanoid",
@@ -177,7 +266,19 @@
     "logo": "/media/logos/humanoid.png",
     "source": "Humanoid",
     "source_url": "https://thehumanoid.ai/humanoid-and-qss-ai-robotics-launch-menas-first-humanoid-robotics-showroom/",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "GB",
+    "hq_city": "London",
+    "mena_countries": [
+      "SA"
+    ],
+    "mena_link": {
+      "en": "Opened the Humanoid Lounge showroom in Riyadh with QSS AI & Robotics in November 2025; QSS is its exclusive Saudi partner, assembles its robots at the Riyadh Robotics Factory and has a pre-order framework for up to 10,000 units over five years.",
+      "ar": "افتتحت صالة عرض Humanoid Lounge في الرياض مع شركة QSS للذكاء الاصطناعي والروبوتات في نوفمبر 2025، وتعدّ QSS شريكها الحصري في السعودية، إذ تتولى تجميع روبوتاتها في مصنع الرياض للروبوتات ضمن إطار طلبات مسبقة يصل إلى 10,000 وحدة على مدى خمس سنوات."
+    },
+    "mena_source": "Humanoid (official release)",
+    "mena_source_url": "https://thehumanoid.ai/humanoid-and-qss-ai-robotics-launch-menas-first-humanoid-robotics-showroom/",
+    "mena_date": "2025-11-27"
   },
   {
     "id": "nero",
@@ -192,7 +293,12 @@
     "logo": "/media/logos/nero.png",
     "source": "Arab Founders",
     "source_url": "https://arabfounders.net/en/nero-autonomous-delivery-vehicles-riyadh-permit/",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "SA",
+    "hq_city": "Riyadh",
+    "mena_countries": [
+      "SA"
+    ]
   },
   {
     "id": "naver-labs",
@@ -207,7 +313,19 @@
     "logo": "/media/logos/naver-labs.png",
     "source": "Seoul Economic Daily",
     "source_url": "https://en.sedaily.com/technology/2026/08/04/naver-to-export-robot-platform-to-saudi-arabia",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "KR",
+    "hq_city": "Seongnam",
+    "mena_countries": [
+      "SA"
+    ],
+    "mena_link": {
+      "en": "Is test-operating its NURI outdoor delivery robot in Saudi Arabia and, as of August 2026, was in talks with the Ministry of Municipalities and Housing on deploying delivery robots in large new residential communities.",
+      "ar": "تختبر روبوت التوصيل الخارجي NURI في السعودية، وكانت حتى أغسطس 2026 تجري محادثات مع وزارة البلديات والإسكان لنشر روبوتات التوصيل في المجمعات السكنية الجديدة الكبرى."
+    },
+    "mena_source": "Seoul Economic Daily",
+    "mena_source_url": "https://en.sedaily.com/technology/2026/08/04/naver-to-export-robot-platform-to-saudi-arabia",
+    "mena_date": "2026-08-04"
   },
   {
     "id": "falconviz",
@@ -222,7 +340,12 @@
     "logo": "",
     "source": "MENA Startup Digest",
     "source_url": "https://menastartupdigest.com/?p=29740",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "SA",
+    "hq_city": "Thuwal",
+    "mena_countries": [
+      "SA"
+    ]
   },
   {
     "id": "ninetenths",
@@ -237,7 +360,12 @@
     "logo": "/media/logos/ninetenths.png",
     "source": "NineTenths",
     "source_url": "https://9tenthsco.com/about-us-ninetenths/",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "SA",
+    "hq_city": "Riyadh",
+    "mena_countries": [
+      "SA"
+    ]
   },
   {
     "id": "tulip-technologies",
@@ -252,7 +380,13 @@
     "logo": "",
     "source": "Sharikat Mubasher",
     "source_url": "https://en.sharikatmubasher.com/media-hub/news/21449103/tulip-technologies-unveils-first-saudi-made-robotic-arm-at-biban-2024?lang=en",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "SA",
+    "hq_city": "Riyadh",
+    "mena_countries": [
+      "SA",
+      "JO"
+    ]
   },
   {
     "id": "x-gen",
@@ -267,7 +401,12 @@
     "logo": "",
     "source": "Arab Finance",
     "source_url": "https://www.arabfinance.com/en/news/newdetails/egypt-x-gen-to-showcase-robotics-and-drone-solutions-at-cairo-ict-2026",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "EG",
+    "hq_city": "Cairo",
+    "mena_countries": [
+      "EG"
+    ]
   },
   {
     "id": "raedbots",
@@ -282,7 +421,12 @@
     "logo": "/media/logos/raedbots.png",
     "source": "Wamda",
     "source_url": "https://www.wamda.com/2026/04/raedbots-launches-egypt-industrial-robotics-manufacturer",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "EG",
+    "hq_city": "Cairo",
+    "mena_countries": [
+      "EG"
+    ]
   },
   {
     "id": "egrobots",
@@ -297,7 +441,12 @@
     "logo": "/media/logos/egrobots.png",
     "source": "Wamda",
     "source_url": "https://www.wamda.com/2026/05/egrobots-unveils-ai-powered-harvesting-robot-built-entirely-egyptian-engineers",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "EG",
+    "hq_city": "Cairo",
+    "mena_countries": [
+      "EG"
+    ]
   },
   {
     "id": "t2s-group",
@@ -312,7 +461,12 @@
     "logo": "/media/logos/t2s-group.png",
     "source": "Hespress FR",
     "source_url": "https://fr.hespress.com/490357-contrat-cadre-t2s-group-akdital-pour-deployer-la-chirurgie-robot-assistee-et-la-telechirurgie-au-maroc.html",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "MA",
+    "hq_city": "Casablanca",
+    "mena_countries": [
+      "MA"
+    ]
   },
   {
     "id": "pony-ai",
@@ -327,7 +481,20 @@
     "logo": "/media/logos/pony-ai.png",
     "source": "Gasgoo",
     "source_url": "https://autonews.gasgoo.com/articles/market-industry/2097907362995453952",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "CN",
+    "hq_city": "Guangzhou",
+    "mena_countries": [
+      "QA",
+      "AE"
+    ],
+    "mena_link": {
+      "en": "Has run commercial robotaxi service in Doha with national transport company Mowasalat through the Karwa app since late 2025, and in September 2026 launched Doha's first fully driverless robotaxi ride programme.",
+      "ar": "تشغّل خدمة أجرة ذاتية القيادة تجارية في الدوحة مع شركة مواصلات الوطنية عبر تطبيق كروة منذ أواخر 2025، وأطلقت في سبتمبر 2026 أول برنامج رحلات أجرة ذاتية القيادة دون سائق بالكامل في الدوحة."
+    },
+    "mena_source": "Gasgoo",
+    "mena_source_url": "https://autonews.gasgoo.com/articles/market-industry/2097907362995453952",
+    "mena_date": "2026-09-10"
   },
   {
     "id": "esbaar",
@@ -342,7 +509,12 @@
     "logo": "/media/logos/esbaar.png",
     "source": "STAT Times",
     "source_url": "https://www.stattimes.com/amp/air-cargo/esbaar-launches-middle-easts-first-oil-and-gas-cargo-drone-1357755",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "OM",
+    "hq_city": "Muscat",
+    "mena_countries": [
+      "OM"
+    ]
   },
   {
     "id": "enova-robotics",
@@ -357,7 +529,12 @@
     "logo": "",
     "source": "allAfrica (La Presse de Tunisie)",
     "source_url": "https://fr.allafrica.com/stories/202604020645.html",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "TN",
+    "hq_city": "Sousse",
+    "mena_countries": [
+      "TN"
+    ]
   },
   {
     "id": "sager-drones",
@@ -372,7 +549,12 @@
     "logo": "",
     "source": "Petra (Jordan News Agency)",
     "source_url": "https://petra.gov.jo/index.php/en/news/aseza-sager%C2%A0drones-sign-agreement-to-support-smart-transformation-in-aqaba",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "JO",
+    "hq_city": "Amman",
+    "mena_countries": [
+      "JO"
+    ]
   },
   {
     "id": "taurob",
@@ -387,7 +569,19 @@
     "logo": "/media/logos/taurob.png",
     "source": "Hydrocarbon Processing",
     "source_url": "https://hydrocarbonprocessing.com/news/2026/05/adnoc-deploys-heavy-duty-inspector-robot-for-hazardous-environments/",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "AT",
+    "hq_city": "Vienna",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "ADNOC deployed Taurob's heavy-duty inspector robot for autonomous inspections at its Taweelah Gas Compression Plant in May 2026, and the two are co-developing a heavy-duty 'operator' robot under the ARGOS joint industry project, due to be operational by the end of 2026.",
+      "ar": "نشرت أدنوك روبوت الفحص الثقيل من تاوروب لإجراء عمليات فحص ذاتية في محطة الطويلة لضغط الغاز في مايو 2026، ويعمل الطرفان على تطوير روبوت «مشغّل» ثقيل ضمن مشروع ARGOS الصناعي المشترك، ومن المقرر تشغيله بحلول نهاية 2026."
+    },
+    "mena_source": "Hydrocarbon Processing",
+    "mena_source_url": "https://hydrocarbonprocessing.com/news/2026/05/adnoc-deploys-heavy-duty-inspector-robot-for-hazardous-environments/",
+    "mena_date": "2026-05-21"
   },
   {
     "id": "unitree",
@@ -402,7 +596,19 @@
     "logo": "/media/logos/unitree.png",
     "source": "Attaqa",
     "source_url": "https://attaqa.net/?p=651656",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "CN",
+    "hq_city": "Hangzhou",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "ADNOC Onshore signed an agreement with Unitree at ADIPEC 2026 on 4 November 2026 to test its robots and humanoid robots in field operations; Unitree's regional director signed for the company.",
+      "ar": "وقّعت أدنوك البرية اتفاقية مع يونيتري خلال معرض أديبك 2026 في 4 نوفمبر 2026 لاختبار روبوتاتها وروبوتاتها الشبيهة بالبشر في عملياتها الميدانية، ووقّعها عن يونيتري مديرها الإقليمي."
+    },
+    "mena_source": "Attaqa (Energy Platform)",
+    "mena_source_url": "https://attaqa.net/?p=651656",
+    "mena_date": "2026-11-04"
   },
   {
     "id": "seaowl",
@@ -417,7 +623,19 @@
     "logo": "/media/logos/seaowl.png",
     "source": "Zawya (ADNOC L&S press release)",
     "source_url": "https://www.zawya.com/en/press-release/companies-news/adnoc-ls-unveils-the-uaes-first-autonomous-offshore-vessels-to-enhance-operational-efficiency-and-increase-sustainability-503125",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "FR",
+    "hq_city": "Levallois-Perret (Paris)",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "Developed with ADNOC Logistics & Services the UAE's first remotely operated 60m landing craft, unveiled in November 2025 with two prototypes due in Q4 2026 for sea trials in UAE waters, and has an office in the RAK Free Zone in Ras Al Khaimah.",
+      "ar": "طوّرت مع أدنوك للخدمات اللوجستية أول سفينة إنزال تُشغَّل عن بُعد في الإمارات بطول 60 متراً، كُشف عنها في نوفمبر 2025 على أن يُسلَّم نموذجان أوليان في الربع الرابع من 2026 لإجراء التجارب البحرية في المياه الإماراتية، ولديها مكتب في المنطقة الحرة برأس الخيمة."
+    },
+    "mena_source": "Zawya (ADNOC L&S press release)",
+    "mena_source_url": "https://www.zawya.com/en/press-release/companies-news/adnoc-ls-unveils-the-uaes-first-autonomous-offshore-vessels-to-enhance-operational-efficiency-and-increase-sustainability-503125",
+    "mena_date": "2025-11-13"
   },
   {
     "id": "aiq",
@@ -432,6 +650,831 @@
     "logo": "/media/logos/aiq.png",
     "source": "ADNOC Gas",
     "source_url": "https://adnocgas.ae/en/news-and-media/press-releases/2025/gecko-aiq",
-    "added": "2026-11-07"
+    "added": "2026-11-07",
+    "hq": "AE",
+    "hq_city": "Abu Dhabi",
+    "mena_countries": [
+      "AE"
+    ]
+  },
+  {
+    "id": "joby-aviation",
+    "name": "Joby Aviation",
+    "name_ar": "جوبي للطيران",
+    "country": "AE",
+    "hq": "US",
+    "hq_city": "Santa Cruz, CA",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "drone",
+    "stage": "corp",
+    "summary": "Electric air taxi (eVTOL) developer and operator based in Santa Cruz, California, US.",
+    "summary_ar": "شركة تطوّر وتشغّل سيارات الأجرة الجوية الكهربائية (eVTOL)، مقرها سانتا كروز في كاليفورنيا بالولايات المتحدة.",
+    "mena_link": {
+      "en": "On 30 June 2025 Joby delivered its first aircraft to the UAE and began piloted test flights in Dubai with the RTA, Dubai Civil Aviation Authority and GCAA, with its first vertiport under construction at Dubai International Airport with Skyports. It is targeting its first Dubai passenger flights in 2026.",
+      "ar": "في 30 يونيو 2025 سلّمت جوبي أول طائرة لها إلى الإمارات وبدأت رحلات تجريبية بطيار في دبي بالتعاون مع هيئة الطرق والمواصلات وهيئة دبي للطيران المدني والهيئة العامة للطيران المدني، فيما يجري بناء أول مهبط عمودي لها في مطار دبي الدولي مع شركة Skyports. وتستهدف الشركة أولى رحلاتها بالركاب في دبي خلال 2026."
+    },
+    "mena_source": "Joby Aviation",
+    "mena_source_url": "https://www.jobyaviation.com/news/joby-cements-global-lead-in-air-taxi-industry-with-dubai-flights-and-beginning-of-commercial-market-readiness-work",
+    "mena_date": "2025-06-30",
+    "website": "https://www.jobyaviation.com/",
+    "logo": "/media/logos/joby-aviation.png",
+    "source": "Joby Aviation",
+    "source_url": "https://www.jobyaviation.com/news/joby-cements-global-lead-in-air-taxi-industry-with-dubai-flights-and-beginning-of-commercial-market-readiness-work",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "archer-aviation",
+    "name": "Archer Aviation",
+    "name_ar": "آرتشر للطيران",
+    "country": "AE",
+    "hq": "US",
+    "hq_city": "San Jose, CA",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "drone",
+    "stage": "corp",
+    "summary": "Maker of the Midnight piloted electric air taxi (eVTOL), based in San Jose, California, US.",
+    "summary_ar": "مصنّعة طائرة الأجرة الكهربائية «ميدنايت» (eVTOL) التي يقودها طيار، ومقرها سان خوسيه في كاليفورنيا بالولايات المتحدة.",
+    "mena_link": {
+      "en": "In November 2025 the Abu Dhabi Investment Office and Archer activated an investment framework under which Archer will introduce at least two piloted Midnight aircraft in Abu Dhabi with Abu Dhabi Aviation and Etihad Aviation Training, backed by the GCAA and the Integrated Transport Centre. Archer began Midnight test flights in Abu Dhabi in July 2025.",
+      "ar": "في نوفمبر 2025 فعّل مكتب أبوظبي للاستثمار وآرتشر إطاراً استثمارياً تُدخل الشركة بموجبه طائرتين على الأقل من طراز «ميدنايت» بطيار إلى أبوظبي بالشراكة مع طيران أبوظبي والاتحاد لتدريب الطيران، بدعم من الهيئة العامة للطيران المدني ومركز النقل المتكامل. وكانت آرتشر قد بدأت رحلات «ميدنايت» التجريبية في أبوظبي في يوليو 2025."
+    },
+    "mena_source": "The National",
+    "mena_source_url": "https://www.thenationalnews.com/business/aviation/2025/11/12/adio-and-archer-aviation-speed-up-plans-to-bring-electric-air-taxis-to-abu-dhabi",
+    "mena_date": "2025-11-12",
+    "website": "https://www.archer.com/",
+    "logo": "/media/logos/archer-aviation.png",
+    "source": "The National",
+    "source_url": "https://www.thenationalnews.com/business/aviation/2025/11/12/adio-and-archer-aviation-speed-up-plans-to-bring-electric-air-taxis-to-abu-dhabi",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "ehang",
+    "name": "EHang",
+    "name_ar": "إي هانغ",
+    "country": "QA",
+    "hq": "CN",
+    "hq_city": "Guangzhou",
+    "mena_countries": [
+      "QA",
+      "AE",
+      "SA"
+    ],
+    "category": "drone",
+    "stage": "corp",
+    "summary": "Maker of the EH216-S pilotless passenger eVTOL and autonomous aerial vehicles, based in Guangzhou, China.",
+    "summary_ar": "مصنّعة طائرة الركاب ذاتية القيادة EH216-S (eVTOL) والمركبات الجوية الذاتية، ومقرها قوانغتشو في الصين.",
+    "mena_link": {
+      "en": "In November 2025 EHang flew trial pilotless EH216-S air-taxi flights between the Port of Doha and Katara Cultural Village under Qatar Civil Aviation Authority authorisation and with the Ministry of Transport, the first urban flights of a pilotless eVTOL in the Middle East. It also flew passenger demonstrations in Abu Dhabi and Mecca in 2024.",
+      "ar": "في نوفمبر 2025 نفّذت إي هانغ رحلات تجريبية لسيارة الأجرة الجوية ذاتية القيادة EH216-S بين ميناء الدوحة والحي الثقافي «كتارا» بتصريح من الهيئة العامة للطيران المدني القطرية وبالتعاون مع وزارة المواصلات، في أول رحلات حضرية لطائرة eVTOL دون طيار في الشرق الأوسط. كما أجرت رحلات استعراضية بالركاب في أبوظبي ومكة المكرمة خلال 2024."
+    },
+    "mena_source": "eVTOL Insights",
+    "mena_source_url": "https://evtolinsights.com/middle-east-ehang-conducts-first-urban-human-carrying-pilotless-electric-air-taxi-flights-in-qatar/",
+    "mena_date": "2025-11-18",
+    "website": "https://www.ehang.com/",
+    "logo": "/media/logos/ehang.png",
+    "source": "eVTOL Insights",
+    "source_url": "https://evtolinsights.com/middle-east-ehang-conducts-first-urban-human-carrying-pilotless-electric-air-taxi-flights-in-qatar/",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "aridge",
+    "name": "Aridge (XPeng AeroHT)",
+    "name_ar": "أريدج (إكس بنغ إيروإتش تي)",
+    "country": "AE",
+    "hq": "CN",
+    "hq_city": "Guangzhou",
+    "mena_countries": [
+      "AE",
+      "QA",
+      "KW"
+    ],
+    "category": "drone",
+    "stage": "corp",
+    "summary": "Flying-car maker (Land Aircraft Carrier eVTOL), formerly XPeng AeroHT, based in Guangzhou, China.",
+    "summary_ar": "مصنّعة سيارات طائرة (مركبة «حاملة الطائرات البرية» eVTOL)، كانت تُعرف سابقاً باسم إكس بنغ إيروإتش تي، ومقرها قوانغتشو في الصين.",
+    "mena_link": {
+      "en": "On 12 October 2025 Aridge flew its first Middle East manned flight in Dubai under a special flight permit issued by the UAE GCAA in September, and announced 600 orders from the UAE's Ali & Sons, Qatar's Almana Group, Kuwait's AlSayer Group and the Chinese Business Council in the UAE.",
+      "ar": "في 12 أكتوبر 2025 نفّذت أريدج أول رحلة مأهولة لها في الشرق الأوسط في دبي بموجب تصريح طيران خاص أصدرته الهيئة العامة للطيران المدني الإماراتية في سبتمبر، وأعلنت عن 600 طلب شراء من مجموعة علي وأولاده الإماراتية ومجموعة المانع القطرية ومجموعة الساير الكويتية ومجلس الأعمال الصيني في الإمارات."
+    },
+    "mena_source": "Gulf News",
+    "mena_source_url": "https://gulfnews.com/business/aviation/chinese-flying-car-maker-aridge-completes-first-manned-test-in-dubai-secures-600-orders-1.500304348",
+    "mena_date": "2025-10-12",
+    "website": "https://www.aridge.com/",
+    "logo": "/media/logos/aridge.png",
+    "source": "Gulf News",
+    "source_url": "https://gulfnews.com/business/aviation/chinese-flying-car-maker-aridge-completes-first-manned-test-in-dubai-secures-600-orders-1.500304348",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "neolix",
+    "name": "Neolix",
+    "name_ar": "نيوليكس",
+    "country": "AE",
+    "hq": "CN",
+    "hq_city": "Beijing",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "av",
+    "stage": "growth",
+    "summary": "Maker of L4 autonomous urban delivery vehicles, based in Beijing, China.",
+    "summary_ar": "مصنّعة مركبات توصيل حضرية ذاتية القيادة من المستوى الرابع، ومقرها بكين في الصين.",
+    "mena_link": {
+      "en": "On 14 October 2025 Abu Dhabi's K2 announced it would act as local fleet operator for Neolix autonomous delivery vehicles across the UAE. In March 2026 Neolix said it had temporarily suspended its Abu Dhabi delivery operations amid regional tensions.",
+      "ar": "في 14 أكتوبر 2025 أعلنت شركة K2 في أبوظبي أنها ستتولى تشغيل أسطول مركبات التوصيل ذاتية القيادة التابعة لنيوليكس في الإمارات بصفتها المشغّل المحلي. وفي مارس 2026 أعلنت نيوليكس تعليق عمليات التوصيل في أبوظبي مؤقتاً بسبب التوترات الإقليمية."
+    },
+    "mena_source": "TradeArabia",
+    "mena_source_url": "https://tradearabia.com/News/329248/K2-Neolix-to-boost-autonomous-delivery-vehicles-deployment-in-UAE",
+    "mena_date": "2025-10-14",
+    "website": "https://www.neolix.ai/",
+    "logo": "/media/logos/neolix.png",
+    "source": "TradeArabia",
+    "source_url": "https://tradearabia.com/News/329248/K2-Neolix-to-boost-autonomous-delivery-vehicles-deployment-in-UAE",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "matternet",
+    "name": "Matternet",
+    "name_ar": "ماترنت",
+    "country": "SA",
+    "hq": "US",
+    "hq_city": "Mountain View, CA",
+    "mena_countries": [
+      "SA"
+    ],
+    "category": "drone",
+    "stage": "growth",
+    "summary": "Maker of the FAA type-certified M2 delivery drone and drone-delivery networks, based in Mountain View, California, US.",
+    "summary_ar": "مصنّعة طائرة التوصيل المسيّرة M2 الحاصلة على شهادة نوع من إدارة الطيران الفيدرالية الأمريكية، ومشغّلة شبكات توصيل بالطائرات المسيّرة، ومقرها ماونتن فيو في كاليفورنيا بالولايات المتحدة.",
+    "mena_link": {
+      "en": "In January 2025 Saudi Arabia's General Authority of Civil Aviation approved Matternet's M2 delivery drone for operations, the first such approval GACA has granted, accepting its FAA type certificate; Matternet is targeting drone delivery in Riyadh.",
+      "ar": "في يناير 2025 وافقت الهيئة العامة للطيران المدني السعودية على تشغيل طائرة التوصيل المسيّرة M2 من ماترنت، في أول موافقة من نوعها تمنحها الهيئة استناداً إلى شهادة النوع الصادرة عن إدارة الطيران الفيدرالية الأمريكية، وتستهدف الشركة خدمات التوصيل بالطائرات المسيّرة في الرياض."
+    },
+    "mena_source": "DroneLife",
+    "mena_source_url": "https://dronelife.com/2025/01/27/matternet-receives-approval-for-m2-drone-operations-in-saudi-arabia/",
+    "mena_date": "2025-01-27",
+    "website": "https://www.matternet.com/",
+    "logo": "/media/logos/matternet.png",
+    "source": "DroneLife",
+    "source_url": "https://dronelife.com/2025/01/27/matternet-receives-approval-for-m2-drone-operations-in-saudi-arabia/",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "einride",
+    "name": "Einride",
+    "name_ar": "آينرايد",
+    "country": "AE",
+    "hq": "SE",
+    "hq_city": "Stockholm",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "av",
+    "stage": "growth",
+    "summary": "Electric and autonomous freight trucks and the Saga fleet-operations platform, based in Stockholm, Sweden.",
+    "summary_ar": "شاحنات شحن كهربائية وذاتية القيادة ومنصة «ساغا» لإدارة الأساطيل، ومقرها ستوكهولم في السويد.",
+    "mena_link": {
+      "en": "In May 2024 DP World and Einride announced the Middle East's largest fleet of driverless electric cargo vehicles to electrify inter-terminal container flows at Jebel Ali Port. This followed Einride's 2023 agreement with the UAE Ministry of Energy and Infrastructure for the 550km 'Falcon Rise' electric and autonomous freight grid.",
+      "ar": "في مايو 2024 أعلنت موانئ دبي العالمية وآينرايد عن أكبر أسطول من مركبات الشحن الكهربائية ذاتية القيادة في الشرق الأوسط لكهربة حركة الحاويات بين محطات ميناء جبل علي، وذلك بعد اتفاقية آينرايد عام 2023 مع وزارة الطاقة والبنية التحتية الإماراتية لإنشاء شبكة «فالكون رايز» للشحن الكهربائي وذاتي القيادة بطول 550 كيلومتراً."
+    },
+    "mena_source": "The National",
+    "mena_source_url": "https://www.thenationalnews.com/future/2024/05/14/dp-world-and-einride-announce-middle-easts-largest-electric-freight-fleet",
+    "mena_date": "2024-05-14",
+    "website": "https://www.einride.tech/",
+    "logo": "/media/logos/einride.png",
+    "source": "The National",
+    "source_url": "https://www.thenationalnews.com/future/2024/05/14/dp-world-and-einride-announce-middle-easts-largest-electric-freight-fleet",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "ocean-infinity",
+    "name": "Ocean Infinity",
+    "name_ar": "أوشن إنفينيتي",
+    "country": "KW",
+    "hq": "US",
+    "hq_city": "Austin, TX",
+    "mena_countries": [
+      "KW"
+    ],
+    "category": "av",
+    "stage": "growth",
+    "summary": "Marine robotics company building uncrewed surface vessels and ocean-data services, based in Austin, Texas, US (with a major base in Southampton, UK).",
+    "summary_ar": "شركة روبوتات بحرية تصنع سفناً سطحية غير مأهولة وتقدّم خدمات بيانات المحيطات، ومقرها أوستن في تكساس بالولايات المتحدة (ولها قاعدة رئيسية في ساوثهامبتون بالمملكة المتحدة).",
+    "mena_link": {
+      "en": "In July 2025 Ocean Infinity launched its 14-metre NeedleFish uncrewed surface vessels with the Kuwait Coast Guard, as part of Kuwait's national maritime surveillance system delivered by SRT Marine Systems, for unmanned patrol of Kuwait's 11,000 km² of territorial waters.",
+      "ar": "في يوليو 2025 أطلقت أوشن إنفينيتي سفنها السطحية غير المأهولة «نيدل فيش» بطول 14 متراً مع خفر السواحل الكويتي، ضمن المنظومة الوطنية للمراقبة البحرية التي تنفّذها شركة SRT Marine Systems، لتسيير دوريات غير مأهولة في المياه الإقليمية الكويتية البالغة مساحتها 11,000 كيلومتر مربع."
+    },
+    "mena_source": "Robotics & Automation News",
+    "mena_source_url": "https://roboticsandautomationnews.com/2025/07/02/ocean-infinity-launches-needlefish-uncrewed-surface-vessel-in-kuwait/92844",
+    "mena_date": "2025-07-02",
+    "website": "https://oceaninfinity.com/",
+    "logo": "/media/logos/ocean-infinity.png",
+    "source": "Robotics & Automation News",
+    "source_url": "https://roboticsandautomationnews.com/2025/07/02/ocean-infinity-launches-needlefish-uncrewed-surface-vessel-in-kuwait/92844",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "holon",
+    "name": "HOLON",
+    "name_ar": "هولون",
+    "country": "SA",
+    "hq": "DE",
+    "hq_city": "Hamburg",
+    "mena_countries": [
+      "SA"
+    ],
+    "category": "av",
+    "stage": "corp",
+    "summary": "Maker of autonomous electric shuttle buses (the HOLON mover), a Benteler Group company based in Hamburg, Germany.",
+    "summary_ar": "مصنّعة حافلات ومكوكات كهربائية ذاتية القيادة (HOLON mover)، تابعة لمجموعة بينتلر ومقرها هامبورغ في ألمانيا.",
+    "mena_link": {
+      "en": "MoU: in September 2025 the Saudi Public Transport Company (SAPTCO) signed a memorandum with HOLON to operate autonomous buses in the Kingdom in three phases, starting with test deployments and expanding to major cities; SAPTCO will run operations and HOLON will supply technology, training and maintenance.",
+      "ar": "مذكرة تفاهم: في سبتمبر 2025 وقّعت الشركة السعودية للنقل الجماعي (سابتكو) مذكرة تفاهم مع هولون لتشغيل حافلات ذاتية القيادة في المملكة على ثلاث مراحل، تبدأ بنشر تجريبي ثم التوسع إلى المدن الكبرى، على أن تتولى سابتكو التشغيل وتقدّم هولون التقنية والتدريب والصيانة."
+    },
+    "mena_source": "SAPTCO",
+    "mena_source_url": "https://saptco.com.sa/en/news-17-09-2025",
+    "mena_date": "2025-09-17",
+    "website": "https://www.driveholon.com/",
+    "logo": "/media/logos/holon.png",
+    "source": "SAPTCO",
+    "source_url": "https://saptco.com.sa/en/news-17-09-2025",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "tier-iv",
+    "name": "TIER IV",
+    "name_ar": "تير فور",
+    "country": "SA",
+    "hq": "JP",
+    "hq_city": "Tokyo",
+    "mena_countries": [
+      "SA"
+    ],
+    "category": "software",
+    "stage": "growth",
+    "summary": "Open-source autonomous-driving software company (Autoware) building autonomous buses and robotaxis, based in Tokyo, Japan.",
+    "summary_ar": "شركة برمجيات قيادة ذاتية مفتوحة المصدر (Autoware) تطوّر حافلات ذاتية القيادة وسيارات أجرة آلية، ومقرها طوكيو في اليابان.",
+    "mena_link": {
+      "en": "MoU: TIER IV signed an MoU with Saudi autonomous-tech developer Elm in September 2025, and on 5 October 2026 said it had won a Japanese METI grant to run autonomous-bus field operational tests in Saudi Arabia, developing buses with a European automaker.",
+      "ar": "مذكرة تفاهم: وقّعت تير فور في سبتمبر 2025 مذكرة تفاهم مع شركة «علم» السعودية المطوّرة لتقنيات القيادة الذاتية، وأعلنت في 5 أكتوبر 2026 حصولها على منحة من وزارة الاقتصاد والتجارة والصناعة اليابانية لإجراء اختبارات تشغيلية ميدانية للحافلات ذاتية القيادة في السعودية، بتطوير حافلات بالتعاون مع شركة سيارات أوروبية."
+    },
+    "mena_source": "PR Newswire via Taiwan News",
+    "mena_source_url": "https://taiwannews.com.tw/en/news/6451818",
+    "mena_date": "2026-10-05",
+    "website": "https://tier4.jp/en/",
+    "logo": "/media/logos/tier-iv.png",
+    "source": "PR Newswire via Taiwan News",
+    "source_url": "https://taiwannews.com.tw/en/news/6451818",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "yutong",
+    "name": "Yutong",
+    "name_ar": "يوتونغ",
+    "country": "QA",
+    "hq": "CN",
+    "hq_city": "Zhengzhou",
+    "mena_countries": [
+      "QA"
+    ],
+    "category": "av",
+    "stage": "corp",
+    "summary": "Bus and coach maker developing L4 autonomous electric buses, based in Zhengzhou, China.",
+    "summary_ar": "مصنّعة حافلات تطوّر حافلات كهربائية ذاتية القيادة من المستوى الرابع، ومقرها تشنغتشو في الصين.",
+    "mena_link": {
+      "en": "In January 2024 Mowasalat (Karwa) and Yutong ran a trial of an autonomous e-bus with passengers on board at Lusail Bus Depot, under Ministry of Transport supervision, as part of Qatar's autonomous-vehicle and e-transit strategy.",
+      "ar": "في يناير 2024 أجرت «مواصلات» (كروة) بالتعاون مع يوتونغ تشغيلاً تجريبياً لحافلة كهربائية ذاتية القيادة على متنها ركاب في مستودع حافلات لوسيل، تحت إشراف وزارة المواصلات، ضمن استراتيجية قطر للمركبات ذاتية القيادة والنقل الكهربائي."
+    },
+    "mena_source": "Gulf Times",
+    "mena_source_url": "https://www.gulf-times.com/article/675550/qatar/successful-autonomous-e-bus-trial-run-with-passengers",
+    "mena_date": "2024-01-15",
+    "website": "https://en.yutong.com/",
+    "logo": "/media/logos/yutong.png",
+    "source": "Gulf Times",
+    "source_url": "https://www.gulf-times.com/article/675550/qatar/successful-autonomous-e-bus-trial-run-with-passengers",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "momenta",
+    "name": "Momenta",
+    "name_ar": "مومنتا",
+    "country": "AE",
+    "hq": "CN",
+    "hq_city": "Beijing",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "software",
+    "stage": "growth",
+    "summary": "Autonomous-driving software developer (ADAS and L4 robotaxi stacks), based in Beijing, China.",
+    "summary_ar": "شركة تطوّر برمجيات القيادة الذاتية (أنظمة مساعدة السائق وأنظمة سيارات الأجرة الآلية من المستوى الرابع)، ومقرها بكين في الصين.",
+    "mena_link": {
+      "en": "In December 2025 Momenta, Mercedes-Benz and K2's mobility company Lumo announced a Level 4 robotaxi fleet built on the Mercedes S-Class with Momenta's autonomy stack, to launch in Abu Dhabi in 2026.",
+      "ar": "في ديسمبر 2025 أعلنت مومنتا ومرسيدس-بنز وشركة «لومو» للتنقل التابعة لـK2 عن أسطول سيارات أجرة آلية من المستوى الرابع مبني على سيارة مرسيدس الفئة S بنظام القيادة الذاتية من مومنتا، على أن يُطلق في أبوظبي خلال 2026."
+    },
+    "mena_source": "The National",
+    "mena_source_url": "https://www.thenationalnews.com/news/uae/2025/12/09/mercedes-benz-driverless-taxis-to-hit-abu-dhabi-roads-in-2026",
+    "mena_date": "2025-12-09",
+    "website": "https://www.momenta.ai/",
+    "logo": "/media/logos/momenta.png",
+    "source": "The National",
+    "source_url": "https://www.thenationalnews.com/news/uae/2025/12/09/mercedes-benz-driverless-taxis-to-hit-abu-dhabi-roads-in-2026",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "geekplus",
+    "name": "Geek+",
+    "name_ar": "جيك بلس",
+    "country": "SA",
+    "hq": "CN",
+    "hq_city": "Beijing",
+    "mena_countries": [
+      "SA",
+      "AE"
+    ],
+    "category": "amr",
+    "stage": "corp",
+    "summary": "Warehouse AMRs, RoboShuttle tote-handling robots and sorting robots; HQ Beijing, China.",
+    "summary_ar": "روبوتات متنقلة ذاتية للمستودعات وروبوتات RoboShuttle لنقل الصناديق وروبوتات فرز؛ مقرها بكين، الصين.",
+    "mena_link": {
+      "en": "In August 2025 Geek+ said Starlinks had completed its first large-scale robotics deployment with it at a Riyadh distribution centre, now running a fully integrated RoboShuttle8 system with robotic sorting. The same site went live in 2023 with about 250 Geek+ robots.",
+      "ar": "في أغسطس 2025 أعلنت جيك بلس أن ستارلينكس أنجزت معها أول نشر واسع للروبوتات في مركز توزيع بالرياض، يعمل الآن بنظام RoboShuttle8 متكامل مع حلول فرز روبوتية. وكان الموقع نفسه قد بدأ العمل في 2023 بنحو 250 روبوتاً من جيك بلس."
+    },
+    "mena_source": "Geekplus (press release)",
+    "mena_source_url": "https://www.geekplus.com/resources/news/starlinks-roboshuttle8",
+    "mena_date": "2025-08-21",
+    "website": "https://www.geekplus.com/",
+    "logo": "/media/logos/geekplus.png",
+    "source": "Geekplus (press release)",
+    "source_url": "https://www.geekplus.com/resources/news/starlinks-roboshuttle8",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "swisslog",
+    "name": "Swisslog",
+    "name_ar": "سويسلوغ",
+    "country": "SA",
+    "hq": "CH",
+    "hq_city": "Buchs (Aargau)",
+    "mena_countries": [
+      "SA",
+      "AE"
+    ],
+    "category": "integrator",
+    "stage": "corp",
+    "summary": "Warehouse automation integrator (AutoStore, pallet ASRS, SynQ software) owned by KUKA; HQ Buchs, Switzerland.",
+    "summary_ar": "شركة تكامل لأتمتة المستودعات (أوتوستور، وأنظمة تخزين واسترجاع للمنصات، وبرمجيات SynQ) مملوكة لكوكا؛ مقرها بوكس، سويسرا.",
+    "mena_link": {
+      "en": "In September 2026 Starlinks selected Swisslog to automate a new aviation MRO spare-parts warehouse in Saudi Arabia with AutoStore, Vectura stacker cranes and SynQ software. In June 2025 Swisslog was named a key automation partner for Chalhoub Group's Riyadh logistics hub in the SILZ free zone.",
+      "ar": "في سبتمبر 2026 اختارت ستارلينكس شركة سويسلوغ لأتمتة مستودع جديد لقطع غيار صيانة الطائرات في السعودية باستخدام أوتوستور ورافعات Vectura وبرمجيات SynQ. وفي يونيو 2025 أُعلنت سويسلوغ شريكاً رئيسياً لأتمتة مركز مجموعة شلهوب اللوجستي في المنطقة الخاصة اللوجستية المتكاملة بالرياض."
+    },
+    "mena_source": "Zawya / TradeArabia",
+    "mena_source_url": "https://www.zawya.com/en/business/industry/starlinks-selects-swisslog-for-saudi-aviation-mro-warehouse-automation-561244",
+    "mena_date": "2026-09-14",
+    "website": "https://www.swisslog.com/",
+    "logo": "/media/logos/swisslog.png",
+    "source": "Zawya / TradeArabia",
+    "source_url": "https://www.zawya.com/en/business/industry/starlinks-selects-swisslog-for-saudi-aviation-mro-warehouse-automation-561244",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "autostore",
+    "name": "AutoStore",
+    "name_ar": "أوتوستور",
+    "country": "SA",
+    "hq": "NO",
+    "hq_city": "Nedre Vats",
+    "mena_countries": [
+      "SA",
+      "AE",
+      "OM"
+    ],
+    "category": "amr",
+    "stage": "corp",
+    "summary": "Cube-storage ASRS in which grid robots retrieve bins for goods-to-person picking; HQ Nedre Vats, Norway.",
+    "summary_ar": "نظام تخزين واسترجاع مكعّب تجلب فيه روبوتات تتحرك على شبكة الصناديقَ إلى محطات الالتقاط؛ مقرها نيدري فاتس، النرويج.",
+    "mena_link": {
+      "en": "Chalhoub Group's new Riyadh fashion and beauty hub in the SILZ free zone is getting an AutoStore system with 67,000 bins and 42 robots, delivered by Swisslog (announced June 2025). In September 2024 Smartlog announced an AutoStore system for Tamer Group's new Riyadh logistics park.",
+      "ar": "يُجهَّز مركز مجموعة شلهوب الجديد للأزياء ومستحضرات التجميل في المنطقة الخاصة اللوجستية المتكاملة بالرياض بنظام أوتوستور يضم 67,000 صندوق و42 روبوتاً تنفذه سويسلوغ (أُعلن في يونيو 2025). وفي سبتمبر 2024 أعلنت سمارتلوغ تركيب نظام أوتوستور في مجمع مجموعة تمر اللوجستي الجديد بالرياض."
+    },
+    "mena_source": "Swisslog (press release)",
+    "mena_source_url": "https://www.swisslog.com/en-my/about-swisslog/newsroom/news/2025/06/swisslog-chalhoub-riyadh-automation",
+    "mena_date": "2025-06-16",
+    "website": "https://www.autostoresystem.com/",
+    "logo": "/media/logos/autostore.png",
+    "source": "Swisslog (press release)",
+    "source_url": "https://www.swisslog.com/en-my/about-swisslog/newsroom/news/2025/06/swisslog-chalhoub-riyadh-automation",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "anybotics",
+    "name": "ANYbotics",
+    "name_ar": "إني بوتيكس",
+    "country": "OM",
+    "hq": "CH",
+    "hq_city": "Zurich",
+    "mena_countries": [
+      "OM"
+    ],
+    "category": "amr",
+    "stage": "growth",
+    "summary": "ANYmal legged robots for autonomous industrial inspection, including Ex-certified versions; HQ Zurich, Switzerland.",
+    "summary_ar": "روبوتات ANYmal رباعية الأرجل للفحص الصناعي الذاتي، بما فيها نسخ معتمدة للأجواء القابلة للانفجار؛ مقرها زيورخ، سويسرا.",
+    "mena_link": {
+      "en": "In September 2024 ANYbotics partnered with Oman's Sol7, which deployed ANYmal at a PDO station of the Rabab Harweel Integrated Project (RHIP). There it autonomously covered 261 inspection points: visual, thermal, level and frequency checks.",
+      "ar": "في سبتمبر 2024 أبرمت إني بوتيكس شراكة مع شركة Sol7 العُمانية التي نشرت روبوت ANYmal في محطة تابعة لشركة تنمية نفط عُمان ضمن مشروع رباب هرويل المتكامل، حيث غطّى ذاتياً 261 نقطة فحص بصري وحراري وقياس للمستوى والترددات."
+    },
+    "mena_source": "RoboticsTomorrow (ANYbotics release)",
+    "mena_source_url": "https://roboticstomorrow.com/news/2024/09/24/anybotics-strengthens-presence-in-oman-partnering-with-sol7/23210",
+    "mena_date": "2024-09-24",
+    "website": "https://www.anybotics.com/",
+    "source": "RoboticsTomorrow (ANYbotics release)",
+    "source_url": "https://roboticstomorrow.com/news/2024/09/24/anybotics-strengthens-presence-in-oman-partnering-with-sol7/23210",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "gmt-robotics",
+    "name": "GMT Robotics",
+    "name_ar": "جي إم تي روبوتكس",
+    "country": "SA",
+    "hq": "DK",
+    "hq_city": "Glostrup (Copenhagen)",
+    "mena_countries": [
+      "SA"
+    ],
+    "category": "arm",
+    "stage": "seed",
+    "summary": "Robotic rebar-cage assembly and handling systems for construction; HQ Glostrup (Copenhagen), Denmark.",
+    "summary_ar": "أنظمة روبوتية لتجميع أقفاص حديد التسليح ومناولتها في قطاع البناء؛ مقرها غلوستروب (كوبنهاغن)، الدنمارك.",
+    "mena_link": {
+      "en": "In December 2024 the NEOM Investment Fund signed an investment agreement with GMT Robotics to localise its robotic rebar-cage production in NEOM-based factories. A week later NEOM and Samsung C&T formed a joint venture of about SAR 1.3 billion for rebar-cage automation at NEOM.",
+      "ar": "في ديسمبر 2024 وقّع صندوق نيوم للاستثمار اتفاقية استثمار مع جي إم تي روبوتكس لتوطين إنتاجها الروبوتي لأقفاص حديد التسليح في مصانع داخل نيوم، وبعدها بأسبوع أسست نيوم وسامسونج سي آند تي مشروعاً مشتركاً بنحو 1.3 مليار ريال لأتمتة تجميع أقفاص التسليح في نيوم."
+    },
+    "mena_source": "Asharq Al-Awsat (SPA)",
+    "mena_source_url": "https://english.aawsat.com/technology/5091024-neom-investment-fund-ventures-automated-robotic-technology-construction-projects",
+    "mena_date": "2024-12-12",
+    "website": "https://gmtrobotics.com/",
+    "logo": "/media/logos/gmt-robotics.png",
+    "source": "Asharq Al-Awsat (SPA)",
+    "source_url": "https://english.aawsat.com/technology/5091024-neom-investment-fund-ventures-automated-robotic-technology-construction-projects",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "fieldai",
+    "name": "FieldAI",
+    "name_ar": "فيلد إيه آي",
+    "country": "AE",
+    "hq": "US",
+    "hq_city": "Irvine, CA",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "software",
+    "stage": "growth",
+    "summary": "Field Foundation Models: autonomy software that lets legged and wheeled robots work on unmapped sites; HQ Irvine, USA.",
+    "summary_ar": "نماذج أساسية ميدانية: برمجيات استقلالية تمكّن الروبوتات ذات الأرجل والعجلات من العمل في مواقع غير مُخطَّطة مسبقاً؛ مقرها إرفاين، الولايات المتحدة.",
+    "mena_link": {
+      "en": "In June 2026 UAE contractor Innovo Group partnered with FieldAI to put general-purpose robots on live construction sites. The first is Majid Al Futtaim's AED 1.7 billion Ghaf Woods community in Dubai, starting with autonomous progress monitoring and site documentation.",
+      "ar": "في يونيو 2026 عقدت مجموعة إنوفو الإماراتية للمقاولات شراكة مع فيلد إيه آي لتشغيل روبوتات متعددة الأغراض في مواقع بناء قائمة، أولها مجتمع غاف وودز السكني لماجد الفطيم في دبي بقيمة 1.7 مليار درهم، بدءاً بالمراقبة الذاتية لتقدم الأعمال وتوثيق الموقع."
+    },
+    "mena_source": "Zawya / TradeArabia",
+    "mena_source_url": "https://www.zawya.com/en/business/technology-and-telecom/innovo-fieldai-deploy-general-purpose-robots-at-mideast-building-sites-tfev6vqe",
+    "mena_date": "2026-06-25",
+    "website": "https://www.fieldai.com/",
+    "logo": "/media/logos/fieldai.png",
+    "source": "Zawya / TradeArabia",
+    "source_url": "https://www.zawya.com/en/business/technology-and-telecom/innovo-fieldai-deploy-general-purpose-robots-at-mideast-building-sites-tfev6vqe",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "dexory",
+    "name": "Dexory",
+    "name_ar": "ديكسوري",
+    "country": "SA",
+    "hq": "GB",
+    "hq_city": "London",
+    "mena_countries": [
+      "SA"
+    ],
+    "category": "amr",
+    "stage": "growth",
+    "summary": "Autonomous mobile robots that scan warehouse racking to build AI digital twins of inventory; HQ London, UK.",
+    "summary_ar": "روبوتات متنقلة ذاتية تمسح رفوف المستودعات لبناء توائم رقمية للمخزون بالذكاء الاصطناعي؛ مقرها لندن، المملكة المتحدة.",
+    "mena_link": {
+      "en": "In February 2025 Dexory signed an MoU (to February 2028) with Al Masarat Holding, at PIF's Private Sector Forum in Riyadh. Dexory is to deploy robotics for tenants of Masarat Mobility Park and set up an R&D facility there.",
+      "ar": "في فبراير 2025 وقّعت ديكسوري مذكرة تفاهم (سارية حتى فبراير 2028) مع شركة المسارات القابضة خلال منتدى القطاع الخاص لصندوق الاستثمارات العامة في الرياض، لنشر حلولها الروبوتية لمستأجري مجمع مسارات للتنقل وإنشاء منشأة بحث وتطوير فيه."
+    },
+    "mena_source": "Dexory (press release)",
+    "mena_source_url": "https://www.dexory.com/insights/dexory-and-al-masarat-holding-sign-mou-to-advance-ai-powered-robotics-in-logistics-and-manufacturing",
+    "mena_date": "2025-02-17",
+    "website": "https://www.dexory.com/",
+    "logo": "/media/logos/dexory.png",
+    "source": "Dexory (press release)",
+    "source_url": "https://www.dexory.com/insights/dexory-and-al-masarat-holding-sign-mou-to-advance-ai-powered-robotics-in-logistics-and-manufacturing",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "addverb",
+    "name": "Addverb",
+    "name_ar": "أدفيرب",
+    "country": "KW",
+    "hq": "IN",
+    "hq_city": "Noida",
+    "mena_countries": [
+      "KW"
+    ],
+    "category": "amr",
+    "stage": "corp",
+    "summary": "Warehouse robots and automation (sorting robots, shuttles, AMRs, ASRS), majority-owned by Reliance; HQ Noida, India.",
+    "summary_ar": "روبوتات وأنظمة أتمتة للمستودعات (روبوتات فرز ومكوكات وروبوتات متنقلة وأنظمة تخزين واسترجاع) تملك ريلاينس حصة الأغلبية فيها؛ مقرها نويدا، الهند.",
+    "mena_link": {
+      "en": "In February 2024 Landmark Group modernised its Kuwait e-commerce fulfilment centre with Addverb. The site uses a fleet of Zippy robotic sorters (up to 1,000 sorts an hour) and Quadron carton shuttles.",
+      "ar": "في فبراير 2024 حدّثت مجموعة لاندمارك مركز التجارة الإلكترونية التابع لها في الكويت بحلول أدفيرب، إذ يعمل فيه أسطول من روبوتات الفرز Zippy بطاقة تصل إلى 1,000 عملية فرز في الساعة، ومكوكات الصناديق Quadron."
+    },
+    "mena_source": "Addverb (press release)",
+    "mena_source_url": "https://addverb.com/press-release/landmark-group-transforms-ecomm-fulfilment-centre-in-kuwait-with-innovative-automation-solution-from-addverb/",
+    "mena_date": "2024-02-07",
+    "website": "https://addverb.com/",
+    "logo": "/media/logos/addverb.png",
+    "source": "Addverb (press release)",
+    "source_url": "https://addverb.com/press-release/landmark-group-transforms-ecomm-fulfilment-centre-in-kuwait-with-innovative-automation-solution-from-addverb/",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "boston-dynamics",
+    "name": "Boston Dynamics",
+    "name_ar": "بوسطن داينامكس",
+    "country": "AE",
+    "hq": "US",
+    "hq_city": "Waltham, MA",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "amr",
+    "stage": "corp",
+    "summary": "Spot quadruped inspection robot, Stretch warehouse robot and Atlas humanoid; Hyundai-owned, HQ Waltham, USA.",
+    "summary_ar": "روبوت Spot رباعي الأرجل للفحص وروبوت Stretch للمستودعات والروبوت البشري Atlas؛ مملوكة لهيونداي ومقرها والثام، الولايات المتحدة.",
+    "mena_link": {
+      "en": "In October 2025 Boston Dynamics signed an exclusive UAE alliance with Abu Dhabi's Analog, which became its sole certified reseller, integrator and service partner. The first Spot deployments are with Abu Dhabi's Department of Municipalities and Transport, for park inspections, environmental monitoring and accessibility checks.",
+      "ar": "في أكتوبر 2025 أبرمت بوسطن داينامكس تحالفاً حصرياً في الإمارات مع شركة أنالوغ في أبوظبي، التي أصبحت موزّعها ومُكامِلها وشريك خدماتها المعتمد الوحيد، على أن تبدأ أولى عمليات نشر روبوت Spot مع دائرة البلديات والنقل في أبوظبي لفحص الحدائق ورصد البيئة وإمكانية الوصول."
+    },
+    "mena_source": "eeNews Europe",
+    "mena_source_url": "https://www.eenewseurope.com/en/boston-dynamics-analog-deploy-physical-intelligence-in-uae",
+    "mena_date": "2025-10-30",
+    "website": "https://bostondynamics.com/",
+    "logo": "/media/logos/boston-dynamics.png",
+    "source": "eeNews Europe",
+    "source_url": "https://www.eenewseurope.com/en/boston-dynamics-analog-deploy-physical-intelligence-in-uae",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "intuitive-surgical",
+    "name": "Intuitive Surgical",
+    "name_ar": "إنتويتيف سرجيكال",
+    "country": "AE",
+    "hq": "US",
+    "hq_city": "Sunnyvale",
+    "mena_countries": [
+      "AE",
+      "SA",
+      "OM"
+    ],
+    "category": "arm",
+    "stage": "corp",
+    "summary": "Maker of the da Vinci robotic surgical systems, based in Sunnyvale, US.",
+    "summary_ar": "شركة أمريكية مقرها سانيفيل تصنع أنظمة دافنشي للجراحة الروبوتية.",
+    "mena_link": {
+      "en": "American Hospital Dubai signed with distributor Al Naghi Medical in February 2026 to buy Intuitive's da Vinci 5 and in September 2026 announced the first unit in the GCC. On 27 October 2026, Security Forces Hospital in Riyadh became the first Saudi hospital to adopt da Vinci 5.",
+      "ar": "وقّع المستشفى الأمريكي في دبي في فبراير 2026 اتفاقية مع الموزّع «الناغي الطبية» لاقتناء نظام دافنشي 5 من إنتويتيف، وأعلن في سبتمبر 2026 تشغيل أول وحدة منه في دول الخليج. وفي 27 أكتوبر 2026 أصبح مستشفى قوى الأمن في الرياض أول مستشفى سعودي يعتمد النظام."
+    },
+    "mena_source": "Khaleej Times (partner content)",
+    "mena_source_url": "https://www.khaleejtimes.com/lifestyle/health/american-hospital-dubai-brings-da-vinci-5-to-the-gcc-for-the-first-time",
+    "mena_date": "2026-09-18",
+    "website": "https://www.intuitive.com/",
+    "logo": "/media/logos/intuitive-surgical.png",
+    "source": "Khaleej Times (partner content)",
+    "source_url": "https://www.khaleejtimes.com/lifestyle/health/american-hospital-dubai-brings-da-vinci-5-to-the-gcc-for-the-first-time",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "medtronic",
+    "name": "Medtronic",
+    "name_ar": "ميدترونيك",
+    "country": "BH",
+    "hq": "IE",
+    "hq_city": "Dublin",
+    "mena_countries": [
+      "BH"
+    ],
+    "category": "arm",
+    "stage": "corp",
+    "summary": "Medical-technology group (Dublin, Ireland; operational HQ Minneapolis, US) whose Hugo system is its robotic-assisted surgery platform.",
+    "summary_ar": "مجموعة للتكنولوجيا الطبية مقرها دبلن في أيرلندا (ومقرها التشغيلي في مينيابوليس بالولايات المتحدة)، ونظام «هيوغو» منصتها للجراحة بمساعدة الروبوت.",
+    "mena_link": {
+      "en": "Bahrain's Royal Medical Services introduced Medtronic's Hugo robotic-assisted surgery system in July 2024, the first hospital in the Middle East to operate on the platform. Its team had done about 180 robotic procedures by August 2026.",
+      "ar": "أدخلت الخدمات الطبية الملكية في البحرين نظام «هيوغو» للجراحة الروبوتية من ميدترونيك في يوليو 2024، لتصبح أول مستشفى في الشرق الأوسط يُجري جراحات بهذه المنصة. وأجرى فريقها نحو 180 عملية روبوتية حتى أغسطس 2026."
+    },
+    "mena_source": "News of Bahrain (Daily Tribune)",
+    "mena_source_url": "https://www.newsofbahrain.com/bahrain/139876.html",
+    "mena_date": "2026-08-22",
+    "website": "https://www.medtronic.com/",
+    "logo": "/media/logos/medtronic.png",
+    "source": "News of Bahrain (Daily Tribune)",
+    "source_url": "https://www.newsofbahrain.com/bahrain/139876.html",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "johnson-johnson-medtech",
+    "name": "Johnson & Johnson MedTech",
+    "name_ar": "جونسون آند جونسون للتكنولوجيا الطبية",
+    "country": "AE",
+    "hq": "US",
+    "hq_city": "New Brunswick",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "arm",
+    "stage": "corp",
+    "summary": "Medical-device arm of Johnson & Johnson (New Brunswick, US); its DePuy Synthes unit makes the VELYS robotic-assisted knee system.",
+    "summary_ar": "ذراع الأجهزة الطبية لشركة جونسون آند جونسون (نيو برونزويك، الولايات المتحدة)؛ تصنع وحدتها «ديبوي سينثيس» نظام VELYS لجراحة الركبة بمساعدة الروبوت.",
+    "mena_link": {
+      "en": "On 26 November 2025, M42's Healthpoint hospital in Abu Dhabi introduced the VELYS Robotic-Assisted Solution from J&J's DePuy Synthes for knee replacement surgery.",
+      "ar": "في 26 نوفمبر 2025 أدخل مستشفى هيلث بوينت التابع لمجموعة M42 في أبوظبي نظام VELYS من «ديبوي سينثيس» التابعة لجونسون آند جونسون لجراحات استبدال الركبة بمساعدة الروبوت."
+    },
+    "mena_source": "Healthpoint (M42)",
+    "mena_source_url": "https://healthpoint.ae/media-center/news-press-release/m42-s-healthpoint-introduces-velys-robotic-assisted-solution-bringing-advanced-precision-to-knee-replacement-surgery/",
+    "mena_date": "2025-11-26",
+    "website": "https://www.jnjmedtech.com/",
+    "logo": "/media/logos/johnson-johnson-medtech.png",
+    "source": "Healthpoint (M42)",
+    "source_url": "https://healthpoint.ae/media-center/news-press-release/m42-s-healthpoint-introduces-velys-robotic-assisted-solution-bringing-advanced-precision-to-knee-replacement-surgery/",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "microport-medbot",
+    "name": "MicroPort MedBot",
+    "name_ar": "ميكروبورت ميدبوت",
+    "country": "MA",
+    "hq": "CN",
+    "hq_city": "Shanghai",
+    "mena_countries": [
+      "MA"
+    ],
+    "category": "arm",
+    "stage": "corp",
+    "summary": "Shanghai maker of the Toumai laparoscopic surgical robot and other surgical robots; listed in Hong Kong.",
+    "summary_ar": "شركة من شنغهاي تصنع روبوت «تومَاي» للجراحة بالمنظار وروبوتات جراحية أخرى، ومدرجة في بورصة هونغ كونغ.",
+    "mena_link": {
+      "en": "Oncorad Group's clinic in Casablanca performed the first Toumai procedure outside China in May 2024. In November 2024 a surgeon in Shanghai used the robot to perform a remote prostatectomy on a patient in Casablanca, about 12,000 km away.",
+      "ar": "أجرت عيادة مجموعة «أونكوراد» في الدار البيضاء في مايو 2024 أول عملية بروبوت «تومَاي» خارج الصين. وفي نوفمبر 2024 أجرى جرّاح من شنغهاي عبر الروبوت عملية استئصال للبروستاتا عن بُعد لمريض في الدار البيضاء على بُعد نحو 12,000 كيلومتر."
+    },
+    "mena_source": "Morocco World News",
+    "mena_source_url": "https://www.moroccoworldnews.com/2024/11/12223/morocco-makes-medical-history-performs-world-s-first-intercontinental-robotic-prostatectomy/",
+    "mena_date": "2024-11-20",
+    "website": "https://www.microportmedbot.com/",
+    "source": "Morocco World News",
+    "source_url": "https://www.moroccoworldnews.com/2024/11/12223/morocco-makes-medical-history-performs-world-s-first-intercontinental-robotic-prostatectomy/",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "engineered-arts",
+    "name": "Engineered Arts",
+    "name_ar": "إنجينيرد آرتس",
+    "country": "AE",
+    "hq": "GB",
+    "hq_city": "Falmouth",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "humanoid",
+    "stage": "a",
+    "summary": "Cornwall (UK) maker of the Ameca humanoid robot with lifelike facial expressions.",
+    "summary_ar": "شركة بريطانية من كورنوال تصنع الروبوت الشبيه بالبشر «أميكا» ذا تعابير الوجه الواقعية.",
+    "mena_link": {
+      "en": "Dubai's Museum of the Future has used Engineered Arts' Ameca humanoid to greet visitors since October 2022. In April 2025 it unveiled an upgraded Ameca on its Tomorrow, Today floor that speaks more than six languages, including Arabic.",
+      "ar": "يستخدم متحف المستقبل في دبي الروبوت «أميكا» من إنجينيرد آرتس لاستقبال الزوار منذ أكتوبر 2022. وفي أبريل 2025 كشف المتحف عن نسخة مطوّرة منه في طابق «اليوم الغد» تتحدث أكثر من ست لغات، بينها العربية."
+    },
+    "mena_source": "Blooloop",
+    "mena_source_url": "https://blooloop.com/museum/news/museum-of-the-future-ameca-humanoid-robot/",
+    "mena_date": "2025-04-25",
+    "website": "https://engineeredarts.com/",
+    "logo": "/media/logos/engineered-arts.png",
+    "source": "Blooloop",
+    "source_url": "https://blooloop.com/museum/news/museum-of-the-future-ameca-humanoid-robot/",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "ubtech-robotics",
+    "name": "UBTech Robotics",
+    "name_ar": "يوبتك للروبوتات",
+    "country": "AE",
+    "hq": "CN",
+    "hq_city": "Shenzhen",
+    "mena_countries": [
+      "AE",
+      "SA"
+    ],
+    "category": "humanoid",
+    "stage": "corp",
+    "summary": "Shenzhen maker of Walker humanoid robots and service and educational robots; listed in Hong Kong.",
+    "summary_ar": "شركة من شنتشن تصنع روبوتات «ووكر» الشبيهة بالبشر وروبوتات خدمية وتعليمية، ومدرجة في بورصة هونغ كونغ.",
+    "mena_link": {
+      "en": "In October 2026 the Ras Al Khaimah government's International Relations Office signed an MoU with UBTech to test, demonstrate and deploy humanoid robots in the emirate, including a humanoid climate-testing research initiative. In September 2025 UBTech secured US$1bn in financing from Infini Capital for Middle East humanoid production and a regional headquarters.",
+      "ar": "في أكتوبر 2026 وقّع مكتب العلاقات الدولية في حكومة رأس الخيمة مذكرة تفاهم مع يوبتك لاختبار الروبوتات الشبيهة بالبشر وعرضها ونشرها في الإمارة، بما في ذلك مبادرة بحثية لاختبارها في الظروف المناخية. وفي سبتمبر 2025 حصلت يوبتك على تمويل بقيمة مليار دولار من «إنفيني كابيتال» لإنتاج الروبوتات الشبيهة بالبشر في الشرق الأوسط وإنشاء مقر إقليمي."
+    },
+    "mena_source": "PR Newswire via Yahoo Finance",
+    "mena_source_url": "https://uk.finance.yahoo.com/news/government-ras-al-khaimah-ubtech-030100603.html",
+    "mena_date": "2026-10-19",
+    "website": "https://www.ubtrobot.com/",
+    "logo": "/media/logos/ubtech-robotics.png",
+    "source": "PR Newswire via Yahoo Finance",
+    "source_url": "https://uk.finance.yahoo.com/news/government-ras-al-khaimah-ubtech-030100603.html",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "1x-technologies",
+    "name": "1X Technologies",
+    "name_ar": "وان إكس تكنولوجيز",
+    "country": "AE",
+    "hq": "US",
+    "hq_city": "Palo Alto",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "humanoid",
+    "stage": "growth",
+    "summary": "Humanoid-robot maker (NEO, EVE) founded in Norway and now based in Palo Alto, US.",
+    "summary_ar": "شركة لصناعة الروبوتات الشبيهة بالبشر (NEO وEVE) تأسست في النرويج ومقرها الآن في بالو ألتو بالولايات المتحدة.",
+    "mena_link": {
+      "en": "At ADIPEC in November 2025, Abu Dhabi Chamber signed an agreement (MoU) with 1X to apply its humanoid robotics and AI in Abu Dhabi's industrial and energy sectors and to help local companies work with 1X and localise its technology.",
+      "ar": "خلال معرض أديبك في نوفمبر 2025 وقّعت غرفة أبوظبي اتفاقية (مذكرة تفاهم) مع شركة 1X لتوظيف روبوتاتها الشبيهة بالبشر وتقنيات الذكاء الاصطناعي في قطاعي الصناعة والطاقة في أبوظبي، ومساعدة الشركات المحلية على التعاون معها وتوطين تقنياتها."
+    },
+    "mena_source": "WAM",
+    "mena_source_url": "https://www.wam.ae/en/article/bmkc6nn-abu-dhabi-chamber-signs-agreement-with",
+    "mena_date": "2025-11-05",
+    "website": "https://www.1x.tech/",
+    "logo": "/media/logos/1x-technologies.png",
+    "source": "WAM",
+    "source_url": "https://www.wam.ae/en/article/bmkc6nn-abu-dhabi-chamber-signs-agreement-with",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "softbank-robotics",
+    "name": "SoftBank Robotics",
+    "name_ar": "سوفت بنك روبوتكس",
+    "country": "AE",
+    "hq": "JP",
+    "hq_city": "Tokyo",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "amr",
+    "stage": "corp",
+    "summary": "SoftBank Group's robotics arm in Tokyo, Japan; it now mainly supplies autonomous cleaning and service robots.",
+    "summary_ar": "ذراع الروبوتات لمجموعة سوفت بنك ومقرها طوكيو في اليابان، وتركّز حاليًا على روبوتات التنظيف والخدمة ذاتية التشغيل.",
+    "mena_link": {
+      "en": "UAE facilities firm Farnek gets its robotic cleaners through a partnership with SoftBank Robotics, via its sister company HITEK AI. In September 2025 Farnek had more than 30 deployed, with du among the first clients and 60 more on the way.",
+      "ar": "تحصل شركة «فارنك» الإماراتية لإدارة المرافق على روبوتات التنظيف عبر شراكة مع سوفت بنك روبوتكس من خلال شركتها الشقيقة «هايتك إيه آي». وفي سبتمبر 2025 كان لديها أكثر من 30 روبوتًا عاملًا، وكانت «دو» من أوائل عملائها، مع 60 روبوتًا إضافيًا قيد النشر."
+    },
+    "mena_source": "Farnek",
+    "mena_source_url": "https://www.farnek.com/farnek-expands-hybrid-cleaning-unit-du/",
+    "mena_date": "2025-09-10",
+    "website": "https://www.softbankrobotics.com/",
+    "logo": "/media/logos/softbank-robotics.png",
+    "source": "Farnek",
+    "source_url": "https://www.farnek.com/farnek-expands-hybrid-cleaning-unit-du/",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "agibot",
+    "name": "AgiBot",
+    "name_ar": "أجيبوت",
+    "country": "SA",
+    "hq": "CN",
+    "hq_city": "Shanghai",
+    "mena_countries": [
+      "SA",
+      "AE"
+    ],
+    "category": "humanoid",
+    "stage": "growth",
+    "summary": "Shanghai maker of general-purpose humanoid robots (A2, G2, X2 series) and the D1 quadruped.",
+    "summary_ar": "شركة من شنغهاي تصنع روبوتات شبيهة بالبشر متعددة الأغراض (سلاسل A2 وG2 وX2) والروبوت الرباعي D1.",
+    "mena_link": {
+      "en": "In September 2026 AgiBot began renting humanoid robots in Saudi Arabia from SAR 2,000 a day, launching the robot-as-a-service offer at LEAP 2026 in Riyadh. In the UAE its robots are sold by Dubai distributor YS Lootah Robotics.",
+      "ar": "في سبتمبر 2026 بدأت أجيبوت تأجير روبوتاتها الشبيهة بالبشر في السعودية بأسعار تبدأ من 2,000 ريال يوميًا، وأطلقت خدمة «الروبوت كخدمة» خلال مؤتمر ليب 2026 في الرياض. وفي الإمارات تبيع روبوتاتها شركة «واي إس لوتاه للروبوتات» الموزّعة في دبي."
+    },
+    "mena_source": "Jawlah",
+    "mena_source_url": "https://jawlah.co/en/64348",
+    "mena_date": "2026-09-14",
+    "website": "https://www.agibot.com/",
+    "logo": "/media/logos/agibot.png",
+    "source": "Jawlah",
+    "source_url": "https://jawlah.co/en/64348",
+    "added": "2026-11-08"
   }
 ]
