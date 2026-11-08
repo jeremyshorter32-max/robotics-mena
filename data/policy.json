@@ -1,0 +1,999 @@
+{
+ "AE": {
+  "sum": [
+   "The region’s most robotics-specific policy stack, with targets set at emirate level by Dubai and Abu Dhabi, under a federal AI strategy.",
+   "أكثر منظومات السياسات تخصصاً في الروبوتات بالمنطقة، بأهداف تضعها دبي وأبوظبي على مستوى الإمارة ضمن استراتيجية اتحادية للذكاء الاصطناعي."
+  ],
+  "robo": [
+   "Yes: Dubai RAP, Abu Dhabi SAVI",
+   "نعم: برنامج دبي وسافي أبوظبي",
+   2
+  ],
+  "head": [
+   0,
+   0
+  ],
+  "progs": [
+   [
+    "Dubai Robotics & Automation Program",
+    "برنامج دبي للروبوتات والأتمتة",
+    "Government of Dubai",
+    "حكومة دبي",
+    2022,
+    "robotics",
+    [
+     [
+      "200,000",
+      "200,000",
+      "robots deployed in Dubai",
+      "روبوت يعمل في دبي",
+      2032
+     ],
+     [
+      "9%",
+      "9%",
+      "robotics’ share of Dubai GDP",
+      "حصة الروبوتات من الناتج المحلي لدبي",
+      2032
+     ]
+    ]
+   ],
+   [
+    "SAVI: Smart & Autonomous Vehicle Industries cluster",
+    "سافي: مجموعة الصناعات الذكية وذاتية القيادة",
+    "ADIO & ADDED, Abu Dhabi",
+    "مكتب أبوظبي للاستثمار ودائرة التنمية الاقتصادية",
+    2023,
+    "autonomy",
+    [
+     [
+      "AED 44bn",
+      "44 مليار درهم",
+      "cluster contribution to Abu Dhabi GDP",
+      "مساهمة المجموعة في الناتج المحلي لأبوظبي",
+      2045
+     ],
+     [
+      "40,000",
+      "40,000",
+      "jobs created",
+      "وظيفة جديدة",
+      2045
+     ]
+    ]
+   ],
+   [
+    "Dubai Autonomous Transportation Strategy",
+    "استراتيجية دبي للتنقل ذاتي القيادة",
+    "Roads & Transport Authority",
+    "هيئة الطرق والمواصلات",
+    2016,
+    "autonomy",
+    [
+     [
+      "25%",
+      "25%",
+      "of all trips in Dubai made autonomously",
+      "من إجمالي الرحلات في دبي ذاتية القيادة",
+      2030
+     ]
+    ]
+   ],
+   [
+    "UAE National Strategy for AI 2031",
+    "الاستراتيجية الوطنية للذكاء الاصطناعي 2031",
+    "UAE Government",
+    "حكومة الإمارات",
+    2017,
+    "ai",
+    [
+     [
+      "Global leader",
+      "ريادة عالمية",
+      "in AI; a qualitative goal with no numeric KPI",
+      "في الذكاء الاصطناعي، هدف نوعي دون مؤشر رقمي",
+      2031
+     ]
+    ]
+   ]
+  ],
+  "feat": {
+   "name": [
+    "SAVI: Smart & Autonomous Vehicle Industries cluster",
+    "سافي: مجموعة الصناعات الذكية وذاتية القيادة"
+   ],
+   "dek": [
+    "Abu Dhabi’s first industry cluster, built to make the emirate a test, certification and manufacturing base for autonomous systems across air, land, sea and robotics.",
+    "أول مجموعة صناعية في أبوظبي، أُنشئت لتكون الإمارة قاعدة لاختبار الأنظمة ذاتية التشغيل واعتمادها وتصنيعها في الجو والبر والبحر والروبوتات."
+   ],
+   "facts": [
+    [
+     "Launched",
+     "الإطلاق",
+     "October 2023",
+     "أكتوبر 2023"
+    ],
+    [
+     "Base",
+     "المقر",
+     "Masdar City, Abu Dhabi",
+     "مدينة مصدر، أبوظبي"
+    ],
+    [
+     "Led by",
+     "الجهة القائدة",
+     "ADIO with ADDED",
+     "مكتب أبوظبي للاستثمار مع دائرة التنمية الاقتصادية"
+    ],
+    [
+     "Domains",
+     "المجالات",
+     "Air, land, sea, robotics",
+     "الجو والبر والبحر والروبوتات"
+    ],
+    [
+     "Support",
+     "الدعم",
+     "Non-dilutive: business facilitation, regulatory guidance, test-zone access",
+     "دعم دون استحواذ: تسهيل الأعمال والإرشاد التنظيمي والوصول إلى مناطق الاختبار"
+    ],
+    [
+     "Governance",
+     "الحوكمة",
+     "Smart and Autonomous Systems Council",
+     "مجلس الأنظمة الذكية وذاتية التشغيل"
+    ]
+   ],
+   "why": [
+    "For robotics vendors, SAVI is the most direct route in the region to a regulated test zone, and to Abu Dhabi as a launch customer.",
+    "بالنسبة لمورّدي الروبوتات، سافي هي أقصر طريق في المنطقة إلى منطقة اختبار منظّمة، وإلى أبوظبي بوصفها عميلاً أول."
+   ],
+   "note": [
+    "Targets differ by source: the cluster site cites AED 22bn of GDP and 15,000 jobs; Abu Dhabi Media Office (Nov 2025) cites AED 44bn and 40,000 jobs by 2045. We show the later figure.",
+    "تختلف الأهداف بحسب المصدر: يذكر موقع المجموعة 22 مليار درهم و15 ألف وظيفة، بينما يذكر المكتب الإعلامي لأبوظبي (نوفمبر 2025) 44 مليار درهم و40 ألف وظيفة بحلول 2045. نعرض الرقم الأحدث."
+   ],
+   "ms": [
+    [
+     "Oct 2023",
+     "أكتوبر 2023",
+     "Cluster launched at Masdar City",
+     "إطلاق المجموعة في مدينة مصدر"
+    ],
+    [
+     "2024",
+     "2024",
+     "Archer Aviation agreement to build and operate eVTOL aircraft in Abu Dhabi",
+     "اتفاقية مع آرتشر لتصنيع وتشغيل طائرات eVTOL في أبوظبي"
+    ],
+    [
+     "Nov 2025",
+     "نوفمبر 2025",
+     "Hub71 becomes the startup gateway into SAVI, announced at DRIFTx",
+     "هب71 بوابة الشركات الناشئة إلى سافي، أُعلن في DRIFTx"
+    ],
+    [
+     "Nov 2025",
+     "نوفمبر 2025",
+     "DiDi Autonomous Driving joins; Tensor signs AV-testing MoU with ADIO and DMT",
+     "انضمام ديدي للقيادة الذاتية، وتوقيع تينسور مذكرة لاختبار المركبات الذاتية"
+    ]
+   ]
+  },
+  "pubs": [
+   [
+    "What is SAVI",
+    "ما هي سافي",
+    "Abu Dhabi Investment Office",
+    "مكتب أبوظبي للاستثمار",
+    "Cluster site",
+    "موقع المجموعة",
+    "2025",
+    "https://savi.investwithabudhabi.com/en/what-is-savi"
+   ],
+   [
+    "SAVI cluster launches at Masdar City",
+    "إطلاق مجموعة سافي في مدينة مصدر",
+    "Abu Dhabi Media Office",
+    "المكتب الإعلامي لأبوظبي",
+    "Press release",
+    "بيان صحفي",
+    "2023",
+    "https://www.mediaoffice.abudhabi/en/technology/in-the-presence-of-hamdan-bin-mohamed-bin-zayed-smart-and-autonomous-vehicles-industries-savi-cluster-launches-at-masdar-city/"
+   ],
+   [
+    "ADIO and DiDi Autonomous Driving partner on smart mobility",
+    "شراكة بين مكتب أبوظبي للاستثمار وديدي للقيادة الذاتية",
+    "Abu Dhabi Media Office",
+    "المكتب الإعلامي لأبوظبي",
+    "Press release",
+    "بيان صحفي",
+    "2025",
+    "https://www.mediaoffice.abudhabi/en/transport/abu-dhabi-investment-office-and-didi-autonomous-driving-partner-to-accelerate-smart-mobility-in-the-middle-east/"
+   ],
+   [
+    "Hub71 becomes gateway for mobility startups to join SAVI",
+    "هب71 بوابة لشركات التنقل الناشئة للانضمام إلى سافي",
+    "Hub71",
+    "هب71",
+    "Press release",
+    "بيان صحفي",
+    "2025",
+    "https://www.hub71.com/latest-news/press-release/hub71-becomes-gateway-for-smart-and-autonomous-mobility-startups-to-join-abu-dhabi's-savi-cluster"
+   ],
+   [
+    "Abu Dhabi’s strategic investments in future mobility",
+    "استثمارات أبوظبي الاستراتيجية في التنقل المستقبلي",
+    "Bird & Bird",
+    "بيرد آند بيرد",
+    "Legal analysis",
+    "تحليل قانوني",
+    "2025",
+    "https://www.twobirds.com/en/insights/2025/united-arab-emirates/abu-dhabis-strategic-investments-in-future-mobility-driving-technological-innovation-and-navigating"
+   ],
+   [
+    "Dubai Robotics & Automation Program",
+    "برنامج دبي للروبوتات والأتمتة",
+    "Dubai Media Office",
+    "المكتب الإعلامي لحكومة دبي",
+    "Announcement",
+    "إعلان",
+    "2022",
+    ""
+   ]
+  ]
+ },
+ "SA": {
+  "sum": [
+   "Automation is framed as industrial policy: a factory-transformation programme, a national AI strategy and a sovereign compute champion.",
+   "تُطرح الأتمتة بوصفها سياسة صناعية: برنامج لتحويل المصانع، واستراتيجية وطنية للذكاء الاصطناعي، وشركة وطنية للحوسبة."
+  ],
+  "robo": [
+   "Automation: Future Factories",
+   "أتمتة: مصانع المستقبل",
+   1
+  ],
+  "head": [
+   0,
+   0
+  ],
+  "progs": [
+   [
+    "Future Factories Program",
+    "برنامج مصانع المستقبل",
+    "Ministry of Industry & Mineral Resources",
+    "وزارة الصناعة والثروة المعدنية",
+    2022,
+    "industry",
+    [
+     [
+      "4,000",
+      "4,000",
+      "factories moved from low-wage labour to automation",
+      "مصنع يتحول من العمالة منخفضة الأجر إلى الأتمتة",
+      null
+     ]
+    ]
+   ],
+   [
+    "National Strategy for Data & AI",
+    "الاستراتيجية الوطنية للبيانات والذكاء الاصطناعي",
+    "SDAIA",
+    "سدايا",
+    2020,
+    "ai",
+    [
+     [
+      "Top 15",
+      "أفضل 15",
+      "position in global AI rankings",
+      "مرتبة في التصنيفات العالمية للذكاء الاصطناعي",
+      2030
+     ]
+    ]
+   ],
+   [
+    "HUMAIN",
+    "هيوماين",
+    "Public Investment Fund",
+    "صندوق الاستثمارات العامة",
+    2025,
+    "compute",
+    [
+     [
+      "1.9 GW",
+      "1.9 غيغاواط",
+      "AI data-centre capacity, first phase",
+      "سعة مراكز بيانات الذكاء الاصطناعي، المرحلة الأولى",
+      2030
+     ],
+     [
+      "6.6 GW",
+      "6.6 غيغاواط",
+      "AI data-centre capacity, full plan",
+      "سعة مراكز بيانات الذكاء الاصطناعي، الخطة الكاملة",
+      2034
+     ]
+    ]
+   ]
+  ],
+  "feat": {
+   "name": [
+    "Future Factories Program",
+    "برنامج مصانع المستقبل"
+   ],
+   "dek": [
+    "A Ministry of Industry programme that scores factories on the Smart Industry Readiness Index (SIRI) and helps fund their move from low-wage labour to automation.",
+    "برنامج لوزارة الصناعة يقيّم المصانع وفق مؤشر جاهزية الصناعة الذكية (SIRI) ويساعد في تمويل انتقالها من العمالة منخفضة الأجر إلى الأتمتة."
+   ],
+   "facts": [
+    [
+     "Launched",
+     "الإطلاق",
+     "20 July 2022",
+     "20 يوليو 2022"
+    ],
+    [
+     "Owner",
+     "الجهة المالكة",
+     "Ministry of Industry & Mineral Resources",
+     "وزارة الصناعة والثروة المعدنية"
+    ],
+    [
+     "Method",
+     "المنهجية",
+     "Smart Industry Readiness Index (SIRI)",
+     "مؤشر جاهزية الصناعة الذكية (SIRI)"
+    ],
+    [
+     "Tracks",
+     "المسارات",
+     "New factories built to 4IR standards; existing factories upgraded",
+     "مصانع جديدة بمعايير الثورة الصناعية الرابعة، وتطوير المصانع القائمة"
+    ],
+    [
+     "Umbrella",
+     "المظلة",
+     "Advanced Manufacturing and Production Center",
+     "مركز التصنيع والإنتاج المتقدم"
+    ]
+   ],
+   "why": [
+    "The largest single pool of robotics demand in the region: every enrolled factory is a candidate buyer for arms, AMRs and integration services.",
+    "أكبر مصدر منفرد للطلب على الروبوتات في المنطقة: كل مصنع مسجّل مشترٍ محتمل للأذرع والروبوتات المتنقلة وخدمات التكامل."
+   ],
+   "note": [
+    "The 4,000 figure is a transformation target, not a count of factories already automated. No completion date has been published.",
+    "رقم 4,000 هدف للتحول وليس عدداً لمصانع تمت أتمتتها بالفعل، ولم يُعلن موعد للإنجاز."
+   ],
+   "ms": [
+    [
+     "Jul 2022",
+     "يوليو 2022",
+     "Programme launched with the SIRI methodology",
+     "إطلاق البرنامج بمنهجية SIRI"
+    ],
+    [
+     "2025",
+     "2025",
+     "AMPC set up as umbrella for Future Factories and the Lighthouse programme",
+     "إنشاء مركز التصنيع المتقدم مظلةً لمصانع المستقبل وبرنامج المنارات"
+    ],
+    [
+     "May 2025",
+     "مايو 2025",
+     "HUMAIN launched under PIF, chaired by the Crown Prince",
+     "إطلاق هيوماين تحت مظلة صندوق الاستثمارات العامة برئاسة ولي العهد"
+    ]
+   ]
+  },
+  "pubs": [
+   [
+    "Saudi Arabia announces plan to automate 4,000 factories",
+    "السعودية تعلن خطة لأتمتة 4,000 مصنع",
+    "Arab News",
+    "عرب نيوز",
+    "News",
+    "خبر",
+    "2022",
+    "https://www.arabnews.com/business/saudi-arabia-announces-plan-to-automate-4000-factories-2126881"
+   ],
+   [
+    "Future Factories Program",
+    "برنامج مصانع المستقبل",
+    "Saudipedia",
+    "سعوديبيديا",
+    "Reference",
+    "مرجع",
+    "2022",
+    "https://saudipedia.com/en/future-factories-program"
+   ],
+   [
+    "HUMAIN has already sold out its data-centre capacity",
+    "هيوماين باعت سعة مراكز بياناتها بالكامل",
+    "Semafor",
+    "سيمافور",
+    "News",
+    "خبر",
+    "2025",
+    "https://www.semafor.com/article/08/27/2025/pifs-ai-unit-has-already-sold-out-its-data-center-capacity"
+   ],
+   [
+    "National Strategy for Data & AI",
+    "الاستراتيجية الوطنية للبيانات والذكاء الاصطناعي",
+    "SDAIA",
+    "سدايا",
+    "Strategy document",
+    "وثيقة استراتيجية",
+    "2020",
+    ""
+   ]
+  ]
+ },
+ "QA": {
+  "sum": [
+   "Policy targets the digital economy as a whole; robotics sits inside the Digital Agenda rather than in a dedicated programme.",
+   "تستهدف السياسات الاقتصاد الرقمي ككل، وتندرج الروبوتات ضمن الأجندة الرقمية لا في برنامج مستقل."
+  ],
+  "robo": [
+   "No: AI and digital only",
+   "لا: ذكاء اصطناعي ورقمنة فقط",
+   0
+  ],
+  "head": [
+   0,
+   0
+  ],
+  "progs": [
+   [
+    "Digital Agenda 2030",
+    "الأجندة الرقمية 2030",
+    "Ministry of Communications & IT",
+    "وزارة الاتصالات وتكنولوجيا المعلومات",
+    2024,
+    "digital",
+    [
+     [
+      "QR 40bn",
+      "40 مليار ريال",
+      "ICT contribution to non-hydrocarbon GDP",
+      "مساهمة القطاع في الناتج المحلي غير الهيدروكربوني",
+      2030
+     ],
+     [
+      "26,000",
+      "26,000",
+      "new jobs in the ICT sector",
+      "وظيفة جديدة في قطاع الاتصالات والتقنية",
+      2030
+     ]
+    ]
+   ],
+   [
+    "National AI Strategy",
+    "الاستراتيجية الوطنية للذكاء الاصطناعي",
+    "Ministry of Communications & IT",
+    "وزارة الاتصالات وتكنولوجيا المعلومات",
+    2019,
+    "ai",
+    [
+     [
+      "Pillar",
+      "ركيزة",
+      "AI as a pillar of the QNV 2030 knowledge economy; no numeric KPI",
+      "الذكاء الاصطناعي ركيزة لاقتصاد المعرفة في رؤية 2030، دون مؤشر رقمي",
+      2030
+     ]
+    ]
+   ]
+  ],
+  "feat": {
+   "name": [
+    "Digital Agenda 2030",
+    "الأجندة الرقمية 2030"
+   ],
+   "dek": [
+    "Qatar’s master plan for digital transformation, sitting under the Third National Development Strategy and Qatar National Vision 2030.",
+    "الخطة الرئيسية للتحول الرقمي في قطر، ضمن استراتيجية التنمية الوطنية الثالثة ورؤية قطر الوطنية 2030."
+   ],
+   "facts": [
+    [
+     "Launched",
+     "الإطلاق",
+     "February 2024",
+     "فبراير 2024"
+    ],
+    [
+     "Owner",
+     "الجهة المالكة",
+     "Ministry of Communications & IT",
+     "وزارة الاتصالات وتكنولوجيا المعلومات"
+    ],
+    [
+     "Structure",
+     "الهيكل",
+     "6 pillars, 23 strategic programmes",
+     "6 ركائز و23 برنامجاً استراتيجياً"
+    ],
+    [
+     "Includes",
+     "يشمل",
+     "National high-performance computing programme",
+     "برنامج وطني للحوسبة عالية الأداء"
+    ]
+   ],
+   "why": [
+    "There is no robotics target yet, so buyers and vendors should read the HPC, cloud and sector-transformation programmes as the entry points.",
+    "لا يوجد هدف خاص بالروبوتات بعد، لذا فإن برامج الحوسبة والسحابة والتحول القطاعي هي المداخل الأنسب."
+   ],
+   "note": [
+    "",
+    ""
+   ],
+   "ms": [
+    [
+     "2019",
+     "2019",
+     "National AI Strategy published",
+     "نشر الاستراتيجية الوطنية للذكاء الاصطناعي"
+    ],
+    [
+     "Feb 2024",
+     "فبراير 2024",
+     "Digital Agenda 2030 launched",
+     "إطلاق الأجندة الرقمية 2030"
+    ]
+   ]
+  },
+  "pubs": [
+   [
+    "MCIT’s Digital Agenda 2030 aims at QR40bn ripple effect, 26,000 jobs",
+    "الأجندة الرقمية 2030: 40 مليار ريال و26 ألف وظيفة",
+    "Gulf Times",
+    "جلف تايمز",
+    "News",
+    "خبر",
+    "2024",
+    "https://www.gulf-times.com/article/678030/qatar/mcits-digital-agenda-2030-aims-atqr40bn-ripple-effect-26000-jobs"
+   ],
+   [
+    "Qatar: Digital Economy",
+    "قطر: الاقتصاد الرقمي",
+    "US International Trade Administration",
+    "إدارة التجارة الدولية الأمريكية",
+    "Country guide",
+    "دليل قُطري",
+    "2024",
+    "https://www.trade.gov/country-commercial-guides/qatar-digital-economy"
+   ],
+   [
+    "Qatar’s Digital Agenda 2030",
+    "الأجندة الرقمية لقطر 2030",
+    "Digital Watch",
+    "ديجيتال ووتش",
+    "Policy summary",
+    "ملخص سياسات",
+    "2024",
+    "https://dig.watch/resource/qatars-digital-agenda-2030"
+   ]
+  ]
+ },
+ "EG": {
+  "sum": [
+   "A refreshed AI strategy with unusually concrete talent and startup KPIs; robotics appears through applied AI rather than a dedicated plan.",
+   "استراتيجية محدّثة للذكاء الاصطناعي بمؤشرات واضحة للمواهب والشركات الناشئة، وتظهر الروبوتات عبر تطبيقات الذكاء الاصطناعي لا عبر خطة مستقلة."
+  ],
+  "robo": [
+   "No: AI and digital only",
+   "لا: ذكاء اصطناعي ورقمنة فقط",
+   0
+  ],
+  "head": [
+   0,
+   1
+  ],
+  "progs": [
+   [
+    "National AI Strategy, 2nd edition (2025–2030)",
+    "الاستراتيجية الوطنية للذكاء الاصطناعي، الإصدار الثاني (2025–2030)",
+    "MCIT & National Council for AI",
+    "وزارة الاتصالات والمجلس الوطني للذكاء الاصطناعي",
+    2025,
+    "ai",
+    [
+     [
+      "7.7%",
+      "7.7%",
+      "ICT sector’s share of GDP",
+      "حصة قطاع الاتصالات وتكنولوجيا المعلومات من الناتج المحلي",
+      2030
+     ],
+     [
+      "30,000",
+      "30,000",
+      "AI specialists in the workforce",
+      "متخصص في الذكاء الاصطناعي",
+      2030
+     ],
+     [
+      "250+",
+      "250+",
+      "AI companies established",
+      "شركة ذكاء اصطناعي",
+      2030
+     ]
+    ]
+   ]
+  ],
+  "feat": {
+   "name": [
+    "National AI Strategy, 2nd edition",
+    "الاستراتيجية الوطنية للذكاء الاصطناعي، الإصدار الثاني"
+   ],
+   "dek": [
+    "Replaces the 2021 strategy with six pillars (governance, technology, data, infrastructure, ecosystem and talent) and 21 initiatives.",
+    "تحل محل استراتيجية 2021 بست ركائز (الحوكمة والتقنية والبيانات والبنية التحتية والمنظومة والمواهب) و21 مبادرة."
+   ],
+   "facts": [
+    [
+     "Launched",
+     "الإطلاق",
+     "January 2025",
+     "يناير 2025"
+    ],
+    [
+     "Owner",
+     "الجهة المالكة",
+     "MCIT with the National Council for AI",
+     "وزارة الاتصالات مع المجلس الوطني للذكاء الاصطناعي"
+    ],
+    [
+     "Structure",
+     "الهيكل",
+     "6 pillars, 21 initiatives",
+     "6 ركائز و21 مبادرة"
+    ],
+    [
+     "Also targets",
+     "أهداف أخرى",
+     "36% of the public using AI-powered tools; 6,000 AI publications a year",
+     "36% من السكان يستخدمون أدوات الذكاء الاصطناعي؛ 6,000 بحث سنوياً"
+    ]
+   ],
+   "why": [
+    "The talent target is the one to watch for robotics: 30,000 AI specialists is the hiring pool regional integrators will draw on.",
+    "هدف المواهب هو الأهم للروبوتات: 30 ألف متخصص هم مصدر التوظيف لمُدمِجي الأنظمة في المنطقة."
+   ],
+   "note": [
+    "Often misreported as “AI will be 7.7% of GDP”. The 7.7% target applies to the whole ICT sector.",
+    "يُنقل أحياناً خطأً أن «الذكاء الاصطناعي سيشكّل 7.7% من الناتج». الهدف يخص قطاع الاتصالات وتكنولوجيا المعلومات بأكمله."
+   ],
+   "ms": [
+    [
+     "May 2021",
+     "مايو 2021",
+     "First national AI strategy launched",
+     "إطلاق الاستراتيجية الوطنية الأولى"
+    ],
+    [
+     "Jan 2025",
+     "يناير 2025",
+     "Second edition launched by President El-Sisi",
+     "إطلاق الإصدار الثاني برعاية الرئيس السيسي"
+    ],
+    [
+     "2025–27",
+     "2025–27",
+     "National Arabic foundation model in development",
+     "تطوير نموذج لغوي عربي وطني"
+    ]
+   ]
+  },
+  "pubs": [
+   [
+    "Egypt National Artificial Intelligence Strategy",
+    "الاستراتيجية الوطنية للذكاء الاصطناعي في مصر",
+    "OECD.AI Policy Navigator",
+    "مرصد OECD.AI",
+    "Policy record",
+    "سجل سياسات",
+    "2025",
+    "https://oecd.ai/en/dashboards/policy-initiatives/egypt-national-artificial-intelligence-strategy"
+   ],
+   [
+    "Factbox: 2nd edition of Egypt’s national AI strategy",
+    "كل ما تريد معرفته عن الإصدار الثاني",
+    "Ahram Online",
+    "الأهرام أونلاين",
+    "News",
+    "خبر",
+    "2025",
+    "https://english.ahram.org.eg/NewsContent/3/1239/539743/Business/Tech/Factbox-All-you-need-to-know-about-nd-edition-of-E.aspx"
+   ],
+   [
+    "Egypt unveils updated AI strategy",
+    "مصر تكشف عن استراتيجية محدّثة للذكاء الاصطناعي",
+    "Arab News",
+    "عرب نيوز",
+    "News",
+    "خبر",
+    "2025",
+    "https://www.arabnews.com/node/2587530/business-economy"
+   ]
+  ]
+ },
+ "MA": {
+  "sum": [
+   "A jobs-and-startups digital strategy. Robotics demand comes mainly from the automotive sector, which sits outside its scope.",
+   "استراتيجية رقمية تركّز على الوظائف والشركات الناشئة، بينما يأتي الطلب على الروبوتات أساساً من قطاع السيارات خارج نطاقها."
+  ],
+  "robo": [
+   "No: AI and digital only",
+   "لا: ذكاء اصطناعي ورقمنة فقط",
+   0
+  ],
+  "head": [
+   0,
+   0
+  ],
+  "progs": [
+   [
+    "Digital Morocco 2030",
+    "المغرب الرقمي 2030",
+    "Ministry of Digital Transition",
+    "وزارة الانتقال الرقمي",
+    2024,
+    "digital",
+    [
+     [
+      "240,000",
+      "240,000",
+      "direct jobs in the digital sector",
+      "وظيفة مباشرة في القطاع الرقمي",
+      2030
+     ],
+     [
+      "MAD 100bn",
+      "100 مليار درهم",
+      "digital economy contribution to GDP",
+      "مساهمة الاقتصاد الرقمي في الناتج المحلي",
+      2030
+     ],
+     [
+      "3,000",
+      "3,000",
+      "startups created",
+      "شركة ناشئة",
+      2030
+     ]
+    ]
+   ]
+  ],
+  "feat": {
+   "name": [
+    "Digital Morocco 2030",
+    "المغرب الرقمي 2030"
+   ],
+   "dek": [
+    "Two pillars, digitising public services and growing the digital economy, plus three accelerators: talent, inclusive use, and cloud & connectivity.",
+    "ركيزتان، رقمنة الخدمات العامة وتنمية الاقتصاد الرقمي، وثلاثة مسرّعات: المواهب والاستخدام الشامل والسحابة والاتصال."
+   ],
+   "facts": [
+    [
+     "Launched",
+     "الإطلاق",
+     "25 September 2024, Rabat",
+     "25 سبتمبر 2024، الرباط"
+    ],
+    [
+     "Owner",
+     "الجهة المالكة",
+     "Ministry of Digital Transition & Administrative Reform",
+     "وزارة الانتقال الرقمي وإصلاح الإدارة"
+    ],
+    [
+     "Talent",
+     "المواهب",
+     "45,000 digital graduates a year by 2030",
+     "45 ألف خريج رقمي سنوياً بحلول 2030"
+    ],
+    [
+     "Services",
+     "الخدمات",
+     "UN Online Services Index rank raised to 50th",
+     "الصعود إلى المرتبة 50 في مؤشر الخدمات الإلكترونية الأممي"
+    ]
+   ],
+   "why": [
+    "The startup and talent targets matter more than the GDP figure: 3,000 new ventures is the pipeline for local robotics software.",
+    "أهداف الشركات الناشئة والمواهب أهم من رقم الناتج: 3,000 شركة جديدة هي مصدر برمجيات الروبوتات المحلية."
+   ],
+   "note": [
+    "",
+    ""
+   ],
+   "ms": [
+    [
+     "Sep 2024",
+     "سبتمبر 2024",
+     "Strategy launched alongside an offshoring programme contract",
+     "إطلاق الاستراتيجية مع عقد برنامج لقطاع الأوفشورينغ"
+    ],
+    [
+     "2025",
+     "2025",
+     "Draft “Digital X.0” law on AI governance in preparation",
+     "إعداد مشروع قانون «الرقمي X.0» لحوكمة الذكاء الاصطناعي"
+    ]
+   ]
+  },
+  "pubs": [
+   [
+    "Official launch of the national strategy “Morocco Digital 2030”",
+    "الإطلاق الرسمي لاستراتيجية «المغرب الرقمي 2030»",
+    "CGEM",
+    "الاتحاد العام لمقاولات المغرب",
+    "News",
+    "خبر",
+    "2024",
+    "https://cgem.ma/en/actualites/official-launch-of-the-national-strategy-morocco-digital-2030/"
+   ],
+   [
+    "Morocco launches “Digital Morocco 2030”",
+    "المغرب يطلق «المغرب الرقمي 2030»",
+    "TechAfrica News",
+    "تك أفريكا نيوز",
+    "News",
+    "خبر",
+    "2025",
+    "https://techafricanews.com/2025/08/15/morocco-launches-digital-morocco-2030-strategy-to-become-a-regional-digital-hub/"
+   ]
+  ]
+ },
+ "OM": {
+  "sum": [
+   "A three-year AI programme under Vision 2040, with the digital economy’s share of GDP as the headline measure.",
+   "برنامج للذكاء الاصطناعي مدته ثلاث سنوات ضمن رؤية 2040، وحصة الاقتصاد الرقمي من الناتج هي المؤشر الرئيسي."
+  ],
+  "robo": [
+   "No: AI and digital only",
+   "لا: ذكاء اصطناعي ورقمنة فقط",
+   0
+  ],
+  "head": [
+   0,
+   0
+  ],
+  "progs": [
+   [
+    "National Programme for AI & Advanced Digital Technologies",
+    "البرنامج الوطني للذكاء الاصطناعي والتقنيات الرقمية المتقدمة",
+    "Ministry of Transport, Communications & IT",
+    "وزارة النقل والاتصالات وتقنية المعلومات",
+    2024,
+    "ai",
+    [
+     [
+      "5%",
+      "5%",
+      "digital economy’s share of GDP (2% in 2021)",
+      "حصة الاقتصاد الرقمي من الناتج (2% في 2021)",
+      2030
+     ],
+     [
+      "10%",
+      "10%",
+      "digital economy’s share of GDP",
+      "حصة الاقتصاد الرقمي من الناتج",
+      2040
+     ],
+     [
+      "Top 50",
+      "أفضل 50",
+      "Government AI Readiness Index",
+      "مؤشر جاهزية الحكومات للذكاء الاصطناعي",
+      [
+       "During 2024–26",
+       "خلال 2024–26"
+      ]
+     ]
+    ]
+   ]
+  ],
+  "feat": {
+   "name": [
+    "National Programme for AI & Advanced Digital Technologies",
+    "البرنامج الوطني للذكاء الاصطناعي والتقنيات الرقمية المتقدمة"
+   ],
+   "dek": [
+    "Upgrades the 2022 executive AI programme, following a call from Sultan Haitham to localise AI and speed up enabling legislation.",
+    "يطوّر البرنامج التنفيذي للذكاء الاصطناعي لعام 2022، استجابةً لتوجيه السلطان هيثم بتوطين الذكاء الاصطناعي وتسريع التشريعات الممكّنة."
+   ],
+   "facts": [
+    [
+     "Launched",
+     "الإطلاق",
+     "2024",
+     "2024"
+    ],
+    [
+     "Runs",
+     "المدة",
+     "2024–2026",
+     "2024–2026"
+    ],
+    [
+     "Owner",
+     "الجهة المالكة",
+     "Ministry of Transport, Communications & IT",
+     "وزارة النقل والاتصالات وتقنية المعلومات"
+    ],
+    [
+     "Includes",
+     "يشمل",
+     "National AI R&D centre, AI Studio, Omani language model",
+     "مركز وطني لأبحاث الذكاء الاصطناعي، واستوديو الذكاء الاصطناعي، ونموذج لغوي عُماني"
+    ]
+   ],
+   "why": [
+    "Oman lists robotics and autonomous vehicles in the programme’s ecosystem but has set no deployment target, leaving an opening for early pilots.",
+    "تُدرج عُمان الروبوتات والمركبات الذاتية ضمن منظومة البرنامج دون هدف للنشر، ما يفتح المجال لتجارب مبكرة."
+   ],
+   "note": [
+    "",
+    ""
+   ],
+   "ms": [
+    [
+     "2022",
+     "2022",
+     "Executive Programme for AI launched",
+     "إطلاق البرنامج التنفيذي للذكاء الاصطناعي"
+    ],
+    [
+     "Nov 2023",
+     "نوفمبر 2023",
+     "Sultan calls for a national AI programme",
+     "السلطان يوجّه بإعداد برنامج وطني"
+    ],
+    [
+     "2024",
+     "2024",
+     "National Programme launched (2024–26)",
+     "إطلاق البرنامج الوطني (2024–26)"
+    ]
+   ]
+  },
+  "pubs": [
+   [
+    "National Program for AI and Advanced Digital Technologies",
+    "البرنامج الوطني للذكاء الاصطناعي والتقنيات الرقمية المتقدمة",
+    "MTCIT",
+    "وزارة النقل والاتصالات",
+    "Programme page",
+    "صفحة البرنامج",
+    "2024",
+    "https://prod.mtcit.gov.om/ITAPortal/Pages/Page.aspx?NID=292589&PID=1342792"
+   ],
+   [
+    "Oman unveils AI and digital tech programme to boost economy",
+    "عُمان تطلق برنامجاً للذكاء الاصطناعي والتقنيات الرقمية",
+    "Oman Observer",
+    "عُمان أوبزرفر",
+    "News",
+    "خبر",
+    "2024",
+    "https://www.omanobserver.om/article/1159476/business/oman-unveils-ai-and-digital-tech-programme-to-boost-economy"
+   ],
+   [
+    "Boost to Oman’s artificial intelligence drives diversification",
+    "الذكاء الاصطناعي يدعم التنويع الاقتصادي في عُمان",
+    "Oxford Business Group",
+    "مجموعة أكسفورد للأعمال",
+    "Report",
+    "تقرير",
+    "2025",
+    "https://oxfordbusinessgroup.com/reports/oman/2025-report/ict/game-changer-initiative-to-boost-local-artificial-intelligence-ai-is-driving-economic-diversification-and-sustainable-growth-analysis/"
+   ]
+  ]
+ }
+}

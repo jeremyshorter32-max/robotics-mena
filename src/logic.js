@@ -131,16 +131,10 @@ class Component extends DCLogic {
 
   CO = window.RM_DATA.companies.map(c => [c.name, c.name_ar || c.name, c.country, c.category, c.stage, c.added, c.summary, c.summary_ar || c.summary, c.id]);
 
-  READY = window.RM_DATA.countries.filter(c => c.in_compare_table).map(c => [c.code, window.RM_DATA.deployments.filter(d => d.country === c.code).length, window.RM_DATA.companies.filter(x => x.country === c.code).length, c.target_year, c.headline_target]).sort((a, b) => b[1] - a[1]);
+  READY = window.RM_DATA.countries.filter(c => c.in_compare_table).map(c => [c.code, window.RM_DATA.deployments.filter(d => d.country === c.code).length, window.RM_DATA.companies.filter(x => (x.mena_countries && x.mena_countries.length ? x.mena_countries : [x.country]).includes(c.code)).length, c.target_year, c.headline_target]).sort((a, b) => b[1] - a[1]);
 
-  STRATS = [
-    ['AE','Dubai Robotics & Automation Program','برنامج دبي للروبوتات والأتمتة','Robotics to 9% of Dubai’s GDP; 200,000 robots over 10 years','رفع مساهمة الروبوتات إلى 9% من الناتج المحلي لدبي، و200 ألف روبوت خلال 10 سنوات','Government of Dubai','حكومة دبي','2022','Dubai Media Office'],
-    ['AE','Dubai Autonomous Transportation Strategy','استراتيجية دبي للتنقل ذاتي القيادة','25% of all trips in Dubai autonomous by 2030','25% من إجمالي الرحلات في دبي ذاتية القيادة بحلول 2030','Roads & Transport Authority','هيئة الطرق والمواصلات','2016','RTA'],
-    ['SA','National Strategy for Data & AI','الاستراتيجية الوطنية للبيانات والذكاء الاصطناعي','Among the top 15 AI nations by 2030','ضمن أفضل 15 دولة في الذكاء الاصطناعي بحلول 2030','SDAIA','سدايا','2020','SDAIA'],
-    ['QA','National AI Strategy','الاستراتيجية الوطنية للذكاء الاصطناعي','AI as a pillar of the knowledge economy under QNV 2030','الذكاء الاصطناعي ركيزة لاقتصاد المعرفة ضمن رؤية قطر 2030','Ministry of Communications & IT','وزارة الاتصالات وتكنولوجيا المعلومات','2019','MCIT Qatar'],
-    ['EG','National AI Strategy','الاستراتيجية الوطنية للذكاء الاصطناعي','ICT sector at 7.7% of GDP by 2030','قطاع الاتصالات وتكنولوجيا المعلومات بنسبة 7.7% من الناتج المحلي بحلول 2030','Ministry of Communications & IT','وزارة الاتصالات وتكنولوجيا المعلومات','2021','MCIT Egypt'],
-    ['MA','Digital Morocco 2030','المغرب الرقمي 2030','A national digital economy and AI talent base by 2030','اقتصاد رقمي وطني وقاعدة مواهب في الذكاء الاصطناعي بحلول 2030','Ministry of Digital Transition','وزارة الانتقال الرقمي','2024','Ministry of Digital Transition']
-  ];
+  STRATS = Object.entries(window.RM_DATA.policy || {}).flatMap(([cc, P]) => (P.progs || []).map(g => { const k = (g[6] || [])[0] || []; return [cc, g[0], g[1], k.length ? k[0] + ' ' + k[2] : '', k.length ? k[1] + ' ' + k[3] : '', g[2], g[3], String(g[4] || ''), g[2]]; }));
+
 
   LABS = [
     ['Universities & labs','الجامعات والمختبرات',[
@@ -161,139 +155,10 @@ class Component extends DCLogic {
   EVENTS = window.RM_DATA.events.filter(e => !e.tentative).map(e => [e.id, e.start, e.end, e.name, e.name_ar || e.name, e.city, e.city_ar || e.city, e.venue, e.venue_ar || e.venue, e.country, e.type, e.dates_confirmed ? 0 : 1, e.logo || '', e.relevance || '', e.relevance_ar || e.relevance || '', e.url || '']);
   LATER = window.RM_DATA.events.filter(e => e.tentative).map(e => [e.name, e.name_ar || e.name, e.city, e.city_ar || e.city, e.start]);
 
-  PCC = ['AE', 'SA', 'QA', 'EG', 'MA', 'OM'];
+  PCC = ['AE', 'SA', 'QA', 'EG', 'MA', 'OM', 'BH', 'JO', 'KW', 'TN', 'DZ'].filter(k => (window.RM_DATA.policy || {})[k]);
   SCOPES = { robotics: ['Robotics', 'روبوتات', 1], autonomy: ['Autonomy', 'قيادة ذاتية', 1], industry: ['Industrial automation', 'أتمتة صناعية', 1], ai: ['AI', 'ذكاء اصطناعي', 0], compute: ['Compute', 'حوسبة', 0], digital: ['Digital economy', 'اقتصاد رقمي', 0] };
-  POLICY = {
-    AE: {
-      sum: ['The region’s most robotics-specific policy stack, with targets set at emirate level by Dubai and Abu Dhabi, under a federal AI strategy.', 'أكثر منظومات السياسات تخصصاً في الروبوتات بالمنطقة، بأهداف تضعها دبي وأبوظبي على مستوى الإمارة ضمن استراتيجية اتحادية للذكاء الاصطناعي.'],
-      robo: ['Yes: Dubai RAP, Abu Dhabi SAVI', 'نعم: برنامج دبي وسافي أبوظبي', 2], head: [0, 0],
-      progs: [
-        ['Dubai Robotics & Automation Program', 'برنامج دبي للروبوتات والأتمتة', 'Government of Dubai', 'حكومة دبي', 2022, 'robotics', [['200,000', '200,000', 'robots deployed in Dubai', 'روبوت يعمل في دبي', 2032], ['9%', '9%', 'robotics’ share of Dubai GDP', 'حصة الروبوتات من الناتج المحلي لدبي', 2032]]],
-        ['SAVI: Smart & Autonomous Vehicle Industries cluster', 'سافي: مجموعة الصناعات الذكية وذاتية القيادة', 'ADIO & ADDED, Abu Dhabi', 'مكتب أبوظبي للاستثمار ودائرة التنمية الاقتصادية', 2023, 'autonomy', [['AED 44bn', '44 مليار درهم', 'cluster contribution to Abu Dhabi GDP', 'مساهمة المجموعة في الناتج المحلي لأبوظبي', 2045], ['40,000', '40,000', 'jobs created', 'وظيفة جديدة', 2045]]],
-        ['Dubai Autonomous Transportation Strategy', 'استراتيجية دبي للتنقل ذاتي القيادة', 'Roads & Transport Authority', 'هيئة الطرق والمواصلات', 2016, 'autonomy', [['25%', '25%', 'of all trips in Dubai made autonomously', 'من إجمالي الرحلات في دبي ذاتية القيادة', 2030]]],
-        ['UAE National Strategy for AI 2031', 'الاستراتيجية الوطنية للذكاء الاصطناعي 2031', 'UAE Government', 'حكومة الإمارات', 2017, 'ai', [['Global leader', 'ريادة عالمية', 'in AI; a qualitative goal with no numeric KPI', 'في الذكاء الاصطناعي، هدف نوعي دون مؤشر رقمي', 2031]]]
-      ],
-      feat: {
-        name: ['SAVI: Smart & Autonomous Vehicle Industries cluster', 'سافي: مجموعة الصناعات الذكية وذاتية القيادة'],
-        dek: ['Abu Dhabi’s first industry cluster, built to make the emirate a test, certification and manufacturing base for autonomous systems across air, land, sea and robotics.', 'أول مجموعة صناعية في أبوظبي، أُنشئت لتكون الإمارة قاعدة لاختبار الأنظمة ذاتية التشغيل واعتمادها وتصنيعها في الجو والبر والبحر والروبوتات.'],
-        facts: [['Launched', 'الإطلاق', 'October 2023', 'أكتوبر 2023'], ['Base', 'المقر', 'Masdar City, Abu Dhabi', 'مدينة مصدر، أبوظبي'], ['Led by', 'الجهة القائدة', 'ADIO with ADDED', 'مكتب أبوظبي للاستثمار مع دائرة التنمية الاقتصادية'], ['Domains', 'المجالات', 'Air, land, sea, robotics', 'الجو والبر والبحر والروبوتات'], ['Support', 'الدعم', 'Non-dilutive: business facilitation, regulatory guidance, test-zone access', 'دعم دون استحواذ: تسهيل الأعمال والإرشاد التنظيمي والوصول إلى مناطق الاختبار'], ['Governance', 'الحوكمة', 'Smart and Autonomous Systems Council', 'مجلس الأنظمة الذكية وذاتية التشغيل']],
-        why: ['For robotics vendors, SAVI is the most direct route in the region to a regulated test zone, and to Abu Dhabi as a launch customer.', 'بالنسبة لمورّدي الروبوتات، سافي هي أقصر طريق في المنطقة إلى منطقة اختبار منظّمة، وإلى أبوظبي بوصفها عميلاً أول.'],
-        note: ['Targets differ by source: the cluster site cites AED 22bn of GDP and 15,000 jobs; Abu Dhabi Media Office (Nov 2025) cites AED 44bn and 40,000 jobs by 2045. We show the later figure.', 'تختلف الأهداف بحسب المصدر: يذكر موقع المجموعة 22 مليار درهم و15 ألف وظيفة، بينما يذكر المكتب الإعلامي لأبوظبي (نوفمبر 2025) 44 مليار درهم و40 ألف وظيفة بحلول 2045. نعرض الرقم الأحدث.'],
-        ms: [['Oct 2023', 'أكتوبر 2023', 'Cluster launched at Masdar City', 'إطلاق المجموعة في مدينة مصدر'], ['2024', '2024', 'Archer Aviation agreement to build and operate eVTOL aircraft in Abu Dhabi', 'اتفاقية مع آرتشر لتصنيع وتشغيل طائرات eVTOL في أبوظبي'], ['Nov 2025', 'نوفمبر 2025', 'Hub71 becomes the startup gateway into SAVI, announced at DRIFTx', 'هب71 بوابة الشركات الناشئة إلى سافي، أُعلن في DRIFTx'], ['Nov 2025', 'نوفمبر 2025', 'DiDi Autonomous Driving joins; Tensor signs AV-testing MoU with ADIO and DMT', 'انضمام ديدي للقيادة الذاتية، وتوقيع تينسور مذكرة لاختبار المركبات الذاتية']]
-      },
-      pubs: [
-        ['What is SAVI', 'ما هي سافي', 'Abu Dhabi Investment Office', 'مكتب أبوظبي للاستثمار', 'Cluster site', 'موقع المجموعة', '2025', 'https://savi.investwithabudhabi.com/en/what-is-savi'],
-        ['SAVI cluster launches at Masdar City', 'إطلاق مجموعة سافي في مدينة مصدر', 'Abu Dhabi Media Office', 'المكتب الإعلامي لأبوظبي', 'Press release', 'بيان صحفي', '2023', 'https://www.mediaoffice.abudhabi/en/technology/in-the-presence-of-hamdan-bin-mohamed-bin-zayed-smart-and-autonomous-vehicles-industries-savi-cluster-launches-at-masdar-city/'],
-        ['ADIO and DiDi Autonomous Driving partner on smart mobility', 'شراكة بين مكتب أبوظبي للاستثمار وديدي للقيادة الذاتية', 'Abu Dhabi Media Office', 'المكتب الإعلامي لأبوظبي', 'Press release', 'بيان صحفي', '2025', 'https://www.mediaoffice.abudhabi/en/transport/abu-dhabi-investment-office-and-didi-autonomous-driving-partner-to-accelerate-smart-mobility-in-the-middle-east/'],
-        ['Hub71 becomes gateway for mobility startups to join SAVI', 'هب71 بوابة لشركات التنقل الناشئة للانضمام إلى سافي', 'Hub71', 'هب71', 'Press release', 'بيان صحفي', '2025', 'https://www.hub71.com/latest-news/press-release/hub71-becomes-gateway-for-smart-and-autonomous-mobility-startups-to-join-abu-dhabi\'s-savi-cluster'],
-        ['Abu Dhabi’s strategic investments in future mobility', 'استثمارات أبوظبي الاستراتيجية في التنقل المستقبلي', 'Bird & Bird', 'بيرد آند بيرد', 'Legal analysis', 'تحليل قانوني', '2025', 'https://www.twobirds.com/en/insights/2025/united-arab-emirates/abu-dhabis-strategic-investments-in-future-mobility-driving-technological-innovation-and-navigating'],
-        ['Dubai Robotics & Automation Program', 'برنامج دبي للروبوتات والأتمتة', 'Dubai Media Office', 'المكتب الإعلامي لحكومة دبي', 'Announcement', 'إعلان', '2022', '']
-      ]
-    },
-    SA: {
-      sum: ['Automation is framed as industrial policy: a factory-transformation programme, a national AI strategy and a sovereign compute champion.', 'تُطرح الأتمتة بوصفها سياسة صناعية: برنامج لتحويل المصانع، واستراتيجية وطنية للذكاء الاصطناعي، وشركة وطنية للحوسبة.'],
-      robo: ['Automation: Future Factories', 'أتمتة: مصانع المستقبل', 1], head: [0, 0],
-      progs: [
-        ['Future Factories Program', 'برنامج مصانع المستقبل', 'Ministry of Industry & Mineral Resources', 'وزارة الصناعة والثروة المعدنية', 2022, 'industry', [['4,000', '4,000', 'factories moved from low-wage labour to automation', 'مصنع يتحول من العمالة منخفضة الأجر إلى الأتمتة', null]]],
-        ['National Strategy for Data & AI', 'الاستراتيجية الوطنية للبيانات والذكاء الاصطناعي', 'SDAIA', 'سدايا', 2020, 'ai', [['Top 15', 'أفضل 15', 'position in global AI rankings', 'مرتبة في التصنيفات العالمية للذكاء الاصطناعي', 2030]]],
-        ['HUMAIN', 'هيوماين', 'Public Investment Fund', 'صندوق الاستثمارات العامة', 2025, 'compute', [['1.9 GW', '1.9 غيغاواط', 'AI data-centre capacity, first phase', 'سعة مراكز بيانات الذكاء الاصطناعي، المرحلة الأولى', 2030], ['6.6 GW', '6.6 غيغاواط', 'AI data-centre capacity, full plan', 'سعة مراكز بيانات الذكاء الاصطناعي، الخطة الكاملة', 2034]]]
-      ],
-      feat: {
-        name: ['Future Factories Program', 'برنامج مصانع المستقبل'],
-        dek: ['A Ministry of Industry programme that scores factories on the Smart Industry Readiness Index (SIRI) and helps fund their move from low-wage labour to automation.', 'برنامج لوزارة الصناعة يقيّم المصانع وفق مؤشر جاهزية الصناعة الذكية (SIRI) ويساعد في تمويل انتقالها من العمالة منخفضة الأجر إلى الأتمتة.'],
-        facts: [['Launched', 'الإطلاق', '20 July 2022', '20 يوليو 2022'], ['Owner', 'الجهة المالكة', 'Ministry of Industry & Mineral Resources', 'وزارة الصناعة والثروة المعدنية'], ['Method', 'المنهجية', 'Smart Industry Readiness Index (SIRI)', 'مؤشر جاهزية الصناعة الذكية (SIRI)'], ['Tracks', 'المسارات', 'New factories built to 4IR standards; existing factories upgraded', 'مصانع جديدة بمعايير الثورة الصناعية الرابعة، وتطوير المصانع القائمة'], ['Umbrella', 'المظلة', 'Advanced Manufacturing and Production Center', 'مركز التصنيع والإنتاج المتقدم']],
-        why: ['The largest single pool of robotics demand in the region: every enrolled factory is a candidate buyer for arms, AMRs and integration services.', 'أكبر مصدر منفرد للطلب على الروبوتات في المنطقة: كل مصنع مسجّل مشترٍ محتمل للأذرع والروبوتات المتنقلة وخدمات التكامل.'],
-        note: ['The 4,000 figure is a transformation target, not a count of factories already automated. No completion date has been published.', 'رقم 4,000 هدف للتحول وليس عدداً لمصانع تمت أتمتتها بالفعل، ولم يُعلن موعد للإنجاز.'],
-        ms: [['Jul 2022', 'يوليو 2022', 'Programme launched with the SIRI methodology', 'إطلاق البرنامج بمنهجية SIRI'], ['2025', '2025', 'AMPC set up as umbrella for Future Factories and the Lighthouse programme', 'إنشاء مركز التصنيع المتقدم مظلةً لمصانع المستقبل وبرنامج المنارات'], ['May 2025', 'مايو 2025', 'HUMAIN launched under PIF, chaired by the Crown Prince', 'إطلاق هيوماين تحت مظلة صندوق الاستثمارات العامة برئاسة ولي العهد']]
-      },
-      pubs: [
-        ['Saudi Arabia announces plan to automate 4,000 factories', 'السعودية تعلن خطة لأتمتة 4,000 مصنع', 'Arab News', 'عرب نيوز', 'News', 'خبر', '2022', 'https://www.arabnews.com/business/saudi-arabia-announces-plan-to-automate-4000-factories-2126881'],
-        ['Future Factories Program', 'برنامج مصانع المستقبل', 'Saudipedia', 'سعوديبيديا', 'Reference', 'مرجع', '2022', 'https://saudipedia.com/en/future-factories-program'],
-        ['HUMAIN has already sold out its data-centre capacity', 'هيوماين باعت سعة مراكز بياناتها بالكامل', 'Semafor', 'سيمافور', 'News', 'خبر', '2025', 'https://www.semafor.com/article/08/27/2025/pifs-ai-unit-has-already-sold-out-its-data-center-capacity'],
-        ['National Strategy for Data & AI', 'الاستراتيجية الوطنية للبيانات والذكاء الاصطناعي', 'SDAIA', 'سدايا', 'Strategy document', 'وثيقة استراتيجية', '2020', '']
-      ]
-    },
-    QA: {
-      sum: ['Policy targets the digital economy as a whole; robotics sits inside the Digital Agenda rather than in a dedicated programme.', 'تستهدف السياسات الاقتصاد الرقمي ككل، وتندرج الروبوتات ضمن الأجندة الرقمية لا في برنامج مستقل.'],
-      robo: ['No: AI and digital only', 'لا: ذكاء اصطناعي ورقمنة فقط', 0], head: [0, 0],
-      progs: [
-        ['Digital Agenda 2030', 'الأجندة الرقمية 2030', 'Ministry of Communications & IT', 'وزارة الاتصالات وتكنولوجيا المعلومات', 2024, 'digital', [['QR 40bn', '40 مليار ريال', 'ICT contribution to non-hydrocarbon GDP', 'مساهمة القطاع في الناتج المحلي غير الهيدروكربوني', 2030], ['26,000', '26,000', 'new jobs in the ICT sector', 'وظيفة جديدة في قطاع الاتصالات والتقنية', 2030]]],
-        ['National AI Strategy', 'الاستراتيجية الوطنية للذكاء الاصطناعي', 'Ministry of Communications & IT', 'وزارة الاتصالات وتكنولوجيا المعلومات', 2019, 'ai', [['Pillar', 'ركيزة', 'AI as a pillar of the QNV 2030 knowledge economy; no numeric KPI', 'الذكاء الاصطناعي ركيزة لاقتصاد المعرفة في رؤية 2030، دون مؤشر رقمي', 2030]]]
-      ],
-      feat: {
-        name: ['Digital Agenda 2030', 'الأجندة الرقمية 2030'],
-        dek: ['Qatar’s master plan for digital transformation, sitting under the Third National Development Strategy and Qatar National Vision 2030.', 'الخطة الرئيسية للتحول الرقمي في قطر، ضمن استراتيجية التنمية الوطنية الثالثة ورؤية قطر الوطنية 2030.'],
-        facts: [['Launched', 'الإطلاق', 'February 2024', 'فبراير 2024'], ['Owner', 'الجهة المالكة', 'Ministry of Communications & IT', 'وزارة الاتصالات وتكنولوجيا المعلومات'], ['Structure', 'الهيكل', '6 pillars, 23 strategic programmes', '6 ركائز و23 برنامجاً استراتيجياً'], ['Includes', 'يشمل', 'National high-performance computing programme', 'برنامج وطني للحوسبة عالية الأداء']],
-        why: ['There is no robotics target yet, so buyers and vendors should read the HPC, cloud and sector-transformation programmes as the entry points.', 'لا يوجد هدف خاص بالروبوتات بعد، لذا فإن برامج الحوسبة والسحابة والتحول القطاعي هي المداخل الأنسب.'],
-        note: ['', ''],
-        ms: [['2019', '2019', 'National AI Strategy published', 'نشر الاستراتيجية الوطنية للذكاء الاصطناعي'], ['Feb 2024', 'فبراير 2024', 'Digital Agenda 2030 launched', 'إطلاق الأجندة الرقمية 2030']]
-      },
-      pubs: [
-        ['MCIT’s Digital Agenda 2030 aims at QR40bn ripple effect, 26,000 jobs', 'الأجندة الرقمية 2030: 40 مليار ريال و26 ألف وظيفة', 'Gulf Times', 'جلف تايمز', 'News', 'خبر', '2024', 'https://www.gulf-times.com/article/678030/qatar/mcits-digital-agenda-2030-aims-atqr40bn-ripple-effect-26000-jobs'],
-        ['Qatar: Digital Economy', 'قطر: الاقتصاد الرقمي', 'US International Trade Administration', 'إدارة التجارة الدولية الأمريكية', 'Country guide', 'دليل قُطري', '2024', 'https://www.trade.gov/country-commercial-guides/qatar-digital-economy'],
-        ['Qatar’s Digital Agenda 2030', 'الأجندة الرقمية لقطر 2030', 'Digital Watch', 'ديجيتال ووتش', 'Policy summary', 'ملخص سياسات', '2024', 'https://dig.watch/resource/qatars-digital-agenda-2030']
-      ]
-    },
-    EG: {
-      sum: ['A refreshed AI strategy with unusually concrete talent and startup KPIs; robotics appears through applied AI rather than a dedicated plan.', 'استراتيجية محدّثة للذكاء الاصطناعي بمؤشرات واضحة للمواهب والشركات الناشئة، وتظهر الروبوتات عبر تطبيقات الذكاء الاصطناعي لا عبر خطة مستقلة.'],
-      robo: ['No: AI and digital only', 'لا: ذكاء اصطناعي ورقمنة فقط', 0], head: [0, 1],
-      progs: [
-        ['National AI Strategy, 2nd edition (2025–2030)', 'الاستراتيجية الوطنية للذكاء الاصطناعي، الإصدار الثاني (2025–2030)', 'MCIT & National Council for AI', 'وزارة الاتصالات والمجلس الوطني للذكاء الاصطناعي', 2025, 'ai', [['7.7%', '7.7%', 'ICT sector’s share of GDP', 'حصة قطاع الاتصالات وتكنولوجيا المعلومات من الناتج المحلي', 2030], ['30,000', '30,000', 'AI specialists in the workforce', 'متخصص في الذكاء الاصطناعي', 2030], ['250+', '250+', 'AI companies established', 'شركة ذكاء اصطناعي', 2030]]]
-      ],
-      feat: {
-        name: ['National AI Strategy, 2nd edition', 'الاستراتيجية الوطنية للذكاء الاصطناعي، الإصدار الثاني'],
-        dek: ['Replaces the 2021 strategy with six pillars (governance, technology, data, infrastructure, ecosystem and talent) and 21 initiatives.', 'تحل محل استراتيجية 2021 بست ركائز (الحوكمة والتقنية والبيانات والبنية التحتية والمنظومة والمواهب) و21 مبادرة.'],
-        facts: [['Launched', 'الإطلاق', 'January 2025', 'يناير 2025'], ['Owner', 'الجهة المالكة', 'MCIT with the National Council for AI', 'وزارة الاتصالات مع المجلس الوطني للذكاء الاصطناعي'], ['Structure', 'الهيكل', '6 pillars, 21 initiatives', '6 ركائز و21 مبادرة'], ['Also targets', 'أهداف أخرى', '36% of the public using AI-powered tools; 6,000 AI publications a year', '36% من السكان يستخدمون أدوات الذكاء الاصطناعي؛ 6,000 بحث سنوياً']],
-        why: ['The talent target is the one to watch for robotics: 30,000 AI specialists is the hiring pool regional integrators will draw on.', 'هدف المواهب هو الأهم للروبوتات: 30 ألف متخصص هم مصدر التوظيف لمُدمِجي الأنظمة في المنطقة.'],
-        note: ['Often misreported as “AI will be 7.7% of GDP”. The 7.7% target applies to the whole ICT sector.', 'يُنقل أحياناً خطأً أن «الذكاء الاصطناعي سيشكّل 7.7% من الناتج». الهدف يخص قطاع الاتصالات وتكنولوجيا المعلومات بأكمله.'],
-        ms: [['May 2021', 'مايو 2021', 'First national AI strategy launched', 'إطلاق الاستراتيجية الوطنية الأولى'], ['Jan 2025', 'يناير 2025', 'Second edition launched by President El-Sisi', 'إطلاق الإصدار الثاني برعاية الرئيس السيسي'], ['2025–27', '2025–27', 'National Arabic foundation model in development', 'تطوير نموذج لغوي عربي وطني']]
-      },
-      pubs: [
-        ['Egypt National Artificial Intelligence Strategy', 'الاستراتيجية الوطنية للذكاء الاصطناعي في مصر', 'OECD.AI Policy Navigator', 'مرصد OECD.AI', 'Policy record', 'سجل سياسات', '2025', 'https://oecd.ai/en/dashboards/policy-initiatives/egypt-national-artificial-intelligence-strategy'],
-        ['Factbox: 2nd edition of Egypt’s national AI strategy', 'كل ما تريد معرفته عن الإصدار الثاني', 'Ahram Online', 'الأهرام أونلاين', 'News', 'خبر', '2025', 'https://english.ahram.org.eg/NewsContent/3/1239/539743/Business/Tech/Factbox-All-you-need-to-know-about-nd-edition-of-E.aspx'],
-        ['Egypt unveils updated AI strategy', 'مصر تكشف عن استراتيجية محدّثة للذكاء الاصطناعي', 'Arab News', 'عرب نيوز', 'News', 'خبر', '2025', 'https://www.arabnews.com/node/2587530/business-economy']
-      ]
-    },
-    MA: {
-      sum: ['A jobs-and-startups digital strategy. Robotics demand comes mainly from the automotive sector, which sits outside its scope.', 'استراتيجية رقمية تركّز على الوظائف والشركات الناشئة، بينما يأتي الطلب على الروبوتات أساساً من قطاع السيارات خارج نطاقها.'],
-      robo: ['No: AI and digital only', 'لا: ذكاء اصطناعي ورقمنة فقط', 0], head: [0, 0],
-      progs: [
-        ['Digital Morocco 2030', 'المغرب الرقمي 2030', 'Ministry of Digital Transition', 'وزارة الانتقال الرقمي', 2024, 'digital', [['240,000', '240,000', 'direct jobs in the digital sector', 'وظيفة مباشرة في القطاع الرقمي', 2030], ['MAD 100bn', '100 مليار درهم', 'digital economy contribution to GDP', 'مساهمة الاقتصاد الرقمي في الناتج المحلي', 2030], ['3,000', '3,000', 'startups created', 'شركة ناشئة', 2030]]]
-      ],
-      feat: {
-        name: ['Digital Morocco 2030', 'المغرب الرقمي 2030'],
-        dek: ['Two pillars, digitising public services and growing the digital economy, plus three accelerators: talent, inclusive use, and cloud & connectivity.', 'ركيزتان، رقمنة الخدمات العامة وتنمية الاقتصاد الرقمي، وثلاثة مسرّعات: المواهب والاستخدام الشامل والسحابة والاتصال.'],
-        facts: [['Launched', 'الإطلاق', '25 September 2024, Rabat', '25 سبتمبر 2024، الرباط'], ['Owner', 'الجهة المالكة', 'Ministry of Digital Transition & Administrative Reform', 'وزارة الانتقال الرقمي وإصلاح الإدارة'], ['Talent', 'المواهب', '45,000 digital graduates a year by 2030', '45 ألف خريج رقمي سنوياً بحلول 2030'], ['Services', 'الخدمات', 'UN Online Services Index rank raised to 50th', 'الصعود إلى المرتبة 50 في مؤشر الخدمات الإلكترونية الأممي']],
-        why: ['The startup and talent targets matter more than the GDP figure: 3,000 new ventures is the pipeline for local robotics software.', 'أهداف الشركات الناشئة والمواهب أهم من رقم الناتج: 3,000 شركة جديدة هي مصدر برمجيات الروبوتات المحلية.'],
-        note: ['', ''],
-        ms: [['Sep 2024', 'سبتمبر 2024', 'Strategy launched alongside an offshoring programme contract', 'إطلاق الاستراتيجية مع عقد برنامج لقطاع الأوفشورينغ'], ['2025', '2025', 'Draft “Digital X.0” law on AI governance in preparation', 'إعداد مشروع قانون «الرقمي X.0» لحوكمة الذكاء الاصطناعي']]
-      },
-      pubs: [
-        ['Official launch of the national strategy “Morocco Digital 2030”', 'الإطلاق الرسمي لاستراتيجية «المغرب الرقمي 2030»', 'CGEM', 'الاتحاد العام لمقاولات المغرب', 'News', 'خبر', '2024', 'https://cgem.ma/en/actualites/official-launch-of-the-national-strategy-morocco-digital-2030/'],
-        ['Morocco launches “Digital Morocco 2030”', 'المغرب يطلق «المغرب الرقمي 2030»', 'TechAfrica News', 'تك أفريكا نيوز', 'News', 'خبر', '2025', 'https://techafricanews.com/2025/08/15/morocco-launches-digital-morocco-2030-strategy-to-become-a-regional-digital-hub/']
-      ]
-    },
-    OM: {
-      sum: ['A three-year AI programme under Vision 2040, with the digital economy’s share of GDP as the headline measure.', 'برنامج للذكاء الاصطناعي مدته ثلاث سنوات ضمن رؤية 2040، وحصة الاقتصاد الرقمي من الناتج هي المؤشر الرئيسي.'],
-      robo: ['No: AI and digital only', 'لا: ذكاء اصطناعي ورقمنة فقط', 0], head: [0, 0],
-      progs: [
-        ['National Programme for AI & Advanced Digital Technologies', 'البرنامج الوطني للذكاء الاصطناعي والتقنيات الرقمية المتقدمة', 'Ministry of Transport, Communications & IT', 'وزارة النقل والاتصالات وتقنية المعلومات', 2024, 'ai', [['5%', '5%', 'digital economy’s share of GDP (2% in 2021)', 'حصة الاقتصاد الرقمي من الناتج (2% في 2021)', 2030], ['10%', '10%', 'digital economy’s share of GDP', 'حصة الاقتصاد الرقمي من الناتج', 2040], ['Top 50', 'أفضل 50', 'Government AI Readiness Index', 'مؤشر جاهزية الحكومات للذكاء الاصطناعي', ['During 2024–26', 'خلال 2024–26']]]]
-      ],
-      feat: {
-        name: ['National Programme for AI & Advanced Digital Technologies', 'البرنامج الوطني للذكاء الاصطناعي والتقنيات الرقمية المتقدمة'],
-        dek: ['Upgrades the 2022 executive AI programme, following a call from Sultan Haitham to localise AI and speed up enabling legislation.', 'يطوّر البرنامج التنفيذي للذكاء الاصطناعي لعام 2022، استجابةً لتوجيه السلطان هيثم بتوطين الذكاء الاصطناعي وتسريع التشريعات الممكّنة.'],
-        facts: [['Launched', 'الإطلاق', '2024', '2024'], ['Runs', 'المدة', '2024–2026', '2024–2026'], ['Owner', 'الجهة المالكة', 'Ministry of Transport, Communications & IT', 'وزارة النقل والاتصالات وتقنية المعلومات'], ['Includes', 'يشمل', 'National AI R&D centre, AI Studio, Omani language model', 'مركز وطني لأبحاث الذكاء الاصطناعي، واستوديو الذكاء الاصطناعي، ونموذج لغوي عُماني']],
-        why: ['Oman lists robotics and autonomous vehicles in the programme’s ecosystem but has set no deployment target, leaving an opening for early pilots.', 'تُدرج عُمان الروبوتات والمركبات الذاتية ضمن منظومة البرنامج دون هدف للنشر، ما يفتح المجال لتجارب مبكرة.'],
-        note: ['', ''],
-        ms: [['2022', '2022', 'Executive Programme for AI launched', 'إطلاق البرنامج التنفيذي للذكاء الاصطناعي'], ['Nov 2023', 'نوفمبر 2023', 'Sultan calls for a national AI programme', 'السلطان يوجّه بإعداد برنامج وطني'], ['2024', '2024', 'National Programme launched (2024–26)', 'إطلاق البرنامج الوطني (2024–26)']]
-      },
-      pubs: [
-        ['National Program for AI and Advanced Digital Technologies', 'البرنامج الوطني للذكاء الاصطناعي والتقنيات الرقمية المتقدمة', 'MTCIT', 'وزارة النقل والاتصالات', 'Programme page', 'صفحة البرنامج', '2024', 'https://prod.mtcit.gov.om/ITAPortal/Pages/Page.aspx?NID=292589&PID=1342792'],
-        ['Oman unveils AI and digital tech programme to boost economy', 'عُمان تطلق برنامجاً للذكاء الاصطناعي والتقنيات الرقمية', 'Oman Observer', 'عُمان أوبزرفر', 'News', 'خبر', '2024', 'https://www.omanobserver.om/article/1159476/business/oman-unveils-ai-and-digital-tech-programme-to-boost-economy'],
-        ['Boost to Oman’s artificial intelligence drives diversification', 'الذكاء الاصطناعي يدعم التنويع الاقتصادي في عُمان', 'Oxford Business Group', 'مجموعة أكسفورد للأعمال', 'Report', 'تقرير', '2025', 'https://oxfordbusinessgroup.com/reports/oman/2025-report/ict/game-changer-initiative-to-boost-local-artificial-intelligence-ai-is-driving-economic-diversification-and-sustainable-growth-analysis/']
-      ]
-    }
-  };
+  POLICY = window.RM_DATA.policy || {};
+
 
   T = {
     en: {
@@ -315,7 +180,7 @@ class Component extends DCLogic {
       s3n: '03 · Directory', s3: 'Ecosystem directory', s3sub: 'Who is building robots, systems and robotics software in the region.', getListed: 'Get listed', sort: 'Sort',
       sortOpts: [['featured', 'Editor’s order'], ['az', 'A–Z'], ['newest', 'Recently added'], ['stage', 'Stage']], listed: 'Listed',
       s4n: '04 · Policy & data', s4: 'National strategies & readiness', s4sub: 'Country by country: the programmes that matter for robotics, what each target actually measures, when it is due, and how that compares with what is deployed on the ground.',
-      pages: ['Brief', 'Map', 'Database', 'Policy', 'Events', 'Submit'], pOpenDossiers: 'Open country dossiers', mapOpen: 'Open the full map', crumbs: 'Breadcrumb', crumbHome: 'Home', crumbPolicy: 'Policy & data', pCountries: 'Countries', pDossier: 'Country dossier', pProgrammes: 'Programmes & targets', pTargets: 'Targets', pKpiNote: 'Each tile shows a published target: the number, what it measures, and the year it is due.', pFeatured: 'Featured initiative', pWhy: 'Why it matters for robotics', pMilestones: 'Milestones', pPubs: 'Publications & sources', pCompareLink: 'Compare all countries', pCompare: 'Compare countries', pCompareSub: 'Each country’s headline target (what it measures and when it is due) next to what we have verified on the ground. Select a country to open its dossier.', pCols: ['Country', 'Robotics-specific policy', 'Headline target · what it measures', 'Due', 'Deployments tracked', 'Companies listed'], pCmpSrc: 'Targets: national strategy documents and official announcements, linked in each dossier. Deployments and companies: Robotics MENA tracker, 7 Nov 2026. Bahrain and Jordan are tracked but not yet profiled.', pStDep: 'Deployments tracked', pStCo: 'Companies listed', pStProg: 'Programmes profiled', byYr: 'Due {y}', noDate: 'No date published', away: 'In {n} years', notProfiled: 'Not yet profiled',
+      pages: ['Brief', 'Map', 'Database', 'Policy', 'Events', 'Submit'], pOpenDossiers: 'Open country dossiers', mapOpen: 'Open the full map', crumbs: 'Breadcrumb', crumbHome: 'Home', crumbPolicy: 'Policy & data', pCountries: 'Countries', pDossier: 'Country dossier', pProgrammes: 'Programmes & targets', pTargets: 'Targets', pKpiNote: 'Each tile shows a published target: the number, what it measures, and the year it is due.', pFeatured: 'Featured initiative', pWhy: 'Why it matters for robotics', pMilestones: 'Milestones', pPubs: 'Publications & sources', pCompareLink: 'Compare all countries', pCompare: 'Compare countries', pCompareSub: 'Each country’s headline target (what it measures and when it is due) next to what we have verified on the ground. Select a country to open its dossier.', pCols: ['Country', 'Robotics-specific policy', 'Headline target · what it measures', 'Due', 'Deployments tracked', 'Companies listed'], pCmpSrc: 'Targets: national strategy documents and official announcements, linked in each dossier. Deployments and companies: Robotics MENA tracker, updated {date}. Countries marked “Not yet profiled” are tracked but have no dossier yet.', pStDep: 'Deployments tracked', pStCo: 'Companies listed', pStProg: 'Programmes profiled', byYr: 'Due {y}', noDate: 'No date published', away: 'In {n} years', notProfiled: 'Not yet profiled',
       p1: 'Deployments tracked', p2: 'Companies listed', p3: 'Headline target horizon', readySrc: 'Source: Robotics MENA tracker · 7 Nov 2026', readySrc3: 'Source: national strategy documents · see below',
       s5: 'National strategies', s5sub: 'The programmes setting targets for robotics, AI and autonomy.', agency: 'Lead agency', launched: 'Launched',
       s6n: '05 · Talent', s6: 'Labs & talent', s6sub: 'Where the region trains, researches and competes.',
@@ -346,7 +211,7 @@ class Component extends DCLogic {
         { h: 'Open data & API', b: 'Companies, deployments, events and strategies are available as open data (CC BY 4.0) and a read-only JSON API.', l: 'Explore the data', href: '/database' },
         { h: 'Contact', b: 'Tips, corrections and partnership enquiries go to the editors.', l: 'editors@roboticsmena.org', href: 'mailto:editors@roboticsmena.org' }
       ],
-      copyright: '© 2026 Robotics MENA · Ad-free and independent', demoNote: 'Prototype: entries beyond the seed items are illustrative placeholders.'
+      copyright: '© 2026 Robotics MENA · Ad-free and independent', demoNote: 'Every record links to its primary source.'
     },
     ar: {
       brand: 'روبوتكس مينا', langSwitch: 'English', subscribe: 'اشترك في الموجز',
@@ -367,7 +232,7 @@ class Component extends DCLogic {
       s3n: '03 · الدليل', s3: 'دليل المنظومة', s3sub: 'من يصنع الروبوتات والأنظمة وبرمجيات الروبوتات في المنطقة.', getListed: 'أدرج شركتك', sort: 'ترتيب',
       sortOpts: [['featured', 'اختيار المحرّر'], ['az', 'أبجدياً'], ['newest', 'الأحدث إدراجاً'], ['stage', 'المرحلة']], listed: 'أُدرج',
       s4n: '04 · السياسات والبيانات', s4: 'الاستراتيجيات الوطنية والجاهزية', s4sub: 'دولة بدولة: البرامج المهمة للروبوتات، وما يقيسه كل هدف فعلاً، وموعد استحقاقه، ومقارنته بما هو منشور على أرض الواقع.',
-      pages: ['الموجز', 'الخريطة', 'البيانات', 'السياسات', 'الفعاليات', 'أضف'], pOpenDossiers: 'افتح ملفات الدول', mapOpen: 'افتح الخريطة الكاملة', crumbs: 'مسار التنقل', crumbHome: 'الرئيسية', crumbPolicy: 'السياسات والبيانات', pCountries: 'الدول', pDossier: 'ملف الدولة', pProgrammes: 'البرامج والأهداف', pTargets: 'الأهداف', pKpiNote: 'تعرض كل خانة هدفاً منشوراً: الرقم، وما يقيسه، وسنة استحقاقه.', pFeatured: 'مبادرة بارزة', pWhy: 'لماذا تهمّ قطاع الروبوتات', pMilestones: 'محطات رئيسية', pPubs: 'المنشورات والمصادر', pCompareLink: 'قارن بين جميع الدول', pCompare: 'مقارنة بين الدول', pCompareSub: 'الهدف الرئيسي لكل دولة (ما يقيسه وموعد استحقاقه) إلى جانب ما تحققنا منه ميدانياً. اختر دولة لفتح ملفها.', pCols: ['الدولة', 'سياسة خاصة بالروبوتات', 'الهدف الرئيسي · ما يقيسه', 'الاستحقاق', 'عمليات النشر المرصودة', 'الشركات المدرجة'], pCmpSrc: 'الأهداف: وثائق الاستراتيجيات الوطنية والإعلانات الرسمية، مع روابطها في كل ملف. عمليات النشر والشركات: متتبّع روبوتكس مينا، 7 نوفمبر 2026. البحرين والأردن مرصودتان ولم تُعدّ ملفاتهما بعد.', pStDep: 'عمليات نشر مرصودة', pStCo: 'شركات مدرجة', pStProg: 'برامج في الملف', byYr: 'الاستحقاق {y}', noDate: 'لم يُعلن موعد', away: 'بعد {n} سنوات', notProfiled: 'لم يُعدّ الملف بعد',
+      pages: ['الموجز', 'الخريطة', 'البيانات', 'السياسات', 'الفعاليات', 'أضف'], pOpenDossiers: 'افتح ملفات الدول', mapOpen: 'افتح الخريطة الكاملة', crumbs: 'مسار التنقل', crumbHome: 'الرئيسية', crumbPolicy: 'السياسات والبيانات', pCountries: 'الدول', pDossier: 'ملف الدولة', pProgrammes: 'البرامج والأهداف', pTargets: 'الأهداف', pKpiNote: 'تعرض كل خانة هدفاً منشوراً: الرقم، وما يقيسه، وسنة استحقاقه.', pFeatured: 'مبادرة بارزة', pWhy: 'لماذا تهمّ قطاع الروبوتات', pMilestones: 'محطات رئيسية', pPubs: 'المنشورات والمصادر', pCompareLink: 'قارن بين جميع الدول', pCompare: 'مقارنة بين الدول', pCompareSub: 'الهدف الرئيسي لكل دولة (ما يقيسه وموعد استحقاقه) إلى جانب ما تحققنا منه ميدانياً. اختر دولة لفتح ملفها.', pCols: ['الدولة', 'سياسة خاصة بالروبوتات', 'الهدف الرئيسي · ما يقيسه', 'الاستحقاق', 'عمليات النشر المرصودة', 'الشركات المدرجة'], pCmpSrc: 'الأهداف: وثائق الاستراتيجيات الوطنية والإعلانات الرسمية، مع روابطها في كل ملف. عمليات النشر والشركات: متتبّع روبوتكس مينا، آخر تحديث {date}. الدول المشار إليها بعبارة «لم يُعدّ ملفها بعد» مرصودة دون ملف حتى الآن.', pStDep: 'عمليات نشر مرصودة', pStCo: 'شركات مدرجة', pStProg: 'برامج في الملف', byYr: 'الاستحقاق {y}', noDate: 'لم يُعلن موعد', away: 'بعد {n} سنوات', notProfiled: 'لم يُعدّ الملف بعد',
       p1: 'عمليات النشر المرصودة', p2: 'الشركات المدرجة', p3: 'أفق الهدف الوطني الرئيسي', readySrc: 'المصدر: متتبّع روبوتكس مينا · 7 نوفمبر 2026', readySrc3: 'المصدر: وثائق الاستراتيجيات الوطنية · انظر أدناه',
       s5: 'الاستراتيجيات الوطنية', s5sub: 'البرامج التي تضع أهداف الروبوتات والذكاء الاصطناعي والقيادة الذاتية.', agency: 'الجهة المسؤولة', launched: 'سنة الإطلاق',
       s6n: '05 · المواهب', s6: 'المختبرات والمواهب', s6sub: 'أين تتدرّب المنطقة وتبحث وتتنافس.',
@@ -398,7 +263,7 @@ class Component extends DCLogic {
         { h: 'البيانات المفتوحة والواجهة البرمجية', b: 'بيانات الشركات وعمليات النشر والفعاليات والاستراتيجيات متاحة مفتوحةً (CC BY 4.0) وعبر واجهة JSON للقراءة.', l: 'استكشف البيانات', href: '/database' },
         { h: 'تواصل معنا', b: 'للمعلومات والتصحيحات والشراكات، راسل فريق التحرير.', l: 'editors@roboticsmena.org', href: 'mailto:editors@roboticsmena.org' }
       ],
-      copyright: '© 2026 روبوتكس مينا · مستقلة وبلا إعلانات', demoNote: 'نموذج أولي: الإدخالات غير الأساسية أمثلة توضيحية.'
+      copyright: '© 2026 روبوتكس مينا · مستقلة وبلا إعلانات', demoNote: 'كل سجل مرتبط بمصدره الأصلي.'
     }
   };
   tPatch = (() => { const o = window.RM_PAGE.t || {}; for (const l in o) Object.assign(this.T[l], o[l]); return true; })();
@@ -480,7 +345,7 @@ class Component extends DCLogic {
     const recs = {
       companies: D.companies.map(o => { const ccs = mk(o), intl = this.isIntl(o); return { o, badge: this.badgeOf(o.name, o.logo), id: o.id, cc: o.country, ccs, intl, origin: intl ? 'intl' : 'regional', hayx: o.mena_link ? (o.mena_link.en || '') + ' ' + (o.mena_link.ar || '') + ' ' + cn(o.hq) + ' ' + OT.intl : '', facet: o.category, date: o.added, name: tr(o, 'name'), alt: intl ? OT.intl + ' · ' + OT.hq + ': ' + cn(o.hq) : (ar ? o.name : (o.name_ar || '')), c2: (this.CATS[o.category] || [o.category, o.category])[L], c3: cn(ccs[0]) + (ccs.length > 1 ? ' +' + num(ccs.length - 1) : ''), c4: (this.STAGES[o.stage] || [o.stage, o.stage])[L], c5: o.added ? fdate(o.added) : '—', size: 0 }; }),
       deployments: D.deployments.map(o => ({ o, badge: this.badgeOf(o.operator, this.opLogo(o.operator, o.logo)), id: o.id, cc: o.country, facet: o.type, date: o.date, name: tr(o, 'title'), alt: tr(o, 'operator') + (o.site ? ' · ' + tr(o, 'site') : ''), c2: (this.TYPES[o.type] || [o.type, o.type])[L], c3: (this.SECTORS[o.sector] || [o.sector, o.sector])[L], c4: cn(o.country), c5: fdate(o.date), size: 0 })),
-      countries: D.countries.map(o => { const dn = D.deployments.filter(x => x.country === o.code).length, cn2 = D.companies.filter(x => mk(x).includes(o.code)).length; return { o, badge: this.badgeOf(o.code, '/media/flags/' + o.code.toLowerCase() + '.svg'), id: o.code, cc: o.code, facet: '', date: '', name: tr(o, 'name'), alt: ar ? o.name : o.name_ar, c2: num(dn), c3: num(cn2), c4: o.headline_target || '—', c5: o.target_year ? String(o.target_year) : '—', size: dn }; }),
+      countries: D.countries.map(o => { const PP = this.POLICY[o.code], hk = PP && PP.head && PP.progs[PP.head[0]] ? (PP.progs[PP.head[0]][6] || [])[PP.head[1]] : null; const dn = D.deployments.filter(x => x.country === o.code).length, cn2 = D.companies.filter(x => mk(x).includes(o.code)).length; return { o, badge: this.badgeOf(o.code, '/media/flags/' + o.code.toLowerCase() + '.svg'), id: o.code, cc: o.code, facet: '', date: '', name: tr(o, 'name'), alt: ar ? o.name : o.name_ar, c2: num(dn), c3: num(cn2), c4: hk ? hk[L] + ' ' + hk[2 + L] : (o.headline_target || '—'), c5: hk ? (hk[4] ? String(hk[4]) : '—') : (o.target_year ? String(o.target_year) : '—'), size: dn }; }),
       events: D.events.map(o => ({ o, badge: this.badgeOf(o.name, o.logo), id: o.id, cc: o.country, facet: o.type, date: o.start, name: tr(o, 'name'), alt: tr(o, 'venue') || '', c2: (this.ETYPES[o.type] || [o.type, o.type])[L], c3: tr(o, 'city'), c4: cn(o.country), c5: range(o), size: 0 }))
     };
     const all = recs[tab];
@@ -742,7 +607,7 @@ class Component extends DCLogic {
       goNewsletter: e => { e.preventDefault(); this.go('newsletter'); },
       goListed: e => { e.preventDefault(); this.setState({ tab: 'company', submitted: false }); this.go('submit'); },
       searchRef: this.searchRef, q: S.q, onQ: e => this.setState({ q: e.target.value }), hasQ: !!q, qOpen: q ? 'true' : 'false', results, noResults: !!q && !results.length,
-      stats, statsUpd: upd,
+      stats, statsUpd: upd, pCmpSrc: (t.pCmpSrc || '').replace('{date}', fdate(lastDate)),
       suggest: (ar ? ['روبوت بشري', 'الرياض', 'مسيّرات', 'جيتكس'] : ['Humanoid', 'Riyadh', 'Drones', 'GITEX']).map(label => ({ label, go: () => { this.setState({ q: label }); this.searchRef.current && this.searchRef.current.focus(); } })),
       onSearchKey: e => { if (e.key === 'ArrowDown') { const o = document.querySelector('#rm-results [role=option]'); if (o) { e.preventDefault(); o.focus(); } } },
       onOptKey: e => { const os = [...document.querySelectorAll('#rm-results [role=option]')], i = os.indexOf(e.currentTarget); if (e.key === 'ArrowDown' && os[i + 1]) { e.preventDefault(); os[i + 1].focus(); } else if (e.key === 'ArrowUp') { e.preventDefault(); (os[i - 1] || this.searchRef.current).focus(); } else if (e.key === 'Escape') { this.searchRef.current.focus(); } }, heroPins: JSON.stringify(this.DEP.map(pinOf)),

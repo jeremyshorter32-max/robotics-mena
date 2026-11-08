@@ -106,10 +106,32 @@ stories.forEach((s, si) => {
 });
 uniq(stories, 'id', 'stories');
 
+// Policy dossiers (data/policy.json): one per country, shown on the Policy page
+const SCOPES = ['robotics', 'autonomy', 'industry', 'ai', 'compute', 'digital'];
+const policy = fs.existsSync(path.join(ROOT, 'data', 'policy.json')) ? readData('policy') : {};
+const pair = (v, w) => { if (!Array.isArray(v) || v.length < 2 || !v[0] || !v[1]) errors.push(`${w}: needs [English, Arabic]`); };
+Object.entries(policy).forEach(([cc, P]) => {
+  const w = `policy ${cc}`;
+  if (!countryCodes.has(cc)) errors.push(`${w}: country is not in countries.json`);
+  if (EXCLUDED_COUNTRIES.has(cc)) errors.push(`${w}: excluded country`);
+  pair(P.sum, `${w} sum`);
+  if (!Array.isArray(P.robo) || ![0, 1, 2].includes(P.robo[2])) errors.push(`${w}: robo must be [en, ar, 0|1|2]`);
+  (P.progs || []).forEach((g, i) => {
+    const gw = `${w} progs[${i}]`;
+    if (!g[0] || !g[1] || !g[2] || !g[3]) errors.push(`${gw}: needs name and agency in English and Arabic`);
+    if (!SCOPES.includes(g[5])) errors.push(`${gw}: scope "${g[5]}" is not one of ${SCOPES.join(', ')}`);
+    (g[6] || []).forEach((k, j) => { if (!k[0] || !k[2] || !k[3]) errors.push(`${gw} kpi ${j}: needs value and what it measures (en, ar)`); if (k[4] !== null && k[4] !== undefined && !Number.isInteger(k[4]) && !(Array.isArray(k[4]) && k[4][0] && k[4][1])) errors.push(`${gw} kpi ${j}: due must be a year, null, or a period as [en, ar]`); });
+  });
+  if (!P.progs || !P.progs.length) errors.push(`${w}: no programmes`);
+  if (P.head && !(P.progs[P.head[0]] && (P.progs[P.head[0]][6] || [])[P.head[1]])) errors.push(`${w}: head points at a missing target`);
+  if (P.feat) { pair(P.feat.name, `${w} feat.name`); pair(P.feat.why, `${w} feat.why`); }
+  (P.pubs || []).forEach((x, i) => { if (!x[0] || !x[1]) errors.push(`${w} pubs[${i}]: needs a title in English and Arabic`); if (!x[7]) errors.push(`${w} pubs[${i}] "${x[0]}": needs a source URL`); else url(x[7], `${w} pubs[${i}]`, 'url'); });
+});
+
 // Excluded countries anywhere in the data, and their flag files
 const flagFiles = fs.readdirSync(path.join(ROOT, 'media', 'flags'));
 EXCLUDED_COUNTRIES.forEach(cc => { if (flagFiles.includes(cc.toLowerCase() + '.svg')) errors.push(`media/flags/${cc.toLowerCase()}.svg must not be in the site`); });
 ['deployments', 'events', 'countries', 'brief'].forEach(n => D[n].forEach((r, i) => { if (EXCLUDED_COUNTRIES.has(r.country) || EXCLUDED_COUNTRIES.has(r.code)) errors.push(`${n}[${i}]: excluded country`); }));
 
 if (errors.length) { console.error(`Data check failed (${errors.length} problem${errors.length > 1 ? 's' : ''}):\n- ` + errors.join('\n- ')); process.exit(1); }
-console.log(`Data check passed: ${D.companies.length} companies, ${D.deployments.length} deployments, ${D.events.length} events, ${D.countries.length} countries, ${D.brief.length} brief items, ${stories.length} research report${stories.length === 1 ? '' : 's'}.`);
+console.log(`Data check passed: ${D.companies.length} companies, ${D.deployments.length} deployments, ${D.events.length} events, ${D.countries.length} countries, ${D.brief.length} brief items, ${stories.length} research report${stories.length === 1 ? '' : 's'}, ${Object.keys(policy).length} policy dossiers.`);
