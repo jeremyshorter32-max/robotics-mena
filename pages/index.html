@@ -35,6 +35,12 @@ html,body{margin:0;padding:0;background:#F7F5EF}
 [data-rm] button,[data-rm] input,[data-rm] select,[data-rm] textarea{font:inherit;color:inherit}
 [data-rm] ::placeholder{color:var(--fg-subtle);opacity:1}
 [data-rail]::-webkit-scrollbar{display:none}
+[data-rm]{--hero-img-w:67%;--hero-img-pos:50% 30%;--hero-fade-a:36%;--hero-fade-b:46%;--hero-fade-c:62%}
+[data-theme=light]{--hero-img-filter:saturate(.92) contrast(1.03);--hero-tint:rgba(22,103,115,.10)}
+[data-theme=dark]{--hero-img-filter:saturate(.85) brightness(.82) contrast(1.05);--hero-tint:rgba(18,33,43,.45)}
+@media (max-width:1180px){[data-rm][dir]{--hero-img-w:76%;--hero-fade-a:28%;--hero-fade-b:40%}}
+@media (max-width:900px){[data-rm][dir]{--hero-img-w:100%;--hero-img-pos:62% 40%;--hero-fade-a:44%;--hero-fade-b:58%;--hero-fade-c:80%}}
+@keyframes rm-hero-kb{from{transform:scale(1.08)}to{transform:scale(1)}}
 @keyframes rm-live{0%,100%{opacity:1}50%{opacity:.35}}
 @media (prefers-reduced-motion:reduce){[data-rm] *{transition:none!important;animation:none!important}}
 </style>
@@ -61,10 +67,13 @@ html,body{margin:0;padding:0;background:#F7F5EF}
 </nav>
 
 <header id="top" data-screen-label="01 Hero" style="position:relative;overflow:hidden;border-bottom:1px solid var(--line)">
-  <div style="position:absolute;inset:0">
-    <x-import component-from-global-scope="mena-map" from="./mena-map.js" mode="hero" dir="{{ dir }}" pins="{{ heroPins }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import>
+  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;background:var(--bg-raised)">
+    <img src="/media/brand/hero-robot-arm.jpg" srcset="/media/brand/hero-robot-arm-960.jpg 900w, /media/brand/hero-robot-arm.jpg 1600w" sizes="100vw" alt="" fetchpriority="high" decoding="async" style="position:absolute;top:0;bottom:0;inset-inline-end:0;width:var(--hero-img-w);height:100%;object-fit:cover;object-position:var(--hero-img-pos);filter:var(--hero-img-filter);animation:rm-hero-kb 22s ease-out both">
+    <div style="position:absolute;inset:0;background:var(--hero-tint);mix-blend-mode:multiply"></div>
+    <div style="position:absolute;inset:0;background-image:radial-gradient(var(--dot) 1px,transparent 1.2px);background-size:22px 22px"></div>
   </div>
-  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(var(--fade-dir), var(--bg) 0%, var(--bg) 32%, transparent 72%)"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(var(--fade-dir), var(--bg) 0%, var(--bg) var(--hero-fade-a), color-mix(in srgb, var(--bg) 45%, transparent) var(--hero-fade-b), transparent var(--hero-fade-c))"></div>
+  <div aria-hidden="true" style="position:absolute;inset-inline:0;bottom:0;height:120px;pointer-events:none;background:linear-gradient(to top,var(--bg),transparent)"></div>
   
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:var(--hero-pad) var(--gutter) 0;display:grid;grid-template-columns:var(--grid);column-gap:var(--gap)">
     <div style="grid-column:1 / -1;max-width:780px;display:flex;flex-direction:column;gap:32px">

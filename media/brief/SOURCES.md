@@ -21,3 +21,9 @@ Most are editorial photos owned by the publisher or a news agency: get permissio
 | taurob-inspector-taweelah.jpg | ADNOC, via JPT | https://jpt.spe.org/adnoc-touts-robotic-deployment-with-more-to-come |
 | adnocls-remote-landing-craft.jpg | ADNOC L&S (rendering), via OE Digital | https://www.oedigital.com/news/532459-adnoc-l-s-presents-uae-s-first-autonomous-offshore-vessels |
 | adipec-2026-adnoc-humanoid.jpg | Erik Arazas / Emarat Al Youm (white side bars trimmed) | https://www.emaratalyoum.com/business/local/2026-11-03-1.2098674 |
+
+## Home page hero (`media/brand/`)
+
+| File | Credit | Source |
+|---|---|---|
+| hero-robot-arm.jpg, hero-robot-arm-960.jpg | Supplied by the site owner | Cropped around the robot arm |
