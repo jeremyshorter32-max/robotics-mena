@@ -538,7 +538,9 @@ class Component extends DCLogic {
         srcUrl, hasSrcUrl: !!srcUrl, openSrc: d.open,
         added: o.added && tab !== 'companies' ? d.added + ' ' + fdate(o.added) : '', hasAdded: !!(o.added && tab !== 'companies'),
         links: extra.filter(Boolean), hasLinks: extra.filter(Boolean).length > 0,
-        relTitle: tab === 'events' ? '' : d.related[tab], rel: rel.slice(0, tab === 'countries' ? 24 : 8), hasRel: rel.length > 0, mena: menaBox || {}, hasMena: !!menaBox, pic: pic || {}, hasPic: !!pic
+        relTitle: tab === 'events' ? '' : d.related[tab], rel: rel.slice(0, tab === 'countries' ? 24 : 8), hasRel: rel.length > 0, mena: menaBox || {}, hasMena: !!menaBox, pic: pic || {}, hasPic: !!pic,
+        ...(pic && !narrow ? { maxW: '1080px', maxH: 'calc(100vh - 6vh - 16px)', flexDir: 'row', bodyOv: 'auto', picOrder: '2', picFlex: '0 0 42%', picAspect: 'auto', picMaxH: 'none', picMinH: '100%', picW: 'auto', picBb: '0', picBs: '1px solid var(--line)', picFit: 'contain', picBlur: 'block' }
+          : { maxW: pic ? '640px' : '640px', maxH: 'none', flexDir: 'column', bodyOv: 'visible', picOrder: '0', picFlex: 'none', picAspect: '16 / 9', picMaxH: narrow ? '28vh' : '280px', picMinH: '0', picW: '100%', picBb: '1px solid var(--line)', picBs: '0', picFit: 'cover', picBlur: 'none' })
       };
     }
     const cols = d.cols[tab];
