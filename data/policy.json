@@ -453,7 +453,265 @@
     "2024",
     "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/Ai/uae-strategy-for-artificial-intelligence"
    ]
-  ]
+  ],
+  "regs": [
+   {
+    "area": "av",
+    "title": {
+     "en": "Dubai Law No. 9 of 2023 on autonomous vehicles and its Executive Regulations",
+     "ar": "قانون دبي رقم 9 لسنة 2023 بشأن المركبات ذاتية القيادة ولائحته التنفيذية"
+    },
+    "body": {
+     "en": "Roads and Transport Authority (RTA), Dubai",
+     "ar": "هيئة الطرق والمواصلات في دبي"
+    },
+    "year": 2023,
+    "status": "in_force",
+    "summary": {
+     "en": "Requires an RTA licence for any AV activity and makes the operator liable, including in free zones and the DIFC. The 2025 Executive Regulations (Administrative Resolution 939) set six vehicle categories, require local operating tests and impose record-keeping and remote-takeover duties on operators.",
+     "ar": "يشترط ترخيصاً من الهيئة لأي نشاط يستخدم المركبات ذاتية القيادة ويحمّل المشغل المسؤولية المدنية، بما في ذلك المناطق الحرة ومركز دبي المالي العالمي. وتحدد اللائحة التنفيذية الصادرة في 2025 (القرار الإداري رقم 939) ست فئات للمركبات، وتشترط اختبارات تشغيل محلية، وتفرض على المشغلين حفظ السجلات واستعادة التحكم بالمركبة عند الحاجة."
+    },
+    "url": "https://www.bracewell.com/resources/driverless-in-the-uae-two-years-on-from-roads-to-waterways-and-beyond/",
+    "source": "Bracewell",
+    "date": "2026-08-11"
+   },
+   {
+    "area": "av",
+    "title": {
+     "en": "Federal Cabinet resolution regulating the use of autonomous vehicles",
+     "ar": "قرار مجلس الوزراء الاتحادي بشأن تنظيم استخدام المركبات ذاتية القيادة"
+    },
+    "body": {
+     "en": "UAE Cabinet (under Federal Decree-Law No. 14 of 2024 on traffic)",
+     "ar": "مجلس الوزراء الاتحادي (بموجب المرسوم بقانون اتحادي رقم 14 لسنة 2024 بشأن السير والمرور)"
+    },
+    "year": 2026,
+    "status": "announced",
+    "summary": {
+     "en": "Approved on 2 Sept 2026, it sets nationwide rules for inspecting, registering, licensing and testing self-driving vehicles, and defines the duties of agents, operators, passengers and federal and local authorities. The full text and effective date had not been published at the time of writing.",
+     "ar": "اعتُمد في 2 سبتمبر 2026، ويضع قواعد موحدة على مستوى الدولة لفحص المركبات ذاتية القيادة وتسجيلها وترخيصها واختبارها، ويحدد التزامات الوكلاء والمشغلين والركاب والجهات الاتحادية والمحلية. ولم يُنشر نصه الكامل ولا موعد نفاذه حتى وقت الإعداد."
+    },
+    "url": "https://www.khaleejtimes.com/uae/transport/uae-approves-federal-law-for-self-driving-cars-sheikh-mohammed-announces",
+    "source": "Khaleej Times",
+    "date": "2026-09-02"
+   },
+   {
+    "area": "av",
+    "title": {
+     "en": "Abu Dhabi commercial permits for fully driverless Level 4 vehicles",
+     "ar": "تصاريح أبوظبي التجارية لمركبات المستوى الرابع دون سائق"
+    },
+    "body": {
+     "en": "Integrated Transport Centre (Abu Dhabi Mobility), under the Smart and Autonomous Systems Council",
+     "ar": "مركز النقل المتكامل (أبوظبي للتنقل) بإشراف مجلس الأنظمة الذكية وذاتية التشغيل"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "In Nov 2025, Abu Dhabi issued MENA's first permits for commercial driverless operation with no safety operator on board, to WeRide with Uber and to AutoGo–K2. Permits follow local performance testing, and the regulator monitors fleets in real time through a digital platform.",
+     "ar": "أصدرت أبوظبي في نوفمبر 2025 أول تصاريح في المنطقة للتشغيل التجاري دون سائق ودون مشرف سلامة على المتن، لشركة وي رايد مع أوبر ولشركة أوتوغو–K2. وتُمنح التصاريح بعد اختبارات أداء محلية، ويراقب المركز الأساطيل لحظياً عبر منصة رقمية."
+    },
+    "url": "https://www.mediaoffice.abudhabi/en/transport/under-supervision-of-smart-and-autonomous-systems-council-integrated-transport-centre-abu-dhabi-mobility-announces-commercial-operation-of-fully-autonomous-vehicles-in-emirate-a-1st-in-mena-region/",
+    "source": "Abu Dhabi Media Office",
+    "date": "2025-11-13"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "GCAA temporary suspension of drone operations (Safety Decision 2026-03)",
+     "ar": "التعليق المؤقت لتشغيل الطائرات بدون طيار (قرار السلامة 2026-03)"
+    },
+    "body": {
+     "en": "General Civil Aviation Authority (GCAA)",
+     "ar": "الهيئة العامة للطيران المدني"
+    },
+    "year": 2026,
+    "status": "suspended",
+    "summary": {
+     "en": "Issued on 28 Feb 2026 during the regional conflict, it suspended all commercial and recreational drone authorisations nationwide. Issue 03 (27 Apr 2026) exempted specialised operations and allows written GCAA exemptions. No official cancellation was found, though commercial drone delivery resumed in Dubai in Sept 2026.",
+     "ar": "صدر في 28 فبراير 2026 خلال النزاع الإقليمي، وعلّق جميع تصاريح تشغيل الطائرات بدون طيار التجارية والترفيهية في الدولة. واستثنى الإصدار الثالث (27 أبريل 2026) العمليات المتخصصة وأجاز استثناءات خطية من الهيئة. ولم نجد إلغاءً رسمياً للقرار، لكن التوصيل التجاري بالطائرات بدون طيار استؤنف في دبي في سبتمبر 2026."
+    },
+    "url": "https://www.gcaa.gov.ae/en/epublication/EPublications/Safety%20Decisions/2026/2035-SAFETY%20DECISION%202026-03%20-%20TEMPORARY%20SUSPENSION%20OF%20UNMANNED%20AIRCRAFT%20SYSTEMS%20DRONES%20LIGHT%20SPORT%20AIRCRAFT%20AND%20BALLOON%20-%20ISSUE%2003.pdf",
+    "source": "GCAA",
+    "date": "2026-04-27"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "Dubai BVLOS drone delivery approvals (Keeta Drone)",
+     "ar": "موافقات دبي لتوصيل الطلبات بالطائرات بدون طيار خارج مدى الرؤية (كيتا درون)"
+    },
+    "body": {
+     "en": "Dubai Civil Aviation Authority (DCAA)",
+     "ar": "هيئة دبي للطيران المدني"
+    },
+    "year": 2024,
+    "status": "in_force",
+    "summary": {
+     "en": "The DCAA licensed Keeta Drone for commercial BVLOS delivery in Dubai Silicon Oasis in Dec 2024. After the 2026 pause, it issued fresh approvals under a revised framework that requires cleared routes, and deliveries resumed in Sept 2026, making Dubai the main live drone-delivery market in the UAE.",
+     "ar": "منحت الهيئة كيتا درون ترخيصاً تجارياً للتوصيل خارج مدى الرؤية في واحة دبي للسيليكون في ديسمبر 2024. وبعد التوقف في 2026 أصدرت موافقات جديدة وفق إطار منقّح يشترط اعتماد المسارات، فاستؤنف التوصيل في سبتمبر 2026، لتبقى دبي السوق الرئيسية العاملة لتوصيل الطلبات بالطائرات بدون طيار في الدولة."
+    },
+    "url": "https://www.zawya.com/en/press-release/companies-news/keeta-drone-resumes-drone-delivery-operations-in-dubai-475216",
+    "source": "Zawya (Keeta Drone press release)",
+    "date": "2026-09-02"
+   },
+   {
+    "area": "sandbox",
+    "title": {
+     "en": "Dubai Mobility Labs at Dubai Silicon Oasis",
+     "ar": "مختبرات دبي للتنقل في واحة دبي للسيليكون"
+    },
+    "body": {
+     "en": "RTA with the Dubai Integrated Economic Zones Authority (DIEZ)",
+     "ar": "هيئة الطرق والمواصلات مع سلطة دبي للمناطق الاقتصادية المتكاملة"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "A dedicated proving ground for autonomous and future mobility, opened in Sept 2026. It combines test tracks and a multi-purpose area with public-road routes from Silicon Oasis to Al Qudra, covering 248 test scenarios, and supports validation and certification before deployment.",
+     "ar": "ساحة اختبار مخصصة للتنقل ذاتي القيادة وتقنيات التنقل المستقبلية، افتُتحت في سبتمبر 2026، تجمع بين مسارات اختبار ومنطقة متعددة الأغراض ومسارات على الطرق العامة من واحة السيليكون إلى القدرة، وتغطي 248 سيناريو اختبار، وتدعم التحقق والاعتماد قبل النشر."
+    },
+    "url": "https://mediaoffice.ae/en/news/2026/september/27-09/rta-unveils-region-smartest-autonomous-mobility-testing-ground-at-dubai-silicon-oasis",
+    "source": "Dubai Media Office",
+    "date": "2026-09-27"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Transform 4.0 and the Technology Transformation Programme",
+     "ar": "برنامج «التحول 4.0» وبرنامج التحول التكنولوجي"
+    },
+    "body": {
+     "en": "Ministry of Industry and Advanced Technology (MoIAT), with Emirates Development Bank (EDB)",
+     "ar": "وزارة الصناعة والتكنولوجيا المتقدمة مع مصرف الإمارات للتنمية"
+    },
+    "year": 2024,
+    "status": "in_force",
+    "summary": {
+     "en": "Under Operation 300bn, MoIAT runs a factory digital-maturity index (ITTI), a technology transformation incentive scheme and Transform 4.0. Transform 4.0 pairs 100 manufacturers with EDB financing at competitive rates to adopt Industry 4.0 technology, a direct funding route for buying automation.",
+     "ar": "ضمن «مشروع 300 مليار»، تدير الوزارة مؤشراً لقياس النضج الرقمي للمصانع (مؤشر التحول التكنولوجي الصناعي) وحزمة حوافز للتحول التكنولوجي وبرنامج «التحول 4.0»، الذي يربط 100 مصنّع بتمويل من مصرف الإمارات للتنمية بأسعار تنافسية لتبني تقنيات الثورة الصناعية الرابعة، وهو مسار تمويل مباشر لشراء حلول الأتمتة."
+    },
+    "url": "https://moiat.gov.ae/en/media-center/news/2024/06/10/miite-forum-transform-2024",
+    "source": "MoIAT",
+    "date": "2024-05-28"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "UAE Charter for the Development and Use of AI",
+     "ar": "ميثاق الإمارات لتطوير واستخدام الذكاء الاصطناعي"
+    },
+    "body": {
+     "en": "UAE AI Office (now within the Federal Authority for AI and Data)",
+     "ar": "مكتب الذكاء الاصطناعي (ضمن الهيئة الاتحادية للذكاء الاصطناعي والبيانات حالياً)"
+    },
+    "year": 2024,
+    "status": "in_force",
+    "summary": {
+     "en": "Twelve non-binding principles, including safety, human oversight, algorithmic fairness, privacy, transparency and accountability, that guide AI development under AI Strategy 2031. A new Federal Authority for AI and Data, announced in June 2026, is expected to take over AI and data regulation.",
+     "ar": "اثنا عشر مبدأً غير ملزم، منها السلامة والإشراف البشري وعدالة الخوارزميات والخصوصية والشفافية والمساءلة، توجّه تطوير الذكاء الاصطناعي ضمن استراتيجية 2031. ومن المتوقع أن تتولى الهيئة الاتحادية للذكاء الاصطناعي والبيانات، المعلن عنها في يونيو 2026، تنظيم الذكاء الاصطناعي والبيانات."
+    },
+    "url": "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/policies/Ai/The-UAE-Charter-for-the-Development-and-Use-of-Artificial-Intelligence",
+    "source": "UAE Government portal (u.ae)",
+    "date": "2026-07-03"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "Federal Personal Data Protection Law (Decree-Law No. 45 of 2021)",
+     "ar": "قانون حماية البيانات الشخصية الاتحادي (المرسوم بقانون رقم 45 لسنة 2021)"
+    },
+    "body": {
+     "en": "UAE Government (UAE Data Office, now the Federal Authority for AI and Data)",
+     "ar": "حكومة الإمارات (مكتب الإمارات للبيانات، ضمن الهيئة الاتحادية للذكاء الاصطناعي والبيانات حالياً)"
+    },
+    "year": 2021,
+    "status": "in_force",
+    "summary": {
+     "en": "The law has been in force since 2 Jan 2022 for onshore UAE, covering personal data captured by robots, cameras and sensors. Its Executive Regulations had still not been issued by mid-2026, so enforcement is limited, and the new Federal Authority for AI and Data is expected to finalise them.",
+     "ar": "القانون نافذ منذ 2 يناير 2022 خارج المناطق الحرة المالية، ويشمل البيانات الشخصية التي تلتقطها الروبوتات والكاميرات والمستشعرات. لكن لائحته التنفيذية لم تصدر حتى منتصف 2026، فبقي التطبيق محدوداً، ويُتوقع أن تتولى الهيئة الاتحادية للذكاء الاصطناعي والبيانات استكمالها."
+    },
+    "url": "https://www.morganlewis.com/pubs/2026/06/uae-establishes-federal-authority-for-artificial-intelligence-and-data",
+    "source": "Morgan Lewis",
+    "date": "2026-06-15"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "DIFC Regulation 10 on autonomous and semi-autonomous systems",
+     "ar": "اللائحة 10 في مركز دبي المالي العالمي بشأن الأنظمة ذاتية وشبه ذاتية التشغيل"
+    },
+    "body": {
+     "en": "DIFC Commissioner of Data Protection",
+     "ar": "مفوض حماية البيانات في مركز دبي المالي العالمي"
+    },
+    "year": 2023,
+    "status": "in_force",
+    "summary": {
+     "en": "Under DIFC Data Protection Law No. 5 of 2020, companies that deploy or supply autonomous systems processing personal data must assess and document risks and tell people the system is in use, with certification for high-risk commercial processing. It is the UAE's first binding rule aimed at autonomous systems.",
+     "ar": "بموجب قانون حماية البيانات رقم 5 لسنة 2020 في المركز، يجب على الجهات التي تنشر أو توفر أنظمة ذاتية التشغيل تعالج بيانات شخصية تقييم المخاطر وتوثيقها وإبلاغ الأفراد باستخدام هذه الأنظمة، مع اشتراط الاعتماد للمعالجة التجارية عالية المخاطر. وهي أول قاعدة ملزمة في الدولة تستهدف الأنظمة ذاتية التشغيل."
+    },
+    "url": "https://www.clydeco.com/en/insights/2026/01/regulation-10-of-the-difc-data-protection-law",
+    "source": "Clyde & Co",
+    "date": "2026-01-14"
+   }
+  ],
+  "score": {
+   "av_law": {
+    "v": 2,
+    "note": {
+     "en": "Dubai Law No. 9 of 2023 and its 2025 Executive Regulations license AV operation on public roads, Abu Dhabi issues driverless operating permits, and a federal Cabinet resolution was approved in Sept 2026.",
+     "ar": "يرخّص قانون دبي رقم 9 لسنة 2023 ولائحته التنفيذية الصادرة في 2025 تشغيل المركبات ذاتية القيادة على الطرق العامة، وتمنح أبوظبي تصاريح تشغيل دون سائق، واعتُمد قرار اتحادي من مجلس الوزراء في سبتمبر 2026."
+    },
+    "url": "https://www.bracewell.com/resources/driverless-in-the-uae-two-years-on-from-roads-to-waterways-and-beyond/",
+    "source": "Bracewell"
+   },
+   "robotaxi": {
+    "v": 2,
+    "note": {
+     "en": "Fully driverless commercial robotaxis with no safety operator run in Abu Dhabi (since Nov 2025) and in Dubai through Uber with WeRide and Apollo Go (2026).",
+     "ar": "تعمل سيارات أجرة ذاتية القيادة تجارياً دون سائق ودون مشرف سلامة في أبوظبي منذ نوفمبر 2025، وفي دبي عبر أوبر مع وي رايد وأبولو غو منذ 2026."
+    },
+    "url": "https://mediaoffice.ae/en/news/2026/august/19-08/dubai-accelerates-autonomous-mobility-as-robotaxi-hits-4-million-km",
+    "source": "Dubai Media Office"
+   },
+   "drones": {
+    "v": 2,
+    "note": {
+     "en": "The DCAA has issued BVLOS delivery approvals, and Keeta resumed commercial drone delivery in Dubai in Sept 2026 after the nationwide suspension declared in Feb 2026.",
+     "ar": "أصدرت هيئة دبي للطيران المدني موافقات للتوصيل خارج مدى الرؤية، واستأنفت كيتا التوصيل التجاري بالطائرات بدون طيار في دبي في سبتمبر 2026 بعد التعليق الشامل المعلن في فبراير 2026."
+    },
+    "url": "https://www.zawya.com/en/press-release/companies-news/keeta-drone-resumes-drone-delivery-operations-in-dubai-475216",
+    "source": "Zawya (Keeta Drone press release)"
+   },
+   "sandbox": {
+    "v": 2,
+    "note": {
+     "en": "Dubai Mobility Labs, a dedicated AV proving ground with public-road test routes, opened in Sept 2026, and Abu Dhabi runs SAVI test zones under the Smart and Autonomous Systems Council.",
+     "ar": "افتُتحت مختبرات دبي للتنقل في سبتمبر 2026، وهي ساحة اختبار مخصصة للمركبات ذاتية القيادة تضم مسارات اختبار على الطرق العامة، وتدير أبوظبي مناطق اختبار سافي بإشراف مجلس الأنظمة الذكية وذاتية التشغيل."
+    },
+    "url": "https://mediaoffice.ae/en/news/2026/september/27-09/rta-unveils-region-smartest-autonomous-mobility-testing-ground-at-dubai-silicon-oasis",
+    "source": "Dubai Media Office"
+   },
+   "incentives": {
+    "v": 2,
+    "note": {
+     "en": "MoIAT's Transform 4.0 offers manufacturers dedicated Emirates Development Bank financing to adopt Industry 4.0 technology, alongside a technology transformation incentive scheme.",
+     "ar": "يقدم برنامج «التحول 4.0» التابع لوزارة الصناعة والتكنولوجيا المتقدمة للمصنّعين تمويلاً مخصصاً من مصرف الإمارات للتنمية لتبني تقنيات الثورة الصناعية الرابعة، إلى جانب حزمة حوافز للتحول التكنولوجي."
+    },
+    "url": "https://moiat.gov.ae/en/media-center/news/2024/06/10/miite-forum-transform-2024",
+    "source": "MoIAT"
+   },
+   "ai_rules": {
+    "v": 2,
+    "note": {
+     "en": "The UAE AI Charter (2024) is in force as a non-binding national framework, and the federal PDPL, DIFC and ADGM data laws are in force, though the federal PDPL still lacks Executive Regulations.",
+     "ar": "ميثاق الإمارات للذكاء الاصطناعي (2024) معمول به إطاراً وطنياً غير ملزم، وقانون حماية البيانات الاتحادي وقوانين البيانات في مركز دبي المالي العالمي وسوق أبوظبي العالمي نافذة، وإن كان القانون الاتحادي ما زال دون لائحة تنفيذية."
+    },
+    "url": "https://www.morganlewis.com/pubs/2026/06/uae-establishes-federal-authority-for-artificial-intelligence-and-data",
+    "source": "Morgan Lewis"
+   }
+  }
  },
  "SA": {
   "sum": [
@@ -892,7 +1150,265 @@
     "2020",
     "https://sdaia.gov.sa/en/SDAIA/SdaiaStrategies/Pages/NationalStrategyForDataAndAI.aspx"
    ]
-  ]
+  ],
+  "regs": [
+   {
+    "area": "av",
+    "title": {
+     "en": "Technical Regulation for Autonomous Vehicles",
+     "ar": "اللائحة الفنية للمركبات ذاتية القيادة"
+    },
+    "body": {
+     "en": "Saudi Standards, Metrology and Quality Organization (SASO)",
+     "ar": "الهيئة السعودية للمواصفات والمقاييس والجودة"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "Sets conformity, testing and safety requirements for Level 4 and 5 passenger and goods vehicles, and obligations for manufacturers, importers and distributors. Published in the Official Gazette on 31 Oct 2025 and applicable within 180 days, so in force since about April 2026.",
+     "ar": "تحدد متطلبات المطابقة والاختبار والسلامة لمركبات الركاب والبضائع من المستويين الرابع والخامس، والتزامات المصنّعين والمستوردين والموزعين. نُشرت في الجريدة الرسمية في 31 أكتوبر 2025 وتُطبق خلال 180 يوماً، فهي نافذة منذ نحو أبريل 2026."
+    },
+    "url": "https://www.saso.gov.sa/en/Laws-And-Regulations/Technical_regulations/Documents/Technical-Regulation-Autonomous-Vehicles.pdf",
+    "source": "SASO",
+    "date": "2025-10-31"
+   },
+   {
+    "area": "av",
+    "title": {
+     "en": "Traffic Law Executive Regulations amended for autonomous vehicles",
+     "ar": "تعديل اللائحة التنفيذية لنظام المرور لتشمل المركبات ذاتية القيادة"
+    },
+    "body": {
+     "en": "Ministry of Interior",
+     "ar": "وزارة الداخلية"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "Since 12 June 2026, fully autonomous vehicles are exempt from driver-licence rules, and the owner carries the driver's traffic duties and accident liability. Deregistering an AV now needs prior approval, so operators must plan ownership and liability structures.",
+     "ar": "منذ 12 يونيو 2026 لم تعد قواعد رخصة القيادة تنطبق على المركبات ذاتية القيادة بالكامل، ويتحمل المالك التزامات السائق المرورية ومسؤولية الحوادث. ويتطلب شطب تسجيل المركبة ذاتية القيادة موافقة مسبقة، ما يلزم المشغلين بالتخطيط لهياكل الملكية والمسؤولية."
+    },
+    "url": "https://www.addleshawgoddard.com/en/insights/insights-briefings/2026/transport/saudi-arabias-latest-av-amendments-allocating-responsibility-when-vehicles-drive-themselves/",
+    "source": "Addleshaw Goddard",
+    "date": "2026-06-25"
+   },
+   {
+    "area": "av",
+    "title": {
+     "en": "Executive Regulation for passenger transport by autonomous vehicles",
+     "ar": "اللائحة التنفيذية لنشاط نقل الركاب بالمركبات ذاتية القيادة"
+    },
+    "body": {
+     "en": "Transport General Authority (TGA)",
+     "ar": "الهيئة العامة للنقل"
+    },
+    "year": 2026,
+    "status": "announced",
+    "summary": {
+     "en": "Approved in November 2026 and in force from 6 January 2027. It sets licensing, operating, safety, insurance, cyber-risk and supervision rules for companies running robotaxi and other passenger AV services, replacing case-by-case sandbox permits with a full licensing regime.",
+     "ar": "اعتُمدت في نوفمبر 2026 وتدخل حيز النفاذ في 6 يناير 2027، وتحدد متطلبات الترخيص والتشغيل والسلامة والتأمين والمخاطر السيبرانية والرقابة للشركات التي تقدم خدمات سيارات الأجرة ذاتية القيادة وغيرها من خدمات نقل الركاب، لتحل محل التصاريح التجريبية الممنوحة لكل حالة على حدة نظاماً متكاملاً للترخيص."
+    },
+    "url": "https://www.albiladpress.com/news/2026/6598/finance/1029871.html",
+    "source": "Al Bilad (Al Arabiya.net, citing SPA)",
+    "date": "2026-11-06"
+   },
+   {
+    "area": "sandbox",
+    "title": {
+     "en": "TGA Regulatory Sandbox for autonomous vehicle piloting",
+     "ar": "البيئة التنظيمية التجريبية للمركبات ذاتية القيادة"
+    },
+    "body": {
+     "en": "Transport General Authority (TGA)",
+     "ar": "الهيئة العامة للنقل"
+    },
+    "year": 2023,
+    "status": "in_force",
+    "summary": {
+     "en": "Until the 2027 rules take effect, this sandbox is the only route to operate AVs on public roads, including pilots. Vetted operators test robotaxis, shuttles and delivery robots in approved geofenced zones under real-time TGA monitoring, and foreign firms may join case by case without a local entity.",
+     "ar": "هذه البيئة التجريبية هي المسار الوحيد لتشغيل المركبات ذاتية القيادة على الطرق العامة، حتى في مرحلة التجربة، إلى أن تدخل قواعد 2027 حيز النفاذ. ويختبر فيها مشغلون مؤهلون سيارات الأجرة والحافلات الصغيرة وروبوتات التوصيل ذاتية القيادة ضمن نطاقات جغرافية معتمدة وتحت رقابة لحظية من الهيئة، ويمكن للشركات الأجنبية المشاركة دون كيان محلي وفق كل حالة."
+    },
+    "url": "https://www.tamimi.com/law-update-articles/driving-into-the-future-regulatory-updates-on-avs-in-the-kingdom-of-saudi-arabia/",
+    "source": "Al Tamimi & Company",
+    "date": "2025-12-03"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "First drone delivery permit for medical logistics at the Holy Sites",
+     "ar": "أول تصريح لتوصيل الأدوية بالطائرات بدون طيار في المشاعر المقدسة"
+    },
+    "body": {
+     "en": "General Authority of Civil Aviation (GACA)",
+     "ar": "الهيئة العامة للطيران المدني"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "GACA gave Terra Drone Arabia the Kingdom's first operational permit for drone delivery of medicines and medical logistics in Makkah's Holy Sites during Hajj 2026, following trials the previous season. It is the first delivery approval issued under GACA's drone rules, though limited in place and season.",
+     "ar": "منحت الهيئة شركة تيرا درون العربية أول تصريح تشغيلي في المملكة لتوصيل الأدوية والإمدادات الطبية بالطائرات بدون طيار في المشاعر المقدسة بمكة المكرمة خلال حج 2026، بعد تجارب في الموسم السابق. وهو أول تصريح توصيل يصدر بموجب أنظمة الهيئة للطائرات بدون طيار، وإن كان محدوداً بالمكان والموسم."
+    },
+    "url": "https://www.arabnews.pk/node/2644896",
+    "source": "Arab News (SPA)",
+    "date": "2026-05-25"
+   },
+   {
+    "area": "robot",
+    "title": {
+     "en": "TGA sandbox licence for autonomous delivery robots",
+     "ar": "ترخيص البيئة التجريبية لروبوتات التوصيل ذاتية القيادة"
+    },
+    "body": {
+     "en": "Transport General Authority (TGA)",
+     "ar": "الهيئة العامة للنقل"
+    },
+    "year": 2025,
+    "status": "pilot",
+    "summary": {
+     "en": "Jahez and ROSHN run the Kingdom's first licensed sidewalk delivery robots, five units at ROSHN Front in Riyadh, under a TGA sandbox licence. There is no standalone rule for delivery or service robots, so the sandbox is the current entry route.",
+     "ar": "تشغّل جاهز وروشن أول روبوتات توصيل مرخّصة على الأرصفة في المملكة، وعددها خمسة في روشن فرونت بالرياض، بموجب ترخيص من البيئة التجريبية للهيئة. ولا توجد لائحة مستقلة لروبوتات التوصيل أو الخدمة، فالبيئة التجريبية هي مسار الدخول الحالي."
+    },
+    "url": "https://www.arabnews.com/node/2610175",
+    "source": "Arab News",
+    "date": "2025-08-05"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Tanafusiya Accelerator Track (Future Factories)",
+     "ar": "مسار مسرّع تنافسية (مصانع المستقبل)"
+    },
+    "body": {
+     "en": "Saudi Industrial Development Fund (SIDF), with the Ministry of Industry and Mineral Resources",
+     "ar": "صندوق التنمية الصناعية السعودي مع وزارة الصناعة والثروة المعدنية"
+    },
+    "year": 2022,
+    "status": "in_force",
+    "summary": {
+     "en": "Soft loans and incentives for existing factories that adopt automation, digitisation or energy-efficiency technology. Terms include up to 24 months' grace, tenors of at least 7 years and fast-track approval within 8 weeks. It is the clearest dedicated funding line for buying robots and automation in the Kingdom.",
+     "ar": "قروض ميسّرة وحوافز للمصانع القائمة التي تتبنى تقنيات الأتمتة أو الرقمنة أو كفاءة الطاقة، مع فترة سماح تصل إلى 24 شهراً ومدة سداد لا تقل عن 7 سنوات وموافقة سريعة خلال 8 أسابيع. وهو أوضح مسار تمويل مخصص لشراء الروبوتات وحلول الأتمتة في المملكة."
+    },
+    "url": "https://www.sidf.gov.sa/Initiatives/Industrial-Sector-Support-Initiative/Future-Factories",
+    "source": "SIDF",
+    "date": "2026-03-09"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "AI Ethics Principles",
+     "ar": "مبادئ أخلاقيات الذكاء الاصطناعي"
+    },
+    "body": {
+     "en": "Saudi Data and AI Authority (SDAIA)",
+     "ar": "الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا)"
+    },
+    "year": 2023,
+    "status": "in_force",
+    "summary": {
+     "en": "Seven principles, with controls, apply across the AI lifecycle, including fairness, privacy, reliability and safety, transparency and accountability, backed by a voluntary ethics-badge scheme. They are the Kingdom's current AI governance framework but are not legally binding.",
+     "ar": "سبعة مبادئ مع ضوابط تطبَّق طوال دورة حياة أنظمة الذكاء الاصطناعي، منها العدالة والخصوصية والموثوقية والسلامة والشفافية والمساءلة، ويدعمها نظام اختياري لشارات الأخلاقيات. وهي إطار حوكمة الذكاء الاصطناعي المعمول به حالياً في المملكة لكنها غير ملزمة قانوناً."
+    },
+    "url": "https://tamimi.com/news/ai-ethics-principles-version-2-0",
+    "source": "Al Tamimi & Company",
+    "date": "2023-10-23"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "Draft Responsible AI Policy",
+     "ar": "مشروع سياسة الذكاء الاصطناعي المسؤول"
+    },
+    "body": {
+     "en": "Saudi Data and AI Authority (SDAIA)",
+     "ar": "الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا)"
+    },
+    "year": 2026,
+    "status": "draft",
+    "summary": {
+     "en": "Would make AI governance binding. It sets four risk tiers and bans critical-risk systems. High-risk systems would need safety reports reviewed by SDAIA, annual third-party audits and human oversight, which matters for autonomous and physical-AI products. Consulted on in April–May 2026 and still a draft in November 2026.",
+     "ar": "تجعل حوكمة الذكاء الاصطناعي ملزمة، فتحدد أربعة مستويات للمخاطر وتحظر الأنظمة ذات المخاطر الحرجة. وتشترط للأنظمة عالية المخاطر تقارير سلامة تراجعها سدايا وتدقيقاً سنوياً من طرف ثالث وإشرافاً بشرياً، وهذا مهم للأنظمة ذاتية التشغيل ومنتجات الذكاء الاصطناعي المادي. طُرحت للاستطلاع العام في أبريل ومايو 2026 وما زالت مسودة حتى نوفمبر 2026."
+    },
+    "url": "https://www.cliffordchance.com/content/dam/cliffordchance/briefings/2026/11/responsible-ai-policy-shift-guiding-regime-supervisory-one.pdf",
+    "source": "AS&H Clifford Chance",
+    "date": "2026-11-04"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "Personal Data Protection Law (PDPL)",
+     "ar": "نظام حماية البيانات الشخصية"
+    },
+    "body": {
+     "en": "Saudi Data and AI Authority (SDAIA)",
+     "ar": "الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا)"
+    },
+    "year": 2023,
+    "status": "in_force",
+    "summary": {
+     "en": "In force since 14 Sept 2023 and fully enforceable since 14 Sept 2024, with implementing rules on cross-border transfers and data protection officers. It covers camera, sensor and telemetry data that robots and AVs collect about people.",
+     "ar": "نافذ منذ 14 سبتمبر 2023 وواجب التطبيق بالكامل منذ 14 سبتمبر 2024، مع لوائح تنفيذية لنقل البيانات خارج المملكة ولمسؤولي حماية البيانات. ويشمل بيانات الكاميرات والمستشعرات والقياس عن بُعد التي تجمعها الروبوتات والمركبات ذاتية القيادة عن الأشخاص."
+    },
+    "url": "https://www.clydeco.com/en/insights/2024/09/saudi-arabia-s-personal-data-protection-law-become",
+    "source": "Clyde & Co",
+    "date": "2024-09-10"
+   }
+  ],
+  "score": {
+   "av_law": {
+    "v": 1,
+    "note": {
+     "en": "AV technical rules (SASO, April 2026) and traffic-law amendments (June 2026) are in force, but road operation is still permitted only case by case through TGA sandbox permits; the passenger AV licensing regulation takes effect on 6 Jan 2027.",
+     "ar": "اللائحة الفنية للمركبات ذاتية القيادة (أبريل 2026) وتعديلات نظام المرور (يونيو 2026) نافذة، لكن التشغيل على الطرق ما زال يُسمح به لكل حالة على حدة عبر تصاريح البيئة التجريبية للهيئة العامة للنقل، ولا تدخل لائحة ترخيص نقل الركاب بالمركبات ذاتية القيادة حيز النفاذ إلا في 6 يناير 2027."
+    },
+    "url": "https://www.albiladpress.com/news/2026/6598/finance/1029871.html",
+    "source": "Al Bilad (Al Arabiya.net, citing SPA)"
+   },
+   "robotaxi": {
+    "v": 1,
+    "note": {
+     "en": "Uber and WeRide run paid robotaxi rides in Riyadh with safety drivers on board; no fully driverless passenger service had been confirmed by November 2026.",
+     "ar": "تقدم أوبر ووي رايد رحلات مدفوعة بسيارات الأجرة ذاتية القيادة في الرياض بوجود سائقي سلامة على متنها، ولم يتأكد حتى نوفمبر 2026 تشغيل أي خدمة ركاب دون سائق بالكامل."
+    },
+    "url": "https://www.automotiveworld.com/news/weride-and-uber-launch-robotaxi-operations-in-riyadh/",
+    "source": "Automotive World"
+   },
+   "drones": {
+    "v": 2,
+    "note": {
+     "en": "GACA has a commercial drone framework and in May 2026 issued its first delivery permit, to Terra Drone Arabia for medical logistics during Hajj; no Saudi drone-wide suspension was found despite 2026 regional attacks.",
+     "ar": "لدى الهيئة العامة للطيران المدني إطار للتشغيل التجاري للطائرات بدون طيار، وأصدرت في مايو 2026 أول تصريح توصيل لتيرا درون العربية للإمدادات الطبية خلال الحج، ولم نجد تعليقاً شاملاً لتشغيل الطائرات بدون طيار في المملكة رغم الهجمات الإقليمية في 2026."
+    },
+    "url": "https://www.arabnews.pk/node/2644896",
+    "source": "Arab News (SPA)"
+   },
+   "sandbox": {
+    "v": 2,
+    "note": {
+     "en": "The TGA runs a dedicated regulatory sandbox for autonomous vehicles and delivery robots on public roads in Riyadh; WeRide and Jahez have both graduated from it with permits.",
+     "ar": "تدير الهيئة العامة للنقل بيئة تنظيمية تجريبية مخصصة للمركبات ذاتية القيادة وروبوتات التوصيل على الطرق العامة في الرياض، وتخرّجت منها وي رايد وجاهز بتصاريح تشغيل."
+    },
+    "url": "https://www.tamimi.com/law-update-articles/driving-into-the-future-regulatory-updates-on-avs-in-the-kingdom-of-saudi-arabia/",
+    "source": "Al Tamimi & Company"
+   },
+   "incentives": {
+    "v": 2,
+    "note": {
+     "en": "SIDF's Tanafusiya Accelerator Track gives soft loans and incentives specifically for factory automation and digitisation, under the Future Factories programme.",
+     "ar": "يقدم مسار مسرّع تنافسية في صندوق التنمية الصناعية قروضاً ميسّرة وحوافز مخصصة لأتمتة المصانع ورقمنتها، ضمن برنامج مصانع المستقبل."
+    },
+    "url": "https://www.sidf.gov.sa/Initiatives/Industrial-Sector-Support-Initiative/Future-Factories",
+    "source": "SIDF"
+   },
+   "ai_rules": {
+    "v": 2,
+    "note": {
+     "en": "The PDPL has been fully enforceable since Sept 2024, and SDAIA's AI Ethics Principles are in force as the national AI framework, though they are non-binding; the binding Responsible AI Policy is still a draft.",
+     "ar": "نظام حماية البيانات الشخصية واجب التطبيق بالكامل منذ سبتمبر 2024، ومبادئ أخلاقيات الذكاء الاصطناعي الصادرة عن سدايا معمول بها إطاراً وطنياً للذكاء الاصطناعي وإن كانت غير ملزمة، أما سياسة الذكاء الاصطناعي المسؤول الملزمة فما زالت مسودة."
+    },
+    "url": "https://www.cliffordchance.com/content/dam/cliffordchance/briefings/2026/11/responsible-ai-policy-shift-guiding-regime-supervisory-one.pdf",
+    "source": "AS&H Clifford Chance"
+   }
+  }
  },
  "QA": {
   "sum": [
@@ -1295,7 +1811,265 @@
     "2024",
     "https://dig.watch/resource/qatars-digital-agenda-2030"
    ]
-  ]
+  ],
+  "regs": [
+   {
+    "area": "av",
+    "title": {
+     "en": "Autonomous Vehicles Strategy",
+     "ar": "استراتيجية المركبات ذاتية القيادة"
+    },
+    "body": {
+     "en": "Ministry of Transport",
+     "ar": "وزارة المواصلات"
+    },
+    "year": 2023,
+    "status": "in_force",
+    "summary": {
+     "en": "Sets a five-year plan to regulate how self-driving vehicles may be used in Qatar. No AV law has been issued yet, so deployments still run as trials approved by the ministry one by one.",
+     "ar": "تضع خطة خمسية لتنظيم شروط استخدام المركبات ذاتية القيادة في قطر. لم يصدر بعد قانون خاص بهذه المركبات، لذا ما زالت عمليات التشغيل تجري كتجارب توافق عليها الوزارة كلاً على حدة."
+    },
+    "url": "https://thepeninsulaqatar.com/article/18/09/2023/transport-ministry-launches-autonomous-vehicles-strategy",
+    "source": "The Peninsula",
+    "date": "2023-09-18"
+   },
+   {
+    "area": "av",
+    "title": {
+     "en": "Level 4 robotaxi operational trials (Mowasalat/Karwa with Pony.ai)",
+     "ar": "التجارب التشغيلية لسيارات الأجرة ذاتية القيادة من المستوى الرابع (مواصلات/كروة مع Pony.ai)"
+    },
+    "body": {
+     "en": "Ministry of Transport",
+     "ar": "وزارة المواصلات"
+    },
+    "year": 2025,
+    "status": "pilot",
+    "summary": {
+     "en": "Phase 1 logged 2,500 trial trips. In phase 2 the safety driver has been removed and the cars are monitored remotely on pre-approved routes. This is still a trial: no approval for a fully driverless commercial service was found.",
+     "ar": "سجّلت المرحلة الأولى 2,500 رحلة تجريبية. وفي المرحلة الثانية أُزيل سائق السلامة من المركبة، وباتت السيارات تُراقَب عن بُعد على مسارات معتمدة مسبقاً. ولا يزال المشروع تجريبياً، إذ لم نعثر على موافقة لتشغيل خدمة تجارية بلا سائق بالكامل."
+    },
+    "url": "https://www.thepeninsulaqatar.com/article/03/08/2026/qatar-advances-driverless-robotaxi-trials-after-achieving-94-success-rate",
+    "source": "The Peninsula",
+    "date": "2026-08-03"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "Law No. 10 of 2026 on Unmanned Aircraft",
+     "ar": "القانون رقم (10) لسنة 2026 بشأن الطائرات بدون طيار"
+    },
+    "body": {
+     "en": "Qatar Civil Aviation Authority",
+     "ar": "الهيئة العامة للطيران المدني"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "Every drone must be registered. Users fall into three categories, each with its own licence. Companies also need approval from the regulator of their sector, plus insurance against damage. The executive regulations that set the detailed procedures have not been issued yet.",
+     "ar": "يُلزم القانون بتسجيل جميع الطائرات بدون طيار، ويصنّف المستخدمين في ثلاث فئات لكل منها ترخيص خاص. وتحتاج الشركات أيضاً إلى موافقة الجهة المشرفة على قطاعها وإلى تأمين يغطي الأضرار. أما اللائحة التنفيذية التي تحدد الإجراءات التفصيلية فلم تصدر بعد."
+    },
+    "url": "https://thepeninsulaqatar.com/article/30/07/2026/civil-aviation-authority-explains-key-provisions-of-new-law-regulating-drones",
+    "source": "The Peninsula",
+    "date": "2026-07-30"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "Drone flights allowed in designated areas only",
+     "ar": "السماح بتشغيل الطائرات بدون طيار في مناطق محددة فقط"
+    },
+    "body": {
+     "en": "Ministry of Interior with the Civil Aviation Authority",
+     "ar": "وزارة الداخلية بالتنسيق مع الهيئة العامة للطيران المدني"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "Flights were banned for much of 2026. Since 29 September 2026 they are allowed again, but only in areas shown in the Metrash app and only from sunrise to 9am and from 2pm to sunset. We found no delivery or BVLOS approvals.",
+     "ar": "ظل تشغيل الطائرات بدون طيار محظوراً معظم عام 2026. ومنذ 29 سبتمبر 2026 عاد مسموحاً به، لكن فقط في المناطق المحددة في تطبيق مطراش، ومن شروق الشمس حتى 9 صباحاً ومن 2 ظهراً حتى الغروب. ولم نعثر على موافقات للتوصيل أو للطيران خارج مدى الرؤية."
+    },
+    "url": "https://www.qatar-tribune.com/article/256670/latest-news/qatar-permits-drone-operations-in-designated-areas",
+    "source": "Qatar Tribune",
+    "date": "2026-09-29"
+   },
+   {
+    "area": "sandbox",
+    "title": {
+     "en": "AI and XR Sandbox (TASMU Innovation Lab)",
+     "ar": "البيئة التجريبية للذكاء الاصطناعي والواقع الممتد (مختبر تسمو للابتكار)"
+    },
+    "body": {
+     "en": "Ministry of Communications & IT",
+     "ar": "وزارة الاتصالات وتكنولوجيا المعلومات"
+    },
+    "year": 2025,
+    "status": "pilot",
+    "summary": {
+     "en": "A controlled environment for piloting and evaluating emerging technologies. Its first cohort covered healthcare, compliance, procurement and smart-city mobility. It is a general innovation sandbox, not one built for robots or vehicles.",
+     "ar": "بيئة خاضعة للرقابة لتجريب التقنيات الناشئة وتقييمها. شملت دفعتها الأولى الرعاية الصحية والامتثال والمشتريات والتنقل في المدن الذكية. وهي بيئة ابتكار عامة، وليست مخصصة للروبوتات أو المركبات."
+    },
+    "url": "https://qna.org.qa/en/News-Area/News/2025-9/6/ministry-of-communications-and-information-technology-hosts-ai-and-xr-sandbox-open-demo-day",
+    "source": "Qatar News Agency",
+    "date": "2025-09-06"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Manarat Advanced Manufacturing Hub",
+     "ar": "مجمع التصنيع المتقدم \"منارات\""
+    },
+    "body": {
+     "en": "Qatar Development Bank, with the Ministry of Commerce & Industry and the Ministry of Finance’s C4IR",
+     "ar": "بنك قطر للتنمية بالشراكة مع وزارة التجارة والصناعة ومركز الثورة الصناعية الرابعة بوزارة المالية"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "Offers 16 ready-built factory units in the New Industrial Area to manufacturers adopting Industry 4.0 technology, with robotics named as a target sector. Tenants can apply for QDB financing of capital and operating costs, along with advisory and export support.",
+     "ar": "يوفر 16 وحدة مصنعية جاهزة في المنطقة الصناعية الجديدة للمصانع التي تتبنى تقنيات الثورة الصناعية الرابعة، والروبوتات من القطاعات المستهدفة. ويمكن للمنضمين التقدم بطلب تمويل من البنك لتغطية النفقات الرأسمالية والتشغيلية، إضافة إلى الاستشارات ودعم التصدير."
+    },
+    "url": "https://qna.org.qa/en/News-Area/News/2026-10/11/manarat-qatars-gateway-to-industry-40-smart-manufacturing",
+    "source": "Qatar News Agency",
+    "date": "2026-10-11"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Free zone and QSTP tax incentives",
+     "ar": "الحوافز الضريبية في المناطق الحرة وواحة قطر للعلوم والتكنولوجيا"
+    },
+    "body": {
+     "en": "Qatar Free Zones Authority; Qatar Science & Technology Park",
+     "ar": "هيئة المناطق الحرة؛ واحة قطر للعلوم والتكنولوجيا"
+    },
+    "year": 2018,
+    "status": "in_force",
+    "summary": {
+     "en": "Free zone companies get 100% foreign ownership and a 20-year tax holiday covering corporate tax and customs duties. R&D entities at QSTP can be fully exempt from Qatari tax.",
+     "ar": "تحصل الشركات في المناطق الحرة على تملّك أجنبي بنسبة 100% وإعفاء ضريبي لمدة 20 عاماً يشمل ضريبة الشركات والرسوم الجمركية. ويمكن إعفاء كيانات البحث والتطوير في الواحة إعفاءً كاملاً من الضريبة القطرية."
+    },
+    "url": "https://taxsummaries.pwc.com/qatar/corporate/tax-credits-and-incentives",
+    "source": "PwC Worldwide Tax Summaries",
+    "date": "2026-09-17"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "Law No. 13 of 2016 on Personal Data Privacy Protection",
+     "ar": "القانون رقم (13) لسنة 2016 بشأن حماية خصوصية البيانات الشخصية"
+    },
+    "body": {
+     "en": "National Cyber Security Agency (Personal Data Privacy Protection Department)",
+     "ar": "الوكالة الوطنية للأمن السيبراني (إدارة حماية خصوصية البيانات الشخصية)"
+    },
+    "year": 2016,
+    "status": "in_force",
+    "summary": {
+     "en": "Sets the rules for collecting and processing personal data. It applies to camera, sensor and user data gathered by robots and connected vehicles.",
+     "ar": "يحدد قواعد جمع البيانات الشخصية ومعالجتها، ويسري على بيانات الكاميرات وأجهزة الاستشعار والمستخدمين التي تجمعها الروبوتات والمركبات المتصلة."
+    },
+    "url": "https://www.thepeninsulaqatar.com/article/06/09/2026/ncsa-highlights-core-personal-data-privacy-protection-principles",
+    "source": "The Peninsula",
+    "date": "2026-09-06"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "Principles and Guidelines for Ethical Development and Deployment of AI",
+     "ar": "مبادئ وإرشادات التطوير والاستخدام الأخلاقي للذكاء الاصطناعي"
+    },
+    "body": {
+     "en": "Ministry of Communications & IT",
+     "ar": "وزارة الاتصالات وتكنولوجيا المعلومات"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "National guidance for developers and users of AI, covering transparency, privacy, data protection and risk reduction. It is guidance, not a binding law.",
+     "ar": "إرشادات وطنية لمطوري الذكاء الاصطناعي ومستخدميه، تغطي الشفافية والخصوصية وحماية البيانات والحد من المخاطر. وهي إرشادات وليست قانوناً ملزماً."
+    },
+    "url": "https://qna.org.qa/en/News-Area/News/2025-5/25/mcit-outlines-efforts-to-establish-regulatory-ethical-frameworks-for-ai-use-at-doha-conference",
+    "source": "Qatar News Agency",
+    "date": "2025-05-25"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "Artificial Intelligence Guideline for QCB-licensed entities",
+     "ar": "التعليمات الإرشادية للذكاء الاصطناعي للجهات المرخصة من مصرف قطر المركزي"
+    },
+    "body": {
+     "en": "Qatar Central Bank",
+     "ar": "مصرف قطر المركزي"
+    },
+    "year": 2024,
+    "status": "in_force",
+    "summary": {
+     "en": "Binding on banks and other QCB-licensed firms: they need an AI strategy, risk assessments and disclosures, and QCB approval before launching new AI systems. It matters to vendors selling AI or automation into finance.",
+     "ar": "ملزمة للبنوك وغيرها من الجهات المرخصة من المصرف: عليها وضع استراتيجية للذكاء الاصطناعي وإجراء تقييمات للمخاطر والإفصاح، والحصول على موافقة المصرف قبل إطلاق أنظمة جديدة. وتهم الموردين الذين يبيعون حلول الذكاء الاصطناعي أو الأتمتة للقطاع المالي."
+    },
+    "url": "https://pinsentmasons.com/out-law/news/qatar-central-bank-guidelines-ethical--ai-financial-sector",
+    "source": "Pinsent Masons (Out-Law)",
+    "date": "2024-09-26"
+   }
+  ],
+  "score": {
+   "av_law": {
+    "v": 1,
+    "note": {
+     "en": "No AV law has been issued; self-driving vehicles run only as Ministry of Transport trials on approved routes under the 2023 strategy.",
+     "ar": "لم يصدر قانون للمركبات ذاتية القيادة، وتعمل هذه المركبات فقط ضمن تجارب لوزارة المواصلات على مسارات معتمدة وفق استراتيجية 2023."
+    },
+    "url": "https://www.thepeninsulaqatar.com/article/03/08/2026/qatar-advances-driverless-robotaxi-trials-after-achieving-94-success-rate",
+    "source": "The Peninsula"
+   },
+   "robotaxi": {
+    "v": 1,
+    "note": {
+     "en": "Robotaxis now run with no safety driver on board, monitored remotely, but this is still phase 2 of a trial, not an approved commercial driverless service.",
+     "ar": "تعمل سيارات الأجرة الروبوتية حالياً دون سائق سلامة على متنها وتحت مراقبة عن بُعد، لكنها ما زالت في المرحلة الثانية من التجربة، وليست خدمة تجارية معتمدة بلا سائق."
+    },
+    "url": "https://www.thepeninsulaqatar.com/article/03/08/2026/qatar-advances-driverless-robotaxi-trials-after-achieving-94-success-rate",
+    "source": "The Peninsula"
+   },
+   "drones": {
+    "v": 1,
+    "note": {
+     "en": "Law 10/2026 sets up registration and licensing, but its executive regulations are pending, flights are limited to designated areas after a ban, and no delivery or BVLOS approvals were found.",
+     "ar": "ينظم القانون رقم 10 لسنة 2026 التسجيل والترخيص، لكن لائحته التنفيذية لم تصدر بعد، والطيران مقصور على مناطق محددة بعد فترة حظر، ولم نعثر على موافقات للتوصيل أو للطيران خارج مدى الرؤية."
+    },
+    "url": "https://www.qatar-tribune.com/article/256670/latest-news/qatar-permits-drone-operations-in-designated-areas",
+    "source": "Qatar Tribune"
+   },
+   "sandbox": {
+    "v": 1,
+    "note": {
+     "en": "MCIT runs a general AI and XR sandbox; there is no dedicated sandbox for autonomous systems, and the national sandbox policy is still a draft.",
+     "ar": "تدير وزارة الاتصالات بيئة تجريبية عامة للذكاء الاصطناعي والواقع الممتد، ولا توجد بيئة مخصصة للأنظمة ذاتية التشغيل، ولا تزال السياسة الوطنية للبيئات التجريبية مسودة."
+    },
+    "url": "https://qna.org.qa/en/News-Area/News/2025-9/6/ministry-of-communications-and-information-technology-hosts-ai-and-xr-sandbox-open-demo-day",
+    "source": "Qatar News Agency"
+   },
+   "incentives": {
+    "v": 2,
+    "note": {
+     "en": "QDB’s Manarat hub, open for applications since September 2026, is dedicated to Industry 4.0 adoption, targets robotics and comes with QDB financing.",
+     "ar": "مجمع \"منارات\" التابع لبنك قطر للتنمية، المفتوح للطلبات منذ سبتمبر 2026، مخصص لتبني تقنيات الصناعة 4.0، ويستهدف الروبوتات ويقترن بتمويل من البنك."
+    },
+    "url": "https://qna.org.qa/en/News-Area/News/2026-10/11/manarat-qatars-gateway-to-industry-40-smart-manufacturing",
+    "source": "Qatar News Agency"
+   },
+   "ai_rules": {
+    "v": 2,
+    "note": {
+     "en": "Qatar has a data protection law in force (Law 13/2016), MCIT’s national AI ethics guidelines, and a binding QCB AI guideline for the financial sector.",
+     "ar": "لدى قطر قانون نافذ لحماية البيانات (القانون 13 لسنة 2016)، وإرشادات وطنية لأخلاقيات الذكاء الاصطناعي من وزارة الاتصالات، وتعليمات ملزمة من مصرف قطر المركزي للقطاع المالي."
+    },
+    "url": "https://pinsentmasons.com/out-law/news/qatar-central-bank-guidelines-ethical--ai-financial-sector",
+    "source": "Pinsent Masons (Out-Law)"
+   }
+  }
  },
  "EG": {
   "sum": [
@@ -1567,7 +2341,245 @@
     "2026",
     "https://dailynewsegypt.com/2026/10/24/egypt-targets-12-5-million-feddans-of-farmland-annual-car-production-of-100k-madbouly/"
    ]
-  ]
+  ],
+  "regs": [
+   {
+    "area": "drone",
+    "title": {
+     "en": "Drone Law No. 216 of 2017 and Executive Regulations No. 931 of 2018",
+     "ar": "قانون الطائرات المحركة آلياً أو لاسلكياً رقم 216 لسنة 2017 ولائحته التنفيذية رقم 931 لسنة 2018"
+    },
+    "body": {
+     "en": "Ministry of Defence",
+     "ar": "وزارة الدفاع"
+    },
+    "year": 2017,
+    "status": "in_force",
+    "summary": {
+     "en": "No one may import, make, trade, hold or fly a drone without a Ministry of Defence permit. Commercial applicants also need security clearances, and violations carry prison terms. This makes drone services in Egypt slow and uncertain to launch.",
+     "ar": "يحظر استيراد الطائرات بدون طيار أو تصنيعها أو الاتجار فيها أو حيازتها أو تشغيلها دون تصريح من وزارة الدفاع. ويحتاج طالبو الاستخدام التجاري أيضاً إلى موافقات أمنية، وتصل العقوبات إلى السجن. لذلك يظل إطلاق خدمات الطائرات بدون طيار في مصر بطيئاً وغير مضمون."
+    },
+    "url": "https://www.mondaq.com/aviation/1151672/legal-controls-for-the-use-of-drones-in-egypt",
+    "source": "Mondaq",
+    "date": "2022-01-19"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "Personal Data Protection Law No. 151 of 2020 and its Executive Regulations (Decree 816 of 2025)",
+     "ar": "قانون حماية البيانات الشخصية رقم 151 لسنة 2020 ولائحته التنفيذية (القرار 816 لسنة 2025)"
+    },
+    "body": {
+     "en": "Personal Data Protection Centre (under MCIT)",
+     "ar": "مركز حماية البيانات الشخصية (التابع لوزارة الاتصالات وتكنولوجيا المعلومات)"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "The regulations, issued on 1 November 2025, set up licences for data controllers and processors and separate permits for cross-border transfers and visual surveillance. Firms had one year to comply. Robots and vehicles that record video or send data abroad are directly affected.",
+     "ar": "صدرت اللائحة في 1 نوفمبر 2025، وأنشأت نظام تراخيص للمتحكمين والمعالجين وتصاريح منفصلة لنقل البيانات عبر الحدود وللمراقبة المرئية، مع مهلة عام واحد لتوفيق الأوضاع. وتتأثر بها مباشرة الروبوتات والمركبات التي تسجل الفيديو أو ترسل البيانات إلى الخارج."
+    },
+    "url": "https://cms.law/en/are/legal-updates/egypt-s-pdpl-executive-regulations-issued-one-year-compliance-countdown-begins",
+    "source": "CMS",
+    "date": "2026-01-13"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "Egyptian Charter for Responsible AI",
+     "ar": "الميثاق المصري للذكاء الاصطناعي المسؤول"
+    },
+    "body": {
+     "en": "National Council for Artificial Intelligence",
+     "ar": "المجلس الوطني للذكاء الاصطناعي"
+    },
+    "year": 2023,
+    "status": "in_force",
+    "summary": {
+     "en": "Egypt’s first set of principles and design requirements for AI systems, adopted in April 2023. It is soft law and carries no penalties.",
+     "ar": "أول مجموعة من المبادئ ومتطلبات التصميم لأنظمة الذكاء الاصطناعي في مصر، اعتُمدت في أبريل 2023. وهو تنظيم استرشادي لا يتضمن عقوبات."
+    },
+    "url": "https://digitalpolicyalert.org/change/12259-egyptian-charter-for-responsible-artificial-intelligence",
+    "source": "Digital Policy Alert",
+    "date": "2023-04-19"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "National AI Governance Framework and Guidelines for Trustworthy and Responsible AI",
+     "ar": "الإطار الوطني لحوكمة الذكاء الاصطناعي والإرشادات الوطنية للذكاء الاصطناعي الجدير بالثقة والمسؤول"
+    },
+    "body": {
+     "en": "National Council for AI, Quantum Computing & Emerging Technologies",
+     "ar": "المجلس الوطني للذكاء الاصطناعي والحوسبة الكمية والتكنولوجيات الناشئة"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "Sorts AI systems into four risk tiers, from prohibited to minimal risk. High-risk uses such as critical infrastructure face checks before and after deployment. It is guidance meant to shape a future AI law, which has not been passed.",
+     "ar": "يصنّف أنظمة الذكاء الاصطناعي في أربع فئات من المخاطر، من المحظورة إلى منخفضة المخاطر. وتخضع الاستخدامات عالية المخاطر، مثل البنية التحتية الحيوية، لفحص قبل النشر وبعده. وهو إطار إرشادي يمهد لقانون مستقبلي للذكاء الاصطناعي لم يصدر بعد."
+    },
+    "url": "https://www.middleeastainews.com/p/egypt-publishes-ai-governance-framework",
+    "source": "Middle East AI News",
+    "date": "2026-03-29"
+   },
+   {
+    "area": "sandbox",
+    "title": {
+     "en": "National AI regulatory sandbox (with UNDP)",
+     "ar": "البيئة التنظيمية التجريبية الوطنية للذكاء الاصطناعي (بالتعاون مع برنامج الأمم المتحدة الإنمائي)"
+    },
+    "body": {
+     "en": "Ministry of Communications & IT",
+     "ar": "وزارة الاتصالات وتكنولوجيا المعلومات"
+    },
+    "year": 2026,
+    "status": "announced",
+    "summary": {
+     "en": "A letter of intent signed in July 2026 to design Egypt’s first AI sandbox, where firms could test AI products under supervision before launch. It is not operating yet.",
+     "ar": "خطاب نوايا وُقّع في يوليو 2026 لتصميم أول بيئة تجريبية للذكاء الاصطناعي في مصر، تتيح للشركات اختبار منتجاتها تحت الإشراف قبل طرحها. ولم تبدأ العمل بعد."
+    },
+    "url": "https://amwalalghad.com/2026/07/09/%d9%85%d8%b5%d8%b1-%d8%aa%d8%b9%d8%b2%d8%b2-%d8%aa%d8%b9%d8%a7%d9%88%d9%86%d9%87%d8%a7-%d9%85%d8%b9-%d9%83%d9%8a%d9%86%d9%8a%d8%a7-%d9%88undp-%d9%88%d8%a7%d9%84%d8%a8%d9%86%d9%83-%d8%a7/",
+    "source": "Amwal Al Ghad",
+    "date": "2026-07-09"
+   },
+   {
+    "area": "sandbox",
+    "title": {
+     "en": "FRA Regulatory Sandbox",
+     "ar": "البيئة التجريبية للهيئة العامة للرقابة المالية"
+    },
+    "body": {
+     "en": "Financial Regulatory Authority",
+     "ar": "الهيئة العامة للرقابة المالية"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "Lets non-bank fintech and insurtech firms, including AI tools, test before launch; it had admitted seven projects by July 2026. It does not cover physical robots or vehicles.",
+     "ar": "تتيح لشركات التكنولوجيا المالية غير المصرفية وتكنولوجيا التأمين، بما فيها أدوات الذكاء الاصطناعي، الاختبار قبل الإطلاق، وقبلت سبعة مشروعات حتى يوليو 2026. ولا تشمل الروبوتات أو المركبات."
+    },
+    "url": "https://www.middleeastainews.com/p/egypt-approves-two-more-ai-insurance",
+    "source": "Middle East AI News",
+    "date": "2026-07-30"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "ITAC Collaborative Funded Projects (Round 41)",
+     "ar": "مشروعات التمويل التعاوني ضمن برنامج ITAC (الجولة 41)"
+    },
+    "body": {
+     "en": "Information Technology Industry Development Agency (ITIDA)",
+     "ar": "هيئة تنمية صناعة تكنولوجيا المعلومات (إيتيدا)"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "Gives Egyptian tech companies up to EGP 5 million (about $98,000) to turn a working prototype into a market-ready product. Round 41 closed on 29 October 2026. It funds R&D, not equipment purchases.",
+     "ar": "يمنح شركات التكنولوجيا المصرية ما يصل إلى 5 ملايين جنيه (نحو 98 ألف دولار) لتحويل نموذج أولي إلى منتج جاهز للسوق. وأُغلقت الجولة 41 في 29 أكتوبر 2026. ويموّل البحث والتطوير لا شراء المعدات."
+    },
+    "url": "https://waya.media/egypts-itida-opens-cfp-round-41-with-up-to-usd-98k-for-ict-product-development/",
+    "source": "WAYA Media",
+    "date": "2026-09-07"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Golden License",
+     "ar": "الرخصة الذهبية"
+    },
+    "body": {
+     "en": "General Authority for Investment and Free Zones (GAFI), approved by the Cabinet",
+     "ar": "الهيئة العامة للاستثمار والمناطق الحرة، بموافقة مجلس الوزراء"
+    },
+    "year": 2023,
+    "status": "in_force",
+    "summary": {
+     "en": "A single approval covering a project’s set-up, operation, building licences and land, which can also carry Investment Law incentives. It is the fastest route for a large factory, though it is not specific to automation.",
+     "ar": "موافقة واحدة تشمل إقامة المشروع وتشغيله وتراخيص البناء والأرض، ويمكن أن تتضمن حوافز قانون الاستثمار. وهي أسرع طريق لإقامة مصنع كبير، لكنها غير مخصصة للأتمتة."
+    },
+    "url": "https://www.investinegypt.gov.eg/PublishingImages/Lists/ArticleDetails/vArticleDetails/En%20G%20L%20Guide%20Update%209-2025.pdf",
+    "source": "GAFI (Invest in Egypt) Golden License Guidebook",
+    "date": "2025-09-01"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Smart manufacturing push and revised industrial incentives",
+     "ar": "التوجه نحو التصنيع الذكي ومراجعة الحوافز الصناعية"
+    },
+    "body": {
+     "en": "Ministry of Industry",
+     "ar": "وزارة الصناعة"
+    },
+    "year": 2026,
+    "status": "announced",
+    "summary": {
+     "en": "The ministry is revising incentive policies to draw manufacturers and says it is encouraging AI, IoT and automation in priority sectors. No automation-specific grant had been published by November 2026.",
+     "ar": "تراجع الوزارة سياسات الحوافز لجذب المصنّعين، وتقول إنها تشجع تبني الذكاء الاصطناعي وإنترنت الأشياء والأتمتة في القطاعات ذات الأولوية. ولم تُعلن حتى نوفمبر 2026 أي منحة مخصصة للأتمتة."
+    },
+    "url": "https://www.dailynewsegypt.com/2026/05/04/egypt-pushes-smart-green-manufacturing-to-elevate-industrial-competitiveness/",
+    "source": "Daily News Egypt",
+    "date": "2026-05-04"
+   }
+  ],
+  "score": {
+   "av_law": {
+    "v": 0,
+    "note": {
+     "en": "No law, regulation or authorised trial regime for autonomous vehicles on public roads was found; the AI strategy names AVs only as a future industry.",
+     "ar": "لم نعثر على قانون أو لائحة أو نظام تجارب معتمد للمركبات ذاتية القيادة على الطرق العامة، وتذكرها استراتيجية الذكاء الاصطناعي فقط كصناعة مستقبلية."
+    },
+    "url": "https://ai.gov.eg/SynchedFiles/en/Resources/AIstrategy%20English%2016-1-2025-1.pdf",
+    "source": "National Council for AI (ai.gov.eg)"
+   },
+   "robotaxi": {
+    "v": 0,
+    "note": {
+     "en": "No robotaxi pilot or service, with or without a safety driver, was found in Egypt.",
+     "ar": "لم نعثر على أي تجربة أو خدمة لسيارات الأجرة ذاتية القيادة في مصر، سواء بسائق سلامة أو من دونه."
+    },
+    "url": "https://ai.gov.eg/SynchedFiles/en/Resources/AIstrategy%20English%2016-1-2025-1.pdf",
+    "source": "National Council for AI (ai.gov.eg)"
+   },
+   "drones": {
+    "v": 1,
+    "note": {
+     "en": "A permit regime exists, but every drone needs a Ministry of Defence permit plus security clearances, and no delivery or BVLOS approvals were found.",
+     "ar": "يوجد نظام للتصاريح، لكن كل طائرة تحتاج إلى تصريح من وزارة الدفاع وموافقات أمنية، ولم نعثر على موافقات للتوصيل أو للطيران خارج مدى الرؤية."
+    },
+    "url": "https://www.mondaq.com/aviation/1151672/legal-controls-for-the-use-of-drones-in-egypt",
+    "source": "Mondaq"
+   },
+   "sandbox": {
+    "v": 0,
+    "note": {
+     "en": "The AI sandbox is only a July 2026 letter of intent, and the working FRA sandbox is limited to non-bank financial services.",
+     "ar": "البيئة التجريبية للذكاء الاصطناعي لا تتجاوز خطاب نوايا وُقّع في يوليو 2026، والبيئة العاملة لدى الرقابة المالية مقصورة على الخدمات المالية غير المصرفية."
+    },
+    "url": "https://amwalalghad.com/2026/07/09/%d9%85%d8%b5%d8%b1-%d8%aa%d8%b9%d8%b2%d8%b2-%d8%aa%d8%b9%d8%a7%d9%88%d9%86%d9%87%d8%a7-%d9%85%d8%b9-%d9%83%d9%8a%d9%86%d9%8a%d8%a7-%d9%88undp-%d9%88%d8%a7%d9%84%d8%a8%d9%86%d9%83-%d8%a7/",
+    "source": "Amwal Al Ghad"
+   },
+   "incentives": {
+    "v": 1,
+    "note": {
+     "en": "Support is general: the Golden License, Investment Law incentives and ITIDA R&D grants; no grant dedicated to automation or robotics was found.",
+     "ar": "الدعم المتاح عام: الرخصة الذهبية وحوافز قانون الاستثمار ومنح البحث والتطوير من إيتيدا، ولم نعثر على منحة مخصصة للأتمتة أو الروبوتات."
+    },
+    "url": "https://www.investinegypt.gov.eg/PublishingImages/Lists/ArticleDetails/vArticleDetails/En%20G%20L%20Guide%20Update%209-2025.pdf",
+    "source": "GAFI (Invest in Egypt)"
+   },
+   "ai_rules": {
+    "v": 2,
+    "note": {
+     "en": "The Personal Data Protection Law is in force with its 2025 regulations, and the national AI governance framework was issued in March 2026, though it is guidance rather than law.",
+     "ar": "قانون حماية البيانات الشخصية نافذ مع لائحته الصادرة في 2025، وصدر الإطار الوطني لحوكمة الذكاء الاصطناعي في مارس 2026، وإن كان إرشادياً لا قانوناً."
+    },
+    "url": "https://www.middleeastainews.com/p/egypt-publishes-ai-governance-framework",
+    "source": "Middle East AI News"
+   }
+  }
  },
  "MA": {
   "sum": [
@@ -1866,7 +2878,225 @@
     "2026",
     "https://maroc.ma/en/news/morocco-moves-ai-strategy-implementation-targets-mad-100-bln-gdp-value-2030"
    ]
-  ]
+  ],
+  "regs": [
+   {
+    "area": "drone",
+    "title": {
+     "en": "2015 order on drone imports and use",
+     "ar": "قرار 2015 بشأن استيراد الطائرات بدون طيار واستخدامها"
+    },
+    "body": {
+     "en": "Ministries of Industry & Trade and of the Interior",
+     "ar": "وزارتا الصناعة والتجارة والداخلية"
+    },
+    "year": 2015,
+    "status": "in_force",
+    "summary": {
+     "en": "Private individuals may not own or fly drones. Professional use needs prior authorisation from the trade and interior ministries. This is still the rule that applies today.",
+     "ar": "يمنع الأفراد من امتلاك الطائرات بدون طيار أو تشغيلها، ويشترط الاستخدام المهني ترخيصاً مسبقاً من وزارتي التجارة والداخلية. ولا يزال هذا هو النظام المعمول به حالياً."
+    },
+    "url": "https://fr.le360.ma/economie/le-maroc-sapprete-a-lancer-une-filiere-industrielle-innovante-les-drones-civils_A5OHX3GYH5CLRERZYOCTIGWGA4/",
+    "source": "Le360 (from L’Economiste)",
+    "date": "2025-10-27"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "Draft decree on the design, production and operation of drones",
+     "ar": "مشروع مرسوم بشأن تصميم الطائرات بدون طيار وإنتاجها وتشغيلها"
+    },
+    "body": {
+     "en": "Directorate General of Civil Aviation (DGAC)",
+     "ar": "المديرية العامة للطيران المدني"
+    },
+    "year": 2025,
+    "status": "draft",
+    "summary": {
+     "en": "Would make the DGAC the single authority and require a DGAC certificate for anyone who designs, builds, maintains or operates drones. It would also open drones to hobbyists. The draft was sent to the General Secretariat of the Government in 2025; no adoption was found.",
+     "ar": "سيجعل المديرية العامة للطيران المدني السلطة المرجعية الوحيدة، ويشترط شهادة منها لكل من يصمم الطائرات بدون طيار أو يصنعها أو يصونها أو يشغلها، كما سيفتح استخدامها أمام الهواة. وأُحيل المشروع إلى الأمانة العامة للحكومة في 2025، ولم نعثر على ما يفيد اعتماده."
+    },
+    "url": "https://fr.le360.ma/economie/le-maroc-sapprete-a-lancer-une-filiere-industrielle-innovante-les-drones-civils_A5OHX3GYH5CLRERZYOCTIGWGA4/",
+    "source": "Le360 (from L’Economiste)",
+    "date": "2025-10-27"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "Digital X.0 framework law (draft)",
+     "ar": "القانون الإطار \"Digital X.0\" (مشروع)"
+    },
+    "body": {
+     "en": "Ministry of Digital Transition & Administration Reform",
+     "ar": "الوزارة المنتدبة المكلفة بالانتقال الرقمي وإصلاح الإدارة"
+    },
+    "year": 2025,
+    "status": "draft",
+    "summary": {
+     "en": "Would set principles for data governance and regulate the use of algorithms, alongside Law 09-08, with sector-based digital IDs and consent-based data sharing. It was with the General Secretariat of the Government in October 2025 and had not been adopted by November 2026.",
+     "ar": "سيضع مبادئ لحوكمة البيانات وينظم استخدام الخوارزميات إلى جانب القانون 09-08، مع هويات رقمية قطاعية وتبادل للبيانات قائم على الموافقة. وكان لدى الأمانة العامة للحكومة في أكتوبر 2025، ولم يُعتمد حتى نوفمبر 2026."
+    },
+    "url": "https://fr.le360.ma/economie/digital-x0-le-maroc-trace-sa-voie-vers-une-intelligence-artificielle-souveraine-et-inclusive_EJLYGX6QCNG37BFRGRK5JXFA2A/",
+    "source": "Le360 (from Finances News)",
+    "date": "2025-10-30"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "Law 09-08 on the protection of personal data",
+     "ar": "القانون 09-08 المتعلق بحماية الأشخاص الذاتيين تجاه معالجة المعطيات ذات الطابع الشخصي"
+    },
+    "body": {
+     "en": "National Commission for the Control of Personal Data Protection (CNDP)",
+     "ar": "اللجنة الوطنية لمراقبة حماية المعطيات ذات الطابع الشخصي"
+    },
+    "year": 2009,
+    "status": "in_force",
+    "summary": {
+     "en": "Processing of personal data must be notified to or authorised by the CNDP, and transfers abroad are restricted. Robots and connected vehicles that collect images or user data need to comply. A reform of the law is in preparation.",
+     "ar": "يجب التصريح بمعالجة المعطيات الشخصية لدى اللجنة الوطنية أو الحصول على إذن منها، ويخضع نقلها إلى الخارج لقيود. وعلى الروبوتات والمركبات المتصلة التي تجمع الصور أو بيانات المستخدمين الالتزام بذلك. ويجري إعداد مراجعة للقانون."
+    },
+    "url": "https://maroc.ma/fr/actualites/elections-legislatives-la-cndp-fixe-les-imperatifs-respecter-dans-le-traitement-des-donnees-caractere",
+    "source": "Maroc.ma (Government of Morocco)",
+    "date": "2026-08-31"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Investment Charter (Framework Law 03-22)",
+     "ar": "ميثاق الاستثمار (القانون الإطار 03-22)"
+    },
+    "body": {
+     "en": "Ministry of Investment, with the Regional Investment Centres",
+     "ar": "الوزارة المكلفة بالاستثمار والمراكز الجهوية للاستثمار"
+    },
+    "year": 2022,
+    "status": "in_force",
+    "summary": {
+     "en": "The main scheme pays a grant of up to 30% of the investment for projects of at least MAD 50 million that create 50 permanent jobs. Territorial, sectoral and strategic-project grants come on top. It is a general scheme, not tied to automation.",
+     "ar": "يمنح النظام الرئيسي منحة تصل إلى 30% من قيمة الاستثمار للمشاريع التي لا تقل عن 50 مليون درهم وتوفر 50 منصب شغل قاراً، تضاف إليها منح ترابية وقطاعية ومنحة للمشاريع الاستراتيجية. وهو نظام عام غير مرتبط بالأتمتة."
+    },
+    "url": "https://upsilon-consulting.com/en/morocco-investment-charter-2023/",
+    "source": "Upsilon Consulting",
+    "date": "2026-03-26"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Corporate tax exemption for industrial companies",
+     "ar": "الإعفاء من الضريبة على الشركات للمقاولات الصناعية"
+    },
+    "body": {
+     "en": "Directorate General of Taxes",
+     "ar": "المديرية العامة للضرائب"
+    },
+    "year": 2021,
+    "status": "in_force",
+    "summary": {
+     "en": "Industrial companies in activities set by regulation pay no corporate tax for their first five years of operation, inside or outside industrial zones. This helps new robot integrators and component makers.",
+     "ar": "تُعفى المقاولات الصناعية التي تزاول أنشطة يحددها نص تنظيمي من الضريبة على الشركات خلال السنوات الخمس الأولى من نشاطها، داخل المناطق الصناعية أو خارجها. ويفيد ذلك مدمجي الروبوتات ومصنعي المكونات الجدد."
+    },
+    "url": "https://taxsummaries.pwc.com/morocco/corporate/tax-credits-and-incentives",
+    "source": "PwC Worldwide Tax Summaries",
+    "date": "2026-04-30"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "PACTE TPME 2026–2030",
+     "ar": "مخطط \"PACTE TPME\" 2026–2030"
+    },
+    "body": {
+     "en": "Maroc PME, with the Ministry of Industry & Trade",
+     "ar": "الوكالة الوطنية \"مغرب المقاولات\" بالتعاون مع وزارة الصناعة والتجارة"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "A national plan launched in April 2026 to make very small, small and medium firms more competitive and resilient, including help with information systems. It is general SME support, not a robotics grant.",
+     "ar": "مخطط وطني أُطلق في أبريل 2026 لتعزيز تنافسية المقاولات الصغيرة جداً والصغرى والمتوسطة وقدرتها على الصمود، بما في ذلك دعم نظم المعلومات. وهو دعم عام للمقاولات وليس منحة للروبوتات."
+    },
+    "url": "https://maroc.ma/ar/%d8%a7%d9%84%d8%a3%d8%ae%d8%a8%d8%a7%d8%b1/%d8%a5%d8%b7%d9%84%d8%a7%d9%82-%d9%85%d8%ae%d8%b7%d8%b7-pacte-tpme-%d9%84%d8%aa%d8%b3%d8%b1%d9%8a%d8%b9-%d9%86%d9%85%d9%88-%d9%88%d8%aa%d8%ad%d9%88%d9%84-%d8%a7%d9%84%d9%85%d9%82%d8%a7%d9%88%d9%84%d8%a7%d8%aa-%d8%a7%d9%84%d8%b5%d8%ba%d9%8a%d8%b1%d8%a9-%d8%ac%d8%af%d8%a7-%d9%88%d8%a7%d9%84%d8%b5%d8%ba%d8%b1%d9%89-%d9%88%d8%a7%d9%84%d9%85%d8%aa%d9%88%d8%b3%d8%b7%d8%a9",
+    "source": "Maroc.ma (Government of Morocco)",
+    "date": "2026-04-30"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "Jazari Industry X.0 Institute",
+     "ar": "معهد الجزري للصناعة X.0"
+    },
+    "body": {
+     "en": "Ministry of Digital Transition & Administration Reform",
+     "ar": "الوزارة المنتدبة المكلفة بالانتقال الرقمي وإصلاح الإدارة"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "A public-interest group, formally set up in the Official Gazette in August 2026, to bring digital tools, AI and Industry 4.0 into Moroccan factories. It is a likely partner for automation pilots, not a funding scheme.",
+     "ar": "مجموعة ذات نفع عام أُحدثت رسمياً بالجريدة الرسمية في أغسطس 2026، لإدخال الأدوات الرقمية والذكاء الاصطناعي والصناعة 4.0 إلى المصانع المغربية. وهي شريك محتمل لتجارب الأتمتة، وليست آلية تمويل."
+    },
+    "url": "https://www.moroccoworldnews.com/2026/08/334868/morocco-establishes-four-institutes-to-drive-ai-industry-and-smart-cities/",
+    "source": "Morocco World News",
+    "date": "2026-08-16"
+   }
+  ],
+  "score": {
+   "av_law": {
+    "v": 0,
+    "note": {
+     "en": "No law, regulation or authorised trial regime for autonomous vehicles was found in Morocco.",
+     "ar": "لم نعثر في المغرب على قانون أو لائحة أو نظام تجارب معتمد للمركبات ذاتية القيادة."
+    },
+    "url": "https://www.moroccoworldnews.com/2026/07/329460/moroccos-new-road-safety-strategy-takes-aim-at-electric-scooters/",
+    "source": "Morocco World News"
+   },
+   "robotaxi": {
+    "v": 0,
+    "note": {
+     "en": "No robotaxi pilot or service was found in Morocco.",
+     "ar": "لم نعثر على أي تجربة أو خدمة لسيارات الأجرة ذاتية القيادة في المغرب."
+    },
+    "url": "https://www.moroccoworldnews.com/2026/07/329460/moroccos-new-road-safety-strategy-takes-aim-at-electric-scooters/",
+    "source": "Morocco World News"
+   },
+   "drones": {
+    "v": 1,
+    "note": {
+     "en": "Drones are tightly restricted under a 2015 order: professional use needs prior authorisation, and the DGAC’s new drone decree is still a draft.",
+     "ar": "تخضع الطائرات بدون طيار لقيود مشددة بموجب قرار 2015، إذ يحتاج الاستخدام المهني إلى ترخيص مسبق، ولا يزال مرسوم المديرية العامة للطيران المدني الجديد مشروعاً."
+    },
+    "url": "https://fr.le360.ma/economie/le-maroc-sapprete-a-lancer-une-filiere-industrielle-innovante-les-drones-civils_A5OHX3GYH5CLRERZYOCTIGWGA4/",
+    "source": "Le360 (from L’Economiste)"
+   },
+   "sandbox": {
+    "v": 0,
+    "note": {
+     "en": "No regulatory sandbox or test zone usable for robotics or autonomous systems was found; Bank Al-Maghrib offers a fintech licensing guide, not a sandbox.",
+     "ar": "لم نعثر على بيئة تنظيمية تجريبية أو منطقة اختبار يمكن استخدامها للروبوتات أو الأنظمة ذاتية التشغيل، ويقدم بنك المغرب دليلاً لترخيص التكنولوجيا المالية لا بيئة تجريبية."
+    },
+    "url": "https://www.moroccoworldnews.com/2026/01/274557/bank-al-maghrib-publishes-new-guide-outlining-fintech-regulatory-pathway/",
+    "source": "Morocco World News"
+   },
+   "incentives": {
+    "v": 1,
+    "note": {
+     "en": "Investors get general Investment Charter grants of up to 30% and industrial tax breaks; no grant dedicated to automation or robotics was found.",
+     "ar": "يستفيد المستثمرون من منح عامة في إطار ميثاق الاستثمار تصل إلى 30% ومن إعفاءات ضريبية صناعية، ولم نعثر على منحة مخصصة للأتمتة أو الروبوتات."
+    },
+    "url": "https://upsilon-consulting.com/en/morocco-investment-charter-2023/",
+    "source": "Upsilon Consulting"
+   },
+   "ai_rules": {
+    "v": 1,
+    "note": {
+     "en": "Law 09-08 on personal data is in force, but there is no AI governance framework in force; the Digital X.0 law is still a draft.",
+     "ar": "القانون 09-08 لحماية المعطيات الشخصية نافذ، لكن لا يوجد إطار نافذ لحوكمة الذكاء الاصطناعي، ولا يزال قانون Digital X.0 مشروعاً."
+    },
+    "url": "https://fr.le360.ma/economie/digital-x0-le-maroc-trace-sa-voie-vers-une-intelligence-artificielle-souveraine-et-inclusive_EJLYGX6QCNG37BFRGRK5JXFA2A/",
+    "source": "Le360 (from Finances News)"
+   }
+  }
  },
  "OM": {
   "sum": [
@@ -2210,7 +3440,245 @@
     "2026",
     "https://www.agbi.com/tech/2026/10/oman-targets-investments-to-boost-digital-economy/"
    ]
-  ]
+  ],
+  "regs": [
+   {
+    "area": "drone",
+    "title": {
+     "en": "Rules on drone sales and registration",
+     "ar": "ضوابط بيع الطائرات بدون طيار وتسجيلها"
+    },
+    "body": {
+     "en": "Civil Aviation Authority",
+     "ar": "هيئة الطيران المدني"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "A circular of 17 February 2026 requires drone retailers to hold a CAA licence. Every drone must be logged on the AirPortal system from import to the end user before it is handed over.",
+     "ar": "يُلزم تعميم صادر في 17 فبراير 2026 متاجر بيع الطائرات بدون طيار بالحصول على ترخيص من الهيئة، ويجب تسجيل كل طائرة في نظام AirPortal من الاستيراد حتى المستخدم النهائي قبل تسليمها."
+    },
+    "url": "https://www.omanobserver.om/article/1184639/business/aviation/caa-announces-rules-on-drone-sales-in-oman",
+    "source": "Oman Observer",
+    "date": "2026-02-18"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "Drone permit suspension and resumption in green zones",
+     "ar": "تعليق تصاريح الطائرات بدون طيار واستئنافها في المناطق الخضراء"
+    },
+    "body": {
+     "en": "Civil Aviation Authority",
+     "ar": "هيئة الطيران المدني"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "All drone permits were suspended on 3 March 2026. Since late May, permits for government, commercial and recreational flights are issued again, but only for the 155+ green zones on the Sirb platform.",
+     "ar": "عُلّقت جميع تصاريح الطائرات بدون طيار في 3 مارس 2026. ومنذ أواخر مايو عاد إصدار التصاريح للأغراض الحكومية والتجارية والترفيهية، لكن فقط في أكثر من 155 منطقة خضراء على منصة \"سرب\"."
+    },
+    "url": "https://www.atheer.om/2026/05/25/100826/",
+    "source": "Atheer",
+    "date": "2026-05-25"
+   },
+   {
+    "area": "sandbox",
+    "title": {
+     "en": "Advanced Air Mobility (AAM) Sandbox",
+     "ar": "البيئة التجريبية للتنقل الجوي المتقدم"
+    },
+    "body": {
+     "en": "Ministry of Transport, Communications & IT with the Civil Aviation Authority",
+     "ar": "وزارة النقل والاتصالات وتقنية المعلومات بالتعاون مع هيئة الطيران المدني"
+    },
+    "year": 2025,
+    "status": "announced",
+    "summary": {
+     "en": "A controlled regulatory zone for live trials of cargo and delivery drones, air taxis, farm, medical and inspection uses. Applications closed on 25 October 2026 and the first field trials are set for 6–10 December 2026. Results will feed Oman’s drone and eVTOL rules.",
+     "ar": "منطقة تنظيمية خاضعة للرقابة لإجراء تجارب حية لطائرات الشحن والتوصيل والتاكسي الجوي والاستخدامات الزراعية والطبية والتفتيش. وأُغلق باب التقديم في 25 أكتوبر 2026، ومن المقرر إجراء أولى التجارب الميدانية بين 6 و10 ديسمبر 2026، وستُستخدم نتائجها في صياغة قواعد الطائرات بدون طيار والطائرات الكهربائية العمودية."
+    },
+    "url": "https://www.omanobserver.om/ampArticle/1197442",
+    "source": "Oman Observer",
+    "date": "2026-10-08"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "‘Sky Bridge’ cargo drone trials",
+     "ar": "تجارب \"الجسر الجوي\" لنقل الشحنات بالطائرات بدون طيار"
+    },
+    "body": {
+     "en": "Ministry of Transport, Communications & IT, supervised by the Civil Aviation Authority",
+     "ar": "وزارة النقل والاتصالات وتقنية المعلومات بإشراف هيئة الطيران المدني"
+    },
+    "year": 2026,
+    "status": "pilot",
+    "summary": {
+     "en": "Government-run trials flying medical supplies by drone: about 150 kg from Salalah to the Hallaniyat Islands in September 2026, after an earlier 100 kg flight to Jebel Akhdar. They show the CAA can approve long-range cargo flights case by case.",
+     "ar": "تجارب حكومية لنقل المستلزمات الطبية بالطائرات بدون طيار: نحو 150 كيلوغراماً من صلالة إلى جزر الحلانيات في سبتمبر 2026، بعد رحلة سابقة بحمولة 100 كيلوغرام إلى الجبل الأخضر. وتُظهر أن الهيئة قادرة على الموافقة على رحلات شحن بعيدة المدى كلاً على حدة."
+    },
+    "url": "https://timesofoman.com/article/176376-sky-bridge-initiative-enters-second-phase-with-drone-medical-deliveries",
+    "source": "Times of Oman",
+    "date": "2026-09-02"
+   },
+   {
+    "area": "av",
+    "title": {
+     "en": "Autonomous EV trial at Salalah Airport",
+     "ar": "تجربة مركبة كهربائية ذاتية القيادة في مطار صلالة"
+    },
+    "body": {
+     "en": "Ministry of Transport, Communications & IT and Oman Airports",
+     "ar": "وزارة النقل والاتصالات وتقنية المعلومات ومطارات عُمان"
+    },
+    "year": 2026,
+    "status": "pilot",
+    "summary": {
+     "en": "A self-driving electric vehicle was trialled at Salalah Airport in September 2026, with operations planned for 2027. Oman has no AV regulation yet, so public-road use still needs a licensing and liability framework.",
+     "ar": "جُرّبت مركبة كهربائية ذاتية القيادة في مطار صلالة في سبتمبر 2026، ومن المخطط بدء تشغيلها في 2027. ولا توجد في عُمان بعد لائحة للمركبات ذاتية القيادة، لذا يتطلب استخدامها على الطرق العامة إطاراً للترخيص والمسؤولية."
+    },
+    "url": "https://www.omanobserver.om/article/1195863/oman/transport/oman-to-launch-self-driving-vehicles-in-2027-trials-successful",
+    "source": "Oman Observer",
+    "date": "2026-09-09"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "Personal Data Protection Law (Royal Decree 6/2022) and Executive Regulations (Decision 34/2024)",
+     "ar": "قانون حماية البيانات الشخصية (المرسوم السلطاني 6/2022) ولائحته التنفيذية (القرار 34/2024)"
+    },
+    "body": {
+     "en": "Ministry of Transport, Communications & IT",
+     "ar": "وزارة النقل والاتصالات وتقنية المعلومات"
+    },
+    "year": 2022,
+    "status": "in_force",
+    "summary": {
+     "en": "Fully enforceable since 5 February 2026, when the transition period ended. It requires consent, a data protection officer, breach notices and controls on transfers abroad, which apply to robot and vehicle data.",
+     "ar": "أصبح نافذاً بالكامل منذ 5 فبراير 2026 بانتهاء الفترة الانتقالية. ويشترط الموافقة وتعيين مسؤول لحماية البيانات والإبلاغ عن الاختراقات وضوابط للنقل إلى الخارج، وتسري هذه الشروط على بيانات الروبوتات والمركبات."
+    },
+    "url": "https://cms.law/en/omn/legal-updates/oman-personal-data-protection-law-entering-the-enforcement-phase",
+    "source": "CMS",
+    "date": "2026-02-11"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "Public Policy for the Safe and Ethical Use of AI Systems",
+     "ar": "السياسة العامة للاستخدام الآمن والأخلاقي لأنظمة الذكاء الاصطناعي"
+    },
+    "body": {
+     "en": "Ministry of Transport, Communications & IT",
+     "ar": "وزارة النقل والاتصالات وتقنية المعلومات"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "A national framework for government and private bodies that build or use AI, with principles and technical controls such as bias checks and human oversight of critical decisions. It was issued as a ministry policy, not a law.",
+     "ar": "إطار وطني للجهات الحكومية والخاصة التي تطور الذكاء الاصطناعي أو تستخدمه، يتضمن مبادئ وضوابط فنية مثل فحص التحيز والإشراف البشري على القرارات الحرجة. وصدر كسياسة وزارية لا كقانون."
+    },
+    "url": "https://www.omanobserver.om/article/1170828/business/economy/oman-unveils-new-national-ai-safety-and-ethics-policy",
+    "source": "Oman Observer",
+    "date": "2025-05-20"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Future Fund Oman",
+     "ar": "صندوق عُمان المستقبل"
+    },
+    "body": {
+     "en": "Oman Investment Authority",
+     "ar": "جهاز الاستثمار العُماني"
+    },
+    "year": 2024,
+    "status": "in_force",
+    "summary": {
+     "en": "A RO 2 billion fund spread over five years, with 90% going into new or existing projects, including SMEs and start-ups. It is general investment capital, not dedicated to automation.",
+     "ar": "صندوق برأسمال 2 مليار ريال عُماني يُستخدم على مدى خمس سنوات، ويوجَّه 90% منه إلى مشاريع جديدة أو قائمة، بما فيها المؤسسات الصغيرة والمتوسطة والشركات الناشئة. وهو رأسمال استثماري عام وليس مخصصاً للأتمتة."
+    },
+    "url": "https://www.omanobserver.om/article/1148408/oman/ro-2-billion-future-fund-oman-launched",
+    "source": "Oman Observer",
+    "date": "2024-01-17"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Smart Production Factories programme",
+     "ar": "مشروع \"مصانع الإنتاج الذكي\""
+    },
+    "body": {
+     "en": "Ministry of Commerce, Industry & Investment Promotion with the Gulf Organisation for Industrial Consulting",
+     "ar": "وزارة التجارة والصناعة وترويج الاستثمار بالتعاون مع منظمة الخليج للاستشارات الصناعية"
+    },
+    "year": 2024,
+    "status": "in_force",
+    "summary": {
+     "en": "Assesses factories against the Smart Industry Readiness Index and gives them digital transformation plans; phase 2 runs to the end of 2026. It offers technical support, not grants, and is the main route for automation vendors to reach Omani factories.",
+     "ar": "يقيّم المصانع وفق مؤشر جاهزية الصناعة الذكية ويضع لها خطط تحول رقمي، وتستمر مرحلته الثانية حتى نهاية 2026. ويقدم دعماً فنياً لا منحاً، وهو المدخل الرئيسي لموردي حلول الأتمتة إلى المصانع العُمانية."
+    },
+    "url": "https://www.omanobserver.om/article/1179015/business/oman-expands-smart-factories-initiative",
+    "source": "Oman Observer",
+    "date": "2025-11-01"
+   }
+  ],
+  "score": {
+   "av_law": {
+    "v": 1,
+    "note": {
+     "en": "There is no AV regulation, but the ministry allowed a case-by-case trial of a self-driving vehicle at Salalah Airport, with operations planned for 2027.",
+     "ar": "لا توجد لائحة للمركبات ذاتية القيادة، لكن الوزارة سمحت بتجربة لمركبة ذاتية القيادة في مطار صلالة كحالة منفردة، مع خطة لبدء التشغيل في 2027."
+    },
+    "url": "https://www.omanobserver.om/article/1195863/oman/transport/oman-to-launch-self-driving-vehicles-in-2027-trials-successful",
+    "source": "Oman Observer"
+   },
+   "robotaxi": {
+    "v": 0,
+    "note": {
+     "en": "No robotaxi pilot or passenger service was found; the Salalah trial and planned RoboVan work focus on airport and logistics vehicles.",
+     "ar": "لم نعثر على تجربة أو خدمة ركاب لسيارات الأجرة ذاتية القيادة، إذ تتركز تجربة صلالة ومشروع RoboVan المخطط على مركبات المطارات والخدمات اللوجستية."
+    },
+    "url": "https://www.omanobserver.om/ampArticle/1195690",
+    "source": "Oman Observer"
+   },
+   "drones": {
+    "v": 1,
+    "note": {
+     "en": "Permits only resumed in May 2026 after a suspension and are limited to green zones; long-range cargo flights so far are government trials, with no commercial delivery approval found.",
+     "ar": "لم يُستأنف إصدار التصاريح إلا في مايو 2026 بعد فترة تعليق، وهو مقصور على المناطق الخضراء، أما رحلات الشحن بعيدة المدى فهي حتى الآن تجارب حكومية، ولم نعثر على موافقة لتوصيل تجاري."
+    },
+    "url": "https://www.atheer.om/2026/05/25/100826/",
+    "source": "Atheer"
+   },
+   "sandbox": {
+    "v": 1,
+    "note": {
+     "en": "A dedicated AAM sandbox for drones and air taxis has been set up, but its first field trials are only due on 6–10 December 2026, so it is not yet operating.",
+     "ar": "أُنشئت بيئة تجريبية مخصصة للتنقل الجوي المتقدم تشمل الطائرات بدون طيار والتاكسي الجوي، لكن أولى تجاربها الميدانية مقررة بين 6 و10 ديسمبر 2026، فهي لم تبدأ العمل بعد."
+    },
+    "url": "https://www.omanobserver.om/ampArticle/1197442",
+    "source": "Oman Observer"
+   },
+   "incentives": {
+    "v": 1,
+    "note": {
+     "en": "Funding is general (Future Fund Oman) and the smart-factory programme gives technical help only; no grant dedicated to automation or robotics was found.",
+     "ar": "التمويل المتاح عام (صندوق عُمان المستقبل)، ويقدم مشروع المصانع الذكية دعماً فنياً فقط، ولم نعثر على منحة مخصصة للأتمتة أو الروبوتات."
+    },
+    "url": "https://www.omanobserver.om/article/1179015/business/oman-expands-smart-factories-initiative",
+    "source": "Oman Observer"
+   },
+   "ai_rules": {
+    "v": 2,
+    "note": {
+     "en": "The Personal Data Protection Law has been fully enforceable since February 2026, and the national AI ethics policy has applied since 2025, though as policy rather than law.",
+     "ar": "قانون حماية البيانات الشخصية نافذ بالكامل منذ فبراير 2026، والسياسة الوطنية لأخلاقيات الذكاء الاصطناعي مطبقة منذ 2025، وإن كانت سياسة لا قانوناً."
+    },
+    "url": "https://cms.law/en/omn/legal-updates/oman-personal-data-protection-law-entering-the-enforcement-phase",
+    "source": "CMS"
+   }
+  }
  },
  "BH": {
   "sum": [
@@ -2350,8 +3818,8 @@
     "تحصل المصانع التي تُكمل تقييم SIRI على خطة تحول وتمويل مشترك، ما يضع مُدمِجي الأتمتة ومورّديها أمام طلب تموّله الحكومة. والروبوتات الطبية تتقدم أيضاً: بدأت الخدمات الطبية الملكية الجراحة الروبوتية بنظام Hugo في 2024."
    ],
    "note": [
-    "The 2026 deadline falls this year, and no count of converted factories has been published. Separately, the Interior Ministry banned all drone use “until further notice” in spring 2026 amid Iranian attacks (we found no report of it being lifted), and the Civil Aviation Law is being amended with tougher drone penalties.",
-    "يحل موعد 2026 هذا العام، ولم يُنشر عدد المصانع التي تحولت فعلاً. ومن جهة أخرى، حظرت وزارة الداخلية استخدام الطائرات المسيّرة كلياً «حتى إشعار آخر» في ربيع 2026 في ظل الهجمات الإيرانية (ولم نجد ما يفيد برفع الحظر)، ويجري تعديل قانون الطيران المدني بعقوبات أشد على المسيّرات."
+    "The 2026 deadline falls this year, and no count of converted factories has been published. Separately, the Interior Ministry banned all drone use “until further notice” in spring 2026 amid Iranian attacks (we found no report of it being lifted), and Decree-Law 41/2026 (in force since September 2026) set up an independent Civil Aviation Authority with a full drone chapter and tougher penalties.",
+    "يحل موعد 2026 هذا العام، ولم يُنشر عدد المصانع التي تحولت فعلاً. ومن جهة أخرى، حظرت وزارة الداخلية استخدام الطائرات المسيّرة كلياً «حتى إشعار آخر» في ربيع 2026 في ظل الهجمات الإيرانية (ولم نجد ما يفيد برفع الحظر)، كما أنشأ المرسوم بقانون رقم 41 لسنة 2026 (النافذ منذ سبتمبر 2026) هيئة مستقلة للطيران المدني تتضمن فصلاً كاملاً عن المسيّرات وعقوبات أشد."
    ],
    "ms": [
     [
@@ -2485,7 +3953,225 @@
     "2026",
     "https://www.gdnonline.com/Details/1409839"
    ]
-  ]
+  ],
+  "regs": [
+   {
+    "area": "drone",
+    "title": {
+     "en": "Decree-Law 41 of 2026 amending the Civil Aviation Law (new drone chapter)",
+     "ar": "المرسوم بقانون رقم 41 لسنة 2026 بتعديل قانون تنظيم الطيران المدني (باب خاص بالطائرات بدون طيار)"
+    },
+    "body": {
+     "en": "Civil Aviation Authority (new independent body replacing Civil Aviation Affairs)",
+     "ar": "هيئة الطيران المدني (هيئة مستقلة حلّت محل شؤون الطيران المدني)"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "Creates an independent Civil Aviation Authority and a full chapter licensing drone operation, import, export, possession, manufacture, maintenance and modification, including cameras and control systems. Operating without a licence is banned, and the gravest offences carry up to 7 years in prison, or life if aimed at military, oil or other vital sites.",
+     "ar": "ينشئ هيئة مستقلة للطيران المدني ويفرد باباً كاملاً لترخيص تشغيل الطائرات بدون طيار واستيرادها وتصديرها وحيازتها وتصنيعها وصيانتها وتعديلها، بما في ذلك أجهزة التصوير وأنظمة التحكم. ويحظر التشغيل دون ترخيص، وتصل العقوبة في أخطر المخالفات إلى السجن 7 سنوات، أو المؤبد إذا استهدفت منشآت عسكرية أو نفطية أو حيوية."
+    },
+    "url": "https://akhbar-alkhaleej.com/news/article/1450804",
+    "source": "Akhbar Al Khaleej",
+    "date": "2026-09-17"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "Interior Ministry ban on all drone use “until further notice”",
+     "ar": "حظر وزارة الداخلية استخدام الطائرات بدون طيار «حتى إشعار آخر»"
+    },
+    "body": {
+     "en": "Ministry of Interior",
+     "ar": "وزارة الداخلية"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "Imposed on 28 March 2026 during Iranian drone and missile attacks, the ban covers all drone flying. We found no report of it being lifted, so commercial drone work is on hold even though the new aviation decree-law provides a licensing route.",
+     "ar": "فُرض الحظر في 28 مارس 2026 خلال الهجمات الإيرانية بالمسيّرات والصواريخ، ويشمل كل أشكال تشغيل الطائرات بدون طيار. ولم نجد ما يفيد برفعه، ما يعني توقف الأعمال التجارية بالمسيّرات رغم أن المرسوم بقانون الجديد يتيح مساراً للترخيص."
+    },
+    "url": "https://alwatannews.net/bahrain/article/4077032/%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9-%D8%AD%D8%B8%D8%B1-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D8%B1%D8%A7%D8%AA-%D8%A8%D8%AF%D9%88%D9%86-%D8%B7%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D8%AF%D8%B1%D9%88%D9%86-%D9%85%D9%86-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D9%88%D8%AD%D8%AA%D9%89-%D8%A5%D8%B4%D8%B9%D8%A7%D8%B1-%D8%A2%D8%AE%D8%B1",
+    "source": "Al Watan (Bahrain)",
+    "date": "2026-03-28"
+   },
+   {
+    "area": "av",
+    "title": {
+     "en": "Planned legislation to allow autonomous vehicles on public roads",
+     "ar": "تشريع مرتقب يتيح تسيير المركبات ذاتية القيادة في الشوارع"
+    },
+    "body": {
+     "en": "Ministry of Transportation & Telecommunications",
+     "ar": "وزارة المواصلات والاتصالات"
+    },
+    "year": 2026,
+    "status": "announced",
+    "summary": {
+     "en": "The transport minister said in June 2026 that Bahrain will legislate, for the first time, to let companies operate and test self-driving vehicles, and that the ministry is preparing pilot projects. No draft text or test permit had been published by early November 2026.",
+     "ar": "أعلن وزير المواصلات والاتصالات في يونيو 2026 أن البحرين ستسنّ لأول مرة تشريعاً يتيح للشركات تسيير المركبات ذاتية القيادة واختبارها، وأن الوزارة تعمل على مشاريع تجريبية. ولم يُنشر حتى مطلع نوفمبر 2026 نص مشروع أو تصريح اختبار."
+    },
+    "url": "https://www.albiladpress.com/news/2026/6469/finance/1006878.html",
+    "source": "Al Bilad",
+    "date": "2026-06-30"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "iFactories: Tamkeen co-funding for factory automation",
+     "ar": "مبادرة المصانع الذكية: تمويل مشترك من تمكين لأتمتة المصانع"
+    },
+    "body": {
+     "en": "Ministry of Industry & Commerce with Tamkeen (Labour Fund)",
+     "ar": "وزارة الصناعة والتجارة بالشراكة مع صندوق العمل (تمكين)"
+    },
+    "year": 2023,
+    "status": "in_force",
+    "summary": {
+     "en": "Factories assessed on the Smart Industry Readiness Index can get Tamkeen grants of up to 50% for automation and digitisation projects, toward a target of 300 smart factories by 2026. It is the clearest source of paid demand for automation integrators in Bahrain.",
+     "ar": "يمكن للمصانع التي تخضع لتقييم مؤشر جاهزية الصناعة الذكية الحصول على منح من تمكين تصل إلى 50% لمشاريع الأتمتة والرقمنة، ضمن هدف تحويل 300 مصنع إلى مصانع ذكية بحلول 2026. وهو أوضح مصدر لطلب مموّل على خدمات مُدمِجي الأتمتة في البحرين."
+    },
+    "url": "https://www.moic.gov.bh/en/node/3845",
+    "source": "Ministry of Industry & Commerce",
+    "date": "2023-08-27"
+   },
+   {
+    "area": "sandbox",
+    "title": {
+     "en": "TRA Innovation Licence (regulatory sandbox for wireless and IoT trials)",
+     "ar": "رخصة الابتكار من هيئة تنظيم الاتصالات (بيئة تجريبية لتقنيات الاتصال اللاسلكي وإنترنت الأشياء)"
+    },
+    "body": {
+     "en": "Telecommunications Regulatory Authority (TRA)",
+     "ar": "هيئة تنظيم الاتصالات"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "A low-cost licence (BD 30) that gives quick access to radio spectrum to trial new wireless technologies such as IoT, digital twins and mmWave. It is not built for robots, but it can cover the connectivity side of drone, robot or vehicle trials. The Central Bank's separate regulatory sandbox covers fintech only.",
+     "ar": "رخصة منخفضة الكلفة (30 ديناراً) تتيح الوصول السريع إلى الطيف الترددي لتجربة تقنيات لاسلكية جديدة مثل إنترنت الأشياء والتوائم الرقمية والموجات المليمترية. وهي ليست مصممة للروبوتات، لكنها قد تغطي جانب الاتصال في تجارب المسيّرات أو الروبوتات أو المركبات. أما البيئة الرقابية التجريبية لدى مصرف البحرين المركزي فتقتصر على التكنولوجيا المالية."
+    },
+    "url": "https://accesspartnership.com/opinion/access-alert-bahrain-introduces-telecommunications-regulatory-sandbox/",
+    "source": "Access Partnership",
+    "date": "2025-08-21"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "Personal Data Protection Law (Law 30 of 2018)",
+     "ar": "قانون حماية البيانات الشخصية (القانون رقم 30 لسنة 2018)"
+    },
+    "body": {
+     "en": "Personal Data Protection Authority",
+     "ar": "هيئة حماية البيانات الشخصية"
+    },
+    "year": 2018,
+    "status": "in_force",
+    "summary": {
+     "en": "A GDPR-style law in force since August 2019 that governs collection, processing and cross-border transfer of personal data. Robots and vehicles that capture camera, location or biometric data in Bahrain must comply.",
+     "ar": "قانون على غرار اللائحة الأوروبية العامة لحماية البيانات، نافذ منذ أغسطس 2019، ينظم جمع البيانات الشخصية ومعالجتها ونقلها عبر الحدود. وعلى الروبوتات والمركبات التي تلتقط صوراً أو بيانات موقع أو بيانات حيوية في البحرين الالتزام به."
+    },
+    "url": "https://www.pdp.gov.bh/en/regulations.html",
+    "source": "Personal Data Protection Authority",
+    "date": "2018-07-12"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "National Policy for the Use of AI, with the GCC AI ethics manual",
+     "ar": "السياسة الوطنية لاستخدام الذكاء الاصطناعي مع الدليل الخليجي لأخلاقيات الذكاء الاصطناعي"
+    },
+    "body": {
+     "en": "Information & eGovernment Authority (iGA)",
+     "ar": "هيئة المعلومات والحكومة الإلكترونية"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "Adopted in July 2025, it sets a national framework for responsible AI use, aimed mainly at government entities, and ties it to the data protection law and the GCC ethics manual. It is policy, not a statute, and places no licensing duties on private robotics firms.",
+     "ar": "أُطلقت في يوليو 2025 وتضع إطاراً وطنياً للاستخدام المسؤول للذكاء الاصطناعي موجهاً أساساً إلى الجهات الحكومية، وتربطه بقانون حماية البيانات والدليل الخليجي للأخلاقيات. وهي سياسة لا قانون، ولا تفرض التزامات ترخيص على شركات الروبوتات الخاصة."
+    },
+    "url": "https://www.iga.gov.bh/en/article/bahrain-launches-national-ai-policy-and-adopts-gcc-ethics-manual",
+    "source": "Information & eGovernment Authority",
+    "date": "2025-07-27"
+   },
+   {
+    "area": "robot",
+    "title": {
+     "en": "Draft law regulating AI technologies and smart robots",
+     "ar": "مشروع قانون بتنظيم تقنيات وأنظمة الذكاء الاصطناعي واستخداماته"
+    },
+    "body": {
+     "en": "Shura Council proposal, now before the Council of Representatives",
+     "ar": "اقتراح بقانون من مجلس الشورى، معروض على مجلس النواب"
+    },
+    "year": 2024,
+    "status": "draft",
+    "summary": {
+     "en": "The first Bahraini bill to regulate AI, including a ban on dangerous robots and smart machines and rules for robots in services, manufacturing and medicine. The government objected in November 2024 that it was unclear and too narrow, and preferred an AI regulatory sandbox; it has not been passed.",
+     "ar": "أول مشروع قانون بحريني لتنظيم الذكاء الاصطناعي، ويتضمن حظر الروبوتات والآلات الذكية الخطرة وأحكاماً لاستخدام الروبوتات في الخدمات والتصنيع والتدخل الطبي. واعترضت الحكومة في نوفمبر 2024 على غموضه وضيق نطاقه، وفضّلت بيئة رقابية تجريبية للذكاء الاصطناعي، ولم يُقرّ بعد."
+    },
+    "url": "https://akhbar-alkhaleej.com/news/article/1384565",
+    "source": "Akhbar Al Khaleej",
+    "date": "2024-11-23"
+   }
+  ],
+  "score": {
+   "av_law": {
+    "v": 0,
+    "note": {
+     "en": "No law or regulation allows autonomous vehicles on public roads; the transport minister announced planned legislation and pilots in June 2026, but no draft or test permit has been published.",
+     "ar": "لا يوجد قانون أو لائحة تسمح بالمركبات ذاتية القيادة على الطرق العامة؛ أعلن وزير المواصلات في يونيو 2026 عن تشريع ومشاريع تجريبية مرتقبة، لكن لم يُنشر مشروع أو تصريح اختبار."
+    },
+    "url": "https://www.albiladpress.com/news/2026/6469/finance/1006878.html",
+    "source": "Al Bilad"
+   },
+   "robotaxi": {
+    "v": 0,
+    "note": {
+     "en": "We found no robotaxi pilot or service in Bahrain; the only autonomy deal is a July 2026 freight co-operation framework with Einride.",
+     "ar": "لم نجد أي تجربة أو خدمة لسيارات الأجرة ذاتية القيادة في البحرين؛ والاتفاق الوحيد في هذا المجال إطار تعاون للشحن مع Einride في يوليو 2026."
+    },
+    "url": "https://www.gdnonline.com/Details/1402010/Transportation-Ministry-and-Sweden%E2%80%99s-Einride-sign-co-operation-framework",
+    "source": "Gulf Daily News"
+   },
+   "drones": {
+    "v": 1,
+    "note": {
+     "en": "A September 2026 decree-law created a full drone licensing regime, but the Interior Ministry's March 2026 ban on all drone use has not been reported lifted, and no delivery or BVLOS approvals are known.",
+     "ar": "أنشأ مرسوم بقانون في سبتمبر 2026 نظاماً متكاملاً لترخيص المسيّرات، لكن لم يُعلن رفع حظر وزارة الداخلية على استخدامها منذ مارس 2026، ولا نعلم بموافقات للتوصيل أو للطيران خارج مدى الرؤية."
+    },
+    "url": "https://akhbar-alkhaleej.com/news/article/1450804",
+    "source": "Akhbar Al Khaleej"
+   },
+   "sandbox": {
+    "v": 1,
+    "note": {
+     "en": "There is no sandbox for autonomous systems; the TRA Innovation Licence for wireless and IoT trials is the only general sandbox usable for robotics, since the CBB sandbox covers fintech only.",
+     "ar": "لا توجد بيئة تجريبية للأنظمة ذاتية التشغيل؛ ورخصة الابتكار من هيئة تنظيم الاتصالات لتجارب الاتصال اللاسلكي وإنترنت الأشياء هي البيئة العامة الوحيدة الصالحة للروبوتات، إذ تقتصر بيئة المصرف المركزي على التكنولوجيا المالية."
+    },
+    "url": "https://accesspartnership.com/opinion/access-alert-bahrain-introduces-telecommunications-regulatory-sandbox/",
+    "source": "Access Partnership"
+   },
+   "incentives": {
+    "v": 2,
+    "note": {
+     "en": "Tamkeen funds up to 50% of factory automation and digitisation projects under the iFactories initiative.",
+     "ar": "تموّل تمكين ما يصل إلى 50% من مشاريع أتمتة المصانع ورقمنتها ضمن مبادرة المصانع الذكية."
+    },
+    "url": "https://www.moic.gov.bh/en/node/3845",
+    "source": "Ministry of Industry & Commerce"
+   },
+   "ai_rules": {
+    "v": 2,
+    "note": {
+     "en": "The 2025 National Policy for the Use of AI is in force alongside the 2018 Personal Data Protection Law, though the AI framework is policy rather than statute.",
+     "ar": "السياسة الوطنية لاستخدام الذكاء الاصطناعي لعام 2025 نافذة إلى جانب قانون حماية البيانات الشخصية لعام 2018، وإن كان إطار الذكاء الاصطناعي سياسة لا قانوناً."
+    },
+    "url": "https://www.iga.gov.bh/en/article/bahrain-launches-national-ai-policy-and-adopts-gcc-ethics-manual",
+    "source": "Information & eGovernment Authority"
+   }
+  }
  },
  "JO": {
   "sum": [
@@ -2722,7 +4408,225 @@
     "2026",
     "https://www.jordannews.jo/Section-109/News/Government-Offers-Industrial-Investment-Opportunities-in-Drone-Components-and-Semiconductors-48631"
    ]
-  ]
+  ],
+  "regs": [
+   {
+    "area": "drone",
+    "title": {
+     "en": "Instructions regulating the use and operation of drones (2025 amendment)",
+     "ar": "تعليمات تنظيم استخدام وتشغيل الطائرات المسيّرة (تعديل 2025)"
+    },
+    "body": {
+     "en": "Civil Aviation Regulatory Commission (CARC)",
+     "ar": "هيئة تنظيم الطيران المدني"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "Issued under Civil Aviation Law 41 of 2007, the amended instructions license drone operation, manufacture, trade and maintenance, and open uses such as tourism marketing, crop monitoring, delivery and logistics. They give drone makers and service firms a formal licensing route for the first time.",
+     "ar": "صدرت استناداً إلى قانون الطيران المدني رقم 41 لسنة 2007، وتنظم ترخيص تشغيل المسيّرات وتصنيعها وتجارتها وصيانتها، وتفتح مجالات مثل التسويق السياحي ومراقبة المحاصيل والتوصيل والخدمات اللوجستية. وتمنح مصنّعي المسيّرات وشركات خدماتها مساراً رسمياً للترخيص لأول مرة."
+    },
+    "url": "https://www.sarahanews.net/1146251-%D9%87%D9%8A%D8%A6%D8%A9-%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86-%D8%AA%D8%B5%D8%AF%D8%B1-%D8%AA%D8%B9%D8%AF%D9%8A%D9%84%D8%A7-%D9%8A%D8%B3%D9%85%D8%AD-%D8%A8%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7/",
+    "source": "Saraha News",
+    "date": "2025-04-07"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "First commercial drone operator licence",
+     "ar": "أول رخصة لمشغل تجاري للطائرات المسيّرة"
+    },
+    "body": {
+     "en": "Civil Aviation Regulatory Commission (CARC)",
+     "ar": "هيئة تنظيم الطيران المدني"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "CARC issued its first commercial operator licence in August 2025, to a television production company, with 75 companies in the queue. The regulator says licensing takes under a year; no delivery or beyond-visual-line-of-sight approvals have been reported.",
+     "ar": "منحت الهيئة أول رخصة لمشغل تجاري في أغسطس 2025 لشركة إنتاج تلفزيوني، فيما تقدمت 75 شركة بطلبات. وتقول الهيئة إن الترخيص يستغرق أقل من عام، ولم يُعلن عن موافقات للتوصيل أو للطيران خارج مدى الرؤية."
+    },
+    "url": "https://www.sadanews.ps/en/news/200224.html",
+    "source": "Sada News Agency",
+    "date": "2025-08-28"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "National Strategy for Localising the Drone Industry 2026–2036",
+     "ar": "الاستراتيجية الوطنية لتوطين صناعة الطائرات المسيّرة 2026–2036"
+    },
+    "body": {
+     "en": "Council of Ministers",
+     "ar": "مجلس الوزراء"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "Approved in October 2026, it aims to move Jordan from importing drones to designing, manufacturing, integrating and testing them locally, and to make the country a regional hub for systems integration and testing. It is a strategy with five pillars, not yet a funding programme.",
+     "ar": "أُقرّت في أكتوبر 2026 وتهدف إلى نقل الأردن من استيراد المسيّرات إلى تصميمها وتصنيعها ودمجها واختبارها محلياً، وجعله مركزاً إقليمياً لتكامل الأنظمة واختبارها. وهي استراتيجية من خمس ركائز، لا برنامج تمويل بعد."
+    },
+    "url": "https://petra.gov.jo/en/news/cabinet-approves-drone-industry-strategy-health-plan-regulatory-changes",
+    "source": "Jordan News Agency (Petra)",
+    "date": "2026-10-20"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Investment Environment Law 21 of 2022 and Regulation 7 of 2023",
+     "ar": "قانون تنظيم البيئة الاستثمارية رقم 21 لسنة 2022 ونظامه رقم 7 لسنة 2023"
+    },
+    "body": {
+     "en": "Ministry of Investment",
+     "ar": "وزارة الاستثمار"
+    },
+    "year": 2022,
+    "status": "in_force",
+    "summary": {
+     "en": "Gives licensed investors zero-rated sales tax on fixed assets, production inputs and spare parts, plus further incentives in development zones. It applies to all sectors, so robot and automation equipment qualifies only as ordinary machinery.",
+     "ar": "يمنح المستثمرين المرخصين ضريبة مبيعات بنسبة صفر على الموجودات الثابتة ومدخلات الإنتاج وقطع الغيار، إضافة إلى حوافز أخرى في المناطق التنموية. وينطبق على جميع القطاعات، فلا تستفيد معدات الروبوتات والأتمتة إلا بوصفها آلات عادية."
+    },
+    "url": "https://www.ammonnews.net/article/950473",
+    "source": "Ammon News",
+    "date": "2025-09-25"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "“Leadership in Industry” grants from the Industry Support & Development Fund",
+     "ar": "منح برنامج «الريادة في الصناعة» من صندوق دعم وتطوير الصناعة"
+    },
+    "body": {
+     "en": "Ministry of Industry, Trade & Supply (Industry Support & Development Fund), with German funding",
+     "ar": "وزارة الصناعة والتجارة والتموين (صندوق دعم وتطوير الصناعة) بتمويل ألماني"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "A €35m programme launched in June 2026 offering non-repayable grants of up to JD 100,000 to 370 small and medium factories, covering up to 70% of eligible costs. It targets competitiveness and exports in general, not automation specifically, but upgrades to production lines can qualify.",
+     "ar": "برنامج بقيمة 35 مليون يورو أُطلق في يونيو 2026، يقدم منحاً غير مستردة تصل إلى 100 ألف دينار لـ370 منشأة صناعية صغيرة ومتوسطة، ويغطي حتى 70% من الكلف المؤهلة. ويستهدف التنافسية والتصدير عموماً لا الأتمتة تحديداً، لكن تطوير خطوط الإنتاج قد يكون مؤهلاً."
+    },
+    "url": "https://petra.gov.jo/ar/news/%D8%A5%D8%B7%D9%84%D8%A7%D9%82-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%AF%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%B5%D9%86%D8%A7%D8%B9%D8%A9-%D8%A8%D8%AA%D9%85%D9%88%D9%8A%D9%84-35-%D9%85%D9%84%D9%8A%D9%88%D9%86-%D9%8A%D9%88%D8%B1%D9%88",
+    "source": "Jordan News Agency (Petra)",
+    "date": "2026-06-28"
+   },
+   {
+    "area": "sandbox",
+    "title": {
+     "en": "JoRegBox fintech regulatory sandbox",
+     "ar": "البيئة الرقابية التجريبية للتكنولوجيا المالية (JoRegBox)"
+    },
+    "body": {
+     "en": "Central Bank of Jordan with JoPACC",
+     "ar": "البنك المركزي الأردني والشركة الأردنية لأنظمة الدفع والتقاص"
+    },
+    "year": 2022,
+    "status": "in_force",
+    "summary": {
+     "en": "A supervised testing environment for payment and banking innovations, relaunched in 2022 with a fintech centre. It covers financial services only; we found no sandbox open to robotics or autonomous systems.",
+     "ar": "بيئة اختبار خاضعة للإشراف لابتكارات الدفع والخدمات المصرفية، أُعيد إطلاقها في 2022 مع مركز للتكنولوجيا المالية. وتقتصر على الخدمات المالية، ولم نجد بيئة تجريبية مفتوحة للروبوتات أو الأنظمة ذاتية التشغيل."
+    },
+    "url": "https://www.jordannews.jo/Section-109/News/Jordan-financial-technology-center-regulatory-sandbox-launched-24711",
+    "source": "Jordan News",
+    "date": "2022-11-17"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "Personal Data Protection Law 24 of 2023",
+     "ar": "قانون حماية البيانات الشخصية رقم 24 لسنة 2023"
+    },
+    "body": {
+     "en": "Personal Data Protection Council and Unit (Ministry of Digital Economy & Entrepreneurship)",
+     "ar": "مجلس حماية البيانات الشخصية ووحدتها في وزارة الاقتصاد الرقمي والريادة"
+    },
+    "year": 2023,
+    "status": "in_force",
+    "summary": {
+     "en": "In force since March 2024, it requires consent, data protection officers in some cases, and controls on sensitive data such as biometrics and on transfers abroad. Camera-equipped drones and robots collecting images or location data fall under it.",
+     "ar": "نافذ منذ مارس 2024، ويشترط الموافقة، وتعيين مسؤول لحماية البيانات في حالات معينة، ويضبط معالجة البيانات الحساسة مثل البيانات الحيوية ونقل البيانات إلى الخارج. وتخضع له المسيّرات والروبوتات المزودة بكاميرات التي تجمع صوراً أو بيانات موقع."
+    },
+    "url": "https://www.dlapiperdataprotection.com/index.html?t=law&c=JO",
+    "source": "DLA Piper",
+    "date": "2026-11-08"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "Jordanian AI Policy (2020) and National AI Ethics Charter",
+     "ar": "السياسة الأردنية للذكاء الاصطناعي (2020) والميثاق الوطني لأخلاقيات الذكاء الاصطناعي"
+    },
+    "body": {
+     "en": "Ministry of Digital Economy & Entrepreneurship",
+     "ar": "وزارة الاقتصاد الرقمي والريادة"
+    },
+    "year": 2022,
+    "status": "in_force",
+    "summary": {
+     "en": "The Cabinet-approved policy sets the government's AI direction and enabling environment, and the ethics charter sets principles for developers and users, backed by a published governance model. Neither is binding law, and no AI statute or risk-based rulebook exists yet.",
+     "ar": "تحدد السياسة التي أقرها مجلس الوزراء التوجه الحكومي في الذكاء الاصطناعي والبيئة الممكّنة له، ويضع الميثاق مبادئ أخلاقية للمطورين والمستخدمين، مع نموذج حوكمة منشور. ولا يُعد أي منهما قانوناً ملزماً، ولا يوجد بعد قانون للذكاء الاصطناعي أو قواعد قائمة على المخاطر."
+    },
+    "url": "https://modee.gov.jo/ar/pages/AICustompage",
+    "source": "Ministry of Digital Economy & Entrepreneurship",
+    "date": "2026-11-08"
+   }
+  ],
+  "score": {
+   "av_law": {
+    "v": 0,
+    "note": {
+     "en": "We found no autonomous-vehicle law, regulation, draft or trial permit; the government's September 2026 two-year transport review mentions buses, rail and smart transport but no AVs.",
+     "ar": "لم نجد قانوناً أو لائحة أو مسودة أو تصريح اختبار للمركبات ذاتية القيادة؛ وتتناول حصيلة النقل الحكومية لعامين (سبتمبر 2026) الحافلات والسكك الحديدية والنقل الذكي دون أي ذكر لها."
+    },
+    "url": "https://petra.gov.jo/en/news/two-year-transport-drive-expands-bus-network-renews-freight-fleet-advances-aqaba-railway",
+    "source": "Jordan News Agency (Petra)"
+   },
+   "robotaxi": {
+    "v": 0,
+    "note": {
+     "en": "No robotaxi pilot or service has been reported in Jordan.",
+     "ar": "لم يُعلن عن أي تجربة أو خدمة لسيارات الأجرة ذاتية القيادة في الأردن."
+    },
+    "url": "https://petra.gov.jo/en/news/two-year-transport-drive-expands-bus-network-renews-freight-fleet-advances-aqaba-railway",
+    "source": "Jordan News Agency (Petra)"
+   },
+   "drones": {
+    "v": 1,
+    "note": {
+     "en": "CARC's 2025 instructions license commercial operations and the first operator licence was issued in August 2025, but no delivery or BVLOS approval has been reported.",
+     "ar": "تنظم تعليمات الهيئة لعام 2025 ترخيص التشغيل التجاري، ومُنحت أول رخصة لمشغل في أغسطس 2025، لكن لم يُعلن عن أي موافقة للتوصيل أو للطيران خارج مدى الرؤية."
+    },
+    "url": "https://www.sadanews.ps/en/news/200224.html",
+    "source": "Sada News Agency"
+   },
+   "sandbox": {
+    "v": 0,
+    "note": {
+     "en": "Jordan's sandboxes are run by the central bank and financial regulators for fintech only; we could not confirm any sandbox usable for robotics.",
+     "ar": "تقتصر البيئات التجريبية في الأردن على التكنولوجيا المالية ويديرها البنك المركزي والجهات الرقابية المالية؛ ولم نتمكن من التحقق من وجود بيئة تجريبية صالحة للروبوتات."
+    },
+    "url": "https://www.jordannews.jo/Section-109/News/Jordan-financial-technology-center-regulatory-sandbox-launched-24711",
+    "source": "Jordan News"
+   },
+   "incentives": {
+    "v": 1,
+    "note": {
+     "en": "Only general incentives apply: zero-rated sales tax on investment assets and industrial competitiveness grants of up to 70%, with nothing earmarked for automation.",
+     "ar": "لا تتوفر إلا حوافز عامة: ضريبة مبيعات بنسبة صفر على الأصول الاستثمارية ومنح لتنافسية الصناعة تصل إلى 70%، دون تخصيص للأتمتة."
+    },
+    "url": "https://petra.gov.jo/ar/news/%D8%A5%D8%B7%D9%84%D8%A7%D9%82-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%AF%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%B5%D9%86%D8%A7%D8%B9%D8%A9-%D8%A8%D8%AA%D9%85%D9%88%D9%8A%D9%84-35-%D9%85%D9%84%D9%8A%D9%88%D9%86-%D9%8A%D9%88%D8%B1%D9%88",
+    "source": "Jordan News Agency (Petra)"
+   },
+   "ai_rules": {
+    "v": 2,
+    "note": {
+     "en": "A Cabinet-approved AI policy, ethics charter and governance model are in place alongside the Personal Data Protection Law in force since 2024, though the AI framework is non-binding.",
+     "ar": "لدى الأردن سياسة للذكاء الاصطناعي أقرها مجلس الوزراء وميثاق أخلاقيات ونموذج حوكمة، إلى جانب قانون حماية البيانات الشخصية النافذ منذ 2024، وإن كان إطار الذكاء الاصطناعي غير ملزم."
+    },
+    "url": "https://modee.gov.jo/ar/pages/AICustompage",
+    "source": "Ministry of Digital Economy & Entrepreneurship"
+   }
+  }
  },
  "KW": {
   "sum": [
@@ -2932,6 +4836,224 @@
     "2025",
     "https://www.arabnews.com/node/2592687/middle-east"
    ]
-  ]
+  ],
+  "regs": [
+   {
+    "area": "drone",
+    "title": {
+     "en": "Decree-Law 89 of 2026 on drones, light sport aircraft and air sports",
+     "ar": "المرسوم بقانون رقم 89 لسنة 2026 بشأن الطائرات بدون طيار والطائرات الرياضية الخفيفة والرياضات الجوية"
+    },
+    "body": {
+     "en": "Public Authority for Civil Aviation, with Interior Ministry approval",
+     "ar": "الهيئة العامة للطيران المدني بعد موافقة وزارة الداخلية"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "In force since September 2026, it requires registration, an airworthiness certificate and an operating licence, and a separate permit to import, manufacture, assemble or program drones. Night flights and imaging of designated sites are banned, with jail terms of up to 3 years and fines up to KD 5,000.",
+     "ar": "نافذ منذ سبتمبر 2026، ويشترط تسجيل الطائرة والحصول على شهادة صلاحية وترخيص تشغيل، وتصريحاً منفصلاً لاستيراد المسيّرات أو تصنيعها أو تجميعها أو برمجتها. ويحظر الطيران ليلاً وتصوير المواقع المحددة، بعقوبات تصل إلى الحبس 3 سنوات وغرامة 5,000 دينار."
+    },
+    "url": "https://kuwaittimes.com/article/49716/kuwait/other-news/kuwait-regulates-drones-violators-risk-jail-term-fine/",
+    "source": "Kuwait Times",
+    "date": "2026-09-13"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "Executive regulations for the drone decree-law",
+     "ar": "اللائحة التنفيذية للمرسوم بقانون بشأن الطائرات بدون طيار"
+    },
+    "body": {
+     "en": "Public Authority for Civil Aviation",
+     "ar": "الهيئة العامة للطيران المدني"
+    },
+    "year": 2026,
+    "status": "draft",
+    "summary": {
+     "en": "The regulations will set licensing conditions, procedures and fees and the list of sites that may not be filmed, and are due by the end of 2026. Until they are published, operators have no working route to a licence.",
+     "ar": "ستحدد اللائحة شروط الترخيص وإجراءاته ورسومه وقائمة المواقع المحظور تصويرها، وموعد إصدارها نهاية 2026. وإلى حين نشرها لا يملك المشغلون مساراً عملياً للحصول على ترخيص."
+    },
+    "url": "https://www.alraimedia.com/article/1779171/%D9%85%D8%AD%D9%84%D9%8A%D8%A7%D8%AA/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D9%85%D8%AD%D9%84%D9%8A%D8%A9/%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%A7%D9%84%D8%AF%D8%B1%D9%88%D9%86-%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5-%D9%88%D8%A5%D8%B0%D9%86-%D9%82%D8%A8%D9%84-%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%82-%D9%88%D8%A7%D9%84%D8%AD%D8%A8%D8%B3-%D9%84%D9%84%D9%85%D8%AE%D8%A7%D9%84%D9%81%D9%8A%D9%86-%D9%8A%D8%B5%D9%84-%D8%A5%D9%84%D9%89-3-%D8%B3%D9%86%D9%88%D8%A7%D8%AA",
+    "source": "Al Rai",
+    "date": "2026-09-13"
+   },
+   {
+    "area": "drone",
+    "title": {
+     "en": "Ministerial ban on retail sale of drones",
+     "ar": "قرار وزاري بحظر بيع الطائرات المسيّرة وتداولها في المحال"
+    },
+    "body": {
+     "en": "Ministry of Commerce & Industry",
+     "ar": "وزارة التجارة والصناعة"
+    },
+    "year": 2026,
+    "status": "in_force",
+    "summary": {
+     "en": "Issued in April 2026 during the regional conflict, it bans the sale and trading of drones in all shops and markets “until further notice”. We found no report of it being lifted, which limits local supply even for licensed users.",
+     "ar": "صدر في أبريل 2026 خلال التصعيد الإقليمي، ويحظر بيع المسيّرات وتداولها في جميع المحال والأسواق «حتى إشعار آخر». ولم نجد ما يفيد برفعه، ما يقيّد التوريد المحلي حتى للمستخدمين المرخصين."
+    },
+    "url": "https://www.alanba.com.kw/1352912",
+    "source": "Al Anba",
+    "date": "2026-04-02"
+   },
+   {
+    "area": "sandbox",
+    "title": {
+     "en": "CBK regulatory sandbox for fintech",
+     "ar": "البيئة الرقابية التجريبية لبنك الكويت المركزي"
+    },
+    "body": {
+     "en": "Central Bank of Kuwait",
+     "ar": "بنك الكويت المركزي"
+    },
+    "year": 2018,
+    "status": "in_force",
+    "summary": {
+     "en": "Lets fintech firms test financial products with banks under central bank supervision. It covers financial services only; we found no CITRA or other sandbox open to robotics or autonomous systems.",
+     "ar": "تتيح لشركات التكنولوجيا المالية اختبار منتجاتها مع البنوك تحت إشراف البنك المركزي. وتقتصر على الخدمات المالية، ولم نجد بيئة تجريبية لدى هيئة الاتصالات أو غيرها مفتوحة للروبوتات أو الأنظمة ذاتية التشغيل."
+    },
+    "url": "https://www.aljarida.com/article/6777",
+    "source": "Al Jarida",
+    "date": "2022-12-04"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "Direct investment incentives under Law 116 of 2013",
+     "ar": "حوافز الاستثمار المباشر بموجب القانون رقم 116 لسنة 2013"
+    },
+    "body": {
+     "en": "Kuwait Direct Investment Promotion Authority (KDIPA)",
+     "ar": "هيئة تشجيع الاستثمار المباشر"
+    },
+    "year": 2013,
+    "status": "in_force",
+    "summary": {
+     "en": "Licensed investors can get up to 10 years' tax exemption, customs exemptions on machinery, equipment and technological devices, and access to allocated land. The incentives are general, with no track for robotics or automation.",
+     "ar": "يمكن للمستثمرين المرخصين الحصول على إعفاء ضريبي حتى 10 سنوات، وإعفاءات جمركية على الآلات والمعدات والأجهزة التقنية، وتخصيص أراضٍ. والحوافز عامة، دون مسار خاص بالروبوتات أو الأتمتة."
+    },
+    "url": "https://kdipa.gov.kw/invest-in-kuwait/guarantees-incentives/",
+    "source": "KDIPA",
+    "date": "2026-11-08"
+   },
+   {
+    "area": "incentive",
+    "title": {
+     "en": "National Fund for SME Development financing",
+     "ar": "تمويل الصندوق الوطني لرعاية وتنمية المشروعات الصغيرة والمتوسطة"
+    },
+    "body": {
+     "en": "National Fund for the Care and Development of SMEs",
+     "ar": "الصندوق الوطني لرعاية وتنمية المشروعات الصغيرة والمتوسطة"
+    },
+    "year": 2013,
+    "status": "suspended",
+    "summary": {
+     "en": "The fund has financed hundreds of Kuwaiti-owned projects, but Times Kuwait reported in October 2026 that new financing has been suspended for several years. It is not a current source of funding for robotics startups.",
+     "ar": "موّل الصندوق مئات المشاريع المملوكة لكويتيين، لكن «تايمز كويت» أفادت في أكتوبر 2026 بأن التمويل الجديد متوقف منذ عدة سنوات. فلا يُعد حالياً مصدراً لتمويل الشركات الناشئة في الروبوتات."
+    },
+    "url": "https://timeskuwait.com/sme-fund-backed-projects-generate-202-million-dinars-in-annual-revenue/",
+    "source": "Times Kuwait",
+    "date": "2026-10-21"
+   },
+   {
+    "area": "data",
+    "title": {
+     "en": "Data Privacy Protection Regulation No. 26 of 2024",
+     "ar": "لائحة حماية خصوصية البيانات رقم 26 لسنة 2024"
+    },
+    "body": {
+     "en": "Communications & Information Technology Regulatory Authority (CITRA)",
+     "ar": "الهيئة العامة للاتصالات وتقنية المعلومات"
+    },
+    "year": 2024,
+    "status": "in_force",
+    "summary": {
+     "en": "Replaces Regulation 42 of 2021 and sets conditions for collecting and processing personal data by telecoms and IT service providers. Kuwait still has no general data protection law, so coverage outside CITRA licensees is patchy.",
+     "ar": "تحل محل اللائحة رقم 42 لسنة 2021، وتحدد شروط جمع البيانات الشخصية ومعالجتها لدى مقدمي خدمات الاتصالات وتقنية المعلومات. ولا يزال الكويت بلا قانون عام لحماية البيانات، فتبقى الحماية خارج نطاق المرخص لهم من الهيئة مجزأة."
+    },
+    "url": "https://timeskuwait.com/citra-issues-new-data-privacy-regulations/",
+    "source": "Times Kuwait",
+    "date": "2024-02-17"
+   },
+   {
+    "area": "ai",
+    "title": {
+     "en": "CITRA guidance on AI ethics",
+     "ar": "الدليل الإرشادي لأخلاقيات الذكاء الاصطناعي الصادر عن هيئة الاتصالات"
+    },
+    "body": {
+     "en": "Communications & Information Technology Regulatory Authority (CITRA)",
+     "ar": "الهيئة العامة للاتصالات وتقنية المعلومات"
+    },
+    "year": 2025,
+    "status": "in_force",
+    "summary": {
+     "en": "Issued in November 2025, the guide sets ethical principles on data safety, privacy, human dignity and social responsibility for organisations building or using AI. It is voluntary guidance meant to inform future legislation, not binding rules.",
+     "ar": "صدر في نوفمبر 2025، ويضع مبادئ أخلاقية تتعلق بسلامة البيانات والخصوصية والكرامة الإنسانية والمسؤولية الاجتماعية للجهات التي تطوّر الذكاء الاصطناعي أو تستخدمه. وهو دليل إرشادي يمهد لتشريعات مستقبلية، لا قواعد ملزمة."
+    },
+    "url": "https://www.alraimedia.com/article/1746522/%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF/%D9%87%D9%8A%D8%A6%D8%A9-%D8%A7%D9%84%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%D8%A7%D8%AA-%D8%AA%D8%AD%D8%AF%D8%AF-4-%D9%85%D8%B1%D8%AA%D9%83%D8%B2%D8%A7%D8%AA-%D9%84%D8%B6%D9%85%D8%A7%D9%86-%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D8%A2%D9%85%D9%86-%D9%84%D9%84%D8%AC%D9%87%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%A3%D9%81%D8%B1%D8%A7%D8%AF",
+    "source": "Al Rai",
+    "date": "2025-11-11"
+   }
+  ],
+  "score": {
+   "av_law": {
+    "v": 0,
+    "note": {
+     "en": "We found no autonomous-vehicle law, regulation, draft or trial permit in Kuwait.",
+     "ar": "لم نجد في الكويت قانوناً أو لائحة أو مسودة أو تصريح اختبار للمركبات ذاتية القيادة."
+    },
+    "url": "https://dig.watch/resource/the-kuwait-national-ai-strategy-2025-2028-draft",
+    "source": "Digital Watch Observatory"
+   },
+   "robotaxi": {
+    "v": 0,
+    "note": {
+     "en": "No robotaxi pilot or service has been reported in Kuwait.",
+     "ar": "لم يُعلن عن أي تجربة أو خدمة لسيارات الأجرة ذاتية القيادة في الكويت."
+    },
+    "url": "https://dig.watch/resource/the-kuwait-national-ai-strategy-2025-2028-draft",
+    "source": "Digital Watch Observatory"
+   },
+   "drones": {
+    "v": 1,
+    "note": {
+     "en": "Decree-Law 89/2026 sets registration and licensing rules, but its executive regulations are still pending, a retail sales ban stands, and no delivery or BVLOS approvals exist.",
+     "ar": "يضع المرسوم بقانون 89/2026 قواعد للتسجيل والترخيص، لكن لائحته التنفيذية لم تصدر بعد، ولا يزال حظر البيع في المحال قائماً، ولا توجد موافقات للتوصيل أو للطيران خارج مدى الرؤية."
+    },
+    "url": "https://kuwaittimes.com/article/49716/kuwait/other-news/kuwait-regulates-drones-violators-risk-jail-term-fine/",
+    "source": "Kuwait Times"
+   },
+   "sandbox": {
+    "v": 0,
+    "note": {
+     "en": "The only sandbox found is the central bank's fintech sandbox; we found no CITRA or other sandbox usable for robotics.",
+     "ar": "البيئة التجريبية الوحيدة التي وجدناها هي بيئة البنك المركزي للتكنولوجيا المالية؛ ولم نجد بيئة لدى هيئة الاتصالات أو غيرها صالحة للروبوتات."
+    },
+    "url": "https://www.aljarida.com/article/6777",
+    "source": "Al Jarida"
+   },
+   "incentives": {
+    "v": 1,
+    "note": {
+     "en": "Only general KDIPA tax and customs incentives apply, and new SME fund financing is suspended; nothing targets automation.",
+     "ar": "لا تتوفر إلا حوافز ضريبية وجمركية عامة من هيئة تشجيع الاستثمار، والتمويل الجديد من صندوق المشروعات الصغيرة متوقف؛ ولا شيء موجه للأتمتة."
+    },
+    "url": "https://kdipa.gov.kw/invest-in-kuwait/guarantees-incentives/",
+    "source": "KDIPA"
+   },
+   "ai_rules": {
+    "v": 1,
+    "note": {
+     "en": "Kuwait has only voluntary CITRA AI ethics guidance and a sector data regulation for telecom and IT providers; the AI strategy is still a draft and there is no general data protection law.",
+     "ar": "لا تملك الكويت سوى دليل إرشادي لأخلاقيات الذكاء الاصطناعي من هيئة الاتصالات ولائحة قطاعية للبيانات تخص مقدمي خدمات الاتصالات وتقنية المعلومات؛ ولا تزال استراتيجية الذكاء الاصطناعي مسودة، ولا يوجد قانون عام لحماية البيانات."
+    },
+    "url": "https://timeskuwait.com/citra-issues-new-data-privacy-regulations/",
+    "source": "Times Kuwait"
+   }
+  }
  }
 }
