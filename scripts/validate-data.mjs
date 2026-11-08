@@ -2,7 +2,7 @@
 // so a bad entry can never reach the live site.
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, SECTORS, ROBOT_TYPES, COMPANY_CATEGORIES, STAGES, EVENT_TYPES, MENA, ISO_DATE, readData } from './lib/taxonomy.mjs';
+import { ROOT, SECTORS, ROBOT_TYPES, COMPANY_CATEGORIES, STAGES, EVENT_TYPES, MENA, EXCLUDED_COUNTRIES, ISO_DATE, readData } from './lib/taxonomy.mjs';
 
 const errors = [];
 const D = Object.fromEntries(['companies', 'deployments', 'events', 'countries', 'brief'].map(n => [n, readData(n)]));
@@ -23,6 +23,7 @@ D.companies.forEach((c, i) => {
   oneOf(c.category, COMPANY_CATEGORIES, w, 'category'); oneOf(c.stage, STAGES, w, 'stage');
   if (!countryCodes.has(c.country)) errors.push(`${w}: country "${c.country}" is not in countries.json`);
   date(c.added, w, 'added'); url(c.website, w, 'website'); logo(c.logo, w); url(c.source_url, w, 'source_url');
+  if ([c.country, c.hq, ...(c.mena_countries || [])].some(x => EXCLUDED_COUNTRIES.has(x))) errors.push(`${w}: companies based in or listed under an excluded country are not allowed`);
   if (c.hq !== undefined && !/^[A-Z]{2}$/.test(c.hq)) errors.push(`${w}: hq "${c.hq}" must be a 2-letter ISO country code`);
   if (c.mena_countries !== undefined) { if (!Array.isArray(c.mena_countries) || !c.mena_countries.length) errors.push(`${w}: mena_countries must be a non-empty list`); else c.mena_countries.forEach(cc => { if (!(cc in MENA)) errors.push(`${w}: mena_countries "${cc}" is not a MENA country`); }); if (Array.isArray(c.mena_countries) && !c.mena_countries.includes(c.country)) errors.push(`${w}: mena_countries must include its listed country "${c.country}"`); }
   if (c.hq && !(c.hq in MENA)) {
@@ -103,6 +104,11 @@ stories.forEach((s, si) => {
   (R.watch || []).forEach((x, i) => { if (!(R.watchStatus || {})[x.status]) errors.push(`${w} watch[${i}]: status "${x.status}" is not in report.watchStatus`); if (x.due) date(x.due, `${w} watch[${i}]`, 'due'); });
 });
 uniq(stories, 'id', 'stories');
+
+// Excluded countries anywhere in the data, and their flag files
+const flagFiles = fs.readdirSync(path.join(ROOT, 'media', 'flags'));
+EXCLUDED_COUNTRIES.forEach(cc => { if (flagFiles.includes(cc.toLowerCase() + '.svg')) errors.push(`media/flags/${cc.toLowerCase()}.svg must not be in the site`); });
+['deployments', 'events', 'countries', 'brief'].forEach(n => D[n].forEach((r, i) => { if (EXCLUDED_COUNTRIES.has(r.country) || EXCLUDED_COUNTRIES.has(r.code)) errors.push(`${n}[${i}]: excluded country`); }));
 
 if (errors.length) { console.error(`Data check failed (${errors.length} problem${errors.length > 1 ? 's' : ''}):\n- ` + errors.join('\n- ')); process.exit(1); }
 console.log(`Data check passed: ${D.companies.length} companies, ${D.deployments.length} deployments, ${D.events.length} events, ${D.countries.length} countries, ${D.brief.length} brief items, ${stories.length} research report${stories.length === 1 ? '' : 's'}.`);

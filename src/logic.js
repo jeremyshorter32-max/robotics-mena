@@ -445,7 +445,7 @@ class Component extends DCLogic {
     const c = a && window.RM_DATA.companies.find(x => x.logo && (a.includes(x.name.toLowerCase()) || x.name.toLowerCase().includes(a)));
     return c ? c.logo : '';
   }
-  MENA_CC = new Set(['AE', 'SA', 'QA', 'KW', 'BH', 'OM', 'EG', 'MA', 'TN', 'DZ', 'LY', 'JO', 'LB', 'IQ', 'SY', 'PS', 'YE', 'IL', 'TR', 'IR']);
+  MENA_CC = new Set(['AE', 'SA', 'QA', 'KW', 'BH', 'OM', 'EG', 'MA', 'TN', 'DZ', 'LY', 'JO', 'LB', 'IQ', 'SY', 'PS', 'YE', 'TR', 'IR']);
   isIntl(o) { return !!(o && o.hq && !this.MENA_CC.has(o.hq)); }
   flagUrl(cc) { return cc ? '/media/flags/' + String(cc).toLowerCase() + '.svg' : ''; }
   dbOpen(tab, id) { this._dbReturn = document.activeElement; this.setState({ dbTab: tab, dbSel: id }); }

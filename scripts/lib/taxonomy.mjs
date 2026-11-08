@@ -21,12 +21,14 @@ export const STAGES = dict('STAGES');
 export const EVENT_TYPES = dict('ETYPES');
 
 // Countries the record may cover (MENA). New ones are added to data/countries.json automatically when first used.
+// Countries the site does not cover. Companies headquartered or listed there are rejected by the validator and the scanner.
+export const EXCLUDED_COUNTRIES = new Set(['IL']);
 export const MENA = {
   AE: ['UAE', 'الإمارات'], SA: ['Saudi Arabia', 'السعودية'], QA: ['Qatar', 'قطر'], KW: ['Kuwait', 'الكويت'],
   BH: ['Bahrain', 'البحرين'], OM: ['Oman', 'عُمان'], EG: ['Egypt', 'مصر'], MA: ['Morocco', 'المغرب'],
   TN: ['Tunisia', 'تونس'], DZ: ['Algeria', 'الجزائر'], LY: ['Libya', 'ليبيا'], JO: ['Jordan', 'الأردن'],
   LB: ['Lebanon', 'لبنان'], IQ: ['Iraq', 'العراق'], PS: ['Palestine', 'فلسطين'], SY: ['Syria', 'سوريا'],
-  YE: ['Yemen', 'اليمن'], IL: ['Israel', 'إسرائيل'], TR: ['Türkiye', 'تركيا'], IR: ['Iran', 'إيران']
+  YE: ['Yemen', 'اليمن'], TR: ['Türkiye', 'تركيا'], IR: ['Iran', 'إيران']
 };
 
 export const DATA_FILES = ['companies', 'deployments', 'events', 'countries', 'brief'];

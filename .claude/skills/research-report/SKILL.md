@@ -108,3 +108,4 @@ Keep it short and plain.
 - Emails from the gate are only stored in the reader's browser until a sign-up endpoint is set in `data/site.json` (`signup_url`). Mention it if the user asks about sign-ups.
 - The site is password-protected during private preview, but `media/` files (images, PDFs) and the repo itself are public. Mention this if a report is sensitive before launch.
 - Older reports stay reachable at `/spotlight?s=<their id>`.
+- Israeli companies are not listed on this site, and the Israeli flag is not used. The validator and the scanner reject them (`EXCLUDED_COUNTRIES` in `scripts/lib/taxonomy.mjs`).

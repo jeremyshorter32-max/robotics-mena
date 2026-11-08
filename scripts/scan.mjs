@@ -13,7 +13,7 @@ import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { z } from 'zod';
 import { betaZodOutputFormat } from '@anthropic-ai/sdk/helpers/beta/zod';
-import { ROOT, SECTORS, ROBOT_TYPES, COMPANY_CATEGORIES, STAGES, EVENT_TYPES, MENA, ISO_DATE, readData, writeData, norm, slug, normUrl } from './lib/taxonomy.mjs';
+import { ROOT, SECTORS, ROBOT_TYPES, COMPANY_CATEGORIES, STAGES, EVENT_TYPES, MENA, EXCLUDED_COUNTRIES, ISO_DATE, readData, writeData, norm, slug, normUrl } from './lib/taxonomy.mjs';
 
 const MODEL = 'claude-opus-5-5';
 // If the model declines a request for policy reasons, the API retries it on a server-chosen fallback model.
@@ -176,6 +176,7 @@ function merge(found) {
     if (!ensureCountry(c.country)) { skip('Company', c.name, `country ${c.country} not covered`); continue; }
     let id = slug(c.name) || 'company'; while (data.companies.some(x => x.id === id)) id += '-2';
     const hq = /^[A-Z]{2}$/.test(c.hq || '') ? c.hq : c.country;
+    if (EXCLUDED_COUNTRIES.has(hq)) { skip('Company', c.name, 'headquartered in an excluded country'); continue; }
     const intl = !(hq in MENA);
     if (intl && !c.mena_link) { skip('Company', c.name, 'international but no link to MENA'); continue; }
     const mc = [...new Set([c.country, ...(c.mena_countries || []).filter(x => x in MENA)])];
