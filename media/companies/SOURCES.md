@@ -56,3 +56,11 @@ One image per company, taken from the company's own website, newsroom or press k
 | ys-lootah-robotics.jpg | YS Lootah Robotics | https://yslootahrobotics.com/media/home-hero.webp |
 | yutong.jpg | Yutong | https://en.yutong.com/res/res/2024/10/17/richText/9395b28de8fd4aa28c851a4a89c92c91.jpg |
 | falcon-tech-robotics.jpg | Falcon Tech Robotics | https://kodyrobots.com/wp-content/uploads/2025/11/deploys-290-advertising-robots-odigo.jpg (cropped to remove headline text) |
+| layn.jpg | LAYN | https://layntech.com/wp-content/themes/layn/assets/images/t-Hardware.png |
+| innotech.jpg | InnoTech | https://images.squarespace-cdn.com/content/v1/6208e69b7ee6ce5e65575ce3/d2561ae2-05e6-4660-9658-384c7f21e260/IMG_2633.JPG |
+| abyan.jpg | Abyan Building Construction | https://abyan.com.kw/images/Tanks_projects/home_page_1.JPG |
+| feds.jpg | Falcon Eye Drones (FEDS) | https://cdn.prod.website-files.com/68c12a5987c0cd3e02e9e53f/68eac46a0d1e900673b1c480_TechnicalCapabilitiesDronePlatformsPayloadsConstructionMonitoringSolutions.webp |
+| ucc-holding.jpg | UCC Holding | https://uccholding.com/cu896o9t4nx/Images/Articles/Bannner/DSCXIO638851972833258454.jpg |
+| cobod.jpg | COBOD | https://cobod.com/wp-content/uploads/2025/07/ucc-printer-on-location.png |
+| hilti.jpg | Hilti | https://www.hilti.com/content/hilti/W1/US/en/business/business/trends/jaibot/_jcr_content/cta/image.coreimg.82.1920.jpeg/1717006574115/l139811.jpeg |
+| legend-robot.jpg | Legend Robot | https://www.legendrobot.com/uploads/image/20260918/3.3m_Latex_Paint_Spraying_Robot_Case_Study_(2).webp |

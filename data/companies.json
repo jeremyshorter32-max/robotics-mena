@@ -2277,5 +2277,422 @@
     },
     "image_url": "https://kodyrobots.com/wp-content/uploads/2025/11/deploys-290-advertising-robots-odigo.jpg",
     "image_page": "https://kodyrobots.com/press-release/kody-technolab-joint-venture-falcon-tech-robotics-deploy-odigo-lulu-group-uae/"
+  },
+  {
+    "id": "3dxb-group",
+    "name": "3DXB Group",
+    "name_ar": "مجموعة 3DXB",
+    "country": "AE",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "construction",
+    "stage": "corp",
+    "summary": "Dubai 3D construction printing contractor that printed a Guinness-record 300 sq m villa in Al Awir and builds its own printers.",
+    "summary_ar": "شركة مقاولات في دبي متخصصة في طباعة المباني ثلاثية الأبعاد، طبعت فيلا بمساحة 300 متر مربع في العوير دخلت موسوعة غينيس، وتصنّع طابعاتها الخاصة.",
+    "source": "Zawya (press release)",
+    "source_url": "https://www.zawya.com/en/press-release/companies-news/3dxb-group-tackles-uaes-sustainable-construction-challenges-with-advanced-3d-printing-technology-cpppo3pa",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "layn",
+    "name": "LAYN",
+    "name_ar": "لاين",
+    "country": "EG",
+    "hq": "EG",
+    "hq_city": "Cairo (New Cairo)",
+    "mena_countries": [
+      "EG"
+    ],
+    "category": "construction",
+    "stage": "seed",
+    "summary": "Egypt's first 3D concrete printing company, building its own gantry printers, software and mixes for developers like SODIC, Mountain View and Emaar.",
+    "summary_ar": "أول شركة مصرية للطباعة الخرسانية ثلاثية الأبعاد، تطوّر طابعاتها وبرمجياتها وخلطاتها داخليًا لمطورين مثل سوديك وماونتن فيو وإعمار.",
+    "website": "https://layntech.com/",
+    "logo": "/media/logos/layn.png",
+    "source": "EnterpriseAM",
+    "source_url": "https://enterpriseam.com/egypt/2026/09/04/meet-egyptian-3d-concrete-printing-company-layns-zeyad-zein/",
+    "image": "/media/companies/layn.jpg",
+    "image_cap": {
+      "en": "LAYN's in-house gantry concrete printer",
+      "ar": "طابعة الخرسانة ذات الجسر المتحرك التي طوّرتها لاين داخليًا"
+    },
+    "image_alt": {
+      "en": "Close-up of a black gantry-style 3D concrete printer with its print head and hopper mounted on a horizontal beam inside a workshop",
+      "ar": "لقطة قريبة لطابعة خرسانة ثلاثية الأبعاد سوداء من نوع الجسر المتحرك، يظهر فيها رأس الطباعة والقادوس مثبتين على عارضة أفقية داخل ورشة"
+    },
+    "image_credit": {
+      "en": "Image: LAYN",
+      "ar": "الصورة: لاين"
+    },
+    "image_url": "https://layntech.com/wp-content/themes/layn/assets/images/t-Hardware.png",
+    "image_page": "https://layntech.com/technology/",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "innotech",
+    "name": "InnoTech",
+    "name_ar": "إنوتك",
+    "country": "OM",
+    "hq": "OM",
+    "hq_city": "Muscat (Ghala)",
+    "mena_countries": [
+      "OM"
+    ],
+    "category": "construction",
+    "stage": "seed",
+    "summary": "Omani 3D construction printing firm that built Oman's first locally made concrete printer and has printed halls and facilities for PDO and municipalities.",
+    "summary_ar": "شركة عُمانية للطباعة الإنشائية ثلاثية الأبعاد، صنعت أول طابعة خرسانة محلية في عُمان وطبعت قاعات ومرافق لشركة تنمية نفط عُمان وجهات بلدية.",
+    "website": "https://www.innotech.om/",
+    "logo": "/media/logos/innotech.png",
+    "source": "Oman Observer",
+    "source_url": "https://www.omanobserver.om/article/1167903/business/innotech-leads-omans-3d-printing-revolution-in-construction",
+    "image": "/media/companies/innotech.jpg",
+    "image_cap": {
+      "en": "3D-printed concrete walls on an InnoTech site in Oman",
+      "ar": "جدران خرسانية مطبوعة بتقنية ثلاثية الأبعاد في أحد مواقع إنوتك في عُمان"
+    },
+    "image_alt": {
+      "en": "A worker in a cap stands among freshly printed layered concrete walls, with the printer's gantry towers in the background",
+      "ar": "عامل يرتدي قبعة يقف بين جدران خرسانية مطبوعة حديثًا بطبقات متتالية، وتظهر أبراج الطابعة في الخلفية"
+    },
+    "image_credit": {
+      "en": "Image: InnoTech",
+      "ar": "الصورة: إنوتك"
+    },
+    "image_url": "https://images.squarespace-cdn.com/content/v1/6208e69b7ee6ce5e65575ce3/d2561ae2-05e6-4660-9658-384c7f21e260/IMG_2633.JPG",
+    "image_page": "https://www.innotech.om/",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "abyan",
+    "name": "Abyan Building Construction",
+    "name_ar": "أبيان لإنشاء المباني",
+    "country": "KW",
+    "hq": "KW",
+    "hq_city": "Kuwait City",
+    "mena_countries": [
+      "KW"
+    ],
+    "category": "construction",
+    "stage": "corp",
+    "summary": "Kuwaiti 3D construction printing contractor running a COBOD BOD2; printed the world's first on-site 3D-printed concrete water tanks and Kuwait's first printed villa.",
+    "summary_ar": "شركة مقاولات كويتية للطباعة الإنشائية ثلاثية الأبعاد تشغّل طابعة COBOD BOD2، طبعت أول خزانات مياه خرسانية في العالم في الموقع وأول فيلا مطبوعة في الكويت.",
+    "website": "https://abyan.com.kw/",
+    "logo": "/media/logos/abyan.png",
+    "source": "Gulf Construction",
+    "source_url": "https://gulfconstructiononline.com/Article/464270/gcc-moves-from-pilot-projects-to-mega-scale-3d-printed-construction",
+    "image": "/media/companies/abyan.jpg",
+    "image_cap": {
+      "en": "Abyan's 3D-printed concrete water tanks in Kuwait",
+      "ar": "خزانات المياه الخرسانية المطبوعة بتقنية ثلاثية الأبعاد من أبيان في الكويت"
+    },
+    "image_alt": {
+      "en": "Two large cylindrical layered-concrete water tanks stand on a desert site, with workers and scaffolding beside them",
+      "ar": "خزانا مياه أسطوانيان كبيران من الخرسانة المطبوعة بطبقات يقفان في موقع صحراوي، وبجانبهما عمال وسقالات"
+    },
+    "image_credit": {
+      "en": "Image: Abyan",
+      "ar": "الصورة: أبيان"
+    },
+    "image_url": "https://abyan.com.kw/images/Tanks_projects/home_page_1.JPG",
+    "image_page": "https://abyan.com.kw/",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "nuqul-building-solutions",
+    "name": "Nuqul Building Solutions",
+    "name_ar": "نقل لحلول البناء",
+    "country": "JO",
+    "hq": "JO",
+    "hq_city": "Amman",
+    "mena_countries": [
+      "JO"
+    ],
+    "category": "construction",
+    "stage": "corp",
+    "summary": "Nuqul Group venture that is Jordan's first 3D construction printing operator and the sole distributor and operator of COBOD printers in Jordan.",
+    "summary_ar": "مشروع تابع لمجموعة نقل، وهو أول مشغّل للطباعة الإنشائية ثلاثية الأبعاد في الأردن والموزع والمشغّل الحصري لطابعات COBOD في المملكة.",
+    "source": "Zawya (press release)",
+    "source_url": "https://www.zawya.com/en/press-release/companies-news/nuqul-group-launches-nuqul-building-solutions-t1uitqsv",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "feds",
+    "name": "Falcon Eye Drones (FEDS)",
+    "name_ar": "فالكون آي درونز",
+    "country": "AE",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE",
+      "SA"
+    ],
+    "category": "drone",
+    "stage": "growth",
+    "summary": "Dubai drone-services firm doing aerial survey, LiDAR mapping and construction progress monitoring for contractors across the UAE and Saudi Arabia.",
+    "summary_ar": "شركة خدمات طائرات مسيّرة في دبي تقدّم المسح الجوي ورسم الخرائط بالليدار ومراقبة تقدم أعمال البناء للمقاولين في الإمارات والسعودية.",
+    "website": "https://www.feds.group/",
+    "logo": "/media/logos/feds.png",
+    "source": "FEDS website (Construction monitoring)",
+    "source_url": "https://www.feds.group/services/construction-monitoring",
+    "image": "/media/companies/feds.jpg",
+    "image_cap": {
+      "en": "A FEDS survey drone with a sensor payload being readied on site",
+      "ar": "طائرة مسح مسيّرة من فالكون آي درونز مزوّدة بحمولة استشعار يجري تجهيزها في الموقع"
+    },
+    "image_alt": {
+      "en": "A pilot in orange workwear lifts a large quadcopter drone with a mapping sensor underneath on gravel ground, with low buildings behind",
+      "ar": "طيّار يرتدي ملابس عمل برتقالية يرفع طائرة مسيّرة رباعية كبيرة تحمل مستشعر مسح أسفلها على أرض حصوية، وخلفه مبانٍ منخفضة"
+    },
+    "image_credit": {
+      "en": "Image: Falcon Eye Drones",
+      "ar": "الصورة: فالكون آي درونز"
+    },
+    "image_url": "https://cdn.prod.website-files.com/68c12a5987c0cd3e02e9e53f/68eac46a0d1e900673b1c480_TechnicalCapabilitiesDronePlatformsPayloadsConstructionMonitoringSolutions.webp",
+    "image_page": "https://www.feds.group/services/construction-monitoring",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "ucc-holding",
+    "name": "UCC Holding",
+    "name_ar": "يو سي سي القابضة",
+    "country": "QA",
+    "hq": "QA",
+    "hq_city": "Doha",
+    "mena_countries": [
+      "QA"
+    ],
+    "category": "construction",
+    "stage": "corp",
+    "summary": "Qatari contractor running two COBOD BOD XL printers to 3D-print two 20,000 sq m public schools for Ashghal, the largest printed buildings to date.",
+    "summary_ar": "شركة مقاولات قطرية تشغّل طابعتين من طراز COBOD BOD XL لطباعة مدرستين حكوميتين لصالح أشغال بمساحة 20,000 متر مربع لكل منهما، وهما أكبر مبانٍ مطبوعة حتى الآن.",
+    "website": "https://uccholding.com/",
+    "logo": "/media/logos/ucc-holding.png",
+    "source": "UCC Holding (press release)",
+    "source_url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences",
+    "image": "/media/companies/ucc-holding.jpg",
+    "image_cap": {
+      "en": "UCC and COBOD teams at the 3D-printed schools site in Doha",
+      "ar": "فريقا يو سي سي وCOBOD في موقع المدارس المطبوعة بتقنية ثلاثية الأبعاد في الدوحة"
+    },
+    "image_alt": {
+      "en": "A large group in hi-vis vests and hard hats poses in front of curved 3D-printed concrete walls under a printer gantry with UCC and COBOD banners",
+      "ar": "مجموعة كبيرة من الأشخاص يرتدون سترات عاكسة وخوذات أمام جدران خرسانية منحنية مطبوعة تحت جسر طابعة تحمل لافتات يو سي سي وCOBOD"
+    },
+    "image_credit": {
+      "en": "Image: UCC Holding",
+      "ar": "الصورة: يو سي سي القابضة"
+    },
+    "image_url": "https://uccholding.com/cu896o9t4nx/Images/Articles/Bannner/DSCXIO638851972833258454.jpg",
+    "image_page": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "cobod",
+    "name": "COBOD",
+    "name_ar": "كوبود",
+    "country": "QA",
+    "hq": "DK",
+    "hq_city": "Copenhagen",
+    "mena_countries": [
+      "QA",
+      "SA",
+      "AE",
+      "OM"
+    ],
+    "category": "construction",
+    "stage": "growth",
+    "summary": "Gantry-style construction 3D printers (BOD2, BODXL) for printing walls of buildings on site; HQ Copenhagen, Denmark.",
+    "summary_ar": "طابعات بناء ثلاثية الأبعاد من نوع الجسر المتحرك (BOD2 وBODXL) لطباعة جدران المباني في الموقع؛ مقرها كوبنهاغن، الدنمارك.",
+    "mena_link": {
+      "en": "In June 2025 Qatar's UCC Holding and the Public Works Authority (Ashghal) began printing two 20,000 m² public schools in Doha on two custom COBOD BODXL printers, after UCC signed the printer purchase in September 2024. COBOD printers were also used for Dar Al Arkan's three-storey villa in Riyadh and Emaar's first 3D-printed villa in Dubai.",
+      "ar": "في يونيو 2025 بدأت شركة أورباكون القابضة (UCC) وهيئة الأشغال العامة (أشغال) في قطر طباعة مدرستين حكوميتين مساحة كل منهما 20,000 م² في الدوحة بطابعتين مخصصتين من طراز BODXL من كوبود، بعد أن وقّعت UCC عقد شراء الطابعات في سبتمبر 2024. كما استُخدمت طابعات كوبود في فيلا دار الأركان المكوّنة من ثلاثة طوابق في الرياض وفي أول فيلا مطبوعة لإعمار في دبي."
+    },
+    "mena_source": "UCC Holding",
+    "mena_source_url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences",
+    "mena_date": "2025-06-11",
+    "website": "https://cobod.com/",
+    "logo": "/media/logos/cobod.png",
+    "source": "UCC Holding",
+    "source_url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences",
+    "image": "/media/companies/cobod.jpg",
+    "image_cap": {
+      "en": "COBOD BODXL gantry printer on the UCC Holding school site in Qatar",
+      "ar": "طابعة BODXL الجسرية من كوبود في موقع مدارس أورباكون القابضة في قطر"
+    },
+    "image_alt": {
+      "en": "Aerial view of a huge steel gantry 3D printer framework standing over a concrete slab on a desert construction site, with cranes and excavators around it",
+      "ar": "منظر جوي لهيكل طابعة ثلاثية الأبعاد جسرية فولاذية ضخمة فوق بلاطة خرسانية في موقع بناء صحراوي، تحيط بها رافعات وحفارات"
+    },
+    "image_credit": {
+      "en": "Image: COBOD",
+      "ar": "الصورة: كوبود"
+    },
+    "image_url": "https://cobod.com/wp-content/uploads/2025/07/ucc-printer-on-location.png",
+    "image_page": "https://cobod.com/customer-projects/ucc-holding/",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "leapting",
+    "name": "LEAPTING",
+    "name_ar": "ليبتينغ",
+    "country": "SA",
+    "hq": "CN",
+    "hq_city": "Huzhou",
+    "mena_countries": [
+      "SA"
+    ],
+    "category": "construction",
+    "stage": "a",
+    "summary": "Autonomous robots that mount solar modules (MMR) and clean panels on utility-scale PV plants; HQ Huzhou, China.",
+    "summary_ar": "روبوتات ذاتية التشغيل لتركيب الألواح الشمسية (MMR) وتنظيفها في محطات الطاقة الشمسية الكبيرة؛ مقرها هوتشو، الصين.",
+    "mena_link": {
+      "en": "In September 2025 LEAPTING signed a deal to install all 149,000+ modules of Aloy's 105 MWp solar project in Saudi Arabia with 10 of its module-mounting robots, billed as the kingdom's first PV plant fully installed by robots. In July 2025 it shipped a first batch of 25 MMR robots to a GW-scale Middle East project, after a May 2025 agreement to supply robots to L&T for 3.5 GW of Saudi solar plants.",
+      "ar": "في سبتمبر 2025 وقّعت ليبتينغ اتفاقاً لتركيب أكثر من 149,000 لوح في مشروع ألوي للطاقة الشمسية بقدرة 105 ميغاواط ذروة في السعودية باستخدام 10 من روبوتاتها لتركيب الألواح، ليكون أول محطة شمسية في المملكة تُركَّب بالكامل بالروبوتات. وفي يوليو 2025 شحنت أول دفعة من 25 روبوت MMR إلى مشروع بقدرة غيغاواط في الشرق الأوسط، بعد اتفاق في مايو 2025 لتزويد شركة لارسن آند توبرو بروبوتات لمحطات شمسية سعودية بقدرة 3.5 غيغاواط."
+    },
+    "mena_source": "SolarQuarter",
+    "mena_source_url": "https://solarquarter.com/2025/09/16/leapting-signs-105-mwp-aloy-charge-ppa-in-saudi-arabia-as-the-first-fixed-tilt-table-project-to-be-fully-installed-by-module-mounting-robots-mmr/",
+    "mena_date": "2025-09-16",
+    "source": "SolarQuarter",
+    "source_url": "https://solarquarter.com/2025/09/16/leapting-signs-105-mwp-aloy-charge-ppa-in-saudi-arabia-as-the-first-fixed-tilt-table-project-to-be-fully-installed-by-module-mounting-robots-mmr/",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "guanli",
+    "name": "Guanli",
+    "name_ar": "غوانلي",
+    "country": "SA",
+    "hq": "CN",
+    "hq_city": "Hangzhou",
+    "mena_countries": [
+      "SA"
+    ],
+    "category": "construction",
+    "stage": "growth",
+    "summary": "Construction 3D printers (gantry and robotic-arm systems) for on-site concrete printing; HQ Hangzhou, China.",
+    "summary_ar": "طابعات بناء ثلاثية الأبعاد (أنظمة جسرية وأذرع روبوتية) لطباعة الخرسانة في الموقع؛ مقرها هانغتشو، الصين.",
+    "mena_link": {
+      "en": "Four Guanli printers built the 5,600 m² Abdulaziz Abdullah Sharbatly Mosque in Jeddah's Al-Jawhara district, opened in March 2024 by Forsan Real Estate as the world's first 3D-printed mosque. The project took about six months.",
+      "ar": "شُيّد جامع عبدالعزيز عبدالله شربتلي في حي الجوهرة بجدة بمساحة 5,600 م² باستخدام أربع طابعات من غوانلي، وافتتحته شركة فرسان العقارية في مارس 2024 بوصفه أول جامع مطبوع بتقنية الطباعة ثلاثية الأبعاد في العالم، واستغرق تنفيذه نحو ستة أشهر."
+    },
+    "mena_source": "Gulf Construction Online",
+    "mena_source_url": "https://www.gulfconstructiononline.com/Article/386820/Jeddah_hosts_world%E2%80%99s_first_3D_printed_mosque",
+    "mena_date": "2024-07-01",
+    "source": "Gulf Construction Online",
+    "source_url": "https://www.gulfconstructiononline.com/Article/386820/Jeddah_hosts_world%E2%80%99s_first_3D_printed_mosque",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "kenyo",
+    "name": "Kenyo",
+    "name_ar": "كينيو",
+    "country": "AE",
+    "hq": "CN",
+    "hq_city": "Nanjing",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "construction",
+    "stage": "corp",
+    "summary": "Construction 3D concrete printing group building printed structures and printers; HQ Nanjing, China.",
+    "summary_ar": "مجموعة متخصصة في الطباعة الخرسانية ثلاثية الأبعاد للمباني والطابعات؛ مقرها نانجينغ، الصين.",
+    "mena_link": {
+      "en": "In October 2025 Nanjing Kenyo Group's UAE unit, Kenyo Tech Middle East, broke ground on a 3D concrete printing factory in Abu Dhabi's China-UAE Industrial Capacity Cooperation Demonstration Park (KEZAD), an investment of about $30 million on more than 38,000 m². The unit had already printed a 300 m² warehouse in the UAE and develops desert-sand UHPC mixes with Khalifa University.",
+      "ar": "في أكتوبر 2025 وضعت كينيو تك الشرق الأوسط، الذراع الإماراتية لمجموعة نانجينغ كينيو، حجر الأساس لمصنع للطباعة الخرسانية ثلاثية الأبعاد في منطقة التعاون الصناعي الصيني الإماراتي النموذجية ضمن كيزاد في أبوظبي، باستثمار يقارب 30 مليون دولار على مساحة تتجاوز 38,000 م². وكانت الوحدة قد طبعت مستودعاً بمساحة 300 م² في الإمارات، وتطوّر مع جامعة خليفة خلطات خرسانة فائقة الأداء من رمال الصحراء."
+    },
+    "mena_source": "Gulf Today",
+    "mena_source_url": "https://www.gulftoday.ae/business/2025/10/06/nanjing-kenyo-group-breaks-ground-on-middle-easts-largest-3d-printing-factory-in-abu-dhabi",
+    "mena_date": "2025-10-06",
+    "source": "Gulf Today",
+    "source_url": "https://www.gulftoday.ae/business/2025/10/06/nanjing-kenyo-group-breaks-ground-on-middle-easts-largest-3d-printing-factory-in-abu-dhabi",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "hilti",
+    "name": "Hilti",
+    "name_ar": "هيلتي",
+    "country": "AE",
+    "hq": "LI",
+    "hq_city": "Schaan",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "construction",
+    "stage": "corp",
+    "summary": "Construction tools maker whose Jaibot semi-autonomous robot drills ceiling holes from BIM data; HQ Schaan, Liechtenstein.",
+    "summary_ar": "شركة أدوات بناء طوّرت الروبوت شبه الذاتي جايبوت لحفر ثقوب الأسقف وفق بيانات نمذجة معلومات البناء؛ مقرها شان، ليختنشتاين.",
+    "mena_link": {
+      "en": "Dubai contractor ALEC uses Hilti's Jaibot ceiling-drilling robots on its sites, part of a strategy launched in November 2024 to automate 5% of its construction activities by 2030, where Hilti gave a live Jaibot demonstration.",
+      "ar": "تستخدم شركة المقاولات «ألك» في دبي روبوتات «جايبوت» من هيلتي لحفر الأسقف في مواقعها، ضمن استراتيجية أطلقتها في نوفمبر 2024 لأتمتة 5% من أنشطتها الإنشائية بحلول 2030، وقدّمت خلالها هيلتي عرضاً حياً للروبوت."
+    },
+    "mena_source": "The National",
+    "mena_source_url": "https://www.thenationalnews.com/business/property/2026/02/08/tech-watches-and-robot-dogs-dubai-contractor-alec-bullish-on-ai-but-expects-hard-hats-to-stay",
+    "mena_date": "2026-02-08",
+    "website": "https://www.hilti.com/",
+    "logo": "/media/logos/hilti.png",
+    "source": "Middle East Construction News",
+    "source_url": "https://meconstructionnews.com/61478/alec-launches-robotics-strategy",
+    "image": "/media/companies/hilti.jpg",
+    "image_cap": {
+      "en": "Hilti Jaibot drilling robot with a PLT 300 layout tool",
+      "ar": "روبوت الحفر جايبوت من هيلتي مع جهاز التخطيط PLT 300"
+    },
+    "image_alt": {
+      "en": "A red tracked Hilti Jaibot robot raising an orange robotic arm to drill into a concrete ceiling, beside a red Hilti total station on a tripod in an unfinished building",
+      "ar": "روبوت جايبوت أحمر من هيلتي على جنزير يرفع ذراعاً روبوتية برتقالية للحفر في سقف خرساني، بجانب جهاز مساحة أحمر من هيلتي على حامل ثلاثي داخل مبنى قيد الإنشاء"
+    },
+    "image_credit": {
+      "en": "Image: Hilti",
+      "ar": "الصورة: هيلتي"
+    },
+    "image_url": "https://www.hilti.com/content/hilti/W1/US/en/business/business/trends/jaibot/_jcr_content/cta/image.coreimg.82.1920.jpeg/1717006574115/l139811.jpeg",
+    "image_page": "https://www.hilti.com/content/hilti/W1/US/en/business/business/trends/jaibot.html",
+    "added": "2026-11-08"
+  },
+  {
+    "id": "legend-robot",
+    "name": "Legend Robot",
+    "name_ar": "ليجند روبوت",
+    "country": "SA",
+    "hq": "CN",
+    "hq_city": "Shenzhen",
+    "mena_countries": [
+      "SA",
+      "AE"
+    ],
+    "category": "construction",
+    "stage": "a",
+    "summary": "Autonomous putty and latex paint-spraying, tile-laying and floor-grinding robots for building interiors; HQ Shenzhen, China.",
+    "summary_ar": "روبوتات ذاتية لرش المعجون والطلاء ولتبليط الأرضيات وجليها في التشطيبات الداخلية للمباني؛ مقرها شنجن، الصين.",
+    "mena_link": {
+      "en": "In an August 2026 release, Legend Robot said it had deployed its latex paint-spraying robot with Furnishing House for interior wall finishing at Qiddiya in Riyadh, reaching up to 226 m² an hour in mock-up trials, and had used its spraying units at Damac Hills and Damac Lagoons in Dubai. It lists Qiddiya as its EMEA case study.",
+      "ar": "أعلنت ليجند روبوت في أغسطس 2026 أنها نشرت روبوت رش الطلاء مع شركة فيرنيشينغ هاوس لتشطيب الجدران الداخلية في مشروع القدية بالرياض، وبلغت سرعته في تجارب النموذج الأولي حتى 226 م² في الساعة، كما استخدمت وحدات الرش في داماك هيلز وداماك لاغونز في دبي. وتعرض الشركة القدية بوصفها دراسة حالة في أوروبا والشرق الأوسط وأفريقيا."
+    },
+    "mena_source": "TradeArabia",
+    "mena_source_url": "https://www.tradearabia.com/News/466964/Legend-Robot-to-unveil-Its-mobile-paint-spraying-robot-at-Big-5-Construct-Saudi",
+    "mena_date": "2026-08-26",
+    "website": "https://www.legendrobot.com/",
+    "logo": "/media/logos/legend-robot.png",
+    "source": "TradeArabia",
+    "source_url": "https://www.tradearabia.com/News/466964/Legend-Robot-to-unveil-Its-mobile-paint-spraying-robot-at-Big-5-Construct-Saudi",
+    "image": "/media/companies/legend-robot.jpg",
+    "image_cap": {
+      "en": "Legend Robot latex paint-spraying robot on the Qiddiya site in Riyadh",
+      "ar": "روبوت رش الطلاء من ليجند روبوت في موقع القدية بالرياض"
+    },
+    "image_alt": {
+      "en": "Four men in hard hats and high-visibility vests standing on a construction site beside a white Legend Robot paint-spraying robot with a covered spray arm",
+      "ar": "أربعة رجال بخوذات وسترات عاكسة يقفون في موقع بناء بجانب روبوت رش طلاء أبيض من ليجند روبوت بذراع رش مغطاة"
+    },
+    "image_credit": {
+      "en": "Image: Legend Robot",
+      "ar": "الصورة: ليجند روبوت"
+    },
+    "image_url": "https://www.legendrobot.com/uploads/image/20260918/3.3m_Latex_Paint_Spraying_Robot_Case_Study_(2).webp",
+    "image_page": "https://www.legendrobot.com/qiddiya-riyadh-saudi-arabia/",
+    "added": "2026-11-08"
   }
 ]

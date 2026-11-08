@@ -106,3 +106,11 @@ No usable logo found for FalconViz, Sager Drones, AutoGo, Sinaha Technology, Apo
 | softbank-robotics.png | SoftBank Robotics | https://www.softbankrobotics.com/wp-content/uploads/asset/img/common/logo.svg |
 | anybotics.png | ANYbotics | Supplied by the site owner (official wordmark) |
 | falcon-tech-robotics.png | Falcon Tech Robotics | Emblem cropped from the Kody Robots press image https://kodyrobots.com/wp-content/uploads/2025/11/deploys-290-advertising-robots-odigo.jpg |
+| layn.png | LAYN | https://layntech.com/wp-content/uploads/2025/09/cropped-icon.jpg (site icon, kept on its own navy background, full bleed like gecko-robotics.png) |
+| innotech.png | InnoTech | https://images.squarespace-cdn.com/content/v1/6208e69b7ee6ce5e65575ce3/364f8a53-00c8-47a3-8b3c-e41d5b75f22e/شعار+انوتم+الجديد.png (site header logo, WebP) |
+| abyan.png | Abyan Building Construction | https://abyan.com.kw/newest_logo/abyan_logo.png |
+| feds.png | Falcon Eye Drones (FEDS) | https://cdn.prod.website-files.com/68c12a5987c0cd3e02e9e53f/6ad864a77aac613b5b6b3b88_FEDS%20icon.png (512px site icon) |
+| ucc-holding.png | UCC Holding | https://uccholding.com/assets/img/logo.png |
+| cobod.png | COBOD | https://cobod.com/wp-content/uploads/2022/04/logo-cobod-hvid.svg (white SVG recoloured to #1A1A1A) |
+| hilti.png | Hilti | https://www.hilti.com/static/ui/assets/images/hilti-logo.svg |
+| legend-robot.png | Legend Robot | existing file (not regenerated) |
