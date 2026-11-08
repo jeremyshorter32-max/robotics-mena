@@ -35,6 +35,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
 [data-rm] button,[data-rm] input,[data-rm] select,[data-rm] textarea{font:inherit;color:inherit}
 [data-rm] ::placeholder{color:var(--fg-subtle);opacity:1}
 [data-rail]::-webkit-scrollbar{display:none}
+@keyframes rm-pic-in{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
 @keyframes rm-live{0%,100%{opacity:1}50%{opacity:.35}}
 @media (prefers-reduced-motion:reduce){[data-rm] *{transition:none!important;animation:none!important}}
 </style>
@@ -144,6 +145,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
 <sc-if value="{{ db.open }}">
   <div onClick="{{ db.close }}" style="position:fixed;inset:0;z-index:100;background:rgba(10,10,20,.45);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);display:flex;align-items:flex-start;justify-content:center;padding:6vh 16px 16px;overflow-y:auto">
     <div id="rm-db-card" role="dialog" aria-modal="true" aria-labelledby="rm-db-card-title" onClick="{{ db.stop }}" style="position:relative;width:100%;max-width:640px;background:var(--bg);color:var(--fg);border:1px solid var(--line-strong);box-shadow:0 24px 64px rgba(0,0,0,.25);display:flex;flex-direction:column">
+      <sc-if value="{{ db.card.hasPic }}"><figure style="margin:0;position:relative;aspect-ratio:16 / 9;max-height:280px;width:100%;overflow:hidden;background:var(--bg-raised);border-bottom:1px solid var(--line)"><img src="{{ db.card.pic.src }}" alt="{{ db.card.pic.alt }}" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;animation:rm-pic-in .5s ease-out both"><figcaption style="position:absolute;inset-inline:0;bottom:0;padding:28px 16px 10px;background:linear-gradient(to top,rgba(9,17,23,.78),transparent);display:flex;justify-content:space-between;gap:12px;font:400 12px/16px var(--font-num);color:#F7F5EF"><span>{{ db.card.pic.cap }}</span><span style="opacity:.8;white-space:nowrap">{{ db.card.pic.credit }}</span></figcaption></figure></sc-if>
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:24px 24px 0">
         <div style="display:flex;gap:16px;align-items:flex-start;min-width:0">
         <span aria-hidden="true" style="width:64px;height:64px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ db.card.badge.bg }};font:600 18px/1 var(--font-num);letter-spacing:.02em;color:var(--fg)"><sc-if value="{{ db.card.badge.hasImg }}"><img src="{{ db.card.badge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:{{ db.card.badge.fit }};padding:{{ db.card.badge.pad }};display:block"></sc-if><sc-if value="{{ db.card.badge.noImg }}">{{ db.card.badge.mono }}</sc-if></span>

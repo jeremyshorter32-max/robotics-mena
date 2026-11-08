@@ -486,17 +486,21 @@ class Component extends DCLogic {
     if (r) {
       const o = r.o, F = d.f, fields = [], rel = [];
       const link = (url, label) => url ? { url, label } : null;
-      let menaBox = null;
+      let menaBox = null, pic = null;
+      const bi = v => !v ? '' : typeof v === 'string' ? v : (ar ? (v.ar || v.en || '') : (v.en || ''));
+      const picOf = x => x && x.image ? { src: x.image, cap: bi(x.image_cap), credit: bi(x.image_credit), alt: bi(x.image_alt) || bi(x.image_cap), url: x.image_page || x.website || '' } : null;
       let desc = '', srcName = o.source || '', srcUrl = o.source_url || '', extra = [];
       if (tab === 'companies') {
         fields.push([F.category, r.c2], [OT.hq, (o.hq_city && !ar ? o.hq_city + ', ' : '') + cn(o.hq || o.country) + (r.intl ? ' · ' + OT.intl : '')], [OT.active, r.ccs.map(cn).join(ar ? '، ' : ', ')], [F.stage, r.c4], [F.listed, r.c5]);
         if (o.mena_link) menaBox = { title: OT.menaTitle, text: ar ? (o.mena_link.ar || o.mena_link.en) : o.mena_link.en, src: OT.menaSrc + ': ' + (o.mena_source || (o.mena_source_url || '').replace(/^https?:\/\/(www\.)?/, '').split('/')[0]) + (o.mena_date ? ' · ' + fdate(o.mena_date) : ''), url: o.mena_source_url || '', hasUrl: !!o.mena_source_url, flag: this.flagUrl(o.hq), hq: cn(o.hq) };
         desc = tr(o, 'summary');
+        pic = picOf(o);
         if (o.website) extra.push(link(o.website, d.visit));
         D.deployments.filter(x => opMatch(x.operator, o.name)).forEach(x => rel.push({ badge: this.badgeOf(x.operator, this.opLogo(x.operator, x.logo)), label: tr(x, 'title'), sub: tr(x, 'site') + ' · ' + fdate(x.date), open: () => this.setState({ dbTab: 'deployments', dbSel: x.id }) }));
       } else if (tab === 'deployments') {
         fields.push([ar ? 'النوع' : 'Kind', (this.DKINDS[o.kind] || this.DKINDS.deployment)[L]], [F.operator, tr(o, 'operator')], [F.site, tr(o, 'site')], [F.country, r.c4], [F.sector, r.c3], [F.type, r.c2], [F.date, r.c5]);
         desc = tr(o, 'summary');
+        pic = picOf(D.companies.find(x => x.image && opMatch(o.operator, x.name)));
         D.companies.filter(x => opMatch(o.operator, x.name)).forEach(x => rel.push({ badge: this.badgeOf(x.name, x.logo), label: tr(x, 'name'), sub: (this.CATS[x.category] || ['', ''])[L] + ' · ' + cn(x.country), open: () => this.setState({ dbTab: 'companies', dbSel: x.id }) }));
         extra.push({ url: this.pageHref('map'), label: d.onMap });
       } else if (tab === 'countries') {
@@ -519,7 +523,7 @@ class Component extends DCLogic {
         srcUrl, hasSrcUrl: !!srcUrl, openSrc: d.open,
         added: o.added && tab !== 'companies' ? d.added + ' ' + fdate(o.added) : '', hasAdded: !!(o.added && tab !== 'companies'),
         links: extra.filter(Boolean), hasLinks: extra.filter(Boolean).length > 0,
-        relTitle: tab === 'events' ? '' : d.related[tab], rel: rel.slice(0, tab === 'countries' ? 24 : 8), hasRel: rel.length > 0, mena: menaBox || {}, hasMena: !!menaBox
+        relTitle: tab === 'events' ? '' : d.related[tab], rel: rel.slice(0, tab === 'countries' ? 24 : 8), hasRel: rel.length > 0, mena: menaBox || {}, hasMena: !!menaBox, pic: pic || {}, hasPic: !!pic
       };
     }
     const cols = d.cols[tab];

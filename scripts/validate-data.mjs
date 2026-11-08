@@ -24,6 +24,7 @@ D.companies.forEach((c, i) => {
   if (!countryCodes.has(c.country)) errors.push(`${w}: country "${c.country}" is not in countries.json`);
   date(c.added, w, 'added'); url(c.website, w, 'website'); logo(c.logo, w); url(c.source_url, w, 'source_url');
   if ([c.country, c.hq, ...(c.mena_countries || [])].some(x => EXCLUDED_COUNTRIES.has(x))) errors.push(`${w}: companies based in or listed under an excluded country are not allowed`);
+  if (c.image) { if (!/^\/media\/companies\/[a-z0-9._-]+\.(jpg|jpeg|png|webp)$/.test(c.image)) errors.push(`${w}: image must be a file in /media/companies/`); else if (!fs.existsSync(path.join(ROOT, c.image))) errors.push(`${w}: image file ${c.image} does not exist`); if (!c.image_credit) errors.push(`${w}: image needs image_credit`); }
   if (c.hq !== undefined && !/^[A-Z]{2}$/.test(c.hq)) errors.push(`${w}: hq "${c.hq}" must be a 2-letter ISO country code`);
   if (c.mena_countries !== undefined) { if (!Array.isArray(c.mena_countries) || !c.mena_countries.length) errors.push(`${w}: mena_countries must be a non-empty list`); else c.mena_countries.forEach(cc => { if (!(cc in MENA)) errors.push(`${w}: mena_countries "${cc}" is not a MENA country`); }); if (Array.isArray(c.mena_countries) && !c.mena_countries.includes(c.country)) errors.push(`${w}: mena_countries must include its listed country "${c.country}"`); }
   if (c.hq && !(c.hq in MENA)) {
