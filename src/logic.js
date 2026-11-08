@@ -4,7 +4,7 @@ class Component extends DCLogic {
   pref(k) { try { return window.localStorage.getItem('rm-' + k); } catch (e) { return null; } }
   savePref(k, v) { try { window.localStorage.setItem('rm-' + k, v); } catch (e) {} }
   urlTidy = (() => { try { ['lang', 'theme'].forEach(k => { const v = this.qp.get(k); if (v) this.savePref(k, v); }); const u = new URL(window.location.href); ['lang', 'theme', 'accent'].forEach(k => u.searchParams.delete(k)); let p = u.pathname.replace(/index\.html$/, '').replace(/\.html$/, ''); if (u.hash === '#top') u.hash = ''; const next = p + u.search + u.hash; if (next !== window.location.pathname + window.location.search + window.location.hash) window.history.replaceState(window.history.state, '', next); } catch (e) {} return true; })();
-  state = { active: 'brief', rails: { brief: { i: 0, n: 0, end: false }, strat: { i: 0, n: 0, end: false } }, lang: null, theme: null, q: '', fCountry: '', fSector: '', fType: '', sel: null, dCat: '', dSort: 'featured', eType: '', eCountry: '', tab: 'company', submitted: false, dbTab: this.qp.get('tab') || 'companies', dbSel: this.qp.get('id') || null, dbQ: this.qp.get('q') || '', dbCountry: '', dbFacet: '', dbOrigin: new URLSearchParams(window.location.search).get('origin') || '', dbSort: '', dbAll: false, dbCopied: false, dAll: false, mapAll: false, mapNear: false, pc: (this.qp.get('c') || 'AE').toUpperCase(), email: '', subscribed: !!this.pref('subscriber'), rpTl: null, rpFleet: 'all', rpFleetOpen: null, rpClaims: {}, rpLb: -1, rpCh: '', rpSrcAll: false, added: {}, w: window.innerWidth };
+  state = { active: 'brief', rails: { brief: { i: 0, n: 0, end: false }, strat: { i: 0, n: 0, end: false } }, lang: null, theme: null, q: '', fCountry: '', fSector: '', fType: '', sel: null, cty: null, dCat: '', dSort: 'featured', eType: '', eCountry: '', tab: 'company', submitted: false, dbTab: this.qp.get('tab') || 'companies', dbSel: this.qp.get('id') || null, dbQ: this.qp.get('q') || '', dbCountry: '', dbFacet: '', dbOrigin: new URLSearchParams(window.location.search).get('origin') || '', dbSort: '', dbAll: false, dbCopied: false, dAll: false, mapAll: false, mapNear: false, pc: (this.qp.get('c') || 'AE').toUpperCase(), email: '', subscribed: !!this.pref('subscriber'), rpTl: null, rpFleet: 'all', rpFleetOpen: null, rpClaims: {}, rpLb: -1, rpCh: '', rpSrcAll: false, added: {}, w: window.innerWidth };
   searchRef = React.createRef();
   briefRail = React.createRef(); stratRail = React.createRef(); tabRail = React.createRef();
   NAV_IDS = window.RM_PAGE.nav;
@@ -51,11 +51,13 @@ class Component extends DCLogic {
   componentDidMount() {
     this.markExternal();
     if ('MutationObserver' in window) { this.extMO = new MutationObserver(() => { if (this.extRaf) return; this.extRaf = requestAnimationFrame(() => { this.extRaf = 0; this.markExternal(); }); }); this.extMO.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] }); }
-    this.onPin = e => this.setState({ sel: e.detail.id });
+    this.onPin = e => this.setState({ sel: e.detail.id, cty: null });
+    this.onCty = e => this.setState({ cty: e.detail.cc, sel: null });
     this.onKey = e => { if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { e.preventDefault(); this.searchRef.current && this.searchRef.current.focus(); } if (e.key === 'Escape' && this.state.dbSel) { this.setState({ dbSel: null }); return; } if (e.key === 'Escape' && this.state.q) this.setState({ q: '' }); };
     if (/^#(map|search)/.test(location.hash)) this.setState({ mapNear: true });
     this.onResize = () => this.setState({ w: window.innerWidth });
     window.addEventListener('rm:pin', this.onPin);
+    window.addEventListener('rm:country', this.onCty);
     window.addEventListener('keydown', this.onKey);
     window.addEventListener('resize', this.onResize);
     this.onSpy = () => { if (this.spyRaf) return; this.spyRaf = requestAnimationFrame(() => { this.spyRaf = 0; let cur = this.NAV_IDS[0]; for (const id of this.NAV_IDS) { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= this.navH() + 32) cur = id; } if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = this.NAV_IDS[this.NAV_IDS.length - 1]; if (cur !== this.state.active) this.setState({ active: cur }); }); };
@@ -101,7 +103,7 @@ class Component extends DCLogic {
   railStep(el) { const li = el.querySelector('li'); return li ? li.getBoundingClientRect().width + (parseFloat(getComputedStyle(el).columnGap) || 0) : el.clientWidth; }
   railUpdate(k) { const el = this.railEl(k); if (!el) return; const x = Math.abs(el.scrollLeft), n = el.querySelectorAll('li').length, i = Math.round(x / this.railStep(el)), end = x + el.clientWidth >= el.scrollWidth - 4; const o = this.state.rails[k]; if (o.i !== i || o.n !== n || o.end !== end) this.setState(s => ({ rails: { ...s.rails, [k]: { i, n, end } } })); }
   railMove(k, d) { const el = this.railEl(k); if (!el) return; const r = this.state.rails[k]; if ((d < 0 && r.i === 0) || (d > 0 && r.end)) return; const rtl = getComputedStyle(el).direction === 'rtl'; el.scrollBy({ left: d * this.railStep(el) * (rtl ? -1 : 1), behavior: this.reduced ? 'auto' : 'smooth' }); }
-  componentWillUnmount() { this.extMO && this.extMO.disconnect(); this.rpIO && this.rpIO.disconnect(); this.onRp && window.removeEventListener('scroll', this.onRp); this.onLbKey && window.removeEventListener('keydown', this.onLbKey); this.mapIO && this.mapIO.disconnect(); window.removeEventListener('scroll', this.onSpy); window.removeEventListener('rm:pin', this.onPin); window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.onResize); }
+  componentWillUnmount() { this.extMO && this.extMO.disconnect(); this.rpIO && this.rpIO.disconnect(); this.onRp && window.removeEventListener('scroll', this.onRp); this.onLbKey && window.removeEventListener('keydown', this.onLbKey); this.mapIO && this.mapIO.disconnect(); window.removeEventListener('scroll', this.onSpy); window.removeEventListener('rm:pin', this.onPin); window.removeEventListener('rm:country', this.onCty); window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.onResize); }
 
   go(id, c) { const el = document.getElementById(id); if (!el) { window.location.href = this.pageHref(id, c); return; } window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - this.navH() - 8, behavior: this.reduced ? 'auto' : 'smooth' }); }
 
@@ -198,7 +200,7 @@ class Component extends DCLogic {
       panelLatest: 'Latest deployments & entrants', panelRecord: 'Deployment record', showing: '{a} of {b}',
       operator: 'Operator', site: 'Site', country: 'Country', date: 'Live since', close: 'Close', newLbl: 'New this week',
       pickHint: 'Select a pin or a row to open its record.', mapHelp: 'Drag to pan · Pinch or Ctrl + scroll to zoom · 0 resets',
-      legPin: 'Deployment', legCluster: 'Cluster: select to zoom', legNew: 'Added this week', mapSource: 'Robotics MENA tracker · 1 primary source per record · Boundaries: Natural Earth',
+      legPin: 'Colour shows robot type', legCluster: 'Cluster: select to zoom', legNew: 'Added this week', mapSource: 'Robotics MENA tracker · 1 primary source per record · Boundaries: Natural Earth',
       s3n: '03 · Directory', s3: 'Ecosystem directory', s3sub: 'Who is building robots, systems and robotics software in the region.', getListed: 'Get listed', sort: 'Sort',
       sortOpts: [['featured', 'Editor’s order'], ['az', 'A–Z'], ['newest', 'Recently added'], ['stage', 'Stage']], listed: 'Listed',
       s4n: '04 · Policy & data', s4: 'National strategies & readiness', s4sub: 'Country by country: the programmes that matter for robotics, what each target actually measures, when it is due, and how that compares with what is deployed on the ground.',
@@ -250,7 +252,7 @@ class Component extends DCLogic {
       panelLatest: 'أحدث عمليات النشر والوافدين الجدد', panelRecord: 'سجل عملية النشر', showing: '{a} من {b}',
       operator: 'المشغّل', site: 'الموقع', country: 'الدولة', date: 'يعمل منذ', close: 'إغلاق', newLbl: 'جديد هذا الأسبوع',
       pickHint: 'اختر نقطة أو صفاً لفتح السجل.', mapHelp: 'اسحب للتحريك · قرّب بإصبعين أو Ctrl مع التمرير · 0 لإعادة الضبط',
-      legPin: 'عملية نشر', legCluster: 'مجموعة: اخترها للتكبير', legNew: 'أُضيف هذا الأسبوع', mapSource: 'متتبّع روبوتكس مينا · مصدر أصلي لكل سجل · الحدود: Natural Earth',
+      legPin: 'اللون يدل على نوع الروبوت', legCluster: 'مجموعة: اخترها للتكبير', legNew: 'أُضيف هذا الأسبوع', mapSource: 'متتبّع روبوتكس مينا · مصدر أصلي لكل سجل · الحدود: Natural Earth',
       s3n: '03 · الدليل', s3: 'دليل المنظومة', s3sub: 'من يصنع الروبوتات والأنظمة وبرمجيات الروبوتات في المنطقة.', getListed: 'أدرج شركتك', sort: 'ترتيب',
       sortOpts: [['featured', 'اختيار المحرّر'], ['az', 'أبجدياً'], ['newest', 'الأحدث إدراجاً'], ['stage', 'المرحلة']], listed: 'أُدرج',
       s4n: '04 · السياسات والبيانات', s4: 'الاستراتيجيات الوطنية والجاهزية', s4sub: 'دولة بدولة: البرامج المهمة للروبوتات، وما يقيسه كل هدف فعلاً، وموعد استحقاقه، ومقارنته بما هو منشور على أرض الواقع.',
@@ -559,6 +561,7 @@ class Component extends DCLogic {
     const cList = [...new Set(this.DEP.map(d => d.cc))];
     const cChips = [this.chip(t.all, num(this.DEP.length), !S.fCountry, () => this.setState({ fCountry: '', sel: null }))].concat(cList.map(c => this.chip(ccName(c), num(cnt('cc', c)), S.fCountry === c, () => setF('fCountry', c))));
     const sChips = [this.chip(t.all, '', !S.fSector, () => this.setState({ fSector: '', sel: null }))].concat(Object.keys(this.SECTORS).map(k => this.chip(this.SECTORS[k][L], num(cnt('sector', k)), S.fSector === k, () => setF('fSector', k))));
+    const tLegend = Object.keys(this.TYPES).filter(k => cnt('type', k)).map(k => ({ label: this.TYPES[k][L], n: num(cnt('type', k)), icon: this.ICON[k], col: 'var(--t-' + k + ')', on: S.fType === k ? 'true' : 'false', bd: S.fType === k ? 'var(--fg)' : 'var(--line-strong)', bg: S.fType === k ? 'var(--bg-hover)' : 'var(--bg-raised)', op: S.fType && S.fType !== k ? '.55' : '1', pick: () => setF('fType', k) }));
     const tChips = [{ ...this.chip(t.all, '', !S.fType, () => this.setState({ fType: '', sel: null })), icon: '' }].concat(Object.keys(this.TYPES).map(k => ({ ...this.chip(this.TYPES[k][L], num(cnt('type', k)), S.fType === k, () => setF('fType', k)), icon: this.ICON[k] })));
     const opt = (v, label, n) => ({ v, label: n ? label + '  ' + n : label });
     const cOpts = [opt('', t.all, num(this.DEP.length))].concat(cList.map(c => opt(c, ccName(c), num(cnt('cc', c)))));
@@ -568,10 +571,38 @@ class Component extends DCLogic {
       cBd: S.fCountry ? 'var(--accent)' : 'var(--line-strong)', sBd: S.fSector ? 'var(--accent)' : 'var(--line-strong)', tBd: S.fType ? 'var(--accent)' : 'var(--line-strong)',
       onFCountry: e => this.setState({ fCountry: e.target.value, sel: null }), onFSector: e => this.setState({ fSector: e.target.value, sel: null }), onFType: e => this.setState({ fType: e.target.value, sel: null }),
       anyFilter: !!(S.fCountry || S.fSector || S.fType), clearFilters: () => this.setState({ fCountry: '', fSector: '', fType: '', sel: null }) };
-    const pinOf = d => ({ id: d.id, lat: d.lat, lon: d.lon, cc: d.cc, n: d.n, label: d.robot[L] + ', ' + d.site[L] });
+    const coPic = this.coPic || (this.coPic = {});
+    const picFor = op => { if (!(op in coPic)) { const a = String(op || '').toLowerCase(), c = a && window.RM_DATA.companies.find(x => x.image && (a.includes(x.name.toLowerCase()) || x.name.toLowerCase().includes(a))); coPic[op] = c ? c.image : ''; } return coPic[op]; };
+    const pinOf = d => ({ id: d.id, lat: d.lat, lon: d.lon, cc: d.cc, n: d.n, label: d.robot[L] + ', ' + d.site[L], t: d.type, d: d.date, ti: d.robot[L], op: d.op[L], site: d.site[L], when: fdate(d.date), tl: this.TYPES[d.type][L], img: picFor(d.op[0]), logo: this.opLogo(d.op[0], d.logo), href: '/database?tab=deployments&id=' + d.id });
+    const heroPinOf = d => ({ id: d.id, lat: d.lat, lon: d.lon, cc: d.cc, n: d.n, label: '' });
     const selD = S.sel && this.DEP.find(d => d.id === S.sel);
     const sel = selD ? { icon: this.ICON[selD.type], robot: selD.robot[L], typeLabel: this.TYPES[selD.type][L], sector: this.SECTORS[selD.sector][L], operator: selD.op[L], opBadge: this.badgeOf(selD.op[0], this.opLogo(selD.op[0], selD.logo)), site: selD.site[L], country: ccName(selD.cc), date: fdate(selD.date), srcLine: t.source + ': ' + selD.src, isNew: selD.n, kindLabel: (this.DKINDS[selD.kind] || this.DKINDS.deployment)[L], summary: selD.sum[L], hasSummary: !!selD.sum[L], srcUrl: selD.url, hasUrl: !!selD.url, noUrl: !selD.url } : {};
     const panelList = depF.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, this.PAGE === 'home' ? 4 : (narrow && !S.mapAll ? 5 : 8)).map(d => ({ icon: this.ICON[d.type], robot: d.robot[L], site: d.site[L], kindLabel: (this.DKINDS[d.kind] || this.DKINDS.deployment)[L], op: d.op[L], date: fdate(d.date), isNew: d.n, pick: () => this.setState({ sel: d.id }) }));
+
+    // map: country readiness layer + side-panel profile
+    const CT = ar ? { title: 'ملف الدولة', score: 'مؤشر الجاهزية', head: 'الهدف الرئيسي', next: 'الموعد النهائي التالي', deps: 'عمليات نشر على الخريطة', dossier: 'افتح ملف السياسات', show: 'اعرض عمليات نشرها', none: 'لم يُعدّ ملف سياسات لهذه الدولة بعد.', thisYr: 'هذا العام', layerHint: 'استخدم مفتاح الطبقات أعلى الخريطة لتلوين الدول حسب الجاهزية أو النشاط، ثم اختر دولة.' }
+      : { title: 'Country profile', score: 'Readiness score', head: 'Headline target', next: 'Next deadline', deps: 'Deployments on the map', dossier: 'Open the policy dossier', show: 'Show its deployments', none: 'No policy dossier for this country yet.', thisYr: 'This year', layerHint: 'Use the layer switch on the map to shade countries by readiness or activity, then select one.' };
+    const ranked = this.PCC.map(c => ({ c, sc: this.scoreOf(c) })).filter(x => x.sc).map(x => ({ c: x.c, s: x.sc.reduce((a, d) => a + d.v, 0), m: x.sc.length * 2 })).sort((a, b) => b.s - a.s);
+    const mapCountries = JSON.stringify(Object.fromEntries(ranked.map(x => [x.c, { s: x.s, m: x.m, r: ranked.filter(y => y.s > x.s).length + 1, of: ranked.length }])));
+    let cty = {};
+    if (S.cty && this.CC[S.cty]) {
+      const c = S.cty, P3 = this.POLICY[c], sc = this.scoreOf(c), rk = ranked.find(x => x.c === c), nDep = this.DEP.filter(d => d.cc === c).length;
+      cty = { cc: c, flag: this.flagUrl(c), name: ccName(c), hasDossier: !!(P3 && sc), noDossier: !(P3 && sc), none: CT.none, depN: num(nDep), policyHref: '/policy?c=' + c, show: () => this.setState({ fCountry: c, cty: null, sel: null }) };
+      if (P3 && sc) {
+        const SW2 = ['var(--line-strong)', 'var(--accent-text)', 'var(--sand)'];
+        cty.totalTxt = num(rk.s) + ' / ' + num(rk.m); cty.w = Math.round(rk.s / rk.m * 100) + '%';
+        const rnk = ranked.filter(y => y.s > rk.s).length + 1; cty.rank = ar ? 'المرتبة ' + num(rnk) + ' من ' + num(ranked.length) : 'Ranked ' + num(rnk) + ' of ' + num(ranked.length);
+        cty.dims = sc.map((d, i) => ({ label: this.SCORE_DIMS[i][3 + L], full: this.SCORE_DIMS[i][1 + L], segs: [1, 2].map(n => ({ bg: n <= d.v ? SW2[d.v] : 'var(--line)' })) }));
+        const hk = P3.head && P3.progs[P3.head[0]] ? P3.progs[P3.head[0]][6][P3.head[1]] : null;
+        cty.hasHead = !!hk; cty.headV = hk ? digits(hk[L]) : ''; cty.headWhat = hk ? hk[2 + L] : ''; cty.headDue = hk ? (hk[4] == null ? t.noDate : Array.isArray(hk[4]) ? digits(hk[4][L]) : t.byYr.replace('{y}', yr(hk[4]))) : '';
+        const nowY2 = new Date().getFullYear(), nowMs = Date.now(), cand = [];
+        (P3.deadlines || []).forEach(x => { const ms = Date.parse(x.date + 'T23:59:59Z'); if (ms >= nowMs) cand.push({ key: x.date, when: fdate(x.date), soon: this.weeksTxt(Math.ceil((ms - nowMs) / 864e5), ar, num), what: ar ? x.ar : x.en }); });
+        (P3.progs || []).forEach(g => (g[6] || []).forEach(k => { if (typeof k[4] === 'number' && k[4] >= nowY2) cand.push({ key: k[4] + '-12-31', when: yr(k[4]), soon: k[4] === nowY2 ? CT.thisYr : k[4] === nowY2 + 1 ? t.awayNext : t.away.replace('{n}', num(k[4] - nowY2)), what: digits(k[L]) + ' · ' + k[2 + L] }); }));
+        cand.sort((a, b) => a.key.localeCompare(b.key));
+        cty.hasNext = cand.length > 0; Object.assign(cty, cand[0] ? { nextWhen: cand[0].when, nextSoon: cand[0].soon, nextWhat: cand[0].what } : {});
+      }
+    }
+    const ctyFx = { mapCountries, cty, hasCty: !!cty.cc, ctT: CT, closeCty: () => this.setState({ cty: null }), mapLoc: loc };
 
     // directory
     let co = this.CO.map((c, i) => ({ c, i })).filter(({ c }) => !S.dCat || c[3] === S.dCat);
@@ -653,11 +684,11 @@ class Component extends DCLogic {
       stats, statsUpd: upd, pCmpSrc: (t.pCmpSrc || '').replace('{date}', fdate(lastDate)),
       suggest: (ar ? ['روبوت بشري', 'الرياض', 'مسيّرات', 'جيتكس'] : ['Humanoid', 'Riyadh', 'Drones', 'GITEX']).map(label => ({ label, go: () => { this.setState({ q: label }); this.searchRef.current && this.searchRef.current.focus(); } })),
       onSearchKey: e => { if (e.key === 'ArrowDown') { const o = document.querySelector('#rm-results [role=option]'); if (o) { e.preventDefault(); o.focus(); } } },
-      onOptKey: e => { const os = [...document.querySelectorAll('#rm-results [role=option]')], i = os.indexOf(e.currentTarget); if (e.key === 'ArrowDown' && os[i + 1]) { e.preventDefault(); os[i + 1].focus(); } else if (e.key === 'ArrowUp') { e.preventDefault(); (os[i - 1] || this.searchRef.current).focus(); } else if (e.key === 'Escape') { this.searchRef.current.focus(); } }, heroPins: JSON.stringify(this.DEP.map(pinOf)),
+      onOptKey: e => { const os = [...document.querySelectorAll('#rm-results [role=option]')], i = os.indexOf(e.currentTarget); if (e.key === 'ArrowDown' && os[i + 1]) { e.preventDefault(); os[i + 1].focus(); } else if (e.key === 'ArrowUp') { e.preventDefault(); (os[i - 1] || this.searchRef.current).focus(); } else if (e.key === 'Escape') { this.searchRef.current.focus(); } }, heroPins: JSON.stringify(this.DEP.map(heroPinOf)),
       brief: this.BRIEF.map((b, i) => ({ idx: nf2.format(i + 1), cc: b[0], country: ccName(b[0]), date: fdate(b[1]), srcLine: t.source + ': ' + b[2], title: b[3 + L], take: b[5 + L], img: b[7], hasImg: !!b[7], noImg: !b[7], panelSrc: b[2], credit: (ar ? 'الصورة: ' : 'Image: ') + b[8], srcUrl: b[9], hasUrl: !!b[9], noUrl: !b[9] })),
       cChips, sChips, tChips, ...fx, mapPins: JSON.stringify(depF.map(pinOf)), selId: S.sel || '', fCountry: S.fCountry, padEnd: S.w <= 1180 ? '0' : '432',
-      hasSel: !!selD, noSel: !selD, sel, clearSel: () => this.setState({ sel: null }), panelList,
-      panelTitle: selD ? t.panelRecord : t.panelLatest, showing: t.showing.replace('{a}', num(depF.length)).replace('{b}', num(this.DEP.length)),
+      ...ctyFx, tLegend, hasSel: !!selD, noSel: !selD && !(S.cty && this.CC[S.cty]), sel, clearSel: () => this.setState({ sel: null }), panelList,
+      panelTitle: selD ? t.panelRecord : (S.cty && this.CC[S.cty]) ? CT.title : t.panelLatest, showing: t.showing.replace('{a}', num(depF.length)).replace('{b}', num(this.DEP.length)),
       dChips, companies, companiesShown: S.dAll ? companies : companies.slice(0, 9), dirMore: companies.length > 9, dirMoreLbl: S.dAll ? t.showFewer : t.showAll.replace('{n}', num(companies.length)), toggleDirAll: () => this.setState(st => ({ dAll: !st.dAll })),
       mapRef: this.mapRef, mapNear: S.mapNear, mapMore: this.PAGE !== 'home' && narrow && depF.length > 5, mapMoreLbl: S.mapAll ? t.showFewer : t.showAll.replace('{n}', num(Math.min(8, depF.length))), toggleMapAll: () => this.setState(st => ({ mapAll: !st.mapAll })),
       dSort: S.dSort, onSort: e => this.setState({ dSort: e.target.value }), sortOpts: t.sortOpts.map(o => ({ v: o[0], label: o[1] })),

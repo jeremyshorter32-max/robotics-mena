@@ -23,8 +23,8 @@ html,body{margin:0;padding:0;background:#F7F5EF}
 [data-rm][dir=rtl]{--font-sans:'29LT Zarid Sans','Noto Sans Arabic','Inter',sans-serif;--font-label:'29LT Zarid Sans','Noto Sans Arabic',sans-serif;--font-num:'Noto Sans Arabic','DM Mono',sans-serif;--label-track:0;--label-case:none;--track-tight:0;--lh-display:1.3;--lh-body:1.65;--fade-dir:to left}
 @media (max-width:1180px){[data-rm][dir]{--d-nav:none;--span-label:1 / -1;--span-main:1 / -1;--fs-display:64px;--hero-pad:96px;--three-cols:minmax(0,1fr);--ev-cols:88px minmax(0,1fr) auto;--ev-tail:none;--panel-pos:relative;--panel-w:auto;--panel-top:auto;--panel-end:auto;--panel-margin:16px var(--gutter);--panel-maxh:none;--rail-order:3;--rail-flex:1 1 100%;--rail-h:44px;--rail-bt:1px solid var(--line);--rail-mx:0 calc(var(--gutter) * -1);--rail-px:var(--gutter)}}
 @media (max-width:900px){[data-rm][dir]{--gutter:20px;--gap:16px;--grid:repeat(4,minmax(0,1fr));--span-label:1 / -1;--span-main:1 / -1;--sec-pad:56px;--d-desk:none;--d-mob:flex;--fs-display:44px;--fs-h2:28px;--hero-pad:40px;--stats-cols:repeat(2,minmax(0,1fr));--brief-cols:40px minmax(0,1fr);--brief-meta:2;--map-h:460px;--panel-pos:relative;--panel-w:auto;--spot-cols:minmax(0,1fr);--ev-cols:64px minmax(0,1fr);--ev-tail:none;--two-cols:minmax(0,1fr);--three-cols:minmax(0,1fr);--fade-dir:to bottom;--ev-btn-col:2;--card-w:84vw;--chip-wrap:nowrap;--chip-lbl:none;--fs-page:36px;--dos-pad:20px;--aside-bs:0;--aside-bt:1px solid var(--line)}}
-[data-theme=dark]{--bg:#12212B;--bg-raised:#1B303B;--bg-hover:#233A47;--bg-glass:rgba(18,33,43,.88);--fg:#F7F5EF;--fg-muted:#B8C7CB;--fg-subtle:#93A6AC;--line:#2C4450;--line-strong:#39515C;--sand:#92D4CB;--sand-soft:rgba(146,212,203,.10);--pin:#92D4CB;--pin-soft:rgba(146,212,203,.16);--dot:rgba(247,245,239,.08);--frame:rgba(146,212,203,.07);--mark:#F7F5EF;--mark-point:#D65336;--map-sea:#0F1D26;--map-land:#1B303B;--map-land-mena:#24404D;--map-border:#3E5966;--map-coast:#6E8A93;color-scheme:dark}
-[data-theme=light]{--bg:#F7F5EF;--bg-raised:#FFFFFF;--bg-hover:#EFECE4;--bg-glass:rgba(247,245,239,.88);--fg:#12212B;--fg-muted:#52616A;--fg-subtle:#5D6A71;--line:#D7DCD8;--line-strong:#BEC7C3;--sand:#166773;--sand-soft:rgba(22,103,115,.08);--pin:#166773;--pin-soft:rgba(22,103,115,.14);--dot:rgba(18,33,43,.10);--frame:rgba(18,33,43,.05);--mark:#12212B;--mark-point:#D65336;--map-sea:#EFECE4;--map-land:#E4E2DA;--map-land-mena:#FFFFFF;--map-border:#C5CCC8;--map-coast:#8D9A99;color-scheme:light}
+[data-theme=dark]{--t-av:#EE7A5F;--t-drone:#6FAEE8;--t-arm:#E6B54E;--t-amr:#92D4CB;--t-humanoid:#B39AF0;--t-quadruped:#EC86B8;--t-service:#A9CF6A;--pin-ink:#12212B;--bg:#12212B;--bg-raised:#1B303B;--bg-hover:#233A47;--bg-glass:rgba(18,33,43,.88);--fg:#F7F5EF;--fg-muted:#B8C7CB;--fg-subtle:#93A6AC;--line:#2C4450;--line-strong:#39515C;--sand:#92D4CB;--sand-soft:rgba(146,212,203,.10);--pin:#92D4CB;--pin-soft:rgba(146,212,203,.16);--dot:rgba(247,245,239,.08);--frame:rgba(146,212,203,.07);--mark:#F7F5EF;--mark-point:#D65336;--map-sea:#0F1D26;--map-land:#1B303B;--map-land-mena:#24404D;--map-border:#3E5966;--map-coast:#6E8A93;color-scheme:dark}
+[data-theme=light]{--t-av:#D65336;--t-drone:#2F74B5;--t-arm:#B97C0C;--t-amr:#166773;--t-humanoid:#7A56C2;--t-quadruped:#B4417A;--t-service:#5C7F1E;--pin-ink:#FFFFFF;--bg:#F7F5EF;--bg-raised:#FFFFFF;--bg-hover:#EFECE4;--bg-glass:rgba(247,245,239,.88);--fg:#12212B;--fg-muted:#52616A;--fg-subtle:#5D6A71;--line:#D7DCD8;--line-strong:#BEC7C3;--sand:#166773;--sand-soft:rgba(22,103,115,.08);--pin:#166773;--pin-soft:rgba(22,103,115,.14);--dot:rgba(18,33,43,.10);--frame:rgba(18,33,43,.05);--mark:#12212B;--mark-point:#D65336;--map-sea:#EFECE4;--map-land:#E4E2DA;--map-land-mena:#FFFFFF;--map-border:#C5CCC8;--map-coast:#8D9A99;color-scheme:light}
 [data-theme=dark][data-accent=violet]{--accent:#C24A2F;--accent-text:#F28B70;--accent-ink:#FFFFFF;--accent-soft:rgba(214,83,54,.18)}
 [data-theme=dark][data-accent=cyan]{--accent:#92D4CB;--accent-text:#92D4CB;--accent-ink:#12212B;--accent-soft:rgba(146,212,203,.14)}
 [data-theme=light][data-accent=violet]{--accent:#C24A2F;--accent-text:#B54127;--accent-ink:#FFFFFF;--accent-soft:rgba(214,83,54,.10)}
@@ -94,22 +94,23 @@ html,body{margin:0;padding:0;background:#F7F5EF}
         </select>
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="position:absolute;inset-inline-end:12px;top:14px;color:var(--fg-subtle);pointer-events:none"><path d="M3 4.5l3 3 3-3"></path></svg>
       </label>
-      <label style="position:relative;display:inline-flex;align-items:center;gap:8px;height:40px;padding-inline:12px 32px;background:var(--bg-raised);border:1px solid {{ tBd }};border-radius:3px;font-size:13px;cursor:pointer" style-hover="border-color:var(--fg)">
-        <span style="color:var(--fg-subtle)">{{ t.fType }}</span>
-        <select value="{{ fType }}" onChange="{{ onFType }}" style="appearance:none;-webkit-appearance:none;border:0;background:transparent;font-size:13px;font-weight:500;color:var(--fg);cursor:pointer;padding:0;max-width:200px">
-          <sc-for list="{{ tOpts }}" as="o"><option value="{{ o.v }}">{{ o.label }}</option></sc-for>
-        </select>
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="position:absolute;inset-inline-end:12px;top:14px;color:var(--fg-subtle);pointer-events:none"><path d="M3 4.5l3 3 3-3"></path></svg>
-      </label>
-      <sc-if value="{{ anyFilter }}" hint-placeholder-val="{{ false }}"><button onClick="{{ clearFilters }}" style="height:40px;padding:0 8px;background:transparent;border:0;color:var(--accent-text);font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px">{{ t.clearAll }}</button></sc-if>
+            <sc-if value="{{ anyFilter }}" hint-placeholder-val="{{ false }}"><button onClick="{{ clearFilters }}" style="height:40px;padding:0 8px;background:transparent;border:0;color:var(--accent-text);font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px">{{ t.clearAll }}</button></sc-if>
       <span aria-live="polite" style="margin-inline-start:auto;font:500 12px var(--font-num);color:var(--fg-subtle);white-space:nowrap">{{ showing }}</span>
+    </div>
+    <div role="group" aria-label="{{ t.fType }}" style="grid-column:1 / -1;display:flex;flex-wrap:var(--chip-wrap);overflow-x:auto;gap:8px;margin-inline:calc(var(--gutter) * -1);padding:2px var(--gutter);scrollbar-width:none">
+      <span style="display:var(--chip-lbl);align-items:center;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle);margin-inline-end:4px;white-space:nowrap">{{ t.fType }}</span>
+      <sc-for list="{{ tLegend }}" as="c" hint-placeholder-count="6">
+        <button type="button" onClick="{{ c.pick }}" aria-pressed="{{ c.on }}" style="flex:none;display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 12px 0 6px;background:{{ c.bg }};border:1px solid {{ c.bd }};border-radius:18px;font-size:13px;font-weight:500;color:var(--fg);cursor:pointer;opacity:{{ c.op }};transition:opacity .15s,border-color .15s;white-space:nowrap" style-hover="border-color:var(--fg)">
+          <span aria-hidden="true" style="width:24px;height:24px;border-radius:50%;background:{{ c.col }};display:grid;place-items:center;color:var(--pin-ink)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ c.icon }}"></path></svg></span>
+          {{ c.label }}<span style="font:500 12px var(--font-num);color:var(--fg-subtle)">{{ c.n }}</span>
+        </button>
+      </sc-for>
     </div>
   </div>
   <div style="position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)">
     <div ref="{{ mapRef }}" style="height:var(--map-h);position:relative;background:var(--map-sea)">
-      <sc-if value="{{ mapNear }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="mena-map" from="./mena-map.js" mode="full" dir="{{ dir }}" pins="{{ mapPins }}" selected="{{ selId }}" focus="{{ fCountry }}" pad-end="{{ padEnd }}" label="{{ t.s2 }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import></sc-if>
-      <div style="position:absolute;top:16px;inset-inline-start:16px;font:400 12px/16px var(--font-num);color:var(--fg-subtle);background:var(--bg-glass);padding:6px 10px;border:1px solid var(--line);display:var(--d-nav);white-space:nowrap">{{ t.mapHelp }}</div>
-    </div>
+      <sc-if value="{{ mapNear }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="mena-map" from="./mena-map.js" mode="full" dir="{{ dir }}" pins="{{ mapPins }}" selected="{{ selId }}" focus="{{ fCountry }}" pad-end="{{ padEnd }}" label="{{ t.s2 }}" locale="{{ mapLoc }}" countries="{{ mapCountries }}" timeline="" layers="" style="position:absolute;inset:0" hint-size="100%,100%"></x-import></sc-if>
+      </div>
     <aside style="position:var(--panel-pos);top:var(--panel-top);inset-inline-end:var(--panel-end);margin:var(--panel-margin);width:var(--panel-w);max-height:var(--panel-maxh);overflow:auto;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:3px">
       <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)">
         <span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ panelTitle }}</span>
@@ -137,6 +138,46 @@ html,body{margin:0;padding:0;background:#F7F5EF}
           <div style="padding:12px 0 0;border-top:1px solid var(--line);font-size:13px;color:var(--fg-subtle)"><sc-if value="{{ sel.hasUrl }}"><a href="{{ sel.srcUrl }}" target="_blank" rel="noopener noreferrer" style="color:var(--accent-text)">{{ sel.srcLine }} {{ arrow }}</a></sc-if><sc-if value="{{ sel.noUrl }}">{{ sel.srcLine }}</sc-if></div>
         </article>
       </sc-if>
+      <sc-if value="{{ hasCty }}" hint-placeholder-val="{{ false }}">
+        <article style="padding:20px;display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;gap:14px;align-items:center">
+            <img src="{{ cty.flag }}" alt="" width="48" height="32" style="width:48px;height:32px;object-fit:cover;border:1px solid var(--line-strong);flex:none">
+            <h3 style="margin:0;flex:1;font-size:22px;line-height:1.3;font-weight:600;letter-spacing:var(--track-tight)">{{ cty.name }}</h3>
+            <button onClick="{{ closeCty }}" aria-label="{{ t.close }}" style="width:32px;height:32px;flex:none;background:transparent;border:1px solid var(--line-strong);border-radius:3px;cursor:pointer;color:var(--fg-muted)">✕</button>
+          </div>
+          <sc-if value="{{ cty.hasDossier }}">
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ ctT.score }}</span><span style="font:400 12px var(--font-num);color:var(--fg-subtle)">{{ cty.rank }}</span></div>
+              <div dir="ltr" style="unicode-bidi:isolate;font:600 40px/1 var(--font-num);color:var(--fg);text-align:start">{{ cty.totalTxt }}</div>
+              <div style="height:8px;background:var(--line);position:relative"><div style="position:absolute;inset-block:0;inset-inline-start:0;width:{{ cty.w }};background:var(--sand)"></div></div>
+              <ul style="list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px">
+                <sc-for list="{{ cty.dims }}" as="d"><li title="{{ d.full }}" style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--fg-muted)"><span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ d.label }}</span><span aria-hidden="true" style="display:flex;gap:2px;flex:none"><sc-for list="{{ d.segs }}" as="g"><span style="width:14px;height:6px;background:{{ g.bg }}"></span></sc-for></span></li></sc-for>
+              </ul>
+            </div>
+            <sc-if value="{{ cty.hasHead }}">
+              <div style="border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:6px">
+                <span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ ctT.head }}</span>
+                <span style="font:600 24px/1.15 var(--font-num);color:var(--accent-text)">{{ cty.headV }}</span>
+                <span style="font-size:14px;line-height:1.45;color:var(--fg)">{{ cty.headWhat }}</span>
+                <span style="font:400 12px var(--font-num);color:var(--fg-subtle)">{{ cty.headDue }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ cty.hasNext }}">
+              <div style="border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:6px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ ctT.next }}</span><span style="font:600 12px var(--font-num);color:var(--accent-text);white-space:nowrap">{{ cty.nextSoon }}</span></div>
+                <span style="font:500 13px var(--font-num);color:var(--fg)">{{ cty.nextWhen }}</span>
+                <span style="font-size:14px;line-height:1.45;color:var(--fg-muted)">{{ cty.nextWhat }}</span>
+              </div>
+            </sc-if>
+          </sc-if>
+          <sc-if value="{{ cty.noDossier }}"><p style="margin:0;font-size:14px;color:var(--fg-muted)">{{ cty.none }}</p></sc-if>
+          <div style="border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;align-items:center;gap:12px"><span style="font-size:13px;color:var(--fg-subtle)">{{ ctT.deps }}</span><span style="font:600 18px var(--font-num)">{{ cty.depN }}</span></div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <sc-if value="{{ cty.hasDossier }}"><a href="{{ cty.policyHref }}" style="display:inline-flex;align-items:center;height:40px;padding:0 16px;background:var(--accent);color:#fff;border-radius:3px;font-size:14px;font-weight:500;text-decoration:none">{{ ctT.dossier }} →</a></sc-if>
+            <button onClick="{{ cty.show }}" style="height:40px;padding:0 16px;background:transparent;border:1px solid var(--line-strong);border-radius:3px;font-size:14px;font-weight:500;color:var(--fg);cursor:pointer" style-hover="border-color:var(--fg)">{{ ctT.show }}</button>
+          </div>
+        </article>
+      </sc-if>
       <sc-if value="{{ noSel }}" hint-placeholder-val="{{ true }}">
         <ul style="list-style:none;margin:0;padding:0">
           <sc-for list="{{ panelList }}" as="d" hint-placeholder-count="6">
@@ -150,13 +191,13 @@ html,body{margin:0;padding:0;background:#F7F5EF}
           </sc-for>
         </ul>
         <sc-if value="{{ mapMore }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toggleMapAll }}" style="width:100%;height:44px;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--accent-text);font-size:14px;font-weight:500;cursor:pointer">{{ mapMoreLbl }}</button></sc-if>
-        <div style="padding:12px 20px;font-size:12px;color:var(--fg-subtle)">{{ t.pickHint }}</div>
+        <div style="padding:12px 20px;font-size:12px;line-height:1.5;color:var(--fg-subtle)">{{ t.pickHint }} {{ ctT.layerHint }}</div>
       </sc-if>
     </aside>
   </div>
   <div style="max-width:1440px;margin:0 auto;padding:16px var(--gutter) 0;display:flex;flex-wrap:wrap;gap:24px;align-items:center;font-size:12px;color:var(--fg-subtle);padding-bottom:var(--sec-pad)">
-    <span style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:50%;background:var(--accent)"></span>{{ t.legPin }}</span>
-    <span style="display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:50%;border:1px solid var(--accent);background:var(--accent-soft)"></span>{{ t.legCluster }}</span>
+    <span style="display:var(--d-nav);align-items:center;gap:8px;font-family:var(--font-num)">{{ t.mapHelp }}</span>
+    <span style="display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:50%;border:3px solid var(--t-arm);border-inline-end-color:var(--t-av);border-bottom-color:var(--t-drone);background:var(--bg-raised)"></span>{{ t.legCluster }}</span>
     <span style="display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:50%;border:1px solid var(--accent);opacity:.6"></span>{{ t.legNew }}</span>
     <span style="margin-inline-start:auto;font-family:var(--font-num)">{{ t.mapSource }} · {{ statsUpd }}</span>
   </div>
