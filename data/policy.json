@@ -2713,8 +2713,8 @@
    [
     "Digital Morocco 2030",
     "المغرب الرقمي 2030",
-    "Ministry of Digital Transition & Administration Reform",
-    "وزارة الانتقال الرقمي وإصلاح الإدارة",
+    "Ministry of Artificial Intelligence, Digital Transformation & Administration Reform",
+    "وزارة الذكاء الاصطناعي والتحول الرقمي وإصلاح الإدارة",
     2024,
     "digital",
     [
@@ -2751,8 +2751,8 @@
    [
     "Maroc IA 2030 (“AI Made in Morocco”)",
     "المغرب ذكاء اصطناعي 2030 («ذكاء اصطناعي صُنع في المغرب»)",
-    "Ministry of Digital Transition & Administration Reform",
-    "وزارة الانتقال الرقمي وإصلاح الإدارة",
+    "Ministry of Artificial Intelligence, Digital Transformation & Administration Reform",
+    "وزارة الذكاء الاصطناعي والتحول الرقمي وإصلاح الإدارة",
     2026,
     "ai",
     [
@@ -2816,8 +2816,8 @@
     [
      "Owner",
      "الجهة المالكة",
-     "Ministry of Digital Transition & Administration Reform (Minister Amal El Fallah Seghrouchni)",
-     "وزارة الانتقال الرقمي وإصلاح الإدارة (الوزيرة أمل الفلاح السغروشني)"
+     "Ministry of Artificial Intelligence, Digital Transformation & Administration Reform (Minister Ahmed Rahhou, since Oct 2026)",
+     "وزارة الذكاء الاصطناعي والتحول الرقمي وإصلاح الإدارة (الوزير أحمد رحو منذ أكتوبر 2026)"
     ],
     [
      "Targets",
@@ -2888,6 +2888,12 @@
      "سبتمبر 2026",
      "Maroc IA 2030 enters its implementation phase",
      "خارطة المغرب ذكاء اصطناعي 2030 تدخل مرحلة التنفيذ"
+    ],
+    [
+     "Oct 2026",
+     "أكتوبر 2026",
+     "Ministry renamed to include Artificial Intelligence; Ahmed Rahhou appointed minister on 16 October",
+     "إعادة تسمية الوزارة لتشمل الذكاء الاصطناعي، وتعيين أحمد رحو وزيراً في 16 أكتوبر"
     ]
    ],
    "img": "/media/policy/ma-feat.jpg",
@@ -3011,6 +3017,16 @@
     "خبر رسمي",
     "2026",
     "https://maroc.ma/en/news/morocco-moves-ai-strategy-implementation-targets-mad-100-bln-gdp-value-2030"
+   ],
+   [
+    "Morocco names former banker Ahmed Rahhou to lead AI and digital policy",
+    "المغرب يعيّن المصرفي السابق أحمد رحو لقيادة سياسة الذكاء الاصطناعي والرقمنة",
+    "Ecofin Agency",
+    "وكالة إيكوفين",
+    "News",
+    "خبر",
+    "2026",
+    "https://www.ecofinagency.com/appointments/1910-59909-morocco-names-former-banker-ahmed-rahhou-to-lead-ai-and-digital-policy"
    ]
   ],
   "regs": [
@@ -3061,8 +3077,8 @@
      "ar": "القانون الإطار \"Digital X.0\" (مشروع)"
     },
     "body": {
-     "en": "Ministry of Digital Transition & Administration Reform",
-     "ar": "الوزارة المنتدبة المكلفة بالانتقال الرقمي وإصلاح الإدارة"
+     "en": "Ministry of Artificial Intelligence, Digital Transformation & Administration Reform",
+     "ar": "وزارة الذكاء الاصطناعي والتحول الرقمي وإصلاح الإدارة"
     },
     "year": 2025,
     "status": "draft",
@@ -3161,8 +3177,8 @@
      "ar": "معهد الجزري للصناعة X.0"
     },
     "body": {
-     "en": "Ministry of Digital Transition & Administration Reform",
-     "ar": "الوزارة المنتدبة المكلفة بالانتقال الرقمي وإصلاح الإدارة"
+     "en": "Ministry of Artificial Intelligence, Digital Transformation & Administration Reform",
+     "ar": "وزارة الذكاء الاصطناعي والتحول الرقمي وإصلاح الإدارة"
     },
     "year": 2026,
     "status": "in_force",
