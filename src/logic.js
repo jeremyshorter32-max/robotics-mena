@@ -4,7 +4,7 @@ class Component extends DCLogic {
   pref(k) { try { return window.localStorage.getItem('rm-' + k); } catch (e) { return null; } }
   savePref(k, v) { try { window.localStorage.setItem('rm-' + k, v); } catch (e) {} }
   urlTidy = (() => { try { ['lang', 'theme'].forEach(k => { const v = this.qp.get(k); if (v) this.savePref(k, v); }); const u = new URL(window.location.href); ['lang', 'theme', 'accent'].forEach(k => u.searchParams.delete(k)); let p = u.pathname.replace(/index\.html$/, '').replace(/\.html$/, ''); if (u.hash === '#top') u.hash = ''; const next = p + u.search + u.hash; if (next !== window.location.pathname + window.location.search + window.location.hash) window.history.replaceState(window.history.state, '', next); } catch (e) {} return true; })();
-  state = { active: 'brief', rails: { brief: { i: 0, n: 0, end: false }, strat: { i: 0, n: 0, end: false } }, lang: null, theme: null, q: '', fCountry: '', fSector: '', fType: '', sel: null, dCat: '', dSort: 'featured', eType: '', eCountry: '', tab: 'company', submitted: false, dbTab: this.qp.get('tab') || 'companies', dbSel: this.qp.get('id') || null, dbQ: this.qp.get('q') || '', dbCountry: '', dbFacet: '', dbSort: '', dbAll: false, dbCopied: false, dAll: false, mapAll: false, mapNear: false, pc: (this.qp.get('c') || 'AE').toUpperCase(), email: '', subscribed: !!this.pref('subscriber'), rpTl: null, rpFleet: 'all', rpFleetOpen: null, rpClaims: {}, rpLb: -1, rpCh: '', rpSrcAll: false, added: {}, w: window.innerWidth };
+  state = { active: 'brief', rails: { brief: { i: 0, n: 0, end: false }, strat: { i: 0, n: 0, end: false } }, lang: null, theme: null, q: '', fCountry: '', fSector: '', fType: '', sel: null, dCat: '', dSort: 'featured', eType: '', eCountry: '', tab: 'company', submitted: false, dbTab: this.qp.get('tab') || 'companies', dbSel: this.qp.get('id') || null, dbQ: this.qp.get('q') || '', dbCountry: '', dbFacet: '', dbOrigin: new URLSearchParams(window.location.search).get('origin') || '', dbSort: '', dbAll: false, dbCopied: false, dAll: false, mapAll: false, mapNear: false, pc: (this.qp.get('c') || 'AE').toUpperCase(), email: '', subscribed: !!this.pref('subscriber'), rpTl: null, rpFleet: 'all', rpFleetOpen: null, rpClaims: {}, rpLb: -1, rpCh: '', rpSrcAll: false, added: {}, w: window.innerWidth };
   searchRef = React.createRef();
   briefRail = React.createRef(); stratRail = React.createRef(); tabRail = React.createRef();
   NAV_IDS = window.RM_PAGE.nav;
@@ -445,35 +445,40 @@ class Component extends DCLogic {
     const c = a && window.RM_DATA.companies.find(x => x.logo && (a.includes(x.name.toLowerCase()) || x.name.toLowerCase().includes(a)));
     return c ? c.logo : '';
   }
+  MENA_CC = new Set(['AE', 'SA', 'QA', 'KW', 'BH', 'OM', 'EG', 'MA', 'TN', 'DZ', 'LY', 'JO', 'LB', 'IQ', 'SY', 'PS', 'YE', 'IL', 'TR', 'IR']);
+  isIntl(o) { return !!(o && o.hq && !this.MENA_CC.has(o.hq)); }
   flagUrl(cc) { return cc ? '/media/flags/' + String(cc).toLowerCase() + '.svg' : ''; }
   dbOpen(tab, id) { this._dbReturn = document.activeElement; this.setState({ dbTab: tab, dbSel: id }); }
   dbVals(c) {
     const { S, lang, ar, L, num, fdate, ccName, narrow, t } = c;
     const d = this.DBT[lang], D = window.RM_DATA, tab = this.DB_TABS.includes(S.dbTab) ? S.dbTab : 'companies';
     const tr = (o, k) => (ar && o[k + '_ar']) || o[k] || '';
-    const cn = cc => (this.CC[cc] ? ccName(cc) : (cc || '—'));
+    let rn = null; try { rn = new Intl.DisplayNames([ar ? 'ar' : 'en'], { type: 'region' }); } catch (e) {}
+    const cn = cc => (this.CC[cc] ? ccName(cc) : cc ? ((rn && rn.of(cc)) || cc) : '—');
+    const mk = o => (o.mena_countries && o.mena_countries.length ? o.mena_countries : [o.country]);
+    const OT = ar ? { intl: 'دولية', regional: 'إقليمية', hq: 'المقر الرئيسي', active: 'تنشط في', origin: 'المنشأ', menaTitle: 'الصلة بالمنطقة', menaSrc: 'المصدر', all: 'الكل' } : { intl: 'International', regional: 'Regional', hq: 'Headquarters', active: 'Active in', origin: 'Origin', menaTitle: 'Link to MENA', menaSrc: 'Source', all: 'All' };
     const today = new Date().toISOString().slice(0, 10);
     const in90 = new Date(Date.now() + 90 * 864e5).toISOString().slice(0, 10);
     const lc = s => String(s || '').toLowerCase();
     const opMatch = (op, name) => { const a = lc(op), b = lc(name); return !!a && !!b && (a.includes(b) || b.includes(a)); };
     const range = e => e.end && e.end !== e.start ? fdate(e.start) + ' – ' + fdate(e.end) : fdate(e.start);
     const recs = {
-      companies: D.companies.map(o => ({ o, badge: this.badgeOf(o.name, o.logo), id: o.id, cc: o.country, facet: o.category, date: o.added, name: tr(o, 'name'), alt: ar ? o.name : (o.name_ar || ''), c2: (this.CATS[o.category] || [o.category, o.category])[L], c3: cn(o.country), c4: (this.STAGES[o.stage] || [o.stage, o.stage])[L], c5: o.added ? fdate(o.added) : '—', size: 0 })),
+      companies: D.companies.map(o => { const ccs = mk(o), intl = this.isIntl(o); return { o, badge: this.badgeOf(o.name, o.logo), id: o.id, cc: o.country, ccs, intl, origin: intl ? 'intl' : 'regional', hayx: o.mena_link ? (o.mena_link.en || '') + ' ' + (o.mena_link.ar || '') + ' ' + cn(o.hq) + ' ' + OT.intl : '', facet: o.category, date: o.added, name: tr(o, 'name'), alt: intl ? OT.intl + ' · ' + OT.hq + ': ' + cn(o.hq) : (ar ? o.name : (o.name_ar || '')), c2: (this.CATS[o.category] || [o.category, o.category])[L], c3: cn(ccs[0]) + (ccs.length > 1 ? ' +' + num(ccs.length - 1) : ''), c4: (this.STAGES[o.stage] || [o.stage, o.stage])[L], c5: o.added ? fdate(o.added) : '—', size: 0 }; }),
       deployments: D.deployments.map(o => ({ o, badge: this.badgeOf(o.operator, this.opLogo(o.operator, o.logo)), id: o.id, cc: o.country, facet: o.type, date: o.date, name: tr(o, 'title'), alt: tr(o, 'operator') + (o.site ? ' · ' + tr(o, 'site') : ''), c2: (this.TYPES[o.type] || [o.type, o.type])[L], c3: (this.SECTORS[o.sector] || [o.sector, o.sector])[L], c4: cn(o.country), c5: fdate(o.date), size: 0 })),
-      countries: D.countries.map(o => { const dn = D.deployments.filter(x => x.country === o.code).length, cn2 = D.companies.filter(x => x.country === o.code).length; return { o, badge: this.badgeOf(o.code, '/media/flags/' + o.code.toLowerCase() + '.svg'), id: o.code, cc: o.code, facet: '', date: '', name: tr(o, 'name'), alt: ar ? o.name : o.name_ar, c2: num(dn), c3: num(cn2), c4: o.headline_target || '—', c5: o.target_year ? String(o.target_year) : '—', size: dn }; }),
+      countries: D.countries.map(o => { const dn = D.deployments.filter(x => x.country === o.code).length, cn2 = D.companies.filter(x => mk(x).includes(o.code)).length; return { o, badge: this.badgeOf(o.code, '/media/flags/' + o.code.toLowerCase() + '.svg'), id: o.code, cc: o.code, facet: '', date: '', name: tr(o, 'name'), alt: ar ? o.name : o.name_ar, c2: num(dn), c3: num(cn2), c4: o.headline_target || '—', c5: o.target_year ? String(o.target_year) : '—', size: dn }; }),
       events: D.events.map(o => ({ o, badge: this.badgeOf(o.name, o.logo), id: o.id, cc: o.country, facet: o.type, date: o.start, name: tr(o, 'name'), alt: tr(o, 'venue') || '', c2: (this.ETYPES[o.type] || [o.type, o.type])[L], c3: tr(o, 'city'), c4: cn(o.country), c5: range(o), size: 0 }))
     };
     const all = recs[tab];
     const q = lc(S.dbQ).trim();
-    const hay = r => lc([r.name, r.alt, r.c2, r.c3, r.c4, r.c5, ...Object.values(r.o).filter(v => typeof v === 'string')].join(' '));
-    let rows = all.filter(r => (!q || q.split(/\s+/).every(w => hay(r).includes(w))) && (!S.dbCountry || r.cc === S.dbCountry) && (!S.dbFacet || r.facet === S.dbFacet));
+    const hay = r => lc([r.name, r.alt, r.c2, r.c3, r.c4, r.c5, r.hayx || '', ...Object.values(r.o).filter(v => typeof v === 'string')].join(' '));
+    let rows = all.filter(r => (!q || q.split(/\s+/).every(w => hay(r).includes(w))) && (!S.dbCountry || (r.ccs || [r.cc]).includes(S.dbCountry)) && (!S.dbFacet || r.facet === S.dbFacet) && (tab !== 'companies' || !S.dbOrigin || r.origin === S.dbOrigin));
     const sort = S.dbSort || (tab === 'countries' ? 'size' : 'recent');
     if (sort === 'az') rows.sort((a, b) => a.name.localeCompare(b.name, lang));
     else if (sort === 'size' || tab === 'countries' && sort === 'recent') rows.sort((a, b) => b.size - a.size || a.name.localeCompare(b.name, lang));
     else rows.sort((a, b) => tab === 'events' ? (a.date || '').localeCompare(b.date || '') : (b.date || '').localeCompare(a.date || ''));
     const LIMIT = 50, shown = S.dbAll ? rows : rows.slice(0, LIMIT);
     const facetDict = { companies: this.CATS, deployments: this.TYPES, events: this.ETYPES }[tab];
-    const countriesIn = [...new Set(all.map(r => r.cc).filter(Boolean))].sort((a, b) => cn(a).localeCompare(cn(b), lang));
+    const countriesIn = [...new Set(all.flatMap(r => r.ccs || [r.cc]).filter(Boolean))].sort((a, b) => cn(a).localeCompare(cn(b), lang));
     const opt = (v, label, cur) => ({ v, label, sel: v === cur });
     // Detail card
     let card = null;
@@ -481,9 +486,11 @@ class Component extends DCLogic {
     if (r) {
       const o = r.o, F = d.f, fields = [], rel = [];
       const link = (url, label) => url ? { url, label } : null;
+      let menaBox = null;
       let desc = '', srcName = o.source || '', srcUrl = o.source_url || '', extra = [];
       if (tab === 'companies') {
-        fields.push([F.category, r.c2], [F.country, r.c3], [F.stage, r.c4], [F.listed, r.c5]);
+        fields.push([F.category, r.c2], [OT.hq, (o.hq_city ? o.hq_city + ', ' : '') + cn(o.hq || o.country) + (r.intl ? ' · ' + OT.intl : '')], [OT.active, r.ccs.map(cn).join(ar ? '، ' : ', ')], [F.stage, r.c4], [F.listed, r.c5]);
+        if (o.mena_link) menaBox = { title: OT.menaTitle, text: ar ? (o.mena_link.ar || o.mena_link.en) : o.mena_link.en, src: OT.menaSrc + ': ' + (o.mena_source || (o.mena_source_url || '').replace(/^https?:\/\/(www\.)?/, '').split('/')[0]) + (o.mena_date ? ' · ' + fdate(o.mena_date) : ''), url: o.mena_source_url || '', hasUrl: !!o.mena_source_url, flag: this.flagUrl(o.hq), hq: cn(o.hq) };
         desc = tr(o, 'summary');
         if (o.website) extra.push(link(o.website, d.visit));
         D.deployments.filter(x => opMatch(x.operator, o.name)).forEach(x => rel.push({ badge: this.badgeOf(x.operator, this.opLogo(x.operator, x.logo)), label: tr(x, 'title'), sub: tr(x, 'site') + ' · ' + fdate(x.date), open: () => this.setState({ dbTab: 'deployments', dbSel: x.id }) }));
@@ -497,7 +504,7 @@ class Component extends DCLogic {
         fields.push([F.deployments, r.c2], [F.companies, r.c3], [F.events, num(ev)], [F.target, r.c4], [F.year, r.c5]);
         desc = this.POLICY[o.code] ? this.POLICY[o.code].sum[L] : '';
         if (this.POLICY[o.code]) extra.push({ url: this.pageHref('policy', o.code), label: d.dossier });
-        D.companies.filter(x => x.country === o.code).forEach(x => rel.push({ badge: this.badgeOf(x.name, x.logo), label: tr(x, 'name'), sub: d.kind.companies + ' · ' + (this.CATS[x.category] || ['', ''])[L], open: () => this.setState({ dbTab: 'companies', dbSel: x.id }) }));
+        D.companies.filter(x => mk(x).includes(o.code)).forEach(x => rel.push({ badge: this.badgeOf(x.name, x.logo), label: tr(x, 'name'), sub: d.kind.companies + ' · ' + (this.CATS[x.category] || ['', ''])[L] + (this.isIntl(x) ? ' · ' + OT.intl : ''), open: () => this.setState({ dbTab: 'companies', dbSel: x.id }) }));
         D.deployments.filter(x => x.country === o.code).forEach(x => rel.push({ badge: this.badgeOf(x.operator, this.opLogo(x.operator, x.logo)), label: tr(x, 'title'), sub: d.kind.deployments + ' · ' + fdate(x.date), open: () => this.setState({ dbTab: 'deployments', dbSel: x.id }) }));
       } else {
         fields.push([F.dates, r.c5], [F.etype, r.c2], [F.city, r.c3], [F.venue, tr(o, 'venue') || '—'], [F.country, r.c4], [F.status, o.tentative ? d.status.tent : o.dates_confirmed ? d.status.ok : d.status.tbc]);
@@ -512,23 +519,25 @@ class Component extends DCLogic {
         srcUrl, hasSrcUrl: !!srcUrl, openSrc: d.open,
         added: o.added && tab !== 'companies' ? d.added + ' ' + fdate(o.added) : '', hasAdded: !!(o.added && tab !== 'companies'),
         links: extra.filter(Boolean), hasLinks: extra.filter(Boolean).length > 0,
-        relTitle: tab === 'events' ? '' : d.related[tab], rel: rel.slice(0, 8), hasRel: rel.length > 0
+        relTitle: tab === 'events' ? '' : d.related[tab], rel: rel.slice(0, tab === 'countries' ? 24 : 8), hasRel: rel.length > 0, mena: menaBox || {}, hasMena: !!menaBox
       };
     }
     const cols = d.cols[tab];
     return {
       db: {
         t: d, tab, chev: ar ? '‹' : '›', cols: { c1: cols[0], c2: cols[1], c3: cols[2], c4: cols[3], c5: cols[4] },
-        tabs: this.DB_TABS.map(k => ({ ...this.chip(d.tabs[k], num(recs[k].length), k === tab, () => this.setState({ dbTab: k, dbFacet: '', dbCountry: '', dbSort: '', dbAll: false, dbSel: null })), id: 'rm-dbtab-' + k, ti: k === tab ? '0' : '-1' })),
+        tabs: this.DB_TABS.map(k => ({ ...this.chip(d.tabs[k], num(recs[k].length), k === tab, () => this.setState({ dbTab: k, dbFacet: '', dbCountry: '', dbOrigin: '', dbSort: '', dbAll: false, dbSel: null })), id: 'rm-dbtab-' + k, ti: k === tab ? '0' : '-1' })),
         q: S.dbQ, onQ: e => this.setState({ dbQ: e.target.value, dbAll: false }),
         countryOpts: [opt('', d.anyCountry, S.dbCountry)].concat(countriesIn.map(cc => opt(cc, cn(cc), S.dbCountry))), country: S.dbCountry, onCountry: e => this.setState({ dbCountry: e.target.value }),
         hasFacet: !!facetDict, facetLabel: d.facet[tab] || '', facet: S.dbFacet,
         facetOpts: facetDict ? [opt('', d.all, S.dbFacet)].concat(Object.keys(facetDict).filter(k => all.some(r => r.facet === k)).map(k => opt(k, facetDict[k][L], S.dbFacet))) : [],
         onFacet: e => this.setState({ dbFacet: e.target.value }),
+        hasOrigin: tab === 'companies', origin: S.dbOrigin || '', onOrigin: e => this.setState({ dbOrigin: e.target.value }), originLabel: OT.origin,
+        originOpts: [['', OT.all], ['regional', OT.regional], ['intl', OT.intl]].map(([v, l]) => opt(v, l + ' (' + num(v ? all.filter(x => x.origin === v).length : all.length) + ')', S.dbOrigin || '')),
         sort, sortOpts: (tab === 'countries' ? ['size', 'az'] : ['recent', 'az']).map(k => opt(k, k === 'recent' && tab === 'events' ? (ar ? 'الأقرب' : 'Soonest') : d.sorts[k], sort)), onSort: e => this.setState({ dbSort: e.target.value }),
         showing: d.showing.replace('{a}', num(rows.length)).replace('{b}', num(all.length)),
         rows: shown.map(x => ({ id: x.id, badge: x.badge, name: x.name, alt: x.alt, c2: x.c2, c3: x.c3, c4: x.c4, c5: x.c5, cc: x.cc, open: () => this.dbOpen(tab, x.id) })),
-        empty: !rows.length, filtered: !!(q || S.dbCountry || S.dbFacet), clear: () => this.setState({ dbQ: '', dbCountry: '', dbFacet: '' }),
+        empty: !rows.length, filtered: !!(q || S.dbCountry || S.dbFacet || S.dbOrigin), clear: () => this.setState({ dbQ: '', dbCountry: '', dbFacet: '', dbOrigin: '' }),
         more: rows.length > shown.length, moreLbl: d.more.replace('{n}', num(rows.length)), showAll: () => this.setState({ dbAll: true }),
         rowCols: narrow ? 'minmax(0,1fr) auto' : 'minmax(0,2.4fr) minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,.9fr)', colDisp: narrow ? 'none' : 'block', metaDisp: narrow ? 'block' : 'none', headDisp: narrow ? 'none' : 'grid',
         open: !!card, card: card || {}, close: () => this.setState({ dbSel: null }), stop: e => e.stopPropagation(),

@@ -9,10 +9,11 @@
 // Step 2 (extract):  Claude turns the findings into entries that must match the database schema exactly.
 // Step 3 (merge):    this script checks each entry, drops duplicates and anything it can't verify, and writes the files.
 import fs from 'node:fs';
+import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { z } from 'zod';
 import { betaZodOutputFormat } from '@anthropic-ai/sdk/helpers/beta/zod';
-import { SECTORS, ROBOT_TYPES, COMPANY_CATEGORIES, STAGES, EVENT_TYPES, MENA, ISO_DATE, readData, writeData, norm, slug, normUrl } from './lib/taxonomy.mjs';
+import { ROOT, SECTORS, ROBOT_TYPES, COMPANY_CATEGORIES, STAGES, EVENT_TYPES, MENA, ISO_DATE, readData, writeData, norm, slug, normUrl } from './lib/taxonomy.mjs';
 
 const MODEL = 'claude-opus-5-5';
 // If the model declines a request for policy reasons, the API retries it on a server-chosen fallback model.
@@ -40,8 +41,12 @@ const Source = {
 const Findings = z.object({
   companies: z.array(z.object({
     name: z.string(), name_ar: z.string().describe('Arabic name or transliteration'),
-    country: Country, category: z.enum(keys(COMPANY_CATEGORIES)), stage: z.enum(keys(STAGES)),
-    summary: z.string().describe('One sentence, under 20 words, on what the company does in robotics'),
+    country: Country.describe('Main MENA country where the company operates (for international companies: their main MENA market)'), category: z.enum(keys(COMPANY_CATEGORIES)), stage: z.enum(keys(STAGES)),
+    hq: z.string().describe('Headquarters country as a 2-letter ISO code, e.g. AE, US, CN'),
+    mena_countries: z.array(z.string()).describe('2-letter codes of every MENA country where it is active'),
+    mena_link: z.string().describe('For companies headquartered outside MENA: 1-2 sentences of dated facts on why it belongs in a MENA directory (deployment, contract, pilot, local office). Empty string for regional companies'),
+    mena_link_ar: z.string().describe('Arabic translation of mena_link, or empty string'),
+    summary: z.string().describe('One sentence, under 20 words, on what the company does in robotics, naming its home city and country if international'),
     summary_ar: z.string().describe('Arabic translation of summary'),
     website: z.string().describe('Official website URL, or empty string if unknown'),
     ...Source
@@ -170,7 +175,16 @@ function merge(found) {
     if (!isUrl(c.source_url)) { skip('Company', c.name, 'no source link'); continue; }
     if (!ensureCountry(c.country)) { skip('Company', c.name, `country ${c.country} not covered`); continue; }
     let id = slug(c.name) || 'company'; while (data.companies.some(x => x.id === id)) id += '-2';
-    data.companies.push({ id, name: c.name, name_ar: c.name_ar, country: c.country, category: c.category, stage: c.stage, summary: c.summary, summary_ar: c.summary_ar, website: isUrl(c.website) ? c.website : '', logo: '', source: c.source, source_url: c.source_url, added: today });
+    const hq = /^[A-Z]{2}$/.test(c.hq || '') ? c.hq : c.country;
+    const intl = !(hq in MENA);
+    if (intl && !c.mena_link) { skip('Company', c.name, 'international but no link to MENA'); continue; }
+    const mc = [...new Set([c.country, ...(c.mena_countries || []).filter(x => x in MENA)])];
+    const rec = { id, name: c.name, name_ar: c.name_ar, country: c.country, hq, mena_countries: mc, category: c.category, stage: c.stage, summary: c.summary, summary_ar: c.summary_ar, website: isUrl(c.website) ? c.website : '', logo: '', source: c.source, source_url: c.source_url, added: today };
+    if (intl) {
+      Object.assign(rec, { mena_link: { en: c.mena_link, ar: c.mena_link_ar || c.mena_link }, mena_source: c.source, mena_source_url: c.source_url, mena_date: ISO_DATE.test(c.date || '') ? c.date : today });
+      if (!fs.existsSync(path.join(ROOT, 'media', 'flags', hq.toLowerCase() + '.svg'))) { skip('Company', c.name, `no flag file for ${hq} (add media/flags/${hq.toLowerCase()}.svg, then re-run)`); continue; }
+    }
+    data.companies.push(rec);
     seenUrls.add(normUrl(c.source_url));
     report.added.companies.push(c);
   }

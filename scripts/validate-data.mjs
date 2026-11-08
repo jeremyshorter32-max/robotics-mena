@@ -23,6 +23,15 @@ D.companies.forEach((c, i) => {
   oneOf(c.category, COMPANY_CATEGORIES, w, 'category'); oneOf(c.stage, STAGES, w, 'stage');
   if (!countryCodes.has(c.country)) errors.push(`${w}: country "${c.country}" is not in countries.json`);
   date(c.added, w, 'added'); url(c.website, w, 'website'); logo(c.logo, w); url(c.source_url, w, 'source_url');
+  if (c.hq !== undefined && !/^[A-Z]{2}$/.test(c.hq)) errors.push(`${w}: hq "${c.hq}" must be a 2-letter ISO country code`);
+  if (c.mena_countries !== undefined) { if (!Array.isArray(c.mena_countries) || !c.mena_countries.length) errors.push(`${w}: mena_countries must be a non-empty list`); else c.mena_countries.forEach(cc => { if (!(cc in MENA)) errors.push(`${w}: mena_countries "${cc}" is not a MENA country`); }); if (Array.isArray(c.mena_countries) && !c.mena_countries.includes(c.country)) errors.push(`${w}: mena_countries must include its listed country "${c.country}"`); }
+  if (c.hq && !(c.hq in MENA)) {
+    // International supplier: must say why it is in a MENA directory
+    if (!c.mena_link || !c.mena_link.en || !c.mena_link.ar) errors.push(`${w}: international company (HQ ${c.hq}) needs mena_link.en and mena_link.ar`);
+    if (!c.mena_source_url) errors.push(`${w}: international company needs mena_source_url`); else url(c.mena_source_url, w, 'mena_source_url');
+    date(c.mena_date, w, 'mena_date', true);
+    if (!fs.existsSync(path.join(ROOT, 'media', 'flags', c.hq.toLowerCase() + '.svg'))) errors.push(`${w}: missing flag file media/flags/${c.hq.toLowerCase()}.svg`);
+  }
 });
 uniq(D.companies, 'id', 'companies');
 
