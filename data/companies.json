@@ -2694,5 +2694,52 @@
     "image_url": "https://www.legendrobot.com/uploads/image/20260918/3.3m_Latex_Paint_Spraying_Robot_Case_Study_(2).webp",
     "image_page": "https://www.legendrobot.com/qiddiya-riyadh-saudi-arabia/",
     "added": "2026-11-08"
+  },
+  {
+    "id": "pudu-robotics",
+    "name": "Pudu Robotics",
+    "name_ar": "بودو روبوتيكس",
+    "country": "AE",
+    "hq": "CN",
+    "hq_city": "Shenzhen",
+    "mena_countries": [
+      "AE",
+      "SA",
+      "KW",
+      "QA",
+      "BH",
+      "OM"
+    ],
+    "category": "amr",
+    "stage": "growth",
+    "summary": "Shenzhen maker of service robots for restaurants, hotels, hospitals and buildings, including the BellaBot and KettyBot delivery robots and commercial cleaning robots.",
+    "summary_ar": "شركة من شنتشن تصنع روبوتات الخدمة للمطاعم والفنادق والمستشفيات والمباني، ومنها روبوتا التوصيل «بيلابوت» و«كيتي بوت» وروبوتات التنظيف التجارية.",
+    "mena_link": {
+      "en": "Sold and supported across the GCC through local distributors: YS Lootah Robotics carries Pudu robots in Dubai (2026), and Pudu launched its BellaBot, KettyBot and PuduBot in Saudi Arabia with Proven Robotics in October 2021. Pudu sponsored World FM Day 2026 in Riyadh.",
+      "ar": "تُباع روبوتاتها وتُدعم في دول الخليج عبر موزعين محليين: توزّع «واي إس لوتاه للروبوتات» روبوتات بودو في دبي (2026)، وأطلقت بودو روبوتات «بيلابوت» و«كيتي بوت» و«بودوبوت» في السعودية مع «بروفن روبوتيكس» في أكتوبر 2021، ورعت يوم إدارة المرافق العالمي 2026 في الرياض."
+    },
+    "mena_source": "The National",
+    "mena_source_url": "https://www.thenationalnews.com/news/uae/2026/11/06/uae-opens-its-first-humanoid-robotics-showroom-as-dubai-races-to-200000-robots/",
+    "mena_date": "2026-11-06",
+    "website": "https://www.pudurobotics.com/",
+    "logo": "/media/logos/pudu-robotics.png",
+    "source": "Zawya (Proven Robotics and Pudu Robotics press release)",
+    "source_url": "https://www.zawya.com/en/press-release/proven-robotics-and-pudu-robotics-unveil-next-generation-robots-in-saudi-arabia-640295",
+    "added": "2026-11-08",
+    "image": "/media/companies/pudu-robotics.jpg",
+    "image_cap": {
+      "en": "Pudu's BellaBot serving robot in a restaurant",
+      "ar": "روبوت الخدمة «بيلابوت» من بودو في مطعم"
+    },
+    "image_alt": {
+      "en": "Pudu BellaBot serving robot with a cat face display standing between restaurant tables",
+      "ar": "روبوت الخدمة «بيلابوت» من بودو بشاشة على هيئة وجه قطة بين طاولات مطعم"
+    },
+    "image_credit": {
+      "en": "Image: Pudu Robotics",
+      "ar": "الصورة: بودو روبوتيكس"
+    },
+    "image_url": "https://cdn.pudutech.com/Food_and_Beverage_ecca2bbd37.webp",
+    "image_page": "https://www.pudurobotics.com/en"
   }
 ]

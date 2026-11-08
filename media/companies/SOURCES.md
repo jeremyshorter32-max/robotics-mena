@@ -64,3 +64,4 @@ One image per company, taken from the company's own website, newsroom or press k
 | cobod.jpg | COBOD | https://cobod.com/wp-content/uploads/2025/07/ucc-printer-on-location.png |
 | hilti.jpg | Hilti | https://www.hilti.com/content/hilti/W1/US/en/business/business/trends/jaibot/_jcr_content/cta/image.coreimg.82.1920.jpeg/1717006574115/l139811.jpeg |
 | legend-robot.jpg | Legend Robot | https://www.legendrobot.com/uploads/image/20260918/3.3m_Latex_Paint_Spraying_Robot_Case_Study_(2).webp |
+| pudu-robotics.jpg | Pudu Robotics | https://cdn.pudutech.com/Food_and_Beverage_ecca2bbd37.webp |

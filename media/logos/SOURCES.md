@@ -114,3 +114,4 @@ No usable logo found for FalconViz, Sager Drones, AutoGo, Sinaha Technology, Apo
 | cobod.png | COBOD | https://cobod.com/wp-content/uploads/2022/04/logo-cobod-hvid.svg (white SVG recoloured to #1A1A1A) |
 | hilti.png | Hilti | https://www.hilti.com/static/ui/assets/images/hilti-logo.svg |
 | legend-robot.png | Legend Robot | existing file (not regenerated) |
+| pudu-robotics.png | Pudu Robotics | https://www.pudurobotics.com/_next/static/media/logo.851bf515.svg |
