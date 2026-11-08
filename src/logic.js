@@ -532,7 +532,7 @@ class Component extends DCLogic {
       }
       const hasSrc = !!(srcName || srcUrl);
       card = {
-        kind: d.kind[tab], badge: r.badge, title: r.name, alt: r.alt, cc: r.cc || '', hasCc: !!r.cc, desc, hasDesc: !!desc,
+        kind: d.kind[tab], badge: r.badge, title: r.name, alt: r.alt, cc: r.cc || '', hasCc: !!r.cc && tab !== 'countries', flag: this.flagUrl(r.cc), ccName: r.cc ? cn(r.cc) : '', desc, hasDesc: !!desc,
         fields: fields.filter(f => f[1]).map(f => ({ k: f[0], v: f[1] })),
         srcLine: hasSrc ? d.source + ': ' + (srcName || srcUrl.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]) : d.noSource,
         srcUrl, hasSrcUrl: !!srcUrl, openSrc: d.open,
