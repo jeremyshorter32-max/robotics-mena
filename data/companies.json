@@ -17,7 +17,22 @@
     "hq_city": "Dubai",
     "mena_countries": [
       "AE"
-    ]
+    ],
+    "image": "/media/companies/ys-lootah-robotics.jpg",
+    "image_cap": {
+      "en": "Humanoid, quadruped and service robots in a Dubai showroom",
+      "ar": "روبوتات بشرية ورباعية الأرجل وروبوتات خدمة في صالة عرض بدبي"
+    },
+    "image_alt": {
+      "en": "Rows of humanoid robots, robot dogs and Pudu service robots standing with a man in a kandura in a showroom overlooking the Dubai skyline and Burj Khalifa",
+      "ar": "صفوف من الروبوتات البشرية والكلاب الآلية وروبوتات الخدمة من بودو تقف مع رجل يرتدي الكندورة في صالة عرض تطل على أفق دبي وبرج خليفة"
+    },
+    "image_credit": {
+      "en": "Image: YS Lootah Robotics",
+      "ar": "الصورة: واي إس لوتاه للروبوتات"
+    },
+    "image_url": "https://yslootahrobotics.com/media/home-hero.webp",
+    "image_page": "https://yslootahrobotics.com/"
   },
   {
     "id": "analog",
@@ -37,7 +52,22 @@
     "hq_city": "Abu Dhabi",
     "mena_countries": [
       "AE"
-    ]
+    ],
+    "image": "/media/companies/analog.jpg",
+    "image_cap": {
+      "en": "Spot robot on patrol in an Abu Dhabi park",
+      "ar": "روبوت Spot في دورية بحديقة في أبوظبي"
+    },
+    "image_alt": {
+      "en": "A Boston Dynamics Spot quadruped robot walking along a paved path in a tree-lined park",
+      "ar": "روبوت Spot رباعي الأرجل من بوسطن دايناميكس يسير على ممر مرصوف في حديقة تحيط بها الأشجار"
+    },
+    "image_credit": {
+      "en": "Image: Analog",
+      "ar": "الصورة: أنالوج"
+    },
+    "image_url": "https://stanalogbackproduaen.blob.core.windows.net/assets/uploads/video_cover_03_096608983a.webp",
+    "image_page": "https://analog.io/"
   },
   {
     "id": "iq-robotics",
@@ -62,7 +92,22 @@
       "QA",
       "OM",
       "BH"
-    ]
+    ],
+    "image": "/media/companies/iq-robotics.jpg",
+    "image_cap": {
+      "en": "IQ Robotics goods-to-person robots in a fulfilment centre",
+      "ar": "روبوتات آي كيو روبوتيكس لنقل البضائع في مركز تنفيذ الطلبات"
+    },
+    "image_alt": {
+      "en": "Orange IQ Robotics mobile robots carrying shelving pods, some draped with UAE and Saudi flags, across a warehouse floor",
+      "ar": "روبوتات متنقلة برتقالية من آي كيو روبوتيكس تحمل رفوف تخزين، بعضها مزين بعلمي الإمارات والسعودية، في أرضية مستودع"
+    },
+    "image_credit": {
+      "en": "Image: IQ Robotics",
+      "ar": "الصورة: آي كيو روبوتيكس"
+    },
+    "image_url": "https://www.iqrobotics.com/wp-content/uploads/2022/07/Homepage-photo-2.png",
+    "image_page": "https://www.iqrobotics.com/"
   },
   {
     "id": "micropolis-robotics",
@@ -82,7 +127,22 @@
     "hq_city": "Dubai",
     "mena_countries": [
       "AE"
-    ]
+    ],
+    "image": "/media/companies/micropolis-robotics.jpg",
+    "image_cap": {
+      "en": "Micropolis autonomous patrol vehicles in Dubai",
+      "ar": "مركبات الدورية ذاتية القيادة من ميكروبوليس في دبي"
+    },
+    "image_alt": {
+      "en": "Three white autonomous Micropolis patrol vehicles driving in convoy on an elevated road with the Dubai skyline behind",
+      "ar": "ثلاث مركبات دورية بيضاء ذاتية القيادة من ميكروبوليس تسير في رتل على طريق مرتفع وخلفها أفق دبي"
+    },
+    "image_credit": {
+      "en": "Image: Micropolis Robotics",
+      "ar": "الصورة: ميكروبوليس روبوتيكس"
+    },
+    "image_url": "https://micropolis.ai/api/media/file/public-safety-convoy.webp",
+    "image_page": "https://micropolis.ai/"
   },
   {
     "id": "weride",
@@ -137,7 +197,22 @@
     },
     "mena_source": "Zawya (press release)",
     "mena_source_url": "https://www.zawya.com/en/press-release/companies-news/keeta-drone-resumes-drone-delivery-operations-in-dubai-475216",
-    "mena_date": "2026-09-02"
+    "mena_date": "2026-09-02",
+    "image": "/media/companies/keeta-drone.jpg",
+    "image_cap": {
+      "en": "Keeta delivery drone in flight",
+      "ar": "طائرة توصيل من كيتا درون أثناء الطيران"
+    },
+    "image_alt": {
+      "en": "A yellow-and-green Keeta Drone delivery drone with six rotors carrying its delivery box in flight against a blue sky",
+      "ar": "طائرة توصيل مسيّرة سداسية المراوح من كيتا درون باللونين الأصفر والأخضر تحمل صندوق التوصيل وتحلق في سماء زرقاء"
+    },
+    "image_credit": {
+      "en": "Image: Keeta Drone",
+      "ar": "الصورة: كيتا درون"
+    },
+    "image_url": "https://www.keetadrone.com/cdn/shop/articles/DSC_6391-20260916.png?v=1789560775",
+    "image_page": "https://www.keetadrone.com/blogs/news/keeta-drone-resumes-drone-delivery-operations-in-dubai"
   },
   {
     "id": "gecko-robotics",
@@ -164,7 +239,22 @@
     },
     "mena_source": "The National",
     "mena_source_url": "https://www.thenationalnews.com/future/technology/2026/08/25/gecko-robotics-uae-adnoc/",
-    "mena_date": "2026-08-25"
+    "mena_date": "2026-08-25",
+    "image": "/media/companies/gecko-robotics.jpg",
+    "image_cap": {
+      "en": "Gecko wall-climbing robot inspecting a storage tank",
+      "ar": "روبوت جيكو المتسلق يفحص خزان تخزين"
+    },
+    "image_alt": {
+      "en": "A Gecko Robotics crawler robot climbing the wall of an oil storage tank while a technician in a hard hat monitors it from a tablet",
+      "ar": "روبوت زاحف من جيكو روبوتيكس يتسلق جدار خزان نفط بينما يراقبه فني يرتدي خوذة عبر جهاز لوحي"
+    },
+    "image_credit": {
+      "en": "Image: Gecko Robotics",
+      "ar": "الصورة: جيكو روبوتيكس"
+    },
+    "image_url": "https://cdn.sanity.io/images/11oyz1i4/production/7ac16a0089e23939e41bc18100998de20d022c16-1400x1400.avif?w=1400&fm=jpg",
+    "image_page": "https://www.geckorobotics.com/oil-and-gas"
   },
   {
     "id": "autogo",
@@ -184,7 +274,22 @@
     "hq_city": "Abu Dhabi",
     "mena_countries": [
       "AE"
-    ]
+    ],
+    "image": "/media/companies/autogo.jpg",
+    "image_cap": {
+      "en": "AutoGo robotaxi at a charging station in Abu Dhabi",
+      "ar": "سيارة أجرة ذاتية القيادة من أوتو جو عند محطة شحن في أبوظبي"
+    },
+    "image_alt": {
+      "en": "A white and teal AutoGo-branded autonomous minivan plugged into an AutoGo charger in a green EV parking bay",
+      "ar": "سيارة فان ذاتية القيادة بلونين أبيض وفيروزي تحمل شعار أوتو جو موصولة بشاحن في موقف مخصص للسيارات الكهربائية"
+    },
+    "image_credit": {
+      "en": "Image: AutoGo",
+      "ar": "الصورة: أوتو جو"
+    },
+    "image_url": "https://k2.world/wp-content/uploads/2025/04/Autogo-taxi-still.png",
+    "image_page": "https://k2.world/"
   },
   {
     "id": "sinaha-technology",
@@ -204,7 +309,22 @@
     "hq_city": "Abu Dhabi",
     "mena_countries": [
       "AE"
-    ]
+    ],
+    "image": "/media/companies/sinaha-technology.jpg",
+    "image_cap": {
+      "en": "Autonomous cargo vehicle at an ADNOC site",
+      "ar": "مركبة شحن ذاتية القيادة في موقع تابع لأدنوك"
+    },
+    "image_alt": {
+      "en": "A white driverless Evocargo flatbed vehicle branded Sinaha Technology and ADNOC parked in an industrial yard in the UAE",
+      "ar": "مركبة شحن مسطحة بيضاء ذاتية القيادة من إيفوكارغو تحمل شعاري صناعة تكنولوجي وأدنوك في ساحة صناعية بالإمارات"
+    },
+    "image_credit": {
+      "en": "Image: Sinaha Technology",
+      "ar": "الصورة: صناعة تكنولوجي"
+    },
+    "image_url": "https://static.tildacdn.com/tila3834-3763-4233-b631-366630306436/__2026-10-26_132158.png",
+    "image_page": "https://sinahatech.ae/"
   },
   {
     "id": "apollo-go",
@@ -278,7 +398,22 @@
     },
     "mena_source": "Humanoid (official release)",
     "mena_source_url": "https://thehumanoid.ai/humanoid-and-qss-ai-robotics-launch-menas-first-humanoid-robotics-showroom/",
-    "mena_date": "2025-11-27"
+    "mena_date": "2025-11-27",
+    "image": "/media/companies/humanoid.jpg",
+    "image_cap": {
+      "en": "HMND 01 humanoid robot handling parts at Schaeffler",
+      "ar": "الروبوت البشري HMND 01 يتعامل مع القطع في مصنع شيفلر"
+    },
+    "image_alt": {
+      "en": "A white Humanoid HMND 01 robot with a black visor head picks metal bearing rings from a bin on a factory floor",
+      "ar": "روبوت بشري أبيض من هيومانويد طراز HMND 01 برأس أسود لامع يلتقط حلقات معدنية من صندوق في أرضية مصنع"
+    },
+    "image_credit": {
+      "en": "Image: Humanoid",
+      "ar": "الصورة: هيومانويد"
+    },
+    "image_url": "https://thehumanoid.ai/wp-content/uploads/2026/05/Schaeffler_Still_1.3.2-1.png",
+    "image_page": "https://thehumanoid.ai/"
   },
   {
     "id": "nero",
@@ -298,7 +433,22 @@
     "hq_city": "Riyadh",
     "mena_countries": [
       "SA"
-    ]
+    ],
+    "image": "/media/companies/nero.jpg",
+    "image_cap": {
+      "en": "Nero autonomous delivery vehicle on a Riyadh street",
+      "ar": "مركبة التوصيل ذاتية القيادة من نيرو في أحد شوارع الرياض"
+    },
+    "image_alt": {
+      "en": "A white Nero autonomous delivery vehicle with TGA branding driving on a road in Riyadh, with a crane truck and a taxi in the background",
+      "ar": "مركبة توصيل ذاتية القيادة بيضاء من نيرو تحمل شعار الهيئة العامة للنقل تسير على طريق في الرياض وخلفها شاحنة رافعة وسيارة أجرة"
+    },
+    "image_credit": {
+      "en": "Image: Nero",
+      "ar": "الصورة: نيرو"
+    },
+    "image_url": "https://usenero.com/media/nero-riyadh-street-06.jpg",
+    "image_page": "https://usenero.com/"
   },
   {
     "id": "naver-labs",
@@ -325,7 +475,22 @@
     },
     "mena_source": "Seoul Economic Daily",
     "mena_source_url": "https://en.sedaily.com/technology/2026/08/04/naver-to-export-robot-platform-to-saudi-arabia",
-    "mena_date": "2026-08-04"
+    "mena_date": "2026-08-04",
+    "image": "/media/companies/naver-labs.jpg",
+    "image_cap": {
+      "en": "NAVER Rookie service robot at NAVER 1784",
+      "ar": "روبوت الخدمة Rookie من نافر في مبنى NAVER 1784"
+    },
+    "image_alt": {
+      "en": "A silver NAVER Rookie delivery robot standing in an office atrium as a family walks past",
+      "ar": "روبوت التوصيل Rookie الفضي من نافر يقف في ردهة مكتب بينما تمر عائلة بجانبه"
+    },
+    "image_credit": {
+      "en": "Image: NAVER LABS",
+      "ar": "الصورة: نافر لابز"
+    },
+    "image_url": "https://www.naverlabs.com/img/nrobot/rookie/img_infra01_v2.png",
+    "image_page": "https://www.naverlabs.com/nrobot"
   },
   {
     "id": "falconviz",
@@ -345,7 +510,22 @@
     "hq_city": "Thuwal",
     "mena_countries": [
       "SA"
-    ]
+    ],
+    "image": "/media/companies/falconviz.jpg",
+    "image_cap": {
+      "en": "FalconViz drone and LiDAR kit at its open house",
+      "ar": "طائرات فالكون فيز المسيّرة ومعدات المسح الليزري في يومها المفتوح"
+    },
+    "image_alt": {
+      "en": "FalconViz team members talk beside a table of survey drones, a LiDAR scanner and controllers at the company's open house",
+      "ar": "أعضاء فريق فالكون فيز يتحدثون بجانب طاولة عليها طائرات مسح مسيّرة وماسح ليزري ووحدات تحكم خلال اليوم المفتوح للشركة"
+    },
+    "image_credit": {
+      "en": "Image: FalconViz",
+      "ar": "الصورة: فالكون فيز"
+    },
+    "image_url": "https://www.falconviz.com/images/open_house/z1.webp",
+    "image_page": "https://www.falconviz.com/open_house.html"
   },
   {
     "id": "ninetenths",
@@ -365,7 +545,22 @@
     "hq_city": "Riyadh",
     "mena_countries": [
       "SA"
-    ]
+    ],
+    "image": "/media/companies/ninetenths.jpg",
+    "image_cap": {
+      "en": "NineTenths engineer installing a DJI Dock 3 drone station",
+      "ar": "مهندس من تسعة أعشار يركّب محطة الطائرات المسيّرة DJI Dock 3"
+    },
+    "image_alt": {
+      "en": "A NineTenths technician in a hard hat and branded hi-vis vest working on a DJI Dock 3 drone-in-a-box station with a drone inside, on a site in Saudi Arabia",
+      "ar": "فني من تسعة أعشار يرتدي خوذة وسترة عاكسة تحمل شعار الشركة يعمل على محطة DJI Dock 3 للطائرات المسيّرة وبداخلها طائرة، في موقع بالسعودية"
+    },
+    "image_credit": {
+      "en": "Image: NineTenths",
+      "ar": "الصورة: تسعة أعشار"
+    },
+    "image_url": "https://9tenthsco.com/wp-content/uploads/2026/03/Dock-3-Pic-3.jpeg",
+    "image_page": "https://9tenthsco.com/"
   },
   {
     "id": "tulip-technologies",
@@ -426,7 +621,22 @@
     "hq_city": "Cairo",
     "mena_countries": [
       "EG"
-    ]
+    ],
+    "image": "/media/companies/raedbots.jpg",
+    "image_cap": {
+      "en": "Raed industrial robotic arm",
+      "ar": "الذراع الروبوتية الصناعية «رائد»"
+    },
+    "image_alt": {
+      "en": "A white six-axis Raed industrial robotic arm with a tool flange, shown against a black background",
+      "ar": "ذراع روبوتية صناعية بيضاء سداسية المحاور من رائد بوتس مع شفة تركيب الأدوات، على خلفية سوداء"
+    },
+    "image_credit": {
+      "en": "Image: Raedbots",
+      "ar": "الصورة: رائد بوتس"
+    },
+    "image_url": "https://www.raedbots.com/assets/04-DkCVl8Ud.png",
+    "image_page": "https://www.raedbots.com/"
   },
   {
     "id": "egrobots",
@@ -446,7 +656,22 @@
     "hq_city": "Cairo",
     "mena_countries": [
       "EG"
-    ]
+    ],
+    "image": "/media/companies/egrobots.jpg",
+    "image_cap": {
+      "en": "Egrobots Bennu robot in a greenhouse",
+      "ar": "روبوت بنو من إيجي روبوتس داخل صوبة زراعية"
+    },
+    "image_alt": {
+      "en": "The Egrobots Bennu mobile robot driving between rows of tomato plants in a greenhouse",
+      "ar": "روبوت بنو المتنقل من إيجي روبوتس يسير بين صفوف نباتات الطماطم داخل صوبة زراعية"
+    },
+    "image_credit": {
+      "en": "Image: Egrobots",
+      "ar": "الصورة: إيجي روبوتس"
+    },
+    "image_url": "https://egrobots.com/assets/bennu-greenhouse.webp",
+    "image_page": "https://egrobots.com/en/projects/saudi-greenhouse"
   },
   {
     "id": "t2s-group",
@@ -466,7 +691,22 @@
     "hq_city": "Casablanca",
     "mena_countries": [
       "MA"
-    ]
+    ],
+    "image": "/media/companies/t2s-group.jpg",
+    "image_cap": {
+      "en": "Toumai surgical robot system supplied by T2S",
+      "ar": "نظام الجراحة الروبوتية توماي الذي توفره T2S"
+    },
+    "image_alt": {
+      "en": "The MicroPort MedBot Toumai robotic surgery system: surgeon console, vision cart and four-arm patient-side robot on a white background",
+      "ar": "نظام الجراحة الروبوتية تومai من ميكروبورت ميدبوت: وحدة تحكم الجراح وعربة الرؤية والروبوت رباعي الأذرع بجانب المريض على خلفية بيضاء"
+    },
+    "image_credit": {
+      "en": "Image: T2S Group",
+      "ar": "الصورة: مجموعة T2S"
+    },
+    "image_url": "https://t2s.group/wp-content/uploads/2025/03/1.1-Toumai-System.png",
+    "image_page": "https://t2s.group/produit/toumai-mt-1000-pro/"
   },
   {
     "id": "pony-ai",
@@ -494,7 +734,22 @@
     },
     "mena_source": "Gasgoo",
     "mena_source_url": "https://autonews.gasgoo.com/articles/market-industry/2097907362995453952",
-    "mena_date": "2026-09-10"
+    "mena_date": "2026-09-10",
+    "image": "/media/companies/pony-ai.jpg",
+    "image_cap": {
+      "en": "Pony.ai × Karwa robotaxi in Doha",
+      "ar": "مركبة الأجرة الآلية من بوني إيه آي وكروة في الدوحة"
+    },
+    "image_alt": {
+      "en": "A passenger in a white thobe and ghutra opening the rear door of a turquoise Karwa robotaxi operated with Pony.ai in Doha, Qatar",
+      "ar": "راكب يرتدي الثوب والغترة البيضاء يفتح الباب الخلفي لمركبة أجرة آلية فيروزية من كروة تعمل بتقنية بوني إيه آي في الدوحة، قطر"
+    },
+    "image_credit": {
+      "en": "Image: Pony.ai",
+      "ar": "الصورة: بوني إيه آي"
+    },
+    "image_url": "https://static.cdn.xiaomazhixing.com/image/1788921754746/cfbdd021-ec0f-4a0f-bc3d-a217bc242323/0909-%E5%A4%9A%E5%93%88.jpg",
+    "image_page": "https://pony.ai/press?lang=en&news_page=1&article_page=2"
   },
   {
     "id": "esbaar",
@@ -514,7 +769,22 @@
     "hq_city": "Muscat",
     "mena_countries": [
       "OM"
-    ]
+    ],
+    "image": "/media/companies/esbaar.jpg",
+    "image_cap": {
+      "en": "ESBAAR fixed-wing drone over an Omani site",
+      "ar": "طائرة إسبار المسيّرة ثابتة الجناحين فوق موقع في عُمان"
+    },
+    "image_alt": {
+      "en": "An ESBAAR-branded fixed-wing drone flying above a desert site while a pilot in blue coveralls operates it",
+      "ar": "طائرة مسيّرة ثابتة الجناحين تحمل شعار إسبار تحلق فوق موقع صحراوي بينما يشغّلها طيار يرتدي بزة زرقاء"
+    },
+    "image_credit": {
+      "en": "Image: ESBAAR",
+      "ar": "الصورة: إسبار"
+    },
+    "image_url": "https://cdn.prod.website-files.com/6593ac03667b4612e6c8cd03/699acbf244d1cae7e6f70cf6_Esbaar%20Main%20Photo.jpg",
+    "image_page": "https://www.esbaar.com/"
   },
   {
     "id": "enova-robotics",
@@ -534,7 +804,22 @@
     "hq_city": "Sousse",
     "mena_countries": [
       "TN"
-    ]
+    ],
+    "image": "/media/companies/enova-robotics.jpg",
+    "image_cap": {
+      "en": "PGuard security robots patrolling an oil site",
+      "ar": "روبوتات الحراسة PGuard تقوم بدوريات في موقع نفطي"
+    },
+    "image_alt": {
+      "en": "Two black Enova Robotics PGuard autonomous security robots with mast cameras on a road beside industrial plant buildings",
+      "ar": "روبوتان أسودان للحراسة الذاتية من طراز PGuard من إينوفا روبوتكس مزودان بكاميرات على سارية يسيران على طريق بجانب مبانٍ صناعية"
+    },
+    "image_credit": {
+      "en": "Image: Enova Robotics",
+      "ar": "الصورة: إينوفا روبوتكس"
+    },
+    "image_url": "https://www.enovarobotics.eu/wp-content/uploads/2021/05/double-PGuard-site-pétrolier-scaled.jpg",
+    "image_page": "https://www.enovarobotics.eu/en-pguard/"
   },
   {
     "id": "sager-drones",
@@ -545,7 +830,7 @@
     "stage": "seed",
     "summary": "Jordanian drone-data company piloting an AI drone platform for monitoring and infrastructure inspection with ASEZA in Aqaba.",
     "summary_ar": "شركة أردنية لبيانات الطائرات المسيّرة تجرّب منصة مسيّرات بالذكاء الاصطناعي للمراقبة وفحص البنية التحتية مع سلطة العقبة.",
-    "website": "https://www.sagerdrones.com",
+    "website": "https://www.sagerdrone.com",
     "logo": "",
     "source": "Petra (Jordan News Agency)",
     "source_url": "https://petra.gov.jo/index.php/en/news/aseza-sager%C2%A0drones-sign-agreement-to-support-smart-transformation-in-aqaba",
@@ -554,7 +839,22 @@
     "hq_city": "Amman",
     "mena_countries": [
       "JO"
-    ]
+    ],
+    "image": "/media/companies/sager-drones.jpg",
+    "image_cap": {
+      "en": "Sager drone inspecting a power substation",
+      "ar": "طائرة مسيّرة من ساجر تفحص محطة كهرباء فرعية"
+    },
+    "image_alt": {
+      "en": "An industrial quadcopter drone with a sensor payload hovering over an electrical substation with transmission towers in a desert setting",
+      "ar": "طائرة مسيّرة صناعية رباعية المراوح تحمل حساسات تحلّق فوق محطة كهرباء فرعية وأبراج نقل في بيئة صحراوية"
+    },
+    "image_credit": {
+      "en": "Image: Sager",
+      "ar": "الصورة: ساجر"
+    },
+    "image_url": "https://www.sagerdrone.com/frontend/img/PowerGrid1.png",
+    "image_page": "https://www.sagerdrone.com/"
   },
   {
     "id": "taurob",
@@ -581,7 +881,22 @@
     },
     "mena_source": "Hydrocarbon Processing",
     "mena_source_url": "https://hydrocarbonprocessing.com/news/2026/05/adnoc-deploys-heavy-duty-inspector-robot-for-hazardous-environments/",
-    "mena_date": "2026-05-21"
+    "mena_date": "2026-05-21",
+    "image": "/media/companies/taurob.jpg",
+    "image_cap": {
+      "en": "Taurob Inspector robot in an industrial plant",
+      "ar": "روبوت الفحص Taurob Inspector في منشأة صناعية"
+    },
+    "image_alt": {
+      "en": "An orange tracked Taurob inspection robot with a sensor head on a wet floor inside a processing plant",
+      "ar": "روبوت فحص برتقالي مجنزر من تاوروب برأس استشعار على أرضية مبللة داخل منشأة معالجة"
+    },
+    "image_credit": {
+      "en": "Image: Taurob",
+      "ar": "الصورة: تاوروب"
+    },
+    "image_url": "https://www.taurob.com/wp-content/uploads/2024/11/AI_MG_2569_V2-scaled.jpg",
+    "image_page": "https://www.taurob.com/"
   },
   {
     "id": "unitree",
@@ -608,7 +923,22 @@
     },
     "mena_source": "Attaqa (Energy Platform)",
     "mena_source_url": "https://attaqa.net/?p=651656",
-    "mena_date": "2026-11-04"
+    "mena_date": "2026-11-04",
+    "image": "/media/companies/unitree.jpg",
+    "image_cap": {
+      "en": "Unitree inspection quadrupeds at an industrial plant",
+      "ar": "روبوتات يونيتري رباعية الأرجل للفحص في منشأة صناعية"
+    },
+    "image_alt": {
+      "en": "Four Unitree quadruped robots fitted with inspection cameras and sensor payloads stand on a wet roadway between pipe racks at a petrochemical plant",
+      "ar": "أربعة روبوتات رباعية الأرجل من يونيتري مزودة بكاميرات وحمولات استشعار للفحص تقف على طريق مبلل بين خطوط الأنابيب في مصنع بتروكيماويات"
+    },
+    "image_credit": {
+      "en": "Image: Unitree Robotics",
+      "ar": "الصورة: يونيتري روبوتيكس"
+    },
+    "image_url": "https://www.unitree.com/images/9485f82d12cb4195997219f8ad17b178_3840x2160.jpg",
+    "image_page": "https://www.unitree.com/"
   },
   {
     "id": "seaowl",
@@ -635,7 +965,22 @@
     },
     "mena_source": "Zawya (ADNOC L&S press release)",
     "mena_source_url": "https://www.zawya.com/en/press-release/companies-news/adnoc-ls-unveils-the-uaes-first-autonomous-offshore-vessels-to-enhance-operational-efficiency-and-increase-sustainability-503125",
-    "mena_date": "2025-11-13"
+    "mena_date": "2025-11-13",
+    "image": "/media/companies/seaowl.jpg",
+    "image_cap": {
+      "en": "SeaOwl remote operations centre for teleoperated vessels",
+      "ar": "مركز سي أول للتشغيل عن بُعد للسفن المُدارة عن بُعد"
+    },
+    "image_alt": {
+      "en": "A dark SeaOwl remote control station with a central operator chair, a wall of SeaOwl-branded screens and angled navigation displays used to pilot vessels remotely",
+      "ar": "محطة تحكم عن بُعد مظلمة من سي أول بها كرسي مشغّل في الوسط وجدار من الشاشات التي تحمل شعار سي أول وشاشات ملاحة مائلة تُستخدم لقيادة السفن عن بُعد"
+    },
+    "image_credit": {
+      "en": "Image: SeaOwl",
+      "ar": "الصورة: سي أول"
+    },
+    "image_url": "https://seaowlgroup.com/wp-content/uploads/2022/04/img-2251.jpg",
+    "image_page": "https://seaowlgroup.com/solutions/drone-services/teleoperated-services/"
   },
   {
     "id": "aiq",
@@ -655,7 +1000,22 @@
     "hq_city": "Abu Dhabi",
     "mena_countries": [
       "AE"
-    ]
+    ],
+    "image": "/media/companies/aiq.jpg",
+    "image_cap": {
+      "en": "Engineers at an AI-driven operations centre in Abu Dhabi",
+      "ar": "مهندسون في مركز عمليات قائم على الذكاء الاصطناعي في أبوظبي"
+    },
+    "image_alt": {
+      "en": "Two Emirati engineers pointing at a large real-time oil and gas operations dashboard on a control-room wall",
+      "ar": "مهندسان إماراتيان يشيران إلى لوحة كبيرة لعمليات النفط والغاز في الوقت الفعلي على جدار غرفة التحكم"
+    },
+    "image_credit": {
+      "en": "Image: AIQ",
+      "ar": "الصورة: إيه آي كيو"
+    },
+    "image_url": "https://aiq.ae/wp-content/uploads/2026/10/news-robowell.webp",
+    "image_page": "https://aiq.ae/case-studies/robowell-autonomous-well-operations/"
   },
   {
     "id": "joby-aviation",
@@ -682,7 +1042,22 @@
     "logo": "/media/logos/joby-aviation.png",
     "source": "Joby Aviation",
     "source_url": "https://www.jobyaviation.com/news/joby-cements-global-lead-in-air-taxi-industry-with-dubai-flights-and-beginning-of-commercial-market-readiness-work",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/joby-aviation.jpg",
+    "image_cap": {
+      "en": "Joby electric air taxi flying over Dubai",
+      "ar": "تاكسي جوبي الجوي الكهربائي يحلق فوق دبي"
+    },
+    "image_alt": {
+      "en": "A white Joby Aviation eVTOL air taxi with six tilting propellers in flight above the desert outside Dubai",
+      "ar": "تاكسي جوي كهربائي أبيض من جوبي للطيران بست مراوح قابلة للإمالة يحلق فوق الصحراء خارج دبي"
+    },
+    "image_credit": {
+      "en": "Image: Joby Aviation",
+      "ar": "الصورة: جوبي للطيران"
+    },
+    "image_url": "https://cdn.sanity.io/images/h5mp19kq/production/11dbe255ac842c1f89e930dff4a8c25d74835931-8192x5119.jpg",
+    "image_page": "https://www.jobyaviation.com/news/joby-cements-global-lead-in-air-taxi-industry-with-dubai-flights-and-beginning-of-commercial-market-readiness-work"
   },
   {
     "id": "archer-aviation",
@@ -709,7 +1084,22 @@
     "logo": "/media/logos/archer-aviation.png",
     "source": "The National",
     "source_url": "https://www.thenationalnews.com/business/aviation/2025/11/12/adio-and-archer-aviation-speed-up-plans-to-bring-electric-air-taxis-to-abu-dhabi",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/archer-aviation.jpg",
+    "image_cap": {
+      "en": "Archer Midnight eVTOL air taxi in flight",
+      "ar": "التاكسي الجوي الكهربائي «ميدنايت» من آرتشر أثناء الطيران"
+    },
+    "image_alt": {
+      "en": "Archer's white Midnight electric air taxi, registration N704AX, flying low past green hills with its tilting propellers forward",
+      "ar": "طائرة التاكسي الجوي الكهربائية البيضاء «ميدنايت» من آرتشر، بتسجيل N704AX، تحلّق على ارتفاع منخفض بمحاذاة تلال خضراء ومراوحها القابلة للإمالة متجهة إلى الأمام"
+    },
+    "image_credit": {
+      "en": "Image: Archer Aviation",
+      "ar": "الصورة: آرتشر للطيران"
+    },
+    "image_url": "https://d3g33qwfulkxcy.cloudfront.net/images/news-default.jpg",
+    "image_page": "https://www.archer.com/"
   },
   {
     "id": "ehang",
@@ -738,7 +1128,22 @@
     "logo": "/media/logos/ehang.png",
     "source": "eVTOL Insights",
     "source_url": "https://evtolinsights.com/middle-east-ehang-conducts-first-urban-human-carrying-pilotless-electric-air-taxi-flights-in-qatar/",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/ehang.jpg",
+    "image_cap": {
+      "en": "EHang EH216-S eVTOL in flight",
+      "ar": "طائرة إي هانغ EH216-S للإقلاع والهبوط العمودي أثناء الطيران"
+    },
+    "image_alt": {
+      "en": "A white two-seat EH216-S passenger drone with multiple rotors flying above a glass vertiport building",
+      "ar": "طائرة ركاب مسيّرة بيضاء بمقعدين ومراوح متعددة من طراز EH216-S تحلق فوق مبنى مهبط زجاجي"
+    },
+    "image_credit": {
+      "en": "Image: EHang",
+      "ar": "الصورة: إي هانغ"
+    },
+    "image_url": "https://www.ehang.com/images/index/y1.jpg",
+    "image_page": "https://www.ehang.com/"
   },
   {
     "id": "aridge",
@@ -767,7 +1172,22 @@
     "logo": "/media/logos/aridge.png",
     "source": "Gulf News",
     "source_url": "https://gulfnews.com/business/aviation/chinese-flying-car-maker-aridge-completes-first-manned-test-in-dubai-secures-600-orders-1.500304348",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/aridge.jpg",
+    "image_cap": {
+      "en": "Land Aircraft Carrier flying module over the desert",
+      "ar": "الوحدة الطائرة لحاملة الطائرات البرية فوق الصحراء"
+    },
+    "image_alt": {
+      "en": "Aridge's two-seat eVTOL flying module hovers above a desert at sunset while its six-wheeled carrier vehicle waits on the sand",
+      "ar": "الوحدة الطائرة الكهربائية ذات المقعدين من أريدج تحلق فوق صحراء عند الغروب بينما تنتظر مركبتها الحاملة ذات العجلات الست على الرمال"
+    },
+    "image_credit": {
+      "en": "Image: Aridge",
+      "ar": "الصورة: أريدج"
+    },
+    "image_url": "https://ic-cdn-oss-ht-www-prod.aeroht.com/ht-official/ht-official-site/8c29/2025-09-28/1759023600656-4986.jpg",
+    "image_page": "https://www.aridge.com/"
   },
   {
     "id": "neolix",
@@ -794,7 +1214,22 @@
     "logo": "/media/logos/neolix.png",
     "source": "TradeArabia",
     "source_url": "https://tradearabia.com/News/329248/K2-Neolix-to-boost-autonomous-delivery-vehicles-deployment-in-UAE",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/neolix.jpg",
+    "image_cap": {
+      "en": "Neolix autonomous delivery vehicle for noon in Abu Dhabi",
+      "ar": "مركبة التوصيل ذاتية القيادة من نيوليكس لصالح «نون» في أبوظبي"
+    },
+    "image_alt": {
+      "en": "A yellow noon CargoX autonomous delivery vehicle built by Neolix backed up to a warehouse loading bay in Abu Dhabi",
+      "ar": "مركبة توصيل ذاتية القيادة صفراء من نيوليكس تحمل علامة «نون» و CargoX متوقفة عند رصيف تحميل مستودع في أبوظبي"
+    },
+    "image_credit": {
+      "en": "Image: Neolix",
+      "ar": "الصورة: نيوليكس"
+    },
+    "image_url": "https://www.neolix.ai/image/use-cases/cards/autogo-noon-abu-dhabi.webp",
+    "image_page": "https://www.neolix.ai/en/use-cases/autogo-noon-abu-dhabi"
   },
   {
     "id": "matternet",
@@ -821,7 +1256,22 @@
     "logo": "/media/logos/matternet.png",
     "source": "DroneLife",
     "source_url": "https://dronelife.com/2025/01/27/matternet-receives-approval-for-m2-drone-operations-in-saudi-arabia/",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/matternet.jpg",
+    "image_cap": {
+      "en": "Matternet M2 drone on a hospital delivery in London",
+      "ar": "طائرة ماتيرنت M2 المسيّرة في مهمة توصيل لمستشفى في لندن"
+    },
+    "image_alt": {
+      "en": "A white Matternet M2 quadcopter carrying an NHS/Apian medical payload box flying near The Shard in London",
+      "ar": "طائرة ماتيرنت M2 الرباعية البيضاء تحمل صندوق شحنة طبية لهيئة NHS وApian وتحلق قرب برج ذا شارد في لندن"
+    },
+    "image_credit": {
+      "en": "Image: Matternet",
+      "ar": "الصورة: ماتيرنت"
+    },
+    "image_url": "https://images.squarespace-cdn.com/content/v1/6695c6f810dd274bb43320fb/1777045533242-NW0UUR4556RPZMFLFDHQ/Matternet+London+01.jpg?format=2500w",
+    "image_page": "https://www.matternet.com/healthcare"
   },
   {
     "id": "einride",
@@ -848,7 +1298,22 @@
     "logo": "/media/logos/einride.png",
     "source": "The National",
     "source_url": "https://www.thenationalnews.com/future/2024/05/14/dp-world-and-einride-announce-middle-easts-largest-electric-freight-fleet",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/einride.jpg",
+    "image_cap": {
+      "en": "Einride autonomous electric truck on a public road",
+      "ar": "شاحنة آينرايد الكهربائية ذاتية القيادة على طريق عام"
+    },
+    "image_alt": {
+      "en": "A cab-less white Einride autonomous electric freight truck drives along a port-area road with wind turbines behind it",
+      "ar": "شاحنة شحن كهربائية بيضاء ذاتية القيادة من آينرايد بلا مقصورة سائق تسير على طريق في منطقة ميناء وخلفها توربينات رياح"
+    },
+    "image_credit": {
+      "en": "Image: Einride",
+      "ar": "الصورة: آينرايد"
+    },
+    "image_url": "https://framerusercontent.com/images/V0s1ISlzDvn7u8QXO8ZU3fNra5s.webp",
+    "image_page": "https://www.einride.tech/autonomous"
   },
   {
     "id": "ocean-infinity",
@@ -875,7 +1340,22 @@
     "logo": "/media/logos/ocean-infinity.png",
     "source": "Robotics & Automation News",
     "source_url": "https://roboticsandautomationnews.com/2025/07/02/ocean-infinity-launches-needlefish-uncrewed-surface-vessel-in-kuwait/92844",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/ocean-infinity.jpg",
+    "image_cap": {
+      "en": "Ocean Infinity Needlefish uncrewed surface vessel",
+      "ar": "سفينة السطح غير المأهولة «نيدلفيش» من أوشن إنفينيتي"
+    },
+    "image_alt": {
+      "en": "A dark grey Ocean Infinity Needlefish uncrewed surface vessel marked CGX-03, carrying a Kuwaiti flag, speeding across hazy Gulf waters with a city skyline behind",
+      "ar": "سفينة سطح غير مأهولة رمادية داكنة من طراز نيدلفيش من أوشن إنفينيتي تحمل الرمز CGX-03 والعلم الكويتي، تنطلق مسرعة في مياه الخليج الضبابية وخلفها أفق مدينة"
+    },
+    "image_credit": {
+      "en": "Image: Ocean Infinity",
+      "ar": "الصورة: أوشن إنفينيتي"
+    },
+    "image_url": "https://oceaninfinity.com/wp-content/uploads/2026/07/Needlefish_Ocean-Infinity-scaled.jpg",
+    "image_page": "https://oceaninfinity.com/"
   },
   {
     "id": "holon",
@@ -902,7 +1382,22 @@
     "logo": "/media/logos/holon.png",
     "source": "SAPTCO",
     "source_url": "https://saptco.com.sa/en/news-17-09-2025",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/holon.jpg",
+    "image_cap": {
+      "en": "HOLON urban autonomous shuttle in Hamburg",
+      "ar": "الحافلة الذاتية القيادة HOLON urban في هامبورغ"
+    },
+    "image_alt": {
+      "en": "A white and red HOLON urban autonomous shuttle in Hochbahn livery parked by the Elbphilharmonie in Hamburg",
+      "ar": "حافلة HOLON urban ذاتية القيادة باللونين الأبيض والأحمر بألوان شركة هوخبان متوقفة قرب مبنى إلبفيلهارموني في هامبورغ"
+    },
+    "image_credit": {
+      "en": "Image: HOLON",
+      "ar": "الصورة: هولون"
+    },
+    "image_url": "https://www.driveholon.com/fileadmin/_processed_/b/c/csm_20250819_HOCHBAHN_ALIKE_HOLONurban_Fahrzeugankunft_quer_3dc8471be4.jpg",
+    "image_page": "https://www.driveholon.com/en/news/"
   },
   {
     "id": "tier-iv",
@@ -929,7 +1424,22 @@
     "logo": "/media/logos/tier-iv.png",
     "source": "PR Newswire via Taiwan News",
     "source_url": "https://taiwannews.com.tw/en/news/6451818",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/tier-iv.jpg",
+    "image_cap": {
+      "en": "Komatsu Autonomous Bus running on TIER IV technology",
+      "ar": "حافلة كوماتسو ذاتية القيادة العاملة بتقنية تير فور"
+    },
+    "image_alt": {
+      "en": "A white and black Komatsu Autonomous Bus with roof sensors stops in front of Komatsu railway station in Ishikawa, Japan",
+      "ar": "حافلة كوماتسو ذاتية القيادة باللونين الأبيض والأسود ومزودة بأجهزة استشعار على السقف تتوقف أمام محطة قطار كوماتسو في إيشيكاوا باليابان"
+    },
+    "image_credit": {
+      "en": "Image: TIER IV",
+      "ar": "الصورة: تير فور"
+    },
+    "image_url": "https://tier4.co.jp/hs-fs/hubfs/Services_Komatsu%2c%20Ishikawa_5_3.jpg",
+    "image_page": "https://tier4.co.jp/en/services"
   },
   {
     "id": "yutong",
@@ -956,7 +1466,22 @@
     "logo": "/media/logos/yutong.png",
     "source": "Gulf Times",
     "source_url": "https://www.gulf-times.com/article/675550/qatar/successful-autonomous-e-bus-trial-run-with-passengers",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/yutong.jpg",
+    "image_cap": {
+      "en": "Yutong electric city bus on show in Jeddah",
+      "ar": "حافلة يوتونغ الكهربائية للمدن معروضة في جدة"
+    },
+    "image_alt": {
+      "en": "A silver Yutong electric city bus with Saudi licence plates displayed on a blue carpet beside a battery-safety information board at a Yutong event in Jeddah",
+      "ar": "حافلة مدن كهربائية فضية من يوتونغ بلوحات سعودية معروضة على سجادة زرقاء بجوار لوحة معلومات عن سلامة البطارية خلال فعالية ليوتونغ في جدة"
+    },
+    "image_credit": {
+      "en": "Image: Yutong",
+      "ar": "الصورة: يوتونغ"
+    },
+    "image_url": "https://en.yutong.com/res/res/2024/10/17/richText/9395b28de8fd4aa28c851a4a89c92c91.jpg",
+    "image_page": "https://en.yutong.com/pressmedia/news/1846833927642288128.shtml"
   },
   {
     "id": "momenta",
@@ -983,7 +1508,22 @@
     "logo": "/media/logos/momenta.png",
     "source": "The National",
     "source_url": "https://www.thenationalnews.com/news/uae/2025/12/09/mercedes-benz-driverless-taxis-to-hit-abu-dhabi-roads-in-2026",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/momenta.jpg",
+    "image_cap": {
+      "en": "Mercedes-Benz robotaxi with Momenta and Lumo in Abu Dhabi",
+      "ar": "سيارة أجرة ذاتية القيادة من مرسيدس بنز مع مومنتا ولومو في أبوظبي"
+    },
+    "image_alt": {
+      "en": "A wrapped Mercedes-Benz S-Class robotaxi reading 'Easy. Driverless. Safe.' on a palm-lined Abu Dhabi corniche road",
+      "ar": "سيارة أجرة ذاتية القيادة من طراز مرسيدس بنز الفئة S مغطاة بعبارة 'سهلة. بلا سائق. آمنة.' على طريق كورنيش في أبوظبي تحفه النخيل"
+    },
+    "image_credit": {
+      "en": "Image: Momenta",
+      "ar": "الصورة: مومنتا"
+    },
+    "image_url": "https://www.momenta.ai/images/1022ui/mpilot/banner03.jpg",
+    "image_page": "https://www.momenta.ai/en/ScalableRobotaxi.html"
   },
   {
     "id": "geekplus",
@@ -1011,7 +1551,22 @@
     "logo": "/media/logos/geekplus.png",
     "source": "Geekplus (press release)",
     "source_url": "https://www.geekplus.com/resources/news/starlinks-roboshuttle8",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/geekplus.jpg",
+    "image_cap": {
+      "en": "Geek+ RoboShuttle robots at Starlinks in Riyadh",
+      "ar": "روبوتات RoboShuttle من جيك بلس لدى ستارلينكس في الرياض"
+    },
+    "image_alt": {
+      "en": "A line of green Geek+ RoboShuttle tote-handling robots branded Starlinks parked at their charging stations on a warehouse floor",
+      "ar": "صف من روبوتات RoboShuttle الخضراء من جيك بلس لمناولة الصناديق تحمل شعار ستارلينكس متوقفة عند محطات الشحن في أرضية مستودع"
+    },
+    "image_credit": {
+      "en": "Image: Geek+",
+      "ar": "الصورة: جيك بلس"
+    },
+    "image_url": "https://www.geekplus.com/hs-fs/hubfs/%5EPicture%202.jpg",
+    "image_page": "https://www.geekplus.com/resources/news/starlinks-roboshuttle8"
   },
   {
     "id": "swisslog",
@@ -1039,7 +1594,22 @@
     "logo": "/media/logos/swisslog.png",
     "source": "Zawya / TradeArabia",
     "source_url": "https://www.zawya.com/en/business/industry/starlinks-selects-swisslog-for-saudi-aviation-mro-warehouse-automation-561244",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/swisslog.jpg",
+    "image_cap": {
+      "en": "Swisslog AutoStore robots on the storage grid",
+      "ar": "روبوتات أوتوستور من سويسلوغ على شبكة التخزين"
+    },
+    "image_alt": {
+      "en": "Red Swisslog-branded AutoStore robots moving across a large aluminium storage grid inside a warehouse (Master Electronics installation)",
+      "ar": "روبوتات أوتوستور حمراء تحمل علامة سويسلوغ تتحرك فوق شبكة تخزين ألمنيوم كبيرة داخل مستودع (منشأة ماستر إلكترونيكس)"
+    },
+    "image_credit": {
+      "en": "Image: Swisslog",
+      "ar": "الصورة: سويسلوغ"
+    },
+    "image_url": "https://www.swisslog.com/-/media/swisslog/images/logistics-warehouse-distribution-automation/case-studies/retail--ecom/master-electronics/swisslog-reference-master-electronics-autostore-asrs.jpg?rev=7fd6e08895ca409d92ba2b188c939c23&w=1920&hash=A2E6F11B3BA09B162B573EDF2A840CB9",
+    "image_page": "https://www.swisslog.com/"
   },
   {
     "id": "autostore",
@@ -1068,7 +1638,22 @@
     "logo": "/media/logos/autostore.png",
     "source": "Swisslog (press release)",
     "source_url": "https://www.swisslog.com/en-my/about-swisslog/newsroom/news/2025/06/swisslog-chalhoub-riyadh-automation",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/autostore.jpg",
+    "image_cap": {
+      "en": "AutoStore robots on the storage grid",
+      "ar": "روبوتات أوتوستور على شبكة التخزين"
+    },
+    "image_alt": {
+      "en": "Red and black AutoStore R5 robots moving across the aluminium top of a cube storage grid in a warehouse",
+      "ar": "روبوتات أوتوستور R5 باللونين الأحمر والأسود تتحرك فوق السطح الألومنيوم لشبكة تخزين مكعبة في مستودع"
+    },
+    "image_credit": {
+      "en": "Image: AutoStore",
+      "ar": "الصورة: أوتوستور"
+    },
+    "image_url": "https://www.autostoresystem.com/hubfs/QLS-autostore.jpeg",
+    "image_page": "https://www.autostoresystem.com/cases"
   },
   {
     "id": "anybotics",
@@ -1122,7 +1707,22 @@
     "logo": "/media/logos/gmt-robotics.png",
     "source": "Asharq Al-Awsat (SPA)",
     "source_url": "https://english.aawsat.com/technology/5091024-neom-investment-fund-ventures-automated-robotic-technology-construction-projects",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/gmt-robotics.jpg",
+    "image_cap": {
+      "en": "GMT Robotics MICRO ARCAS automated rebar welding line",
+      "ar": "خط اللحام الآلي لحديد التسليح MICRO ARCAS من جي إم تي روبوتكس"
+    },
+    "image_alt": {
+      "en": "Blue industrial welding robots on rails working along a red automated MICRO ARCAS rebar assembly line in a factory hall",
+      "ar": "روبوتات لحام صناعية زرقاء على قضبان تعمل على امتداد خط التجميع الآلي الأحمر MICRO ARCAS لحديد التسليح داخل قاعة مصنع"
+    },
+    "image_credit": {
+      "en": "Image: GMT Robotics",
+      "ar": "الصورة: جي إم تي روبوتكس"
+    },
+    "image_url": "https://b3940074.assetcdn.net/2.0/3940074/wp-content/uploads/2025/03/GMTRobotics_MICRO_ARCAS_automatized_solution-1-scaled.jpg",
+    "image_page": "https://gmtrobotics.com/"
   },
   {
     "id": "fieldai",
@@ -1149,7 +1749,22 @@
     "logo": "/media/logos/fieldai.png",
     "source": "Zawya / TradeArabia",
     "source_url": "https://www.zawya.com/en/business/technology-and-telecom/innovo-fieldai-deploy-general-purpose-robots-at-mideast-building-sites-tfev6vqe",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/fieldai.jpg",
+    "image_cap": {
+      "en": "Field AI autonomy on a legged robot at a construction site",
+      "ar": "نظام القيادة الذاتية من فيلد إيه آي على روبوت بأرجل في موقع بناء"
+    },
+    "image_alt": {
+      "en": "A yellow quadruped robot carrying a Field AI sensor payload standing on dirt in front of a building under construction",
+      "ar": "روبوت أصفر رباعي الأرجل يحمل وحدة استشعار من فيلد إيه آي يقف على التراب أمام مبنى قيد الإنشاء"
+    },
+    "image_credit": {
+      "en": "Image: Field AI",
+      "ar": "الصورة: فيلد إيه آي"
+    },
+    "image_url": "https://cdn.prod.website-files.com/66f60ba1b55a2bf61129d1fa/6aece1529d8cfe4e16aa8343__A8A0240.jpg",
+    "image_page": "https://www.fieldai.com/"
   },
   {
     "id": "dexory",
@@ -1176,7 +1791,22 @@
     "logo": "/media/logos/dexory.png",
     "source": "Dexory (press release)",
     "source_url": "https://www.dexory.com/insights/dexory-and-al-masarat-holding-sign-mou-to-advance-ai-powered-robotics-in-logistics-and-manufacturing",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/dexory.jpg",
+    "image_cap": {
+      "en": "Dexory scanning robot at GWC in the Gulf",
+      "ar": "روبوت المسح من ديكسوري لدى شركة الخليج للمخازن"
+    },
+    "image_alt": {
+      "en": "Two warehouse workers in hi-vis vests watch a tall Dexory autonomous scanning robot branded GWC moving along pallet racking",
+      "ar": "عاملان في مستودع يرتديان سترات عاكسة يراقبان روبوت المسح الذاتي الطويل من ديكسوري الذي يحمل شعار GWC وهو يتحرك بمحاذاة رفوف المنصات"
+    },
+    "image_credit": {
+      "en": "Image: Dexory",
+      "ar": "الصورة: ديكسوري"
+    },
+    "image_url": "https://cdn.prod.website-files.com/672df24a07935ada864724fb/67d853f72bd0d1391ec28e75_Dexory_Air%20cargo%20industry%20automation.avif",
+    "image_page": "https://www.dexory.com/air-cargo-operations-optimisation"
   },
   {
     "id": "addverb",
@@ -1230,7 +1860,22 @@
     "logo": "/media/logos/boston-dynamics.png",
     "source": "eeNews Europe",
     "source_url": "https://www.eenewseurope.com/en/boston-dynamics-analog-deploy-physical-intelligence-in-uae",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/boston-dynamics.jpg",
+    "image_cap": {
+      "en": "Spot robot inspecting industrial equipment",
+      "ar": "روبوت Spot يفحص معدات صناعية"
+    },
+    "image_alt": {
+      "en": "A yellow Boston Dynamics Spot robot with an inspection camera payload beside a motor and fan unit in a plant",
+      "ar": "روبوت Spot الأصفر من بوسطن دايناميكس مزوّد بكاميرا فحص بجانب وحدة محرك ومروحة في منشأة"
+    },
+    "image_credit": {
+      "en": "Image: Boston Dynamics",
+      "ar": "الصورة: بوسطن دايناميكس"
+    },
+    "image_url": "https://bostondynamics.com/wp-content/uploads/2026/03/spot-inspection-cam2.jpg",
+    "image_page": "https://bostondynamics.com/"
   },
   {
     "id": "intuitive-surgical",
@@ -1286,7 +1931,22 @@
     "logo": "/media/logos/medtronic.png",
     "source": "News of Bahrain (Daily Tribune)",
     "source_url": "https://www.newsofbahrain.com/bahrain/139876.html",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/medtronic.jpg",
+    "image_cap": {
+      "en": "Medtronic Hugo robotic-assisted surgery system",
+      "ar": "نظام «هوغو» للجراحة بمساعدة الروبوت من ميدترونيك"
+    },
+    "image_alt": {
+      "en": "The Medtronic Hugo RAS system's robotic arm cart, open surgeon console and system tower shown side by side on a blue background",
+      "ar": "عربة الذراع الروبوتية ووحدة تحكم الجرّاح المفتوحة وبرج النظام في نظام «هوغو» للجراحة بمساعدة الروبوت من ميدترونيك، معروضة جنباً إلى جنب على خلفية زرقاء"
+    },
+    "image_credit": {
+      "en": "Image: Medtronic",
+      "ar": "الصورة: ميدترونيك"
+    },
+    "image_url": "https://news.medtronic.com/download/hugo-ras-platform-components-c-bl.png",
+    "image_page": "https://news.medtronic.com/Robotic-Assisted-Surgery-Technologies"
   },
   {
     "id": "johnson-johnson-medtech",
@@ -1313,7 +1973,22 @@
     "logo": "/media/logos/johnson-johnson-medtech.png",
     "source": "Healthpoint (M42)",
     "source_url": "https://healthpoint.ae/media-center/news-press-release/m42-s-healthpoint-introduces-velys-robotic-assisted-solution-bringing-advanced-precision-to-knee-replacement-surgery/",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/johnson-johnson-medtech.jpg",
+    "image_cap": {
+      "en": "Surgeon with the OTTAVA robotic surgical system",
+      "ar": "جرّاح مع نظام الجراحة الروبوتية OTTAVA"
+    },
+    "image_alt": {
+      "en": "A masked surgeon in blue scrubs handling a draped arm of the OTTAVA surgical robot in an operating room",
+      "ar": "جرّاح يرتدي كمامة وثوبًا جراحيًا أزرق يتعامل مع ذراع مغطاة لروبوت الجراحة OTTAVA في غرفة العمليات"
+    },
+    "image_credit": {
+      "en": "Image: Johnson & Johnson MedTech",
+      "ar": "الصورة: جونسون آند جونسون ميدتك"
+    },
+    "image_url": "https://jnj-production-jnj.s3.us-east-1.amazonaws.com/brightspot/d7/67/43e51bbd4d788cab82f657c119a8/0826-ottava-gallery4.png",
+    "image_page": "https://www.jnj.com/innovation/inside-ottava-robotic-surgical-system-development"
   },
   {
     "id": "microport-medbot",
@@ -1339,7 +2014,22 @@
     "website": "https://www.microportmedbot.com/",
     "source": "Morocco World News",
     "source_url": "https://www.moroccoworldnews.com/2024/11/12223/morocco-makes-medical-history-performs-world-s-first-intercontinental-robotic-prostatectomy/",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/microport-medbot.jpg",
+    "image_cap": {
+      "en": "Toumai surgical robot during an operation",
+      "ar": "روبوت الجراحة توماي أثناء عملية جراحية"
+    },
+    "image_alt": {
+      "en": "Surgeons in green scrubs stand beside the draped arms of a MicroPort MedBot Toumai patient-side robot while watching operating-room monitors",
+      "ar": "جراحون بملابس العمليات الخضراء يقفون بجانب الأذرع المغطاة لروبوت توماي من ميكروبورت ميدبوت بجوار المريض ويتابعون شاشات غرفة العمليات"
+    },
+    "image_credit": {
+      "en": "Image: MicroPort MedBot",
+      "ar": "الصورة: ميكروبورت ميدبوت"
+    },
+    "image_url": "https://www.medbotsurgical.com/upload/images/202610141410454000.jpeg",
+    "image_page": "https://www.medbotsurgical.com/news/540.html"
   },
   {
     "id": "engineered-arts",
@@ -1366,7 +2056,22 @@
     "logo": "/media/logos/engineered-arts.png",
     "source": "Blooloop",
     "source_url": "https://blooloop.com/museum/news/museum-of-the-future-ameca-humanoid-robot/",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/engineered-arts.jpg",
+    "image_cap": {
+      "en": "Ameca humanoid robot at the Museum of the Future, Dubai",
+      "ar": "الروبوت البشري «أميكا» في متحف المستقبل بدبي"
+    },
+    "image_alt": {
+      "en": "Engineered Arts' grey Ameca humanoid robot standing in the white, sculpted hall of Dubai's Museum of the Future as a crowd of visitors watches and films it",
+      "ar": "الروبوت البشري الرمادي «أميكا» من إنجينيرد آرتس يقف في القاعة البيضاء المنحوتة لمتحف المستقبل في دبي بينما يشاهده حشد من الزوار ويصورونه"
+    },
+    "image_credit": {
+      "en": "Image: Engineered Arts",
+      "ar": "الصورة: إنجينيرد آرتس"
+    },
+    "image_url": "https://media.engineeredarts.com/wp-content/uploads/2025/09/Ameca-Full-figure-Social-Humanoid-Robot-Museum-of-the-Future-Dubai-UAE-Engineered-Arts.jpg",
+    "image_page": "https://engineeredarts.com/solutions/business"
   },
   {
     "id": "ubtech-robotics",
@@ -1394,7 +2099,22 @@
     "logo": "/media/logos/ubtech-robotics.png",
     "source": "PR Newswire via Yahoo Finance",
     "source_url": "https://uk.finance.yahoo.com/news/government-ras-al-khaimah-ubtech-030100603.html",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/ubtech-robotics.jpg",
+    "image_cap": {
+      "en": "UBTECH Walker S2 humanoid handling a box",
+      "ar": "الروبوت البشري Walker S2 من يوبيتك يحمل صندوقًا"
+    },
+    "image_alt": {
+      "en": "A white UBTECH Walker S2 humanoid robot kneeling to lift a cardboard box in a bright warehouse",
+      "ar": "روبوت Walker S2 البشري الأبيض من يوبيتك يجثو لرفع صندوق كرتوني في مستودع مضيء"
+    },
+    "image_credit": {
+      "en": "Image: UBTECH Robotics",
+      "ar": "الصورة: يوبيتك روبوتيكس"
+    },
+    "image_url": "https://owebsite-cdn.ubtrobot.com/resources/image/2025/07/17/698771693350981.jpg",
+    "image_page": "https://www.ubtrobot.com/en/humanoid/products/walker-s2"
   },
   {
     "id": "1x-technologies",
@@ -1421,7 +2141,22 @@
     "logo": "/media/logos/1x-technologies.png",
     "source": "WAM",
     "source_url": "https://www.wam.ae/en/article/bmkc6nn-abu-dhabi-chamber-signs-agreement-with",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/1x-technologies.jpg",
+    "image_cap": {
+      "en": "NEO home humanoid at work in a kitchen",
+      "ar": "الروبوت البشري المنزلي NEO أثناء العمل في مطبخ"
+    },
+    "image_alt": {
+      "en": "1X's NEO humanoid robot, in a soft beige knit suit, looks into an open refrigerator in a home kitchen",
+      "ar": "الروبوت البشري NEO من وان إكس، ببدلته المحبوكة البيج الناعمة، ينظر داخل ثلاجة مفتوحة في مطبخ منزلي"
+    },
+    "image_credit": {
+      "en": "Image: 1X Technologies",
+      "ar": "الصورة: وان إكس تكنولوجيز"
+    },
+    "image_url": "https://cdn.sanity.io/images/qka6yvsc/production/16ac313d16c3550c96e2d9432ca52b07e887ec44-1920x1080.webp",
+    "image_page": "https://www.1x.tech/neo"
   },
   {
     "id": "softbank-robotics",
@@ -1448,7 +2183,22 @@
     "logo": "/media/logos/softbank-robotics.png",
     "source": "Farnek",
     "source_url": "https://www.farnek.com/farnek-expands-hybrid-cleaning-unit-du/",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/softbank-robotics.jpg",
+    "image_cap": {
+      "en": "SoftBank Robotics Whiz autonomous cleaning robot",
+      "ar": "روبوت التنظيف الذاتي «ويز» من سوفت بنك روبوتكس"
+    },
+    "image_alt": {
+      "en": "A black SoftBank Robotics Whiz-series autonomous floor-cleaning robot sweeping along a wall in a bright, minimal office",
+      "ar": "روبوت تنظيف أرضيات ذاتي أسود من سلسلة «ويز» من سوفت بنك روبوتكس ينظف بمحاذاة جدار في مكتب مشرق وبسيط"
+    },
+    "image_credit": {
+      "en": "Image: SoftBank Robotics",
+      "ar": "الصورة: سوفت بنك روبوتكس"
+    },
+    "image_url": "https://www.softbankrobotics.com/jp/set/data/product/cleaning/whiz/img/modal_whizP_01.webp",
+    "image_page": "https://www.softbankrobotics.com/jp/product/cleaning/whiz/"
   },
   {
     "id": "agibot",
@@ -1476,6 +2226,21 @@
     "logo": "/media/logos/agibot.png",
     "source": "Jawlah",
     "source_url": "https://jawlah.co/en/64348",
-    "added": "2026-11-08"
+    "added": "2026-11-08",
+    "image": "/media/companies/agibot.jpg",
+    "image_cap": {
+      "en": "AgiBot G2 humanoid robot",
+      "ar": "الروبوت البشري G2 من أجي بوت"
+    },
+    "image_alt": {
+      "en": "A white and black AgiBot G2 humanoid robot with orange light strips waving against a sky and mountain backdrop",
+      "ar": "روبوت أجي بوت G2 البشري بلونين أبيض وأسود وشرائط ضوئية برتقالية يلوّح بيده أمام خلفية من السماء والجبال"
+    },
+    "image_credit": {
+      "en": "Image: AgiBot",
+      "ar": "الصورة: أجي بوت"
+    },
+    "image_url": "https://www.agibot.com/public/static/index/en/images/G2/banner.jpg",
+    "image_page": "https://www.agibot.com/products/G2"
   }
 ]
