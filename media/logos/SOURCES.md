@@ -105,3 +105,4 @@ No usable logo found for FalconViz, Sager Drones, AutoGo, Sinaha Technology, Apo
 | 1x-technologies.png | 1X Technologies | https://www.1x.tech/icons/1xLogo.svg |
 | softbank-robotics.png | SoftBank Robotics | https://www.softbankrobotics.com/wp-content/uploads/asset/img/common/logo.svg |
 | anybotics.png | ANYbotics | Supplied by the site owner (official wordmark) |
+| falcon-tech-robotics.png | Falcon Tech Robotics | Emblem cropped from the Kody Robots press image https://kodyrobots.com/wp-content/uploads/2025/11/deploys-290-advertising-robots-odigo.jpg |

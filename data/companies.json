@@ -2242,5 +2242,40 @@
     },
     "image_url": "https://www.agibot.com/public/static/index/en/images/G2/banner.jpg",
     "image_page": "https://www.agibot.com/products/G2"
+  },
+  {
+    "id": "falcon-tech-robotics",
+    "name": "Falcon Tech Robotics",
+    "name_ar": "فالكون تك روبوتيكس",
+    "country": "AE",
+    "hq": "AE",
+    "hq_city": "Abu Dhabi",
+    "mena_countries": [
+      "AE"
+    ],
+    "category": "amr",
+    "stage": "growth",
+    "summary": "UAE joint venture of India's Kody Technolab that makes, installs and maintains Odigo AI advertising robots for malls and hypermarkets.",
+    "summary_ar": "مشروع مشترك في الإمارات لشركة كودي تكنولاب الهندية، يصنّع روبوتات «أوديغو» الإعلانية الذكية ويركّبها ويتولى صيانتها في المراكز التجارية والهايبرماركت.",
+    "website": "https://kodyrobots.com/",
+    "logo": "/media/logos/falcon-tech-robotics.png",
+    "source": "Kody Robots (press release)",
+    "source_url": "https://kodyrobots.com/press-release/kody-technolab-joint-venture-falcon-tech-robotics-deploy-odigo-lulu-group-uae/",
+    "added": "2026-11-08",
+    "image": "/media/companies/falcon-tech-robotics.jpg",
+    "image_cap": {
+      "en": "Odigo advertising robot in a LuLu Hypermarket",
+      "ar": "روبوت «أوديغو» الإعلاني في لولو هايبرماركت"
+    },
+    "image_alt": {
+      "en": "Odigo advertising robot with a perfume promotion on its screen inside a LuLu Hypermarket",
+      "ar": "روبوت «أوديغو» الإعلاني يعرض ترويجاً للعطور على شاشته داخل لولو هايبرماركت"
+    },
+    "image_credit": {
+      "en": "Image: Kody Robots",
+      "ar": "الصورة: كودي روبوتس"
+    },
+    "image_url": "https://kodyrobots.com/wp-content/uploads/2025/11/deploys-290-advertising-robots-odigo.jpg",
+    "image_page": "https://kodyrobots.com/press-release/kody-technolab-joint-venture-falcon-tech-robotics-deploy-odigo-lulu-group-uae/"
   }
 ]

@@ -619,5 +619,28 @@
     "source": "Business Wire (via Yahoo Finance)",
     "source_url": "https://finance.yahoo.com/technology/ai/articles/uber-launches-baidu-fully-driverless-063000807.html",
     "added": "2026-11-07"
+  },
+  {
+    "id": "d28",
+    "title": "290 Odigo AI robots across LuLu hypermarkets and malls",
+    "title_ar": "290 روبوتاً ذكياً من طراز «أوديغو» في متاجر ومراكز لولو",
+    "operator": "LuLu Group / Falcon Tech Robotics",
+    "operator_ar": "مجموعة لولو / فالكون تك روبوتيكس",
+    "logo": "/media/logos/falcon-tech-robotics.png",
+    "kind": "rollout",
+    "type": "service",
+    "sector": "retail",
+    "country": "AE",
+    "site": "60 LuLu locations across the UAE (17 malls, 43 hypermarkets)",
+    "site_ar": "60 موقعاً للولو في الإمارات (17 مركزاً تجارياً و43 هايبرماركت)",
+    "lat": 24.4539,
+    "lon": 54.3773,
+    "date": "2025-11-10",
+    "is_new": false,
+    "summary": "LuLu Group International signed with Falcon Tech Robotics, Kody Technolab's UAE joint venture, to deploy 290 Odigo autonomous advertising and engagement robots across 60 UAE locations in two phases, on an ad-revenue-share basis. Falcon Tech handles manufacturing, installation and maintenance.",
+    "summary_ar": "وقّعت مجموعة لولو الدولية مع فالكون تك روبوتيكس، المشروع المشترك لكودي تكنولاب في الإمارات، لنشر 290 روبوتاً ذاتي الحركة من طراز «أوديغو» للإعلان والتفاعل مع المتسوقين في 60 موقعاً بالإمارات على مرحلتين، مقابل تقاسم عائدات الإعلانات. وتتولى فالكون تك التصنيع والتركيب والصيانة.",
+    "source": "Kody Robots (press release)",
+    "source_url": "https://kodyrobots.com/press-release/kody-technolab-joint-venture-falcon-tech-robotics-deploy-odigo-lulu-group-uae/",
+    "added": "2026-11-08"
   }
 ]

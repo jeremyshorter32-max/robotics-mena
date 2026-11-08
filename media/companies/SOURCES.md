@@ -55,3 +55,4 @@ One image per company, taken from the company's own website, newsroom or press k
 | unitree.jpg | Unitree Robotics | https://www.unitree.com/images/9485f82d12cb4195997219f8ad17b178_3840x2160.jpg |
 | ys-lootah-robotics.jpg | YS Lootah Robotics | https://yslootahrobotics.com/media/home-hero.webp |
 | yutong.jpg | Yutong | https://en.yutong.com/res/res/2024/10/17/richText/9395b28de8fd4aa28c851a4a89c92c91.jpg |
+| falcon-tech-robotics.jpg | Falcon Tech Robotics | https://kodyrobots.com/wp-content/uploads/2025/11/deploys-290-advertising-robots-odigo.jpg (cropped to remove headline text) |
