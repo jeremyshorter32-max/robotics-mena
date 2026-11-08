@@ -104,3 +104,4 @@ No usable logo found for FalconViz, Sager Drones, AutoGo, Sinaha Technology, Apo
 | ubtech-robotics.png | UBTech Robotics | https://owebsite-cdn.ubtrobot.com/en/uploadfiles/logo.svg |
 | 1x-technologies.png | 1X Technologies | https://www.1x.tech/icons/1xLogo.svg |
 | softbank-robotics.png | SoftBank Robotics | https://www.softbankrobotics.com/wp-content/uploads/asset/img/common/logo.svg |
+| anybotics.png | ANYbotics | Supplied by the site owner (official wordmark) |
