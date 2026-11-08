@@ -87,18 +87,20 @@ html,body{margin:0;padding:0;background:#F7F5EF}
         </select>
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="position:absolute;inset-inline-end:12px;top:14px;color:var(--fg-subtle);pointer-events:none"><path d="M3 4.5l3 3 3-3"></path></svg>
       </label>
-      <label style="position:relative;display:inline-flex;align-items:center;gap:8px;height:40px;padding-inline:12px 32px;background:var(--bg-raised);border:1px solid {{ sBd }};border-radius:3px;font-size:13px;cursor:pointer" style-hover="border-color:var(--fg)">
-        <span style="color:var(--fg-subtle)">{{ t.fSector }}</span>
-        <select value="{{ fSector }}" onChange="{{ onFSector }}" style="appearance:none;-webkit-appearance:none;border:0;background:transparent;font-size:13px;font-weight:500;color:var(--fg);cursor:pointer;padding:0;max-width:200px">
-          <sc-for list="{{ sOpts }}" as="o"><option value="{{ o.v }}">{{ o.label }}</option></sc-for>
-        </select>
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="position:absolute;inset-inline-end:12px;top:14px;color:var(--fg-subtle);pointer-events:none"><path d="M3 4.5l3 3 3-3"></path></svg>
-      </label>
-            <sc-if value="{{ anyFilter }}" hint-placeholder-val="{{ false }}"><button onClick="{{ clearFilters }}" style="height:40px;padding:0 8px;background:transparent;border:0;color:var(--accent-text);font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px">{{ t.clearAll }}</button></sc-if>
+                  <sc-if value="{{ anyFilter }}" hint-placeholder-val="{{ false }}"><button onClick="{{ clearFilters }}" style="height:40px;padding:0 8px;background:transparent;border:0;color:var(--accent-text);font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px">{{ t.clearAll }}</button></sc-if>
       <span aria-live="polite" style="margin-inline-start:auto;font:500 12px var(--font-num);color:var(--fg-subtle);white-space:nowrap">{{ showing }}</span>
     </div>
+    <div role="group" aria-label="{{ t.fSector }}" style="grid-column:1 / -1;display:flex;flex-wrap:var(--chip-wrap);overflow-x:auto;gap:8px;margin-inline:calc(var(--gutter) * -1);padding:2px var(--gutter);scrollbar-width:none">
+      <span style="display:var(--chip-lbl);align-items:center;min-width:88px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle);margin-inline-end:4px;white-space:nowrap">{{ t.fSector }}</span>
+      <sc-for list="{{ sLegend }}" as="c" hint-placeholder-count="6">
+        <button type="button" onClick="{{ c.pick }}" aria-pressed="{{ c.on }}" style="flex:none;position:relative;display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 12px 3px;background:{{ c.bg }};border:1px solid {{ c.bd }};border-radius:3px;font-size:13px;font-weight:500;color:var(--fg);cursor:pointer;opacity:{{ c.op }};overflow:hidden;white-space:nowrap;transition:opacity .15s,border-color .15s" style-hover="border-color:var(--fg)">
+          {{ c.label }}<span style="font:500 12px var(--font-num);color:var(--fg-subtle)">{{ c.n }}</span>
+          <span aria-hidden="true" style="position:absolute;inset-inline-start:0;bottom:0;height:3px;width:{{ c.w }};background:{{ c.fill }}"></span>
+        </button>
+      </sc-for>
+    </div>
     <div role="group" aria-label="{{ t.fType }}" style="grid-column:1 / -1;display:flex;flex-wrap:var(--chip-wrap);overflow-x:auto;gap:8px;margin-inline:calc(var(--gutter) * -1);padding:2px var(--gutter);scrollbar-width:none">
-      <span style="display:var(--chip-lbl);align-items:center;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle);margin-inline-end:4px;white-space:nowrap">{{ t.fType }}</span>
+      <span style="display:var(--chip-lbl);align-items:center;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle);margin-inline-end:4px;white-space:nowrap;min-width:88px">{{ t.fType }}</span>
       <sc-for list="{{ tLegend }}" as="c" hint-placeholder-count="6">
         <button type="button" onClick="{{ c.pick }}" aria-pressed="{{ c.on }}" style="flex:none;display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 12px 0 6px;background:{{ c.bg }};border:1px solid {{ c.bd }};border-radius:18px;font-size:13px;font-weight:500;color:var(--fg);cursor:pointer;opacity:{{ c.op }};transition:opacity .15s,border-color .15s;white-space:nowrap" style-hover="border-color:var(--fg)">
           <span aria-hidden="true" style="width:24px;height:24px;border-radius:50%;background:{{ c.col }};display:grid;place-items:center;color:var(--pin-ink)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ c.icon }}"></path></svg></span>
@@ -109,7 +111,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
   </div>
   <div style="position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)">
     <div ref="{{ mapRef }}" style="height:var(--map-h);position:relative;background:var(--map-sea)">
-      <sc-if value="{{ mapNear }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="mena-map" from="./mena-map.js" mode="full" dir="{{ dir }}" pins="{{ mapPins }}" selected="{{ selId }}" focus="{{ fCountry }}" pad-end="{{ padEnd }}" label="{{ t.s2 }}" locale="{{ mapLoc }}" countries="{{ mapCountries }}" timeline="" layers="" style="position:absolute;inset:0" hint-size="100%,100%"></x-import></sc-if>
+      <sc-if value="{{ mapNear }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="mena-map" from="./mena-map.js" mode="full" dir="{{ dir }}" pins="{{ mapPins }}" selected="{{ selId }}" focus="{{ fCountry }}" pad-end="{{ padEnd }}" label="{{ t.s2 }}" locale="{{ mapLoc }}" countries="{{ mapCountries }}" suppliers="{{ mapSuppliers }}" timeline="" layers="" tour="" style="position:absolute;inset:0" hint-size="100%,100%"></x-import></sc-if>
       </div>
     <aside style="position:var(--panel-pos);top:var(--panel-top);inset-inline-end:var(--panel-end);margin:var(--panel-margin);width:var(--panel-w);max-height:var(--panel-maxh);overflow:auto;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:3px">
       <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)">

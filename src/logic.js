@@ -200,7 +200,7 @@ class Component extends DCLogic {
       panelLatest: 'Latest deployments & entrants', panelRecord: 'Deployment record', showing: '{a} of {b}',
       operator: 'Operator', site: 'Site', country: 'Country', date: 'Live since', close: 'Close', newLbl: 'New this week',
       pickHint: 'Select a pin or a row to open its record.', mapHelp: 'Drag to pan · Pinch or Ctrl + scroll to zoom · 0 resets',
-      legPin: 'Colour shows robot type', legCluster: 'Cluster: select to zoom', legNew: 'Added this week', mapSource: 'Robotics MENA tracker · 1 primary source per record · Boundaries: Natural Earth',
+      legPin: 'Colour shows robot type', legCluster: 'Cluster: select to zoom in or fan out', legNew: 'Added this week', mapSource: 'Robotics MENA tracker · 1 primary source per record · Boundaries: Natural Earth',
       s3n: '03 · Directory', s3: 'Ecosystem directory', s3sub: 'Who is building robots, systems and robotics software in the region.', getListed: 'Get listed', sort: 'Sort',
       sortOpts: [['featured', 'Editor’s order'], ['az', 'A–Z'], ['newest', 'Recently added'], ['stage', 'Stage']], listed: 'Listed',
       s4n: '04 · Policy & data', s4: 'National strategies & readiness', s4sub: 'Country by country: the programmes that matter for robotics, what each target actually measures, when it is due, and how that compares with what is deployed on the ground.',
@@ -252,7 +252,7 @@ class Component extends DCLogic {
       panelLatest: 'أحدث عمليات النشر والوافدين الجدد', panelRecord: 'سجل عملية النشر', showing: '{a} من {b}',
       operator: 'المشغّل', site: 'الموقع', country: 'الدولة', date: 'يعمل منذ', close: 'إغلاق', newLbl: 'جديد هذا الأسبوع',
       pickHint: 'اختر نقطة أو صفاً لفتح السجل.', mapHelp: 'اسحب للتحريك · قرّب بإصبعين أو Ctrl مع التمرير · 0 لإعادة الضبط',
-      legPin: 'اللون يدل على نوع الروبوت', legCluster: 'مجموعة: اخترها للتكبير', legNew: 'أُضيف هذا الأسبوع', mapSource: 'متتبّع روبوتكس مينا · مصدر أصلي لكل سجل · الحدود: Natural Earth',
+      legPin: 'اللون يدل على نوع الروبوت', legCluster: 'مجموعة: اخترها للتكبير أو للتوزيع', legNew: 'أُضيف هذا الأسبوع', mapSource: 'متتبّع روبوتكس مينا · مصدر أصلي لكل سجل · الحدود: Natural Earth',
       s3n: '03 · الدليل', s3: 'دليل المنظومة', s3sub: 'من يصنع الروبوتات والأنظمة وبرمجيات الروبوتات في المنطقة.', getListed: 'أدرج شركتك', sort: 'ترتيب',
       sortOpts: [['featured', 'اختيار المحرّر'], ['az', 'أبجدياً'], ['newest', 'الأحدث إدراجاً'], ['stage', 'المرحلة']], listed: 'أُدرج',
       s4n: '04 · السياسات والبيانات', s4: 'الاستراتيجيات الوطنية والجاهزية', s4sub: 'دولة بدولة: البرامج المهمة للروبوتات، وما يقيسه كل هدف فعلاً، وموعد استحقاقه، ومقارنته بما هو منشور على أرض الواقع.',
@@ -349,6 +349,10 @@ class Component extends DCLogic {
     const c = a && window.RM_DATA.companies.find(x => x.logo && (a.includes(x.name.toLowerCase()) || x.name.toLowerCase().includes(a)));
     return c ? c.logo : '';
   }
+  // Headquarters coordinates for the supplier arcs on the map ([lon, lat]); unknown cities fall back to the country.
+  HQ_LL = { 'Beijing': [116.40, 39.90], 'Guangzhou': [113.26, 23.13], 'Shenzhen': [114.06, 22.54], 'London': [-0.13, 51.51], 'Hangzhou': [120.16, 30.27], 'Tokyo': [139.69, 35.69], 'Shanghai': [121.47, 31.23], 'Pittsburgh': [-79.99, 40.44], 'Seongnam': [127.14, 37.42], 'Vienna': [16.37, 48.21], 'Levallois-Perret (Paris)': [2.29, 48.89], 'Santa Cruz, CA': [-122.03, 36.97], 'San Jose, CA': [-121.89, 37.34], 'Mountain View, CA': [-122.08, 37.39], 'Stockholm': [18.07, 59.33], 'Austin, TX': [-97.74, 30.27], 'Hamburg': [9.99, 53.55], 'Zhengzhou': [113.63, 34.75], 'Buchs (Aargau)': [8.08, 47.39], 'Nedre Vats': [5.73, 59.48], 'Zurich': [8.54, 47.38], 'Glostrup (Copenhagen)': [12.40, 55.67], 'Irvine, CA': [-117.83, 33.68], 'Noida': [77.39, 28.54], 'Waltham, MA': [-71.24, 42.38], 'Sunnyvale': [-122.04, 37.37], 'Dublin': [-6.26, 53.35], 'New Brunswick': [-74.45, 40.49], 'Falmouth': [-5.07, 50.15], 'Palo Alto': [-122.14, 37.44], 'Copenhagen': [12.57, 55.68], 'Huzhou': [120.09, 30.89], 'Nanjing': [118.80, 32.06], 'Schaan': [9.51, 47.17], 'Suzhou': [120.59, 31.30] };
+  CC_LL = { CN: [116.40, 39.90], US: [-77.04, 38.90], GB: [-0.13, 51.51], JP: [139.69, 35.69], KR: [126.98, 37.57], AT: [16.37, 48.21], FR: [2.35, 48.86], SE: [18.07, 59.33], DE: [13.40, 52.52], CH: [7.45, 46.95], NO: [10.75, 59.91], DK: [12.57, 55.68], IN: [77.21, 28.61], IE: [-6.26, 53.35], LI: [9.52, 47.14], IT: [12.50, 41.90], ES: [-3.70, 40.42], NL: [4.90, 52.37], FI: [24.94, 60.17], CA: [-75.70, 45.42], SG: [103.82, 1.35], TW: [121.56, 25.03], AU: [149.13, -35.28], BE: [4.35, 50.85], IL: null };
+  HUB_LL = { AE: [55.27, 25.20], SA: [46.68, 24.71], QA: [51.53, 25.29], KW: [47.98, 29.37], BH: [50.59, 26.23], OM: [58.41, 23.59], EG: [31.24, 30.04], MA: [-6.84, 34.02], JO: [35.93, 31.95], TN: [10.18, 36.81], DZ: [3.06, 36.75], LY: [13.19, 32.89], IQ: [44.37, 33.31], LB: [35.50, 33.89] };
   MENA_CC = new Set(['AE', 'SA', 'QA', 'KW', 'BH', 'OM', 'EG', 'MA', 'TN', 'DZ', 'LY', 'JO', 'LB', 'IQ', 'SY', 'PS', 'YE', 'TR', 'IR']);
   isIntl(o) { return !!(o && o.hq && !this.MENA_CC.has(o.hq)); }
   // Countdowns are shown in weeks: the site is updated weekly, so day counts would go stale between updates.
@@ -561,6 +565,8 @@ class Component extends DCLogic {
     const cList = [...new Set(this.DEP.map(d => d.cc))];
     const cChips = [this.chip(t.all, num(this.DEP.length), !S.fCountry, () => this.setState({ fCountry: '', sel: null }))].concat(cList.map(c => this.chip(ccName(c), num(cnt('cc', c)), S.fCountry === c, () => setF('fCountry', c))));
     const sChips = [this.chip(t.all, '', !S.fSector, () => this.setState({ fSector: '', sel: null }))].concat(Object.keys(this.SECTORS).map(k => this.chip(this.SECTORS[k][L], num(cnt('sector', k)), S.fSector === k, () => setF('fSector', k))));
+    const maxSec = Math.max(1, ...Object.keys(this.SECTORS).map(k => cnt('sector', k)));
+    const sLegend = Object.keys(this.SECTORS).filter(k => cnt('sector', k)).sort((a, b) => cnt('sector', b) - cnt('sector', a)).map(k => ({ label: this.SECTORS[k][L], n: num(cnt('sector', k)), w: Math.round(cnt('sector', k) / maxSec * 100) + '%', on: S.fSector === k ? 'true' : 'false', bd: S.fSector === k ? 'var(--fg)' : 'var(--line-strong)', bg: S.fSector === k ? 'var(--bg-hover)' : 'var(--bg-raised)', fill: S.fSector === k ? 'var(--accent)' : 'var(--sand)', op: S.fSector && S.fSector !== k ? '.55' : '1', pick: () => setF('fSector', k) }));
     const tLegend = Object.keys(this.TYPES).filter(k => cnt('type', k)).map(k => ({ label: this.TYPES[k][L], n: num(cnt('type', k)), icon: this.ICON[k], col: 'var(--t-' + k + ')', on: S.fType === k ? 'true' : 'false', bd: S.fType === k ? 'var(--fg)' : 'var(--line-strong)', bg: S.fType === k ? 'var(--bg-hover)' : 'var(--bg-raised)', op: S.fType && S.fType !== k ? '.55' : '1', pick: () => setF('fType', k) }));
     const tChips = [{ ...this.chip(t.all, '', !S.fType, () => this.setState({ fType: '', sel: null })), icon: '' }].concat(Object.keys(this.TYPES).map(k => ({ ...this.chip(this.TYPES[k][L], num(cnt('type', k)), S.fType === k, () => setF('fType', k)), icon: this.ICON[k] })));
     const opt = (v, label, n) => ({ v, label: n ? label + '  ' + n : label });
@@ -584,6 +590,18 @@ class Component extends DCLogic {
       : { title: 'Country profile', score: 'Readiness score', head: 'Headline target', next: 'Next deadline', deps: 'Deployments on the map', dossier: 'Open the policy dossier', show: 'Show its deployments', none: 'No policy dossier for this country yet.', thisYr: 'This year', layerHint: 'Use the layer switch on the map to shade countries by readiness or activity, then select one.' };
     const ranked = this.PCC.map(c => ({ c, sc: this.scoreOf(c) })).filter(x => x.sc).map(x => ({ c: x.c, s: x.sc.reduce((a, d) => a + d.v, 0), m: x.sc.length * 2 })).sort((a, b) => b.s - a.s);
     const mapCountries = JSON.stringify(Object.fromEntries(ranked.map(x => [x.c, { s: x.s, m: x.m, r: ranked.filter(y => y.s > x.s).length + 1, of: ranked.length }])));
+    let rnS = null; try { rnS = new Intl.DisplayNames([ar ? 'ar' : 'en'], { type: 'region' }); } catch (e) {}
+    const anyName = cc => (this.CC[cc] ? ccName(cc) : (rnS && rnS.of(cc)) || cc);
+    const supO = {}, supNames = {};
+    window.RM_DATA.companies.filter(o => this.isIntl(o) && (!S.fType || o.category === S.fType)).forEach(o => {
+      const to = (o.mena_countries || [o.country]).filter(c => this.HUB_LL[c] && (!S.fCountry || c === S.fCountry)); if (!to.length) return;
+      const ll = this.HQ_LL[o.hq_city] || this.CC_LL[o.hq]; if (!ll) return;
+      const k = this.HQ_LL[o.hq_city] ? o.hq_city : o.hq;
+      (supO[k] = supO[k] || { k, cc: o.hq, city: String(o.hq_city || anyName(o.hq)).replace(/\s*\(.*\)|,\s*[A-Z]{2}$/g, ''), lon: ll[0], lat: ll[1], cos: [] }).cos.push({ id: o.id, name: ar ? (o.name_ar || o.name) : o.name, logo: o.logo || '', href: '/database?tab=companies&id=' + o.id, to });
+      supNames[o.hq] = anyName(o.hq); to.forEach(c => { supNames[c] = anyName(c); });
+    });
+    const supDests = Object.fromEntries(Object.keys(supNames).filter(c => this.HUB_LL[c]).map(c => [c, this.HUB_LL[c]]));
+    const mapSuppliers = JSON.stringify({ origins: Object.values(supO), dests: supDests, names: supNames });
     let cty = {};
     if (S.cty && this.CC[S.cty]) {
       const c = S.cty, P3 = this.POLICY[c], sc = this.scoreOf(c), rk = ranked.find(x => x.c === c), nDep = this.DEP.filter(d => d.cc === c).length;
@@ -602,7 +620,7 @@ class Component extends DCLogic {
         cty.hasNext = cand.length > 0; Object.assign(cty, cand[0] ? { nextWhen: cand[0].when, nextSoon: cand[0].soon, nextWhat: cand[0].what } : {});
       }
     }
-    const ctyFx = { mapCountries, cty, hasCty: !!cty.cc, ctT: CT, closeCty: () => this.setState({ cty: null }), mapLoc: loc };
+    const ctyFx = { mapCountries, mapSuppliers, cty, hasCty: !!cty.cc, ctT: CT, closeCty: () => this.setState({ cty: null }), mapLoc: loc };
 
     // directory
     let co = this.CO.map((c, i) => ({ c, i })).filter(({ c }) => !S.dCat || c[3] === S.dCat);
@@ -687,7 +705,7 @@ class Component extends DCLogic {
       onOptKey: e => { const os = [...document.querySelectorAll('#rm-results [role=option]')], i = os.indexOf(e.currentTarget); if (e.key === 'ArrowDown' && os[i + 1]) { e.preventDefault(); os[i + 1].focus(); } else if (e.key === 'ArrowUp') { e.preventDefault(); (os[i - 1] || this.searchRef.current).focus(); } else if (e.key === 'Escape') { this.searchRef.current.focus(); } }, heroPins: JSON.stringify(this.DEP.map(heroPinOf)),
       brief: this.BRIEF.map((b, i) => ({ idx: nf2.format(i + 1), cc: b[0], country: ccName(b[0]), date: fdate(b[1]), srcLine: t.source + ': ' + b[2], title: b[3 + L], take: b[5 + L], img: b[7], hasImg: !!b[7], noImg: !b[7], panelSrc: b[2], credit: (ar ? 'الصورة: ' : 'Image: ') + b[8], srcUrl: b[9], hasUrl: !!b[9], noUrl: !b[9] })),
       cChips, sChips, tChips, ...fx, mapPins: JSON.stringify(depF.map(pinOf)), selId: S.sel || '', fCountry: S.fCountry, padEnd: S.w <= 1180 ? '0' : '432',
-      ...ctyFx, tLegend, hasSel: !!selD, noSel: !selD && !(S.cty && this.CC[S.cty]), sel, clearSel: () => this.setState({ sel: null }), panelList,
+      ...ctyFx, tLegend, sLegend, hasSel: !!selD, noSel: !selD && !(S.cty && this.CC[S.cty]), sel, clearSel: () => this.setState({ sel: null }), panelList,
       panelTitle: selD ? t.panelRecord : (S.cty && this.CC[S.cty]) ? CT.title : t.panelLatest, showing: t.showing.replace('{a}', num(depF.length)).replace('{b}', num(this.DEP.length)),
       dChips, companies, companiesShown: S.dAll ? companies : companies.slice(0, 9), dirMore: companies.length > 9, dirMoreLbl: S.dAll ? t.showFewer : t.showAll.replace('{n}', num(companies.length)), toggleDirAll: () => this.setState(st => ({ dAll: !st.dAll })),
       mapRef: this.mapRef, mapNear: S.mapNear, mapMore: this.PAGE !== 'home' && narrow && depF.length > 5, mapMoreLbl: S.mapAll ? t.showFewer : t.showAll.replace('{n}', num(Math.min(8, depF.length))), toggleMapAll: () => this.setState(st => ({ mapAll: !st.mapAll })),
