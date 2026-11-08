@@ -26,4 +26,5 @@ Most are editorial photos owned by the publisher or a news agency: get permissio
 
 | File | Credit | Source |
 |---|---|---|
-| hero-robot-arm.jpg, hero-robot-arm-960.jpg | Supplied by the site owner | Cropped around the robot arm |
+| hero-robot-arm.jpg, hero-robot-arm-960.jpg | Supplied by the site owner | Cropped around the robot arm (previous hero) |
+| hero-delivery-robots.jpg, hero-delivery-robots-800.jpg | Supplied by the site owner | Delivery robots (current hero, on trial) |

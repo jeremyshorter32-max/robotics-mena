@@ -35,11 +35,11 @@ html,body{margin:0;padding:0;background:#F7F5EF}
 [data-rm] button,[data-rm] input,[data-rm] select,[data-rm] textarea{font:inherit;color:inherit}
 [data-rm] ::placeholder{color:var(--fg-subtle);opacity:1}
 [data-rail]::-webkit-scrollbar{display:none}
-[data-rm]{--hero-img-w:67%;--hero-img-pos:50% 30%;--hero-fade-a:36%;--hero-fade-b:46%;--hero-fade-c:62%}
+[data-rm]{--hero-img-w:67%;--hero-img-pos:72% 60%;--hero-fade-a:36%;--hero-fade-b:46%;--hero-fade-c:62%}
 [data-theme=light]{--hero-img-filter:saturate(.92) contrast(1.03);--hero-tint:rgba(22,103,115,.10)}
 [data-theme=dark]{--hero-img-filter:saturate(.85) brightness(.82) contrast(1.05);--hero-tint:rgba(18,33,43,.45)}
 @media (max-width:1180px){[data-rm][dir]{--hero-img-w:76%;--hero-fade-a:28%;--hero-fade-b:40%}}
-@media (max-width:900px){[data-rm][dir]{--hero-img-w:100%;--hero-img-pos:62% 40%;--hero-fade-a:44%;--hero-fade-b:58%;--hero-fade-c:80%}}
+@media (max-width:900px){[data-rm][dir]{--hero-img-w:100%;--hero-img-pos:78% 70%;--hero-fade-a:44%;--hero-fade-b:58%;--hero-fade-c:80%}}
 @keyframes rm-hero-kb{from{transform:scale(1.08)}to{transform:scale(1)}}
 @keyframes rm-live{0%,100%{opacity:1}50%{opacity:.35}}
 @media (prefers-reduced-motion:reduce){[data-rm] *{transition:none!important;animation:none!important}}
@@ -67,8 +67,8 @@ html,body{margin:0;padding:0;background:#F7F5EF}
 </nav>
 
 <header id="top" data-screen-label="01 Hero" style="position:relative;overflow:hidden;border-bottom:1px solid var(--line)">
-  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;background:var(--bg-raised)">
-    <img src="/media/brand/hero-robot-arm.jpg" srcset="/media/brand/hero-robot-arm-960.jpg 900w, /media/brand/hero-robot-arm.jpg 1600w" sizes="100vw" alt="" fetchpriority="high" decoding="async" style="position:absolute;top:0;bottom:0;inset-inline-end:0;width:var(--hero-img-w);height:100%;object-fit:cover;object-position:var(--hero-img-pos);filter:var(--hero-img-filter);animation:rm-hero-kb 22s ease-out both">
+  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;background:var(--bg)">
+    <img src="/media/brand/hero-delivery-robots.jpg" srcset="/media/brand/hero-delivery-robots-800.jpg 800w, /media/brand/hero-delivery-robots.jpg 1000w" sizes="100vw" alt="" fetchpriority="high" decoding="async" style="position:absolute;top:0;inset-inline-end:0;width:var(--hero-img-w);height:min(100%, calc(100svh - 64px));object-fit:cover;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent);object-position:var(--hero-img-pos);filter:var(--hero-img-filter);animation:rm-hero-kb 22s ease-out both">
     <div style="position:absolute;inset:0;background:var(--hero-tint);mix-blend-mode:multiply"></div>
     <div style="position:absolute;inset:0;background-image:radial-gradient(var(--dot) 1px,transparent 1.2px);background-size:22px 22px"></div>
   </div>
