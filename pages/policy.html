@@ -35,6 +35,8 @@ html,body{margin:0;padding:0;background:#F7F5EF}
 [data-rm] button,[data-rm] input,[data-rm] select,[data-rm] textarea{font:inherit;color:inherit}
 [data-rm] ::placeholder{color:var(--fg-subtle);opacity:1}
 [data-rail]::-webkit-scrollbar{display:none}
+[data-rm]{--sc-cols:220px minmax(0,1fr)}
+@media (max-width:900px){[data-rm][dir]{--sc-cols:minmax(0,1fr)}}
 @keyframes rm-live{0%,100%{opacity:1}50%{opacity:.35}}
 @media (prefers-reduced-motion:reduce){[data-rm] *{transition:none!important;animation:none!important}}
 </style>
@@ -104,6 +106,36 @@ html,body{margin:0;padding:0;background:#F7F5EF}
           </sc-for>
         </dl>
       </div>
+      <sc-if value="{{ pc.hasScore }}">
+      <div style="padding:20px var(--dos-pad);border-bottom:1px solid var(--line);display:grid;grid-template-columns:var(--sc-cols);gap:16px var(--gap);align-items:start">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ scT.score }}</span>
+          <span style="display:flex;align-items:baseline;gap:8px"><b style="font:500 44px/1 var(--font-num);letter-spacing:-0.03em">{{ pc.score.total }}</b><span style="font:400 15px/1 var(--font-num);color:var(--fg-subtle)">/ {{ pc.score.max }}</span></span>
+          <span aria-hidden="true" style="display:block;height:6px;background:var(--line);max-width:220px"><span style="display:block;height:100%;width:{{ pc.score.pct }};background:var(--accent)"></span></span>
+          <a href="#scorecard" style="font-size:13px;color:var(--accent-text)">{{ scT.how }} <span aria-hidden="true">↓</span></a>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px">
+          <sc-for list="{{ pc.score.dims }}" as="d" hint-placeholder-count="8">
+            <li title="{{ d.note }}" style="padding:10px 12px;border:1px solid var(--line);background:var(--bg-raised);display:flex;flex-direction:column;gap:6px">
+              <span style="font-size:12px;line-height:1.35;color:var(--fg-muted)">{{ d.label }}</span>
+              <span style="display:grid;grid-template-columns:repeat(2,20px);gap:3px"><sc-for list="{{ d.segs }}" as="sg"><span style="height:5px;background:{{ sg.bg }};border-radius:1px"></span></sc-for></span>
+              <span style="font:500 12px/1 var(--font-num);color:{{ d.col }}">{{ d.word }}</span>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+      <details style="padding:0 var(--dos-pad);border-bottom:1px solid var(--line)">
+        <summary style="cursor:pointer;padding:14px 0;font-size:14px;font-weight:500;color:var(--accent-text)">{{ scT.why }}</summary>
+        <ul style="list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:0 var(--gap)">
+          <sc-for list="{{ pc.score.dims }}" as="d" hint-placeholder-count="8">
+            <li style="padding:10px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:52px minmax(0,1fr);gap:4px 12px;font-size:14px;line-height:1.5">
+              <span style="padding-top:6px"><span style="display:grid;grid-template-columns:repeat(2,18px);gap:3px"><sc-for list="{{ d.segs }}" as="sg"><span style="height:5px;background:{{ sg.bg }};border-radius:1px"></span></sc-for></span></span>
+              <span><b style="font-weight:600">{{ d.label }}</b> · <span style="color:{{ d.col }}">{{ d.word }}</span><span style="display:block;color:var(--fg-muted)">{{ d.note }}</span><sc-if value="{{ d.hasUrl }}"><a href="{{ d.url }}" style="font-size:12px;color:var(--fg-subtle);border-bottom:1px solid var(--line-strong)">{{ scT.source }}: {{ d.src }} <span aria-hidden="true">{{ arrow }}</span></a></sc-if></span>
+            </li>
+          </sc-for>
+        </ul>
+      </details>
+      </sc-if>
       <div style="display:grid;grid-template-columns:var(--spot-cols)">
         <div style="padding:0 var(--dos-pad) var(--dos-pad);display:flex;flex-direction:column;min-width:0">
           <h4 style="margin:0;padding:24px 0 12px;border-bottom:1px solid var(--fg);font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.pProgrammes }}</h4>
@@ -154,6 +186,30 @@ html,body{margin:0;padding:0;background:#F7F5EF}
           </div>
         </aside>
       </div>
+      <sc-if value="{{ pc.hasRegs }}">
+      <div style="padding:8px var(--dos-pad) 16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:4px">
+        <h4 style="margin:0;padding:16px 0 0;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ scT.regs }}</h4>
+        <p style="margin:0 0 4px;font-size:14px;color:var(--fg-muted)">{{ scT.regsSub }}</p>
+        <sc-for list="{{ pc.regGroups }}" as="g" hint-placeholder-count="3">
+          <div style="padding-top:12px">
+            <h5 style="margin:0 0 4px;font-size:14px;font-weight:600">{{ g.label }}</h5>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));column-gap:var(--gap)">
+              <sc-for list="{{ g.items }}" as="r" hint-placeholder-count="2">
+                <li style="border-top:1px solid var(--line);padding:12px 0;display:flex;flex-direction:column;gap:6px">
+                  <span style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start">
+                    <sc-if value="{{ r.hasUrl }}"><a href="{{ r.url }}" style="font-size:15px;font-weight:500;line-height:1.4">{{ r.title }} <span aria-hidden="true" style="color:var(--fg-subtle)">{{ arrow }}</span></a></sc-if>
+                    <sc-if value="{{ r.noUrl }}"><span style="font-size:15px;font-weight:500;line-height:1.4">{{ r.title }}</span></sc-if>
+                    <span style="flex:none;display:inline-flex;align-items:center;gap:6px;font:500 12px/16px var(--font-num);color:{{ r.stC }};white-space:nowrap"><span style="width:7px;height:7px;border-radius:50%;background:{{ r.stC }}"></span>{{ r.st }}</span>
+                  </span>
+                  <span style="font-size:13px;color:var(--fg-subtle)">{{ r.body }} · <span style="font-family:var(--font-num)">{{ r.yr }}</span></span>
+                  <span style="font-size:14px;line-height:1.55;color:var(--fg-muted)">{{ r.sum }}</span>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+        </sc-for>
+      </div>
+      </sc-if>
       <div style="padding:8px var(--dos-pad) var(--dos-pad);border-top:1px solid var(--line)">
         <h4 style="margin:0;padding:16px 0 4px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.pPubs }}</h4>
         <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));column-gap:var(--gap)">
@@ -169,6 +225,31 @@ html,body{margin:0;padding:0;background:#F7F5EF}
       </div>
     </div>
 
+    <sc-if value="{{ hasScores }}">
+    <div id="scorecard" style="display:flex;flex-direction:column;gap:16px;padding-top:24px;scroll-margin-top:120px">
+      <div style="display:flex;flex-direction:column;gap:6px;max-width:820px"><h3 style="margin:0;font-size:var(--fs-h2);line-height:1.15;letter-spacing:var(--track-tight);font-weight:600">{{ scT.title }}</h3><p style="margin:0;font-size:15px;color:var(--fg-muted);text-wrap:pretty">{{ scT.sub }}</p></div>
+      <div data-rail="" style="overflow-x:auto;scrollbar-width:thin;border:1px solid var(--line-strong);background:var(--bg)">
+        <div role="table" aria-label="{{ scT.title }}" style="min-width:980px">
+          <div role="row" style="display:grid;grid-template-columns:minmax(150px,1.3fr) repeat(8,minmax(78px,1fr)) minmax(150px,1.3fr);gap:0 8px;align-items:end;padding:14px 16px;border-bottom:1px solid var(--fg)">
+            <span role="columnheader" style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ scT.country }}</span>
+            <sc-for list="{{ scoreHead }}" as="h" hint-placeholder-count="8"><span role="columnheader" title="{{ h.full }}" style="font:500 11px/14px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle);text-align:center">{{ h.short }}</span></sc-for>
+            <span role="columnheader" style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ scT.total }}</span>
+          </div>
+          <sc-for list="{{ scoreRows }}" as="r" hint-placeholder-count="9">
+            <button type="button" role="row" onClick="{{ r.pick }}" style="width:100%;display:grid;grid-template-columns:minmax(150px,1.3fr) repeat(8,minmax(78px,1fr)) minmax(150px,1.3fr);gap:0 8px;align-items:center;padding:12px 16px;border:0;border-bottom:1px solid var(--line);background:{{ r.bg }};color:var(--fg);cursor:pointer;text-align:start;font:inherit" style-hover="background:var(--bg-hover)">
+              <span role="cell" style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600"><img src="{{ r.flag }}" alt="" width="20" height="15" style="display:block;border:1px solid var(--line)">{{ r.name }}</span>
+              <sc-for list="{{ r.cells }}" as="x" hint-placeholder-count="8"><span role="cell" title="{{ x.label }}" aria-label="{{ x.label }}" style="display:flex;justify-content:center"><span style="display:inline-grid;grid-template-columns:repeat(2,14px);gap:3px"><sc-for list="{{ x.segs }}" as="sg"><span style="height:10px;background:{{ sg.bg }};border-radius:2px"></span></sc-for></span></span></sc-for>
+              <span role="cell" style="display:flex;align-items:center;gap:10px"><span aria-hidden="true" style="flex:1;height:6px;background:var(--line)"><span style="display:block;height:100%;width:{{ r.w }};background:var(--accent)"></span></span><span style="font:500 14px/1 var(--font-num);white-space:nowrap">{{ r.totalTxt }}</span></span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;font-size:12px;color:var(--fg-subtle)">
+        <sc-for list="{{ scT.legend }}" as="l" hint-placeholder-count="3"><span style="display:inline-flex;align-items:center;gap:6px"><span style="width:12px;height:10px;border-radius:2px;background:{{ l.c }}"></span>{{ l.w }}</span></sc-for>
+      </div>
+      <p style="margin:0;font-size:12px;color:var(--fg-subtle);max-width:900px;text-wrap:pretty">{{ scT.method }}</p>
+    </div>
+    </sc-if>
     <div id="compare" style="display:flex;flex-direction:column;gap:16px;padding-top:24px">
       <div style="display:flex;flex-direction:column;gap:6px;max-width:760px">
         <h3 style="margin:0;font-size:22px;line-height:1.3;letter-spacing:var(--track-tight);font-weight:600">{{ t.pCompare }}</h3>

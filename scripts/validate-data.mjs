@@ -125,6 +125,9 @@ Object.entries(policy).forEach(([cc, P]) => {
   if (!P.progs || !P.progs.length) errors.push(`${w}: no programmes`);
   if (P.head && !(P.progs[P.head[0]] && (P.progs[P.head[0]][6] || [])[P.head[1]])) errors.push(`${w}: head points at a missing target`);
   if (P.feat) { pair(P.feat.name, `${w} feat.name`); pair(P.feat.why, `${w} feat.why`); }
+  const AREAS = ['av', 'drone', 'sandbox', 'incentive', 'ai', 'data', 'robot'], STATUS = ['in_force', 'draft', 'pilot', 'announced', 'suspended'];
+  (P.regs || []).forEach((r, i) => { const rw = `${w} regs[${i}]`; if (!AREAS.includes(r.area)) errors.push(`${rw}: area "${r.area}" is not one of ${AREAS.join(', ')}`); if (!STATUS.includes(r.status)) errors.push(`${rw}: status "${r.status}" is not one of ${STATUS.join(', ')}`); if (!r.title || !r.title.en || !r.title.ar) errors.push(`${rw}: needs title.en and title.ar`); if (!r.summary || !r.summary.en || !r.summary.ar) errors.push(`${rw}: needs summary.en and summary.ar`); if (!r.url) errors.push(`${rw}: needs a source URL`); else url(r.url, rw, 'url'); });
+  if (P.score) ['av_law', 'robotaxi', 'drones', 'sandbox', 'incentives', 'ai_rules'].forEach(k => { const x = P.score[k], sw = `${w} score.${k}`; if (!x) { errors.push(`${sw}: missing`); return; } if (![0, 1, 2].includes(x.v)) errors.push(`${sw}: v must be 0, 1 or 2`); if (!x.note || !x.note.en || !x.note.ar) errors.push(`${sw}: needs note.en and note.ar`); if (!x.url) errors.push(`${sw}: needs a source URL`); else url(x.url, sw, 'url'); });
   (P.pubs || []).forEach((x, i) => { if (!x[0] || !x[1]) errors.push(`${w} pubs[${i}]: needs a title in English and Arabic`); if (!x[7]) errors.push(`${w} pubs[${i}] "${x[0]}": needs a source URL`); else url(x[7], `${w} pubs[${i}]`, 'url'); });
 });
 

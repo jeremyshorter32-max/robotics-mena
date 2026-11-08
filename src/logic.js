@@ -155,6 +155,27 @@ class Component extends DCLogic {
   EVENTS = window.RM_DATA.events.filter(e => !e.tentative).map(e => [e.id, e.start, e.end, e.name, e.name_ar || e.name, e.city, e.city_ar || e.city, e.venue, e.venue_ar || e.venue, e.country, e.type, e.dates_confirmed ? 0 : 1, e.logo || '', e.relevance || '', e.relevance_ar || e.relevance || '', e.url || '']);
   LATER = window.RM_DATA.events.filter(e => e.tentative).map(e => [e.name, e.name_ar || e.name, e.city, e.city_ar || e.city, e.start]);
 
+  SCORE_DIMS = [
+    ['strategy', 'Robotics strategy', 'استراتيجية الروبوتات', 'Strategy', 'الاستراتيجية'],
+    ['av_law', 'Self-driving law', 'قانون القيادة الذاتية', 'AV law', 'قانون المركبات'],
+    ['robotaxi', 'Robotaxis', 'سيارات الأجرة الذاتية', 'Robotaxis', 'الأجرة الذاتية'],
+    ['drones', 'Drone operations', 'تشغيل المسيّرات', 'Drones', 'المسيّرات'],
+    ['sandbox', 'Test zones & sandboxes', 'مناطق الاختبار والبيئات التجريبية', 'Test zones', 'مناطق الاختبار'],
+    ['incentives', 'Automation incentives', 'حوافز الأتمتة', 'Incentives', 'الحوافز'],
+    ['ai_rules', 'AI & data rules', 'قواعد الذكاء الاصطناعي والبيانات', 'AI & data', 'الذكاء والبيانات'],
+    ['deploy', 'Verified deployments', 'عمليات نشر موثّقة', 'Deployments', 'عمليات النشر']];
+  REG_AREAS = [['av', 'Self-driving vehicles', 'المركبات ذاتية القيادة'], ['drone', 'Drones', 'الطائرات المسيّرة'], ['sandbox', 'Test zones & sandboxes', 'مناطق الاختبار والبيئات التجريبية'], ['incentive', 'Incentives & funding', 'الحوافز والتمويل'], ['robot', 'Robots & safety', 'الروبوتات والسلامة'], ['ai', 'AI governance', 'حوكمة الذكاء الاصطناعي'], ['data', 'Data protection', 'حماية البيانات']];
+  REG_STATUS = { in_force: ['In force', 'سارٍ', 'var(--sand)'], pilot: ['Pilot', 'تجريبي', 'var(--accent-text)'], draft: ['Draft', 'مسودة', 'var(--fg-muted)'], announced: ['Announced', 'معلَن', 'var(--fg-muted)'], suspended: ['Suspended', 'معلّق', 'var(--accent)'] };
+  scoreOf(cc) {
+    const P = this.POLICY[cc]; if (!P || !P.score) return null;
+    const dep = window.RM_DATA.deployments.filter(d => d.country === cc).length;
+    return this.SCORE_DIMS.map(([k]) => {
+      if (k === 'strategy') return { k, v: P.robo[2], note: [P.robo[0], P.robo[1]], url: '', source: '' };
+      if (k === 'deploy') return { k, v: dep >= 10 ? 2 : dep >= 3 ? 1 : 0, note: [dep + ' deployments verified in the Robotics MENA database', dep + ' عمليات نشر موثّقة في قاعدة بيانات روبوتكس مينا'], url: '/database?tab=countries&id=' + cc, source: 'Robotics MENA' };
+      const x = P.score[k] || { v: 0, note: { en: 'Not yet assessed', ar: 'لم يُقيَّم بعد' } };
+      return { k, v: x.v, note: [x.note.en, x.note.ar || x.note.en], url: x.url || '', source: x.source || '' };
+    });
+  }
   PCC = ['AE', 'SA', 'QA', 'EG', 'MA', 'OM', 'BH', 'JO', 'KW', 'TN', 'DZ'].filter(k => (window.RM_DATA.policy || {})[k]);
   SCOPES = { robotics: ['Robotics', 'روبوتات', 1], autonomy: ['Autonomy', 'قيادة ذاتية', 1], industry: ['Industrial automation', 'أتمتة صناعية', 1], ai: ['AI', 'ذكاء اصطناعي', 0], compute: ['Compute', 'حوسبة', 0], digital: ['Digital economy', 'اقتصاد رقمي', 0] };
   POLICY = window.RM_DATA.policy || {};
@@ -574,8 +595,17 @@ class Component extends DCLogic {
       stats: [[num(RD[pcK][1]), t.pStDep], [num(RD[pcK][2]), t.pStCo], [num(PD.progs.length), t.pStProg]].map(x => ({ v: x[0], l: x[1] })),
       progs: PD.progs.map(p => { const sc = this.SCOPES[p[5]]; return { name: p[L], issuer: p[2 + L], yr: yr(p[4]), scope: sc[L], tagFg: sc[2] ? 'var(--accent-text)' : 'var(--fg-muted)', tagBd: sc[2] ? 'var(--accent)' : 'var(--line-strong)', kpis: p[6].map(k => ({ v: digits(k[L]), what: k[2 + L], by: dueTxt(k[4]) })) }; }),
       feat: { name: PD.feat.name[L], dek: PD.feat.dek[L], why: PD.feat.why[L], note: PD.feat.note ? PD.feat.note[L] : '', hasNote: !!(PD.feat.note && PD.feat.note[L]), facts: PD.feat.facts.map(f => ({ k: f[L], v: digits(f[2 + L]) })), ms: PD.feat.ms.map(m => ({ d: digits(m[L]), t: m[2 + L] })) },
+      ...(() => {
+        const sc = this.scoreOf(pcK), W = ar ? ['غير متوفر', 'جزئي', 'متقدم'] : ['None', 'Partial', 'Strong'], C = ['var(--line-strong)', 'var(--accent-text)', 'var(--sand)'];
+        const total = sc ? sc.reduce((a, d) => a + d.v, 0) : 0, max = this.SCORE_DIMS.length * 2;
+        const groups = this.REG_AREAS.map(([a, en, arL]) => ({ label: ar ? arL : en, items: (PD.regs || []).filter(r => r.area === a).map(r => { const st = this.REG_STATUS[r.status] || this.REG_STATUS.announced; return { title: ar ? (r.title.ar || r.title.en) : r.title.en, body: ar ? ((r.body || {}).ar || (r.body || {}).en || '') : ((r.body || {}).en || ''), yr: r.year ? yr(r.year) : '', st: st[L], stC: st[2], sum: ar ? ((r.summary || {}).ar || (r.summary || {}).en || '') : ((r.summary || {}).en || ''), url: r.url || '', hasUrl: !!r.url, noUrl: !r.url, src: r.source || '' }; }) })).filter(g => g.items.length);
+        return { hasScore: !!sc, regGroups: groups, hasRegs: groups.length > 0, score: sc ? { total: num(total), max: num(max), pct: Math.round(total / max * 100) + '%', dims: sc.map((d, i) => { const D = this.SCORE_DIMS[i]; return { label: D[1 + L], short: D[3 + L], word: W[d.v], col: C[d.v], segs: [1, 2].map(n => ({ bg: n <= d.v ? C[d.v] : 'var(--line)' })), note: digits(d.note[L]), url: d.url, hasUrl: !!d.url, src: d.source }; }) } : {} };
+      })(),
       pubs: PD.pubs.map(u => ({ title: u[L], pub: u[2 + L], type: u[4 + L], yr: digits(u[6]), url: u[7], hasUrl: !!u[7], noUrl: !u[7] }))
     };
+    const SW = ar ? ['غير متوفر', 'جزئي', 'متقدم'] : ['None', 'Partial', 'Strong'], SC = ['var(--line-strong)', 'var(--accent-text)', 'var(--sand)'];
+    const scoreRows = this.PCC.map(c => ({ c, sc: this.scoreOf(c) })).filter(x => x.sc).map(({ c, sc }) => { const total = sc.reduce((a, d) => a + d.v, 0), max = sc.length * 2; return { cc: c, flag: this.flagUrl(c), name: ccName(c), total, totalTxt: num(total) + ' / ' + num(max), w: Math.round(total / max * 100) + '%', cells: sc.map((d, i) => ({ v: d.v, label: this.SCORE_DIMS[i][1 + L] + ': ' + SW[d.v], segs: [1, 2].map(n => ({ bg: n <= d.v ? SC[d.v] : 'var(--line)' })) })), bg: c === pcK ? 'var(--accent-soft)' : 'transparent', pick: () => { this.setState({ pc: c }); this.go('strategies', c); } }; }).sort((a, b) => b.total - a.total || a.name.localeCompare(b.name));
+    const scoreHead = this.SCORE_DIMS.map(D => ({ short: D[3 + L], full: D[1 + L] }));
     const mxD = Math.max(...this.READY.map(r => r[1])), mxC = Math.max(...this.READY.map(r => r[2]));
     const cmp = this.READY.map(r => { const c = r[0], P2 = this.POLICY[c]; const base = { cc: c, flag: this.flagUrl(c), name: ccName(c), dep: num(r[1]), co: num(r[2]), dw: (r[1] / mxD * 100).toFixed(1) + '%', cw: (r[2] / mxC * 100).toFixed(1) + '%', bg: c === pcK ? 'var(--accent-soft)' : 'transparent' };
       if (!P2) return { ...base, robo: t.notProfiled, roboFg: 'var(--fg-subtle)', dotBg: 'transparent', dotBd: 'var(--line-strong)', v: 'None set', what: '', due: 'n/a', away: '', pick: () => {}, noPick: 'true', cur: 'default' };
@@ -634,7 +664,7 @@ class Component extends DCLogic {
       },
       story, storySources, storyRelated, hasStory: !!st, chapters, rail, glance, findings, compare, attacks, gauge, timeline, tl, onTlKey, fleetChips, fleet, claims, watch, providers, srcToggle, lb, rpU: Object.fromEntries(Object.keys(U).map(k => [k, ut(k)])), notLocked: S.subscribed, isLocked: !S.subscribed, fleetEmpty: fleet.length === 0, claimKey, storyHref: this.STORIES[0] ? '/spotlight?s=' + this.STORIES[0].id : '/spotlight',
       homeHref: this.PAGE === 'home' ? '/' : this.pageHref('top'), policyHref: this.pageHref('policy', S.pc), mapFullHref: this.pageHref('map'), submitHref: this.pageHref('submit'),
-      pTabs, pc, cmp, pTabId: 'rm-ptab-' + pcK,
+      pTabs, pc, cmp, scoreRows, scoreHead, hasScores: scoreRows.length > 0, scT: ar ? { score: 'مؤشر الجاهزية', of: 'من', why: 'لماذا هذه الدرجات', how: 'كيف نقيس', regs: 'الأنظمة والحوافز', regsSub: 'القواعد والجهات المنظِّمة والبيئات التجريبية والحوافز التي تحدد إمكانية نشر الروبوتات في هذا البلد.', title: 'مؤشر جاهزية الروبوتات', sub: 'ثمانية مقاييس لمدى استعداد كل دولة لنشر الروبوتات فعلياً: القوانين والتصاريح والحوافز والأدلة على أرض الواقع. لكل مقياس من 0 إلى 2 نقطة.', country: 'الدولة', total: 'المجموع', legend: [{ w: 'متقدم', c: 'var(--sand)' }, { w: 'جزئي', c: 'var(--accent-text)' }, { w: 'غير متوفر', c: 'var(--line-strong)' }], method: 'المنهجية: نُقيّم ما هو سارٍ أو قيد التشغيل حالياً، لا ما هو معلن فقط. الاستراتيجية مأخوذة من ملف كل دولة، وعمليات النشر من قاعدة بياناتنا (10 فأكثر: متقدم، 3–9: جزئي). كل درجة أخرى مرتبطة بمصدرها في ملف الدولة.', source: 'المصدر' } : { score: 'Readiness score', of: 'of', why: 'Why these scores', how: 'How we score', regs: 'Regulations & incentives', regsSub: 'The rules, regulators, test zones and incentives that decide whether robots can actually be deployed here.', title: 'Robotics readiness scorecard', sub: 'Eight measures of how ready each country is to put robots to work: laws, permits, incentives and evidence on the ground. Each scores 0 to 2 points.', country: 'Country', total: 'Total', legend: [{ w: 'Strong', c: 'var(--sand)' }, { w: 'Partial', c: 'var(--accent-text)' }, { w: 'None', c: 'var(--line-strong)' }], method: 'Method: we score what is in force or operating today, not announcements. Strategy comes from each country dossier; deployments from our database (10 or more: strong; 3–9: partial). Every other score links to its source in the country dossier.', source: 'Source' }, pTabId: 'rm-ptab-' + pcK,
       goCompare: e => { e.preventDefault(); this.go('compare'); },
       onPTabKey: e => { const i = this.PCC.indexOf(pcK); let d = 0; if (e.key === 'ArrowRight') d = ar ? -1 : 1; if (e.key === 'ArrowLeft') d = ar ? 1 : -1; if (!d) return; e.preventDefault(); const k = this.PCC[(i + d + this.PCC.length) % this.PCC.length]; this.setState({ pc: k }, () => { const b = document.getElementById('rm-ptab-' + k); b && b.focus(); }); },
       tabs, fields, tabId: 'rm-tab-' + S.tab,
