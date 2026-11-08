@@ -81,6 +81,26 @@ html,body{margin:0;padding:0;background:#F7F5EF}
 <main>
 <section id="data" data-screen-label="02 Country dossiers" style="padding:40px 0 var(--sec-pad);background:var(--bg-raised)">
   <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:flex;flex-direction:column;gap:32px">
+    <sc-if value="{{ hasDeadlines }}">
+    <div id="deadlines" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px">
+        <div style="display:flex;flex-direction:column;gap:4px;max-width:760px"><h2 style="margin:0;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ dlT.title }}</h2><p style="margin:0;font-size:14px;color:var(--fg-muted)">{{ dlT.sub }}</p></div>
+        <div style="display:flex;gap:6px"><button type="button" onClick="{{ dlPrev }}" aria-label="{{ dlT.prev }}" style="width:36px;height:36px;border:1px solid var(--line-strong);background:var(--bg);border-radius:3px;cursor:pointer;color:var(--fg)">{{ prevArrow }}</button><button type="button" onClick="{{ dlNext }}" aria-label="{{ dlT.next }}" style="width:36px;height:36px;border:1px solid var(--line-strong);background:var(--bg);border-radius:3px;cursor:pointer;color:var(--fg)">{{ nextArrow }}</button></div>
+      </div>
+      <ol ref="{{ dlRail }}" data-rail="" aria-label="{{ dlT.title }}" style="list-style:none;margin:0;padding:0 0 4px;display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none">
+        <sc-for list="{{ deadlines }}" as="x" hint-placeholder-count="6">
+          <li style="flex:none;width:236px;scroll-snap-align:start">
+            <button type="button" onClick="{{ x.pick }}" style="width:100%;height:100%;padding:14px;background:var(--bg);border:1px solid var(--line-strong);border-top:3px solid {{ x.hot }};border-radius:0;text-align:start;cursor:pointer;color:var(--fg);display:flex;flex-direction:column;gap:6px;font:inherit" style-hover="border-color:var(--fg)">
+              <span style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="font:500 14px/1 var(--font-num)">{{ x.when }}</span><span style="font:500 11px/1 var(--font-num);color:{{ x.hotTxt }};white-space:nowrap">{{ x.soon }}</span></span>
+              <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--fg-subtle)"><img src="{{ x.flag }}" alt="" width="16" height="12" style="display:block;border:1px solid var(--line)">{{ x.name }}</span>
+              <span style="font-size:14px;line-height:1.4"><sc-if value="{{ x.hasV }}"><b style="font-family:var(--font-num);font-weight:500">{{ x.v }}</b> </sc-if>{{ x.what }}</span>
+              <span style="font:500 11px/1 var(--font-num);color:var(--accent-text)">{{ x.more }}</span><span style="margin-top:auto;font-size:12px;line-height:1.35;color:var(--fg-subtle);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">{{ x.prog }}</span>
+            </button>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+    </sc-if>
     <div style="display:grid;grid-template-columns:var(--grid);column-gap:var(--gap);row-gap:24px">
       <div style="grid-column:1 / -1;align-self:end;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;min-width:0">
         <div role="tablist" aria-label="{{ t.pCountries }}" data-rail="" style="display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;min-width:0;max-width:100%">
@@ -157,6 +177,20 @@ html,body{margin:0;padding:0;background:#F7F5EF}
                   </li>
                 </sc-for>
               </ul>
+              <sc-if value="{{ p.hasDeps }}">
+                <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
+                  <span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--sand);display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sand)"></span>{{ p.depLbl }}</span>
+                  <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+                    <sc-for list="{{ p.deps }}" as="dp" hint-placeholder-count="2">
+                      <li><a href="{{ dp.href }}" style="display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px">
+                        <span aria-hidden="true" style="width:28px;height:28px;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ dp.badge.bg }};font:600 10px/1 var(--font-num);color:var(--fg)"><sc-if value="{{ dp.badge.hasImg }}"><img src="{{ dp.badge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if><sc-if value="{{ dp.badge.noImg }}">{{ dp.badge.mono }}</sc-if></span>
+                        <span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ dp.title }}</span>
+                        <span style="font:400 12px/1 var(--font-num);color:var(--fg-subtle);white-space:nowrap">{{ dp.when }} <span aria-hidden="true">{{ arrow }}</span></span>
+                      </a></li>
+                    </sc-for>
+                  </ul>
+                </div>
+              </sc-if>
             </article>
           </sc-for>
           <p style="margin:16px 0 0;font-size:12px;color:var(--fg-subtle)">{{ t.pKpiNote }}</p>

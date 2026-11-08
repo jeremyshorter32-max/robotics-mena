@@ -36,6 +36,13 @@
       "حصة قطاع الروبوتات والأتمتة من الناتج المحلي لدبي",
       2032
      ]
+    ],
+    [
+     "d01",
+     "d23",
+     "d25",
+     "d28",
+     "d32"
     ]
    ],
    [
@@ -60,6 +67,12 @@
       "من إجمالي الرحلات في دبي ذاتية القيادة",
       2040
      ]
+    ],
+    [
+     "d07",
+     "d14",
+     "d27",
+     "d02"
     ]
    ],
    [
@@ -84,6 +97,9 @@
       "وظيفة جديدة (حد أقصى)",
       2045
      ]
+    ],
+    [
+     "d02"
     ]
    ],
    [
@@ -801,6 +817,10 @@
       "من مركبات نقل البضائع ذاتية القيادة",
       2030
      ]
+    ],
+    [
+     "d16",
+     "d15"
     ]
    ],
    [
@@ -1408,7 +1428,15 @@
     "url": "https://www.cliffordchance.com/content/dam/cliffordchance/briefings/2026/11/responsible-ai-policy-shift-guiding-regime-supervisory-one.pdf",
     "source": "AS&H Clifford Chance"
    }
-  }
+  },
+  "deadlines": [
+   {
+    "date": "2027-01-06",
+    "en": "Passenger robotaxi regulation takes effect",
+    "ar": "دخول لائحة نقل الركاب بالمركبات ذاتية القيادة حيز التنفيذ",
+    "url": "https://www.albiladpress.com/news/2026/6598/finance/1029871.html"
+   }
+  ]
  },
  "QA": {
   "sum": [
@@ -1478,6 +1506,9 @@
       "المرحلة الثانية للروبوتاكسي: تشغيل بإشراف عن بُعد دون مشرف سلامة على متن المركبة، وتُطبَّق مساراً تلو الآخر",
       null
      ]
+    ],
+    [
+     "d24"
     ]
    ],
    [
@@ -2163,6 +2194,9 @@
        "خلال 2–3 سنوات من أكتوبر 2026"
       ]
      ]
+    ],
+    [
+     "d18"
     ]
    ]
   ],
@@ -3220,6 +3254,10 @@
       "منطقة خضراء معتمدة لتحليق الطائرات المسيّرة عبر منصة «سرب»، مع دراسة أكثر من 800 موقع إضافي",
       null
      ]
+    ],
+    [
+     "d26",
+     "d10"
     ]
    ]
   ],
@@ -3678,7 +3716,15 @@
     "url": "https://cms.law/en/omn/legal-updates/oman-personal-data-protection-law-entering-the-enforcement-phase",
     "source": "CMS"
    }
-  }
+  },
+  "deadlines": [
+   {
+    "date": "2026-12-06",
+    "en": "First field trials in the Advanced Air Mobility sandbox",
+    "ar": "أولى التجارب الميدانية في البيئة التجريبية للتنقل الجوي المتقدم",
+    "url": "https://www.omanobserver.om/ampArticle/1197442"
+   }
+  ]
  },
  "BH": {
   "sum": [
@@ -3710,6 +3756,9 @@
       "مصنع يتحول إلى مصنع ذكي، وفق مؤشر جاهزية الصناعة الذكية",
       2026
      ]
+    ],
+    [
+     "d06"
     ]
    ],
    [
@@ -4656,7 +4705,10 @@
       "اللائحة التنفيذية",
       "executive regulations setting licensing procedures, conditions and fees, due by 31 December",
       "لائحة تنفيذية تحدد إجراءات الترخيص وشروطه ورسومه، موعدها 31 ديسمبر",
-      2026
+      [
+       "31 Dec 2026",
+       "31 ديسمبر 2026"
+      ]
      ],
      [
       "1 year",
@@ -5054,6 +5106,14 @@
     "url": "https://timeskuwait.com/citra-issues-new-data-privacy-regulations/",
     "source": "Times Kuwait"
    }
-  }
+  },
+  "deadlines": [
+   {
+    "date": "2026-12-31",
+    "en": "Drone law's executive regulations due",
+    "ar": "موعد صدور اللائحة التنفيذية لقانون المسيّرات",
+    "url": "https://gulfnews.com/world/gulf/kuwait/kuwait-brings-drones-under-new-law-with-jail-terms-and-fines-up-to-kd5000-1.500672815"
+   }
+  ]
  }
 }
