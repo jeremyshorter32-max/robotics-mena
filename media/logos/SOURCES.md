@@ -116,3 +116,50 @@ No usable logo found for FalconViz, Sager Drones, AutoGo, Sinaha Technology, Apo
 | legend-robot.png | Legend Robot | existing file (not regenerated) |
 | pudu-robotics.png | Pudu Robotics | https://www.pudurobotics.com/_next/static/media/logo.851bf515.svg |
 | vortexinfo.png | VORTEXINFO | https://9645272.s21i.co99.net/4/4/ABUIABAEGAAg1qCSrQYo6ZyhzAcwl0A4qgc.png (white wordmark; V mark recoloured to brand blue on a white tile) |
+| proven-robotics.png | PROVEN Robotics | https://provenrobotics.ai/wp-content/uploads/2023/09/Icon-1.png |
+| robomecs.png | RoboMecs | https://robomecs.com/assets/brand/robomecs-logo-en.svg |
+| shamal-technologies.png | Shamal Technologies | https://shamal.sa/logo-primary.svg |
+| firnas-aero.png | Firnas Aero | https://firnas.aero/wp-content/uploads/2021/03/firnas-aero-logo.png |
+| afi-robotics.png | AFI Robotics | https://afirobotics.com.sa/wp-content/uploads/2023/09/AFI-Robotics-LOGO-1-1.png |
+| robotics-llc.png | Robotics LLC | https://robotics.sa/brand/robotics-logo.png |
+| rfufco.png | Rfufco | https://rfufco.com.sa/site/img/logo.png |
+| aerial-solutions-company-for-aircrafts.png | Aerial Solutions Company for Aircrafts | https://aerial-solutions.com/wp-content/uploads/2023/05/logo_AerialSolution.png |
+| kuwait-aerospace-technologies-kat.png | Kuwait Aerospace Technologies (KAT) | https://kat.com.kw/wp-content/uploads/kat-logo-dark.svg |
+| star-drones.png | Star Drones | https://www.stardrones.om/wp-content/uploads/2026/01/logo1.png |
+| sol7.png | Sol7 | https://www.sol7.om/solo_logo.svg |
+| roboticktick.png | Roboticktick | https://roboticktick.com/static/img/WRO-OMAN-logo.png |
+| gulf-ourooba-trading.png | Gulf Ourooba Trading | https://ourooba.com/wp-content/uploads/2025/06/gobot-logo-final-01-e1781164504577.png |
+| avelabs.png | Avelabs | https://cdn.prod.website-files.com/6266abc1b558336e1d5bfbe5/683d70229489aa26497d93e7_Avelabs-Logo-03%201.svg |
+| robotics-corner.png | Robotics Corner | https://roboticscorner.tech/images/logo.png |
+| terra-drone.png | Terra Drone | https://terra-drone.net/wp-content/themes/terra-drone-ja/assets/images/logo.svg |
+| flyability.png | Flyability | https://www.flyability.com/hubfs/Brand_Identity/Flyability%20Logo%20Package/1%20-%20Original/flyability_logo_original_color_with_spaces.jpg |
+| wingtra.png | Wingtra | https://wingtra.com/wp-content/uploads/wingtra-logo-short-300x300.png |
+| intelligent-growth-solutions.png | Intelligent Growth Solutions | https://cdn.prod.website-files.com/5f477c69c12b5c2cdadbc16e/655f14b1b6bfe7f5c0c59fc9_Newesr%20logo%20IGS.svg |
+| air-q.png | Air Q | https://airq-ad.com/wp-content/uploads/2022/05/logo-2.svg |
+| eanan.png | EANAN | https://eanan.ae/wp-content/uploads/2024/12/main-logo.svg |
+| cntxt-ai.png | CNTXT AI | https://www.cntxt.tech/logo.svg |
+| al-seer-marine.png | Al Seer Marine | https://alseermarine.com/wp-content/uploads/2024/03/logo-light-1.png |
+| sigma-enterprises.png | Sigma Enterprises | https://www.sep.ae/images/sigma-logo-black.png |
+| gis-drones.png | GIS Drones | https://gisdrones.com/wp-content/uploads/2024/09/GIS-Logo-White.svg |
+| aerosmart.png | Aerosmart | https://aerosmart.ae/wp-content/uploads/2026/06/Aerosmart-logo-1img.png |
+| airscope.png | Airscope | https://airscope.ae/wp-content/uploads/2020/08/airscope_logo_m.png |
+| sindan.png | Sindan | https://sindan.ae/app/uploads/2025/10/sindan-logo.svg |
+| drone-film-arabia.png | Drone Film Arabia | https://dronefilmarabia.com/wp-content/uploads/2021/11/DRONE-FILM-ARABIA-DFA-LOGO-2acs.png |
+| alat.png | Alat | https://alat.com/images/headerComponent/desktop-logo.svg |
+| ktv-working-drone-saudi-arabia.png | KTV Working Drone Saudi Arabia | https://ktvworkingdrone.com/wp-content/uploads/2025/08/ktv.png |
+| clear-sky-drones.png | Clear Sky Drones | https://clearsky-drones.com/images/csd-logo-full-white.png |
+| ankaa-space-technologies.png | Ankaa Space & Technologies | https://res.cloudinary.com/dtibgf65c/image/upload/f_auto,q_100,w_400/v1748934411/3fw_dpsqnh.png |
+| zain-drone.png | Zain Drone | https://zain.com/logoBlack.svg |
+| aerodrive-engineering-services-aes.png | Aerodrive Engineering Services (AES) | https://www.aes.ma/favicon/apple-touch-icon.png |
+| atlan-space.png | ATLAN Space | https://atlanspace.com/wp-content/uploads/2023/04/logo.svg |
+| lebotics.png | Lebotics | https://lebotics.com/assets/images/logo.svg |
+| quicktron-robotics.png | Quicktron Robotics | https://www.quicktron.com/storage/479/logo-1676973788tTMTV-(1).png |
+| cmr-surgical.png | CMR Surgical | https://us.cmrsurgical.com/wp-content/uploads/2022/04/cmr-surgical-logo-web-white.svg |
+| simbe.png | Simbe | https://cdn.sanity.io/images/oh42c9n6/production/9970172354f49cb1976fd3ad50ff74fda92d7763-139x34.svg |
+| deep-trekker.png | Deep Trekker | https://www.deeptrekker.com/_next/static/media/deep-trekker-logo-halma-footer.0nfsfp_zspkb6.svg |
+| aisus.png | AISUS | https://www.aisus.co.uk/wp-content/uploads/2020/03/site-logo.svg |
+| fugro.png | Fugro | https://www.fugro.com/apple-touch-icon.png |
+| skydrive.png | SkyDrive | https://skydrive.co.jp/en/wp-content/themes/skydrive-en-v20260706/assets/images/common/logo-skydrive.webp |
+| draganfly.png | Draganfly | https://draganfly.com/wp-content/uploads/2020/04/logo@2x-min.png |
+| lodd-autonomous.png | LODD Autonomous | https://lodd.com/wp-content/uploads/2026/04/White-with-Green-logo-300x169.webp |
+| cargox.png | CargoX | https://i0.wp.com/cargo-x.ai/wp-content/uploads/2026/01/CargoX-logos_White.png?fit=4168%2C1251&ssl=1 |

@@ -2796,5 +2796,1434 @@
     },
     "image_url": "https://9645272.s21i.co99.net/4/ABUIABAEGAAg_ODwxAYoqMGcQzCgCziqBg.png",
     "image_page": "https://www.vortexinfo-tech.com/"
+  },
+  {
+    "id": "lodd-autonomous",
+    "name": "LODD Autonomous",
+    "name_ar": "لود للأنظمة الذاتية",
+    "country": "AE",
+    "category": "drone",
+    "stage": "a",
+    "summary": "Abu Dhabi company founded in 2023 that designs and builds Hili, a hybrid VTOL cargo drone carrying up to 250kg, for middle-mile and offshore logistics.",
+    "summary_ar": "شركة في أبوظبي تأسست عام 2023 تصمم وتصنع «حيلي»، وهي طائرة شحن هجينة دون طيار بإقلاع وهبوط عموديين تحمل حتى 250 كغ للنقل اللوجستي متوسط المسافة والعمليات البحرية.",
+    "website": "https://www.lodd.com",
+    "source": "The National",
+    "source_url": "https://www.thenationalnews.com/business/partner-content/2025/11/13/uaes-lodd-autonomous-completes-first-test-flight-of-abu-dhabi-built-uav",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Abu Dhabi",
+    "mena_countries": [
+      "AE"
+    ],
+    "logo": "/media/logos/lodd-autonomous.png"
+  },
+  {
+    "id": "air-q",
+    "name": "Air Q",
+    "name_ar": "إير كيو",
+    "country": "AE",
+    "category": "drone",
+    "stage": "seed",
+    "summary": "Masdar City-based maker of UAV systems designed and built in-house in the UAE, including the Harara modular VTOL fixed-wing aircraft for cargo and surveillance missions.",
+    "summary_ar": "شركة مقرها مدينة مصدر تصمم وتصنع أنظمة طائرات دون طيار داخل الإمارات، منها الطائرة المعيارية «حرارة» ذات الجناح الثابت والإقلاع العمودي لمهام الشحن والمراقبة.",
+    "website": "https://airq-ad.com",
+    "source": "Khaleej Times",
+    "source_url": "https://www.khaleejtimes.com/business/uae-born-aerospace-company-rises-from-masdar-city-abu-dhabi",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Abu Dhabi",
+    "mena_countries": [
+      "AE"
+    ],
+    "logo": "/media/logos/air-q.png"
+  },
+  {
+    "id": "eanan",
+    "name": "EANAN",
+    "name_ar": "عنان",
+    "country": "AE",
+    "category": "drone",
+    "secondary": "agri",
+    "stage": "growth",
+    "summary": "Dubai drone manufacturer producing commercial UAVs in the UAE, including the Ghaith feeder-seeder drone for fish feeding and seeding, plus inspection and delivery drones.",
+    "summary_ar": "شركة في دبي تصنع طائرات دون طيار تجارية داخل الإمارات، منها طائرة «غيث» لتغذية الأسماك وبذر البذور، إلى جانب طائرات للفحص والتوصيل.",
+    "website": "https://eanan.ae",
+    "source": "Khaleej Times",
+    "source_url": "https://www.khaleejtimes.com/business/aviation/uaes-first-commercial-drone-factory-feed-fish-detect-palm-tree-diseases",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE"
+    ],
+    "logo": "/media/logos/eanan.png"
+  },
+  {
+    "id": "cargox",
+    "name": "CargoX",
+    "name_ar": "كارغو إكس",
+    "country": "AE",
+    "category": "av",
+    "stage": "a",
+    "summary": "UAE autonomous delivery company running driverless vehicles on last-, middle- and long-haul routes; raised $250m led by BlueFive Capital in 2026 to launch in Abu Dhabi and Dubai.",
+    "summary_ar": "شركة إماراتية للتوصيل الذاتي تشغّل مركبات دون سائق على مسارات الميل الأخير والمتوسط والطويل، وجمعت 250 مليون دولار بقيادة «بلو فايف كابيتال» عام 2026 لبدء العمل في أبوظبي ودبي.",
+    "website": "https://cargo-x.ai",
+    "source": "Enterprise AM",
+    "source_url": "https://enterpriseam.com/uae/?p=117839",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Abu Dhabi",
+    "mena_countries": [
+      "AE"
+    ],
+    "logo": "/media/logos/cargox.png"
+  },
+  {
+    "id": "cntxt-ai",
+    "name": "CNTXT AI",
+    "name_ar": "كونتكست للذكاء الاصطناعي",
+    "country": "AE",
+    "category": "software",
+    "stage": "growth",
+    "summary": "Abu Dhabi AI company founded in 2024 that is opening robotics-data collection and training facilities in Dubai and Abu Dhabi to supply physical-AI training data.",
+    "summary_ar": "شركة ذكاء اصطناعي في أبوظبي تأسست عام 2024 وتفتتح منشآت لجمع بيانات الروبوتات وتدريبها في دبي وأبوظبي لتوفير بيانات تدريب للذكاء الاصطناعي المادي.",
+    "website": "https://www.cntxt.tech",
+    "source": "The National",
+    "source_url": "https://thenationalnews.com/future/technology/2026/10/30/cntxt-robots-physical-ai-mohammad-abu-sheikh",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Abu Dhabi",
+    "mena_countries": [
+      "AE"
+    ],
+    "logo": "/media/logos/cntxt-ai.png"
+  },
+  {
+    "id": "al-seer-marine",
+    "name": "Al Seer Marine",
+    "name_ar": "السير مارين",
+    "country": "AE",
+    "category": "marine",
+    "stage": "corp",
+    "summary": "Abu Dhabi shipbuilder and IHC subsidiary that designs and builds unmanned surface vessels for defence and security customers in the UAE and GCC, in partnership with L3Harris.",
+    "summary_ar": "شركة بناء سفن في أبوظبي تابعة لـ«آي إتش سي» تصمم وتبني زوارق سطحية غير مأهولة لعملاء الدفاع والأمن في الإمارات ودول الخليج بالشراكة مع «إل 3 هاريس».",
+    "website": "https://www.alseermarine.com",
+    "source": "L3Harris newsroom",
+    "source_url": "https://l3harris.com/newsroom/editorial/2026/02/al-seer-marine-and-l3harris-deepen-strategic-agreement-advance-maritime",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Abu Dhabi",
+    "mena_countries": [
+      "AE",
+      "SA"
+    ],
+    "logo": "/media/logos/al-seer-marine.png"
+  },
+  {
+    "id": "marakeb-technologies",
+    "name": "Marakeb Technologies",
+    "name_ar": "مراكب للتقنيات",
+    "country": "AE",
+    "category": "marine",
+    "stage": "growth",
+    "summary": "UAE maker of unmanned surface vessels and the MAP Pro kit that converts crewed boats to remote or autonomous operation; built a 21.25m multi-mission USV for the UAE Navy.",
+    "summary_ar": "شركة إماراتية تصنع الزوارق السطحية غير المأهولة ونظام «ماب برو» الذي يحوّل القوارب المأهولة إلى التشغيل عن بُعد أو الذاتي، وطورت زورقاً متعدد المهام بطول 21.25 متراً للقوات البحرية الإماراتية.",
+    "website": "https://marakeb.tech",
+    "source": "Zawya (press release)",
+    "source_url": "https://www.zawya.com/en/press-release/companies-news/marakeb-technologies-develops-2125m-multi-mission-unmanned-surface-vessel-for-the-uae-navy-oimw9j6b",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Abu Dhabi",
+    "mena_countries": [
+      "AE"
+    ]
+  },
+  {
+    "id": "sigma-enterprises",
+    "name": "Sigma Enterprises",
+    "name_ar": "سيغما إنتربرايزز",
+    "country": "AE",
+    "category": "integrator",
+    "secondary": "inspection",
+    "stage": "corp",
+    "summary": "Dubai-based engineering products distributor (part of Mazrui International) holding UAE distribution rights for ANYbotics, Flyability and Wingtra inspection robots and drones.",
+    "summary_ar": "شركة توزيع منتجات هندسية مقرها دبي وتابعة لمجموعة المزروعي الدولية، تملك حقوق توزيع روبوتات الفحص والطائرات المسيّرة من «إني بوتيكس» و«فلاي أبيليتي» و«وينغترا» في الإمارات.",
+    "website": "https://www.sigma-epd.com",
+    "source": "Gulf News (GN Focus)",
+    "source_url": "https://gulfnews.com/gn-focus/sigma-enterprises-takes-leadership-role-by-bringing-the-latest-swiss-robotics-and-drone-technology-to-the-gcc-1.500136213",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE"
+    ],
+    "logo": "/media/logos/sigma-enterprises.png"
+  },
+  {
+    "id": "action-to-action-robotics",
+    "name": "Action To Action Robotics",
+    "name_ar": "أكشن تو أكشن للروبوتات",
+    "country": "AE",
+    "category": "service",
+    "secondary": "integrator",
+    "stage": "seed",
+    "summary": "Dubai robotics and automation company that sells, rents and services humanoid, delivery and restaurant robots and runs a robots and technology experience centre in Dubai.",
+    "summary_ar": "شركة روبوتات وأتمتة في دبي تبيع وتؤجر وتصون الروبوتات الشبيهة بالبشر وروبوتات التوصيل والمطاعم، وتدير مركزاً لتجربة الروبوتات والتقنية في دبي.",
+    "website": "https://actiontoaction.ai",
+    "source": "Khaleej Times",
+    "source_url": "https://www.khaleejtimes.com/business/tech/from-fighting-fires-to-performing-surgery-the-rise-of-robots-in-uae",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE"
+    ]
+  },
+  {
+    "id": "gis-drones",
+    "name": "GIS Drones",
+    "name_ar": "جي آي إس درونز",
+    "country": "AE",
+    "category": "drone",
+    "stage": "seed",
+    "summary": "Dubai drone services company founded in 2020 providing aerial inspection, surveying, LiDAR mapping and construction monitoring, including a topographic survey for Dubai RTA cycle paths.",
+    "summary_ar": "شركة خدمات طائرات مسيّرة في دبي تأسست عام 2020 تقدم الفحص الجوي والمسح ورسم الخرائط بتقنية الليدار ومتابعة مشاريع البناء، ومنها مسح طبوغرافي لمسارات الدراجات لهيئة الطرق والمواصلات في دبي.",
+    "website": "https://www.gisdrones.com",
+    "source": "Inside Unmanned Systems",
+    "source_url": "https://insideunmannedsystems.com/drone-based-inspection-and-surveying-far-and-away/",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE",
+      "SA",
+      "OM"
+    ],
+    "logo": "/media/logos/gis-drones.png"
+  },
+  {
+    "id": "aerosmart",
+    "name": "Aerosmart",
+    "name_ar": "إيروسمارت",
+    "country": "AE",
+    "category": "integrator",
+    "secondary": "drone",
+    "stage": "seed",
+    "summary": "Dubai-based authorised DJI Enterprise dealer supplying drones and solutions for inspection, surveying, public safety and firefighting, with maintenance and repair services.",
+    "summary_ar": "وكيل معتمد لطائرات «دي جي آي إنتربرايز» مقره دبي، يوفر طائرات مسيّرة وحلولاً للفحص والمسح والسلامة العامة ومكافحة الحرائق، مع خدمات الصيانة والإصلاح.",
+    "website": "https://www.aerosmart.ae",
+    "source": "Aerosmart (company website)",
+    "source_url": "https://www.aerosmart.ae",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE"
+    ],
+    "logo": "/media/logos/aerosmart.png"
+  },
+  {
+    "id": "airscope",
+    "name": "Airscope",
+    "name_ar": "إيرسكوب",
+    "country": "AE",
+    "category": "drone",
+    "stage": "seed",
+    "summary": "Dubai drone services company offering industrial inspections (flare stacks, pipelines, tanks), surveys, thermography, tethered drones and drone permits, plus aerial filming.",
+    "summary_ar": "شركة خدمات طائرات مسيّرة في دبي تقدم الفحص الصناعي لمداخن الشعلة وخطوط الأنابيب والخزانات، والمسح والتصوير الحراري والطائرات المربوطة واستخراج التصاريح، إضافة إلى التصوير الجوي.",
+    "website": "https://airscope.ae",
+    "source": "Airscope (company website)",
+    "source_url": "https://airscope.ae",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE"
+    ],
+    "logo": "/media/logos/airscope.png"
+  },
+  {
+    "id": "rdi-robots",
+    "name": "RDI Robots",
+    "name_ar": "آر دي آي روبوتس",
+    "country": "AE",
+    "category": "humanoid",
+    "secondary": "service",
+    "stage": "seed",
+    "summary": "Dubai company founded in 2022 that develops and integrates service robots, including Ardi, a hyper-realistic humanoid used in its RoboShow interactive entertainment format.",
+    "summary_ar": "شركة في دبي تأسست عام 2022 تطور روبوتات الخدمة وتدمجها، ومنها «آردي»، وهو روبوت شبيه بالبشر بمظهر واقعي يُستخدم في عرضها الترفيهي التفاعلي «روبوشو».",
+    "website": "https://www.rdirobots.com",
+    "source": "The Arabian Post (AP News wire)",
+    "source_url": "https://thearabianpost.com/a-uae-company-creates-a-humanoid-robot-ardi-to-arrange-a-roboshow/",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE"
+    ]
+  },
+  {
+    "id": "sindan",
+    "name": "Sindan",
+    "name_ar": "سندان",
+    "country": "AE",
+    "category": "integrator",
+    "secondary": "humanoid",
+    "stage": "growth",
+    "summary": "Abu Dhabi advanced-manufacturing company offering additive manufacturing, automation and robotics and industrial AI; showcases humanoid and quadruped robots and aims to localise robot production.",
+    "summary_ar": "شركة تصنيع متقدم في أبوظبي تقدم التصنيع بالإضافة والأتمتة والروبوتات والذكاء الاصطناعي الصناعي، وتعرض روبوتات شبيهة بالبشر وروبوتات رباعية الأرجل وتسعى إلى توطين تصنيع الروبوتات.",
+    "website": "https://sindan.ae",
+    "source": "Gulf Daily News",
+    "source_url": "https://www.gdnonline.com/Details/1408957",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Abu Dhabi",
+    "mena_countries": [
+      "AE"
+    ],
+    "logo": "/media/logos/sindan.png"
+  },
+  {
+    "id": "drone-film-arabia",
+    "name": "Drone Film Arabia",
+    "name_ar": "درون فيلم أرابيا",
+    "country": "AE",
+    "category": "drone",
+    "stage": "seed",
+    "summary": "Dubai drone services firm providing construction progress monitoring, surveys, 3D mapping and aerial filming across the UAE, including handling of flight permits.",
+    "summary_ar": "شركة خدمات طائرات مسيّرة في دبي تقدم متابعة تقدم مشاريع البناء والمسح ورسم الخرائط ثلاثية الأبعاد والتصوير الجوي في أنحاء الإمارات، وتتولى استخراج تصاريح الطيران.",
+    "website": "https://www.dronefilmarabia.com",
+    "source": "Drone Film Arabia (company website)",
+    "source_url": "https://www.dronefilmarabia.com",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE"
+    ],
+    "logo": "/media/logos/drone-film-arabia.png"
+  },
+  {
+    "id": "proven-robotics",
+    "name": "PROVEN Robotics",
+    "name_ar": "بروفن روبوتكس",
+    "country": "SA",
+    "category": "integrator",
+    "secondary": "education",
+    "stage": "growth",
+    "summary": "Riyadh-based robotics division of PROVEN Solution that sells, leases (RaaS) and maintains service and industrial robots such as Pudu and Pepper, and runs school robotics clubs in Saudi Arabia.",
+    "summary_ar": "قسم الروبوتات في شركة بروفن سوليوشن ومقره الرياض، يبيع ويؤجّر ويصون روبوتات الخدمة والروبوتات الصناعية مثل بودو وبيبر، ويدير أندية روبوتات مدرسية في السعودية.",
+    "website": "https://provenrobotics.ai/",
+    "source": "Zawya (press release)",
+    "source_url": "https://zawya.com/en/press-release/companies-news/proven-robotics-launches-first-robotics-club-in-the-kingdom-to-revolutionize-stem-education-lsvlwjmb",
+    "added": "2026-11-09",
+    "hq": "SA",
+    "hq_city": "Riyadh",
+    "mena_countries": [
+      "SA",
+      "AE",
+      "KW"
+    ],
+    "logo": "/media/logos/proven-robotics.png"
+  },
+  {
+    "id": "robomecs",
+    "name": "RoboMecs",
+    "name_ar": "روبوميكس",
+    "country": "SA",
+    "category": "integrator",
+    "secondary": "arm",
+    "stage": "growth",
+    "summary": "Jeddah-based engineering firm that designs and integrates robotic cells, conveyors, warehouse automation and control systems for manufacturers and logistics operators in Saudi Arabia.",
+    "summary_ar": "شركة هندسية مقرها جدة تصمم وتدمج الخلايا الروبوتية والسيور الناقلة وأتمتة المستودعات وأنظمة التحكم للمصانع وشركات الخدمات اللوجستية في السعودية.",
+    "website": "https://robomecs.com/",
+    "source": "RoboMecs (company site)",
+    "source_url": "https://robomecs.com/",
+    "added": "2026-11-09",
+    "hq": "SA",
+    "hq_city": "Jeddah",
+    "mena_countries": [
+      "SA"
+    ],
+    "logo": "/media/logos/robomecs.png"
+  },
+  {
+    "id": "shamal-technologies",
+    "name": "Shamal Technologies",
+    "name_ar": "شمال للتقنية",
+    "country": "SA",
+    "category": "drone",
+    "secondary": "integrator",
+    "stage": "growth",
+    "summary": "Jeddah-based drone and geospatial company offering aerial survey, LiDAR, inspection and construction monitoring, and an authorised seller of DJI products in Saudi Arabia.",
+    "summary_ar": "شركة طائرات مسيّرة وحلول جيومكانية مقرها جدة، تقدم المسح الجوي والليدار والفحص ومراقبة الإنشاءات، وهي بائع معتمد لمنتجات DJI في السعودية.",
+    "website": "https://shamal.sa/",
+    "source": "Shamal Technologies (company site)",
+    "source_url": "https://shamal.sa/",
+    "added": "2026-11-09",
+    "hq": "SA",
+    "hq_city": "Jeddah",
+    "mena_countries": [
+      "SA"
+    ],
+    "logo": "/media/logos/shamal-technologies.png"
+  },
+  {
+    "id": "firnas-aero",
+    "name": "Firnas Aero",
+    "name_ar": "فرناس إيرو",
+    "country": "SA",
+    "category": "drone",
+    "secondary": "inspection",
+    "stage": "seed",
+    "summary": "KAUST-based startup founded in 2018 that builds and operates autonomous drone-in-a-box systems for surveillance and infrastructure inspection in Saudi Arabia.",
+    "summary_ar": "شركة ناشئة في جامعة الملك عبدالله للعلوم والتقنية تأسست عام 2018، تطوّر وتشغّل أنظمة الطائرة المسيّرة ذاتية التشغيل داخل الصندوق للمراقبة وفحص البنية التحتية في السعودية.",
+    "website": "https://firnas.aero/",
+    "source": "Arab News",
+    "source_url": "https://www.arabnews.com/node/1707466",
+    "added": "2026-11-09",
+    "hq": "SA",
+    "hq_city": "Thuwal",
+    "mena_countries": [
+      "SA"
+    ],
+    "logo": "/media/logos/firnas-aero.png"
+  },
+  {
+    "id": "afi-robotics",
+    "name": "AFI Robotics",
+    "name_ar": "إيه إف آي للروبوتات",
+    "country": "SA",
+    "category": "inspection",
+    "stage": "seed",
+    "summary": "Al Khobar-based company, founded in 2020, that develops and deploys remotely operated robots for in-service tank inspection, sludge removal and confined-space work in oil, gas and petrochemical plants.",
+    "summary_ar": "شركة مقرها الخبر تأسست عام 2020، تطوّر وتشغّل روبوتات يُتحكم بها عن بُعد لفحص الخزانات أثناء التشغيل وإزالة الرواسب والعمل في الأماكن الضيقة في منشآت النفط والغاز والبتروكيماويات.",
+    "website": "https://afirobotics.com.sa/",
+    "source": "Zawya (press release)",
+    "source_url": "https://www.zawya.com/en/press-release/companies-news/afi-robotics-advances-field-applications-of-robotic-inspection-in-industrial-maintenance-ofgcnhpd",
+    "added": "2026-11-09",
+    "hq": "SA",
+    "hq_city": "Al Khobar",
+    "mena_countries": [
+      "SA"
+    ],
+    "logo": "/media/logos/afi-robotics.png"
+  },
+  {
+    "id": "alat",
+    "name": "Alat",
+    "name_ar": "آلات",
+    "country": "SA",
+    "category": "arm",
+    "stage": "corp",
+    "summary": "PIF-owned Riyadh manufacturing company that formed a joint venture with SoftBank Group in 2024 to build industrial robots in a fully automated hub in Riyadh.",
+    "summary_ar": "شركة تصنيع مملوكة لصندوق الاستثمارات العامة ومقرها الرياض، أسست عام 2024 مشروعاً مشتركاً مع مجموعة سوفت بنك لتصنيع الروبوتات الصناعية في مركز مؤتمت بالكامل في الرياض.",
+    "website": "https://alat.com/en/",
+    "source": "SoftBank Group (press release)",
+    "source_url": "https://group.softbank/en/news/press/20240220",
+    "added": "2026-11-09",
+    "hq": "SA",
+    "hq_city": "Riyadh",
+    "mena_countries": [
+      "SA"
+    ],
+    "logo": "/media/logos/alat.png"
+  },
+  {
+    "id": "robotics-llc",
+    "name": "Robotics LLC",
+    "name_ar": "روبوتكس",
+    "country": "SA",
+    "category": "education",
+    "stage": "seed",
+    "summary": "Riyadh-based robotics education company that runs online and in-person robot-building courses for students aged 8 to 22 and sells robotics training kits in Saudi Arabia.",
+    "summary_ar": "شركة تعليم روبوتات مقرها الرياض، تقدم دورات حضورية وعن بُعد في بناء الروبوتات للطلاب من 8 إلى 22 عاماً، وتبيع حقائب تدريب على الروبوتات في السعودية.",
+    "website": "https://www.robotics.sa/",
+    "source": "Arab News",
+    "source_url": "https://www.arabnews.com/node/2015541",
+    "added": "2026-11-09",
+    "hq": "SA",
+    "hq_city": "Riyadh",
+    "mena_countries": [
+      "SA"
+    ],
+    "logo": "/media/logos/robotics-llc.png"
+  },
+  {
+    "id": "rfufco",
+    "name": "Rfufco",
+    "name_ar": "رفوفكو",
+    "country": "SA",
+    "category": "amr",
+    "stage": "growth",
+    "summary": "Saudi maker of warehouse racking and storage systems with a factory in Sudair Industrial City that designs and installs automated storage and retrieval (ASRS) and four-way shuttle systems.",
+    "summary_ar": "شركة سعودية لتصنيع أنظمة الأرفف والتخزين في المستودعات، لها مصنع في مدينة سدير الصناعية، تصمم وتركّب أنظمة التخزين والاسترجاع الآلية ونظام المكوك رباعي الاتجاهات.",
+    "website": "https://rfufco.com.sa/",
+    "source": "Arab News",
+    "source_url": "https://www.arabnews.com/node/2648267",
+    "added": "2026-11-09",
+    "hq": "SA",
+    "hq_city": "Sudair",
+    "mena_countries": [
+      "SA"
+    ],
+    "logo": "/media/logos/rfufco.png"
+  },
+  {
+    "id": "aerial-solutions-company-for-aircrafts",
+    "name": "Aerial Solutions Company for Aircrafts",
+    "name_ar": "شركة الحلول الجوية للطائرات",
+    "country": "SA",
+    "category": "drone",
+    "stage": "growth",
+    "summary": "Riyadh-based subsidiary of ACES that supplies and operates drone and counter-drone systems, including inspection and surveillance services, and says it works with Saudi Aramco.",
+    "summary_ar": "شركة تابعة لمجموعة ACES مقرها الرياض، توفر وتشغّل أنظمة الطائرات المسيّرة وأنظمة مكافحتها، بما في ذلك خدمات الفحص والمراقبة، وتذكر أنها تعمل مع أرامكو السعودية.",
+    "website": "https://aerial-solutions.com/",
+    "source": "Aerial Solutions (company site)",
+    "source_url": "https://aerial-solutions.com/",
+    "added": "2026-11-09",
+    "hq": "SA",
+    "hq_city": "Riyadh",
+    "mena_countries": [
+      "SA"
+    ],
+    "logo": "/media/logos/aerial-solutions-company-for-aircrafts.png"
+  },
+  {
+    "id": "ktv-working-drone-saudi-arabia",
+    "name": "KTV Working Drone Saudi Arabia",
+    "name_ar": "كي تي في ووركنغ درون السعودية",
+    "country": "SA",
+    "category": "drone",
+    "stage": "seed",
+    "summary": "Saudi operator of KTV Working Drone's tethered cleaning drones, which in 2024 received GACA's first operational licence to clean building facades with drones in the Kingdom.",
+    "summary_ar": "المشغّل السعودي لطائرات التنظيف المسيّرة من KTV Working Drone، حصل عام 2024 على أول ترخيص تشغيلي من الهيئة العامة للطيران المدني لتنظيف واجهات المباني بالطائرات المسيّرة في المملكة.",
+    "website": "https://ktvworkingdrone.com/",
+    "source": "KTV Working Drone (company news, citing GACA)",
+    "source_url": "https://ktvworkingdrone.com/?p=6301",
+    "added": "2026-11-09",
+    "hq": "SA",
+    "hq_city": "",
+    "mena_countries": [
+      "SA"
+    ],
+    "logo": "/media/logos/ktv-working-drone-saudi-arabia.png"
+  },
+  {
+    "id": "clear-sky-drones",
+    "name": "Clear Sky Drones",
+    "name_ar": "كلير سكاي درونز",
+    "country": "QA",
+    "category": "drone",
+    "secondary": "service",
+    "stage": "seed",
+    "summary": "Qatari-owned drone services company using cleaning drones to wash building façades, glass curtain walls and solar panels in Qatar; affiliated with QSTP.",
+    "summary_ar": "شركة قطرية لخدمات الطائرات المسيّرة تستخدم طائرات تنظيف لغسل واجهات المباني والجدران الزجاجية والألواح الشمسية في قطر، وهي تابعة لواحة العلوم والتكنولوجيا في قطر.",
+    "website": "https://clearsky-drones.com/",
+    "source": "Clear Sky Drones (company website)",
+    "source_url": "https://clearsky-drones.com/",
+    "added": "2026-11-09",
+    "hq": "QA",
+    "hq_city": "Doha",
+    "mena_countries": [
+      "QA"
+    ],
+    "logo": "/media/logos/clear-sky-drones.png"
+  },
+  {
+    "id": "btr-tech",
+    "name": "btr.tech",
+    "name_ar": "بي تي آر تك",
+    "country": "KW",
+    "category": "integrator",
+    "secondary": "amr",
+    "stage": "a",
+    "summary": "Kuwaiti consultancy and integrator designing warehouse automation (ASRS, AMRs, robotic sorting) and distributing Pudu cleaning and delivery robots in Kuwait and the GCC; part of Raha.",
+    "summary_ar": "شركة كويتية للاستشارات والتكامل تصمم أنظمة أتمتة المستودعات (التخزين والاسترجاع الآلي والروبوتات المتنقلة والفرز الآلي) وتوزع روبوتات بودو للتنظيف والتوصيل في الكويت والخليج، وهي جزء من مجموعة راحة.",
+    "website": "https://www.btr.tech/",
+    "source": "The National",
+    "source_url": "https://www.thenationalnews.com/business/technology/2024/01/01/generation-start-up-from-e-grocery-automation-to-robotics-kuwaits-raha-is-aiming-high/",
+    "added": "2026-11-09",
+    "hq": "KW",
+    "hq_city": "Kuwait City",
+    "mena_countries": [
+      "KW",
+      "SA",
+      "AE"
+    ]
+  },
+  {
+    "id": "kuwait-aerospace-technologies-kat",
+    "name": "Kuwait Aerospace Technologies (KAT)",
+    "name_ar": "الكويت لتقنيات الطيران والفضاء",
+    "country": "KW",
+    "category": "drone",
+    "stage": "growth",
+    "summary": "Kuwaiti aerospace company that manufactures and integrates unmanned aircraft systems and is developing the KAT-X reconfigurable UAV platform.",
+    "summary_ar": "شركة كويتية للطيران والفضاء تصنع أنظمة الطائرات بدون طيار وتدمجها، وتطور منصة الطائرة المسيّرة القابلة لإعادة التهيئة KAT-X.",
+    "website": "https://kat.com.kw/",
+    "source": "Kuwait Aerospace Technologies (company website)",
+    "source_url": "https://kat.com.kw/",
+    "added": "2026-11-09",
+    "hq": "KW",
+    "hq_city": "Kuwait City",
+    "mena_countries": [
+      "KW"
+    ],
+    "logo": "/media/logos/kuwait-aerospace-technologies-kat.png"
+  },
+  {
+    "id": "star-drones",
+    "name": "Star Drones",
+    "name_ar": "مسيرات نجمة",
+    "country": "OM",
+    "category": "drone",
+    "stage": "seed",
+    "summary": "Omani R&D company founded in 2022 that designs and builds drones, including TARIQ, unveiled at COMEX 2024 as Oman's first locally made drone; also sells DJI products and runs training.",
+    "summary_ar": "شركة عُمانية للبحث والتطوير تأسست عام 2022 تصمم الطائرات المسيّرة وتصنعها، ومنها الطائرة «طارق» التي كُشف عنها في معرض كومكس 2024 بوصفها أول طائرة مسيّرة مصنوعة محلياً في عُمان، كما تبيع منتجات DJI وتقدم برامج تدريبية.",
+    "website": "https://www.stardrones.om/",
+    "source": "Oman Observer",
+    "source_url": "https://www.omanobserver.om/article/1154553/business/economy/rd-company-unveils-first-omani-made-drone",
+    "added": "2026-11-09",
+    "hq": "OM",
+    "hq_city": "Muscat",
+    "mena_countries": [
+      "OM"
+    ],
+    "logo": "/media/logos/star-drones.png"
+  },
+  {
+    "id": "ankaa-space-technologies",
+    "name": "Ankaa Space & Technologies",
+    "name_ar": "العنقاء للفضاء والتكنولوجيا",
+    "country": "OM",
+    "category": "drone",
+    "secondary": "education",
+    "stage": "seed",
+    "summary": "Omani aerospace firm offering drone, geospatial and training services, setting up a centre to develop drones and robots for agriculture and urban planning.",
+    "summary_ar": "شركة عُمانية في مجال الفضاء تقدم خدمات الطائرات المسيّرة والتقنيات الجيومكانية والتدريب، وتعمل على إنشاء مركز لتطوير الطائرات المسيّرة والروبوتات لاستخدامها في الزراعة والتخطيط العمراني.",
+    "website": "https://ankaa.om/",
+    "source": "Oman Observer (ONA)",
+    "source_url": "https://www.omanobserver.om/article/1163959/oman/community/omani-company-establishes-first-centre-for-developing-drones-robots",
+    "added": "2026-11-09",
+    "hq": "OM",
+    "hq_city": "Muscat",
+    "mena_countries": [
+      "OM"
+    ],
+    "logo": "/media/logos/ankaa-space-technologies.png"
+  },
+  {
+    "id": "sol7",
+    "name": "Sol7",
+    "name_ar": "سول7",
+    "country": "OM",
+    "category": "integrator",
+    "secondary": "inspection",
+    "stage": "seed",
+    "summary": "Omani integrator supplying robotics, automation and leak-detection technology to oil, gas and telecom; ANYbotics' partner in Oman, it trialled ANYmal at the RHIP oil and gas station.",
+    "summary_ar": "شركة عُمانية لتكامل الأنظمة تقدم حلول الروبوتات والأتمتة وكشف التسربات لقطاعي النفط والغاز والاتصالات، وهي شريكة ANYbotics في عُمان وجرّبت الروبوت ANYmal في محطة مشروع رباب-هرويل.",
+    "website": "https://www.sol7.om/",
+    "source": "Robotics Tomorrow (ANYbotics press release)",
+    "source_url": "https://roboticstomorrow.com/news/2024/09/24/anybotics-strengthens-presence-in-oman-partnering-with-sol7/23210",
+    "added": "2026-11-09",
+    "hq": "OM",
+    "hq_city": "Muscat",
+    "mena_countries": [
+      "OM"
+    ],
+    "logo": "/media/logos/sol7.png"
+  },
+  {
+    "id": "roboticktick",
+    "name": "Roboticktick",
+    "name_ar": "روبوتيك تيك",
+    "country": "OM",
+    "category": "education",
+    "stage": "seed",
+    "summary": "Muscat robotics learning centre and the national organiser of the World Robot Olympiad in Oman; also sells LEGO Education and MATRIX robotics kits.",
+    "summary_ar": "مركز لتعليم الروبوتات في مسقط، وهو المنظم الوطني للأولمبياد العالمي للروبوت في سلطنة عُمان، ويبيع أيضاً أطقم الروبوتات التعليمية من ليغو إديوكيشن وماتريكس.",
+    "website": "https://roboticktick.com/",
+    "source": "Edarabia",
+    "source_url": "https://www.edarabia.com/cheltenham-muscat-hosts-world-robot-olympiad-oman-national-qualifier/",
+    "added": "2026-11-09",
+    "hq": "OM",
+    "hq_city": "Muscat",
+    "mena_countries": [
+      "OM"
+    ],
+    "logo": "/media/logos/roboticktick.png"
+  },
+  {
+    "id": "gulf-ourooba-trading",
+    "name": "Gulf Ourooba Trading",
+    "name_ar": "العروبة الخليجية للتجارة",
+    "country": "QA",
+    "category": "integrator",
+    "secondary": "service",
+    "stage": "growth",
+    "summary": "Doha distributor of commercial cleaning, delivery and reception robots (Keenon, AgiBot and others, sold under its Gobot range), with deployments at Hamad International Airport and Qatari hospitals.",
+    "summary_ar": "شركة في الدوحة توزع روبوتات التنظيف التجاري والتوصيل والاستقبال (من كينون وأجي بوت وغيرهما، وتُباع تحت علامتها Gobot)، ولها روبوتات عاملة في مطار حمد الدولي ومستشفيات قطرية.",
+    "website": "https://ourooba.com/",
+    "source": "Gulf Ourooba (company website: About and Projects pages)",
+    "source_url": "https://ourooba.com/projects/",
+    "added": "2026-11-09",
+    "hq": "QA",
+    "hq_city": "Doha",
+    "mena_countries": [
+      "QA"
+    ],
+    "logo": "/media/logos/gulf-ourooba-trading.png"
+  },
+  {
+    "id": "zain-drone",
+    "name": "Zain Drone",
+    "name_ar": "زين درون",
+    "country": "KW",
+    "category": "drone",
+    "stage": "corp",
+    "summary": "Drone services subsidiary of Kuwaiti telecom group Zain, providing aerial surveys and inspections; in 2024 it inspected 1,000km of Kuwait's major roads and bridges for the Ministry of Public Works.",
+    "summary_ar": "شركة تابعة لمجموعة زين الكويتية للاتصالات تقدم خدمات الطائرات المسيّرة للمسح الجوي والفحص، وقد فحصت عام 2024 ألف كيلومتر من الطرق والجسور الرئيسية في الكويت لصالح وزارة الأشغال العامة.",
+    "website": "https://zain.com/",
+    "source": "Kuwait Times",
+    "source_url": "https://kuwaittimes.com/article/12771/kuwait/other-news/zain-carries-out-road-inspection-project-for-public-works-ministry",
+    "added": "2026-11-09",
+    "hq": "KW",
+    "hq_city": "Kuwait City",
+    "mena_countries": [
+      "KW",
+      "SA"
+    ],
+    "logo": "/media/logos/zain-drone.png"
+  },
+  {
+    "id": "aerodrive-engineering-services-aes",
+    "name": "Aerodrive Engineering Services (AES)",
+    "name_ar": "إيرودرايف للخدمات الهندسية",
+    "country": "MA",
+    "category": "drone",
+    "stage": "a",
+    "summary": "Moroccan drone maker and drone-services firm that built the Atlas Istar surveillance UAV, Morocco's first locally made military drone, and offers survey and inspection flights for mining and industry.",
+    "summary_ar": "شركة مغربية لتصنيع الطائرات المسيّرة وتقديم خدماتها، طوّرت طائرة الاستطلاع «أطلس إيستار»، أول طائرة مسيّرة عسكرية مصنوعة محلياً في المغرب، وتقدم خدمات المسح والتفتيش لقطاعي التعدين والصناعة.",
+    "website": "https://www.aes.ma",
+    "source": "Le360 (citing Challenge)",
+    "source_url": "https://fr.le360.ma/economie/fabricant-du-premier-drone-militaire-100-marocain-aes-passe-a-la-phase-industrielle_KNKOJ72YDZGDPPPG6MRK45BGTE/",
+    "added": "2026-11-09",
+    "hq": "MA",
+    "hq_city": "Benguerir",
+    "mena_countries": [
+      "MA"
+    ],
+    "logo": "/media/logos/aerodrive-engineering-services-aes.png"
+  },
+  {
+    "id": "atlan-space",
+    "name": "ATLAN Space",
+    "name_ar": "أطلان سبيس",
+    "country": "MA",
+    "category": "drone",
+    "secondary": "software",
+    "stage": "a",
+    "summary": "Casablanca company developing AI that lets fixed-wing drones fly beyond line of sight autonomously, used for surveying, fisheries surveillance and environmental monitoring; makes the ATLAN Geo VTOL drone.",
+    "summary_ar": "شركة في الدار البيضاء تطوّر برمجيات ذكاء اصطناعي تتيح للطائرات المسيّرة ثابتة الجناحين التحليق ذاتياً خارج مدى الرؤية، وتُستخدم في المسح ومراقبة المصايد والبيئة، وتصنع الطائرة العمودية «أطلان جيو».",
+    "website": "https://atlanspace.com",
+    "source": "Wamda",
+    "source_url": "https://www.wamda.com/2020/11/atlan-space-raises-1-1-million-series",
+    "added": "2026-11-09",
+    "hq": "MA",
+    "hq_city": "Casablanca",
+    "mena_countries": [
+      "MA"
+    ],
+    "logo": "/media/logos/atlan-space.png"
+  },
+  {
+    "id": "spexal",
+    "name": "Spexal",
+    "name_ar": "سبكسال",
+    "country": "LB",
+    "category": "integrator",
+    "secondary": "amr",
+    "stage": "seed",
+    "summary": "Beirut robotics and automation company that designs and integrates robotic cells, palletisers, AMRs, autonomous forklifts, ASRS and AI vision systems for logistics and manufacturing.",
+    "summary_ar": "شركة روبوتات وأتمتة في بيروت تصمم وتدمج خلايا روبوتية وأنظمة تكديس وروبوتات متنقلة ذاتية ورافعات شوكية ذاتية القيادة وأنظمة تخزين واسترجاع آلية ورؤية حاسوبية لقطاعي اللوجستيات والتصنيع.",
+    "website": "https://spexal.com",
+    "source": "EtherCAT Technology Group member directory",
+    "source_url": "https://www.ethercat.org/en/members/members_78E659B1D1F4425EBD909E8FBC9F0F77.htm",
+    "added": "2026-11-09",
+    "hq": "LB",
+    "hq_city": "Beirut",
+    "mena_countries": [
+      "LB"
+    ]
+  },
+  {
+    "id": "deepleaf",
+    "name": "DeepLeaf",
+    "name_ar": "ديب ليف",
+    "country": "MA",
+    "category": "agri",
+    "secondary": "software",
+    "stage": "seed",
+    "summary": "Moroccan agritech start-up from Sidi Bennour that built AgriGo, a field robot using multispectral cameras to detect crop disease and spray in a targeted way, alongside its AI crop-diagnosis platform.",
+    "summary_ar": "شركة ناشئة مغربية في مجال التكنولوجيا الزراعية من سيدي بنور طوّرت «أغريغو»، وهو روبوت حقلي يستخدم كاميرات متعددة الأطياف لرصد أمراض المحاصيل والرش الموجّه، إلى جانب منصتها للتشخيص الزراعي بالذكاء الاصطناعي.",
+    "website": "https://deepleaf.io",
+    "source": "Le Matin",
+    "source_url": "https://lematin.ma/economie/la-technologie-agricole-africaine-sexporte-vers-leurope-deepleaf/339330",
+    "added": "2026-11-09",
+    "hq": "MA",
+    "hq_city": "Sidi Bennour",
+    "mena_countries": [
+      "MA"
+    ]
+  },
+  {
+    "id": "droneway",
+    "name": "Droneway",
+    "name_ar": "درون واي",
+    "country": "MA",
+    "category": "integrator",
+    "secondary": "drone",
+    "stage": "growth",
+    "summary": "Moroccan drone distributor selling civil and tactical drones, UGVs, drone-in-a-box and counter-drone systems with pilot training; signed a partnership with Tekever in 2024 for AR3/AR5 drones and local support.",
+    "summary_ar": "شركة مغربية لتوزيع الطائرات المسيّرة المدنية والتكتيكية والمركبات الأرضية المسيّرة وأنظمة مكافحة الطائرات المسيّرة، مع تدريب الطيارين، ووقّعت في 2024 شراكة مع «تيكيفر» لتوريد طائراتها وتقديم خدمات الدعم محلياً.",
+    "website": "https://droneway.ma",
+    "source": "Hespress FR",
+    "source_url": "https://fr.hespress.com/393411-tekever-et-droneway-sassocient-pour-dynamiser-lindustrie-marocaine-des-drones.html",
+    "added": "2026-11-09",
+    "hq": "MA",
+    "hq_city": "",
+    "mena_countries": [
+      "MA"
+    ]
+  },
+  {
+    "id": "nooragri-noor-solutions-agri",
+    "name": "NoorAgri (Noor Solutions Agri)",
+    "name_ar": "نور سوليسيون أقري",
+    "country": "DZ",
+    "category": "agri",
+    "secondary": "drone",
+    "stage": "seed",
+    "summary": "Algerian agritech firm in El Oued offering agricultural spraying drones (DJI Agras) and AI-driven survey drones for nurseries, alongside smart greenhouse, irrigation and IoT systems.",
+    "summary_ar": "شركة جزائرية للتكنولوجيا الزراعية في الوادي تقدم طائرات مسيّرة زراعية للرش وطائرات مسح مدعومة بالذكاء الاصطناعي للمشاتل، إلى جانب أنظمة البيوت البلاستيكية والري الذكي وإنترنت الأشياء.",
+    "website": "https://nooragri.com",
+    "source": "FreshPlaza",
+    "source_url": "https://www.freshplaza.com/africa/article/9850001/corvus-drones-and-nooragri-join-forces-to-accelerate-drone-crop-monitoring-in-algerian-region/",
+    "added": "2026-11-09",
+    "hq": "DZ",
+    "hq_city": "El Oued",
+    "mena_countries": [
+      "DZ"
+    ]
+  },
+  {
+    "id": "lebotics",
+    "name": "Lebotics",
+    "name_ar": "ليبوتكس",
+    "country": "LB",
+    "category": "inspection",
+    "secondary": "software",
+    "stage": "seed",
+    "summary": "Beirut robotics and AI engineering firm building ARIES, a tracked disaster-response robot with thermal and depth sensing, SLAM navigation, fire suppression and a 6-DOF arm for debris handling.",
+    "summary_ar": "شركة هندسية في بيروت متخصصة في الروبوتات والذكاء الاصطناعي، تطوّر «آريس»، وهو روبوت مجنزر للاستجابة للكوارث مزوّد باستشعار حراري وعمقي وملاحة SLAM وأداة لإخماد الحرائق وذراع بست درجات حرية لرفع الأنقاض.",
+    "website": "https://lebotics.com",
+    "source": "Lebotics (company website)",
+    "source_url": "https://lebotics.com",
+    "added": "2026-11-09",
+    "hq": "LB",
+    "hq_city": "Beirut",
+    "mena_countries": [
+      "LB"
+    ],
+    "logo": "/media/logos/lebotics.png"
+  },
+  {
+    "id": "avelabs",
+    "name": "Avelabs",
+    "name_ar": "أفيلابس",
+    "country": "EG",
+    "category": "software",
+    "secondary": "av",
+    "stage": "growth",
+    "summary": "Cairo automotive software engineering firm with a Munich office; makes Yonohub, a cloud platform for designing and testing autonomous-vehicle, ADAS and robotics systems, and AutoHears acoustic sensing for AVs.",
+    "summary_ar": "شركة هندسة برمجيات للسيارات مقرها القاهرة ولها مكتب في ميونخ، تطوّر «يونوهب»، وهي منصة سحابية لتصميم واختبار أنظمة المركبات ذاتية القيادة وأنظمة مساعدة السائق والروبوتات، ونظام «أوتوهيرز» للاستشعار الصوتي للمركبات ذاتية القيادة.",
+    "website": "https://www.avelabs.com",
+    "source": "Avelabs (company website)",
+    "source_url": "https://www.avelabs.com",
+    "added": "2026-11-09",
+    "hq": "EG",
+    "hq_city": "Cairo",
+    "mena_countries": [
+      "EG"
+    ],
+    "logo": "/media/logos/avelabs.png"
+  },
+  {
+    "id": "robotics-corner",
+    "name": "Robotics Corner",
+    "name_ar": "روبوتكس كورنر",
+    "country": "EG",
+    "category": "education",
+    "secondary": "software",
+    "stage": "seed",
+    "summary": "Cairo robotics training and engineering firm offering ROS-based robotics courses, R&D and consulting, and developing its own AMR, manipulator robot and RoboAgent robotics IDE.",
+    "summary_ar": "شركة في القاهرة للتدريب والهندسة في مجال الروبوتات تقدم دورات قائمة على نظام ROS وخدمات البحث والتطوير والاستشارات، وتطوّر روبوتاً متنقلاً ذاتياً وذراعاً روبوتية وبيئة تطوير «روبوإيجنت» لبرمجة الروبوتات.",
+    "website": "https://roboticscorner.tech",
+    "source": "Robotics Corner (company website)",
+    "source_url": "https://roboticscorner.tech",
+    "added": "2026-11-09",
+    "hq": "EG",
+    "hq_city": "Cairo",
+    "mena_countries": [
+      "EG"
+    ],
+    "logo": "/media/logos/robotics-corner.png"
+  },
+  {
+    "id": "savoye",
+    "name": "SAVOYE",
+    "name_ar": "سافوي",
+    "country": "SA",
+    "category": "amr",
+    "secondary": "software",
+    "stage": "corp",
+    "summary": "French intralogistics firm that designs automated goods-to-person picking systems and the ODATiO warehouse software, with a Middle East subsidiary in the UAE.",
+    "summary_ar": "شركة فرنسية متخصصة في الخدمات اللوجستية الداخلية تصمم أنظمة انتقاء آلية وبرنامج ODATiO لإدارة المستودعات، ولها شركة تابعة للشرق الأوسط في الإمارات.",
+    "website": "https://www.savoye.com/",
+    "source": "SAVOYE",
+    "source_url": "https://www.savoye.com/?p=26715",
+    "added": "2026-11-09",
+    "hq": "FR",
+    "hq_city": "Dijon",
+    "mena_countries": [
+      "SA",
+      "AE"
+    ],
+    "mena_link": {
+      "en": "In July 2025 SAVOYE Middle East put its ODATiO warehouse management system live at CJ Logistics' iHerb fulfilment centre in the SILZ zone in Riyadh, the first WMS in a SILZ facility. It set up a UAE subsidiary in 2021 and resells Hai Robotics HAIPICK robots in the region.",
+      "ar": "في يوليو 2025 شغّلت سافوي الشرق الأوسط نظام ODATiO لإدارة المستودعات في مركز تنفيذ طلبات iHerb التابع لـCJ Logistics في منطقة SILZ بالرياض، وهو أول نظام من نوعه في منشأة تابعة للمنطقة. وأسست الشركة فرعاً في الإمارات عام 2021 وتوزّع روبوتات HAIPICK من Hai Robotics في المنطقة."
+    },
+    "mena_source": "SAVOYE",
+    "mena_source_url": "https://www.savoye.com/?p=26715",
+    "mena_date": "2025-07-07"
+  },
+  {
+    "id": "quicktron-robotics",
+    "name": "Quicktron Robotics",
+    "name_ar": "كويكترون للروبوتات",
+    "country": "SA",
+    "category": "amr",
+    "stage": "growth",
+    "summary": "Shanghai maker of warehouse robots, including shelf-to-person AMRs, pallet movers and tote-handling robots, sold in the Gulf through integrator BTR.tech.",
+    "summary_ar": "شركة من شنغهاي تصنع روبوتات المستودعات، منها روبوتات متنقلة تنقل الرفوف إلى العامل وروبوتات نقل المنصات والصناديق، وتُسوَّق في الخليج عبر شركة التكامل BTR.tech.",
+    "website": "https://www.quicktron.com/",
+    "source": "China Daily",
+    "source_url": "https://global.chinadaily.com.cn/a/202403/07/WS65e9dbc4a31082fc043bb4c0.html",
+    "added": "2026-11-09",
+    "hq": "CN",
+    "hq_city": "Shanghai",
+    "mena_countries": [
+      "SA",
+      "KW"
+    ],
+    "mena_link": {
+      "en": "On 6 March 2024, at LEAP in Riyadh, Quicktron signed a strategic partnership with GCC robotics integrator BTR.tech to supply its logistics robots to warehouse operators across the Gulf.",
+      "ar": "في 6 مارس 2024، خلال مؤتمر LEAP في الرياض، وقّعت كويكترون شراكة استراتيجية مع شركة تكامل الروبوتات الخليجية BTR.tech لتوريد روبوتاتها اللوجستية لمشغّلي المستودعات في دول الخليج."
+    },
+    "mena_source": "China Daily",
+    "mena_source_url": "https://global.chinadaily.com.cn/a/202403/07/WS65e9dbc4a31082fc043bb4c0.html",
+    "mena_date": "2024-03-07",
+    "logo": "/media/logos/quicktron-robotics.png"
+  },
+  {
+    "id": "zimmer-biomet",
+    "name": "Zimmer Biomet",
+    "name_ar": "زيمر بايوميت",
+    "country": "AE",
+    "category": "medical",
+    "stage": "corp",
+    "summary": "US orthopaedic device maker whose ROSA robotic system assists surgeons in knee and hip replacement; in use at Aster Hospital Mankhool in Dubai.",
+    "summary_ar": "شركة أمريكية لصناعة الأجهزة العظمية يساعد نظامها الروبوتي ROSA الجراحين في عمليات استبدال الركبة والورك، ويُستخدم في مستشفى أستر المنخول بدبي.",
+    "website": "https://www.zimmerbiomet.com/",
+    "source": "Gulf News",
+    "source_url": "https://gulfnews.com/uae/health/dubai-indian-boxing-legend-mary-kom-opens-robotic-orthopaedic-centre-1.500095109",
+    "added": "2026-11-09",
+    "hq": "US",
+    "hq_city": "Warsaw, Indiana",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "In April 2025 Aster Hospital Mankhool in Dubai opened a robotic orthopaedic centre built around Zimmer Biomet's ROSA robotic knee replacement system, the Aster group's first robotic surgery facility in the UAE.",
+      "ar": "في أبريل 2025 افتتح مستشفى أستر المنخول في دبي مركزاً لجراحة العظام الروبوتية يعتمد على نظام ROSA من زيمر بايوميت لاستبدال الركبة، وهو أول مرفق للجراحة الروبوتية لمجموعة أستر في الإمارات."
+    },
+    "mena_source": "Gulf News",
+    "mena_source_url": "https://gulfnews.com/uae/health/dubai-indian-boxing-legend-mary-kom-opens-robotic-orthopaedic-centre-1.500095109",
+    "mena_date": "2025-04-16"
+  },
+  {
+    "id": "cmr-surgical",
+    "name": "CMR Surgical",
+    "name_ar": "سي إم آر سيرجيكال",
+    "country": "EG",
+    "category": "medical",
+    "stage": "growth",
+    "summary": "Cambridge maker of the Versius modular surgical robot for keyhole surgery, used in hospitals in Egypt and the UAE.",
+    "summary_ar": "شركة من كامبريدج تصنع الروبوت الجراحي المعياري Versius لجراحات المناظير، ويُستخدم في مستشفيات بمصر والإمارات.",
+    "website": "https://cmrsurgical.com/",
+    "source": "Journal of Robotic Surgery (Springer)",
+    "source_url": "https://link.springer.com/article/10.1007/s11701-026-03209-8",
+    "added": "2026-11-09",
+    "hq": "GB",
+    "hq_city": "Cambridge",
+    "mena_countries": [
+      "EG",
+      "AE"
+    ],
+    "mena_link": {
+      "en": "A February 2026 peer-reviewed study reports 200 robotic bariatric operations performed with Versius at a single Egyptian centre between December 2021 and December 2024. CMR opened its first Middle East office in the UAE in 2021.",
+      "ar": "تشير دراسة محكّمة نُشرت في فبراير 2026 إلى إجراء 200 عملية روبوتية لجراحة السمنة باستخدام Versius في مركز مصري واحد بين ديسمبر 2021 وديسمبر 2024. وافتتحت الشركة أول مكتب لها في الشرق الأوسط بالإمارات عام 2021."
+    },
+    "mena_source": "Journal of Robotic Surgery (Springer)",
+    "mena_source_url": "https://link.springer.com/article/10.1007/s11701-026-03209-8",
+    "mena_date": "2026-02-23",
+    "logo": "/media/logos/cmr-surgical.png"
+  },
+  {
+    "id": "simbe",
+    "name": "Simbe",
+    "name_ar": "سيمبي",
+    "country": "SA",
+    "category": "service",
+    "stage": "growth",
+    "summary": "San Francisco company whose Tally robot autonomously scans supermarket shelves for stock, price and placement errors; deployed by Prime Markets in Saudi Arabia.",
+    "summary_ar": "شركة من سان فرانسيسكو يمسح روبوتها Tally رفوف المتاجر ذاتياً لرصد نقص المخزون وأخطاء الأسعار والمواقع، وتستخدمه سلسلة برايم ماركتس في السعودية.",
+    "website": "https://www.simberobotics.com/",
+    "source": "Simbe newsroom",
+    "source_url": "https://www.simberobotics.com/about/newsroom/prime-markets-is-the-first-retailer-in-saudi-arabia-to-bring-industry-leading-inventory-robot-to-local-stores",
+    "added": "2026-11-09",
+    "hq": "US",
+    "hq_city": "San Francisco",
+    "mena_countries": [
+      "SA"
+    ],
+    "mena_link": {
+      "en": "In March 2025 Simbe announced a partnership with Universal Cold Store (Prime Markets) to deploy its Tally shelf-scanning robot in selected Prime Markets stores, the first such deployment in Saudi Arabia.",
+      "ar": "في مارس 2025 أعلنت سيمبي شراكة مع يونيفرسال كولد ستور (برايم ماركتس) لتشغيل روبوت Tally لمسح الرفوف في عدد من فروع برايم ماركتس، وهو أول تشغيل من نوعه في السعودية."
+    },
+    "mena_source": "Simbe newsroom",
+    "mena_source_url": "https://www.simberobotics.com/about/newsroom/prime-markets-is-the-first-retailer-in-saudi-arabia-to-bring-industry-leading-inventory-robot-to-local-stores",
+    "mena_date": "2025-03-24",
+    "logo": "/media/logos/simbe.png"
+  },
+  {
+    "id": "vertical-aerospace",
+    "name": "Vertical Aerospace",
+    "name_ar": "فيرتيكال إيروسبيس",
+    "country": "SA",
+    "category": "drone",
+    "stage": "growth",
+    "summary": "UK developer of the Valo electric vertical take-off and landing (eVTOL) air taxi, assessing certification and local manufacturing in Saudi Arabia.",
+    "summary_ar": "شركة بريطانية تطوّر طائرة الأجرة الكهربائية «فالو» ذات الإقلاع والهبوط العمودي، وتدرس اعتمادها وتصنيعها محلياً في السعودية.",
+    "website": "https://vertical-aerospace.com/",
+    "source": "TradeArabia",
+    "source_url": "https://tradearabia.com/News/465383/Saudi-Arabia-partners-with-Vertical-Aerospace-to-advance-air-mobility",
+    "added": "2026-11-09",
+    "hq": "GB",
+    "hq_city": "Bristol",
+    "mena_countries": [
+      "SA"
+    ],
+    "mena_link": {
+      "en": "Signed an MoU with Saudi Arabia's General Authority of Civil Aviation (GACA) at Farnborough Airshow in July 2026 on certification and regulation for advanced air mobility, plus a separate MoU with Cluster2 Airports on eVTOL infrastructure; this followed a February 2026 MoU with AHQ Group and the National Industrial Development Centre on possible local manufacturing.",
+      "ar": "وقّعت في يوليو 2026 خلال معرض فارنبورو مذكرة تفاهم مع الهيئة العامة للطيران المدني السعودية بشأن اعتماد وتنظيم التنقل الجوي المتقدم، ومذكرة أخرى مع شركة مطارات القابضة «التجمع الثاني» لتطوير بنية تحتية للطائرات العمودية الكهربائية، بعد مذكرة في فبراير 2026 مع مجموعة AHQ والمركز الوطني للتنمية الصناعية لدراسة التصنيع المحلي."
+    },
+    "mena_source": "TradeArabia",
+    "mena_source_url": "https://tradearabia.com/News/465383/Saudi-Arabia-partners-with-Vertical-Aerospace-to-advance-air-mobility",
+    "mena_date": "2026-07-21"
+  },
+  {
+    "id": "skyports",
+    "name": "Skyports",
+    "name_ar": "سكاي بورتس",
+    "country": "AE",
+    "category": "drone",
+    "stage": "growth",
+    "summary": "UK company that builds vertiports for electric air taxis and runs drone services; it is building Dubai's first air-taxi network and testing BVLOS drone operations in Saudi Arabia.",
+    "summary_ar": "شركة بريطانية تبني مهابط عمودية لطائرات الأجرة الكهربائية وتقدّم خدمات الطائرات المسيّرة، وتنفّذ أول شبكة للتاكسي الجوي في دبي وتختبر عمليات الطائرات المسيّرة خارج مدى الرؤية في السعودية.",
+    "website": "https://skyports.net/",
+    "source": "Khaleej Times",
+    "source_url": "https://www.khaleejtimes.com/business/aviation/60-work-complete-first-flying-taxi-vertiport-near-dxb",
+    "added": "2026-11-09",
+    "hq": "GB",
+    "hq_city": "London",
+    "mena_countries": [
+      "AE",
+      "SA"
+    ],
+    "mena_link": {
+      "en": "Holds the agreement to build and operate Dubai's initial vertiports; its 3,100 sq m air-taxi station next to Dubai International Airport was 60% complete in November 2025, with further sites planned at Dubai Mall, Atlantis The Royal and Dubai Marina for the 2026 launch. In February 2025 Skyports Drone Services entered Saudi Arabia with a BVLOS drone proof-of-concept for giga-projects with iot squared (PIF/stc).",
+      "ar": "تتولى بناء وتشغيل أولى محطات التاكسي الجوي في دبي؛ وبلغت نسبة إنجاز محطتها بجوار مطار دبي الدولي (3100 متر مربع) 60% في نوفمبر 2025، مع مواقع مخططة في دبي مول وأتلانتس ذا رويال ودبي مارينا لإطلاق الخدمة في 2026. وفي فبراير 2025 دخلت «سكاي بورتس لخدمات الطائرات المسيّرة» السوق السعودية بمشروع إثبات مفهوم لعمليات الطائرات المسيّرة خارج مدى الرؤية للمشاريع الكبرى بالتعاون مع «آي أو تي سكويرد» (صندوق الاستثمارات العامة وstc)."
+    },
+    "mena_source": "Khaleej Times",
+    "mena_source_url": "https://www.khaleejtimes.com/business/aviation/60-work-complete-first-flying-taxi-vertiport-near-dxb",
+    "mena_date": "2025-11-16"
+  },
+  {
+    "id": "oxa",
+    "name": "Oxa",
+    "name_ar": "أوكسا",
+    "country": "AE",
+    "category": "av",
+    "secondary": "software",
+    "stage": "growth",
+    "summary": "UK developer of self-driving software, fleet tools and sensors for industrial vehicles, forming the SHIFFT joint venture in Dubai with the Dubai Future Foundation.",
+    "summary_ar": "شركة بريطانية تطوّر برمجيات القيادة الذاتية وأدوات إدارة الأساطيل وأجهزة الاستشعار للمركبات الصناعية، وأسّست مشروع «SHIFFT» المشترك في دبي مع مؤسسة دبي للمستقبل.",
+    "website": "https://oxa.tech/",
+    "source": "UKTN",
+    "source_url": "https://uktech.news/ai/oxa-dubai-autonomous-vehicles-20260803",
+    "added": "2026-11-09",
+    "hq": "GB",
+    "hq_city": "Oxford",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "In August 2026 formed SHIFFT, a joint venture with the Dubai Future Foundation to deploy autonomous industrial vehicles at ports and airports, targeting commercial rollout in late 2027; in 2024 it had partnered with Abu Dhabi's Bayanat on AV technology in the UAE.",
+      "ar": "أسست في أغسطس 2026 مشروع «SHIFFT» المشترك مع مؤسسة دبي للمستقبل لنشر مركبات صناعية ذاتية القيادة في الموانئ والمطارات، مع استهداف الإطلاق التجاري أواخر 2027، بعد شراكة عام 2024 مع «بيانات» في أبوظبي."
+    },
+    "mena_source": "UKTN",
+    "mena_source_url": "https://uktech.news/ai/oxa-dubai-autonomous-vehicles-20260803",
+    "mena_date": "2026-08-03"
+  },
+  {
+    "id": "applied-intuition",
+    "name": "Applied Intuition",
+    "name_ar": "أبلايد إنتويشن",
+    "country": "SA",
+    "category": "software",
+    "secondary": "av",
+    "stage": "growth",
+    "summary": "US vehicle-software and autonomy company working with HUMAIN to deploy autonomous trucks on Saudi Arabia's main freight corridors.",
+    "summary_ar": "شركة أمريكية لبرمجيات المركبات والقيادة الذاتية تتعاون مع «هيوماين» لنشر شاحنات ذاتية القيادة على ممرات الشحن الرئيسية في السعودية.",
+    "website": "https://www.appliedintuition.com/",
+    "source": "Applied Intuition",
+    "source_url": "https://www.appliedintuition.com/blog/applied-intuition-humain-autonomous-trucking-saudi-arabia",
+    "added": "2026-11-09",
+    "hq": "US",
+    "hq_city": "Mountain View",
+    "mena_countries": [
+      "SA"
+    ],
+    "mena_link": {
+      "en": "On 31 August 2026 announced a strategic collaboration with PIF-owned HUMAIN to deploy thousands of autonomous trucks along Saudi logistics corridors by 2030, with later phases exploring robotaxis, ports and mining.",
+      "ar": "أعلنت في 31 أغسطس 2026 تعاوناً استراتيجياً مع «هيوماين» المملوكة لصندوق الاستثمارات العامة لنشر آلاف الشاحنات ذاتية القيادة على ممرات الخدمات اللوجستية في السعودية بحلول 2030، مع مراحل لاحقة تشمل سيارات الأجرة الذاتية والموانئ والتعدين."
+    },
+    "mena_source": "Applied Intuition",
+    "mena_source_url": "https://www.appliedintuition.com/blog/applied-intuition-humain-autonomous-trucking-saudi-arabia",
+    "mena_date": "2026-08-31"
+  },
+  {
+    "id": "deep-trekker",
+    "name": "Deep Trekker",
+    "name_ar": "ديب تريكر",
+    "country": "AE",
+    "category": "marine",
+    "stage": "growth",
+    "summary": "Canadian maker of portable battery-powered underwater ROVs for inspection, sold in the UAE, Saudi Arabia and Qatar through Unique Group.",
+    "summary_ar": "شركة كندية تصنع مركبات تحت الماء محمولة تعمل بالبطاريات ويتم التحكم بها عن بُعد لأعمال الفحص، وتُباع في الإمارات والسعودية وقطر عبر «يونيك جروب».",
+    "website": "https://www.deeptrekker.com/",
+    "source": "Unique Group",
+    "source_url": "https://www.uniquegroup.com/media-centre/latest-news/unique-group-announces-partnership-with-deep-trekker-canada-for-remote-operated-vehicles/",
+    "added": "2026-11-09",
+    "hq": "CA",
+    "hq_city": "Kitchener",
+    "mena_countries": [
+      "AE",
+      "SA",
+      "QA"
+    ],
+    "mena_link": {
+      "en": "In July 2025 appointed UAE-based Unique Group as its exclusive Middle East distributor, supplying and supporting Deep Trekker ROVs across the UAE, Saudi Arabia and Qatar.",
+      "ar": "عيّنت في يوليو 2025 مجموعة «يونيك جروب» الإماراتية موزعاً حصرياً لها في الشرق الأوسط لتوريد ودعم مركباتها تحت الماء في الإمارات والسعودية وقطر."
+    },
+    "mena_source": "Unique Group",
+    "mena_source_url": "https://www.uniquegroup.com/media-centre/latest-news/unique-group-announces-partnership-with-deep-trekker-canada-for-remote-operated-vehicles/",
+    "mena_date": "2025-07-24",
+    "logo": "/media/logos/deep-trekker.png"
+  },
+  {
+    "id": "terra-drone",
+    "name": "Terra Drone",
+    "name_ar": "تيرا درون",
+    "country": "SA",
+    "category": "drone",
+    "secondary": "inspection",
+    "stage": "growth",
+    "summary": "Japanese drone maker and inspection-services company operating in Saudi Arabia through Terra Drone Arabia, with an Aramco MoU on drone inspections.",
+    "summary_ar": "شركة يابانية لصناعة الطائرات المسيّرة وخدمات الفحص تعمل في السعودية عبر «تيرا درون العربية»، ووقّعت مذكرة تفاهم مع أرامكو لفحص المنشآت بالطائرات المسيّرة.",
+    "website": "https://terra-drone.net/",
+    "source": "Journal of Petroleum Technology (SPE)",
+    "source_url": "https://jpt.spe.org/aramco-eyes-2027-start-for-drone-inspections-under-mou-with-terra-drone",
+    "added": "2026-11-09",
+    "hq": "JP",
+    "hq_city": "Tokyo",
+    "mena_countries": [
+      "SA"
+    ],
+    "mena_link": {
+      "en": "Signed an MoU with Saudi Aramco (reported April 2025) to run test drone inspections of Aramco facilities, with full-scale operations targeted for 2027; set up the Saudi branch Terra Drone Arabia after a $14m investment from Aramco's Wa'ed Ventures.",
+      "ar": "وقّعت مذكرة تفاهم مع أرامكو السعودية (أُعلن عنها في أبريل 2025) لإجراء اختبارات فحص بالطائرات المسيّرة في منشآت أرامكو، مع استهداف التشغيل الكامل في 2027، وأسست فرعها «تيرا درون العربية» بعد استثمار بقيمة 14 مليون دولار من «واعد فنتشرز» التابعة لأرامكو."
+    },
+    "mena_source": "Journal of Petroleum Technology (SPE)",
+    "mena_source_url": "https://jpt.spe.org/aramco-eyes-2027-start-for-drone-inspections-under-mou-with-terra-drone",
+    "mena_date": "2025-04-08",
+    "logo": "/media/logos/terra-drone.png"
+  },
+  {
+    "id": "flyability",
+    "name": "Flyability",
+    "name_ar": "فلاي أبيليتي",
+    "country": "AE",
+    "category": "drone",
+    "secondary": "inspection",
+    "stage": "growth",
+    "summary": "Swiss maker of collision-tolerant Elios drones for indoor and confined-space inspection, sold in the UAE through exclusive distributor Sigma Enterprises.",
+    "summary_ar": "شركة سويسرية تصنع طائرات «إليوس» المسيّرة المقاومة للاصطدام لفحص الأماكن المغلقة والضيقة، وتُباع في الإمارات عبر الموزّع الحصري «سيغما إنتربرايزز».",
+    "website": "https://www.flyability.com/",
+    "source": "Gulf News",
+    "source_url": "https://gulfnews.com/gn-focus/sigma-enterprises-takes-leadership-role-by-bringing-the-latest-swiss-robotics-and-drone-technology-to-the-gcc-1.500136213",
+    "added": "2026-11-09",
+    "hq": "CH",
+    "hq_city": "Lausanne",
+    "mena_countries": [
+      "AE",
+      "SA",
+      "QA"
+    ],
+    "mena_link": {
+      "en": "UAE distributor Sigma Enterprises holds exclusive UAE rights to Flyability drones and was deploying them with customers as of May 2025; HiTech Drone (Saudi Arabia) and West Bay Petroleum (Qatar) have also been named resellers.",
+      "ar": "تملك «سيغما إنتربرايزز» حقوق التوزيع الحصري لطائرات فلاي أبيليتي في الإمارات وكانت تنشرها لدى عملائها حتى مايو 2025، كما سُمّيت «هاي تك درون» في السعودية و«ويست باي بتروليوم» في قطر موزعين لها."
+    },
+    "mena_source": "Gulf News",
+    "mena_source_url": "https://gulfnews.com/gn-focus/sigma-enterprises-takes-leadership-role-by-bringing-the-latest-swiss-robotics-and-drone-technology-to-the-gcc-1.500136213",
+    "mena_date": "2025-05-22",
+    "logo": "/media/logos/flyability.png"
+  },
+  {
+    "id": "wingtra",
+    "name": "Wingtra",
+    "name_ar": "وينغترا",
+    "country": "AE",
+    "category": "drone",
+    "stage": "growth",
+    "summary": "Swiss maker of vertical take-off fixed-wing survey and mapping drones, distributed exclusively in the UAE by Sigma Enterprises.",
+    "summary_ar": "شركة سويسرية تصنع طائرات مسيّرة ثابتة الجناح بإقلاع عمودي للمسح ورسم الخرائط، ويوزعها حصرياً في الإمارات «سيغما إنتربرايزز».",
+    "website": "https://wingtra.com/",
+    "source": "Gulf News",
+    "source_url": "https://gulfnews.com/gn-focus/sigma-enterprises-takes-leadership-role-by-bringing-the-latest-swiss-robotics-and-drone-technology-to-the-gcc-1.500136213",
+    "added": "2026-11-09",
+    "hq": "CH",
+    "hq_city": "Zurich",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "Sigma Enterprises holds exclusive UAE distribution rights for Wingtra and showcased its drones at the Swiss Future Tech event in Abu Dhabi, as reported in May 2025.",
+      "ar": "تملك «سيغما إنتربرايزز» حقوق التوزيع الحصري لوينغترا في الإمارات، وعرضت طائراتها في فعالية «سويس فيوتشر تك» في أبوظبي، بحسب تقرير في مايو 2025."
+    },
+    "mena_source": "Gulf News",
+    "mena_source_url": "https://gulfnews.com/gn-focus/sigma-enterprises-takes-leadership-role-by-bringing-the-latest-swiss-robotics-and-drone-technology-to-the-gcc-1.500136213",
+    "mena_date": "2025-05-22",
+    "logo": "/media/logos/wingtra.png"
+  },
+  {
+    "id": "aisus",
+    "name": "AISUS",
+    "name_ar": "أيسوس",
+    "country": "AE",
+    "category": "inspection",
+    "stage": "a",
+    "summary": "Aberdeen-based provider of remote robotic inspection tools and services for offshore energy assets, with a GCC headquarters in Dubai and an Abu Dhabi hub planned.",
+    "summary_ar": "شركة من أبردين تقدّم أدوات وخدمات الفحص الروبوتي عن بُعد لأصول الطاقة البحرية، ولها مقر إقليمي خليجي في دبي ومركز مخطط في أبوظبي.",
+    "website": "https://www.aisus.co.uk/",
+    "source": "OneStopNDT",
+    "source_url": "https://www.onestopndt.com/ndt-news/aisus-showcases-remarkable-global-growth-and-middle-east-expansion-at-adipec-2025",
+    "added": "2026-11-09",
+    "hq": "GB",
+    "hq_city": "Aberdeen",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "At ADIPEC in October 2025 said it runs its GCC headquarters from Dubai and planned a second Middle East hub in Abu Dhabi by the end of 2025.",
+      "ar": "أعلنت خلال معرض أديبك في أكتوبر 2025 أن مقرها الخليجي في دبي، وأنها تخطط لافتتاح مركز ثانٍ في الشرق الأوسط في أبوظبي قبل نهاية 2025."
+    },
+    "mena_source": "OneStopNDT",
+    "mena_source_url": "https://www.onestopndt.com/ndt-news/aisus-showcases-remarkable-global-growth-and-middle-east-expansion-at-adipec-2025",
+    "mena_date": "2025-10-27",
+    "logo": "/media/logos/aisus.png"
+  },
+  {
+    "id": "fugro",
+    "name": "Fugro",
+    "name_ar": "فوغرو",
+    "country": "AE",
+    "category": "marine",
+    "stage": "corp",
+    "summary": "Dutch geo-data company that operates uncrewed surface vessels for subsea inspection and hydrographic survey, run from a remote operations centre in Dubai.",
+    "summary_ar": "شركة هولندية للبيانات الجيولوجية تشغّل سفناً سطحية غير مأهولة لفحص المنشآت تحت البحر والمسح الهيدروغرافي، وتديرها من مركز عمليات عن بُعد في دبي.",
+    "website": "https://www.fugro.com/",
+    "source": "Fugro",
+    "source_url": "https://www.fugro.com/news/business-news/2024/fugro-to-support-middle-easts-expanding-needs-for-ocean-data-with-its-high-tech-low-carbon-emissions-uncrewed-vessels",
+    "added": "2026-11-09",
+    "hq": "NL",
+    "hq_city": "Leidschendam",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "In March 2024 brought a Blue Shadow-class uncrewed surface vessel to the UAE for hydrographic surveys, adding to its Blue Essence USV fleet, which has operated in the UAE since 2022 and became the first over-the-horizon USV licensed there in 2023.",
+      "ar": "جلبت في مارس 2024 سفينة سطحية غير مأهولة من فئة «بلو شادو» إلى الإمارات للمسح الهيدروغرافي، إضافةً إلى سفن «بلو إسنس» العاملة في الإمارات منذ 2022، والتي أصبحت في 2023 أول سفينة غير مأهولة مرخّصة للعمل فيما وراء الأفق هناك."
+    },
+    "mena_source": "Fugro",
+    "mena_source_url": "https://www.fugro.com/news/business-news/2024/fugro-to-support-middle-easts-expanding-needs-for-ocean-data-with-its-high-tech-low-carbon-emissions-uncrewed-vessels",
+    "mena_date": "2024-03-21",
+    "logo": "/media/logos/fugro.png"
+  },
+  {
+    "id": "eve-air-mobility",
+    "name": "Eve Air Mobility",
+    "name_ar": "إيف للتنقل الجوي",
+    "country": "BH",
+    "category": "drone",
+    "stage": "growth",
+    "summary": "Embraer-backed developer of a four-passenger eVTOL air taxi, with agreements in Bahrain and Saudi Arabia to prepare air-taxi operations.",
+    "summary_ar": "شركة مدعومة من «إمبراير» تطوّر طائرة أجرة كهربائية للإقلاع والهبوط العمودي تتسع لأربعة ركاب، ولديها اتفاقيات في البحرين والسعودية للتحضير لخدمات التاكسي الجوي.",
+    "website": "https://eveairmobility.com/",
+    "source": "MEED",
+    "source_url": "https://www.meed.com/bahrain-signs-evtol-deal-with-eve-air-mobility",
+    "added": "2026-11-09",
+    "hq": "BR",
+    "hq_city": "São José dos Campos",
+    "mena_countries": [
+      "BH",
+      "SA"
+    ],
+    "mena_link": {
+      "en": "Bahrain signed an MoU with Eve in early November 2025 to build an eVTOL ecosystem, including a testbed and vertiports, aiming for commercial operations in 2028; in May 2024 Eve signed agreements in Saudi Arabia including an MoA with Saudia Technic on maintenance.",
+      "ar": "وقّعت البحرين مذكرة تفاهم مع «إيف» في أوائل نوفمبر 2025 لبناء منظومة للطائرات الكهربائية العمودية تشمل منصة اختبار ومهابط، بهدف بدء التشغيل التجاري في 2028، كما وقّعت «إيف» في مايو 2024 اتفاقيات في السعودية منها مذكرة مع «السعودية لهندسة وصناعة الطيران» للصيانة."
+    },
+    "mena_source": "MEED",
+    "mena_source_url": "https://www.meed.com/bahrain-signs-evtol-deal-with-eve-air-mobility",
+    "mena_date": "2025-11-06"
+  },
+  {
+    "id": "skydrive",
+    "name": "SkyDrive",
+    "name_ar": "سكاي درايف",
+    "country": "AE",
+    "category": "drone",
+    "stage": "b",
+    "summary": "Japanese developer of the SD-05 compact eVTOL aircraft, with a framework deal to supply 20 aircraft to UAE operator AeroGulf Services.",
+    "summary_ar": "شركة يابانية تطوّر الطائرة الكهربائية الصغيرة ذات الإقلاع العمودي «SD-05»، ولديها اتفاق إطاري لتوريد 20 طائرة لشركة «إيروغلف سيرفيسز» الإماراتية.",
+    "website": "https://skydrive.co.jp/en/",
+    "source": "Aviation News",
+    "source_url": "https://aviationnews.eu/news/2026/01/skydrive-reaches-uae-deal-framework-for-20-evtol-aircraft/",
+    "added": "2026-11-09",
+    "hq": "JP",
+    "hq_city": "Toyota City",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "In January 2026 reached a general understanding with AeroGulf Services (UAE) for the potential purchase of 20 SD-05 aircraft, 10 for delivery in 2028 and 10 in 2029 - its first customer outside Japan.",
+      "ar": "توصلت في يناير 2026 إلى تفاهم عام مع «إيروغلف سيرفيسز» الإماراتية لشراء محتمل لعشرين طائرة «SD-05»، تُسلَّم عشر منها في 2028 وعشر في 2029، لتكون أول عميل لها خارج اليابان."
+    },
+    "mena_source": "Aviation News",
+    "mena_source_url": "https://aviationnews.eu/news/2026/01/skydrive-reaches-uae-deal-framework-for-20-evtol-aircraft/",
+    "mena_date": "2026-01-16",
+    "logo": "/media/logos/skydrive.png"
+  },
+  {
+    "id": "nvidia",
+    "name": "NVIDIA",
+    "name_ar": "إنفيديا",
+    "country": "AE",
+    "category": "software",
+    "stage": "corp",
+    "summary": "US chip and AI-platform company whose robotics stack (Isaac, Jetson Thor) underpins a joint AI and robotics lab it opened with Abu Dhabi's TII.",
+    "summary_ar": "شركة أمريكية للرقائق ومنصات الذكاء الاصطناعي، تقوم منصتها للروبوتات (آيزاك وجيتسون ثور) عليها أعمال مختبر مشترك للذكاء الاصطناعي والروبوتات أطلقته مع معهد الابتكار التكنولوجي في أبوظبي.",
+    "website": "https://www.nvidia.com/en-us/industries/robotics/",
+    "source": "The National",
+    "source_url": "https://www.thenationalnews.com/future/technology/2025/09/22/nvidia-and-abu-dhabis-tii-launch-joint-ai-and-robotics-research-lab-to-accelerate-innovation",
+    "added": "2026-11-09",
+    "hq": "US",
+    "hq_city": "Santa Clara",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "On 22 September 2025 launched the TII-NVAITC Joint Lab for AI and Robotics with Abu Dhabi's Technology Innovation Institute, the first NVIDIA AI Technology Centre lab in the Middle East, focused on robotics, humanoids and physical AI.",
+      "ar": "أطلقت في 22 سبتمبر 2025 مع معهد الابتكار التكنولوجي في أبوظبي المختبر المشترك للذكاء الاصطناعي والروبوتات، وهو أول مختبر لمركز إنفيديا لتقنيات الذكاء الاصطناعي في الشرق الأوسط، ويركز على الروبوتات والروبوتات البشرية والذكاء الاصطناعي المادي."
+    },
+    "mena_source": "The National",
+    "mena_source_url": "https://www.thenationalnews.com/future/technology/2025/09/22/nvidia-and-abu-dhabis-tii-launch-joint-ai-and-robotics-research-lab-to-accelerate-innovation",
+    "mena_date": "2025-09-22"
+  },
+  {
+    "id": "intelligent-growth-solutions",
+    "name": "Intelligent Growth Solutions",
+    "name_ar": "إنتليجنت غروث سوليوشنز",
+    "country": "AE",
+    "category": "agri",
+    "stage": "b",
+    "summary": "Scottish maker of automated vertical-farming Growth Towers, supplying 200 towers to the GigaFarm being built in Dubai's Food Tech Valley.",
+    "summary_ar": "شركة اسكتلندية تصنع أبراج «Growth Towers» المؤتمتة للزراعة العمودية، وتوّرد 200 برج لمشروع «غيغافارم» قيد الإنشاء في وادي تكنولوجيا الغذاء في دبي.",
+    "website": "https://www.intelligentgrowthsolutions.com/",
+    "source": "Intelligent Growth Solutions",
+    "source_url": "https://www.intelligentgrowthsolutions.com/press-release/construction-progresses-dubai-gigafarm",
+    "added": "2026-11-09",
+    "hq": "GB",
+    "hq_city": "Edinburgh",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "With ReFarm Global Investments, is building the GigaFarm in Dubai's Food Tech Valley using 200 IGS Growth Towers; in June 2026 the first phase of 20 towers was due online that summer, with first crops later in 2026.",
+      "ar": "تبني مع «ريفارم غلوبال إنفستمنتس» مشروع «غيغافارم» في وادي تكنولوجيا الغذاء بدبي باستخدام 200 برج من أبراجها؛ وفي يونيو 2026 كان من المقرر تشغيل المرحلة الأولى بعشرين برجاً خلال الصيف، مع أول حصاد في وقت لاحق من 2026."
+    },
+    "mena_source": "Intelligent Growth Solutions",
+    "mena_source_url": "https://www.intelligentgrowthsolutions.com/press-release/construction-progresses-dubai-gigafarm",
+    "mena_date": "2026-06-08",
+    "logo": "/media/logos/intelligent-growth-solutions.png"
+  },
+  {
+    "id": "draganfly",
+    "name": "Draganfly",
+    "name_ar": "دراغونفلاي",
+    "country": "AE",
+    "category": "drone",
+    "stage": "growth",
+    "summary": "Canadian drone maker and services company selected by Dubai-based Arabian Aero Investment to integrate drones with a solar-powered electric-mobility charging platform in the UAE.",
+    "summary_ar": "شركة كندية لصناعة الطائرات المسيّرة وخدماتها، اختارتها «أرابيان إيرو إنفستمنت» في دبي لدمج الطائرات المسيّرة في منصة شحن للتنقل الكهربائي تعمل بالطاقة الشمسية في الإمارات.",
+    "website": "https://draganfly.com/",
+    "source": "Draganfly",
+    "source_url": "https://draganfly.com/press-release/draganfly-selected-for-innovative-end-to-end-electric-mobility-platform-in-uae/",
+    "added": "2026-11-09",
+    "hq": "CA",
+    "hq_city": "Saskatoon",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "In January 2024 was selected by Arabian Aero Investment LLC (Dubai) as solutions provider to integrate UAVs with the UAE's first end-to-end solar-powered electric-mobility platform; earlier, in 2020, Dubai Police selected it for drone pilots.",
+      "ar": "اختارتها «أرابيان إيرو إنفستمنت» في دبي في يناير 2024 مزوداً للحلول لدمج الطائرات المسيّرة في أول منصة متكاملة للتنقل الكهربائي بالطاقة الشمسية في الإمارات، وكانت شرطة دبي قد اختارتها في 2020 لمشاريع تجريبية للطائرات المسيّرة."
+    },
+    "mena_source": "Draganfly",
+    "mena_source_url": "https://draganfly.com/press-release/draganfly-selected-for-innovative-end-to-end-electric-mobility-platform-in-uae/",
+    "mena_date": "2024-01-23",
+    "logo": "/media/logos/draganfly.png"
   }
 ]

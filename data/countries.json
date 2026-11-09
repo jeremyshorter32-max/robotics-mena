@@ -86,5 +86,13 @@
     "target_year": null,
     "headline_target": "140 more locally made Aurès 700 drones being contracted for the next fire season (35 in service today, 20 of them Aurès 700)",
     "in_compare_table": true
+  },
+  {
+    "code": "LB",
+    "name": "Lebanon",
+    "name_ar": "لبنان",
+    "target_year": null,
+    "headline_target": null,
+    "in_compare_table": false
   }
 ]

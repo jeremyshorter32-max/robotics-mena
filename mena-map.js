@@ -35,7 +35,7 @@
   const REGION_NARROW = [[32, 12], [60, 35]];
   const LIMIT = [[-40, -20], [140, 62]];
   // Suppliers view: wide enough to show headquarters from California to Tokyo.
-  const WORLD = [[-128, -6], [150, 62]], LIMIT_W = [[-180, -50], [180, 76]];
+  const WORLD = [[-128, -28], [150, 62]], LIMIT_W = [[-180, -50], [180, 76]];
   // One fixed rotation for every view, so panning and zooming is just a scale + translate of the
   // pre-drawn base map (countries are drawn once, not on every frame).
   const ROT = [-49, 0], S0 = 1000;
@@ -622,7 +622,7 @@
           arcs += `<path class="arc${flow}${on ? ' on' : ''}" d="M${nd.x},${nd.y} Q${cx},${cy} ${b[0]},${b[1]}" stroke-width="${(1 + Math.sqrt(n) * 0.9).toFixed(2)}"/>`;
         });
         const n = nd.n, r = 4 + Math.sqrt(n) * 2.6, ccs = nd.ccs;
-        const lbl = ccs.length === 1 ? (nm[ccs[0]] || ccs[0]) : nd.os[0].city, showL = ccs.some(c => big[c] === nd), lx = Math.max(48, Math.min(w - 48, nd.x));
+        const lbl = ccs.length === 1 ? (nm[ccs[0]] || ccs[0]) : nd.os[0].city, showL = ccs.some(c => big[c] === nd) && (nd.n > 1 || nodes.length < 25), lx = Math.max(48, Math.min(w - 48, nd.x));
         const dim = hl && hl !== nd.k && !(hl.startsWith('d:') && dn[hl.slice(2)] && dn[hl.slice(2)].from.has(nd.k));
         ns += `<g class="org" tabindex="0" role="button" aria-label="${esc(lbl)}: ${n}" data-k="${esc(nd.k)}" data-x="${nd.x}" data-y="${nd.y}" data-r="${r}" opacity="${dim ? .35 : 1}"><circle cx="${nd.x}" cy="${nd.y}" r="${r + 8}" fill="transparent"/><circle cx="${nd.x}" cy="${nd.y}" r="${r}" fill="var(--sand)" stroke="var(--bg-raised)" stroke-width="2"/>`
           + (n > 1 ? `<text class="cnt" x="${nd.x}" y="${nd.y + 4}" text-anchor="middle" style="fill:var(--pin-ink,#fff);font-size:10px">${n}</text>` : '')

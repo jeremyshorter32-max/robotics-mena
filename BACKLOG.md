@@ -26,6 +26,21 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 
 ## Content and research
 
+- [ ] **Defence and weapons drone makers: include or not?** Ten were found and held back pending an editorial
+  decision: EDGE Group (UAE), SR2Vector, United Defense Company, INTRA Defense Technologies, Haris Unmanned
+  Systems, SERB Advanced Industries (Saudi Arabia), Barzan Holdings (Qatar), Shield AI (US), Exail (France),
+  Saildrone (US, Fifth Fleet). Records are ready to add if the answer is yes.
+- [ ] **Second research pass.** The first pass (Nov 2026) added 63 companies but every agent stopped early on the
+  session's web-search limit. Not yet covered well: medical, education, agriculture, service-robot distributors
+  (Pudu/Keenon/Unitree dealers), Khalifa University/MBZUAI spin-outs, Jordan, Iraq, Libya, Bahrain, industrial
+  arm makers (ABB, KUKA, FANUC…). Leads already noted: BTR.tech partners, Unique Group (UAE subsea), iFarm (UAE),
+  Planys, Milkor UAE, Furhat, Elroy Air/Barq, LimX Dynamics, Jiangsu Yunmu humanoid deal, Robot Ahmed (Bahrain),
+  Buildroid AI, Hollyway/XAR (Morocco), Tekever, Corvus Drones, Harmattan AI, Faraday Future (UAE partners),
+  Yango Tech Robotics (confirm HQ), Black Buffalo 3D / Struxure.
+- [ ] **Thinly sourced new entries to re-check.** Some new companies are sourced only from their own websites
+  (e.g. Aerosmart, Airscope, Drone Film Arabia, RoboMecs, Shamal, Aerial Solutions, Lebotics, Avelabs, Robotics
+  Corner, Clear Sky Drones, KAT) or from older coverage (Marakeb 2023, Firnas Aero 2020, ATLAN Space 2020).
+
 - [ ] **VORTEXINFO in Qatar.** Listed with its Abu Dhabi showcase (ADSW, Jan 2026); no Qatar presence found.
   Add Qatar if a source turns up.
 - [ ] **Link new deployments to policy programmes.** Add this step to the research-report skill
