@@ -41,7 +41,7 @@ const Source = {
 const Findings = z.object({
   companies: z.array(z.object({
     name: z.string(), name_ar: z.string().describe('Arabic name or transliteration'),
-    country: Country.describe('Main MENA country where the company operates (for international companies: their main MENA market)'), category: z.enum(keys(COMPANY_CATEGORIES)), stage: z.enum(keys(STAGES)),
+    country: Country.describe('Main MENA country where the company operates (for international companies: their main MENA market)'), category: z.enum(keys(COMPANY_CATEGORIES)), secondary: z.enum(['', ...keys(COMPANY_CATEGORIES)]).describe('Optional second category when the company clearly spans two; empty string otherwise'), stage: z.enum(keys(STAGES)),
     hq: z.string().describe('Headquarters country as a 2-letter ISO code, e.g. AE, US, CN'),
     mena_countries: z.array(z.string()).describe('2-letter codes of every MENA country where it is active'),
     mena_link: z.string().describe('For companies headquartered outside MENA: 1-2 sentences of dated facts on why it belongs in a MENA directory (deployment, contract, pilot, local office). Empty string for regional companies'),
@@ -180,7 +180,7 @@ function merge(found) {
     const intl = !(hq in MENA);
     if (intl && !c.mena_link) { skip('Company', c.name, 'international but no link to MENA'); continue; }
     const mc = [...new Set([c.country, ...(c.mena_countries || []).filter(x => x in MENA)])];
-    const rec = { id, name: c.name, name_ar: c.name_ar, country: c.country, hq, mena_countries: mc, category: c.category, stage: c.stage, summary: c.summary, summary_ar: c.summary_ar, website: isUrl(c.website) ? c.website : '', logo: '', source: c.source, source_url: c.source_url, added: today };
+    const rec = { id, name: c.name, name_ar: c.name_ar, country: c.country, hq, mena_countries: mc, category: c.category, ...(c.secondary && c.secondary !== c.category ? { secondary: c.secondary } : {}), stage: c.stage, summary: c.summary, summary_ar: c.summary_ar, website: isUrl(c.website) ? c.website : '', logo: '', source: c.source, source_url: c.source_url, added: today };
     if (intl) {
       Object.assign(rec, { mena_link: { en: c.mena_link, ar: c.mena_link_ar || c.mena_link }, mena_source: c.source, mena_source_url: c.source_url, mena_date: ISO_DATE.test(c.date || '') ? c.date : today });
       if (!fs.existsSync(path.join(ROOT, 'media', 'flags', hq.toLowerCase() + '.svg'))) { skip('Company', c.name, `no flag file for ${hq} (add media/flags/${hq.toLowerCase()}.svg, then re-run)`); continue; }

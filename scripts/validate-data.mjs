@@ -20,7 +20,7 @@ uniq(D.countries, 'code', 'countries');
 D.companies.forEach((c, i) => {
   const w = `companies[${i}] ${c.id}`;
   need(c, w, ['id', 'name', 'country', 'category', 'stage', 'summary', 'added']);
-  oneOf(c.category, COMPANY_CATEGORIES, w, 'category'); oneOf(c.stage, STAGES, w, 'stage');
+  oneOf(c.category, COMPANY_CATEGORIES, w, 'category'); if (c.secondary != null) { oneOf(c.secondary, COMPANY_CATEGORIES, w, 'secondary'); if (c.secondary === c.category) errors.push(`${w}: secondary repeats category`); } oneOf(c.stage, STAGES, w, 'stage');
   if (!countryCodes.has(c.country)) errors.push(`${w}: country "${c.country}" is not in countries.json`);
   date(c.added, w, 'added'); url(c.website, w, 'website'); logo(c.logo, w); url(c.source_url, w, 'source_url');
   if ([c.country, c.hq, ...(c.mena_countries || [])].some(x => EXCLUDED_COUNTRIES.has(x))) errors.push(`${w}: companies based in or listed under an excluded country are not allowed`);

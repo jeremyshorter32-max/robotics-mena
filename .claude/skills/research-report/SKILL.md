@@ -55,7 +55,7 @@ Rules to put in every research prompt:
 5. **Providers:** every provider in `report.providers` must exist in `data/companies.json`. Add missing ones following the existing records, e.g. `gecko-robotics`, `taurob`:
    - set `country` to their main MENA market, `hq` to the real headquarters (ISO code) with `hq_city`, and `mena_countries` to every MENA country they're active in;
    - for international companies (HQ outside MENA) add `mena_link` {en, ar}, one or two dated sentences on why they belong in a MENA directory, plus `mena_source`, `mena_source_url` and `mena_date`. Add the HQ flag to `media/flags/<cc>.svg` from flag-icons if it's missing;
-   - use a valid category (humanoid, arm, amr, drone, av, construction, integrator, software) and stage (seed, a, b, growth, corp);
+   - use a valid category (arm, amr, av, drone, humanoid, inspection, marine, service, medical, construction, agri, software, integrator, education; optional `secondary` from the same list; the list lives in `CATS` in `src/logic.js`) and stage (seed, a, b, growth, corp);
    - add a logo at `media/logos/<id>.png`: official logo, trimmed and centred on a white 256×256 tile, plus a row in `media/logos/SOURCES.md`.
 6. Add `related` links (directory records, deployments, `/map`), and `pdf` paths `/media/reports/<id>-en.pdf` and `/media/reports/<id>-ar.pdf`.
 7. Optionally add a deployment record to `data/deployments.json` if the story is a new deployment and it isn't there yet.
