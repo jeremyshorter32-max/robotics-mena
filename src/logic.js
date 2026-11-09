@@ -147,7 +147,7 @@ class Component extends DCLogic {
     const o = this.briefOpener; this.briefOpener = null; if (o && o.focus) setTimeout(() => o.focus(), 0);
   }
   // Sends a sign-up or submission to the site inbox (FormSubmit relays it to the contact address).
-  post(url, fields) { if (!url) return Promise.resolve(false); try { return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ _captcha: 'false', _template: 'table', ...fields }) }).then(r => r.ok).catch(() => false); } catch (e) { return Promise.resolve(false); } }
+  post(url, fields) { if (!url) return Promise.resolve(false); try { return fetch(url, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ _captcha: 'false', _template: 'table', ...fields }) }).then(r => r.ok).catch(() => false); } catch (e) { return Promise.resolve(false); } }
   BRIEF = window.RM_DATA.brief.map(b => [b.country, b.date, b.source, b.title, b.title_ar || b.title, b.takeaway, b.takeaway_ar || b.takeaway, b.image || '', b.image_credit || '', b.source_url || '']);
 
   CO = window.RM_DATA.companies.map(c => [c.name, c.name_ar || c.name, c.country, c.category, c.stage, c.added, c.summary, c.summary_ar || c.summary, c.id]);
