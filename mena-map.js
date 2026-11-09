@@ -31,7 +31,12 @@
   const LIMIT = [[-40, -20], [140, 62]];
   // Suppliers view: wide enough to show headquarters from California to Tokyo.
   const WORLD = [[-128, -6], [150, 62]], LIMIT_W = [[-180, -50], [180, 76]];
-  const flat = b => d3.geoMercator().rotate([-(b[0][0] + b[1][0]) / 2, 0]);
+  // One fixed rotation for every view, so panning and zooming is just a scale + translate of the
+  // pre-drawn base map (countries are drawn once, not on every frame).
+  const ROT = [-49, 0], S0 = 1000;
+  const flat = () => d3.geoMercator().rotate(ROT);
+  const P0 = () => d3.geoMercator().rotate(ROT).scale(S0).translate([0, 0]);
+  const HI_SPAN = 70; // switch to the detailed coastline below this view width (degrees)
   const MIN_SPAN = 0.8, NS_R = 28;
   const cache = {};
   const libs = () => new Promise(r => { const t = () => (window.d3 && window.topojson) ? r() : setTimeout(t, 40); t(); });
@@ -72,6 +77,9 @@
         .grp button svg{width:16px;height:16px;flex:none;display:block}
         :host([mode=full])>svg{cursor:grab}
         :host([data-drag])>svg{cursor:grabbing}
+        .bw path{vector-effect:non-scaling-stroke}
+        .bw .lo,.bw .hi{display:none}
+        .bw[data-d=lo] .lo,.bw[data-d=hi] .hi{display:inline}
         .pin{cursor:pointer;outline:none}
         .pin:focus-visible .hit{stroke:var(--accent-text);stroke-width:2.5}
         .pin .glyph{transition:transform .15s;transform-box:fill-box;transform-origin:center}
@@ -175,7 +183,7 @@
         .card .meter{height:6px;background:var(--line);position:relative}
         .card .meter i{position:absolute;inset-block:0;inset-inline-start:0;background:var(--sand)}
         @media (prefers-reduced-motion:reduce){.ring{animation:none;opacity:.6;transform:scale(1.6)}.rip,.drop,.card,.arc.flow,.card .bar2 i{animation:none}}
-      </style><svg role="group"></svg>
+      </style><svg role="group"><g class="bw"></g><g class="ov"></g></svg>
       <div class="top"><div class="row"><div class="grp lay" role="group" hidden><button data-l="off"></button><button data-l="score"><i style="background:var(--sand)"></i></button><button data-l="count"><i style="background:var(--accent)"></i></button><button data-l="sup" hidden></button></div><div class="grp tourg" hidden><button class="tourb" type="button"></button></div></div><div class="leg" hidden></div></div>
       <div class="tl" role="group" hidden><button class="pp" type="button"></button><div class="mid"><span class="mo" aria-hidden="true"></span><input type="range" min="0" max="0" step="1" value="0"><div class="ax"><span></span><span></span></div></div><div class="st" aria-live="polite"><span><b class="nd">0</b><small class="ndl"></small></span><span><b class="nc">0</b><small class="ncl"></small></span></div></div>
       <div class="card" hidden></div>
@@ -184,7 +192,7 @@
         <div class="grp"><button data-z="reset" class="rs"></button><button data-z="full"></button></div>
         <div class="scale" aria-hidden="true"><span></span><i></i></div>
       </div>`;
-      this.svg = r.querySelector('svg');
+      this.svg = r.querySelector('svg'); this.bw = this.svg.querySelector('.bw'); this.ov = this.svg.querySelector('.ov'); this.bases = {};
       this.bar = r.querySelector('.bar');
       this.tlEl = r.querySelector('.tl'); this.range = this.tlEl.querySelector('input'); this.ppBtn = this.tlEl.querySelector('.pp');
       this.layEl = r.querySelector('.lay'); this.tourBtn = r.querySelector('.tourb'); this.tourG = r.querySelector('.tourg'); this.legEl = r.querySelector('.leg'); this.cardEl = r.querySelector('.card');
@@ -275,15 +283,16 @@
         const ox = b[0] - a[0], oy = b[1] - a[1];
         d.x = e.clientX; d.y = e.clientY;
         this.bbox = this.clamp([[this.bbox[0][0] + ox, this.bbox[0][1] + oy], [this.bbox[1][0] + ox, this.bbox[1][1] + oy]]);
-        this.render();
+        this.queue();
       });
-      const end = e => { const d = this.drag; if (!d || d.id !== e.pointerId) return; if (d.moved) { this.dragged = true; setTimeout(() => this.dragged = false, 0); } this.drag = null; this.removeAttribute('data-drag'); };
+      const end = e => { const d = this.drag; if (!d || d.id !== e.pointerId) return; if (d.moved) { this.dragged = true; setTimeout(() => this.dragged = false, 0); } this.drag = null; this.removeAttribute('data-drag'); this.queue(); };
       this.svg.addEventListener('pointerup', end); this.svg.addEventListener('pointercancel', end);
       // pinch / ctrl+wheel zoom (plain wheel keeps page scrolling)
       this.svg.addEventListener('wheel', e => {
         if (this.mode() !== 'full' || !(e.ctrlKey || e.metaKey) || !this.proj) return;
         e.preventDefault(); this.endTour(false);
         const r = this.svg.getBoundingClientRect(), at = this.proj.invert([e.clientX - r.left, e.clientY - r.top]);
+        this._wheel = true; clearTimeout(this._wt); this._wt = setTimeout(() => { this._wheel = false; this.queue(); }, 180);
         this.zoomBy(Math.exp(e.deltaY * 0.01), at, true);
       }, { passive: false });
     }
@@ -291,13 +300,20 @@
     // The page's template engine lower-cases attribute names to "padend"; accept both spellings.
     padEnd() { return +(this.getAttribute('pad-end') || this.getAttribute('padend')) || 0; }
     lang() { return this.getAttribute('dir') === 'rtl' ? 'ar' : 'en'; }
-    t(k) { let o = {}; try { o = JSON.parse(this.getAttribute('labels') || '{}'); } catch (e) {} return o[k] != null ? o[k] : L[this.lang()][k]; }
+    t(k) { const a = this.getAttribute('labels'); if (this._la !== a) { this._la = a; try { this._lab = JSON.parse(a || '{}'); } catch (e) { this._lab = {}; } } const o = this._lab; return o[k] != null ? o[k] : L[this.lang()][k]; }
+    queue() { if (this._q) return; this._q = requestAnimationFrame(() => { this._q = 0; this.render(); }); }
     loc() { return this.getAttribute('locale') || (this.lang() === 'ar' ? 'ar-AE-u-nu-latn' : 'en-GB'); }
     num(n) { return new Intl.NumberFormat(this.loc()).format(n); }
     allPins() { if (this._pa !== this.getAttribute('pins')) { this._pa = this.getAttribute('pins'); try { this._pins = JSON.parse(this._pa || '[]'); } catch (e) { this._pins = []; } } return this._pins; }
     countries() { if (this._ca !== this.getAttribute('countries')) { this._ca = this.getAttribute('countries'); try { this._cty = JSON.parse(this._ca || '{}'); } catch (e) { this._cty = {}; } } return this._cty; }
     // Timeline: one step per calendar month, from the first deployment to the current month.
     months() {
+      this.allPins();
+      if (this._ma === this._pa && this._ms) return this._ms;
+      this._ma = this._pa;
+      return (this._ms = this.monthsCalc());
+    }
+    monthsCalc() {
       const ds = this.allPins().map(p => p.d).filter(Boolean).sort();
       if (!ds.length) return [];
       const now = new Date().toISOString().slice(0, 7), last = ds[ds.length - 1].slice(0, 7) > now ? ds[ds.length - 1].slice(0, 7) : now;
@@ -327,8 +343,7 @@
     stop() { if (!this.playing) return; this.playing = false; clearInterval(this.tick); this.render(); }
     connectedCallback() {
       if (!this.hasAttribute('mode')) this.setAttribute('mode', 'full');
-      load('lo').then(g => { if (!this.geo) { this.geo = g; this.render(); } });
-      if (this.mode() === 'full') load('hi').then(g => { this.geo = g; this.render(); });
+      load('lo').then(g => { this.geo = g; this.render(); });
       this.ro = new ResizeObserver(() => this.render()); this.ro.observe(this);
       this.labels();
     }
@@ -336,7 +351,6 @@
     attributeChangedCallback(n, o, v) {
       if (o === v) return;
       if (n === 'focus') { this.animateTo(this.focusBox()); return; }
-      if (n === 'mode' && v === 'full') load('hi').then(g => { this.geo = g; this.render(); });
       if (n === 'dir' || n === 'labels') this.labels();
       if (n === 'pins') { this.fresh.clear(); if (!this.playing) this.tlIdx = -1; this.spider = null; this.endTour(false); }
       if (n === 'suppliers') this.supHl = null;
@@ -390,7 +404,7 @@
       if (at) nb = [[at[0] - (at[0] - b[0][0]) * f, at[1] - (at[1] - b[0][1]) * f], [at[0] + (b[1][0] - at[0]) * f, at[1] + (b[1][1] - at[1]) * f]];
       else nb = [[cx - sx / 2, cy - sy / 2], [cx + sx / 2, cy + sy / 2]];
       nb = this.clamp(nb);
-      if (instant) { cancelAnimationFrame(this.raf); this.bbox = nb; this.render(); } else this.animateTo(nb);
+      if (instant) { cancelAnimationFrame(this.raf); this.bbox = nb; this.queue(); } else this.animateTo(nb);
     }
     animateTo(t) {
       cancelAnimationFrame(this.raf);
@@ -500,8 +514,8 @@
         const g = this.svg.querySelector(`.cty[data-cc="${id}"]`); if (!g) { this.cardEl.hidden = true; return; }
         g.classList.add('hov');
         const c = this.countries()[id], nm = (NAMES[CC[id]] || [id, id])[this.lang() === 'ar' ? 1 : 0], n = this.pins().filter(p => p.cc === id).length;
-        const r = this.svg.getBoundingClientRect(), b = g.getBBox();
-        at = [b.x + b.width / 2, b.y + b.height / 2, 0];
+        const r = this.getBoundingClientRect(), b = g.getBoundingClientRect();
+        at = [b.x - r.x + b.width / 2, b.y - r.y + b.height / 2, 0];
         const ft = `<div class="ft"><span>${esc(t('depN').replace('{n}', this.num(n)))}</span>${c ? `<a href="#" data-cty="${id}" onclick="return false">${esc(t('pickCty'))} →</a>` : ''}</div>`;
         if (this.layer === 'score' && c) html = `<div class="bd"><span class="ty">${esc(t('scoreLeg'))}</span><h4>${esc(nm)}</h4><span class="big" dir="ltr">${this.num(c.s)} <small>/ ${this.num(c.m)}</small></span><span class="meter"><i style="width:${Math.round(c.s / c.m * 100)}%"></i></span><span class="sub">${esc(t('rank').replace('{r}', this.num(c.r)).replace('{n}', this.num(c.of)))}</span>${ft}</div>`;
         else html = `<div class="bd"><span class="ty">${esc(this.layer === 'score' ? t('noDossier') : t('countLeg'))}</span><h4>${esc(nm)}</h4><span class="big">${this.num(n)}</span>${ft}</div>`;
@@ -532,6 +546,8 @@
       this.scaleEl.querySelector('i').style.width = Math.round(nice / km * 100) + 'px';
       this.scaleEl.querySelector('span').textContent = nice.toLocaleString() + ' ' + this.t('km');
     }
+    setH(el, html) { if (el._h !== html) { el._h = html; el.innerHTML = html; } }
+    setT(el, txt) { if (el.textContent !== txt) el.textContent = txt; }
     chrome(w, pad, rtl) {
       // layer switch + legend
       const lay = this.hasAttribute('layers') && this.mode() === 'full';
@@ -544,28 +560,28 @@
       this.toggleAttribute('data-layer', this.layer !== 'off' && this.layer !== 'sup');
       this.toggleAttribute('data-hl', !!this.supHl);
       this.legEl.hidden = this.layer === 'off';
-      if (this.layer === 'sup') { const S = this.suppliers(), os = S.origins || [], n = os.reduce((a, o) => a + o.cos.length, 0), m = new Set(os.map(o => o.cc)).size; this.legEl.innerHTML = `<span>${esc(this.t('supLeg').replace('{n}', this.num(n)).replace('{m}', this.num(m)))}</span>`; }
+      if (this.layer === 'sup') { const S = this.suppliers(), os = S.origins || [], n = os.reduce((a, o) => a + o.cos.length, 0), m = new Set(os.map(o => o.cc)).size; this.setH(this.legEl, `<span>${esc(this.t('supLeg').replace('{n}', this.num(n)).replace('{m}', this.num(m)))}</span>`); }
       // guided tour button
       const tourOn = this.hasAttribute('tour') && this.mode() === 'full' && this.layer !== 'sup' && this.pins().length > 0;
       this.tourG.hidden = !tourOn;
-      this.tourBtn.innerHTML = (this.tour ? I.pause : I.tour) + '<span>' + esc(this.tour ? this.t('tourStop') : this.t('tour')) + '</span>';
+      this.setH(this.tourBtn, (this.tour ? I.pause : I.tour) + '<span>' + esc(this.tour ? this.t('tourStop') : this.t('tour')) + '</span>');
       this.tourBtn.toggleAttribute('data-on', !!this.tour);
-      if (this.layer === 'score') { const cs = Object.values(this.countries()), m = cs.length ? cs[0].m : 16; this.legEl.innerHTML = `<span>${esc(this.t('scoreLeg'))}</span><span dir="ltr" style="display:inline-flex;align-items:center;gap:6px">0<span class="ramp" style="background:linear-gradient(90deg,${this.ramp('score', 0)},${this.ramp('score', 1)})"></span>${this.num(m)}</span><span class="nd"><i></i>${esc(this.t('noDossier'))}</span>`; }
-      if (this.layer === 'count') { const mx = this.maxCount; this.legEl.innerHTML = `<span>${esc(this.t('countLeg'))}</span><span dir="ltr" style="display:inline-flex;align-items:center;gap:6px">0<span class="ramp" style="background:linear-gradient(90deg,${this.ramp('count', 0)},${this.ramp('count', 1)})"></span>${this.num(mx || 0)}</span>`; }
+      if (this.layer === 'score') { const cs = Object.values(this.countries()), m = cs.length ? cs[0].m : 16; this.setH(this.legEl, `<span>${esc(this.t('scoreLeg'))}</span><span dir="ltr" style="display:inline-flex;align-items:center;gap:6px">0<span class="ramp" style="background:linear-gradient(90deg,${this.ramp('score', 0)},${this.ramp('score', 1)})"></span>${this.num(m)}</span><span class="nd"><i></i>${esc(this.t('noDossier'))}</span>`); }
+      if (this.layer === 'count') { const mx = this.maxCount; this.setH(this.legEl, `<span>${esc(this.t('countLeg'))}</span><span dir="ltr" style="display:inline-flex;align-items:center;gap:6px">0<span class="ramp" style="background:linear-gradient(90deg,${this.ramp('count', 0)},${this.ramp('count', 1)})"></span>${this.num(mx || 0)}</span>`); }
       // time-lapse bar
       const on = this.tlOn(), ms = this.months();
       this.tlEl.hidden = !on || ms.length < 2 || this.layer === 'sup' || !!this.tour;
       this.toggleAttribute('data-narrow', w < 720);
       if (on && ms.length > 1) {
         const i = this.tlIdx < 0 ? ms.length - 1 : this.tlIdx, at = i >= ms.length - 1;
-        const fm = k => new Intl.DateTimeFormat(this.loc(), { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(k + '-15T12:00:00Z'));
+        const df = this._df && this._dfl === this.loc() ? this._df : (this._dfl = this.loc(), this._df = new Intl.DateTimeFormat(this.loc(), { month: 'short', year: 'numeric', timeZone: 'UTC' })), fm = k => df.format(new Date(k + '-15T12:00:00Z'));
         this.range.max = ms.length - 1; this.range.value = i; this.range.setAttribute('aria-valuetext', fm(ms[i]));
-        this.tlEl.querySelector('.mo').textContent = fm(ms[i]);
-        const ax = this.tlEl.querySelectorAll('.ax span'); ax[0].textContent = fm(ms[0]); ax[1].textContent = fm(ms[ms.length - 1]);
+        this.setT(this.tlEl.querySelector('.mo'), fm(ms[i]));
+        const ax = this.tlEl.querySelectorAll('.ax span'); this.setT(ax[0], fm(ms[0])); this.setT(ax[1], fm(ms[ms.length - 1]));
         const ps = this.pins();
-        this.tlEl.querySelector('.nd').textContent = this.num(ps.length);
-        this.tlEl.querySelector('.nc').textContent = this.num(new Set(ps.map(p => p.cc)).size);
-        this.ppBtn.innerHTML = this.playing ? I.pause : (at ? I.replay : I.play);
+        this.setT(this.tlEl.querySelector('.nd'), this.num(ps.length));
+        this.setT(this.tlEl.querySelector('.nc'), this.num(new Set(ps.map(p => p.cc)).size));
+        this.setH(this.ppBtn, this.playing ? I.pause : (at ? I.replay : I.play));
         this.ppBtn.setAttribute('aria-label', this.playing ? this.t('pause') : (at ? this.t('replay') : this.t('play')));
         this.ppBtn.title = this.ppBtn.getAttribute('aria-label');
         if (w >= 720) {
@@ -613,6 +629,27 @@
       });
       return arcs + ns + ds;
     }
+    // Builds one detail level of the base map in fixed projection space (once per detail level).
+    base(lv, hero) {
+      const geo = lv === 'hi' ? this.geoHi : this.geo;
+      if (!geo || (this.bases[lv] === geo && !!this.bases[lv + 'h'] === !!hero)) return;
+      this.bases[lv] = geo; this.bases[lv + 'h'] = !!hero;
+      const path = d3.geoPath(P0());
+      let lands = '', mena = '';
+      for (const f of geo.features) {
+        const d = path(f); if (!d) continue;
+        if (MENA.has(f.id)) mena += `<path class="m" data-id="${f.id}" d="${d}" fill="var(--map-land-mena)"/>`;
+        else lands += `<path d="${d}" fill="var(--map-land)"/>`;
+      }
+      const g = (hero ? '' : `<path d="${path(d3.geoGraticule().step([5, 5])())}" fill="none" stroke="var(--line)" stroke-width="0.5" stroke-opacity=".55" pointer-events="none"/>`)
+        + lands + mena
+        + `<path d="${path(geo.borders)}" fill="none" stroke="var(--map-border)" stroke-width="${hero ? .5 : .75}" stroke-linejoin="round" pointer-events="none"/>`
+        + `<path d="${path(geo.coast)}" fill="none" stroke="var(--map-coast,var(--map-border))" stroke-width="${hero ? .6 : 1}" stroke-linejoin="round" pointer-events="none"/>`
+        + `<path class="fo" d="" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linejoin="round" pointer-events="none"/>`;
+      let el = this.bw.querySelector('.' + lv);
+      if (!el) { el = document.createElementNS('http://www.w3.org/2000/svg', 'g'); el.setAttribute('class', lv); this.bw.appendChild(el); }
+      el.innerHTML = g; this._fk = null;
+    }
     render() {
       if (!this.geo) return;
       const w = this.clientWidth, h = this.clientHeight;
@@ -647,32 +684,46 @@
         proj.translate([tr[0] + cx - c[0], tr[1] + cy - c[1]]);
       }
       this.proj = proj;
-      const path = d3.geoPath(proj);
       const fcc = CC[this.getAttribute('focus')];
       const k = proj.scale() / 400;
       const layer = hero ? 'off' : this.layer, cdata = this.countries();
-      let out = '';
-      if (!hero) out += `<path d="${path(d3.geoGraticule().step([5, 5])())}" fill="none" stroke="var(--line)" stroke-width="0.6" stroke-dasharray="1 3"/>`;
-      let lands = '', mena = '';
-      for (const f of this.geo.features) {
-        const m = MENA.has(f.id), d = path(f);
-        if (!m) { lands += `<path d="${d}" fill="var(--map-land)"/>`; continue; }
-        const cc = ID2CC[f.id];
-        let fill = f.id === fcc ? 'var(--accent-soft)' : 'var(--map-land-mena)', cls = '';
-        if (layer === 'score' && cdata[cc]) { fill = this.ramp('score', cdata[cc].s / cdata[cc].m); cls = 'cty'; }
-        else if (layer === 'count' && cc) { const n = cnt[cc] || 0; if (n) fill = this.ramp('count', Math.sqrt(n / (this.maxCount || 1))); cls = 'cty'; }
-        if (cls) mena += `<path class="cty" data-cc="${cc}" tabindex="0" role="button" aria-label="${esc((NAMES[f.id] || [cc, cc])[rtl ? 1 : 0])}" d="${d}" fill="${fill}"/>`;
-        else mena += `<path d="${d}" fill="${fill}"/>`;
+      // Base map: drawn once per detail level, then moved with a single transform.
+      // The detailed coastline is only fetched once someone zooms in.
+      if (!hero && !this.geoHi && !this._hiL && this.span() < HI_SPAN * 1.3) { this._hiL = true; load('hi').then(g => { this.geoHi = g; this.queue(); }); }
+      // While the map is moving, keep the light coastline; swap in the detailed one when it settles.
+      const moving = this.anim || (this.drag && this.drag.moved) || this._wheel;
+      const want = !hero && this.geoHi && this.span() < HI_SPAN && (!moving || this.bw.getAttribute('data-d') === 'hi' && this._hiOk) ? 'hi' : 'lo';
+      this._hiOk = want === 'hi';
+      this.base('lo', hero); if (want === 'hi') this.base('hi', hero);
+      const f0 = proj.scale() / S0, tr = proj.translate();
+      this.bw.setAttribute('transform', `translate(${tr[0]} ${tr[1]}) scale(${f0})`);
+      this.bw.setAttribute('data-d', want);
+      // Country fills (choropleth / focus) only touch the ~20 MENA shapes, and only when something changed.
+      const fk = [layer, fcc, this._ca, layer === 'count' ? JSON.stringify(cnt) : '', rtl].join('|');
+      if (this._fk !== fk + want) {
+        this._fk = fk + want;
+        this.bw.querySelectorAll('.m').forEach(el => {
+          const id = el.dataset.id, cc = ID2CC[id];
+          let fill = id === fcc ? 'var(--accent-soft)' : 'var(--map-land-mena)', on = false;
+          if (layer === 'score' && cdata[cc]) { fill = this.ramp('score', cdata[cc].s / cdata[cc].m); on = true; }
+          else if (layer === 'count' && cc) { const n = cnt[cc] || 0; if (n) fill = this.ramp('count', Math.sqrt(n / (this.maxCount || 1))); on = true; }
+          el.setAttribute('fill', fill);
+          el.classList.toggle('cty', on);
+          if (on) { el.setAttribute('data-cc', cc); el.setAttribute('tabindex', '0'); el.setAttribute('role', 'button'); el.setAttribute('aria-label', (NAMES[id] || [cc, cc])[rtl ? 1 : 0]); }
+          else { el.removeAttribute('data-cc'); el.removeAttribute('tabindex'); el.removeAttribute('role'); el.removeAttribute('aria-label'); }
+        });
+        this.bw.querySelectorAll('.fo').forEach(el => el.setAttribute('d', ''));
+        if (fcc) { const src = this.bw.querySelector(`.${want} .m[data-id="${fcc}"]`), fo = this.bw.querySelector(`.${want} .fo`); if (src && fo) fo.setAttribute('d', src.getAttribute('d')); }
       }
-      out += lands + mena;
-      out += `<path d="${path(this.geo.borders)}" fill="none" stroke="var(--map-border)" stroke-width="${hero ? .5 : .75}" stroke-linejoin="round" pointer-events="none"/>`;
-      out += `<path d="${path(this.geo.coast)}" fill="none" stroke="var(--map-coast,var(--map-border))" stroke-width="${hero ? .6 : 1}" stroke-linejoin="round" pointer-events="none"/>`;
-      if (fcc) { const f = this.geo.features.find(x => x.id === fcc); if (f) out += `<path d="${path(f)}" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linejoin="round" pointer-events="none"/>`; }
+      let out = '';
       if (!hero) {
+        const P = this.p0c || (this.p0c = {});
         for (const id in NAMES) {
-          const f = this.geo.features.find(x => x.id === id); if (!f) continue;
           if (id === '048' && k < 4) continue;
-          const c = path.centroid(f); if (!isFinite(c[0]) || c[0] < 0 || c[0] > w || c[1] < 0 || c[1] > h - 60) continue;
+          if (!(id in P)) { const f = this.geo.features.find(x => x.id === id); P[id] = f ? d3.geoPath(P0()).centroid(f) : null; }
+          const c0 = P[id]; if (!c0) continue;
+          const c = [c0[0] * f0 + tr[0], c0[1] * f0 + tr[1]];
+          if (!isFinite(c[0]) || c[0] < 0 || c[0] > w || c[1] < 0 || c[1] > h - 60) continue;
           const cc = ID2CC[id];
           const v = layer === 'score' && cdata[cc] ? cdata[cc].s : layer === 'count' && cnt[cc] ? cnt[cc] : null;
           out += `<text class="lbl${rtl ? ' ar' : ''}" x="${c[0]}" y="${c[1] + 24}" text-anchor="middle">${NAMES[id][rtl ? 1 : 0]}${v != null ? `<tspan class="v" x="${c[0]}" dy="15">${this.num(v)}</tspan>` : ''}</text>`;
@@ -747,7 +798,7 @@
         if (p) { const xy = proj([p.lon, p.lat]); out += `<circle class="ring" cx="${xy[0]}" cy="${xy[1]}" r="9" style="stroke-width:2"/><circle cx="${xy[0]}" cy="${xy[1]}" r="16" fill="none" stroke="var(--accent)" stroke-width="2" pointer-events="none"/>`; }
       }
       const fa = this.shadowRoot.activeElement, fid = fa && fa.dataset && (fa.dataset.ids || fa.dataset.cc || fa.dataset.k);
-      this.svg.innerHTML = out;
+      this.ov.innerHTML = out;
       if (fid) { const el = [...this.svg.querySelectorAll('.pin,.cty,.org,.dst')].find(g => g.dataset.cc === fid || g.dataset.k === fid || (g.dataset.ids && (g.dataset.ids === fid || g.dataset.ids.split(',').includes(fid.split(',')[0])))); el && el.focus({ preventScroll: true }); }
       if (!hero) this.controls(proj, w);
       // Keep a card open across re-renders: hover/focus, or the selected pin when the side panel is off-map.
