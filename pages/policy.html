@@ -322,7 +322,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
       <p style="margin:0;font-size:17px;color:var(--fg-muted)">{{ t.nlDek }}</p>
       <sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
         <form onSubmit="{{ subscribe }}" style="display:flex;gap:8px;flex-wrap:wrap">
-          <label style="flex:1;min-width:220px"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">{{ t.nlPh }}</span><input type="email" required="" value="{{ email }}" onChange="{{ onEmail }}" placeholder="{{ t.nlPh }}" style="width:100%;height:48px;padding:0 16px;background:var(--bg);border:1px solid var(--line-strong);border-radius:3px;font-size:16px;outline-offset:0"></label>
+          <label style="flex:1;min-width:220px"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">{{ t.nlPh }}</span><input type="email" required="{{ true }}" value="{{ email }}" onChange="{{ onEmail }}" placeholder="{{ t.nlPh }}" style="width:100%;height:48px;padding:0 16px;background:var(--bg);border:1px solid var(--line-strong);border-radius:3px;font-size:16px;outline-offset:0"></label>
           <button type="submit" style="height:48px;padding:0 24px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:3px;font-size:15px;font-weight:600;cursor:pointer">{{ t.nlBtn }}</button>
         </form>
       </sc-if>

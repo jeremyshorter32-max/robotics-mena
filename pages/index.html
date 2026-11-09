@@ -284,7 +284,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
       <p style="margin:0;font-size:17px;color:var(--fg-muted)">{{ t.nlDek }}</p>
       <sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
         <form onSubmit="{{ subscribe }}" style="display:flex;gap:8px;flex-wrap:wrap">
-          <label style="flex:1;min-width:220px"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">{{ t.nlPh }}</span><input type="email" required="" value="{{ email }}" onChange="{{ onEmail }}" placeholder="{{ t.nlPh }}" style="width:100%;height:48px;padding:0 16px;background:var(--bg);border:1px solid var(--line-strong);border-radius:3px;font-size:16px;outline-offset:0"></label>
+          <label style="flex:1;min-width:220px"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">{{ t.nlPh }}</span><input type="email" required="{{ true }}" value="{{ email }}" onChange="{{ onEmail }}" placeholder="{{ t.nlPh }}" style="width:100%;height:48px;padding:0 16px;background:var(--bg);border:1px solid var(--line-strong);border-radius:3px;font-size:16px;outline-offset:0"></label>
           <button type="submit" style="height:48px;padding:0 24px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:3px;font-size:15px;font-weight:600;cursor:pointer">{{ t.nlBtn }}</button>
         </form>
       </sc-if>
@@ -302,6 +302,22 @@ html,body{margin:0;padding:0;background:#F7F5EF}
       </ol>
       <div style="font-size:12px;color:var(--fg-subtle)">{{ t.sampleFoot }}</div>
     </div>
+  </div>
+</section>
+
+<section id="work" data-screen-label="07 Work with us" style="border-top:1px solid var(--line);padding:var(--sec-pad) 0">
+  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:var(--grid);column-gap:var(--gap);row-gap:24px">
+    <div style="grid-column:var(--span-label);display:flex;flex-direction:column;gap:12px">
+      <div style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.wk.n }}</div>
+      <h2 style="margin:0;font-size:var(--fs-h2);line-height:1.15;letter-spacing:var(--track-tight);font-weight:600">{{ t.wk.title }}</h2>
+      <p style="margin:0;font-size:16px;color:var(--fg-muted);text-wrap:pretty">{{ t.wk.homeDek }}</p>
+      <a href="/work" style="align-self:flex-start;margin-top:8px;display:inline-flex;align-items:center;height:44px;padding:0 20px;background:var(--accent);color:var(--accent-ink);border-radius:3px;font-size:15px;font-weight:600">{{ t.wk.cta }}</a>
+    </div>
+    <ul style="grid-column:var(--span-main);list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px">
+      <sc-for list="{{ wkWays }}" as="w" hint-placeholder-count="6">
+        <li><a href="{{ w.href }}" style="height:100%;display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid var(--line-strong);border-radius:3px;background:var(--bg-raised);transition:border-color .15s" style-hover="border-color:var(--accent)"><strong style="font-size:15px;font-weight:600">{{ w.label }}</strong><span style="font-size:13px;line-height:1.5;color:var(--fg-muted)">{{ w.desc }}</span></a></li>
+      </sc-for>
+    </ul>
   </div>
 </section>
 
