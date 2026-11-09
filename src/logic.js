@@ -132,6 +132,7 @@ class Component extends DCLogic {
   STORIES = window.RM_DATA.stories || [];
   SIGNUP_URL = (window.RM_DATA.site || {}).signup_url || '';
   FORM_URL = (window.RM_DATA.site || {}).form_url || (window.RM_DATA.site || {}).signup_url || '';
+  SHEET_URL = (window.RM_DATA.site || {}).sheet_url || '';
   CONTACT = (window.RM_DATA.site || {}).contact_email || 'contact@roboticsmena.com';
   // "Get the brief" pop-up: opens from the nav on every page.
   openBrief(opener) {
@@ -147,7 +148,14 @@ class Component extends DCLogic {
     const o = this.briefOpener; this.briefOpener = null; if (o && o.focus) setTimeout(() => o.focus(), 0);
   }
   // Sends a sign-up or submission to the site inbox (FormSubmit relays it to the contact address).
-  post(url, fields) { if (!url) return Promise.resolve(false); try { return fetch(url, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ _captcha: 'false', _template: 'table', ...fields }) }).then(r => r.ok).catch(() => false); } catch (e) { return Promise.resolve(false); } }
+  // Sends a form to the inbox (FormSubmit) and, when configured, logs it to the Google Sheet.
+  post(url, fields, kind) {
+    if (this.SHEET_URL && kind) {
+      const row = {}; Object.keys(fields).forEach(k => { if (k.charAt(0) !== '_') row[k] = fields[k]; });
+      // text/plain avoids a CORS preflight, which Apps Script web apps don't answer.
+      try { fetch(this.SHEET_URL, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ kind, subject: fields._subject || '', ...row }) }).catch(() => {}); } catch (e) {}
+    }
+    if (!url) return Promise.resolve(false); try { return fetch(url, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ _captcha: 'false', _template: 'table', ...fields }) }).then(r => r.ok).catch(() => false); } catch (e) { return Promise.resolve(false); } }
   BRIEF = window.RM_DATA.brief.map(b => [b.country, b.date, b.source, b.title, b.title_ar || b.title, b.takeaway, b.takeaway_ar || b.takeaway, b.image || '', b.image_credit || '', b.source_url || '']);
 
   CO = window.RM_DATA.companies.map(c => [c.name, c.name_ar || c.name, c.country, c.category, c.stage, c.added, c.summary, c.summary_ar || c.summary, c.id]);
@@ -735,7 +743,7 @@ class Component extends DCLogic {
         const way = this.T.en.wk.ways.find(w => w[0] === fd.interest), area = way ? way[1] : 'General';
         const who = fd.organisation || fd.name || '';
         this.setState({ wkSent: true, wkErr: false });
-        this.post(this.FORM_URL, { _subject: 'Work with us · ' + area + (who ? ' · ' + who : ''), _replyto: fd.email, enquiry_type: 'Work with us', area, name: fd.name, email: fd.email, organisation: fd.organisation || '', role: fd.role || '', message: fd.message, page: location.href, language: lang }).then(ok => { if (!ok) this.setState({ wkErr: true }); });
+        this.post(this.FORM_URL, { _subject: 'Work with us · ' + area + (who ? ' · ' + who : ''), _replyto: fd.email, enquiry_type: 'Work with us', area, name: fd.name, email: fd.email, organisation: fd.organisation || '', role: fd.role || '', message: fd.message, page: location.href, language: lang }, 'work').then(ok => { if (!ok) this.setState({ wkErr: true }); });
         try { window.scrollTo({ top: 0, behavior: this.reduced ? 'auto' : 'smooth' }); } catch (e3) {}
       },
       briefOpen: S.briefOpen, closeBrief: () => this.closeBrief(), keepBrief: e => e.stopPropagation(),
@@ -749,8 +757,8 @@ class Component extends DCLogic {
       subscribeBrief: e => {
         e.preventDefault(); const em = (S.email || '').trim(); if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return;
         this.savePref('subscriber', em);
-        const where = { home: 'Home', map: 'Map', database: 'Database', policy: 'Policy', events: 'Events', spotlight: 'Spotlight', submit: 'Submit' }[this.PAGE] || this.PAGE;
-        this.post(this.SIGNUP_URL, { _subject: 'New sign-up · Get the brief pop-up (' + where + ')', email: em, signed_up_from: 'Get the brief pop-up on the ' + where + ' page', page: location.href, language: lang });
+        const where = { home: 'Home', map: 'Map', database: 'Database', policy: 'Policy', events: 'Events', spotlight: 'Spotlight', submit: 'Submit', work: 'Work with us' }[this.PAGE] || this.PAGE;
+        this.post(this.SIGNUP_URL, { _subject: 'New sign-up · Get the brief pop-up (' + where + ')', email: em, signed_up_from: 'Get the brief pop-up on the ' + where + ' page', page: location.href, language: lang }, 'signup');
         this.setState({ subscribed: true });
       },
       goListed: e => { e.preventDefault(); this.setState({ tab: 'company', submitted: false }); this.go('submit'); },
@@ -778,7 +786,7 @@ class Component extends DCLogic {
         e.preventDefault(); const em = (S.email || '').trim(); if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return;
         this.savePref('subscriber', em);
         const src = this.PAGE === 'spotlight' && st ? 'Spotlight: ' + (st.title ? (st.title.en || st.id) : st.id) : this.PAGE === 'home' ? 'Home page newsletter' : this.PAGE;
-        this.post(this.SIGNUP_URL, { _subject: 'New sign-up · ' + src, email: em, signed_up_from: src, page: location.href, language: lang });
+        this.post(this.SIGNUP_URL, { _subject: 'New sign-up · ' + src, email: em, signed_up_from: src, page: location.href, language: lang }, 'signup');
         this.setState({ subscribed: true });
       },
       story, storySources, storyRelated, hasStory: !!st, chapters, rail, glance, findings, compare, attacks, gauge, timeline, tl, onTlKey, fleetChips, fleet, claims, watch, providers, srcToggle, lb, rpU: Object.fromEntries(Object.keys(U).map(k => [k, ut(k)])), notLocked: S.subscribed, isLocked: !S.subscribed, fleetEmpty: fleet.length === 0, claimKey, storyHref: this.STORIES[0] ? '/spotlight?s=' + this.STORIES[0].id : '/spotlight',
@@ -789,7 +797,7 @@ class Component extends DCLogic {
       tabs, fields, tabId: 'rm-tab-' + S.tab,
       onTabKey: e => { const i = tabKeys.indexOf(S.tab), rtl = ar; let d = 0; if (e.key === 'ArrowRight') d = rtl ? -1 : 1; if (e.key === 'ArrowLeft') d = rtl ? 1 : -1; if (!d) return; e.preventDefault(); const k = tabKeys[(i + d + 3) % 3]; this.setState({ tab: k, submitted: false }, () => { const b = document.getElementById('rm-tab-' + k); b && b.focus(); }); },
       submitted: S.submitted, notSubmitted: !S.submitted, submitErr: !!S.submitErr, contact: this.CONTACT, contactHref: 'mailto:' + this.CONTACT,
-      submitForm: e => { e.preventDefault(); const fd = {}; try { new FormData(e.target).forEach((v, k) => { if (String(v).trim()) fd[k] = String(v).trim(); }); } catch (e2) {} const kind = { company: 'Company', deployment: 'Deployment', event: 'Event' }[S.tab] || S.tab; const reply = Object.keys(fd).find(k => /email/.test(k)); this.setState({ submitted: true, submitErr: false }); this.post(this.FORM_URL, { _subject: 'New submission · ' + kind + (fd[Object.keys(fd)[0]] ? ' · ' + fd[Object.keys(fd)[0]] : ''), ...(reply ? { _replyto: fd[reply] } : {}), submission_type: kind, ...fd, page: location.href, language: lang }).then(ok => { if (!ok) this.setState({ submitErr: true }); }); }, resetForm: () => this.setState({ submitted: false }),
+      submitForm: e => { e.preventDefault(); const fd = {}; try { new FormData(e.target).forEach((v, k) => { if (String(v).trim()) fd[k] = String(v).trim(); }); } catch (e2) {} const kind = { company: 'Company', deployment: 'Deployment', event: 'Event' }[S.tab] || S.tab; const reply = Object.keys(fd).find(k => /email/.test(k)); this.setState({ submitted: true, submitErr: false }); this.post(this.FORM_URL, { _subject: 'New submission · ' + kind + (fd[Object.keys(fd)[0]] ? ' · ' + fd[Object.keys(fd)[0]] : ''), ...(reply ? { _replyto: fd[reply] } : {}), submission_type: kind, ...fd, page: location.href, language: lang }, 'submission').then(ok => { if (!ok) this.setState({ submitErr: true }); }); }, resetForm: () => this.setState({ submitted: false }),
       ...this.dbVals({ S, lang, ar, L, num, fdate, ccName, narrow, t })
     };
   }
