@@ -130,6 +130,10 @@ class Component extends DCLogic {
 
   STORIES = window.RM_DATA.stories || [];
   SIGNUP_URL = (window.RM_DATA.site || {}).signup_url || '';
+  FORM_URL = (window.RM_DATA.site || {}).form_url || (window.RM_DATA.site || {}).signup_url || '';
+  CONTACT = (window.RM_DATA.site || {}).contact_email || 'contact@roboticsmena.com';
+  // Sends a sign-up or submission to the site inbox (FormSubmit relays it to the contact address).
+  post(url, fields) { if (!url) return Promise.resolve(false); try { return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ _captcha: 'false', _template: 'table', ...fields }) }).then(r => r.ok).catch(() => false); } catch (e) { return Promise.resolve(false); } }
   BRIEF = window.RM_DATA.brief.map(b => [b.country, b.date, b.source, b.title, b.title_ar || b.title, b.takeaway, b.takeaway_ar || b.takeaway, b.image || '', b.image_credit || '', b.source_url || '']);
 
   CO = window.RM_DATA.companies.map(c => [c.name, c.name_ar || c.name, c.country, c.category, c.stage, c.added, c.summary, c.summary_ar || c.summary, c.id]);
@@ -215,7 +219,7 @@ class Component extends DCLogic {
       spotQuote: '“Robotics are essential to ensure that resilience and readiness is possible in a world where we don’t have a lot of these skilled workforces.”', spotWho: 'Jake Loosararian, chief executive, Gecko Robotics',
       spotStats: [['Tens', 'Robots deployed a day in the region'], ['3–5×', 'Faster than Gecko’s previous robot'], ['50×', 'Lower data-collection cost (company claim)']],
       spotSrc: 'Source: The National, 4 Nov 2026. Raptor was unveiled at ADIPEC, Abu Dhabi.', spotRead: 'Read our analysis', spotCap: 'Raptor at ADIPEC, Abu Dhabi · Nov 2026', spotCredit: 'Photo: Victor Besa / The National',
-      storyCrumb: 'Spotlight', storyRead: '{n} min read', gateKicker: 'Free with the weekly brief', gateTitle: 'Keep reading: the full analysis, sources and images', gateDek: 'Enter your email to unlock this piece. You’ll also get the weekly MENA robotics brief: five signals every Monday. Unsubscribe any time.', gatePh: 'Email address', gateBtn: 'Unlock the analysis', gateNote: 'Email only. We never share your address.', storySources: 'Sources', storyRelated: 'In the Robotics MENA database', storyUnlocked: 'Unlocked. Thanks for subscribing.', pdfBtn: 'Download PDF', pdfLocked: 'Unlock to download the PDF', pdfNote: 'Branded PDF edition with every chart, table and source.', storyBack: 'Back to home',
+      storyCrumb: 'Spotlight', storyRead: '{n} min read', gateKicker: 'Free with the weekly brief', gateTitle: 'Keep reading: the full analysis, sources and images', gateDek: 'Enter your email to unlock this piece. You’ll also get the weekly MENA robotics brief: five signals every Monday. Unsubscribe any time.', gatePh: 'Email address', gateBtn: 'Unlock the analysis', gateNote: 'Email only. We never share your address. Questions: contact@roboticsmena.com', storySources: 'Sources', storyRelated: 'In the Robotics MENA database', storyUnlocked: 'Unlocked. Thanks for subscribing.', pdfBtn: 'Download PDF', pdfLocked: 'Unlock to download the PDF', pdfNote: 'Branded PDF edition with every chart, table and source.', storyBack: 'Back to home',
       spotAlt: 'Gecko Robotics Raptor wall-climbing inspection robot on a steel surface at ADIPEC, Abu Dhabi',
       s9n: '08 · Newsletter', nlTitle: 'The weekly MENA robotics brief', nlDek: 'Five signals every Monday, each with a takeaway and a primary source. Written for the people who sign the purchase orders.', nlPh: 'Work email', nlBtn: 'Subscribe', nlDone: 'You’re on the list. The next issue lands Monday.', nlMeta: 'Every Monday · 4-minute read · No ads, no sponsored slots · Unsubscribe in one click',
       sampleLbl: 'Sample issue', sampleIssue: 'No. 45 · 9 Nov 2026', sampleFoot: '+ 3 deployments added to the map · 2 events this fortnight',
@@ -228,12 +232,12 @@ class Component extends DCLogic {
       },
       notes: 'Anything the editor should know', submitBtn: 'Send for review', reqNote: '* Required. We publish the source, never your email.',
       submittedTitle: 'Received. Thank you.', submittedMsg: 'An editor will check it against the primary source and reply within five working days.', another: 'Submit another',
-      reviewTitle: 'How editorial review works', reviewSteps: ['An editor checks every claim against a primary source.', 'We contact the company or operator to confirm.', 'Published with source and date; corrections are logged publicly.'], reviewNote: 'Listing is free and cannot be bought. We do not accept sponsored entries.',
+      reviewTitle: 'How editorial review works', reviewSteps: ['An editor checks every claim against a primary source.', 'We contact the company or operator to confirm.', 'Published with source and date; corrections are logged publicly.'], reviewNote: 'Listing is free and cannot be bought. We do not accept sponsored entries.', emailAlt: 'Prefer email? Write to', corrNote: 'Spotted an error or have a source we missed? Write to', submitErr: 'We could not confirm delivery. Please email your submission to',
       foot: [
         { h: 'About', b: 'Robotics MENA is an independent, curated record of robotics, physical AI and automation across the Middle East and North Africa.', l: 'About the team', href: '/' },
         { h: 'Editorial & sourcing', b: 'Every number carries a source and a date. Claims without a primary source are not published. Corrections are logged.', l: 'Read the policy', href: '/submit' },
         { h: 'Open data & API', b: 'Companies, deployments, events and strategies are available as open data (CC BY 4.0) and a read-only JSON API.', l: 'Explore the data', href: '/database' },
-        { h: 'Contact', b: 'Tips, corrections and partnership enquiries go to the editors.', l: 'editors@roboticsmena.org', href: 'mailto:editors@roboticsmena.org' }
+        { h: 'Contact', b: 'Tips, corrections, listings and partnership enquiries.', l: 'contact@roboticsmena.com', href: 'mailto:contact@roboticsmena.com' }
       ],
       copyright: '© 2026 Robotics MENA · Ad-free and independent', demoNote: 'Every record links to its primary source.'
     },
@@ -267,7 +271,7 @@ class Component extends DCLogic {
       spotQuote: '«الروبوتات ضرورية لضمان المرونة والجاهزية في عالم لا تتوفر فيه أعداد كافية من العمالة الماهرة.»', spotWho: 'جيك لوساراريان، الرئيس التنفيذي لجيكو روبوتكس',
       spotStats: [['عشرات', 'روبوتات تُنشر يومياً في المنطقة'], ['3–5×', 'أسرع من روبوت جيكو السابق'], ['50×', 'خفض في تكلفة جمع البيانات (بحسب الشركة)']],
       spotSrc: 'المصدر: ذا ناشونال، 4 نوفمبر 2026. كُشف عن «رابتور» في معرض أديبك، أبوظبي.', spotRead: 'اقرأ تحليلنا', spotCap: 'رابتور في أديبك، أبوظبي · نوفمبر 2026', spotCredit: 'تصوير: فيكتور بيسا / ذا ناشونال',
-      storyCrumb: 'تحت الضوء', storyRead: 'قراءة في {n} دقائق', gateKicker: 'مجاناً مع الموجز الأسبوعي', gateTitle: 'تابع القراءة: التحليل الكامل مع المصادر والصور', gateDek: 'أدخل بريدك الإلكتروني لفتح هذا المقال. ستصلك أيضاً نشرة روبوتات المنطقة الأسبوعية: خمس إشارات كل اثنين. يمكنك إلغاء الاشتراك في أي وقت.', gatePh: 'البريد الإلكتروني', gateBtn: 'افتح التحليل', gateNote: 'البريد الإلكتروني فقط. لا نشارك عنوانك مع أحد.', storySources: 'المصادر', storyRelated: 'في قاعدة بيانات روبوتكس مينا', storyUnlocked: 'تم الفتح. شكراً لاشتراكك.', pdfBtn: 'تنزيل PDF', pdfLocked: 'افتح التقرير لتنزيل ملف PDF', pdfNote: 'نسخة PDF بهوية روبوتكس مينا تضم كل الرسوم والجداول والمصادر.', storyBack: 'العودة إلى الرئيسية',
+      storyCrumb: 'تحت الضوء', storyRead: 'قراءة في {n} دقائق', gateKicker: 'مجاناً مع الموجز الأسبوعي', gateTitle: 'تابع القراءة: التحليل الكامل مع المصادر والصور', gateDek: 'أدخل بريدك الإلكتروني لفتح هذا المقال. ستصلك أيضاً نشرة روبوتات المنطقة الأسبوعية: خمس إشارات كل اثنين. يمكنك إلغاء الاشتراك في أي وقت.', gatePh: 'البريد الإلكتروني', gateBtn: 'افتح التحليل', gateNote: 'البريد الإلكتروني فقط. لا نشارك عنوانك مع أحد. للاستفسارات: contact@roboticsmena.com', storySources: 'المصادر', storyRelated: 'في قاعدة بيانات روبوتكس مينا', storyUnlocked: 'تم الفتح. شكراً لاشتراكك.', pdfBtn: 'تنزيل PDF', pdfLocked: 'افتح التقرير لتنزيل ملف PDF', pdfNote: 'نسخة PDF بهوية روبوتكس مينا تضم كل الرسوم والجداول والمصادر.', storyBack: 'العودة إلى الرئيسية',
       spotAlt: 'روبوت الفحص «رابتور» من جيكو روبوتكس يتسلّق سطحاً فولاذياً في أديبك، أبوظبي',
       s9n: '08 · النشرة', nlTitle: 'الموجز الأسبوعي لروبوتات المنطقة', nlDek: 'خمس إشارات كل اثنين، لكل منها خلاصة ومصدر أصلي. مكتوبة لمن يوقّعون أوامر الشراء.', nlPh: 'بريد العمل', nlBtn: 'اشترك', nlDone: 'تم تسجيلك. يصلك العدد القادم يوم الاثنين.', nlMeta: 'كل اثنين · 4 دقائق قراءة · بلا إعلانات أو رعايات · إلغاء الاشتراك بنقرة',
       sampleLbl: 'نموذج عدد', sampleIssue: 'العدد 45 · 9 نوفمبر 2026', sampleFoot: '+ 3 عمليات نشر أُضيفت إلى الخريطة · فعاليتان خلال أسبوعين',
@@ -280,12 +284,12 @@ class Component extends DCLogic {
       },
       notes: 'ما يجب أن يعرفه المحرّر', submitBtn: 'أرسل للمراجعة', reqNote: '* حقل مطلوب. ننشر المصدر، ولا ننشر بريدك أبداً.',
       submittedTitle: 'وصلنا طلبك، شكراً لك.', submittedMsg: 'سيتحقق محرّر من المصدر الأصلي ويرد خلال خمسة أيام عمل.', another: 'أضف إدخالاً آخر',
-      reviewTitle: 'كيف تعمل المراجعة التحريرية', reviewSteps: ['يتحقق محرّر من كل معلومة مقابل مصدر أصلي.', 'نتواصل مع الشركة أو المشغّل للتأكيد.', 'يُنشر الإدخال مع مصدره وتاريخه، وتُسجَّل التصحيحات علناً.'], reviewNote: 'الإدراج مجاني ولا يمكن شراؤه. لا نقبل إدخالات مموّلة.',
+      reviewTitle: 'كيف تعمل المراجعة التحريرية', reviewSteps: ['يتحقق محرّر من كل معلومة مقابل مصدر أصلي.', 'نتواصل مع الشركة أو المشغّل للتأكيد.', 'يُنشر الإدخال مع مصدره وتاريخه، وتُسجَّل التصحيحات علناً.'], reviewNote: 'الإدراج مجاني ولا يمكن شراؤه. لا نقبل إدخالات مموّلة.', emailAlt: 'تفضّل البريد الإلكتروني؟ راسلنا على', corrNote: 'لاحظت خطأً أو لديك مصدر فاتنا؟ راسلنا على', submitErr: 'تعذّر تأكيد الإرسال. يرجى إرسال طلبك عبر البريد إلى',
       foot: [
         { h: 'عن المنصة', b: 'روبوتكس مينا سجلّ مستقل ومنسّق للروبوتات والذكاء الاصطناعي المادي والأتمتة في الشرق الأوسط وشمال أفريقيا.', l: 'تعرّف على الفريق', href: '/' },
         { h: 'السياسة التحريرية والمصادر', b: 'لكل رقم مصدر وتاريخ. لا ننشر أي معلومة دون مصدر أصلي، ونسجّل التصحيحات علناً.', l: 'اقرأ السياسة', href: '/submit' },
         { h: 'البيانات المفتوحة والواجهة البرمجية', b: 'بيانات الشركات وعمليات النشر والفعاليات والاستراتيجيات متاحة مفتوحةً (CC BY 4.0) وعبر واجهة JSON للقراءة.', l: 'استكشف البيانات', href: '/database' },
-        { h: 'تواصل معنا', b: 'للمعلومات والتصحيحات والشراكات، راسل فريق التحرير.', l: 'editors@roboticsmena.org', href: 'mailto:editors@roboticsmena.org' }
+        { h: 'تواصل معنا', b: 'للمعلومات والتصحيحات والشراكات، راسل فريق التحرير.', l: 'contact@roboticsmena.com', href: 'mailto:contact@roboticsmena.com' }
       ],
       copyright: '© 2026 روبوتكس مينا · مستقلة وبلا إعلانات', demoNote: 'كل سجل مرتبط بمصدره الأصلي.'
     }
@@ -721,7 +725,8 @@ class Component extends DCLogic {
       subscribe: e => {
         e.preventDefault(); const em = (S.email || '').trim(); if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return;
         this.savePref('subscriber', em);
-        if (this.SIGNUP_URL) { try { fetch(this.SIGNUP_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ email: em, source: this.PAGE === 'spotlight' && st ? 'spotlight:' + st.id : this.PAGE, lang }) }).catch(() => {}); } catch (e2) {} }
+        const src = this.PAGE === 'spotlight' && st ? 'Spotlight: ' + (st.title ? (st.title.en || st.id) : st.id) : this.PAGE === 'home' ? 'Home page newsletter' : this.PAGE;
+        this.post(this.SIGNUP_URL, { _subject: 'New sign-up · ' + src, email: em, signed_up_from: src, page: location.href, language: lang });
         this.setState({ subscribed: true });
       },
       story, storySources, storyRelated, hasStory: !!st, chapters, rail, glance, findings, compare, attacks, gauge, timeline, tl, onTlKey, fleetChips, fleet, claims, watch, providers, srcToggle, lb, rpU: Object.fromEntries(Object.keys(U).map(k => [k, ut(k)])), notLocked: S.subscribed, isLocked: !S.subscribed, fleetEmpty: fleet.length === 0, claimKey, storyHref: this.STORIES[0] ? '/spotlight?s=' + this.STORIES[0].id : '/spotlight',
@@ -731,8 +736,8 @@ class Component extends DCLogic {
       onPTabKey: e => { const i = this.PCC.indexOf(pcK); let d = 0; if (e.key === 'ArrowRight') d = ar ? -1 : 1; if (e.key === 'ArrowLeft') d = ar ? 1 : -1; if (!d) return; e.preventDefault(); const k = this.PCC[(i + d + this.PCC.length) % this.PCC.length]; this.setState({ pc: k }, () => { const b = document.getElementById('rm-ptab-' + k); b && b.focus(); }); },
       tabs, fields, tabId: 'rm-tab-' + S.tab,
       onTabKey: e => { const i = tabKeys.indexOf(S.tab), rtl = ar; let d = 0; if (e.key === 'ArrowRight') d = rtl ? -1 : 1; if (e.key === 'ArrowLeft') d = rtl ? 1 : -1; if (!d) return; e.preventDefault(); const k = tabKeys[(i + d + 3) % 3]; this.setState({ tab: k, submitted: false }, () => { const b = document.getElementById('rm-tab-' + k); b && b.focus(); }); },
-      submitted: S.submitted, notSubmitted: !S.submitted,
-      submitForm: e => { e.preventDefault(); this.setState({ submitted: true }); }, resetForm: () => this.setState({ submitted: false }),
+      submitted: S.submitted, notSubmitted: !S.submitted, submitErr: !!S.submitErr, contact: this.CONTACT, contactHref: 'mailto:' + this.CONTACT,
+      submitForm: e => { e.preventDefault(); const fd = {}; try { new FormData(e.target).forEach((v, k) => { if (String(v).trim()) fd[k] = String(v).trim(); }); } catch (e2) {} const kind = { company: 'Company', deployment: 'Deployment', event: 'Event' }[S.tab] || S.tab; const reply = Object.keys(fd).find(k => /email/.test(k)); this.setState({ submitted: true, submitErr: false }); this.post(this.FORM_URL, { _subject: 'New submission · ' + kind + (fd[Object.keys(fd)[0]] ? ' · ' + fd[Object.keys(fd)[0]] : ''), ...(reply ? { _replyto: fd[reply] } : {}), submission_type: kind, ...fd, page: location.href, language: lang }).then(ok => { if (!ok) this.setState({ submitErr: true }); }); }, resetForm: () => this.setState({ submitted: false }),
       ...this.dbVals({ S, lang, ar, L, num, fdate, ccName, narrow, t })
     };
   }

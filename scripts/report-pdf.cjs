@@ -121,7 +121,7 @@ h1{margin:4mm 0 0;font-size:${ar ? 29 : 33}pt;line-height:${ar ? 1.3 : 1.07};let
   <div class="hero"><img src="${fileUrl(st.hero.src)}" alt=""></div>
   <div class="cap"><span>${esc(tx(st.hero.cap))}</span><span>${esc(tx(st.hero.credit))}</span></div>
   <div class="glance">${glance}</div>
-  <div class="foot"><span>roboticsmena.com</span><span>${esc(U.online)}: roboticsmena.com/spotlight?s=${esc(st.id)}</span></div>
+  <div class="foot"><span>roboticsmena.com · contact@roboticsmena.com</span><span>${esc(U.online)}: roboticsmena.com/spotlight?s=${esc(st.id)}</span></div>
 </section>
 <section class="pg back"><div class="dots"></div><div class="frame">${FRAME('rgba(146,212,203,.08)')}</div>
   <svg class="big" viewBox="0 0 100 100">${MARK('#F7F5EF').replace(/^<svg[^>]*>|<\/svg>$/g, '')}</svg>
@@ -129,6 +129,7 @@ h1{margin:4mm 0 0;font-size:${ar ? 29 : 33}pt;line-height:${ar ? 1.3 : 1.07};let
   <p class="about">${esc(U.about)}</p>
   <p class="cta">${esc(U.cta)}</p>
   <a class="url" href="https://roboticsmena.com">roboticsmena.com</a>
+  <a class="url" href="mailto:contact@roboticsmena.com" style="font-size:11pt;margin-top:4pt">contact@roboticsmena.com</a>
   <div class="fine"><span>${esc(U.photo)}</span><span>${esc(U.copyright)}</span></div>
 </section>
 </body></html>`;
@@ -188,7 +189,7 @@ ${chapters}
 
   const shortTitle = tx(st.title).length > 70 ? tx(st.title).slice(0, 68) + '…' : tx(st.title);
   const header = `<div style="width:100%;margin:0 16mm;padding-bottom:2mm;border-bottom:0.6px solid #D7DCD8;display:flex;justify-content:space-between;align-items:center;font-family:Inter,Arial,sans-serif;font-size:7px;color:#5D6A71;-webkit-print-color-adjust:exact"><span style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:11px;height:11px">${MARK('#12212B', '#D65336', '#FFFFFF')}</span><b style="color:#12212B;font-weight:700">Robotics MENA</b><span style="color:#D65336">|</span><span>Research report</span></span><span>${ar ? '' : esc(shortTitle)}</span></div>`;
-  const footer = `<div style="width:100%;margin:0 16mm;display:flex;justify-content:space-between;align-items:center;font-family:Inter,Arial,sans-serif;font-size:7px;color:#5D6A71;-webkit-print-color-adjust:exact"><span>roboticsmena.com</span><span style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:14px;height:2px;background:#D65336"></span><span class="pageNumber" style="color:#12212B;font-weight:600"></span></span></div>`;
+  const footer = `<div style="width:100%;margin:0 16mm;display:flex;justify-content:space-between;align-items:center;font-family:Inter,Arial,sans-serif;font-size:7px;color:#5D6A71;-webkit-print-color-adjust:exact"><span>roboticsmena.com · contact@roboticsmena.com</span><span style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:14px;height:2px;background:#D65336"></span><span class="pageNumber" style="color:#12212B;font-weight:600"></span></span></div>`;
   return { coverHtml, bodyHtml, header, footer, title: tx(st.title), subject: tx(st.dek) };
 }
 

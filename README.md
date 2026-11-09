@@ -40,7 +40,7 @@ Language and theme are remembered in the visitor's browser, so links stay clean.
 
 **Preview locally:** `python3 scripts/serve-site.py _site` serves a build with clean URLs.
 
-**Collecting emails:** the site has no backend, so sign-ups (here and in the home newsletter box) are only remembered in the reader's browser until you connect an email service. Put the service's form endpoint in `data/site.json` as `signup_url`; each sign-up is then POSTed there as JSON (`email`, `source`, `lang`).
+**Collecting emails and submissions:** the site has no backend, so it relays them through [FormSubmit](https://formsubmit.co) to `contact@roboticsmena.com`, set in `data/site.json` (`contact_email`, `signup_url` for the Spotlight gate and newsletter box, `form_url` for the Submit page). Each sign-up arrives as an email titled "New sign-up · …" with the address and where they signed up; each submission arrives as "New submission · …" with every field. FormSubmit needs a one-time activation: the first time anyone submits, it emails contact@roboticsmena.com a confirmation link, and nothing is delivered until that link is clicked. To switch to a mailing-list service later (Mailchimp, Buttondown, etc.), replace `signup_url` with its form endpoint. The gate still unlocks instantly even if delivery fails; the Submit page shows a fallback asking people to email contact@roboticsmena.com directly.
 
 ## Database entries
 

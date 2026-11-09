@@ -1,1 +1,5 @@
-{ "signup_url": "" }
+{
+  "contact_email": "contact@roboticsmena.com",
+  "signup_url": "https://formsubmit.co/ajax/contact@roboticsmena.com",
+  "form_url": "https://formsubmit.co/ajax/contact@roboticsmena.com"
+}
