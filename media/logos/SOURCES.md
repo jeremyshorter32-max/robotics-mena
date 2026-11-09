@@ -163,3 +163,4 @@ No usable logo found for FalconViz, Sager Drones, AutoGo, Sinaha Technology, Apo
 | draganfly.png | Draganfly | https://draganfly.com/wp-content/uploads/2020/04/logo@2x-min.png |
 | lodd-autonomous.png | LODD Autonomous | https://lodd.com/wp-content/uploads/2026/04/White-with-Green-logo-300x169.webp |
 | cargox.png | CargoX | https://i0.wp.com/cargo-x.ai/wp-content/uploads/2026/01/CargoX-logos_White.png?fit=4168%2C1251&ssl=1 |
+| ac3d.png | AC3D | https://ac3d-us.com/wp-content/uploads/2024/01/ac3d-logo.svg |

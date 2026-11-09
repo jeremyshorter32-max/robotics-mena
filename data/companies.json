@@ -4225,5 +4225,25 @@
     "mena_source_url": "https://draganfly.com/press-release/draganfly-selected-for-innovative-end-to-end-electric-mobility-platform-in-uae/",
     "mena_date": "2024-01-23",
     "logo": "/media/logos/draganfly.png"
+  },
+  {
+    "id": "ac3d",
+    "name": "AC3D",
+    "name_ar": "إيه سي ثري دي",
+    "country": "AE",
+    "category": "construction",
+    "stage": "seed",
+    "summary": "Dubai construction 3D printing company that builds its own Codemason printers, printable concrete and geopolymer mixes, and prints buildings near site for clients including DP World, Aldar and Damac.",
+    "summary_ar": "شركة في دبي للطباعة الإنشائية ثلاثية الأبعاد تصنع طابعات Codemason ومزائج الخرسانة والجيوبوليمر القابلة للطباعة، وتطبع المباني قرب مواقع المشاريع لعملاء منهم موانئ دبي العالمية والدار وداماك.",
+    "website": "https://ac3d-us.com/",
+    "source": "Gulf Construction",
+    "source_url": "https://gulfconstructiononline.com/ArticleTA/488954/ac3d-transgulf-team-up-to-scale-construction-3d-printing-across-gcc",
+    "added": "2026-11-09",
+    "hq": "AE",
+    "hq_city": "Dubai",
+    "mena_countries": [
+      "AE"
+    ],
+    "logo": "/media/logos/ac3d.png"
   }
 ]
