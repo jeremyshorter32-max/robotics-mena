@@ -1,11 +1,17 @@
 /**
  * Robotics MENA: website forms → Google Sheet.
  *
- * Paste this into Extensions → Apps Script of the Google Sheet that should collect the
- * website's sign-ups, submissions and "Work with us" enquiries, then deploy it as a web app
+ * Paste this into a new project at script.google.com (or Extensions → Apps Script of the Sheet)
+ * to collect the website's sign-ups, submissions and "Work with us" enquiries, then deploy it as a web app
  * (see integrations/google-sheets/README.md). Each form gets its own tab; new fields become
  * new columns automatically. Status and Notes columns are added for follow-up.
  */
+
+// The Google Sheet that collects the entries (the long ID in its address, between /d/ and /edit).
+// Lets this run as a standalone project from script.google.com; leave it empty to use the Sheet
+// the script is attached to (Extensions → Apps Script).
+var SHEET_ID = '1Af2GzhWl5YkrGS-XZ46HMJ3MlFqK2V1kAqFL9stzqXI';
+function book() { return SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : SpreadsheetApp.getActiveSpreadsheet(); }
 
 // Website form type → tab name.
 var TABS = { signup: 'Sign-ups', submission: 'Submissions', work: 'Work with us' };
@@ -21,7 +27,7 @@ function doPost(e) {
     try { data = JSON.parse((e && e.postData && e.postData.contents) || '{}'); } catch (err) { return reply({ ok: false, error: 'bad json' }); }
     if (data.website_url_check) return reply({ ok: true }); // honeypot field: bots fill it, people never see it
     var tab = TABS[data.kind] || 'Other';
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(tab) || SpreadsheetApp.getActiveSpreadsheet().insertSheet(tab);
+    var ss = book(), sheet = ss.getSheetByName(tab) || ss.insertSheet(tab);
 
     var row = { Received: new Date(), Status: 'New', Notes: '' };
     Object.keys(data).forEach(function (k) {

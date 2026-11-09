@@ -6,10 +6,12 @@ added as a row to a Google Sheet, one tab per form, with Status and Notes column
 
 ## Set-up (about 5 minutes, once)
 
-1. Sign in to Google with the account that should own the data and create a new Google Sheet,
-   for example "Robotics MENA – website leads".
-2. In the Sheet, open **Extensions → Apps Script**. Delete the sample code, paste in everything
-   from [`Code.gs`](Code.gs), and click **Save** (the disk icon).
+1. Sign in to Google with the account that owns the Sheet (a private/incognito window with only
+   that account signed in avoids Google's "file cannot be opened" error).
+   The Sheet in use: https://docs.google.com/spreadsheets/d/1Af2GzhWl5YkrGS-XZ46HMJ3MlFqK2V1kAqFL9stzqXI/edit
+2. Go to **script.google.com → New project**. Delete the sample code, paste in everything from
+   [`Code.gs`](Code.gs) (it already points at the Sheet above via `SHEET_ID`), name the project
+   "Robotics MENA forms" and click **Save**. To use a different Sheet, change `SHEET_ID`.
 3. Click **Deploy → New deployment**. Click the gear next to "Select type" and choose **Web app**.
    - Description: `Website forms`
    - Execute as: **Me**
