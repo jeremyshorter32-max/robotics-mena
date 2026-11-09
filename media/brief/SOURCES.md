@@ -28,3 +28,6 @@ Most are editorial photos owned by the publisher or a news agency: get permissio
 |---|---|---|
 | hero-robot-arm.jpg, hero-robot-arm-960.jpg | Supplied by the site owner | Cropped around the robot arm (previous hero) |
 | hero-delivery-robots.jpg, hero-delivery-robots-800.jpg | Supplied by the site owner | Delivery robots (current hero, on trial) |
+| robot-villa-launch.jpg | Government of Dubai Media Office | https://mediaoffice.ae/en/news/2026/january/27-01/dubai-municipality-launches-global-challenge |
+| robot-villa-render.jpg | Dubai Municipality (render, via Travels Dubai) | https://www.travelsdubai.com/21-Oct-2026/dubai-build-world-s-first-robot-made-villa |
+| cobod-qatar-school.jpg | COBOD | https://cobod.com/wp-content/uploads/2025/07/ucc-printer-on-location.png |

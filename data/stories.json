@@ -1,5 +1,1264 @@
 [
  {
+  "id": "dubai-robot-villa",
+  "date": "2026-11-09",
+  "read_min": 9,
+  "kicker": {
+   "en": "Construction · Dubai Municipality · 04 ConTech Valley",
+   "ar": "البناء · بلدية دبي · وادي التقنيات الإنشائية 04"
+  },
+  "title": {
+   "en": "Dubai’s robot-built villa is the right test. It needs a public scorecard.",
+   "ar": "فيلا دبي التي تبنيها الروبوتات اختبار في محله، لكنها تحتاج إلى بطاقة تقييم علنية"
+  },
+  "dek": {
+   "en": "Ten months after Dubai Municipality launched a global challenge to build a villa with robots, there is still no named consortium, no specifications and no start date. The idea is sound; its value depends on what Dubai measures and publishes.",
+   "ar": "بعد عشرة أشهر من إطلاق بلدية دبي تحدياً عالمياً لبناء فيلا بالروبوتات، لا يزال التحالف بلا أسماء، والمواصفات وتاريخ البدء غير معلنة. الفكرة سليمة، وقيمتها رهن بما ستقيسه دبي وتنشره."
+  },
+  "by": {
+   "en": "Robotics MENA analysis",
+   "ar": "تحليل روبوتكس مينا"
+  },
+  "hero": {
+   "src": "/media/spotlight/robot-villa-launch.jpg",
+   "alt": {
+    "en": "Officials and partners on stage at the launch of Dubai’s robotic villa challenge, standing either side of a humanoid robot in a hard hat and high-visibility vest",
+    "ar": "مسؤولون وشركاء على المنصة في إطلاق تحدي الفيلا الروبوتية في دبي، يقفون على جانبي روبوت بشري يرتدي خوذة وسترة عاكسة"
+   },
+   "cap": {
+    "en": "The launch of the robotic villa challenge at Expo City Dubai, 27 January 2026. The humanoid on stage carries Würth’s “Red Link” badge.",
+    "ar": "إطلاق تحدي الفيلا الروبوتية في مدينة إكسبو دبي، 27 يناير 2026. يحمل الروبوت البشري على المنصة شارة «ريد لينك» التابعة لفورت."
+   },
+   "credit": {
+    "en": "Photo: Government of Dubai Media Office",
+    "ar": "الصورة: المكتب الإعلامي لحكومة دبي"
+   }
+  },
+  "sources": [
+   {
+    "name": "Dubai Media Office",
+    "title": "Dubai Municipality launches global challenge",
+    "date": "2026-01-27",
+    "url": "https://mediaoffice.ae/en/news/2026/january/27-01/dubai-municipality-launches-global-challenge"
+   },
+   {
+    "name": "Dubai Municipality",
+    "title": "Dubai Municipality launches global robotic villa challenge",
+    "date": "2026-01-28",
+    "url": "https://www.dm.gov.ae/dubai-municipality-launches-global-robotic-villa-challenge/"
+   },
+   {
+    "name": "Dubai Municipality (Arabic)",
+    "title": "استعراض ابتكارات البناء في معرض ويتيكس 2026",
+    "date": "2026-10-20",
+    "url": "https://www.dm.gov.ae/?lang=ar&p=396830"
+   },
+   {
+    "name": "Khaleej Times",
+    "title": "Dubai is building the world’s first villa using robots",
+    "date": "2026-10-21",
+    "url": "https://www.khaleejtimes.com/business/dubai-is-building-the-worlds-first-villa-using-robots"
+   },
+   {
+    "name": "Gulf News",
+    "title": "Dubai launches global challenge to create world’s first fully robot-built villa",
+    "date": "2026-01-27",
+    "url": "https://gulfnews.com/business/property/dubai-launches-global-challenge-to-create-worlds-first-fully-robot-built-villa-1.500422536"
+   },
+   {
+    "name": "Economy Middle East",
+    "title": "Würth Professional Solutions partners with Dubai Municipality and Zacua Ventures to drive humanoid robotics at Expo City ConTech Innovation Hub",
+    "date": "2026-01-29",
+    "url": "https://economymiddleeast.com/news/wurth-professional-solutions-partners-with-dubai-municipality-and-zacua-ventures-to-drive-humanoid-robotics-at-expo-city-contech-innovation-hub/"
+   },
+   {
+    "name": "Gulf Construction",
+    "title": "Würth mobilises humanoid robots to automate construction in Dubai",
+    "date": "2026-03-01",
+    "url": "https://gulfconstructiononline.com/Article/389715/"
+   },
+   {
+    "name": "Zacua Ventures",
+    "title": "Robotic Startup Call 2026",
+    "date": "2026-02-25",
+    "url": "https://zacuaventures.com/robotic-startup-call-2026/"
+   },
+   {
+    "name": "Dubai Media Office",
+    "title": "Dubai Municipality, Expo City Dubai sign MoU to establish a regional ConTech innovation hub",
+    "date": "2025-12-17",
+    "url": "https://www.mediaoffice.ae/en/news/2025/december/17-12/dubai-municipality-and-expo-city-dubai"
+   },
+   {
+    "name": "Khaleej Times",
+    "title": "New Dubai Legathon to shape rules for 3D-printed buildings, robot-aided construction",
+    "date": "2026-09-28",
+    "url": "https://www.khaleejtimes.com/uae/dubai-legathon-rules-3d-print-buildings-robot-aid-construction"
+   },
+   {
+    "name": "UAE Government portal",
+    "title": "Dubai 3D Printing Strategy",
+    "date": "2016-04-01",
+    "url": "https://u.ae/en/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/industry-science-and-technology/dubai-3d-printing-strategy"
+   },
+   {
+    "name": "Dubai Media Office",
+    "title": "Mohammed inaugurates world’s first 3D printed office building",
+    "date": "2016-05-23",
+    "url": "https://www.mediaoffice.ae/en/news/2016/5/mohammed-inaugurates-world-s-first-3d-printed-office-building"
+   },
+   {
+    "name": "The National",
+    "title": "Dubai’s Office of the Future gets Guinness World Record as first 3D printed building",
+    "date": "2020-02-22",
+    "url": "https://www.thenationalnews.com/uae/dubai-s-office-of-the-future-gets-guinness-world-record-as-first-3d-printed-building-1.982364"
+   },
+   {
+    "name": "Dubai Media Office",
+    "title": "Dubai’s largest 3D-printed structure enters Guinness Book of World Records",
+    "date": "2019-10-23",
+    "url": "https://mediaoffice.ae/en/news/2019/10/23-10/dubai-largest-3dprinted-sturctre"
+   },
+   {
+    "name": "New Atlas",
+    "title": "Apis Cor completes world’s largest 3D-printed building",
+    "date": "2019-12-19",
+    "url": "https://newatlas.com/architecture/apis-cor-3d-printed-building-dubai"
+   },
+   {
+    "name": "Gulf News",
+    "title": "Dubai issues first licence to construct 3D-printed residential villa",
+    "date": "2023-07-18",
+    "url": "https://gulfnews.com/uae/dubai-issues-first-licence-to-construct-3d-printed-residential-villa-1.97028172"
+   },
+   {
+    "name": "Guinness World Records",
+    "title": "Largest 3D printed villa",
+    "date": "2023-12-07",
+    "url": "https://www.guinnessworldrecords.com/world-records/754918-largest-3d-printed-villa"
+   },
+   {
+    "name": "Arab News",
+    "title": "NEOM signs JV agreement to accelerate construction automation",
+    "date": "2024-12-19",
+    "url": "https://www.arabnews.com/node/2583634"
+   },
+   {
+    "name": "3Dnatives",
+    "title": "A School in Qatar with 30,000 Square Meters of 3D Printed Walls Is Close to Completion",
+    "date": "2026-10-30",
+    "url": "https://www.3dnatives.com/en/3d-printed-school-qatar-30102026/"
+   },
+   {
+    "name": "Qatar Tribune",
+    "title": "World’s largest 3D printed construction project commences in Qatar",
+    "date": "2025-06-12",
+    "url": "https://www.qatar-tribune.com/article/180858/nation/worlds-largest-3d-printed-construction-project-commences-in-qatar"
+   },
+   {
+    "name": "Zacua Ventures, Hilti Ventures and 94 Ventures",
+    "title": "Construction Robotics Report 2026",
+    "date": "2026-03-05",
+    "url": "https://zacuaventures.com/construction-robotics-report-2026/"
+   },
+   {
+    "name": "3D Printing Industry",
+    "title": "Contentious new study challenges the cost and sustainability benefits of concrete 3D printing",
+    "date": "2022-06-14",
+    "url": "https://3dprintingindustry.com/news/contentious-new-study-challenges-the-cost-and-sustainability-benefits-of-concrete-3d-printing-210694/"
+   },
+   {
+    "name": "Naresuan University (Thailand)",
+    "title": "A comparison of the cost and construction time of small residential houses using 3D-printed concrete systems versus conventional construction methods in Thailand",
+    "date": "2026-06-30",
+    "url": "https://so16.tci-thaijo.org/index.php/JRCAD/article/view/4209"
+   },
+   {
+    "name": "Gulf Construction",
+    "title": "GCC moves from pilot projects to mega-scale 3D-printed construction",
+    "date": "2026-10-01",
+    "url": "https://gulfconstructiononline.com/Article/464270/gcc-moves-from-pilot-projects-to-mega-scale-3d-printed-construction"
+   },
+   {
+    "name": "Gulf News",
+    "title": "Midday outdoor work ban returns across UAE for 22nd year",
+    "date": "2026-06-08",
+    "url": "https://gulfnews.com/uae/government/midday-outdoor-work-ban-returns-across-uae-for-22nd-year-1.500567381"
+   },
+   {
+    "name": "Dubai Future Foundation",
+    "title": "Hamdan bin Mohammed launches the Dubai Robotics and Automation Program",
+    "date": "2022-09-21",
+    "url": "https://www.dubaifuture.ae/dubai-future-foundation/hamdan-bin-mohammed-launches-the-dubai-robotics-and-automation-program"
+   },
+   {
+    "name": "Gulf Construction",
+    "title": "AC3D, Transgulf team up to scale construction 3D printing across GCC",
+    "date": "2026-10-31",
+    "url": "https://gulfconstructiononline.com/ArticleTA/488954/ac3d-transgulf-team-up-to-scale-construction-3d-printing-across-gcc"
+   },
+   {
+    "name": "Emarat Al Youm",
+    "title": "بلدية دبي تُطلق تحدياً عالمياً لبناء فيلا سكنية باستخدام أنظمة البناء الروبوتية",
+    "date": "2026-01-27",
+    "url": "https://www.emaratalyoum.com/local-section/other/2026-01-27-1.2010131"
+   }
+  ],
+  "related": [
+   {
+    "en": "Robotic villa challenge (deployment)",
+    "ar": "تحدي الفيلا الروبوتية (نشر)",
+    "href": "/database?tab=deployments&id=d32"
+   },
+   {
+    "en": "Würth Professional Solutions",
+    "ar": "فورت للحلول المهنية",
+    "href": "/database?tab=companies&id=wurth-professional-solutions"
+   },
+   {
+    "en": "Construction & 3D printing companies",
+    "ar": "شركات البناء والطباعة ثلاثية الأبعاد",
+    "href": "/database?tab=companies&cat=construction"
+   },
+   {
+    "en": "Policy: UAE dossier",
+    "ar": "السياسات: ملف الإمارات",
+    "href": "/policy?c=AE"
+   },
+   {
+    "en": "Deployments map",
+    "ar": "خريطة النشر",
+    "href": "/map"
+   }
+  ],
+  "report": {
+   "label": {
+    "en": "Research report",
+    "ar": "تقرير بحثي"
+   },
+   "gate_after": 1,
+   "glance": [
+    {
+     "n": 25,
+     "suf": {
+      "en": "+",
+      "ar": "+"
+     },
+     "en": "Companies and universities in the consortium, per Dubai Municipality. None has been named.",
+     "ar": "شركة وجامعة في التحالف بحسب بلدية دبي، ولم يُكشف عن أيٍّ منها."
+    },
+    {
+     "n": 8,
+     "suf": {
+      "en": " months",
+      "ar": " أشهر"
+     },
+     "en": "Length of the challenge, plus two months to document results. No start date has been published.",
+     "ar": "مدة التحدي، تليها شهران لتوثيق النتائج. ولم يُعلن تاريخ البدء."
+    },
+    {
+     "n": 25,
+     "suf": {
+      "en": "%",
+      "ar": "%"
+     },
+     "en": "Share of Dubai buildings meant to be 3D-printed by 2030, a 2016 target with no published progress figure.",
+     "ar": "نسبة مباني دبي المستهدف طباعتها بحلول 2030، وهو هدف من 2016 بلا مؤشر تقدّم منشور."
+    },
+    {
+     "n": 10,
+     "en": "Years since Dubai’s first 3D-printed building, the 2016 Office of the Future, which was printed in China.",
+     "ar": "أعوام منذ أول مبنى مطبوع في دبي، «مكتب المستقبل» عام 2016، الذي طُبع في الصين."
+    }
+   ],
+   "findings": [
+    {
+     "title": {
+      "en": "A good test, thinly documented",
+      "ar": "اختبار جيد بتوثيق شحيح"
+     },
+     "en": "Ten months after launch there is no published list of consortium members, no villa specifications and no start date.",
+     "ar": "بعد عشرة أشهر من الإطلاق لا توجد قائمة منشورة بأعضاء التحالف، ولا مواصفات للفيلا، ولا تاريخ للبدء."
+    },
+    {
+     "title": {
+      "en": "Two partners, two visions",
+      "ar": "شريكان ورؤيتان"
+     },
+     "en": "Würth pitches humanoid robots; Dubai Municipality’s own visuals show 3D-printed walls. Which robots will do what is not public.",
+     "ar": "تروّج فورت للروبوتات البشرية، بينما تُظهر مرئيات بلدية دبي جدراناً مطبوعة. ولم يُكشف أيّ الروبوتات ستؤدي أيّ مهمة."
+    },
+    {
+     "title": {
+      "en": "Dubai’s record is demonstrators",
+      "ar": "سجلّ دبي نماذج استعراضية"
+     },
+     "en": "Its 3D-printed “firsts” were printed abroad or needed hand-placed steel and concrete, and the 25% target has no published metric.",
+     "ar": "طُبعت «أوائل» دبي في الخارج أو احتاجت إلى حديد وخرسانة يدوية، ولا يوجد مقياس منشور لهدف الـ25%."
+    },
+    {
+     "title": {
+      "en": "Cost is the real test",
+      "ar": "التكلفة هي الاختبار الحقيقي"
+     },
+     "en": "Independent studies find printed one-off houses cost more than conventional ones; savings appear only with repetition.",
+     "ar": "تجد دراسات مستقلة أن المنازل المطبوعة المنفردة أغلى من التقليدية، ولا تظهر الوفورات إلا مع التكرار."
+    }
+   ],
+   "compare": [
+    {
+     "tag": {
+      "en": "What was announced",
+      "ar": "ما أُعلن"
+     },
+     "title": {
+      "en": "The world’s first robot-built villa",
+      "ar": "أول فيلا في العالم تبنيها الروبوتات"
+     },
+     "sub": {
+      "en": "Dubai Municipality, January and October 2026",
+      "ar": "بلدية دبي، يناير وأكتوبر 2026"
+     },
+     "physical": false,
+     "items": [
+      {
+       "en": "A global challenge to build a villa “entirely” with robotic construction systems",
+       "ar": "تحدٍّ عالمي لبناء فيلا «بالكامل» بأنظمة البناء الروبوتية"
+      },
+      {
+       "en": "A consortium of more than 25 companies, plus universities",
+       "ar": "تحالف يضم أكثر من 25 شركة إلى جانب جامعات"
+      },
+      {
+       "en": "Partners: Zacua Ventures and Würth",
+       "ar": "الشركاء: زاكوا فنتشرز وفورت"
+      },
+      {
+       "en": "An 8-month challenge, then 2 months to document results",
+       "ar": "تحدٍّ مدته 8 أشهر يليه شهران لتوثيق النتائج"
+      },
+      {
+       "en": "A “live applied laboratory” at 04 ConTech Valley, Expo City Dubai",
+       "ar": "«مختبر تطبيقي حي» في وادي التقنيات الإنشائية 04 بمدينة إكسبو دبي"
+      }
+     ]
+    },
+    {
+     "tag": {
+      "en": "What is on the record",
+      "ar": "ما هو موثّق"
+     },
+     "title": {
+      "en": "A launch, two partners and renders",
+      "ar": "إطلاق وشريكان وتصاميم حاسوبية"
+     },
+     "sub": {
+      "en": "Everything else is still to be published",
+      "ar": "وكل ما عدا ذلك لم يُنشر بعد"
+     },
+     "physical": true,
+     "items": [
+      {
+       "en": "No named consortium members",
+       "ar": "لا أسماء لأعضاء التحالف"
+      },
+      {
+       "en": "No size, storeys, budget or cost per square metre",
+       "ar": "لا مساحة ولا عدد طوابق ولا ميزانية ولا تكلفة للمتر المربع"
+      },
+      {
+       "en": "No start date, so no end date",
+       "ar": "لا تاريخ بدء، وبالتالي لا تاريخ انتهاء"
+      },
+      {
+       "en": "No photo of robots working on the site",
+       "ar": "لا صورة لروبوتات تعمل في الموقع"
+      },
+      {
+       "en": "No definition of “entirely”: the Arabic release says “integrated”",
+       "ar": "لا تعريف لكلمة «بالكامل»، والنص العربي يقول «متكاملة»"
+      }
+     ]
+    }
+   ],
+   "timeline": [
+    {
+     "date": "2016-04",
+     "title": {
+      "en": "25% target set",
+      "ar": "تحديد هدف الـ25%"
+     },
+     "en": "Dubai’s 3D Printing Strategy aims for 25% of buildings to be 3D-printed by 2030.",
+     "ar": "تستهدف استراتيجية دبي للطباعة ثلاثية الأبعاد أن تكون 25% من المباني مطبوعة بحلول 2030.",
+     "src": 11
+    },
+    {
+     "date": "2016-05-23",
+     "title": {
+      "en": "Office of the Future",
+      "ar": "مكتب المستقبل"
+     },
+     "en": "A 250 m² office opens at Emirates Towers. Its parts were printed in a warehouse in China and shipped to Dubai.",
+     "ar": "افتتاح مكتب بمساحة 250 متراً مربعاً في أبراج الإمارات، طُبعت أجزاؤه في مستودع بالصين وشُحنت إلى دبي.",
+     "src": 13
+    },
+    {
+     "date": "2019-10-23",
+     "title": {
+      "en": "Warsan building",
+      "ar": "مبنى ورسان"
+     },
+     "en": "A 640 m², 9.5 m two-storey building enters Guinness World Records. Workers still placed rebar and poured concrete by hand.",
+     "ar": "مبنى من طابقين بمساحة 640 متراً مربعاً وارتفاع 9.5 أمتار يدخل موسوعة غينيس، مع تركيب حديد التسليح وصبّ الخرسانة يدوياً.",
+     "src": 15
+    },
+    {
+     "date": "2023-07-18",
+     "title": {
+      "en": "First villa licence",
+      "ar": "أول رخصة لفيلا"
+     },
+     "en": "Dubai Municipality issues its first construction licence for a 3D-printed private villa, at Al Awir 1.",
+     "ar": "بلدية دبي تصدر أول رخصة بناء لفيلا خاصة مطبوعة ثلاثياً في العوير 1.",
+     "src": 16
+    },
+    {
+     "date": "2023-12-07",
+     "title": {
+      "en": "3DXB record villa",
+      "ar": "فيلا 3DXB القياسية"
+     },
+     "en": "Guinness lists 3DXB’s Dubai villa as the largest 3D-printed villa, at 303 m².",
+     "ar": "غينيس تدرج فيلا 3DXB في دبي بوصفها أكبر فيلا مطبوعة، بمساحة 303 أمتار مربعة.",
+     "src": 17
+    },
+    {
+     "date": "2024-12-19",
+     "title": {
+      "en": "NEOM rebar robots",
+      "ar": "روبوتات حديد التسليح في نيوم"
+     },
+     "en": "NEOM and Samsung C&T form a SR1.3bn ($350m) joint venture for robotic rebar-cage assembly.",
+     "ar": "نيوم وسامسونج سي آند تي تؤسسان مشروعاً مشتركاً بقيمة 1.3 مليار ريال (350 مليون دولار) لتجميع أقفاص حديد التسليح آلياً.",
+     "src": 18
+    },
+    {
+     "date": "2025-06",
+     "title": {
+      "en": "Qatar’s printed schools",
+      "ar": "مدارس قطر المطبوعة"
+     },
+     "en": "Printing starts on two 20,000 m² public schools, due by the end of 2025.",
+     "ar": "بدء طباعة مدرستين حكوميتين بمساحة 20 ألف متر مربع لكل منهما، على أن تكتملا بنهاية 2025.",
+     "src": 20
+    },
+    {
+     "date": "2025-12-17",
+     "title": {
+      "en": "04 ConTech Valley agreed",
+      "ar": "الاتفاق على وادي التقنيات الإنشائية 04"
+     },
+     "en": "Dubai Municipality and Expo City Dubai sign an MoU for a construction-technology hub with regulatory sandboxes.",
+     "ar": "بلدية دبي ومدينة إكسبو دبي توقعان مذكرة تفاهم لمركز لتقنيات البناء يضم بيئات تنظيمية تجريبية.",
+     "src": 9
+    },
+    {
+     "date": "2026-01-27",
+     "title": {
+      "en": "Challenge launched",
+      "ar": "إطلاق التحدي"
+     },
+     "en": "The robotic villa challenge is announced with Zacua Ventures and Würth, alongside the 70–70 off-site strategy.",
+     "ar": "الإعلان عن تحدي الفيلا الروبوتية مع زاكوا فنتشرز وفورت، إلى جانب استراتيجية 70–70 للبناء خارج الموقع.",
+     "src": 1
+    },
+    {
+     "date": "2026-07",
+     "title": {
+      "en": "Qatar runs late",
+      "ar": "تأخر مشروع قطر"
+     },
+     "en": "The Qatar school walls are “nearly complete”, months after the end-2025 target.",
+     "ar": "جدران مدارس قطر «شبه مكتملة»، بعد أشهر من موعد نهاية 2025.",
+     "src": 19
+    },
+    {
+     "date": "2026-09-28",
+     "title": {
+      "en": "Rules still being drafted",
+      "ar": "القواعد قيد الصياغة"
+     },
+     "en": "Dubai Municipality’s first Legathon starts drafting rules for robot-aided buildings.",
+     "ar": "أول «ليجاثون» لبلدية دبي يبدأ صياغة قواعد للمباني المشيّدة بمساعدة الروبوتات.",
+     "src": 10
+    },
+    {
+     "date": "2026-10-20",
+     "title": {
+      "en": "“Plans to build”",
+      "ar": "«خطط لبناء»"
+     },
+     "en": "At WETEX, Dubai Municipality shows its plans and sets an 8-month challenge plus 2 months of documentation.",
+     "ar": "في معرض ويتيكس تعرض بلدية دبي خططها وتحدد تحدياً مدته 8 أشهر وشهرين للتوثيق.",
+     "src": 3
+    }
+   ],
+   "status": {
+    "announced": {
+     "en": "Announced",
+     "ar": "معلَن"
+    },
+    "shown": {
+     "en": "Shown in renders",
+     "ar": "معروض في التصاميم"
+    },
+    "sought": {
+     "en": "Sought by partners",
+     "ar": "مطلوب من الشركاء"
+    }
+   },
+   "fleet": [
+    {
+     "id": "red-link-humanoid",
+     "name": {
+      "en": "Red Link humanoid",
+      "ar": "الروبوت البشري «ريد لينك»"
+     },
+     "maker": "Würth Professional Solutions",
+     "kind": {
+      "en": "Humanoid robot (make not disclosed)",
+      "ar": "روبوت بشري (لم تُكشف الشركة المصنّعة)"
+     },
+     "status": "announced",
+     "where": {
+      "en": "Robotic villa, Expo City Dubai",
+      "ar": "الفيلا الروبوتية، مدينة إكسبو دبي"
+     },
+     "en": "Würth says the villa will be a “living laboratory” to test and validate humanoid robots in real residential construction. One stood on stage at the launch.",
+     "ar": "تقول فورت إن الفيلا ستكون «مختبراً حياً» لاختبار الروبوتات البشرية في بناء سكني حقيقي، ووقف أحدها على المنصة عند الإطلاق.",
+     "fact": {
+      "en": "No model, maker, count or task has been named",
+      "ar": "لم يُكشف الطراز ولا الصانع ولا العدد ولا المهام"
+     },
+     "src": 7,
+     "co": "wurth-professional-solutions"
+    },
+    {
+     "id": "robot-dogs",
+     "name": {
+      "en": "Robot dog platforms",
+      "ar": "منصات الكلاب الآلية"
+     },
+     "maker": "Würth Professional Solutions",
+     "kind": {
+      "en": "Quadruped robots",
+      "ar": "روبوتات رباعية الأرجل"
+     },
+     "status": "announced",
+     "where": {
+      "en": "Construction sites in Dubai",
+      "ar": "مواقع البناء في دبي"
+     },
+     "en": "Part of Würth’s Red Link plan, for remote inspection, safety monitoring and vision-based site assessment.",
+     "ar": "جزء من خطة «ريد لينك» لدى فورت، للفحص عن بُعد ومراقبة السلامة وتقييم المواقع بالرؤية الحاسوبية.",
+     "fact": {
+      "en": "Linked to the hub, not confirmed for the villa",
+      "ar": "مرتبطة بالمركز، ولم تؤكَّد للفيلا"
+     },
+     "src": 6,
+     "co": "wurth-professional-solutions"
+    },
+    {
+     "id": "concrete-printing",
+     "name": {
+      "en": "3D concrete printing",
+      "ar": "الطباعة الخرسانية ثلاثية الأبعاد"
+     },
+     "maker": "Not named",
+     "kind": {
+      "en": "Gantry or arm printer",
+      "ar": "طابعة جسرية أو ذراعية"
+     },
+     "status": "shown",
+     "where": {
+      "en": "Dubai Municipality visuals, Oct 2026",
+      "ar": "مرئيات بلدية دبي، أكتوبر 2026"
+     },
+     "en": "Khaleej Times reads the October visuals as 3D-printed villas, and the render’s layered walls fit that reading. No printer maker has been named.",
+     "ar": "قرأت «خليج تايمز» مرئيات أكتوبر على أنها فلل مطبوعة، وجدران التصميم ذات الطبقات تتسق مع ذلك، ولم يُكشف صانع الطابعة.",
+     "fact": {
+      "en": "Dubai Municipality’s text does not say “3D printing”",
+      "ar": "نص بلدية دبي لا يذكر «الطباعة ثلاثية الأبعاد»"
+     },
+     "src": 4
+    },
+    {
+     "id": "startup-call",
+     "name": {
+      "en": "Assembly, logistics and site robots",
+      "ar": "روبوتات التجميع والخدمات اللوجستية والموقع"
+     },
+     "maker": "Applicants to Zacua’s call",
+     "kind": {
+      "en": "Several robot types",
+      "ar": "أنواع متعددة من الروبوتات"
+     },
+     "status": "sought",
+     "where": {
+      "en": "Global startup call, closed 4 Apr 2026",
+      "ar": "دعوة عالمية للشركات الناشئة أُغلقت في 4 أبريل 2026"
+     },
+     "en": "Zacua sought structural assembly, concrete printing, earthmoving and material logistics, multi-robot coordination, AI vision and human–robot collaboration. Who was chosen is not public.",
+     "ar": "طلبت زاكوا حلولاً للتجميع الإنشائي والطباعة الخرسانية وتحريك التربة ولوجستيات المواد وتنسيق الروبوتات المتعددة والرؤية الحاسوبية والتعاون بين الإنسان والروبوت، ولم يُعلن من اختير.",
+     "fact": {
+      "en": "“We are not looking for concepts. We are looking for companies ready to deploy.”",
+      "ar": "«لا نبحث عن أفكار، بل عن شركات جاهزة للتنفيذ.»"
+     },
+     "src": 8
+    }
+   ],
+   "claims": [
+    {
+     "id": "c1",
+     "claim": {
+      "en": "“The world’s first villa built entirely using robotic construction systems”",
+      "ar": "«أول فيلا في العالم تُبنى بالكامل بأنظمة البناء الروبوتية»"
+     },
+     "who": {
+      "en": "Dubai Municipality (English release)",
+      "ar": "بلدية دبي (البيان الإنجليزي)"
+     },
+     "level": 1,
+     "tag": {
+      "en": "Official claim, undefined",
+      "ar": "ادعاء رسمي غير معرَّف"
+     },
+     "en": "No share of robotic work has been defined or measured, and the Arabic release describes an “integrated” villa rather than an entirely robotic one. “First” cannot be judged until it is built.",
+     "ar": "لم تُحدَّد نسبة العمل الروبوتي أو تُقَس، ويصف البيان العربي فيلا «متكاملة» لا روبوتية بالكامل. ولا يمكن الحكم على «الأولى» قبل اكتمال البناء.",
+     "src": 2
+    },
+    {
+     "id": "c2",
+     "claim": {
+      "en": "“More than 25 companies” in the consortium",
+      "ar": "«أكثر من 25 شركة» في التحالف"
+     },
+     "who": {
+      "en": "Dubai Municipality",
+      "ar": "بلدية دبي"
+     },
+     "level": 3,
+     "tag": {
+      "en": "Documented, with caveats",
+      "ar": "موثّق مع تحفّظات"
+     },
+     "en": "Repeated in January and October, but the wording shifted from “companies and academic institutions” to “companies plus universities”, and no member has been named.",
+     "ar": "تكرر في يناير وأكتوبر، لكن الصياغة تغيّرت من «شركات ومؤسسات أكاديمية» إلى «شركات إلى جانب جامعات»، ولم يُكشف أيّ عضو.",
+     "src": 3
+    },
+    {
+     "id": "c3",
+     "claim": {
+      "en": "Global ConTech investment above $30bn by 2033, growing 17.5% a year",
+      "ar": "استثمارات عالمية في تقنيات البناء تتجاوز 30 مليار دولار بحلول 2033 بنمو 17.5% سنوياً"
+     },
+     "who": {
+      "en": "Global ConTech Report, Dubai Municipality and Zacua Ventures",
+      "ar": "التقرير العالمي لتقنيات البناء، بلدية دبي وزاكوا فنتشرز"
+     },
+     "level": 2,
+     "tag": {
+      "en": "Projection",
+      "ar": "توقع"
+     },
+     "en": "A forecast co-written by a venture investor that is also a villa partner. Zacua’s own robotics report puts on-site robotics at under 0.03% of construction spend in 2025.",
+     "ar": "توقع شارك في إعداده مستثمر جريء هو أيضاً شريك في الفيلا، فيما يقدّر تقرير زاكوا نفسه الروبوتات الميدانية بأقل من 0.03% من الإنفاق على البناء في 2025.",
+     "src": 21
+    },
+    {
+     "id": "c4",
+     "claim": {
+      "en": "25% of Dubai buildings 3D-printed by 2030",
+      "ar": "25% من مباني دبي مطبوعة بحلول 2030"
+     },
+     "who": {
+      "en": "Dubai 3D Printing Strategy (2016)",
+      "ar": "استراتيجية دبي للطباعة ثلاثية الأبعاد (2016)"
+     },
+     "level": 3,
+     "tag": {
+      "en": "Official target, no metric",
+      "ar": "هدف رسمي بلا مقياس"
+     },
+     "en": "Ten years on, we found no definition of the metric (count, floor area or value) and no published progress figure.",
+     "ar": "بعد عشر سنوات، لم نجد تعريفاً للمقياس (العدد أو المساحة أو القيمة) ولا أي مؤشر تقدّم منشور.",
+     "src": 11
+    },
+    {
+     "id": "c5",
+     "claim": {
+      "en": "An 8-month challenge plus 2 months of documentation",
+      "ar": "تحدٍّ لمدة 8 أشهر يليه شهران للتوثيق"
+     },
+     "who": {
+      "en": "Dubai Municipality (WETEX, Oct 2026)",
+      "ar": "بلدية دبي (ويتيكس، أكتوبر 2026)"
+     },
+     "level": 2,
+     "tag": {
+      "en": "Single source",
+      "ar": "مصدر واحد"
+     },
+     "en": "Stated once, in the Arabic WETEX release, without a start date, so the finish date cannot be worked out.",
+     "ar": "ورد مرة واحدة في البيان العربي لمعرض ويتيكس دون تاريخ بدء، فلا يمكن تحديد موعد الانتهاء.",
+     "src": 3
+    }
+   ],
+   "levels": [
+    {
+     "en": "Company claim",
+     "ar": "ادعاء الشركة"
+    },
+    {
+     "en": "Single source or projection",
+     "ar": "مصدر واحد أو توقع"
+    },
+    {
+     "en": "Documented, with caveats",
+     "ar": "موثّق مع تحفّظات"
+    },
+    {
+     "en": "Reported by several outlets",
+     "ar": "منقول عن عدة وسائل"
+    }
+   ],
+   "watchStatus": {
+    "due": {
+     "en": "Due",
+     "ar": "مرتقب"
+    },
+    "open": {
+     "en": "Open question",
+     "ar": "سؤال مفتوح"
+    },
+    "trial": {
+     "en": "Trial",
+     "ar": "تجربة"
+    }
+   },
+   "watch": [
+    {
+     "status": "open",
+     "when": {
+      "en": "Any time",
+      "ar": "في أي وقت"
+     },
+     "en": "The consortium list: who is building the villa, and which robot does which task.",
+     "ar": "قائمة التحالف: من يبني الفيلا، وأيّ روبوت يؤدي أيّ مهمة."
+    },
+    {
+     "status": "open",
+     "when": {
+      "en": "Any time",
+      "ar": "في أي وقت"
+     },
+     "en": "A start date, a site and basic specifications: size, storeys and budget.",
+     "ar": "تاريخ البدء والموقع والمواصفات الأساسية: المساحة وعدد الطوابق والميزانية."
+    },
+    {
+     "status": "open",
+     "when": {
+      "en": "After the build",
+      "ar": "بعد البناء"
+     },
+     "en": "The two-month results report: robotic share by task, cost per m² against a conventional villa, schedule and defects.",
+     "ar": "تقرير النتائج بعد شهرين: نسبة العمل الروبوتي لكل مهمة، وتكلفة المتر المربع مقارنة بفيلا تقليدية، والجدول الزمني والعيوب."
+    },
+    {
+     "status": "trial",
+     "when": {
+      "en": "From the Legathon",
+      "ar": "من الليجاثون"
+     },
+     "en": "Draft rules for robot-built buildings, and whether the villa is permitted under them.",
+     "ar": "مسودة قواعد المباني المشيّدة بالروبوتات، وهل ستُرخَّص الفيلا بموجبها."
+    },
+    {
+     "status": "open",
+     "when": {
+      "en": "Next",
+      "ar": "التالي"
+     },
+     "en": "Which humanoid Würth deploys, and what work it actually does on site.",
+     "ar": "أيّ روبوت بشري ستنشره فورت، وما العمل الذي سيؤديه فعلياً في الموقع."
+    }
+   ],
+   "providers": [
+    {
+     "id": "wurth-professional-solutions",
+     "en": "Named partner. Says it is implementing the robotic villa with Zacua Ventures as a living lab for humanoid robots under its Red Link plan.",
+     "ar": "شريك معلَن، يقول إنه ينفّذ الفيلا الروبوتية مع زاكوا فنتشرز مختبراً حياً للروبوتات البشرية ضمن خطة «ريد لينك».",
+     "fleet": [
+      "red-link-humanoid",
+      "robot-dogs"
+     ]
+    },
+    {
+     "id": "3dxb-group",
+     "en": "Not named in the consortium. Built the Dubai villa Guinness lists as the largest 3D-printed villa, with Dubai Municipality, in 2023.",
+     "ar": "غير مدرجة في التحالف. شيّدت مع بلدية دبي عام 2023 الفيلا التي تدرجها غينيس أكبرَ فيلا مطبوعة."
+    },
+    {
+     "id": "ac3d",
+     "en": "Not named in the consortium. The Dubai maker of Codemason construction printers; raised a strategic investment from Transgulf Readymix in October 2026.",
+     "ar": "غير مدرجة في التحالف. صانعة طابعات Codemason للبناء في دبي، وحصلت على استثمار استراتيجي من ترانسغلف ريدي ميكس في أكتوبر 2026."
+    },
+    {
+     "id": "cobod",
+     "en": "Not named in the consortium. Its printers built Qatar’s 3D-printed schools and Emaar’s Dubai villa; its founder says printing pays only at 10 or more units.",
+     "ar": "غير مدرجة في التحالف. شيّدت طابعاتها مدارس قطر المطبوعة وفيلا إعمار في دبي، ويقول مؤسسها إن الطباعة لا تربح إلا عند 10 وحدات فأكثر."
+    }
+   ],
+   "ui": {
+    "glance": {
+     "en": "At a glance",
+     "ar": "لمحة سريعة"
+    },
+    "findings": {
+     "en": "Key findings",
+     "ar": "أبرز النتائج"
+    },
+    "contents": {
+     "en": "Contents",
+     "ar": "المحتويات"
+    },
+    "chapter": {
+     "en": "Chapter",
+     "ar": "الفصل"
+    },
+    "vs": {
+     "en": "vs",
+     "ar": "مقابل"
+    },
+    "attacks": {
+     "en": "Challenge log",
+     "ar": "سجلّ التحدي"
+    },
+    "timeline": {
+     "en": "Robots and printers on Gulf building sites",
+     "ar": "الروبوتات والطابعات في مواقع البناء الخليجية"
+    },
+    "tlHint": {
+     "en": "Select a milestone",
+     "ar": "اختر محطة"
+    },
+    "fleet": {
+     "en": "The robots in the plan",
+     "ar": "الروبوتات في الخطة"
+    },
+    "fleetHint": {
+     "en": "Filter by status, then open a robot for details",
+     "ar": "صفِّ حسب الحالة ثم افتح أي روبوت لمعرفة التفاصيل"
+    },
+    "all": {
+     "en": "All",
+     "ar": "الكل"
+    },
+    "inService": {
+     "en": "Confirmed on site",
+     "ar": "مؤكدة في الموقع"
+    },
+    "coming": {
+     "en": "Announced, shown or sought",
+     "ar": "معلنة أو معروضة أو مطلوبة"
+    },
+    "claims": {
+     "en": "Claim check",
+     "ar": "تدقيق الادعاءات"
+    },
+    "claimsHint": {
+     "en": "How strong is the evidence behind each headline number? Open a card to see what we found.",
+     "ar": "ما مدى قوة الأدلة وراء كل رقم بارز؟ افتح أي بطاقة لترى ما وجدناه."
+    },
+    "found": {
+     "en": "What we found",
+     "ar": "ما وجدناه"
+    },
+    "evidence": {
+     "en": "Evidence",
+     "ar": "الأدلة"
+    },
+    "watch": {
+     "en": "Watchlist",
+     "ar": "قائمة المتابعة"
+    },
+    "daysLeft": {
+     "en": "{n} days left",
+     "ar": "متبقٍ {n} يوماً"
+    },
+    "overdue": {
+     "en": "Overdue",
+     "ar": "متأخر"
+    },
+    "providers": {
+     "en": "Providers in this report",
+     "ar": "المزوّدون في هذا التقرير"
+    },
+    "inDir": {
+     "en": "View in directory",
+     "ar": "عرض في الدليل"
+    },
+    "robots": {
+     "en": "In the fleet",
+     "ar": "في الأسطول"
+    },
+    "source": {
+     "en": "Source",
+     "ar": "المصدر"
+    },
+    "showAll": {
+     "en": "Show all {n} sources",
+     "ar": "عرض كل المصادر ({n})"
+    },
+    "showFewer": {
+     "en": "Show fewer",
+     "ar": "عرض أقل"
+    },
+    "enlarge": {
+     "en": "Enlarge image",
+     "ar": "تكبير الصورة"
+    },
+    "close": {
+     "en": "Close",
+     "ar": "إغلاق"
+    },
+    "prev": {
+     "en": "Previous",
+     "ar": "السابق"
+    },
+    "next": {
+     "en": "Next",
+     "ar": "التالي"
+    },
+    "progress": {
+     "en": "Reading progress",
+     "ar": "تقدّم القراءة"
+    },
+    "where": {
+     "en": "Where",
+     "ar": "الموقع"
+    },
+    "maker": {
+     "en": "Maker",
+     "ar": "الصانع"
+    }
+   },
+   "chapters": [
+    {
+     "id": "announcement",
+     "n": "01",
+     "title": {
+      "en": "A villa built by robots, on paper",
+      "ar": "فيلا تبنيها الروبوتات، على الورق"
+     },
+     "blocks": [
+      {
+       "t": "p",
+       "en": "On 27 January 2026, Dubai Municipality launched a global challenge to build “the world’s first villa” using robotic construction systems. It named two partners, the construction-technology investor Zacua Ventures and Würth, and a consortium of more than 25 companies and academic institutions. The site is 04 ConTech Valley, a construction-technology hub at Expo City Dubai.",
+       "ar": "في 27 يناير 2026 أطلقت بلدية دبي تحدياً عالمياً لبناء «أول فيلا في العالم» بأنظمة البناء الروبوتية، وسمّت شريكين هما المستثمر في تقنيات البناء «زاكوا فنتشرز» و«فورت»، إلى جانب تحالف يضم أكثر من 25 شركة ومؤسسة أكاديمية. والموقع هو «وادي التقنيات الإنشائية 04»، مركز تقنيات البناء في مدينة إكسبو دبي."
+      },
+      {
+       "t": "p",
+       "en": "Ten months later, the project is still described as a plan. At WETEX in October, the municipality said it was “showcasing its plans to build” the villa, over an eight-month challenge followed by two months to document results. It has not published a start date, the villa’s size or budget, or the names of the companies building it. The only images are the launch event and computer renders.",
+       "ar": "وبعد عشرة أشهر لا يزال المشروع يوصف بأنه خطة. ففي معرض ويتيكس في أكتوبر قالت البلدية إنها «تستعرض خططها لبناء» الفيلا، ضمن تحدٍّ مدته ثمانية أشهر يليه شهران لتوثيق النتائج. ولم تنشر تاريخ البدء ولا مساحة الفيلا أو ميزانيتها ولا أسماء الشركات المنفذة، والصور الوحيدة هي حفل الإطلاق وتصاميم حاسوبية."
+      },
+      {
+       "t": "p",
+       "en": "That gap matters, because this could be one of the most useful construction experiments in the region: a full house, built under real regulations, with robots doing as much of the work as possible. Its value depends on what Dubai measures and publishes.",
+       "ar": "وهذه الفجوة مهمة، لأن المشروع قد يكون من أكثر تجارب البناء فائدة في المنطقة: منزل كامل يُبنى وفق اشتراطات حقيقية، وتؤدي فيه الروبوتات أكبر قدر ممكن من العمل. وتتوقف قيمته على ما ستقيسه دبي وتنشره."
+      },
+      {
+       "t": "w",
+       "w": "compare"
+      }
+     ]
+    },
+    {
+     "id": "why-robots",
+     "n": "02",
+     "title": {
+      "en": "Why Dubai wants robots on site",
+      "ar": "لماذا تريد دبي روبوتات في مواقع البناء"
+     },
+     "blocks": [
+      {
+       "t": "p",
+       "en": "The case for building with robots in the Gulf is strong on paper. Construction depends on large migrant workforces, and from 15 June to 15 September outdoor work in direct sun stops between 12:30pm and 3pm, now for the 22nd year. Dubai has stacked targets on top of that: 25% of buildings 3D-printed by 2030, 200,000 robots across the economy by 2032, and, announced on the same day as the villa, a “70–70” goal of 70% off-site construction and at least 70% factory automation by 2030.",
+       "ar": "تبدو حجة البناء بالروبوتات في الخليج قوية نظرياً. فالبناء يعتمد على أعداد كبيرة من العمالة الوافدة، ويتوقف العمل في الشمس المباشرة من 12:30 ظهراً حتى 3 عصراً بين 15 يونيو و15 سبتمبر، للعام الثاني والعشرين. وأضافت دبي أهدافاً فوق ذلك: 25% من المباني مطبوعة بحلول 2030، و200 ألف روبوت في الاقتصاد بحلول 2032، وهدف «70–70» المعلن يوم إطلاق الفيلا نفسه: 70% من البناء خارج الموقع وأتمتة لا تقل عن 70% في المصانع بحلول 2030."
+      },
+      {
+       "t": "stats",
+       "items": [
+        {
+         "v": "12:30–3pm",
+         "en": "Midday outdoor work ban, 15 Jun–15 Sep",
+         "ar": "حظر العمل الخارجي ظهراً، 15 يونيو–15 سبتمبر"
+        },
+        {
+         "v": "200,000",
+         "en": "Robots targeted in Dubai by 2032",
+         "ar": "روبوت مستهدف في دبي بحلول 2032"
+        },
+        {
+         "v": "70–70",
+         "en": "Off-site and factory-automation targets for 2030",
+         "ar": "هدفا البناء خارج الموقع وأتمتة المصانع لعام 2030"
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "en": "Two details complicate the story. The midday ban already exempts concrete pours, so printing does not need it lifted. And construction is not one of the five focus areas of Dubai’s robotics programme. The villa is how the municipality, which also writes the building rules, intends to bring robots into its own sector.",
+       "ar": "لكن تفصيلين يعقّدان الصورة: فحظر الظهيرة يستثني أصلاً صبّ الخرسانة، فلا تحتاج الطباعة إلى رفعه. كما أن البناء ليس من القطاعات الخمسة المستهدفة في برنامج دبي للروبوتات. والفيلا هي وسيلة البلدية، وهي أيضاً واضعة اشتراطات البناء، لإدخال الروبوتات إلى قطاعها."
+      },
+      {
+       "t": "quote",
+       "en": "“We are creating a live environment where robotics and artificial intelligence move beyond concept and into real-world application.”",
+       "ar": "«نحن نهيّئ بيئة حية تنتقل فيها الروبوتات والذكاء الاصطناعي من المفهوم إلى التطبيق الواقعي.»",
+       "who": {
+        "en": "Marwan bin Ghalita, Director General, Dubai Municipality (Würth release, January 2026)",
+        "ar": "مروان بن غليطة، مدير عام بلدية دبي (بيان فورت، يناير 2026)"
+       }
+      }
+     ]
+    },
+    {
+     "id": "track-record",
+     "n": "03",
+     "title": {
+      "en": "Ten years of “firsts”",
+      "ar": "عشر سنوات من «الأوائل»"
+     },
+     "blocks": [
+      {
+       "t": "p",
+       "en": "Dubai has announced construction-robotics firsts before. The 2016 Office of the Future was hailed as the first 3D-printed office, but its sections were printed in a warehouse in China and shipped over. The 2019 building at Warsan set a Guinness record at 640 m², yet workers still placed the steel and poured concrete by hand. The 2023 villas by 3DXB and Emaar were real, licensed houses, but one-offs.",
+       "ar": "سبق لدبي أن أعلنت «أوائل» في روبوتات البناء. فقد وُصف «مكتب المستقبل» عام 2016 بأنه أول مكتب مطبوع، لكن أجزاءه طُبعت في مستودع بالصين وشُحنت. وسجّل مبنى ورسان عام 2019 رقماً قياسياً في غينيس بمساحة 640 متراً مربعاً، غير أن العمال ركّبوا الحديد وصبّوا الخرسانة يدوياً. أما فلل 3DXB وإعمار عام 2023 فكانت منازل حقيقية مرخّصة، لكنها منفردة."
+      },
+      {
+       "t": "w",
+       "w": "timeline"
+      },
+      {
+       "t": "p",
+       "en": "The neighbours show both the ambition and the friction. Qatar is printing two 20,000 m² public schools, the largest printed project anywhere; they were due by the end of 2025, and by July 2026 the walls were “nearly complete”. Saudi Arabia’s NEOM signed a $350m robotic rebar venture with Samsung C&T in December 2024; we found no public update on its output.",
+       "ar": "ويُظهر الجيران الطموح والعقبات معاً. فقطر تطبع مدرستين حكوميتين بمساحة 20 ألف متر مربع لكل منهما، وهو أكبر مشروع مطبوع في العالم؛ وكان موعدهما نهاية 2025، وفي يوليو 2026 كانت الجدران «شبه مكتملة». ووقّعت نيوم السعودية مشروعاً مشتركاً بقيمة 350 مليون دولار مع سامسونج سي آند تي لحديد التسليح الآلي في ديسمبر 2024، ولم نجد تحديثاً علنياً عن إنتاجه."
+      },
+      {
+       "t": "img",
+       "src": "/media/spotlight/cobod-qatar-school.jpg",
+       "alt": {
+        "en": "A large gantry concrete printer spanning a school building site in Qatar",
+        "ar": "طابعة خرسانية جسرية ضخمة تمتد فوق موقع بناء مدرسة في قطر"
+       },
+       "cap": {
+        "en": "The benchmark next door: a COBOD BODXL printer on the site of Qatar’s two 3D-printed public schools, which have run late.",
+        "ar": "المقارنة الأقرب: طابعة BODXL من كوبود في موقع المدرستين الحكوميتين المطبوعتين في قطر، اللتين تأخر إنجازهما."
+       },
+       "credit": {
+        "en": "Image: COBOD",
+        "ar": "الصورة: كوبود"
+       }
+      }
+     ]
+    },
+    {
+     "id": "two-visions",
+     "n": "04",
+     "title": {
+      "en": "Two visions of a robot villa",
+      "ar": "رؤيتان لفيلا روبوتية"
+     },
+     "blocks": [
+      {
+       "t": "p",
+       "en": "The partners describe different projects. Würth Professional Solutions, the Würth company leading its part, calls the villa “a living laboratory” to “test and validate humanoid systems within real residential construction environments”, alongside robot dogs for inspection. A humanoid in a hard hat and hi-vis vest stood on stage at the launch.",
+       "ar": "يصف الشريكان مشروعين مختلفين. فشركة «فورت للحلول المهنية»، التابعة لفورت والمسؤولة عن دورها، تسمّي الفيلا «مختبراً حياً» لـ«اختبار الأنظمة البشرية والتحقق منها في بيئات بناء سكنية حقيقية»، إلى جانب كلاب آلية للفحص. ووقف روبوت بشري بخوذة وسترة عاكسة على منصة الإطلاق."
+      },
+      {
+       "t": "p",
+       "en": "Dubai Municipality’s October visuals point another way: Khaleej Times read them as 3D-printed villas, and the render’s layered walls fit that reading. Zacua’s startup call asked for almost everything: structural assembly, concrete printing, earthmoving, logistics, multi-robot coordination and AI vision. Zacua’s own industry report, published in March, expects humanoids to see only targeted use, and says specialised machines “will remain the workhorses” on rough sites.",
+       "ar": "أما مرئيات بلدية دبي في أكتوبر فتشير إلى اتجاه آخر: فقد قرأتها «خليج تايمز» على أنها فلل مطبوعة، وجدران التصميم ذات الطبقات تتسق مع ذلك. وطلبت دعوة زاكوا للشركات الناشئة كل شيء تقريباً: التجميع الإنشائي والطباعة الخرسانية وتحريك التربة واللوجستيات وتنسيق الروبوتات والرؤية الحاسوبية. ويتوقع تقرير زاكوا نفسه الصادر في مارس استخداماً محدوداً للروبوتات البشرية، ويقول إن الآلات المتخصصة «ستبقى العمود الفقري» في المواقع الوعرة."
+      },
+      {
+       "t": "img",
+       "src": "/media/spotlight/robot-villa-render.jpg",
+       "alt": {
+        "en": "Computer render of a two-storey villa with layered, printed-looking walls, glass walls and a plunge pool",
+        "ar": "تصوّر حاسوبي لفيلا من طابقين بجدران ذات طبقات تبدو مطبوعة وواجهات زجاجية ومسبح صغير"
+       },
+       "cap": {
+        "en": "Render, not a photo: one of the visuals Dubai Municipality released in October 2026. Its layered walls suggest 3D concrete printing.",
+        "ar": "تصوّر حاسوبي وليس صورة: أحد المرئيات التي نشرتها بلدية دبي في أكتوبر 2026، وتوحي جدرانه ذات الطبقات بالطباعة الخرسانية ثلاثية الأبعاد."
+       },
+       "credit": {
+        "en": "Image: Dubai Municipality",
+        "ar": "الصورة: بلدية دبي"
+       }
+      },
+      {
+       "t": "w",
+       "w": "fleet"
+      },
+      {
+       "t": "quote",
+       "en": "“This is not a showcase installation or a conceptual prototype. It is a fully functional residential asset, delivered under real building regulations.”",
+       "ar": "«ليست عرضاً استعراضياً ولا نموذجاً مفاهيمياً، بل أصلاً سكنياً متكامل الوظائف يُنفَّذ وفق اشتراطات بناء حقيقية.»",
+       "who": {
+        "en": "Zacua Ventures, Robotic Startup Call 2026 (February 2026)",
+        "ar": "زاكوا فنتشرز، دعوة الشركات الناشئة 2026 (فبراير 2026)"
+       }
+      }
+     ]
+    },
+    {
+     "id": "numbers",
+     "n": "05",
+     "title": {
+      "en": "The numbers deserve scrutiny",
+      "ar": "الأرقام تستحق التدقيق"
+     },
+     "blocks": [
+      {
+       "t": "p",
+       "en": "The most quoted numbers around the villa are claims, targets and projections rather than measurements. That is normal at launch. It becomes a problem if the same numbers are still doing the work when the villa is finished.",
+       "ar": "أكثر الأرقام تداولاً حول الفيلا ادعاءات وأهداف وتوقعات لا قياسات، وهذا طبيعي عند الإطلاق، لكنه يصبح مشكلة إن ظلت الأرقام نفسها هي المرجع بعد اكتمال الفيلا."
+      },
+      {
+       "t": "w",
+       "w": "claims"
+      },
+      {
+       "t": "p",
+       "en": "Cost is the number that will decide whether this scales. Independent work is sobering. A Heriot-Watt study of a UAE townhouse found 3D printing about 5% more expensive overall than precast. A 2026 Thai study found single printed houses cost 10–26% more than conventional ones and only broke even at ten repeated units. COBOD’s founder says the same: printing becomes “truly profitable” at 10, 15 or more units. One villa, however robotic, cannot prove the economics on its own.",
+       "ar": "التكلفة هي الرقم الذي سيحسم قابلية التوسع، والدراسات المستقلة تدعو إلى الحذر. فقد وجدت دراسة لجامعة هيريوت وات على منزل متلاصق في الإمارات أن الطباعة أغلى بنحو 5% من البناء مسبق الصب. ووجدت دراسة تايلندية عام 2026 أن المنازل المطبوعة المنفردة أغلى بنسبة 10–26% ولا تتعادل إلا عند عشر وحدات مكررة. ويقول مؤسس كوبود الأمر نفسه: الطباعة تصبح «مربحة فعلاً» عند 10 أو 15 وحدة فأكثر. ففيلا واحدة، مهما بلغت روبوتيتها، لا تثبت الجدوى الاقتصادية وحدها."
+      }
+     ]
+    },
+    {
+     "id": "our-view",
+     "n": "06",
+     "title": {
+      "en": "Our view",
+      "ar": "رأينا"
+     },
+     "blocks": [
+      {
+       "t": "p",
+       "en": "Dubai is right to run this test, and right to run it on a real house rather than a pavilion. But a challenge without a scorecard is a showcase. Before the robots start, the municipality should publish the consortium, the villa’s specifications and the measures it will report: the share of work done by robots, task by task; cost per square metre against a conventional villa built to the same design; schedule; defects; and the human labour still needed.",
+       "ar": "دبي محقة في إجراء هذا الاختبار، ومحقة في إجرائه على منزل حقيقي لا جناح عرض. لكن التحدي بلا بطاقة تقييم يبقى عرضاً. وقبل أن تبدأ الروبوتات العمل، ينبغي للبلدية أن تنشر أعضاء التحالف ومواصفات الفيلا والمؤشرات التي ستعلنها: نسبة العمل الروبوتي لكل مهمة، وتكلفة المتر المربع مقارنة بفيلا تقليدية بالتصميم نفسه، والجدول الزمني، والعيوب، والعمالة البشرية التي ظلت مطلوبة.",
+       "lead": true
+      },
+      {
+       "t": "p",
+       "en": "The municipality is unusually well placed to do this. It writes the rules, runs the testing laboratory and is drafting regulations for robot-built buildings through its Legathon. If the villa ends with a published scorecard, it will be worth more to the industry than another “world’s first”.",
+       "ar": "والبلدية في موقع فريد يتيح لها ذلك: فهي تضع الاشتراطات وتدير مختبر الفحص وتصوغ قواعد المباني المشيّدة بالروبوتات عبر «الليجاثون». وإن انتهت الفيلا ببطاقة تقييم منشورة، فستكون أنفع للقطاع من «أول» آخر."
+      }
+     ]
+    },
+    {
+     "id": "watching",
+     "n": "07",
+     "title": {
+      "en": "What we’re watching",
+      "ar": "ما نترقّبه"
+     },
+     "blocks": [
+      {
+       "t": "w",
+       "w": "watch"
+      },
+      {
+       "t": "p",
+       "en": "We will update this report when Dubai Municipality names the consortium or sets a start date. If you are part of the consortium and can share details on the record, write to contact@roboticsmena.com.",
+       "ar": "سنحدّث هذا التقرير عندما تعلن بلدية دبي أعضاء التحالف أو تحدد تاريخ البدء. وإن كنت جزءاً من التحالف ويمكنك مشاركة تفاصيل علنية، فراسلنا على contact@roboticsmena.com."
+      }
+     ]
+    },
+    {
+     "id": "providers",
+     "n": "08",
+     "title": {
+      "en": "About the providers",
+      "ar": "عن مزوّدي التقنية"
+     },
+     "blocks": [
+      {
+       "t": "w",
+       "w": "providers"
+      }
+     ]
+    }
+   ]
+  },
+  "pdf": {
+   "en": "/media/reports/dubai-robot-villa-en.pdf",
+   "ar": "/media/reports/dubai-robot-villa-ar.pdf"
+  },
+  "home": {
+   "kicker": {
+    "en": "Construction robotics",
+    "ar": "روبوتات البناء"
+   },
+   "title": {
+    "en": "Dubai’s robot-built villa: a bold test with few details so far",
+    "ar": "فيلا دبي الروبوتية: اختبار جريء بتفاصيل قليلة حتى الآن"
+   },
+   "dek": {
+    "en": "Dubai Municipality wants the world’s first villa built with robotic construction systems at Expo City’s 04 ConTech Valley. Ten months on, the consortium, specifications and start date are still unpublished.",
+    "ar": "تريد بلدية دبي بناء أول فيلا في العالم بأنظمة البناء الروبوتية في وادي التقنيات الإنشائية 04 بمدينة إكسبو. وبعد عشرة أشهر لم يُنشر بعدُ التحالف ولا المواصفات ولا تاريخ البدء."
+   },
+   "quote": {
+    "en": "“This is not a showcase installation or a conceptual prototype.”",
+    "ar": "«ليست عرضاً استعراضياً ولا نموذجاً مفاهيمياً.»"
+   },
+   "who": {
+    "en": "Zacua Ventures, villa partner",
+    "ar": "زاكوا فنتشرز، شريك الفيلا"
+   },
+   "stats": [
+    {
+     "v": "25+",
+     "en": "Consortium members, none named",
+     "ar": "عضواً في التحالف، بلا أسماء"
+    },
+    {
+     "v": "8+2",
+     "en": "Months to build, then document",
+     "ar": "أشهر للبناء ثم التوثيق"
+    },
+    {
+     "v": "0",
+     "en": "Published photos of robots at work on site",
+     "ar": "صور منشورة لروبوتات تعمل في الموقع"
+    }
+   ],
+   "src": {
+    "en": "Sources: Dubai Municipality, 27 Jan and 20 Oct 2026; Khaleej Times, 21 Oct 2026.",
+    "ar": "المصادر: بلدية دبي، 27 يناير و20 أكتوبر 2026؛ خليج تايمز، 21 أكتوبر 2026."
+   },
+   "img": "/media/spotlight/robot-villa-launch.jpg",
+   "cap": {
+    "en": "Launch at Expo City Dubai · Jan 2026",
+    "ar": "الإطلاق في مدينة إكسبو دبي · يناير 2026"
+   },
+   "credit": {
+    "en": "Photo: Government of Dubai Media Office",
+    "ar": "الصورة: المكتب الإعلامي لحكومة دبي"
+   }
+  }
+ },
+ {
   "id": "gecko-adnoc-raptor",
   "date": "2026-11-07",
   "read_min": 9,
