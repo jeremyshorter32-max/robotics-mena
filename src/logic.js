@@ -4,7 +4,7 @@ class Component extends DCLogic {
   pref(k) { try { return window.localStorage.getItem('rm-' + k); } catch (e) { return null; } }
   savePref(k, v) { try { window.localStorage.setItem('rm-' + k, v); } catch (e) {} }
   urlTidy = (() => { try { ['lang', 'theme'].forEach(k => { const v = this.qp.get(k); if (v) this.savePref(k, v); }); const u = new URL(window.location.href); ['lang', 'theme', 'accent'].forEach(k => u.searchParams.delete(k)); let p = u.pathname.replace(/index\.html$/, '').replace(/\.html$/, ''); if (u.hash === '#top') u.hash = ''; const next = p + u.search + u.hash; if (next !== window.location.pathname + window.location.search + window.location.hash) window.history.replaceState(window.history.state, '', next); } catch (e) {} return true; })();
-  state = { active: 'brief', rails: { brief: { i: 0, n: 0, end: false }, strat: { i: 0, n: 0, end: false } }, lang: null, theme: null, q: '', fCountry: '', fSector: '', fType: '', sel: null, cty: null, dCat: '', dSort: 'featured', eType: '', eCountry: '', tab: 'company', submitted: false, dbTab: this.qp.get('tab') || 'companies', dbSel: this.qp.get('id') || null, dbQ: this.qp.get('q') || '', dbCountry: '', dbFacet: '', dbOrigin: new URLSearchParams(window.location.search).get('origin') || '', dbSort: '', dbAll: false, dbCopied: false, dAll: false, mapAll: false, mapNear: false, pc: (this.qp.get('c') || 'AE').toUpperCase(), email: '', subscribed: !!this.pref('subscriber'), rpTl: null, rpFleet: 'all', rpFleetOpen: null, rpClaims: {}, rpLb: -1, rpCh: '', rpSrcAll: false, added: {}, w: window.innerWidth };
+  state = { active: 'brief', rails: { brief: { i: 0, n: 0, end: false }, strat: { i: 0, n: 0, end: false } }, lang: null, theme: null, q: '', fCountry: '', fSector: '', fType: '', sel: null, cty: null, briefOpen: false, dCat: '', dSort: 'featured', eType: '', eCountry: '', tab: 'company', submitted: false, dbTab: this.qp.get('tab') || 'companies', dbSel: this.qp.get('id') || null, dbQ: this.qp.get('q') || '', dbCountry: '', dbFacet: '', dbOrigin: new URLSearchParams(window.location.search).get('origin') || '', dbSort: '', dbAll: false, dbCopied: false, dAll: false, mapAll: false, mapNear: false, pc: (this.qp.get('c') || 'AE').toUpperCase(), email: '', subscribed: !!this.pref('subscriber'), rpTl: null, rpFleet: 'all', rpFleetOpen: null, rpClaims: {}, rpLb: -1, rpCh: '', rpSrcAll: false, added: {}, w: window.innerWidth };
   searchRef = React.createRef();
   briefRail = React.createRef(); stratRail = React.createRef(); tabRail = React.createRef();
   NAV_IDS = window.RM_PAGE.nav;
@@ -53,7 +53,7 @@ class Component extends DCLogic {
     if ('MutationObserver' in window) { this.extMO = new MutationObserver(() => { if (this.extRaf) return; this.extRaf = requestAnimationFrame(() => { this.extRaf = 0; this.markExternal(); }); }); this.extMO.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] }); }
     this.onPin = e => this.setState({ sel: e.detail.id, cty: null });
     this.onCty = e => this.setState({ cty: e.detail.cc, sel: null });
-    this.onKey = e => { if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { e.preventDefault(); this.searchRef.current && this.searchRef.current.focus(); } if (e.key === 'Escape' && this.state.dbSel) { this.setState({ dbSel: null }); return; } if (e.key === 'Escape' && this.state.q) this.setState({ q: '' }); };
+    this.onKey = e => { if (e.key === 'Escape' && this.state.briefOpen) { this.closeBrief(); return; } if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { e.preventDefault(); this.searchRef.current && this.searchRef.current.focus(); } if (e.key === 'Escape' && this.state.dbSel) { this.setState({ dbSel: null }); return; } if (e.key === 'Escape' && this.state.q) this.setState({ q: '' }); };
     if (/^#(map|search)/.test(location.hash)) this.setState({ mapNear: true });
     this.onResize = () => this.setState({ w: window.innerWidth });
     window.addEventListener('rm:pin', this.onPin);
@@ -132,6 +132,19 @@ class Component extends DCLogic {
   SIGNUP_URL = (window.RM_DATA.site || {}).signup_url || '';
   FORM_URL = (window.RM_DATA.site || {}).form_url || (window.RM_DATA.site || {}).signup_url || '';
   CONTACT = (window.RM_DATA.site || {}).contact_email || 'contact@roboticsmena.com';
+  // "Get the brief" pop-up: opens from the nav on every page.
+  openBrief(opener) {
+    this.briefOpener = opener || document.activeElement;
+    this.setState({ briefOpen: true });
+    try { document.documentElement.style.overflow = 'hidden'; } catch (e) {}
+    setTimeout(() => { const el = document.getElementById('rm-brief-email') || document.querySelector('#rm-brief-panel button'); el && el.focus(); }, 60);
+  }
+  closeBrief() {
+    if (!this.state.briefOpen) return;
+    this.setState({ briefOpen: false });
+    try { document.documentElement.style.overflow = ''; } catch (e) {}
+    const o = this.briefOpener; this.briefOpener = null; if (o && o.focus) setTimeout(() => o.focus(), 0);
+  }
   // Sends a sign-up or submission to the site inbox (FormSubmit relays it to the contact address).
   post(url, fields) { if (!url) return Promise.resolve(false); try { return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ _captcha: 'false', _template: 'table', ...fields }) }).then(r => r.ok).catch(() => false); } catch (e) { return Promise.resolve(false); } }
   BRIEF = window.RM_DATA.brief.map(b => [b.country, b.date, b.source, b.title, b.title_ar || b.title, b.takeaway, b.takeaway_ar || b.takeaway, b.image || '', b.image_credit || '', b.source_url || '']);
@@ -219,7 +232,7 @@ class Component extends DCLogic {
       spotQuote: '“Robotics are essential to ensure that resilience and readiness is possible in a world where we don’t have a lot of these skilled workforces.”', spotWho: 'Jake Loosararian, chief executive, Gecko Robotics',
       spotStats: [['Tens', 'Robots deployed a day in the region'], ['3–5×', 'Faster than Gecko’s previous robot'], ['50×', 'Lower data-collection cost (company claim)']],
       spotSrc: 'Source: The National, 4 Nov 2026. Raptor was unveiled at ADIPEC, Abu Dhabi.', spotRead: 'Read our analysis', spotCap: 'Raptor at ADIPEC, Abu Dhabi · Nov 2026', spotCredit: 'Photo: Victor Besa / The National',
-      storyCrumb: 'Spotlight', storyRead: '{n} min read', gateKicker: 'Free with the weekly brief', gateTitle: 'Keep reading: the full analysis, sources and images', gateDek: 'Enter your email to unlock this piece. You’ll also get the weekly MENA robotics brief: five signals every Monday. Unsubscribe any time.', gatePh: 'Email address', gateBtn: 'Unlock the analysis', gateNote: 'Email only. We never share your address. Questions: contact@roboticsmena.com', storySources: 'Sources', storyRelated: 'In the Robotics MENA database', storyUnlocked: 'Unlocked. Thanks for subscribing.', pdfBtn: 'Download PDF', pdfLocked: 'Unlock to download the PDF', pdfNote: 'Branded PDF edition with every chart, table and source.', storyBack: 'Back to home',
+      storyCrumb: 'Spotlight', storyRead: '{n} min read', gateKicker: 'Free with the weekly brief', gateTitle: 'Keep reading: the full analysis, sources and images', gateDek: 'Enter your email to unlock this piece. You’ll also get the weekly MENA robotics brief: five signals every Monday. Unsubscribe any time.', gatePh: 'Email address', gateBtn: 'Unlock the analysis', gateNote: 'Email only. We never share your address. Questions: contact@roboticsmena.com', briefKicker: 'Free · Every Monday', briefBack: 'Back to the site', storySources: 'Sources', storyRelated: 'In the Robotics MENA database', storyUnlocked: 'Unlocked. Thanks for subscribing.', pdfBtn: 'Download PDF', pdfLocked: 'Unlock to download the PDF', pdfNote: 'Branded PDF edition with every chart, table and source.', storyBack: 'Back to home',
       spotAlt: 'Gecko Robotics Raptor wall-climbing inspection robot on a steel surface at ADIPEC, Abu Dhabi',
       s9n: '08 · Newsletter', nlTitle: 'The weekly MENA robotics brief', nlDek: 'Five signals every Monday, each with a takeaway and a primary source. Written for the people who sign the purchase orders.', nlPh: 'Work email', nlBtn: 'Subscribe', nlDone: 'You’re on the list. The next issue lands Monday.', nlMeta: 'Every Monday · 4-minute read · No ads, no sponsored slots · Unsubscribe in one click',
       sampleLbl: 'Sample issue', sampleIssue: 'No. 45 · 9 Nov 2026', sampleFoot: '+ 3 deployments added to the map · 2 events this fortnight',
@@ -271,7 +284,7 @@ class Component extends DCLogic {
       spotQuote: '«الروبوتات ضرورية لضمان المرونة والجاهزية في عالم لا تتوفر فيه أعداد كافية من العمالة الماهرة.»', spotWho: 'جيك لوساراريان، الرئيس التنفيذي لجيكو روبوتكس',
       spotStats: [['عشرات', 'روبوتات تُنشر يومياً في المنطقة'], ['3–5×', 'أسرع من روبوت جيكو السابق'], ['50×', 'خفض في تكلفة جمع البيانات (بحسب الشركة)']],
       spotSrc: 'المصدر: ذا ناشونال، 4 نوفمبر 2026. كُشف عن «رابتور» في معرض أديبك، أبوظبي.', spotRead: 'اقرأ تحليلنا', spotCap: 'رابتور في أديبك، أبوظبي · نوفمبر 2026', spotCredit: 'تصوير: فيكتور بيسا / ذا ناشونال',
-      storyCrumb: 'تحت الضوء', storyRead: 'قراءة في {n} دقائق', gateKicker: 'مجاناً مع الموجز الأسبوعي', gateTitle: 'تابع القراءة: التحليل الكامل مع المصادر والصور', gateDek: 'أدخل بريدك الإلكتروني لفتح هذا المقال. ستصلك أيضاً نشرة روبوتات المنطقة الأسبوعية: خمس إشارات كل اثنين. يمكنك إلغاء الاشتراك في أي وقت.', gatePh: 'البريد الإلكتروني', gateBtn: 'افتح التحليل', gateNote: 'البريد الإلكتروني فقط. لا نشارك عنوانك مع أحد. للاستفسارات: contact@roboticsmena.com', storySources: 'المصادر', storyRelated: 'في قاعدة بيانات روبوتكس مينا', storyUnlocked: 'تم الفتح. شكراً لاشتراكك.', pdfBtn: 'تنزيل PDF', pdfLocked: 'افتح التقرير لتنزيل ملف PDF', pdfNote: 'نسخة PDF بهوية روبوتكس مينا تضم كل الرسوم والجداول والمصادر.', storyBack: 'العودة إلى الرئيسية',
+      storyCrumb: 'تحت الضوء', storyRead: 'قراءة في {n} دقائق', gateKicker: 'مجاناً مع الموجز الأسبوعي', gateTitle: 'تابع القراءة: التحليل الكامل مع المصادر والصور', gateDek: 'أدخل بريدك الإلكتروني لفتح هذا المقال. ستصلك أيضاً نشرة روبوتات المنطقة الأسبوعية: خمس إشارات كل اثنين. يمكنك إلغاء الاشتراك في أي وقت.', gatePh: 'البريد الإلكتروني', gateBtn: 'افتح التحليل', gateNote: 'البريد الإلكتروني فقط. لا نشارك عنوانك مع أحد. للاستفسارات: contact@roboticsmena.com', briefKicker: 'مجاناً · كل يوم اثنين', briefBack: 'العودة إلى الموقع', storySources: 'المصادر', storyRelated: 'في قاعدة بيانات روبوتكس مينا', storyUnlocked: 'تم الفتح. شكراً لاشتراكك.', pdfBtn: 'تنزيل PDF', pdfLocked: 'افتح التقرير لتنزيل ملف PDF', pdfNote: 'نسخة PDF بهوية روبوتكس مينا تضم كل الرسوم والجداول والمصادر.', storyBack: 'العودة إلى الرئيسية',
       spotAlt: 'روبوت الفحص «رابتور» من جيكو روبوتكس يتسلّق سطحاً فولاذياً في أديبك، أبوظبي',
       s9n: '08 · النشرة', nlTitle: 'الموجز الأسبوعي لروبوتات المنطقة', nlDek: 'خمس إشارات كل اثنين، لكل منها خلاصة ومصدر أصلي. مكتوبة لمن يوقّعون أوامر الشراء.', nlPh: 'بريد العمل', nlBtn: 'اشترك', nlDone: 'تم تسجيلك. يصلك العدد القادم يوم الاثنين.', nlMeta: 'كل اثنين · 4 دقائق قراءة · بلا إعلانات أو رعايات · إلغاء الاشتراك بنقرة',
       sampleLbl: 'نموذج عدد', sampleIssue: 'العدد 45 · 9 نوفمبر 2026', sampleFoot: '+ 3 عمليات نشر أُضيفت إلى الخريطة · فعاليتان خلال أسبوعين',
@@ -700,7 +713,22 @@ class Component extends DCLogic {
       themeLabel: theme === 'dark' ? (ar ? 'فاتح' : 'Light') : (ar ? 'داكن' : 'Dark'), themeAria: ar ? 'تبديل المظهر' : 'Switch colour theme',
       toggleTheme: () => { const v = theme === 'dark' ? 'light' : 'dark'; this.savePref('theme', v); this.setState({ theme: v }); },
       toggleLang: () => { const v = ar ? 'en' : 'ar'; this.savePref('lang', v); this.setState({ lang: v }); },
-      goNewsletter: e => { e.preventDefault(); this.go('newsletter'); },
+      goNewsletter: e => { e.preventDefault(); this.openBrief(e.currentTarget); },
+      briefOpen: S.briefOpen, closeBrief: () => this.closeBrief(), keepBrief: e => e.stopPropagation(),
+      briefKey: e => {
+        if (e.key === 'Escape') { e.preventDefault(); this.closeBrief(); return; }
+        if (e.key !== 'Tab') return;
+        const f = [...document.querySelectorAll('#rm-brief-panel button, #rm-brief-panel input, #rm-brief-panel a[href]')].filter(x => !x.disabled && x.offsetParent !== null);
+        if (!f.length) return; const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      },
+      subscribeBrief: e => {
+        e.preventDefault(); const em = (S.email || '').trim(); if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return;
+        this.savePref('subscriber', em);
+        const where = { home: 'Home', map: 'Map', database: 'Database', policy: 'Policy', events: 'Events', spotlight: 'Spotlight', submit: 'Submit' }[this.PAGE] || this.PAGE;
+        this.post(this.SIGNUP_URL, { _subject: 'New sign-up · Get the brief pop-up (' + where + ')', email: em, signed_up_from: 'Get the brief pop-up on the ' + where + ' page', page: location.href, language: lang });
+        this.setState({ subscribed: true });
+      },
       goListed: e => { e.preventDefault(); this.setState({ tab: 'company', submitted: false }); this.go('submit'); },
       searchRef: this.searchRef, q: S.q, onQ: e => this.setState({ q: e.target.value }), hasQ: !!q, qOpen: q ? 'true' : 'false', results, noResults: !!q && !results.length,
       stats, statsUpd: upd, pCmpSrc: (t.pCmpSrc || '').replace('{date}', fdate(lastDate)),

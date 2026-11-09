@@ -12,6 +12,7 @@ data.builtAt = new Date().toISOString().slice(0, 10);
 
 const logic = read('src/logic.js');
 const headBrand = read('partials/head-brand.html').trim();
+const briefModal = read('partials/brief-modal.html').trim();
 if (logic.includes('</script')) throw new Error('src/logic.js must not contain "</script"');
 const safeJson = v => JSON.stringify(v).replace(/</g, '\\u003c');
 // Cache-busting: script files referenced by the pages get a content hash in their URL, so browsers
@@ -27,7 +28,9 @@ for (const file of fs.readdirSync(path.join(root, 'pages')).filter(f => f.endsWi
   if (!cfg || !html.includes('/*@logic*/')) throw new Error(`${file}: missing @config or @logic marker`);
   html = html.replace(cfg[0], () => `<script>window.RM_PAGE=${safeJson(JSON.parse(cfg[1]))};window.RM_DATA=${safeJson(data)};</script>`)
              .replace('/*@logic*/', () => logic)
-             .replace('</head>', () => headBrand + '\n</head>');
+             .replace('</head>', () => headBrand + '\n</head>')
+             .replace('<!--@brief-modal-->', () => briefModal);
+  if (html.includes('<!--@brief-modal-->') || !html.includes('rm-brief-panel')) throw new Error(`${file}: missing the Get the brief pop-up`);
   fs.writeFileSync(path.join(out, file), bust(html));
 }
 console.log(`Assembled pages with ${data.companies.length} companies, ${data.deployments.length} deployments, ${data.events.length} events, ${data.countries.length} countries.`);

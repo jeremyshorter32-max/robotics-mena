@@ -57,6 +57,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
       <button onClick="{{ toggleTheme }}" aria-label="{{ themeAria }}" style="height:36px;padding:0 12px;background:transparent;border:1px solid var(--line-strong);border-radius:3px;cursor:pointer;font-size:13px;color:var(--fg-muted)">{{ themeLabel }}</button>
       <button onClick="{{ toggleLang }}" lang="{{ otherLang }}" style="height:36px;padding:0 12px;background:transparent;border:1px solid var(--line-strong);border-radius:3px;cursor:pointer;font-size:14px;font-family:{{ otherFont }}">{{ t.langSwitch }}</button>
       <a href="#newsletter" onClick="{{ goNewsletter }}" style="display:var(--d-desk);align-items:center;height:36px;padding:0 16px;background:var(--accent);color:var(--accent-ink);border-radius:3px;font-size:14px;font-weight:600;white-space:nowrap">{{ t.subscribe }}</a>
+      <button type="button" onClick="{{ goNewsletter }}" aria-label="{{ t.subscribe }}" title="{{ t.subscribe }}" style="display:var(--d-mob);align-items:center;justify-content:center;width:36px;height:36px;padding:0;background:var(--accent);color:var(--accent-ink);border:0;border-radius:3px;cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.5h17v11h-17z"/><path d="M3.5 7l8.5 6.5L20.5 7"/></svg></button>
     </div>
     <div ref="{{ tabRail }}" data-rail="" role="navigation" aria-label="{{ t.sections }}" style="order:var(--rail-order);flex:var(--rail-flex);min-width:0;position:relative;margin:var(--rail-mx);padding-inline:var(--rail-px);border-top:var(--rail-bt);height:var(--rail-h);display:flex;gap:20px;overflow-x:auto;scrollbar-width:none;white-space:nowrap">
       <sc-for list="{{ nav }}" as="n" hint-placeholder-count="6">
@@ -320,6 +321,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
     <span>{{ t.copyright }}</span><span>{{ t.demoNote }}</span>
   </div>
 </footer>
+<!--@brief-modal-->
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;dark&quot;,&quot;light&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'dark'|'light'&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;violet&quot;,&quot;cyan&quot;],&quot;default&quot;:&quot;violet&quot;,&quot;tsType&quot;:&quot;'violet'|'cyan'&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;ar&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;'en'|'ar'&quot;,&quot;section&quot;:&quot;Language&quot;},&quot;arabicNumerals&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;latn&quot;,&quot;arab&quot;],&quot;default&quot;:&quot;latn&quot;,&quot;tsType&quot;:&quot;'latn'|'arab'&quot;,&quot;section&quot;:&quot;Language&quot;}}">/*@logic*/</script>
