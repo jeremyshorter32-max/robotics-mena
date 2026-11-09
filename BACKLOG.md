@@ -26,6 +26,11 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 
 ## Content and research
 
+- [ ] **Launch the Dubai robotic villa report (ready, not launched).** Draft on branch `draft/robot-villa`
+  (`/spotlight?s=dubai-robot-villa`, EN/AR PDFs, adds Würth Professional Solutions). To launch: merge the branch
+  into `main` (it becomes the home-page Spotlight). Before launching, check for news since 9 Nov 2026 (consortium
+  names, start date) and update the text if anything changed.
+
 - [ ] **Defence and weapons drone makers: include or not?** Ten were found and held back pending an editorial
   decision: EDGE Group (UAE), SR2Vector, United Defense Company, INTRA Defense Technologies, Haris Unmanned
   Systems, SERB Advanced Industries (Saudi Arabia), Barzan Holdings (Qatar), Shield AI (US), Exail (France),
