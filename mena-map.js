@@ -22,12 +22,13 @@
     service: ['#5C7F1E', 'M8 3.5h8v6H8zM10.5 6.5h.01M13.5 6.5h.01M12 9.5V12M7 12h10l-1 8.5H8zM9.5 15.5h5']
   };
   const tcol = t => TYPE[t] ? `var(--t-${t},${TYPE[t][0]})` : 'var(--pin, var(--accent))';
-  // The GCC is the map's centre of gravity: the view is centred on the Gulf, wide enough that Egypt,
-  // the Levant and the Maghreb stay visible. Mercator keeps every country's shape true at these latitudes.
+  // GCC centre, used by the home-page hero map. Mercator keeps every country's shape true at these latitudes.
   const GCC = [49, 25.5];
-  const REGION = [[GCC[0] - 62, GCC[1] - 16], [GCC[0] + 62, GCC[1] + 22]];
-  // Phones start closer in on the GCC (Levant to Oman); the Maghreb is a pan or zoom-out away.
-  const REGION_NARROW = [[GCC[0] - 22, GCC[1] - 14], [GCC[0] + 22, GCC[1] + 14]];
+  // Starting view: just MENA, Morocco to Oman and Turkey's south coast to Yemen.
+  const REGION = [[-17, 12], [61, 38]];
+  const MAX_SPAN = 124; // how far you can zoom out
+  // Phones start closer in on the Gulf (Levant to Oman); the Maghreb is a pan or zoom-out away.
+  const REGION_NARROW = [[32, 12], [60, 35]];
   const LIMIT = [[-40, -20], [140, 62]];
   // Suppliers view: wide enough to show headquarters from California to Tokyo.
   const WORLD = [[-128, -6], [150, 62]], LIMIT_W = [[-180, -50], [180, 76]];
@@ -393,7 +394,7 @@
       return [[x0, y0], [x1, y1]];
     }
     span() { return this.bbox[1][0] - this.bbox[0][0]; }
-    maxSpan() { return this.sup() ? WORLD[1][0] - WORLD[0][0] : REGION[1][0] - REGION[0][0]; }
+    maxSpan() { return this.sup() ? WORLD[1][0] - WORLD[0][0] : MAX_SPAN; }
     zoomBy(f, at, instant) {
       const b = this.bbox, cx = (b[0][0] + b[1][0]) / 2, cy = (b[0][1] + b[1][1]) / 2;
       let sx = (b[1][0] - b[0][0]) * f, sy = (b[1][1] - b[0][1]) * f;
