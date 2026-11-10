@@ -15,13 +15,13 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 - [ ] **Add a short privacy page.** The forms collect emails and names; link a plain-language privacy notice
   (what is collected, why, FormSubmit + Google Sheets as processors, how to be removed) from the footer and
   next to each form.
-- [ ] **Footer "Open data & API" claim.** It promises open data (CC BY 4.0) and a read-only JSON API, but no API
-  is published. Either publish the data files (e.g. `/api/companies.json` …) or reword the footer.
-- [ ] **Footer "About the team" link** goes to the home page. Add an About page or remove the link.
+- [x] **Footer "Open data & API" claim.** Removed (10 Nov 2026), also from the Work page.<!-- It promises open data (CC BY 4.0) and a read-only JSON API, but no API
+  is published. Either publish the data files (e.g. `/api/companies.json` …) or reword the footer. -->
+- [x] **Footer "About the team" link** removed (10 Nov 2026).<!-- goes to the home page. Add an About page or remove the link. -->
 - [ ] **Brief week label is hard-coded** (`s1week: 'Week 45 · 2 – 8 Nov 2026'` in `src/logic.js`). Make it come
   from `data/brief.json` or the build date so it can't go stale.
-- [ ] **Editorial policy and corrections (audit, 10 Nov).** Footer "Read the policy" goes to `/submit`, and the
-  footer promises corrections are logged. Publish a short editorial and corrections page (or change the copy).
+- [x] **Editorial policy and corrections (audit, 10 Nov).** Published at /editorial with a corrections log (`data/corrections.json`).<!-- Footer "Read the policy" goes to `/submit`, and the
+  footer promises corrections are logged. Publish a short editorial and corrections page (or change the copy). -->
 - [ ] **Image rights (audit).** Brief, Spotlight and policy images include agency and newspaper photos (The National,
   WAM, Gulf Times, Asharq Al-Awsat, MedEdge, Dubai Media Office). A credit is not a licence: confirm permission,
   switch to official press-kit images, or replace them before going public.
