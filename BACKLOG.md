@@ -41,16 +41,18 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   "Strong" while the drone suspension is in force; Qatar robotaxi "launched" vs dossier "still a trial".
 - [ ] **Launch plumbing (audit):** add `sitemap.xml`, a branded `404.html`, canonical tags and per-page
   descriptions; confirm "Enforce HTTPS" is ticked in GitHub Pages settings; decide on (privacy-friendly)
-  analytics. Consider the orange button contrast (white on #D65336 at small sizes is 4.07:1, below 4.5:1).
+  analytics. (Button contrast fixed by the indigo rebrand, 10 Nov 2026.)
 - [ ] **Turn off the password** (only after the above): change `scripts/build-site.sh` so it publishes without
   StatiCrypt, remove the `noindex, nofollow` tag it adds and the robots block, delete the `SITE_PASSWORD`
   repository secret, then check every page, search engines' access and the social preview image.
 
 ## Content and research
 
+- [ ] **Arabic brand name.** The new logo reads «روبوتات الشرق الأوسط وشمال أفريقيا», but the site's Arabic text still
+  calls the platform «روبوتكس مينا» (nav, footer, copy, PDFs). Decide which name to use and align the text.
 - [ ] **Launch the Dubai robotic villa report (ready, not launched).** Draft on branch `draft/robot-villa`
   (`/spotlight?s=dubai-robot-villa`, EN/AR PDFs, adds Würth Professional Solutions). To launch: merge the branch
-  into `main` (it becomes the home-page Spotlight). Before launching, check for news since 9 Nov 2026 (consortium
+  into `main` (it predates the Nov 2026 rebrand: re-run `node scripts/report-pdf.cjs dubai-robot-villa` after merging) (it becomes the home-page Spotlight). Before launching, check for news since 9 Nov 2026 (consortium
   names, start date) and update the text if anything changed.
 
 - [ ] **Defence and weapons drone makers: include or not?** Ten were found and held back pending an editorial

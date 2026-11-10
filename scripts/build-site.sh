@@ -14,7 +14,7 @@ rm -rf _site
 mkdir _site
 cp -r *.js vendor CNAME .nojekyll .image-slots.state.json favicon.ico _site/
 cp redirects/*.html _site/
-cp -r media _site/
+cp -r media brand _site/
 node scripts/validate-data.mjs
 node scripts/assemble.cjs _site
 
@@ -46,8 +46,8 @@ npx --yes staticrypt@3.5.4 _site/*.html -d _site \
   --template-placeholder "Password" \
   --template-remember "Remember me on this device for 30 days" \
   --template-error "Incorrect password" \
-  --template-color-primary "#D65336" \
-  --template-color-secondary "#F7F5EF"
+  --template-color-primary "#26246E" \
+  --template-color-secondary "#F3F1EC"
 
 # Ask crawlers not to index the password screen itself.
 sed -i 's#<head>#<head><meta name="robots" content="noindex, nofollow">#' _site/*.html

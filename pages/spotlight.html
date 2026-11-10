@@ -12,23 +12,23 @@
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap">
 <script src="/vendor/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"></script>
 <script src="/vendor/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67"></script>
 <script src="/image-slot.js"></script>
 <style>
-html,body{margin:0;padding:0;background:#F7F5EF}
+html,body{margin:0;padding:0;background:#F3F1EC}
 *{box-sizing:border-box}
-[data-rm]{--font-sans:'29LT Zarid Sans','Inter','Noto Sans Arabic',system-ui,sans-serif;--font-label:'DM Mono','IBM Plex Mono',ui-monospace,monospace;--font-num:'DM Mono','IBM Plex Mono',ui-monospace,monospace;--label-track:.12em;--label-case:uppercase;--track-tight:-0.035em;--lh-display:1.05;--lh-body:1.5;--fade-dir:to right;--gutter:64px;--gap:24px;--grid:repeat(12,minmax(0,1fr));--span-label:1 / span 3;--span-main:4 / -1;--sec-pad:88px;--d-desk:flex;--d-nav:flex;--d-mob:none;--fs-display:88px;--fs-h2:32px;--hero-pad:128px;--stats-cols:repeat(4,minmax(0,1fr));--brief-cols:72px minmax(0,1fr) 240px;--brief-meta:3;--map-h:720px;--panel-pos:absolute;--panel-w:384px;--panel-top:24px;--panel-end:24px;--panel-margin:0;--panel-maxh:calc(100% - 48px);--spot-cols:minmax(0,7fr) minmax(0,5fr);--ev-cols:112px minmax(0,1fr) 128px 112px 176px;--ev-tail:flex;--two-cols:minmax(0,1fr) minmax(0,1fr);--card-w:400px;--rail-pad:max(var(--gutter),calc((100vw - 1440px) / 2 + var(--gutter)));--three-cols:repeat(3,minmax(0,1fr));--rail-order:1;--rail-flex:1 1 0;--rail-h:64px;--rail-bt:0;--rail-mx:0;--rail-px:0;--chip-wrap:wrap;--chip-lbl:flex;--fs-page:56px;--dos-pad:32px;--aside-bs:1px solid var(--line);--aside-bt:0}
-[data-rm][dir=rtl]{--font-sans:'29LT Zarid Sans','Noto Sans Arabic','Inter',sans-serif;--font-label:'29LT Zarid Sans','Noto Sans Arabic',sans-serif;--font-num:'Noto Sans Arabic','DM Mono',sans-serif;--label-track:0;--label-case:none;--track-tight:0;--lh-display:1.3;--lh-body:1.65;--fade-dir:to left}
+[data-rm]{--font-sans:'IBM Plex Sans','IBM Plex Sans Arabic',system-ui,sans-serif;--font-label:'IBM Plex Mono',ui-monospace,monospace;--font-num:'IBM Plex Mono',ui-monospace,monospace;--label-track:.12em;--label-case:uppercase;--track-tight:-0.035em;--lh-display:1.05;--lh-body:1.5;--fade-dir:to right;--gutter:64px;--gap:24px;--grid:repeat(12,minmax(0,1fr));--span-label:1 / span 3;--span-main:4 / -1;--sec-pad:88px;--d-desk:flex;--d-nav:flex;--d-mob:none;--fs-display:88px;--fs-h2:32px;--hero-pad:128px;--stats-cols:repeat(4,minmax(0,1fr));--brief-cols:72px minmax(0,1fr) 240px;--brief-meta:3;--map-h:720px;--panel-pos:absolute;--panel-w:384px;--panel-top:24px;--panel-end:24px;--panel-margin:0;--panel-maxh:calc(100% - 48px);--spot-cols:minmax(0,7fr) minmax(0,5fr);--ev-cols:112px minmax(0,1fr) 128px 112px 176px;--ev-tail:flex;--two-cols:minmax(0,1fr) minmax(0,1fr);--card-w:400px;--rail-pad:max(var(--gutter),calc((100vw - 1440px) / 2 + var(--gutter)));--three-cols:repeat(3,minmax(0,1fr));--rail-order:1;--rail-flex:1 1 0;--rail-h:64px;--rail-bt:0;--rail-mx:0;--rail-px:0;--chip-wrap:wrap;--chip-lbl:flex;--fs-page:56px;--dos-pad:32px;--aside-bs:1px solid var(--line);--aside-bt:0}
+[data-rm][dir=rtl]{--font-sans:'IBM Plex Sans Arabic','IBM Plex Sans',system-ui,sans-serif;--font-label:'IBM Plex Sans Arabic','IBM Plex Sans',sans-serif;--font-num:'IBM Plex Sans Arabic','IBM Plex Mono',sans-serif;--label-track:0;--label-case:none;--track-tight:0;--lh-display:1.3;--lh-body:1.65;--fade-dir:to left}
 @media (max-width:1180px){[data-rm][dir]{--d-nav:none;--span-label:1 / -1;--span-main:1 / -1;--fs-display:64px;--hero-pad:96px;--three-cols:minmax(0,1fr);--ev-cols:88px minmax(0,1fr) auto;--ev-tail:none;--panel-pos:relative;--panel-w:auto;--panel-top:auto;--panel-end:auto;--panel-margin:16px var(--gutter);--panel-maxh:none;--rail-order:3;--rail-flex:1 1 100%;--rail-h:44px;--rail-bt:1px solid var(--line);--rail-mx:0 calc(var(--gutter) * -1);--rail-px:var(--gutter)}}
 @media (max-width:900px){[data-rm][dir]{--gutter:20px;--gap:16px;--grid:repeat(4,minmax(0,1fr));--span-label:1 / -1;--span-main:1 / -1;--sec-pad:56px;--d-desk:none;--d-mob:flex;--fs-display:44px;--fs-h2:28px;--hero-pad:40px;--stats-cols:repeat(2,minmax(0,1fr));--brief-cols:40px minmax(0,1fr);--brief-meta:2;--map-h:460px;--panel-pos:relative;--panel-w:auto;--spot-cols:minmax(0,1fr);--ev-cols:64px minmax(0,1fr);--ev-tail:none;--two-cols:minmax(0,1fr);--three-cols:minmax(0,1fr);--fade-dir:to bottom;--ev-btn-col:2;--card-w:84vw;--chip-wrap:nowrap;--chip-lbl:none;--fs-page:36px;--dos-pad:20px;--aside-bs:0;--aside-bt:1px solid var(--line)}}
-[data-theme=dark]{--bg:#12212B;--bg-raised:#1B303B;--bg-hover:#233A47;--bg-glass:rgba(18,33,43,.88);--fg:#F7F5EF;--fg-muted:#B8C7CB;--fg-subtle:#93A6AC;--line:#2C4450;--line-strong:#39515C;--sand:#92D4CB;--sand-soft:rgba(146,212,203,.10);--pin:#92D4CB;--pin-soft:rgba(146,212,203,.16);--dot:rgba(247,245,239,.08);--frame:rgba(146,212,203,.07);--mark:#F7F5EF;--mark-point:#D65336;--map-sea:#0F1D26;--map-land:#1B303B;--map-land-mena:#24404D;--map-border:#3E5966;--map-coast:#6E8A93;color-scheme:dark}
-[data-theme=light]{--bg:#F7F5EF;--bg-raised:#FFFFFF;--bg-hover:#EFECE4;--bg-glass:rgba(247,245,239,.88);--fg:#12212B;--fg-muted:#52616A;--fg-subtle:#5D6A71;--line:#D7DCD8;--line-strong:#BEC7C3;--sand:#166773;--sand-soft:rgba(22,103,115,.08);--pin:#166773;--pin-soft:rgba(22,103,115,.14);--dot:rgba(18,33,43,.10);--frame:rgba(18,33,43,.05);--mark:#12212B;--mark-point:#D65336;--map-sea:#EFECE4;--map-land:#E4E2DA;--map-land-mena:#FFFFFF;--map-border:#C5CCC8;--map-coast:#8D9A99;color-scheme:light}
-[data-theme=dark][data-accent=violet]{--accent:#C24A2F;--accent-text:#F28B70;--accent-ink:#FFFFFF;--accent-soft:rgba(214,83,54,.18)}
-[data-theme=dark][data-accent=cyan]{--accent:#92D4CB;--accent-text:#92D4CB;--accent-ink:#12212B;--accent-soft:rgba(146,212,203,.14)}
-[data-theme=light][data-accent=violet]{--accent:#C24A2F;--accent-text:#B54127;--accent-ink:#FFFFFF;--accent-soft:rgba(214,83,54,.10)}
-[data-theme=light][data-accent=cyan]{--accent:#166773;--accent-text:#166773;--accent-ink:#FFFFFF;--accent-soft:rgba(22,103,115,.10)}
+[data-theme=dark]{--bg:#111216;--bg-raised:#1A1B22;--bg-hover:#23242D;--bg-glass:rgba(17,18,22,.88);--fg:#F3F1EC;--fg-muted:#A3A5B3;--fg-subtle:#8E90A0;--line:#2A2C35;--line-strong:#3A3C47;--sand:#A9A7DE;--sand-soft:rgba(143,141,201,.10);--pin:#A9A7DE;--pin-soft:rgba(143,141,201,.16);--dot:rgba(243,241,236,.08);--frame:rgba(143,141,201,.07);--mark:#F3F1EC;--mark-point:#A9A7DE;--map-sea:#0C0D11;--map-land:#1A1B22;--map-land-mena:#25263A;--map-border:#3B3D4B;--map-coast:#6E7086;color-scheme:dark}
+[data-theme=light]{--bg:#F3F1EC;--bg-raised:#FFFFFF;--bg-hover:#EAE7E0;--bg-glass:rgba(243,241,236,.88);--fg:#111216;--fg-muted:#5E6070;--fg-subtle:#585A66;--line:#DEDBD3;--line-strong:#C8C4BA;--sand:#26246E;--sand-soft:rgba(38,36,110,.08);--pin:#26246E;--pin-soft:rgba(38,36,110,.14);--dot:rgba(17,18,22,.10);--frame:rgba(17,18,22,.05);--mark:#26246E;--mark-point:#26246E;--map-sea:#EAE7E0;--map-land:#E2DFD7;--map-land-mena:#FFFFFF;--map-border:#C9C5BC;--map-coast:#8E8C9C;color-scheme:light}
+[data-theme=dark][data-accent=violet]{--accent:#F3F1EC;--accent-text:#A9A7DE;--accent-ink:#26246E;--accent-soft:rgba(143,141,201,.18);--accent-hover:#E3E2F2}
+[data-theme=dark][data-accent=cyan]{--accent:#F3F1EC;--accent-text:#A9A7DE;--accent-ink:#26246E;--accent-soft:rgba(143,141,201,.18);--accent-hover:#E3E2F2}
+[data-theme=light][data-accent=violet]{--accent:#26246E;--accent-text:#26246E;--accent-ink:#F3F1EC;--accent-soft:rgba(38,36,110,.10);--accent-hover:#1C1A55}
+[data-theme=light][data-accent=cyan]{--accent:#26246E;--accent-text:#26246E;--accent-ink:#F3F1EC;--accent-soft:rgba(38,36,110,.10);--accent-hover:#1C1A55}
 [data-rm] a{color:inherit;text-decoration:none}
 [data-rm] a:hover{color:var(--accent-text)}
 [data-rm] :focus-visible{outline:2px solid var(--accent-text);outline-offset:2px}
@@ -48,7 +48,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
 [data-zoom] img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 [data-zoom]:hover img{transform:scale(1.035)}
 [data-lift]{transition:transform .25s,border-color .25s,box-shadow .25s}
-[data-lift]:hover{transform:translateY(-3px);box-shadow:0 14px 32px -20px rgba(18,33,43,.5)}
+[data-lift]:hover{transform:translateY(-3px);box-shadow:0 14px 32px -20px rgba(17,18,22,.5)}
 @keyframes rp-kb{from{transform:scale(1.09)}to{transform:scale(1)}}
 @keyframes rp-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 [data-pop]{animation:rp-in .4s cubic-bezier(.2,.7,.2,1)}
@@ -63,8 +63,7 @@ button[disabled]{opacity:.35;cursor:default!important}
 <nav aria-label="Primary" style="position:sticky;top:0;z-index:50;background:var(--bg-glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)">
   <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:flex;flex-wrap:wrap;align-items:center;column-gap:32px">
     <a href="{{ homeHref }}" style="order:0;height:64px;display:flex;align-items:center;gap:12px;flex:none">
-      <svg aria-hidden="true" viewBox="0 0 100 100" width="30" height="30" style="display:block;flex:none"><g fill="none" stroke="var(--mark)" stroke-width="9.6" stroke-linejoin="miter" stroke-linecap="square"><path d="M31 7H61L84 26V37"/><path d="M91 65V73L73 91H59"/><path d="M43 91H31L9 70V59"/><path d="M9 42V29L29 9"/></g><path d="M26 71L49 45L69 56" fill="none" stroke="var(--mark)" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/><path d="M68 56L87 53" fill="none" stroke="var(--mark)" stroke-width="7" stroke-linecap="round"/><circle cx="26" cy="71" r="9" fill="var(--mark)"/><circle cx="26" cy="71" r="4.4" fill="var(--bg)"/><circle cx="49" cy="45" r="9" fill="var(--mark)"/><circle cx="49" cy="45" r="4.4" fill="var(--bg)"/><circle cx="49" cy="69" r="4.1" fill="var(--mark-point)"/></svg><span aria-hidden="true" style="width:1.5px;height:22px;background:var(--mark-point);flex:none"></span>
-      <span style="font-weight:600;font-size:16px;letter-spacing:var(--track-tight)">{{ t.brand }}</span>
+      <span class="rm-logo" role="img" aria-label="{{ t.brand }}"></span>
     </a>
     <div style="order:2;height:64px;margin-inline-start:auto;display:flex;align-items:center;gap:8px">
       <button onClick="{{ toggleTheme }}" aria-label="{{ themeAria }}" style="height:36px;padding:0 12px;background:transparent;border:1px solid var(--line-strong);border-radius:3px;cursor:pointer;font-size:13px;color:var(--fg-muted)">{{ themeLabel }}</button>
@@ -82,47 +81,46 @@ button[disabled]{opacity:.35;cursor:default!important}
 
 <div aria-hidden="true" style="position:fixed;top:0;left:0;right:0;height:3px;z-index:60;pointer-events:none"><div id="rm-rp-bar" style="height:100%;background:var(--accent);transform:scaleX(0);transform-origin:var(--grow-origin);will-change:transform"></div></div>
 
-<header id="top" data-screen-label="01 Report cover" style="position:relative;overflow:hidden;isolation:isolate;background:#12212B;color:#F7F5EF">
-  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background-image:radial-gradient(rgba(146,212,203,.16) 1px,transparent 1.2px);background-size:22px 22px;-webkit-mask-image:linear-gradient(var(--fade-dir),#000,transparent 75%);mask-image:linear-gradient(var(--fade-dir),#000,transparent 75%)"></div>
-  <svg aria-hidden="true" viewBox="0 0 100 100" fill="none" stroke="rgba(146,212,203,.07)" stroke-width="9.6" stroke-linejoin="miter" stroke-linecap="square" style="position:absolute;z-index:-1;pointer-events:none;width:520px;height:520px;bottom:-220px;inset-inline-start:-160px"><path d="M31 7H61L84 26V37"/><path d="M91 65V73L73 91H59"/><path d="M43 91H31L9 70V59"/><path d="M9 42V29L29 9"/></svg>
+<header id="top" data-screen-label="01 Report cover" style="position:relative;overflow:hidden;isolation:isolate;background:#26246E;color:#F3F1EC">
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;background-image:radial-gradient(rgba(227,226,242,.16) 1px,transparent 1.2px);background-size:22px 22px;-webkit-mask-image:linear-gradient(var(--fade-dir),#000,transparent 75%);mask-image:linear-gradient(var(--fade-dir),#000,transparent 75%)"></div>
   <div style="max-width:1440px;margin:0 auto;padding:36px var(--gutter) 48px;display:grid;grid-template-columns:var(--rp-cover);gap:40px var(--gap);align-items:center">
     <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
       <nav aria-label="{{ t.crumbs }}">
-        <ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:#93A6AC">
-          <li><a href="{{ homeHref }}" style="color:#B8C7CB">{{ t.crumbHome }}</a></li>
+        <ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:#A9A7DE">
+          <li><a href="{{ homeHref }}" style="color:#C9C8E4">{{ t.crumbHome }}</a></li>
           <li aria-hidden="true">/</li>
-          <li aria-current="page" style="color:#F7F5EF">{{ t.storyCrumb }}</li>
+          <li aria-current="page" style="color:#F3F1EC">{{ t.storyCrumb }}</li>
         </ol>
       </nav>
       <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px">
-        <span style="display:inline-flex;align-items:center;gap:8px;height:28px;padding:0 12px;background:#C24A2F;color:#fff;border-radius:2px;font:500 12px/1 var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case)"><span style="width:6px;height:6px;background:#fff;transform:rotate(45deg)"></span>{{ story.label }}</span>
-        <span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:#92D4CB">{{ story.kicker }}</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;height:28px;padding:0 12px;background:#F3F1EC;color:#26246E;border-radius:2px;font:500 12px/1 var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case)"><span style="width:6px;height:6px;background:#fff;transform:rotate(45deg)"></span>{{ story.label }}</span>
+        <span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:#E3E2F2">{{ story.kicker }}</span>
       </div>
       <h1 style="margin:0;font-size:var(--rp-h1);line-height:1.06;letter-spacing:var(--track-tight);font-weight:600;text-wrap:balance">{{ story.title }}</h1>
-      <p style="margin:0;max-width:640px;font-size:19px;line-height:1.55;color:#B8C7CB;text-wrap:pretty">{{ story.dek }}</p>
-      <div style="display:flex;flex-wrap:wrap;gap:6px 18px;font:400 13px/18px var(--font-num);color:#93A6AC"><span>{{ story.by }}</span><span>{{ story.date }}</span><span>{{ story.read }}</span></div>
+      <p style="margin:0;max-width:640px;font-size:19px;line-height:1.55;color:#C9C8E4;text-wrap:pretty">{{ story.dek }}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px 18px;font:400 13px/18px var(--font-num);color:#A9A7DE"><span>{{ story.by }}</span><span>{{ story.date }}</span><span>{{ story.read }}</span></div>
       <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:4px">
-        <a href="#findings" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;background:#F7F5EF;color:#12212B;border-radius:3px;font-size:14px;font-weight:600">{{ rpU.findings }} <span aria-hidden="true">↓</span></a>
-        <sc-if value="{{ story.pdfOpen }}"><a href="{{ story.pdf }}" download="{{ story.pdfName }}" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;background:#C24A2F;color:#fff;border-radius:3px;font-size:14px;font-weight:600"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M3 13h10" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>{{ t.pdfBtn }}</a></sc-if>
-        <sc-if value="{{ story.pdfLocked }}"><a href="#gate" onClick="{{ story.goGate }}" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border:1px solid rgba(247,245,239,.35);color:#F7F5EF;border-radius:3px;font-size:14px;font-weight:600"><svg aria-hidden="true" viewBox="0 0 16 16" width="13" height="13"><path d="M4 7V5a4 4 0 0 1 8 0v2M3 7h10v7H3z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>{{ t.pdfLocked }}</a></sc-if>
+        <a href="#findings" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;background:transparent;color:#F3F1EC;box-shadow:inset 0 0 0 1px rgba(243,241,236,.55);border-radius:3px;font-size:14px;font-weight:600">{{ rpU.findings }} <span aria-hidden="true">↓</span></a>
+        <sc-if value="{{ story.pdfOpen }}"><a href="{{ story.pdf }}" download="{{ story.pdfName }}" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;background:#F3F1EC;color:#26246E;border-radius:3px;font-size:14px;font-weight:600"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M3 13h10" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>{{ t.pdfBtn }}</a></sc-if>
+        <sc-if value="{{ story.pdfLocked }}"><a href="#gate" onClick="{{ story.goGate }}" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border:1px solid rgba(243,241,236,.35);color:#F3F1EC;border-radius:3px;font-size:14px;font-weight:600"><svg aria-hidden="true" viewBox="0 0 16 16" width="13" height="13"><path d="M4 7V5a4 4 0 0 1 8 0v2M3 7h10v7H3z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>{{ t.pdfLocked }}</a></sc-if>
       </div>
     </div>
     <sc-if value="{{ hasStory }}">
     <figure style="margin:0;display:flex;flex-direction:column;gap:10px;min-width:0">
-      <button type="button" onClick="{{ story.open }}" aria-label="{{ rpU.enlarge }}" data-zoom="" style="position:relative;display:block;padding:0;border:0;background:#1B303B;cursor:zoom-in;overflow:hidden;aspect-ratio:16 / 10;width:100%">
+      <button type="button" onClick="{{ story.open }}" aria-label="{{ rpU.enlarge }}" data-zoom="" style="position:relative;display:block;padding:0;border:0;background:#1C1A55;cursor:zoom-in;overflow:hidden;aspect-ratio:16 / 10;width:100%">
         <img src="{{ story.hero }}" alt="{{ story.heroAlt }}" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;animation:rp-kb 14s ease-out both">
-        <span aria-hidden="true" style="position:absolute;bottom:12px;inset-inline-end:12px;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:rgba(18,33,43,.75);color:#F7F5EF;border-radius:2px;font-size:18px">⤢</span>
+        <span aria-hidden="true" style="position:absolute;bottom:12px;inset-inline-end:12px;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:rgba(17,18,22,.75);color:#F3F1EC;border-radius:2px;font-size:18px">⤢</span>
       </button>
-      <figcaption style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;font:400 12px/17px var(--font-num);color:#93A6AC"><span>{{ story.heroCap }}</span><span>{{ story.heroCredit }}</span></figcaption>
+      <figcaption style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;font:400 12px/17px var(--font-num);color:#A9A7DE"><span>{{ story.heroCap }}</span><span>{{ story.heroCredit }}</span></figcaption>
     </figure>
     </sc-if>
   </div>
-  <div style="border-top:1px solid rgba(146,212,203,.18)">
+  <div style="border-top:1px solid rgba(227,226,242,.18)">
     <dl aria-label="{{ rpU.glance }}" style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:var(--rp-glance)">
       <sc-for list="{{ glance }}" as="g" hint-placeholder-count="4">
-        <div style="padding:24px 24px 28px 0;padding-inline:0 24px;display:flex;flex-direction:column;gap:6px;border-inline-end:1px solid rgba(146,212,203,.12)">
-          <dd style="margin:0;font:500 40px/44px var(--font-num);letter-spacing:-0.02em;color:#F28B70">{{ g.el }}</dd>
-          <dt style="font-size:13px;line-height:1.45;color:#B8C7CB;max-width:240px">{{ g.label }}</dt>
+        <div style="padding:24px 24px 28px 0;padding-inline:0 24px;display:flex;flex-direction:column;gap:6px;border-inline-end:1px solid rgba(227,226,242,.12)">
+          <dd style="margin:0;font:500 40px/44px var(--font-num);letter-spacing:-0.02em;color:#F3F1EC">{{ g.el }}</dd>
+          <dt style="font-size:13px;line-height:1.45;color:#C9C8E4;max-width:240px">{{ g.label }}</dt>
         </div>
       </sc-for>
     </dl>
@@ -180,7 +178,7 @@ button[disabled]{opacity:.35;cursor:default!important}
           <sc-if value="{{ b.isP }}"><p style="margin:0;max-width:720px;font-size:19px;line-height:1.7;text-wrap:pretty">{{ b.text }}</p></sc-if>
           <sc-if value="{{ b.isLead }}"><p data-reveal="" style="margin:0;max-width:760px;padding-inline-start:24px;border-inline-start:3px solid var(--accent);font-size:25px;line-height:1.5;letter-spacing:var(--track-tight);font-weight:500;text-wrap:pretty">{{ b.text }}</p></sc-if>
           <sc-if value="{{ b.isQ }}"><blockquote data-reveal="" style="margin:8px 0;padding:28px 32px;background:var(--bg-raised);border:1px solid var(--line);position:relative;display:flex;flex-direction:column;gap:12px"><span aria-hidden="true" style="position:absolute;top:-6px;inset-inline-start:24px;font:700 72px/1 Georgia,serif;color:var(--accent)">“</span><p style="margin:0;font-size:24px;line-height:1.4;letter-spacing:var(--track-tight);font-weight:500">{{ b.text }}</p><cite style="font-style:normal;font-size:13px;color:var(--fg-subtle)">{{ b.who }}</cite></blockquote></sc-if>
-          <sc-if value="{{ b.isImg }}"><figure data-reveal="" style="margin:8px 0;display:flex;flex-direction:column;gap:10px;max-width:{{ b.maxw }}"><button type="button" onClick="{{ b.open }}" aria-label="{{ rpU.enlarge }}" data-zoom="" style="position:relative;display:block;padding:0;border:1px solid var(--line);background:var(--bg-raised);cursor:zoom-in;overflow:hidden"><img src="{{ b.src }}" alt="{{ b.alt }}" loading="lazy" decoding="async" style="width:100%;height:auto;display:block"><span aria-hidden="true" style="position:absolute;bottom:10px;inset-inline-end:10px;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:rgba(18,33,43,.72);color:#F7F5EF;border-radius:2px;font-size:16px">⤢</span></button><figcaption style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;font:400 12px/17px var(--font-num);color:var(--fg-subtle)"><span>{{ b.cap }}</span><span>{{ b.credit }}</span></figcaption></figure></sc-if>
+          <sc-if value="{{ b.isImg }}"><figure data-reveal="" style="margin:8px 0;display:flex;flex-direction:column;gap:10px;max-width:{{ b.maxw }}"><button type="button" onClick="{{ b.open }}" aria-label="{{ rpU.enlarge }}" data-zoom="" style="position:relative;display:block;padding:0;border:1px solid var(--line);background:var(--bg-raised);cursor:zoom-in;overflow:hidden"><img src="{{ b.src }}" alt="{{ b.alt }}" loading="lazy" decoding="async" style="width:100%;height:auto;display:block"><span aria-hidden="true" style="position:absolute;bottom:10px;inset-inline-end:10px;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:rgba(17,18,22,.72);color:#F3F1EC;border-radius:2px;font-size:16px">⤢</span></button><figcaption style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;font:400 12px/17px var(--font-num);color:var(--fg-subtle)"><span>{{ b.cap }}</span><span>{{ b.credit }}</span></figcaption></figure></sc-if>
           <sc-if value="{{ b.isStats }}"><dl data-reveal="" style="margin:8px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px"><sc-for list="{{ b.items }}" as="s" hint-placeholder-count="3"><div data-lift="" style="padding:20px;background:var(--bg-raised);border:1px solid var(--line);display:flex;flex-direction:column;gap:8px"><dd style="margin:0;font:500 34px/40px var(--font-num);letter-spacing:-0.02em;color:var(--accent-text)">{{ s.el }}</dd><dt style="font-size:13px;line-height:1.45;color:var(--fg-muted)">{{ s.label }}</dt></div></sc-for></dl></sc-if>
 
           <sc-if value="{{ b.wCompare }}">
@@ -349,7 +347,7 @@ button[disabled]{opacity:.35;cursor:default!important}
     </sc-if>
 
     <sc-if value="{{ notLocked }}">
-      <sc-if value="{{ story.hasPdf }}"><div data-reveal="" style="margin-top:56px;padding:24px;background:#12212B;color:#F7F5EF;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px"><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px;font-weight:600">{{ story.title }}</strong><span style="font-size:13px;color:#B8C7CB">{{ t.pdfNote }}</span></div><a href="{{ story.pdf }}" download="{{ story.pdfName }}" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;background:#C24A2F;color:#fff;border-radius:3px;font-size:14px;font-weight:600;flex:none"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M3 13h10" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>{{ t.pdfBtn }}</a></div></sc-if>
+      <sc-if value="{{ story.hasPdf }}"><div data-reveal="" style="margin-top:56px;padding:24px;background:#26246E;color:#F3F1EC;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px"><div style="display:flex;flex-direction:column;gap:4px"><strong style="font-size:18px;font-weight:600">{{ story.title }}</strong><span style="font-size:13px;color:#C9C8E4">{{ t.pdfNote }}</span></div><a href="{{ story.pdf }}" download="{{ story.pdfName }}" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;background:#F3F1EC;color:#26246E;border-radius:3px;font-size:14px;font-weight:600;flex:none"><svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M3 13h10" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>{{ t.pdfBtn }}</a></div></sc-if>
       <section aria-labelledby="rm-src-h" style="margin-top:56px;border-top:1px solid var(--fg);padding-top:16px;display:flex;flex-direction:column;gap:14px">
         <h2 id="rm-src-h" style="margin:0;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.storySources }}</h2>
         <ol style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:var(--two-cols);gap:10px 24px">
@@ -368,17 +366,17 @@ button[disabled]{opacity:.35;cursor:default!important}
 </main>
 
 <sc-if value="{{ lb.open }}">
-  <div role="dialog" aria-modal="true" aria-label="{{ lb.alt }}" style="position:fixed;inset:0;z-index:100;background:rgba(9,17,23,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px;color:#F7F5EF">
-    <div style="position:absolute;top:16px;inset-inline:20px;display:flex;justify-content:space-between;align-items:center"><span style="font:400 13px/1 var(--font-num);color:#B8C7CB">{{ lb.pos }}</span><button type="button" id="rm-lb-close" onClick="{{ lb.close }}" aria-label="{{ rpU.close }}" style="width:40px;height:40px;border:1px solid rgba(247,245,239,.3);background:transparent;color:#F7F5EF;border-radius:3px;font-size:20px;cursor:pointer">×</button></div>
+  <div role="dialog" aria-modal="true" aria-label="{{ lb.alt }}" style="position:fixed;inset:0;z-index:100;background:rgba(9,17,23,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px;color:#F3F1EC">
+    <div style="position:absolute;top:16px;inset-inline:20px;display:flex;justify-content:space-between;align-items:center"><span style="font:400 13px/1 var(--font-num);color:#C9C8E4">{{ lb.pos }}</span><button type="button" id="rm-lb-close" onClick="{{ lb.close }}" aria-label="{{ rpU.close }}" style="width:40px;height:40px;border:1px solid rgba(243,241,236,.3);background:transparent;color:#F3F1EC;border-radius:3px;font-size:20px;cursor:pointer">×</button></div>
     <img src="{{ lb.src }}" alt="{{ lb.alt }}" data-pop="" style="max-width:min(1200px,100%);max-height:76vh;object-fit:contain;display:block">
-    <div style="max-width:min(1200px,100%);width:100%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 16px;font:400 13px/18px var(--font-num);color:#B8C7CB"><span>{{ lb.cap }}</span><span>{{ lb.credit }}</span></div>
-    <div style="display:flex;gap:10px"><button type="button" onClick="{{ lb.prev }}" aria-label="{{ rpU.prev }}" style="width:44px;height:44px;border:1px solid rgba(247,245,239,.3);background:transparent;color:#F7F5EF;border-radius:3px;font-size:18px;cursor:pointer">{{ prevArrow }}</button><button type="button" onClick="{{ lb.next }}" aria-label="{{ rpU.next }}" style="width:44px;height:44px;border:1px solid rgba(247,245,239,.3);background:transparent;color:#F7F5EF;border-radius:3px;font-size:18px;cursor:pointer">{{ nextArrow }}</button></div>
+    <div style="max-width:min(1200px,100%);width:100%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 16px;font:400 13px/18px var(--font-num);color:#C9C8E4"><span>{{ lb.cap }}</span><span>{{ lb.credit }}</span></div>
+    <div style="display:flex;gap:10px"><button type="button" onClick="{{ lb.prev }}" aria-label="{{ rpU.prev }}" style="width:44px;height:44px;border:1px solid rgba(243,241,236,.3);background:transparent;color:#F3F1EC;border-radius:3px;font-size:18px;cursor:pointer">{{ prevArrow }}</button><button type="button" onClick="{{ lb.next }}" aria-label="{{ rpU.next }}" style="width:44px;height:44px;border:1px solid rgba(243,241,236,.3);background:transparent;color:#F3F1EC;border-radius:3px;font-size:18px;cursor:pointer">{{ nextArrow }}</button></div>
   </div>
 </sc-if>
 
 
 <footer data-screen-label="03 Footer" style="position:relative;overflow:hidden;isolation:isolate;border-top:1px solid var(--line);padding:72px 0 40px;background:var(--bg)">
-  <svg aria-hidden="true" viewBox="0 0 100 100" fill="none" stroke="var(--frame)" stroke-width="9.6" stroke-linejoin="miter" stroke-linecap="square" style="position:absolute;z-index:-1;pointer-events:none;width:380px;height:380px;bottom:-170px;inset-inline-end:-100px"><path d="M31 7H61L84 26V37"/><path d="M91 65V73L73 91H59"/><path d="M43 91H31L9 70V59"/><path d="M9 42V29L29 9"/></svg>
+  <div style="max-width:1440px;margin:0 auto 48px;padding:0 var(--gutter)"><a href="{{ homeHref }}" style="display:inline-block"><span class="rm-logo rm-logo--bilingual" role="img" aria-label="Robotics MENA · روبوتات الشرق الأوسط وشمال أفريقيا" style="--logo-h:48px"></span></a></div>
   <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px var(--gap)">
     <sc-for list="{{ t.foot }}" as="f" hint-placeholder-count="4">
       <div style="display:flex;flex-direction:column;gap:12px">

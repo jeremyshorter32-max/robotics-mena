@@ -23,7 +23,7 @@ Every push to `main` runs the **Deploy site** GitHub Action, which builds the si
 - `pages/*.html`: each page's layout. `@config` and `@logic` markers are filled in at build time.
 - `scripts/build-site.sh`: checks the data, assembles the pages into `_site/`, then encrypts them behind the password (see below).
 - `media/logos/`: square logo tiles for real organisations (sources in `media/logos/SOURCES.md`). Set an entry's `logo` to `/media/logos/<file>.png`; entries without one show their initials.
-- `media/brand/`, `favicon.ico`, `partials/`: brand identity V2: petroleum, signal orange and paper; 29LT Zarid Sans with Inter / Noto Sans Arabic stand-ins, DM Mono for data (logo mark, favicons, share image, password-screen branding). The full brand pack (guide, tokens, README) is in `docs/brand/`.
+- `brand/` (served at `/brand/`), `favicon.ico`, `partials/`: brand pack v1.0 (Nov 2026): Datum Indigo #26246E, Paper #F3F1EC, Ink #111216; IBM Plex Sans, Plex Sans Arabic and Plex Mono; robot-arm logo lockups, favicons, app icons, share image and tokens (`brand/README.md`). Design sources in `docs/brand/`; the previous identity is archived in `docs/brand-archive-v2/`. `media/brand/robotics-mena-brand-kit.zip` is the downloadable kit.
 - `support.js`, `mena-map.js`, `image-slot.js`, `vendor/`: runtime, map, image placeholders, and local copies of React, D3, topojson and the world map.
 
 Language and theme are remembered in the visitor's browser, so links stay clean. Old-style links (`?lang=ar`, `index.html#top`) still work and are tidied in the address bar.

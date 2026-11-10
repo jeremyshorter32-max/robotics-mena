@@ -1,0 +1,73 @@
+/* Robotics MENA — brand tokens v1.0
+   Import once: <link rel="stylesheet" href="/brand/tokens/brand.css">
+   Change a value here and the whole site follows. */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap");
+
+:root {
+  /* Colour — core */
+  --rm-indigo: #26246E;   /* Datum Indigo · PMS 2755 C · CMYK 98 95 18 12 */
+  --rm-paper:  #F3F1EC;   /* Paper */
+  --rm-ink:    #111216;   /* Ink */
+  /* Colour — support (UI only, never in the logo) */
+  --rm-indigo-700: #1C1A55;
+  --rm-indigo-300: #8F8DC9;
+  --rm-indigo-100: #E3E2F2;
+  --rm-line:  #DEDBD3;
+  --rm-muted: #5E6070;
+
+  /* Roles — swap these to re-theme */
+  --rm-bg:        var(--rm-paper);
+  --rm-surface:   #FFFFFF;
+  --rm-text:      var(--rm-ink);
+  --rm-text-soft: var(--rm-muted);
+  --rm-brand:     var(--rm-indigo);
+  --rm-on-brand:  var(--rm-paper);
+  --rm-link:      var(--rm-indigo);
+  --rm-border:    var(--rm-line);
+
+  /* Type */
+  --rm-font-sans:   "IBM Plex Sans", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --rm-font-arabic: "IBM Plex Sans Arabic", "IBM Plex Sans", system-ui, sans-serif;
+  --rm-font-mono:   "IBM Plex Mono", ui-monospace, monospace;
+  --rm-text-xs: 0.75rem;  --rm-text-sm: 0.875rem; --rm-text-md: 1rem;
+  --rm-text-lg: 1.25rem;  --rm-text-xl: 1.75rem;  --rm-text-2xl: 2.5rem; --rm-text-3xl: 3.5rem;
+  --rm-weight-regular: 400; --rm-weight-medium: 500; --rm-weight-semibold: 600;
+  --rm-tracking-label: 0.12em;
+
+  /* Space & shape */
+  --rm-space-1: 4px; --rm-space-2: 8px; --rm-space-3: 12px; --rm-space-4: 16px;
+  --rm-space-6: 24px; --rm-space-8: 32px; --rm-space-12: 48px; --rm-space-16: 64px;
+  --rm-radius-sm: 2px; --rm-radius-md: 6px; --rm-radius-lg: 14px;
+
+  /* Logo */
+  --rm-logo-min-symbol: 16px;   /* symbol never smaller */
+  --rm-logo-min-lockup: 24px;   /* lockup height never smaller */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-rm-theme="auto"] {
+    --rm-bg: var(--rm-ink); --rm-surface: #1A1B22; --rm-text: var(--rm-paper);
+    --rm-text-soft: #A3A5B3; --rm-brand: var(--rm-paper); --rm-on-brand: var(--rm-indigo);
+    --rm-link: var(--rm-indigo-300); --rm-border: #2A2C35;
+  }
+}
+:root[data-rm-theme="dark"] {
+  --rm-bg: var(--rm-ink); --rm-surface: #1A1B22; --rm-text: var(--rm-paper);
+  --rm-text-soft: #A3A5B3; --rm-brand: var(--rm-paper); --rm-on-brand: var(--rm-indigo);
+  --rm-link: var(--rm-indigo-300); --rm-border: #2A2C35;
+}
+
+/* Optional base — delete if your site has its own */
+html[lang="ar"], [dir="rtl"] { font-family: var(--rm-font-arabic); }
+.rm-base { background: var(--rm-bg); color: var(--rm-text); font-family: var(--rm-font-sans); }
+.rm-base a { color: var(--rm-link); }
+.rm-label { font: var(--rm-weight-medium) var(--rm-text-xs)/1.4 var(--rm-font-mono); letter-spacing: var(--rm-tracking-label); text-transform: uppercase; }
+
+/* Logo that recolours with tokens: <span class="rm-logo" role="img" aria-label="Robotics MENA"></span> */
+.rm-logo { display: inline-block; height: 40px; aspect-ratio: 155.55 / 58; background: var(--rm-brand);
+  -webkit-mask: url("/brand/logo/lockup-horizontal-black.svg") center / contain no-repeat;
+          mask: url("/brand/logo/lockup-horizontal-black.svg") center / contain no-repeat; }
+.rm-logo--bilingual { aspect-ratio: 281.1 / 58;
+  -webkit-mask-image: url("/brand/logo/lockup-bilingual-black.svg"); mask-image: url("/brand/logo/lockup-bilingual-black.svg"); }
+.rm-logo--symbol { aspect-ratio: 62 / 58;
+  -webkit-mask-image: url("/brand/logo/symbol-black.svg"); mask-image: url("/brand/logo/symbol-black.svg"); }
