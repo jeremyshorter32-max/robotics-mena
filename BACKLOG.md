@@ -27,15 +27,9 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 - [ ] **Image rights (audit).** Brief, Spotlight and policy images include agency and newspaper photos (The National,
   WAM, Gulf Times, Asharq Al-Awsat, MedEdge, Dubai Media Office). A credit is not a licence: confirm permission,
   switch to official press-kit images, or replace them before going public.
-- [ ] **Bugs found in the audit.**
-  - Countries tab shows bilingual target dates raw ("2027 fire season,موسم حرائق 2027"; Kuwait) — `src/logic.js` ~l.422.
-  - Alat's card lists the Doha robotaxi deployment (substring match: "Mowasalat" contains "alat"); make operator
-    matching whole-word.
-  - `/policy?c=LB` silently shows the UAE dossier; `/spotlight?s=<unknown>` silently shows the ADNOC report.
-  - Events: venue runs into "Dates TBC" ("RiyadhDates TBC"); cross-month ranges read "31–3 Jan" / "29–1 Nov";
-    unconfirmed events show invented dates ("1 Jan 2027"); empty "Meetup 0" filter.
-  - Kenyo source link is dead (Gulf Today 404) on the company and deployment d31; replace with the Gulf News
-    report (https://gulfnews.com/business/corporate-news/nanjing-kenyo-group-launches-middle-easts-largest-3d-printing-factory-in-abu-dhabi-1.500296159).
+- [x] **Bugs found in the audit** fixed (10 Nov 2026): raw target dates, Alat/Mowasalat match (now whole-word,
+  also for logos and photos), notices for unknown `?c=` / `?s=` links, events separators, cross-month ranges, TBC
+  months instead of invented dates, empty event filters hidden, Kenyo link replaced with Gulf News.
 - [ ] **Newsletter sample and stale copy (audit).** The sample is labelled "No. 45" (implies 44 past issues), its
   counts disagree with the data, "Updated 9 Nov 2026" is fixed text, two brief takeaways point to events ending
   10 Nov, and the "Added this week" flags are set by hand.

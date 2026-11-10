@@ -388,7 +388,7 @@ class Component extends DCLogic {
   opLogo(operator, own) {
     if (own) return own;
     const a = String(operator || '').toLowerCase();
-    const c = a && window.RM_DATA.companies.find(x => x.logo && (a.includes(x.name.toLowerCase()) || x.name.toLowerCase().includes(a)));
+    const c = a && window.RM_DATA.companies.find(x => x.logo && this.nameMatch(a, x.name));
     return c ? c.logo : '';
   }
   // Headquarters coordinates for the supplier arcs on the map ([lon, lat]); unknown cities fall back to the country.
@@ -399,6 +399,8 @@ class Component extends DCLogic {
   isIntl(o) { return !!(o && o.hq && !this.MENA_CC.has(o.hq)); }
   // Countdowns are shown in weeks: the site is updated weekly, so day counts would go stale between updates.
   weeksTxt(d, ar, num) { const w = Math.round(d / 7); if (d <= 7 || w < 1) return ar ? 'هذا الأسبوع' : 'This week'; if (ar) return w === 1 ? 'خلال أسبوع' : w === 2 ? 'خلال أسبوعين' : w <= 10 ? 'خلال ' + num(w) + ' أسابيع' : 'خلال ' + num(w) + ' أسبوعاً'; return 'In ' + num(w) + ' week' + (w === 1 ? '' : 's'); }
+  // Whole-word name match, so "Mowasalat" does not match the company "Alat".
+  nameMatch(x, y) { const a = String(x || '').toLowerCase(), b = String(y || '').toLowerCase(); if (!a || !b) return false; const w = (h, n) => { const ok = c => !c || !/[a-z0-9\u0600-\u06ff]/.test(c); for (let j = h.indexOf(n); j >= 0; j = h.indexOf(n, j + 1)) if (ok(h[j - 1]) && ok(h[j + n.length])) return true; return false; }; return w(a, b) || w(b, a); }
   flagUrl(cc) { return cc ? '/media/flags/' + String(cc).toLowerCase() + '.svg' : ''; }
   dbOpen(tab, id) { this._dbReturn = document.activeElement; this.setState({ dbTab: tab, dbSel: id }); }
   dbVals(c) {
@@ -412,12 +414,12 @@ class Component extends DCLogic {
     const today = new Date().toISOString().slice(0, 10);
     const in90 = new Date(Date.now() + 90 * 864e5).toISOString().slice(0, 10);
     const lc = s => String(s || '').toLowerCase();
-    const opMatch = (op, name) => { const a = lc(op), b = lc(name); return !!a && !!b && (a.includes(b) || b.includes(a)); };
-    const range = e => e.end && e.end !== e.start ? fdate(e.start) + ' – ' + fdate(e.end) : fdate(e.start);
+    const opMatch = (op, name) => this.nameMatch(op, name);
+    const range = e => { if (!e.dates_confirmed && (!e.end || e.end === e.start) && e.start.endsWith('-01')) return new Intl.DateTimeFormat(ar ? 'ar-AE-u-nu-latn' : 'en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(e.start + 'T12:00:00Z')) + (ar ? ' (قيد التأكيد)' : ' (TBC)'); return e.end && e.end !== e.start ? fdate(e.start) + ' – ' + fdate(e.end) : fdate(e.start); };
     const recs = {
       companies: D.companies.map(o => { const ccs = mk(o), intl = this.isIntl(o); return { o, badge: this.badgeOf(o.name, o.logo), id: o.id, cc: o.country, ccs, intl, origin: intl ? 'intl' : 'regional', hayx: o.mena_link ? (o.mena_link.en || '') + ' ' + (o.mena_link.ar || '') + ' ' + cn(o.hq) + ' ' + OT.intl : '', facet: o.category, facet2: o.secondary || '', date: o.added, name: tr(o, 'name'), alt: intl ? OT.intl + ' · ' + OT.hq + ': ' + cn(o.hq) : (ar ? o.name : (o.name_ar || '')), c2: (this.CATS[o.category] || [o.category, o.category])[L], c3: cn(ccs[0]) + (ccs.length > 1 ? ' +' + num(ccs.length - 1) : ''), c4: (this.STAGES[o.stage] || [o.stage, o.stage])[L], c5: o.added ? fdate(o.added) : '—', size: 0 }; }),
       deployments: D.deployments.map(o => ({ o, badge: this.badgeOf(o.operator, this.opLogo(o.operator, o.logo)), id: o.id, cc: o.country, facet: o.type, date: o.date, name: tr(o, 'title'), alt: tr(o, 'operator') + (o.site ? ' · ' + tr(o, 'site') : ''), c2: (this.TYPES[o.type] || [o.type, o.type])[L], c3: (this.SECTORS[o.sector] || [o.sector, o.sector])[L], c4: cn(o.country), c5: fdate(o.date), size: 0 })),
-      countries: D.countries.map(o => { const PP = this.POLICY[o.code], hk = PP && PP.head && PP.progs[PP.head[0]] ? (PP.progs[PP.head[0]][6] || [])[PP.head[1]] : null; const dn = D.deployments.filter(x => x.country === o.code).length, cn2 = D.companies.filter(x => mk(x).includes(o.code)).length; return { o, badge: this.badgeOf(o.code, '/media/flags/' + o.code.toLowerCase() + '.svg'), id: o.code, cc: o.code, facet: '', date: '', name: tr(o, 'name'), alt: ar ? o.name : o.name_ar, c2: num(dn), c3: num(cn2), c4: hk ? hk[L] + ' ' + hk[2 + L] : (o.headline_target || '—'), c5: hk ? (hk[4] ? String(hk[4]) : '—') : (o.target_year ? String(o.target_year) : '—'), size: dn }; }),
+      countries: D.countries.map(o => { const PP = this.POLICY[o.code], hk = PP && PP.head && PP.progs[PP.head[0]] ? (PP.progs[PP.head[0]][6] || [])[PP.head[1]] : null; const dn = D.deployments.filter(x => x.country === o.code).length, cn2 = D.companies.filter(x => mk(x).includes(o.code)).length; return { o, badge: this.badgeOf(o.code, '/media/flags/' + o.code.toLowerCase() + '.svg'), id: o.code, cc: o.code, facet: '', date: '', name: tr(o, 'name'), alt: ar ? o.name : o.name_ar, c2: num(dn), c3: num(cn2), c4: hk ? (/\d/.test(hk[L]) ? hk[L] + ' ' + hk[2 + L] : hk[2 + L].charAt(0).toUpperCase() + hk[2 + L].slice(1)) : (o.headline_target || '—'), c5: hk ? (hk[4] ? (Array.isArray(hk[4]) ? hk[4][L] : String(hk[4])) : '—') : (o.target_year ? String(o.target_year) : '—'), size: dn }; }),
       events: D.events.map(o => ({ o, badge: this.badgeOf(o.name, o.logo), id: o.id, cc: o.country, facet: o.type, date: o.start, name: tr(o, 'name'), alt: tr(o, 'venue') || '', c2: (this.ETYPES[o.type] || [o.type, o.type])[L], c3: tr(o, 'city'), c4: cn(o.country), c5: range(o), size: 0 }))
     };
     const all = recs[tab];
@@ -621,7 +623,7 @@ class Component extends DCLogic {
       onFCountry: e => this.setState({ fCountry: e.target.value, sel: null }), onFSector: e => this.setState({ fSector: e.target.value, sel: null }), onFType: e => this.setState({ fType: e.target.value, sel: null }),
       anyFilter: !!(S.fCountry || S.fSector || S.fType), clearFilters: () => this.setState({ fCountry: '', fSector: '', fType: '', sel: null }) };
     const coPic = this.coPic || (this.coPic = {});
-    const picFor = op => { if (!(op in coPic)) { const a = String(op || '').toLowerCase(), c = a && window.RM_DATA.companies.find(x => x.image && (a.includes(x.name.toLowerCase()) || x.name.toLowerCase().includes(a))); coPic[op] = c ? c.image : ''; } return coPic[op]; };
+    const picFor = op => { if (!(op in coPic)) { const a = String(op || '').toLowerCase(), c = a && window.RM_DATA.companies.find(x => x.image && this.nameMatch(a, x.name)); coPic[op] = c ? c.image : ''; } return coPic[op]; };
     const pinOf = d => ({ id: d.id, lat: d.lat, lon: d.lon, cc: d.cc, n: d.n, label: d.robot[L] + ', ' + d.site[L], t: d.type, d: d.date, ti: d.robot[L], op: d.op[L], site: d.site[L], when: fdate(d.date), tl: this.TYPES[d.type][L], img: picFor(d.op[0]), logo: this.opLogo(d.op[0], d.logo), href: '/database?tab=deployments&id=' + d.id });
     const heroPinOf = d => ({ id: d.id, lat: d.lat, lon: d.lon, cc: d.cc, n: d.n, label: '' });
     const selD = S.sel && this.DEP.find(d => d.id === S.sel);
@@ -729,8 +731,8 @@ class Component extends DCLogic {
     const evF = this.EVENTS.filter(e => (!S.eType || e[10] === S.eType) && (!S.eCountry || e[9] === S.eCountry));
     const mm = {};
     evF.forEach(e => { const k = e[1].slice(0, 7); (mm[k] = mm[k] || []).push(e); });
-    const months = Object.keys(mm).sort().map(k => ({ label: dfm.format(D(k + '-01')), rows: mm[k].map(e => ({ days: (e[11] && e[1] === e[2] && e[1].endsWith('-01')) ? (ar ? 'يُحدَّد' : 'TBC') : num(D(e[1]).getUTCDate()) + (e[1] !== e[2] ? '–' + num(D(e[2]).getUTCDate()) : ''), mon: df2.format(D(e[1])), name: e[3 + L], city: e[5 + L], venue: e[7 + L], place: [e[7 + L], e[5 + L]].filter(Boolean).join(' · '), flag: e[9] ? '/media/flags/' + e[9].toLowerCase() + '.svg' : '', hasFlag: !!e[9], cname: e[9] && this.CC[e[9]] ? this.CC[e[9]][L] : '', cc: e[9], type: this.ETYPES[e[10]][L], tbc: !!e[11], badge: this.badgeOf(e[3], e[12]), why: e[13 + L], hasWhy: !!e[13 + L], whyLbl: ar ? 'لماذا يهمّ قطاع الروبوتات:' : 'Why it matters for robotics:', url: e[15], hasUrl: !!e[15], noUrl: !e[15], addLabel: S.added[e[0]] ? '✓ ' + t.added : t.addCal, add: () => this.ics(e) })) }));
-    const evChips = [this.chip(t.all, num(this.EVENTS.length), !S.eType, () => this.setState({ eType: '' }))].concat(Object.keys(this.ETYPES).map(k => this.chip(this.ETYPES[k][L], num(this.EVENTS.filter(e => e[10] === k).length), S.eType === k, () => this.setState(st => ({ eType: st.eType === k ? '' : k })))));
+    const months = Object.keys(mm).sort().map(k => ({ label: dfm.format(D(k + '-01')), rows: mm[k].map(e => ({ days: (e[11] && e[1] === e[2] && e[1].endsWith('-01')) ? (ar ? 'يُحدَّد' : 'TBC') : num(D(e[1]).getUTCDate()) + (e[1] !== e[2] ? '–' + num(D(e[2]).getUTCDate()) : ''), mon: df2.format(D(e[1])) + (e[1].slice(0, 7) !== e[2].slice(0, 7) ? '–' + df2.format(D(e[2])) : ''), name: e[3 + L], city: e[5 + L], venue: e[7 + L], place: [e[7 + L], e[5 + L]].filter(Boolean).join(' · '), flag: e[9] ? '/media/flags/' + e[9].toLowerCase() + '.svg' : '', hasFlag: !!e[9], cname: e[9] && this.CC[e[9]] ? this.CC[e[9]][L] : '', cc: e[9], type: this.ETYPES[e[10]][L], tbc: !!e[11], badge: this.badgeOf(e[3], e[12]), why: e[13 + L], hasWhy: !!e[13 + L], whyLbl: ar ? 'لماذا يهمّ قطاع الروبوتات:' : 'Why it matters for robotics:', url: e[15], hasUrl: !!e[15], noUrl: !e[15], addLabel: S.added[e[0]] ? '✓ ' + t.added : t.addCal, add: () => this.ics(e) })) }));
+    const evChips = [this.chip(t.all, num(this.EVENTS.length), !S.eType, () => this.setState({ eType: '' }))].concat(Object.keys(this.ETYPES).filter(k => this.EVENTS.some(e => e[10] === k)).map(k => this.chip(this.ETYPES[k][L], num(this.EVENTS.filter(e => e[10] === k).length), S.eType === k, () => this.setState(st => ({ eType: st.eType === k ? '' : k })))));
     const evCChips = [this.chip(t.all, '', !S.eCountry, () => this.setState({ eCountry: '' }))].concat([...new Set(this.EVENTS.map(e => e[9]))].map(c => this.chip(ccName(c), '', S.eCountry === c, () => this.setState(st => ({ eCountry: st.eCountry === c ? '' : c })))));
     const later = this.LATER.map(e => ({ name: e[L], city: e[2 + L], mon: new Intl.DateTimeFormat(loc, { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(D(e[4])) + (ar ? ' (قيد التأكيد)' : ' (TBC)') }));
 
@@ -776,6 +778,15 @@ class Component extends DCLogic {
           { h: 'Changes', ps: ['If we change this policy, we will publish the new version on this page with the date it was updated.'] }
         ]
       },
+      ...(() => {
+        const rc = this.PAGE === 'policy' && !this.POLICY[S.pc] ? S.pc : '', rn = rc ? (this.CC[rc] ? this.CC[rc][L] : rc) : '';
+        const rs = this.PAGE === 'spotlight' ? this.qp.get('s') : '', badS = !!rs && !this.STORIES.some(x => x.id === rs);
+        return {
+          hasMissPc: !!rc, missPc: ar ? `لم ننشر ملفاً عن ${rn} بعد، لذلك تعرض الصفحة ملف الإمارات العربية المتحدة.` : `We haven’t published a dossier for ${rn} yet, so this page shows the United Arab Emirates.`,
+          missPcHref: this.CC[rc] ? '/database?tab=countries&id=' + rc : '/database?tab=countries', missPcLbl: ar ? `اطّلع على شركات ${rn} وعمليات النشر فيها` : `See ${rn}’s companies and deployments`,
+          hasMissS: badS, missS: ar ? 'لم نجد هذا التقرير، لذلك تعرض الصفحة أحدث تقاريرنا.' : 'We couldn’t find that report, so this page shows our latest one.'
+        };
+      })(),
       privHref: '/privacy', privLbl: ar ? 'سياسة الخصوصية' : 'Privacy policy',
       edT: ar ? {
         crumb: 'السياسة التحريرية', title: 'السياسة التحريرية والتصحيحات', sub: 'كيف تبحث روبوتكس مينا وتتحقق وتصحّح ما تنشره.',
