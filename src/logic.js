@@ -522,6 +522,15 @@ class Component extends DCLogic {
     const t = this.T[lang];
     try { if (document.documentElement.lang !== lang) document.documentElement.lang = lang; } catch (e) {}
     const tt = {}; for (const k in t) tt[k] = typeof t[k] === 'string' ? digits(t[k]) : t[k];
+    // Brief week label, worked out from the newest brief item (ISO week, Monday to Sunday), so it never goes stale.
+    { const bd = (window.RM_DATA.brief || []).map(b => b.date).filter(Boolean).sort().pop();
+      if (bd) { const d = new Date(bd + 'T12:00:00Z'), mon = new Date(d - ((d.getUTCDay() + 6) % 7) * 864e5), sun = new Date(+mon + 6 * 864e5), thu = new Date(+mon + 3 * 864e5);
+        const wk = 1 + Math.floor((thu - Date.UTC(thu.getUTCFullYear(), 0, 1)) / (7 * 864e5));
+        const f = o => new Intl.DateTimeFormat(loc, { ...o, timeZone: 'UTC' }).format.bind(null);
+        const dd = f({ day: 'numeric' }), dm = f({ day: 'numeric', month: 'short' }), dmy = f({ day: 'numeric', month: 'short', year: 'numeric' });
+        const sameY = mon.getUTCFullYear() === sun.getUTCFullYear(), sameM = sameY && mon.getUTCMonth() === sun.getUTCMonth();
+        const span = (sameM ? dd(mon) : sameY ? dm(mon) : dmy(mon)) + ' – ' + dmy(sun);
+        tt.s1week = digits((ar ? 'الأسبوع ' : 'Week ') + yr(wk) + ' · ' + span); } }
     const arrow = ar ? '↖' : '↗';
     const ccName = cc => this.CC[cc][L];
     const narrow = S.w <= 900;
