@@ -93,7 +93,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
             </select>
           </label>
           <label style="grid-column:1 / -1;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--fg-muted)"><span>{{ t.wk.fMsg }}<span aria-hidden="true" style="color:var(--fg-subtle)"> *</span></span><textarea name="message" required="{{ true }}" rows="6" placeholder="{{ t.wk.fMsgPh }}" style="padding:12px;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:3px;font:inherit;font-size:15px;color:var(--fg);resize:vertical"></textarea></label>
-          <div style="grid-column:1 / -1;display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);background:var(--bg-raised);border-radius:3px;font-size:13px;line-height:1.5;color:var(--fg-muted)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px;color:var(--sand)"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></svg><span>{{ t.wk.priv }}</span></div>
+          <div style="grid-column:1 / -1;display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);background:var(--bg-raised);border-radius:3px;font-size:13px;line-height:1.5;color:var(--fg-muted)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px;color:var(--sand)"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></svg><span>{{ t.wk.priv }} <a href="{{ privHref }}" style="color:var(--accent-text);border-bottom:1px solid currentColor;white-space:nowrap">{{ privLbl }}</a></span></div>
           <div style="grid-column:1 / -1;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
             <button type="submit" style="height:48px;padding:0 24px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:3px;font-size:15px;font-weight:600;cursor:pointer">{{ t.wk.send }}</button>
             <span style="font-size:12px;color:var(--fg-subtle)">{{ t.wk.req }}</span>
@@ -128,7 +128,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
     </sc-for>
   </div>
   <div style="max-width:1440px;margin:56px auto 0;padding:24px var(--gutter) 0;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;font-size:12px;color:var(--fg-subtle);border-top:1px solid var(--line)">
-    <span>{{ t.copyright }}</span><span>{{ t.demoNote }}</span>
+    <span>{{ t.copyright }}</span><span style="display:flex;flex-wrap:wrap;gap:12px 24px"><a href="{{ privHref }}" style="color:var(--fg-muted);border-bottom:1px solid var(--line-strong)">{{ privLbl }}</a><span>{{ t.demoNote }}</span></span>
   </div>
 </footer>
 <!--@brief-modal-->

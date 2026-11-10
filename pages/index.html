@@ -317,7 +317,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
       </sc-if>
       <sc-if value="{{ subscribed }}"><p role="status" style="margin:0;padding:14px 16px;border:1px solid var(--accent);color:var(--fg);font-size:15px">{{ t.nlDone }}</p></sc-if>
       <div style="font-size:13px;color:var(--fg-subtle)">{{ t.nlMeta }}</div>
-      <div style="display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);background:var(--bg-raised);border-radius:3px;font-size:13px;line-height:1.5;color:var(--fg-muted)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px;color:var(--sand)"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></svg><span><strong style="color:var(--fg);font-weight:600">{{ t.privTitle }}</strong> {{ t.privBody }}</span></div>
+      <div style="display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);background:var(--bg-raised);border-radius:3px;font-size:13px;line-height:1.5;color:var(--fg-muted)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:2px;color:var(--sand)"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></svg><span><strong style="color:var(--fg);font-weight:600">{{ t.privTitle }}</strong> {{ t.privBody }} <a href="{{ privHref }}" style="color:var(--accent-text);border-bottom:1px solid currentColor;white-space:nowrap">{{ privLbl }}</a></span></div>
     </div>
     <div style="background:var(--bg);border:1px solid var(--line-strong);padding:32px;display:flex;flex-direction:column;gap:16px;max-width:560px;width:100%;justify-self:end">
       <div style="display:flex;justify-content:space-between;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)"><span>{{ t.sampleLbl }}</span><span style="font-family:var(--font-num)">{{ t.sampleIssue }}</span></div>
@@ -362,7 +362,7 @@ html,body{margin:0;padding:0;background:#F7F5EF}
     </sc-for>
   </div>
   <div style="max-width:1440px;margin:56px auto 0;padding:24px var(--gutter) 0;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;font-size:12px;color:var(--fg-subtle);border-top:1px solid var(--line)">
-    <span>{{ t.copyright }}</span><span>{{ t.demoNote }}</span>
+    <span>{{ t.copyright }}</span><span style="display:flex;flex-wrap:wrap;gap:12px 24px"><a href="{{ privHref }}" style="color:var(--fg-muted);border-bottom:1px solid var(--line-strong)">{{ privLbl }}</a><span>{{ t.demoNote }}</span></span>
   </div>
 </footer>
 <!--@brief-modal-->

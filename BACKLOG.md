@@ -12,9 +12,11 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 - [ ] **Decide how the newsletter is sent and how people unsubscribe.** Sign-ups are collected, but nothing sends
   the weekly brief yet and unsubscribes are manual (reply or email). Pick a free mailing tool (e.g. Brevo or
   Mailchimp free tier), import the sign-ups, and use its one-click unsubscribe.
-- [ ] **Add a short privacy page.** The forms collect emails and names; link a plain-language privacy notice
+- [x] **Privacy page.** Published at /privacy (10 Nov 2026), linked from every footer and next to each form.<!-- The forms collect emails and names; link a plain-language privacy notice
   (what is collected, why, FormSubmit + Google Sheets as processors, how to be removed) from the footer and
-  next to each form.
+  next to each form. -->
+- [ ] **Privacy page: owner to confirm.** The retention periods (sign-ups until unsubscribe, enquiries up to 24 months)
+  and whether to name a legal entity and address. Have it checked by a lawyer if the site will process EU/UK data at scale.
 - [x] **Footer "Open data & API" claim.** Removed (10 Nov 2026), also from the Work page.<!-- It promises open data (CC BY 4.0) and a read-only JSON API, but no API
   is published. Either publish the data files (e.g. `/api/companies.json` …) or reword the footer. -->
 - [x] **Footer "About the team" link** removed (10 Nov 2026).<!-- goes to the home page. Add an About page or remove the link. -->

@@ -10,7 +10,7 @@ class Component extends DCLogic {
   briefRail = React.createRef(); stratRail = React.createRef(); tabRail = React.createRef();
   NAV_IDS = window.RM_PAGE.nav;
   PAGE = window.RM_PAGE.page;
-  PAGES = { editorial: '/editorial', work: '/work', policy: '/policy', strategies: '/policy', data: '/policy', compare: '/policy', directory: '/database?tab=companies', events: '/events', submit: '/submit', map: '/map', database: '/database' };
+  PAGES = { privacy: '/privacy', editorial: '/editorial', work: '/work', policy: '/policy', strategies: '/policy', data: '/policy', compare: '/policy', directory: '/database?tab=companies', events: '/events', submit: '/submit', map: '/map', database: '/database' };
   pageHref(id, c) { const q = this.qsCur || ''; const p = this.PAGES[id]; if (p) return p + q + (c && c !== 'AE' && p === '/policy' ? '?c=' + c : '') + (id === 'compare' ? '#compare' : ''); return id === 'top' ? '/' : '/#' + id; }
   mapRef = React.createRef();
   dlRail = React.createRef();
@@ -747,6 +747,36 @@ class Component extends DCLogic {
       toggleLang: () => { const v = ar ? 'en' : 'ar'; this.savePref('lang', v); this.setState({ lang: v }); },
       goNewsletter: e => { e.preventDefault(); this.openBrief(e.currentTarget); },
       resetSignup: e => { e && e.preventDefault(); this.dropPref('subscriber'); this.setState({ subscribed: false, email: '' }); setTimeout(() => { const el = document.getElementById('rm-brief-email'); el && el.focus(); }, 60); },
+      pvT: ar ? {
+        crumb: 'الخصوصية', title: 'سياسة الخصوصية', sub: 'ما الذي نجمعه، ولماذا، ومن يعالجه، وكيف تطلب حذفه. بلغة بسيطة.', updated: 'آخر تحديث: 10 نوفمبر 2026',
+        summaryTitle: 'باختصار', summary: ['لا نبيع بياناتك ولا نؤجرها ولا نشاركها.', 'لا إعلانات ولا أدوات تتبّع ولا تحليلات، ولا نضع ملفات تعريف ارتباط.', 'نجمع فقط ما تكتبه بنفسك في نماذجنا.', 'يمكنك طلب نسخة من بياناتك أو حذفها في أي وقت.'],
+        sections: [
+          { h: 'من نحن', ps: ['روبوتكس مينا («نحن») منصة مستقلة توثّق الروبوتات في الشرق الأوسط وشمال أفريقيا. للتواصل بشأن الخصوصية: contact@roboticsmena.com.'] },
+          { h: 'ما الذي نجمعه', ps: ['الاشتراك في الموجز الأسبوعي (النافذة المنبثقة، ومربع النشرة، ونموذج فتح تقارير «تحت الضوء»): بريدك الإلكتروني، والصفحة التي اشتركت منها، ولغة الموقع.', 'نموذج «أضف إلى السجل»: المعلومات التي تكتبها عن شركة أو عملية نشر أو فعالية، وبريدك الإلكتروني إن أضفته.', 'نموذج «اعمل معنا»: اسمك وبريدك الإلكتروني ومؤسستك ومنصبك والمجال الذي تختاره ورسالتك.', 'الرسائل التي ترسلها إلى بريدنا.', 'لا نجمع أي بيانات أخرى عنك، ولا نستخدم أدوات تحليل أو تتبّع.'] },
+          { h: 'لماذا نستخدمها', ps: ['لإرسال الموجز الأسبوعي إليك إذا اشتركت، وللرد على رسائلك وطلبات التعاون، ولمراجعة ما ترسله إلى السجل والتحقق منه. لا نستخدم بياناتك لأي غرض آخر، ولن نضيفك إلى قائمة بريدية ما لم تشترك بنفسك.'] },
+          { h: 'من يعالجها نيابة عنا', ps: ['FormSubmit (formsubmit.co) ينقل ما ترسله عبر نماذجنا إلى بريدنا الإلكتروني.', 'مزوّد البريد الإلكتروني الخاص بنا يحفظ الرسائل في صندوق الوارد.', 'قد نحتفظ بنسخة من الاشتراكات والطلبات في جدول خاص على Google Sheets.', 'يُستضاف الموقع على GitHub Pages، وقد يسجّل خادم الاستضافة عنوان IP الخاص بك كما تفعل أي خدمة استضافة.', 'يحمّل متصفحك الخطوط من Google Fonts، فيرى Google عنوان IP الخاص بك عند ذلك.', 'لا نشارك بياناتك مع أي جهة أخرى، ولا نبيعها أو نؤجرها.'] },
+          { h: 'ما يُحفظ في متصفحك', ps: ['يحفظ الموقع في متصفحك فقط (وليس على خوادمنا): لغتك المفضلة، والوضع الفاتح أو الداكن، وبريدك الإلكتروني إن اشتركت كي تبقى التقارير مفتوحة لك. لا نضع ملفات تعريف ارتباط. يمكنك حذف ذلك بمسح بيانات الموقع من متصفحك، أو باختيار «استخدم بريداً آخر» في نافذة الاشتراك.'] },
+          { h: 'مدة الاحتفاظ', ps: ['نحتفظ بالاشتراكات حتى تلغي اشتراكك. ونحتفظ بالطلبات والرسائل للمدة اللازمة للتعامل معها، ولا تتجاوز 24 شهراً، ما لم تطلب حذفها قبل ذلك.'] },
+          { h: 'حقوقك', ps: ['أينما كنت، يمكنك أن تطلب نسخة من بياناتك أو تصحيحها أو حذفها، أو أن تلغي اشتراكك. راسلنا على contact@roboticsmena.com وسنرد خلال 30 يوماً. ويمكنك إلغاء الاشتراك في أي وقت بالرد على أي عدد من الموجز.'] },
+          { h: 'الروابط الخارجية', ps: ['نربط كل سجل بمصدره الأصلي على مواقع أخرى. لهذه المواقع سياسات خصوصية خاصة بها.'] },
+          { h: 'التعديلات', ps: ['سننشر أي تعديل على هذه السياسة في هذه الصفحة مع تاريخ التحديث.'] }
+        ]
+      } : {
+        crumb: 'Privacy', title: 'Privacy policy', sub: 'What we collect, why, who processes it and how to have it deleted. In plain language.', updated: 'Last updated: 10 November 2026',
+        summaryTitle: 'In short', summary: ['We never sell, rent or share your data.', 'No ads, no trackers, no analytics, and we set no cookies.', 'We only collect what you type into our forms.', 'You can ask for a copy of your data, or for it to be deleted, at any time.'],
+        sections: [
+          { h: 'Who we are', ps: ['Robotics MENA (“we”) is an independent record of robotics across the Middle East and North Africa. For anything about privacy, write to contact@roboticsmena.com.'] },
+          { h: 'What we collect', ps: ['Signing up for the weekly brief (the “Get the brief” pop-up, the newsletter box, or the form that unlocks Spotlight reports): your email address, the page you signed up from and the site language.', 'The Submit form: the details you enter about a company, deployment or event, and your email address if you add one.', 'The Work with us form: your name, email address, organisation, role, the area you choose and your message.', 'Emails you send us.', 'We collect nothing else about you, and we use no analytics or tracking tools.'] },
+          { h: 'Why we use it', ps: ['To send you the weekly brief if you signed up, to reply to your messages and enquiries, and to review and verify what you submit to the record. We use your data for nothing else, and we will not add you to a mailing list unless you sign up yourself.'] },
+          { h: 'Who processes it for us', ps: ['FormSubmit (formsubmit.co) relays what you send through our forms to our email inbox.', 'Our email provider stores messages in our inbox.', 'We may keep a copy of sign-ups and enquiries in a private Google Sheets spreadsheet.', 'The site is hosted on GitHub Pages, whose servers may log your IP address, as any web host does.', 'Your browser loads fonts from Google Fonts, so Google sees your IP address when it does.', 'We share your data with no one else, and never sell or rent it.'] },
+          { h: 'What is stored in your browser', ps: ['The site stores a few things in your own browser only, not on our servers: your language, light or dark mode, and your email address if you signed up, so research reports stay unlocked for you. We set no cookies. You can remove these by clearing this site’s data in your browser, or by choosing “Use a different email” in the sign-up pop-up.'] },
+          { h: 'How long we keep it', ps: ['We keep sign-ups until you unsubscribe. We keep enquiries and messages for as long as we need to handle them, and no longer than 24 months, unless you ask us to delete them sooner.'] },
+          { h: 'Your rights', ps: ['Wherever you live, you can ask for a copy of your data, ask us to correct or delete it, or unsubscribe. Write to contact@roboticsmena.com and we will reply within 30 days. You can also unsubscribe at any time by replying to any issue of the brief.'] },
+          { h: 'Links to other sites', ps: ['We link every record to its primary source on other websites. Those sites have their own privacy policies.'] },
+          { h: 'Changes', ps: ['If we change this policy, we will publish the new version on this page with the date it was updated.'] }
+        ]
+      },
+      privHref: '/privacy', privLbl: ar ? 'سياسة الخصوصية' : 'Privacy policy',
       edT: ar ? {
         crumb: 'السياسة التحريرية', title: 'السياسة التحريرية والتصحيحات', sub: 'كيف تبحث روبوتكس مينا وتتحقق وتصحّح ما تنشره.',
         sections: [
