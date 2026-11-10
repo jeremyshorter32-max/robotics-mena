@@ -520,6 +520,7 @@ class Component extends DCLogic {
     const df = new Intl.DateTimeFormat(loc, { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
     const fdate = iso => df.format(new Date(iso + 'T12:00:00Z'));
     const t = this.T[lang];
+    try { if (document.documentElement.lang !== lang) document.documentElement.lang = lang; } catch (e) {}
     const tt = {}; for (const k in t) tt[k] = typeof t[k] === 'string' ? digits(t[k]) : t[k];
     const arrow = ar ? '↖' : '↗';
     const ccName = cc => this.CC[cc][L];
