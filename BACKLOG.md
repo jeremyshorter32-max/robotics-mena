@@ -5,10 +5,10 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 
 ## Must do before going public
 
-- [ ] **Connect the Google Sheet for form entries.** Deploy `integrations/google-sheets/Code.gs` as a web app
+- [x] **Google Sheet connected** (10 Nov 2026): web app deployed, `sheet_url` set, test entries sent.<!-- Connect the Google Sheet for form entries. Deploy `integrations/google-sheets/Code.gs` as a web app
   from script.google.com (steps in `integrations/google-sheets/README.md`; it already points at the Sheet
   `1Af2GzhWl5YkrGS-XZ46HMJ3MlFqK2V1kAqFL9stzqXI`), put the `/exec` URL in `data/site.json` as `sheet_url`,
-  publish, and send one test entry. Until then, forms only arrive by email.
+  publish, and send one test entry. Until then, forms only arrive by email. -->
 - [ ] **Decide how the newsletter is sent and how people unsubscribe.** Sign-ups are collected, but nothing sends
   the weekly brief yet and unsubscribes are manual (reply or email). Pick a free mailing tool (e.g. Brevo or
   Mailchimp free tier), import the sign-ups, and use its one-click unsubscribe.
