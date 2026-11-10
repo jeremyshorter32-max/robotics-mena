@@ -20,6 +20,32 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 - [ ] **Footer "About the team" link** goes to the home page. Add an About page or remove the link.
 - [ ] **Brief week label is hard-coded** (`s1week: 'Week 45 · 2 – 8 Nov 2026'` in `src/logic.js`). Make it come
   from `data/brief.json` or the build date so it can't go stale.
+- [ ] **Editorial policy and corrections (audit, 10 Nov).** Footer "Read the policy" goes to `/submit`, and the
+  footer promises corrections are logged. Publish a short editorial and corrections page (or change the copy).
+- [ ] **Image rights (audit).** Brief, Spotlight and policy images include agency and newspaper photos (The National,
+  WAM, Gulf Times, Asharq Al-Awsat, MedEdge, Dubai Media Office). A credit is not a licence: confirm permission,
+  switch to official press-kit images, or replace them before going public.
+- [ ] **Bugs found in the audit.**
+  - Countries tab shows bilingual target dates raw ("2027 fire season,موسم حرائق 2027"; Kuwait) — `src/logic.js` ~l.422.
+  - Alat's card lists the Doha robotaxi deployment (substring match: "Mowasalat" contains "alat"); make operator
+    matching whole-word.
+  - `/policy?c=LB` silently shows the UAE dossier; `/spotlight?s=<unknown>` silently shows the ADNOC report.
+  - Events: venue runs into "Dates TBC" ("RiyadhDates TBC"); cross-month ranges read "31–3 Jan" / "29–1 Nov";
+    unconfirmed events show invented dates ("1 Jan 2027"); empty "Meetup 0" filter.
+  - Kenyo source link is dead (Gulf Today 404) on the company and deployment d31; replace with the Gulf News
+    report (https://gulfnews.com/business/corporate-news/nanjing-kenyo-group-launches-middle-easts-largest-3d-printing-factory-in-abu-dhabi-1.500296159).
+- [ ] **Newsletter sample and stale copy (audit).** The sample is labelled "No. 45" (implies 44 past issues), its
+  counts disagree with the data, "Updated 9 Nov 2026" is fixed text, two brief takeaways point to events ending
+  10 Nov, and the "Added this week" flags are set by hand.
+- [ ] **Country cards say "Source not yet recorded"** on every country, against "every record links to its
+  primary source". Add sources or change the wording.
+- [ ] **Arabic polish (audit):** number agreement ("12 شركات", "1 عمليات نشر"), English left in Arabic mode ("Tens",
+  "(press release)"), "AED110 مليون درهم", inconsistent spellings of company names.
+- [ ] **Score/dossier consistency (audit):** Qatar "Deployments tracked 2" vs "Verified deployments: None"; UAE drones
+  "Strong" while the drone suspension is in force; Qatar robotaxi "launched" vs dossier "still a trial".
+- [ ] **Launch plumbing (audit):** add `sitemap.xml`, a branded `404.html`, canonical tags and per-page
+  descriptions; confirm "Enforce HTTPS" is ticked in GitHub Pages settings; decide on (privacy-friendly)
+  analytics. Consider the orange button contrast (white on #D65336 at small sizes is 4.07:1, below 4.5:1).
 - [ ] **Turn off the password** (only after the above): change `scripts/build-site.sh` so it publishes without
   StatiCrypt, remove the `noindex, nofollow` tag it adds and the robots block, delete the `SITE_PASSWORD`
   repository secret, then check every page, search engines' access and the social preview image.
