@@ -821,7 +821,7 @@ class Component extends DCLogic {
           { h: 'كيف نبحث', ps: ['نتابع الأخبار والبيانات الرسمية أسبوعياً بالعربية والإنجليزية. تساعدنا أدوات آلية في رصد الأخبار وجمعها، لكن كل إدخال يراجعه محرّر ويقارنه بمصدره الأصلي قبل نشره.'] },
           { h: 'الاستقلالية', ps: ['الإدراج مجاني ولا يمكن شراؤه. لا نقبل إدخالات مموّلة ولا مواضع مدفوعة ولا إعلانات. إذا تعاونّا مع جهة في مشروع بحثي أو فعالية فسنذكر ذلك بوضوح، ولا يؤثر أي شريك في تغطيتنا.'] },
           { h: 'الآراء والتقارير البحثية', ps: ['تقاريرنا البحثية تحليل مبني على الأدلة. نفصل الوقائع عن الرأي، ويظهر رأينا في قسم واضح بعنوان «رأينا».'] },
-          { h: 'الصور', ps: ['تُنسب كل صورة إلى صاحبها. نوضّح عندما تكون الصورة تصوّراً حاسوبياً أو تصميماً أو صورة توضيحية وليست صورة للموقع الفعلي.'] },
+          { h: 'الصور', ps: ['تُنسب كل صورة إلى صاحبها. نوضّح عندما تكون الصورة تصوّراً حاسوبياً أو تصميماً أو صورة توضيحية وليست صورة للموقع الفعلي.', 'إذا كنت تملك صورة نستخدمها وترغب في تعديل نسبتها أو استبدالها أو حذفها، فراسلنا على contact@roboticsmena.com مع رابط الصفحة. ونتعامل مع كل طلب خلال خمسة أيام عمل.'] },
           { h: 'التصحيحات', ps: ['إذا وجدت خطأً فراسلنا على contact@roboticsmena.com مع رابط السجل والمصدر الذي يصحّحه. نراجع كل طلب، ونصحّح الأخطاء في مكانها، ونسجّل التصحيحات الجوهرية أدناه مع تاريخها.'] }
         ],
         logTitle: 'سجل التصحيحات', logWas: 'ما ذُكر سابقاً', logNow: 'التصحيح', logSrc: 'المصدر', logEmpty: 'لا توجد تصحيحات بعد.', contactLbl: 'أرسل تصحيحاً'
@@ -833,7 +833,7 @@ class Component extends DCLogic {
           { h: 'How we research', ps: ['We follow news and official releases every week, in Arabic and English. Automated tools help us find and gather news, but every entry is reviewed by an editor and checked against its primary source before it is published.'] },
           { h: 'Independence', ps: ['Listing is free and cannot be bought. We do not accept sponsored entries, paid placement or advertising. If we ever work with an organisation on research or an event, we will say so clearly, and no partner shapes our coverage.'] },
           { h: 'Opinion and research reports', ps: ['Our research reports are evidence-led analysis. We keep facts and opinion apart: our view appears in a clearly marked “Our view” section.'] },
-          { h: 'Images', ps: ['Every image is credited to its owner. We say when an image is a render, a design or an illustration rather than a photo of the actual site.'] },
+          { h: 'Images', ps: ['Every image is credited to its owner. We say when an image is a render, a design or an illustration rather than a photo of the actual site.', 'If you own an image we use and would like it credited differently, replaced or removed, write to contact@roboticsmena.com with a link to the page. We act on every request within five working days.'] },
           { h: 'Corrections', ps: ['If you spot an error, write to contact@roboticsmena.com with a link to the record and a source for the correction. We review every request, correct errors in place, and log significant corrections below with their date.'] }
         ],
         logTitle: 'Corrections log', logWas: 'What we said', logNow: 'Correction', logSrc: 'Source', logEmpty: 'No corrections yet.', contactLbl: 'Send a correction'
