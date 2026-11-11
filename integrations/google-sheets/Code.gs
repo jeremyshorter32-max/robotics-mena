@@ -48,6 +48,7 @@ function doPost(e) {
     }
 
     sheet.appendRow(headers.map(function (h) { return row[h] === undefined ? '' : row[h]; }));
+    if (tab === 'Sign-ups' && row.email && row.Status !== 'Repeat') addToKit(row.email);
     return reply({ ok: true });
   } finally {
     lock.releaseLock();
@@ -67,4 +68,32 @@ function clean(v) {
 
 function reply(obj) {
   return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
+}
+
+// ---- Newsletter: add sign-ups to Kit (kit.com) --------------------------------------------------------
+// Set two Script properties (Project Settings → Script properties): KIT_API_KEY (Kit → Settings → Developer
+// → V4 key) and KIT_FORM_ID (the id of the double opt-in form, from the form's address in Kit). Kit then
+// sends its own "confirm your subscription" email. Without the properties this step is skipped.
+function addToKit(email) {
+  var p = PropertiesService.getScriptProperties(), key = p.getProperty('KIT_API_KEY'), form = p.getProperty('KIT_FORM_ID');
+  if (!key || !form || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
+  var opt = function (body) { return { method: 'post', contentType: 'application/json', headers: { 'X-Kit-Api-Key': key }, payload: JSON.stringify(body), muteHttpExceptions: true }; };
+  try {
+    UrlFetchApp.fetch('https://api.kit.com/v4/subscribers', opt({ email_address: email, state: 'inactive' }));
+    var r = UrlFetchApp.fetch('https://api.kit.com/v4/forms/' + form + '/subscribers', opt({ email_address: email }));
+    return r.getResponseCode() < 300;
+  } catch (err) { console.error('Kit: ' + err); return false; }
+}
+
+// One-off: add every existing sign-up to Kit (run once from the editor after setting the properties).
+// Each person gets Kit's confirmation email; anyone already on the form is skipped by Kit.
+function syncAllSignupsToKit() {
+  var sheet = book().getSheetByName(TABS.signup); if (!sheet || sheet.getLastRow() < 2) return;
+  var head = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0], col = head.indexOf('email');
+  var seen = {}, n = 0;
+  sheet.getRange(2, 1, sheet.getLastRow() - 1, head.length).getValues().forEach(function (r) {
+    var e = String(r[col] || '').trim().toLowerCase(); if (!e || seen[e]) return; seen[e] = 1;
+    if (addToKit(e)) n++; Utilities.sleep(300);
+  });
+  console.log('Added ' + n + ' sign-ups to Kit');
 }

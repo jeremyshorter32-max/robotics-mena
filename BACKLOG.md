@@ -9,9 +9,13 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   from script.google.com (steps in `integrations/google-sheets/README.md`; it already points at the Sheet
   `1Af2GzhWl5YkrGS-XZ46HMJ3MlFqK2V1kAqFL9stzqXI`), put the `/exec` URL in `data/site.json` as `sheet_url`,
   publish, and send one test entry. Until then, forms only arrive by email. -->
-- [ ] **Decide how the newsletter is sent and how people unsubscribe.** Sign-ups are collected, but nothing sends
-  the weekly brief yet and unsubscribes are manual (reply or email). Pick a free mailing tool (e.g. Brevo or
-  Mailchimp free tier), import the sign-ups, and use its one-click unsubscribe.
+- [ ] **Newsletter on Kit (in progress, 11 Nov 2026).** Decided: Kit free plan, English only, Monday 07:00 Gulf,
+  owner approves each issue in a Claude conversation. Built: `scripts/newsletter.mjs` (email from site data, Kit
+  draft/schedule), `.claude/skills/weekly-brief/SKILL.md` (Sunday routine), Kit sign-up sync in
+  `integrations/google-sheets/Code.gs`. Still to do: owner creates the Kit account (sender address, domain
+  records, double opt-in form, API key), key saved to the environment, Apps Script properties + redeploy,
+  import existing sign-ups, first test draft, then the Sunday scheduled task. Update the privacy page to name
+  Kit as the newsletter processor.
 - [x] **Privacy page.** Published at /privacy (10 Nov 2026), linked from every footer and next to each form.<!-- The forms collect emails and names; link a plain-language privacy notice
   (what is collected, why, FormSubmit + Google Sheets as processors, how to be removed) from the footer and
   next to each form. -->
