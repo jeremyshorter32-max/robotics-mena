@@ -759,7 +759,7 @@ class Component extends DCLogic {
       goNewsletter: e => { e.preventDefault(); this.openBrief(e.currentTarget); },
       resetSignup: e => { e && e.preventDefault(); this.dropPref('subscriber'); this.setState({ subscribed: false, email: '' }); setTimeout(() => { const el = document.getElementById('rm-brief-email'); el && el.focus(); }, 60); },
       pvT: ar ? {
-        crumb: 'الخصوصية', title: 'سياسة الخصوصية', sub: 'ما الذي نجمعه، ولماذا، ومن يعالجه، وكيف تطلب حذفه. بلغة بسيطة.', updated: 'آخر تحديث: 10 نوفمبر 2026',
+        crumb: 'الخصوصية', title: 'سياسة الخصوصية', sub: 'ما الذي نجمعه، ولماذا، ومن يعالجه، وكيف تطلب حذفه. بلغة بسيطة.', updated: 'آخر تحديث: 11 نوفمبر 2026',
         summaryTitle: 'باختصار', summary: ['لا نبيع بياناتك ولا نؤجرها ولا نشاركها.', 'لا إعلانات ولا أدوات تتبّع ولا تحليلات، ولا نضع ملفات تعريف ارتباط.', 'نجمع فقط ما تكتبه بنفسك في نماذجنا.', 'يمكنك طلب نسخة من بياناتك أو حذفها في أي وقت.'],
         sections: [
           { h: 'من نحن', ps: ['روبوتكس مينا («نحن») منصة مستقلة توثّق الروبوتات في الشرق الأوسط وشمال أفريقيا. للتواصل بشأن الخصوصية: contact@roboticsmena.com.'] },
@@ -767,13 +767,21 @@ class Component extends DCLogic {
           { h: 'لماذا نستخدمها', ps: ['لإرسال الموجز الأسبوعي إليك إذا اشتركت، وللرد على رسائلك وطلبات التعاون، ولمراجعة ما ترسله إلى السجل والتحقق منه. لا نستخدم بياناتك لأي غرض آخر، ولن نضيفك إلى قائمة بريدية ما لم تشترك بنفسك.'] },
           { h: 'من يعالجها نيابة عنا', ps: ['FormSubmit (formsubmit.co) ينقل ما ترسله عبر نماذجنا إلى بريدنا الإلكتروني.', 'مزوّد البريد الإلكتروني الخاص بنا يحفظ الرسائل في صندوق الوارد.', 'نحتفظ بنسخة من الاشتراكات والطلبات في جدول خاص على Google Sheets لا يطّلع عليه أحد سوانا.', 'يُستضاف الموقع على GitHub Pages، وقد يسجّل خادم الاستضافة عنوان IP الخاص بك كما تفعل أي خدمة استضافة.', 'يحمّل متصفحك الخطوط من Google Fonts، فيرى Google عنوان IP الخاص بك عند ذلك.', 'لا نشارك بياناتك مع أي جهة أخرى، ولا نبيعها أو نؤجرها.'] },
           { h: 'ما يُحفظ في متصفحك', ps: ['يحفظ الموقع في متصفحك فقط (وليس على خوادمنا): لغتك المفضلة، والوضع الفاتح أو الداكن، وبريدك الإلكتروني إن اشتركت كي تبقى التقارير مفتوحة لك. لا نضع ملفات تعريف ارتباط. يمكنك حذف ذلك بمسح بيانات الموقع من متصفحك، أو باختيار «استخدم بريداً آخر» في نافذة الاشتراك.'] },
-          { h: 'مدة الاحتفاظ', ps: ['نحتفظ بالاشتراكات حتى تلغي اشتراكك. ونحتفظ بالطلبات والرسائل للمدة اللازمة للتعامل معها، ولا تتجاوز 24 شهراً، ما لم تطلب حذفها قبل ذلك.'] },
+          { h: 'مدة الاحتفاظ', ps: [
+            'لا نحتفظ بالبيانات الشخصية إلا للمدة التي نحتاجها للغرض الذي قدّمتها من أجله، ثم نحذفها. ونراجع ما لدينا مرة واحدة على الأقل كل عام.',
+            'الاشتراك في الموجز (بما في ذلك نموذج فتح تقارير «تحت الضوء»): طوال مدة اشتراكك. وإذا لم تفتح الموجز أو تتفاعل معه لمدة 24 شهراً، نسألك مرة واحدة إن كنت ما زلت ترغب فيه، ونحذف اشتراكك إن لم تردّ.',
+            'عند إلغاء الاشتراك: نحذف بيانات اشتراكك خلال 30 يوماً، ونُبقي بريدك الإلكتروني فقط في قائمة «عدم المراسلة» حتى لا نضيفك مجدداً عن طريق الخطأ.',
+            'طلبات «اعمل معنا» والرسائل التي ترسلها إلينا: حتى انتهاء المراسلة، ثم مدة أقصاها 24 شهراً من آخر تواصل. وإذا عملنا معاً، نحتفظ بما يلزم العمل طوال مدته وأي مدة إضافية يفرضها القانون (مثل الفواتير).',
+            'الإضافات إلى السجل وطلبات التصحيح: تبقى الوقائع المنشورة عن الشركات وعمليات النشر والفعاليات جزءاً من السجل العام. ونحتفظ باسمك وبريدك الإلكتروني مدة أقصاها 24 شهراً من آخر تواصل، تحسّباً لحاجتنا إلى التحقق من المصدر معك.',
+            'متصفحك: تبقى لغتك والوضع الذي اخترته وبريد اشتراكك في متصفحك حتى تحذفها. وما دام الموقع في مرحلة المعاينة الخاصة، تُحفظ كلمة المرور على جهازك 30 يوماً إذا اخترت «تذكّرني».',
+            'إذا طلبت حذف بياناتك، نحذفها خلال 30 يوماً، ما لم يُلزمنا القانون بالاحتفاظ بها.'
+          ] },
           { h: 'حقوقك', ps: ['أينما كنت، يمكنك أن تطلب نسخة من بياناتك أو تصحيحها أو حذفها، أو أن تلغي اشتراكك. راسلنا على contact@roboticsmena.com وسنرد خلال 30 يوماً. ويمكنك إلغاء الاشتراك في أي وقت بالرد على أي عدد من الموجز.'] },
           { h: 'الروابط الخارجية', ps: ['نربط كل سجل بمصدره الأصلي على مواقع أخرى. لهذه المواقع سياسات خصوصية خاصة بها.'] },
           { h: 'التعديلات', ps: ['سننشر أي تعديل على هذه السياسة في هذه الصفحة مع تاريخ التحديث.'] }
         ]
       } : {
-        crumb: 'Privacy', title: 'Privacy policy', sub: 'What we collect, why, who processes it and how to have it deleted. In plain language.', updated: 'Last updated: 10 November 2026',
+        crumb: 'Privacy', title: 'Privacy policy', sub: 'What we collect, why, who processes it and how to have it deleted. In plain language.', updated: 'Last updated: 11 November 2026',
         summaryTitle: 'In short', summary: ['We never sell, rent or share your data.', 'No ads, no trackers, no analytics, and we set no cookies.', 'We only collect what you type into our forms.', 'You can ask for a copy of your data, or for it to be deleted, at any time.'],
         sections: [
           { h: 'Who we are', ps: ['Robotics MENA (“we”) is an independent record of robotics across the Middle East and North Africa. For anything about privacy, write to contact@roboticsmena.com.'] },
@@ -781,7 +789,15 @@ class Component extends DCLogic {
           { h: 'Why we use it', ps: ['To send you the weekly brief if you signed up, to reply to your messages and enquiries, and to review and verify what you submit to the record. We use your data for nothing else, and we will not add you to a mailing list unless you sign up yourself.'] },
           { h: 'Who processes it for us', ps: ['FormSubmit (formsubmit.co) relays what you send through our forms to our email inbox.', 'Our email provider stores messages in our inbox.', 'We keep a copy of sign-ups and enquiries in a private Google Sheets spreadsheet, which only we can open.', 'The site is hosted on GitHub Pages, whose servers may log your IP address, as any web host does.', 'Your browser loads fonts from Google Fonts, so Google sees your IP address when it does.', 'We share your data with no one else, and never sell or rent it.'] },
           { h: 'What is stored in your browser', ps: ['The site stores a few things in your own browser only, not on our servers: your language, light or dark mode, and your email address if you signed up, so research reports stay unlocked for you. We set no cookies. You can remove these by clearing this site’s data in your browser, or by choosing “Use a different email” in the sign-up pop-up.'] },
-          { h: 'How long we keep it', ps: ['We keep sign-ups until you unsubscribe. We keep enquiries and messages for as long as we need to handle them, and no longer than 24 months, unless you ask us to delete them sooner.'] },
+          { h: 'How long we keep it', ps: [
+            'We keep personal data only as long as we need it for the reason you gave it to us, then delete it. We review what we hold at least once a year.',
+            'Brief sign-ups (including the form that unlocks Spotlight reports): for as long as you stay subscribed. If you do not open or act on the brief for 24 months, we will ask once whether you still want it, and remove you if you do not reply.',
+            'When you unsubscribe: we delete your sign-up details within 30 days. We keep only your email address on a “do not email” list, so you are never added again by mistake.',
+            'Work with us enquiries and emails to us: until the conversation ends, then up to 24 months after our last contact. If we go on to work together, we keep what the work needs for as long as it lasts and any further time the law requires (for example, invoices).',
+            'Submissions to the record and correction requests: the published facts about companies, deployments and events stay in the public record. Your name and email address are kept for up to 24 months after our last contact, in case we need to check the source with you.',
+            'Your browser: your language, theme and sign-up email stay in your browser until you clear them. While the site is in private preview, the password is remembered on your device for 30 days if you tick “Remember me”.',
+            'If you ask us to delete your data, we do so within 30 days, unless the law requires us to keep it.'
+          ] },
           { h: 'Your rights', ps: ['Wherever you live, you can ask for a copy of your data, ask us to correct or delete it, or unsubscribe. Write to contact@roboticsmena.com and we will reply within 30 days. You can also unsubscribe at any time by replying to any issue of the brief.'] },
           { h: 'Links to other sites', ps: ['We link every record to its primary source on other websites. Those sites have their own privacy policies.'] },
           { h: 'Changes', ps: ['If we change this policy, we will publish the new version on this page with the date it was updated.'] }
