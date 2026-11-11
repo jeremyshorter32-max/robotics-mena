@@ -45,6 +45,9 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 - [ ] **Turn off the password** (only after the above): change `scripts/build-site.sh` so it publishes without
   StatiCrypt, remove the `noindex, nofollow` tag it adds and the robots block, delete the `SITE_PASSWORD`
   repository secret, then check every page, search engines' access and the social preview image.
+  Then submit roboticsmena.com for web-filter categorisation (Science/Technology or News) so work networks stop
+  blocking it as "Miscellaneous or Unknown": Zscaler (sitereview.zscaler.com), Palo Alto, Fortinet, Cisco Talos,
+  Symantec/Broadcom, Netskope, Forcepoint, McAfee/Trellix, Check Point.
 
 ## Content and research
 
