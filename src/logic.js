@@ -135,7 +135,10 @@ class Component extends DCLogic {
   DKINDS = { rollout: ['Rollout', 'توسّع في النشر'], deployment: ['New deployment', 'نشر جديد'], entrant: ['New entrant', 'دخول جديد للسوق'] };
   ETYPES = { expo: ['Expo', 'معرض'], conference: ['Conference', 'مؤتمر'], meetup: ['Meetup', 'لقاء'], competition: ['Competition', 'مسابقة'] };
 
-  DEP = window.RM_DATA.deployments.map(d => ({ id: d.id, type: d.type, sector: d.sector, cc: d.country, lat: d.lat, lon: d.lon, date: d.date, n: !!d.is_new, robot: [d.title, d.title_ar || d.title], op: [d.operator, d.operator_ar || d.operator], site: [d.site, d.site_ar || d.site], src: d.source, logo: d.logo || '', kind: d.kind || 'deployment', sum: [d.summary || '', d.summary_ar || d.summary || ''], url: d.source_url || '' }));
+  // "New" = flagged by the weekly scanner (is_new) and added in the last 14 days, so a flag can never go stale.
+  NEW_SINCE = new Date(Date.now() - 14 * 864e5).toISOString().slice(0, 10);
+  isNewRec(d) { return !!d.is_new && !!d.added && d.added >= this.NEW_SINCE; }
+  DEP = window.RM_DATA.deployments.map(d => ({ id: d.id, type: d.type, sector: d.sector, cc: d.country, lat: d.lat, lon: d.lon, date: d.date, n: this.isNewRec(d), robot: [d.title, d.title_ar || d.title], op: [d.operator, d.operator_ar || d.operator], site: [d.site, d.site_ar || d.site], src: d.source, logo: d.logo || '', kind: d.kind || 'deployment', sum: [d.summary || '', d.summary_ar || d.summary || ''], url: d.source_url || '' }));
 
   STORIES = window.RM_DATA.stories || [];
   SIGNUP_URL = (window.RM_DATA.site || {}).signup_url || '';
@@ -208,7 +211,7 @@ class Component extends DCLogic {
     const dep = window.RM_DATA.deployments.filter(d => d.country === cc).length;
     return this.SCORE_DIMS.map(([k]) => {
       if (k === 'strategy') return { k, v: P.robo[2], note: [P.robo[0], P.robo[1]], url: '', source: '' };
-      if (k === 'deploy') return { k, v: dep >= 10 ? 2 : dep >= 3 ? 1 : 0, note: [dep + ' deployments verified in the Robotics MENA database', dep + ' عمليات نشر موثّقة في قاعدة بيانات روبوتكس مينا'], url: '/database?tab=countries&id=' + cc, source: 'Robotics MENA' };
+      if (k === 'deploy') return { k, v: dep >= 10 ? 2 : dep >= 1 ? 1 : 0, note: [(dep === 0 ? 'No deployments' : dep === 1 ? '1 deployment' : dep + ' deployments') + ' verified in the Robotics MENA database', (dep === 0 ? 'لا عمليات نشر موثّقة' : dep === 1 ? 'عملية نشر واحدة موثّقة' : dep === 2 ? 'عمليتا نشر موثّقتان' : dep <= 10 ? dep + ' عمليات نشر موثّقة' : dep + ' عملية نشر موثّقة') + ' في قاعدة بيانات روبوتكس مينا'], url: '/database?tab=countries&id=' + cc, source: 'Robotics MENA' };
       const x = P.score[k] || { v: 0, note: { en: 'Not yet assessed', ar: 'لم يُقيَّم بعد' } };
       return { k, v: x.v, note: [x.note.en, x.note.ar || x.note.en], url: x.url || '', source: x.source || '' };
     });
@@ -239,7 +242,7 @@ class Component extends DCLogic {
       sortOpts: [['featured', 'Editor’s order'], ['az', 'A–Z'], ['newest', 'Recently added'], ['stage', 'Stage']], listed: 'Listed',
       s4n: '04 · Policy & data', s4: 'National strategies & readiness', s4sub: 'Country by country: the programmes that matter for robotics, what each target actually measures, when it is due, and how that compares with what is deployed on the ground.',
       pages: ['Brief', 'Map', 'Database', 'Policy', 'Events', 'Submit'], pOpenDossiers: 'Open country dossiers', mapOpen: 'Open the full map', crumbs: 'Breadcrumb', crumbHome: 'Home', crumbPolicy: 'Policy & data', pCountries: 'Countries', pDossier: 'Country dossier', pProgrammes: 'Programmes & targets', pTargets: 'Targets', pKpiNote: 'Each tile shows a published target: the number, what it measures, and the year it is due.', pFeatured: 'Featured initiative', pWhy: 'Why it matters for robotics', pMilestones: 'Milestones', pPubs: 'Publications & sources', pCompareLink: 'Compare all countries', pCompare: 'Compare countries', pCompareSub: 'Each country’s headline target (what it measures and when it is due) next to what we have verified on the ground. Select a country to open its dossier.', pCols: ['Country', 'Robotics-specific policy', 'Headline target · what it measures', 'Due', 'Deployments tracked', 'Companies listed'], pCmpSrc: 'Targets: national strategy documents and official announcements, linked in each dossier. Deployments and companies: Robotics MENA tracker, updated {date}. Countries marked “Not yet profiled” are tracked but have no dossier yet.', pStDep: 'Deployments tracked', pStCo: 'Companies listed', pStProg: 'Programmes profiled', byYr: 'Due {y}', noDate: 'No date published', away: 'In {n} years', awayNext: 'Next year', awayNow: 'Due this year', awayPast: 'Deadline passed', notProfiled: 'Not yet profiled',
-      p1: 'Deployments tracked', p2: 'Companies listed', p3: 'Headline target horizon', readySrc: 'Source: Robotics MENA tracker · 7 Nov 2026', readySrc3: 'Source: national strategy documents · see below',
+      p1: 'Deployments tracked', p2: 'Companies listed', p3: 'Headline target horizon', readySrc: 'Source: Robotics MENA tracker · {date}', readySrc3: 'Source: national strategy documents · see below',
       s5: 'National strategies', s5sub: 'The programmes setting targets for robotics, AI and autonomy.', agency: 'Lead agency', launched: 'Launched',
       s6n: '05 · Talent', s6: 'Labs & talent', s6sub: 'Where the region trains, researches and competes.',
       s7n: '06 · Events', s7: 'Events calendar', s7sub: 'Robotics and physical-AI events across MENA through 2027, from dedicated shows to big expos with a robotics angle. Dates are from organisers unless marked TBC.', addCal: 'Add to calendar', added: 'Saved .ics', tbc: 'Dates TBC', later: 'Further out', noEvents: 'No events match these filters.',
@@ -256,7 +259,7 @@ class Component extends DCLogic {
         fName: 'Your name', fEmail: 'Email', fOrg: 'Organisation', fRole: 'Role', fInterest: 'What would you like to do together?', fMsg: 'Tell us more', fMsgPh: 'What you have in mind, timing, and anything we should know.', pick: 'Choose one', send: 'Send enquiry', req: '* Required', indep: 'We are independent: we never sell placement in the record, the map or the brief, and sponsors never shape coverage.', priv: 'We use your details only to reply to this enquiry. We never sell or share them, and we will not add you to any mailing list unless you sign up yourself.',
         doneTitle: 'Thank you, your enquiry is on its way.', doneMsg: 'An editor will reply to your email within five working days.', again: 'Send another enquiry', err: 'We could not confirm delivery. Please email your enquiry to', waysTitle: 'Ways to work together', pickWay: 'Select to choose this' },
       privTitle: 'Your email is safe with us.', privBody: 'We never sell, rent or share it with anyone, and we only send the weekly brief: one email on Mondays, no spam. Unsubscribe any time by replying to any issue or writing to contact@roboticsmena.com.',
-      sampleLbl: 'Sample issue', sampleIssue: 'No. 45 · 9 Nov 2026', sampleFoot: '+ 3 deployments added to the map · 2 events this fortnight',
+      sampleLbl: 'Sample issue', sampleIssue: '', sampleFoot: '',
       s10n: '09 · Contribute', s10: 'Submit to the record', s10sub: 'Add a company, a deployment or an event. An editor verifies every entry before it is published.',
       tabs: ['A company', 'A deployment', 'An event'],
       fields: {
@@ -295,7 +298,7 @@ class Component extends DCLogic {
       sortOpts: [['featured', 'اختيار المحرّر'], ['az', 'أبجدياً'], ['newest', 'الأحدث إدراجاً'], ['stage', 'المرحلة']], listed: 'أُدرج',
       s4n: '04 · السياسات والبيانات', s4: 'الاستراتيجيات الوطنية والجاهزية', s4sub: 'دولة بدولة: البرامج المهمة للروبوتات، وما يقيسه كل هدف فعلاً، وموعد استحقاقه، ومقارنته بما هو منشور على أرض الواقع.',
       pages: ['الموجز', 'الخريطة', 'البيانات', 'السياسات', 'الفعاليات', 'أضف'], pOpenDossiers: 'افتح ملفات الدول', mapOpen: 'افتح الخريطة الكاملة', crumbs: 'مسار التنقل', crumbHome: 'الرئيسية', crumbPolicy: 'السياسات والبيانات', pCountries: 'الدول', pDossier: 'ملف الدولة', pProgrammes: 'البرامج والأهداف', pTargets: 'الأهداف', pKpiNote: 'تعرض كل خانة هدفاً منشوراً: الرقم، وما يقيسه، وسنة استحقاقه.', pFeatured: 'مبادرة بارزة', pWhy: 'لماذا تهمّ قطاع الروبوتات', pMilestones: 'محطات رئيسية', pPubs: 'المنشورات والمصادر', pCompareLink: 'قارن بين جميع الدول', pCompare: 'مقارنة بين الدول', pCompareSub: 'الهدف الرئيسي لكل دولة (ما يقيسه وموعد استحقاقه) إلى جانب ما تحققنا منه ميدانياً. اختر دولة لفتح ملفها.', pCols: ['الدولة', 'سياسة خاصة بالروبوتات', 'الهدف الرئيسي · ما يقيسه', 'الاستحقاق', 'عمليات النشر المرصودة', 'الشركات المدرجة'], pCmpSrc: 'الأهداف: وثائق الاستراتيجيات الوطنية والإعلانات الرسمية، مع روابطها في كل ملف. عمليات النشر والشركات: متتبّع روبوتكس مينا، آخر تحديث {date}. الدول المشار إليها بعبارة «لم يُعدّ ملفها بعد» مرصودة دون ملف حتى الآن.', pStDep: 'عمليات نشر مرصودة', pStCo: 'شركات مدرجة', pStProg: 'برامج في الملف', byYr: 'الاستحقاق {y}', noDate: 'لم يُعلن موعد', away: 'بعد {n} سنوات', awayNext: 'العام المقبل', awayNow: 'مستحق هذا العام', awayPast: 'انقضى الموعد', notProfiled: 'لم يُعدّ الملف بعد',
-      p1: 'عمليات النشر المرصودة', p2: 'الشركات المدرجة', p3: 'أفق الهدف الوطني الرئيسي', readySrc: 'المصدر: متتبّع روبوتكس مينا · 7 نوفمبر 2026', readySrc3: 'المصدر: وثائق الاستراتيجيات الوطنية · انظر أدناه',
+      p1: 'عمليات النشر المرصودة', p2: 'الشركات المدرجة', p3: 'أفق الهدف الوطني الرئيسي', readySrc: 'المصدر: متتبّع روبوتكس مينا · {date}', readySrc3: 'المصدر: وثائق الاستراتيجيات الوطنية · انظر أدناه',
       s5: 'الاستراتيجيات الوطنية', s5sub: 'البرامج التي تضع أهداف الروبوتات والذكاء الاصطناعي والقيادة الذاتية.', agency: 'الجهة المسؤولة', launched: 'سنة الإطلاق',
       s6n: '05 · المواهب', s6: 'المختبرات والمواهب', s6sub: 'أين تتدرّب المنطقة وتبحث وتتنافس.',
       s7n: '06 · الفعاليات', s7: 'تقويم الفعاليات', s7sub: 'فعاليات الروبوتات والذكاء الاصطناعي المادي في المنطقة حتى نهاية 2027، من المعارض المتخصصة إلى المعارض الكبرى ذات الصلة بالروبوتات. التواريخ من المنظّمين ما لم يُذكر أنها قيد التأكيد.', addCal: 'أضف إلى التقويم', added: 'حُفظ الملف', tbc: 'التواريخ قيد التأكيد', later: 'لاحقاً', noEvents: 'لا فعاليات تطابق هذه المرشّحات.',
@@ -312,7 +315,7 @@ class Component extends DCLogic {
         fName: 'الاسم', fEmail: 'البريد الإلكتروني', fOrg: 'المؤسسة', fRole: 'المنصب', fInterest: 'ما الذي تودّ أن نعمل عليه معاً؟', fMsg: 'أخبرنا بالمزيد', fMsgPh: 'ما تفكر فيه والتوقيت وأي تفاصيل ينبغي أن نعرفها.', pick: 'اختر', send: 'أرسل الطلب', req: '* حقل مطلوب', indep: 'نحن مستقلون: لا نبيع أي إدراج في السجل أو الخريطة أو الموجز، ولا يؤثر الرعاة في تغطيتنا.', priv: 'نستخدم بياناتك فقط للرد على طلبك. لا نبيعها ولا نشاركها، ولن نضيفك إلى أي قائمة بريدية ما لم تشترك بنفسك.',
         doneTitle: 'شكراً لك، طلبك في الطريق إلينا.', doneMsg: 'سيرد عليك أحد المحررين عبر البريد الإلكتروني خلال خمسة أيام عمل.', again: 'أرسل طلباً آخر', err: 'تعذّر تأكيد الإرسال. يرجى إرسال طلبك عبر البريد إلى', waysTitle: 'طرق التعاون', pickWay: 'اختر هذا الخيار' },
       privTitle: 'بريدك في أمان معنا.', privBody: 'لا نبيعه ولا نؤجره ولا نشاركه مع أي جهة، ولا نرسل سوى الموجز الأسبوعي: رسالة واحدة كل اثنين، بلا رسائل مزعجة. يمكنك إلغاء الاشتراك في أي وقت بالرد على أي عدد أو بمراسلة contact@roboticsmena.com.',
-      sampleLbl: 'نموذج عدد', sampleIssue: 'العدد 45 · 9 نوفمبر 2026', sampleFoot: '+ 3 عمليات نشر أُضيفت إلى الخريطة · فعاليتان خلال أسبوعين',
+      sampleLbl: 'نموذج عدد', sampleIssue: '', sampleFoot: '',
       s10n: '09 · المساهمة', s10: 'أضف إلى السجل', s10sub: 'أضف شركة أو عملية نشر أو فعالية. يتحقق محرّر من كل إدخال قبل نشره.',
       tabs: ['شركة', 'عملية نشر', 'فعالية'],
       fields: {
@@ -401,6 +404,10 @@ class Component extends DCLogic {
   weeksTxt(d, ar, num) { const w = Math.round(d / 7); if (d <= 7 || w < 1) return ar ? 'هذا الأسبوع' : 'This week'; if (ar) return w === 1 ? 'خلال أسبوع' : w === 2 ? 'خلال أسبوعين' : w <= 10 ? 'خلال ' + num(w) + ' أسابيع' : 'خلال ' + num(w) + ' أسبوعاً'; return 'In ' + num(w) + ' week' + (w === 1 ? '' : 's'); }
   // Whole-word name match, so "Mowasalat" does not match the company "Alat".
   nameMatch(x, y) { const a = String(x || '').toLowerCase(), b = String(y || '').toLowerCase(); if (!a || !b) return false; const w = (h, n) => { const ok = c => !c || !/[a-z0-9\u0600-\u06ff]/.test(c); for (let j = h.indexOf(n); j >= 0; j = h.indexOf(n, j + 1)) if (ok(h[j - 1]) && ok(h[j + n.length])) return true; return false; }; return w(a, b) || w(b, a); }
+  // Arabic number agreement: f = [one, two, few (3–10), many (11+)]; '#' marks where the number goes.
+  arN(n, f, num) { const w = n === 1 ? f[0] : n === 2 ? f[1] : (n % 100 >= 3 && n % 100 <= 10) ? f[2] : f[3]; return w.replace('#', num ? num(n) : String(n)); }
+  // Source labels like "Zawya (press release)" in Arabic mode.
+  srcTx(x, ar) { return ar ? String(x || '').replace(/\s*\(press release\)/gi, ' (بيان صحفي)').replace(/\s*\(company website\)/gi, ' (موقع الشركة)') : x; }
   flagUrl(cc) { return cc ? '/media/flags/' + String(cc).toLowerCase() + '.svg' : ''; }
   dbOpen(tab, id) { this._dbReturn = document.activeElement; this.setState({ dbTab: tab, dbSel: id }); }
   dbVals(c) {
@@ -443,10 +450,10 @@ class Component extends DCLogic {
       let menaBox = null, pic = null;
       const bi = v => !v ? '' : typeof v === 'string' ? v : (ar ? (v.ar || v.en || '') : (v.en || ''));
       const picOf = x => x && x.image ? { src: x.image, cap: bi(x.image_cap), credit: bi(x.image_credit), alt: bi(x.image_alt) || bi(x.image_cap), url: x.image_page || x.website || '' } : null;
-      let desc = '', srcName = o.source || '', srcUrl = o.source_url || '', extra = [];
+      let desc = '', srcName = o.source || '', srcUrl = o.source_url || '', srcNote = '', extra = [];
       if (tab === 'companies') {
         fields.push([F.category, r.c2 + (o.secondary && this.CATS[o.secondary] ? ' · ' + this.CATS[o.secondary][L] : '')], [OT.hq, (o.hq_city && !ar ? o.hq_city + ', ' : '') + cn(o.hq || o.country) + (r.intl ? ' · ' + OT.intl : '')], [OT.active, r.ccs.map(cn).join(ar ? '، ' : ', ')], [F.stage, r.c4], [F.listed, r.c5]);
-        if (o.mena_link) menaBox = { title: OT.menaTitle, text: ar ? (o.mena_link.ar || o.mena_link.en) : o.mena_link.en, src: OT.menaSrc + ': ' + (o.mena_source || (o.mena_source_url || '').replace(/^https?:\/\/(www\.)?/, '').split('/')[0]) + (o.mena_date ? ' · ' + fdate(o.mena_date) : ''), url: o.mena_source_url || '', hasUrl: !!o.mena_source_url, flag: this.flagUrl(o.hq), hq: cn(o.hq) };
+        if (o.mena_link) menaBox = { title: OT.menaTitle, text: ar ? (o.mena_link.ar || o.mena_link.en) : o.mena_link.en, src: OT.menaSrc + ': ' + this.srcTx(o.mena_source || (o.mena_source_url || '').replace(/^https?:\/\/(www\.)?/, '').split('/')[0], ar) + (o.mena_date ? ' · ' + fdate(o.mena_date) : ''), url: o.mena_source_url || '', hasUrl: !!o.mena_source_url, flag: this.flagUrl(o.hq), hq: cn(o.hq) };
         desc = tr(o, 'summary');
         pic = picOf(o);
         if (o.website) extra.push(link(o.website, d.visit));
@@ -462,6 +469,10 @@ class Component extends DCLogic {
         fields.push([F.deployments, r.c2], [F.companies, r.c3], [F.events, num(ev)], [F.target, r.c4], [F.year, r.c5]);
         desc = this.POLICY[o.code] ? this.POLICY[o.code].sum[L] : '';
         if (this.POLICY[o.code]) extra.push({ url: this.pageHref('policy', o.code), label: d.dossier });
+        // Country figures are sourced in the dossier (targets) and in each linked record (counts).
+        const np = this.POLICY[o.code] ? (this.POLICY[o.code].pubs || []).length : 0;
+        if (np) { srcName = ar ? 'ملف الدولة، ' + num(np) + (np <= 10 ? ' مصادر' : ' مصدراً') : 'country dossier, ' + num(np) + ' sources'; srcUrl = this.pageHref('policy', o.code) + '#pubs'; }
+        else srcNote = ar ? 'الأرقام مأخوذة من سجلات الشركات وعمليات النشر أدناه، ولكل منها مصدره.' : 'Counts come from the company and deployment records below, each with its own source.';
         D.companies.filter(x => mk(x).includes(o.code)).forEach(x => rel.push({ badge: this.badgeOf(x.name, x.logo), label: tr(x, 'name'), sub: d.kind.companies + ' · ' + (this.CATS[x.category] || ['', ''])[L] + (this.isIntl(x) ? ' · ' + OT.intl : ''), open: () => this.setState({ dbTab: 'companies', dbSel: x.id }) }));
         D.deployments.filter(x => x.country === o.code).forEach(x => rel.push({ badge: this.badgeOf(x.operator, this.opLogo(x.operator, x.logo)), label: tr(x, 'title'), sub: d.kind.deployments + ' · ' + fdate(x.date), open: () => this.setState({ dbTab: 'deployments', dbSel: x.id }) }));
       } else {
@@ -473,7 +484,7 @@ class Component extends DCLogic {
       card = {
         kind: d.kind[tab], badge: r.badge, title: r.name, alt: r.alt, cc: r.cc || '', hasCc: !!r.cc && tab !== 'countries', flag: this.flagUrl(r.cc), ccName: r.cc ? cn(r.cc) : '', desc, hasDesc: !!desc,
         fields: fields.filter(f => f[1]).map(f => ({ k: f[0], v: f[1] })),
-        srcLine: hasSrc ? d.source + ': ' + (srcName || srcUrl.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]) : d.noSource,
+        srcLine: hasSrc ? d.source + ': ' + this.srcTx(srcName || srcUrl.replace(/^https?:\/\/(www\.)?/, '').split('/')[0], ar) : (srcNote || d.noSource),
         srcUrl, hasSrcUrl: !!srcUrl, openSrc: d.open,
         added: o.added && tab !== 'companies' ? d.added + ' ' + fdate(o.added) : '', hasAdded: !!(o.added && tab !== 'companies'),
         links: extra.filter(Boolean), hasLinks: extra.filter(Boolean).length > 0,
@@ -531,6 +542,15 @@ class Component extends DCLogic {
         const sameY = mon.getUTCFullYear() === sun.getUTCFullYear(), sameM = sameY && mon.getUTCMonth() === sun.getUTCMonth();
         const span = (sameM ? dd(mon) : sameY ? dm(mon) : dmy(mon)) + ' – ' + dmy(sun);
         tt.s1week = digits((ar ? 'الأسبوع ' : 'Week ') + yr(wk) + ' · ' + span); } }
+    // Sample issue footer and source dates, from the data so they never go stale.
+    { const RMD = window.RM_DATA, last = [...RMD.deployments.map(x => x.added || x.date), ...RMD.companies.map(x => x.added)].filter(Boolean).sort().pop() || RMD.builtAt;
+      const nNew = RMD.deployments.filter(x => this.isNewRec(x)).length;
+      const today = new Date().toISOString().slice(0, 10), in30 = new Date(Date.now() + 30 * 864e5).toISOString().slice(0, 10);
+      const nEv = RMD.events.filter(e => !e.tentative && (e.end || e.start) >= today && e.start <= in30).length;
+      const dep = !nNew ? (ar ? 'لا عمليات نشر جديدة هذا الأسبوع' : 'No new deployments this week') : ar ? (nNew === 1 ? 'عملية نشر واحدة أُضيفت' : nNew === 2 ? 'عمليتا نشر أُضيفتا' : nNew <= 10 ? yr(nNew) + ' عمليات نشر أُضيفت' : yr(nNew) + ' عملية نشر أُضيفت') + ' إلى الخريطة' : yr(nNew) + (nNew === 1 ? ' deployment' : ' deployments') + ' added to the map';
+      const ev = ar ? (nEv === 0 ? 'لا فعاليات خلال 30 يوماً' : nEv === 1 ? 'فعالية واحدة خلال 30 يوماً' : nEv === 2 ? 'فعاليتان خلال 30 يوماً' : yr(nEv) + (nEv <= 10 ? ' فعاليات' : ' فعالية') + ' خلال 30 يوماً') : (nEv === 0 ? 'No events in the next 30 days' : yr(nEv) + (nEv === 1 ? ' event' : ' events') + ' in the next 30 days');
+      tt.sampleIssue = tt.s1week; tt.sampleFoot = digits((nNew ? '+ ' : '') + dep + ' · ' + ev);
+      tt.readySrc = digits(tt.readySrc.replace('{date}', fdate(last))); }
     const arrow = ar ? '↖' : '↗';
     const ccName = cc => this.CC[cc][L];
     const narrow = S.w <= 900;
@@ -546,14 +566,14 @@ class Component extends DCLogic {
     const gallery = [];
     const addImg = (src, cap, credit, alt) => { if (!src) return -1; let k = gallery.findIndex(g => g.src === src); if (k < 0) { gallery.push({ src, cap, credit, alt }); k = gallery.length - 1; } return k; };
     const lbOpen = k => e => { if (e) e.preventDefault(); this._lbReturn = document.activeElement; this.setState({ rpLb: k }); };
-    const story = st ? { kicker: tx(st.kicker), title: tx(st.title), dek: tx(st.dek), date: fdate(st.date), by: tx(st.by), read: digits(t.storyRead.replace('{n}', st.read_min)), hero: st.hero.src, heroAlt: tx(st.hero.alt), heroCap: tx(st.hero.cap), heroCredit: tx(st.hero.credit), label: R ? tx(R.label) : '', pdf: st.pdf ? tx(st.pdf) : '', pdfName: 'Robotics-MENA-' + st.id + '-' + lang + '.pdf' } : {};
+    const story = st ? { kicker: tx(st.kicker), title: tx(st.title), dek: tx(st.dek), date: fdate(st.date), by: tx(st.by), read: ar ? digits(this.arN(st.read_min, ['قراءة في دقيقة', 'قراءة في دقيقتين', 'قراءة في # دقائق', 'قراءة في # دقيقة'])) : digits(t.storyRead.replace('{n}', st.read_min)), hero: st.hero.src, heroAlt: tx(st.hero.alt), heroCap: tx(st.hero.cap), heroCredit: tx(st.hero.credit), label: R ? tx(R.label) : '', pdf: st.pdf ? tx(st.pdf) : '', pdfName: 'Robotics-MENA-' + st.id + '-' + lang + '.pdf' } : {};
     if (st) { story.hasPdf = !!story.pdf; story.pdfOpen = story.hasPdf && S.subscribed; story.pdfLocked = story.hasPdf && !S.subscribed; story.goGate = e => { e.preventDefault(); this.go('gate'); }; }
     if (st) story.open = lbOpen(addImg(st.hero.src, story.heroCap, story.heroCredit, story.heroAlt));
     const fleetOn = S.rpFleet || 'all', inSvc = { live: 1, deploying: 1, delivered: 1 };
     const stColor = k => inSvc[k] ? 'var(--sand)' : k === 'trial' ? 'var(--fg-muted)' : 'var(--accent-text)';
     const blk = b => {
       const o = { isP: b.t === 'p' && !b.lead, isLead: b.t === 'p' && !!b.lead, isH: b.t === 'h', isImg: b.t === 'img', isQ: b.t === 'quote', isStats: b.t === 'stats', isList: b.t === 'list', text: digits(tx(b)), src: b.src || '', maxw: b.maxw || '100%', alt: tx(b.alt), cap: tx(b.cap), credit: tx(b.credit), who: tx(b.who),
-        items: (b.items || []).map(x => { const m = /^([^\d]*)([\d.]+)(.*)$/.exec(x.v || ''); const n = m ? parseFloat(m[2]) : NaN; return { v: digits(x.v || ''), label: digits(tx(x)), el: m && Number.isInteger(n) ? React.createElement(this.Ticker, { value: n, fmt: v => digits(m[1] + num(v) + m[3]), key: lang + x.v }) : digits(x.v || '') }; }),
+        items: (b.items || []).map(x0 => { const x = ar && x0.v_ar ? { ...x0, v: x0.v_ar } : x0; const m = /^([^\d]*)([\d.]+)(.*)$/.exec(x.v || ''); const n = m ? parseFloat(m[2]) : NaN; return { v: digits(x.v || ''), label: digits(tx(x)), el: m && Number.isInteger(n) ? React.createElement(this.Ticker, { value: n, fmt: v => digits(m[1] + num(v) + m[3]), key: lang + x.v }) : digits(x.v || '') }; }),
         isW: b.t === 'w', wCompare: b.w === 'compare', wAttacks: b.w === 'attacks', wTimeline: b.w === 'timeline', wFleet: b.w === 'fleet', wClaims: b.w === 'claims', wWatch: b.w === 'watch', wProviders: b.w === 'providers' };
       if (b.t === 'img') o.open = lbOpen(addImg(b.src, o.cap, o.credit, o.alt));
       return o;
@@ -636,14 +656,14 @@ class Component extends DCLogic {
     const pinOf = d => ({ id: d.id, lat: d.lat, lon: d.lon, cc: d.cc, n: d.n, label: d.robot[L] + ', ' + d.site[L], t: d.type, d: d.date, ti: d.robot[L], op: d.op[L], site: d.site[L], when: fdate(d.date), tl: this.TYPES[d.type][L], img: picFor(d.op[0]), logo: this.opLogo(d.op[0], d.logo), href: '/database?tab=deployments&id=' + d.id });
     const heroPinOf = d => ({ id: d.id, lat: d.lat, lon: d.lon, cc: d.cc, n: d.n, label: '' });
     const selD = S.sel && this.DEP.find(d => d.id === S.sel);
-    const sel = selD ? { icon: this.ICON[selD.type], robot: selD.robot[L], typeLabel: this.TYPES[selD.type][L], sector: this.SECTORS[selD.sector][L], operator: selD.op[L], opBadge: this.badgeOf(selD.op[0], this.opLogo(selD.op[0], selD.logo)), site: selD.site[L], country: ccName(selD.cc), date: fdate(selD.date), srcLine: t.source + ': ' + selD.src, isNew: selD.n, kindLabel: (this.DKINDS[selD.kind] || this.DKINDS.deployment)[L], summary: selD.sum[L], hasSummary: !!selD.sum[L], srcUrl: selD.url, hasUrl: !!selD.url, noUrl: !selD.url } : {};
+    const sel = selD ? { icon: this.ICON[selD.type], robot: selD.robot[L], typeLabel: this.TYPES[selD.type][L], sector: this.SECTORS[selD.sector][L], operator: selD.op[L], opBadge: this.badgeOf(selD.op[0], this.opLogo(selD.op[0], selD.logo)), site: selD.site[L], country: ccName(selD.cc), date: fdate(selD.date), srcLine: t.source + ': ' + this.srcTx(selD.src, ar), isNew: selD.n, kindLabel: (this.DKINDS[selD.kind] || this.DKINDS.deployment)[L], summary: selD.sum[L], hasSummary: !!selD.sum[L], srcUrl: selD.url, hasUrl: !!selD.url, noUrl: !selD.url } : {};
     const panelList = depF.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, this.PAGE === 'home' ? 4 : (narrow && !S.mapAll ? 5 : 8)).map(d => ({ icon: this.ICON[d.type], robot: d.robot[L], site: d.site[L], kindLabel: (this.DKINDS[d.kind] || this.DKINDS.deployment)[L], op: d.op[L], date: fdate(d.date), isNew: d.n, pick: () => this.setState({ sel: d.id }) }));
 
     // Robotics categories: one grid used on the home page and the database page.
     const catN = k => RMD.companies.filter(c => c.category === k || c.secondary === k).length;
     const depN = k => RMD.deployments.filter(x => x.type === k).length;
     const CF = ar ? { m: 'الآلات', e: 'المنظومة الداعمة', title: 'تصفّح حسب الفئة', sub: 'كل شركة مصنّفة حسب نوع الروبوتات التي تصنعها أو تشغّلها أو تدعمها.', co: 'شركات', dep: 'عمليات نشر', all: 'عرض كل الشركات' } : { m: 'Machines', e: 'Ecosystem', title: 'Browse by category', sub: 'Every company is classified by the kind of robots it builds, runs or supports.', co: 'companies', dep: 'deployments', all: 'See all companies' };
-    const catGrid = ['m', 'e'].map(fam => ({ title: CF[fam], items: Object.keys(this.CATS).filter(k => this.CATS[k][2] === fam).map(k => { const n = catN(k), dn = depN(k), on = this.PAGE === 'database' && S.dbTab === 'companies' && S.dbFacet === k; return { k, label: this.CATS[k][L], icon: this.ICON[k] || '', col: this.CATS[k][2] === 'm' ? 'var(--t-' + k + ')' : 'var(--fg-muted)', n: num(n), nTxt: num(n) + ' ' + (ar ? CF.co : n === 1 ? 'company' : CF.co) + (dn ? ' · ' + num(dn) + ' ' + (ar ? CF.dep : dn === 1 ? 'deployment' : CF.dep) : ''), href: '/database?tab=companies&cat=' + k, bd: on ? 'var(--accent)' : 'var(--line-strong)', bg: on ? 'var(--bg-hover)' : 'var(--bg-raised)', on: on ? 'true' : 'false', op: n ? '1' : '.5', pick: e => { if (this.PAGE !== 'database') return; e.preventDefault(); this.setState({ dbTab: 'companies', dbFacet: on ? '' : k, dbSel: null, dbCountry: '', dbOrigin: '' }); } }; }) }));
+    const catGrid = ['m', 'e'].map(fam => ({ title: CF[fam], items: Object.keys(this.CATS).filter(k => this.CATS[k][2] === fam).map(k => { const n = catN(k), dn = depN(k), on = this.PAGE === 'database' && S.dbTab === 'companies' && S.dbFacet === k; return { k, label: this.CATS[k][L], icon: this.ICON[k] || '', col: this.CATS[k][2] === 'm' ? 'var(--t-' + k + ')' : 'var(--fg-muted)', n: num(n), nTxt: (ar ? this.arN(n, ['شركة واحدة', 'شركتان', '# شركات', '# شركة'], num) : num(n) + ' ' + (n === 1 ? 'company' : CF.co)) + (dn ? ' · ' + (ar ? this.arN(dn, ['عملية نشر واحدة', 'عمليتا نشر', '# عمليات نشر', '# عملية نشر'], num) : num(dn) + ' ' + (dn === 1 ? 'deployment' : CF.dep)) : ''), href: '/database?tab=companies&cat=' + k, bd: on ? 'var(--accent)' : 'var(--line-strong)', bg: on ? 'var(--bg-hover)' : 'var(--bg-raised)', on: on ? 'true' : 'false', op: n ? '1' : '.5', pick: e => { if (this.PAGE !== 'database') return; e.preventDefault(); this.setState({ dbTab: 'companies', dbFacet: on ? '' : k, dbSel: null, dbCountry: '', dbOrigin: '' }); } }; }) }));
 
     // map: country readiness layer + side-panel profile
     const CT = ar ? { title: 'ملف الدولة', score: 'مؤشر الجاهزية', head: 'الهدف الرئيسي', next: 'الموعد النهائي التالي', deps: 'عمليات نشر على الخريطة', dossier: 'افتح ملف السياسات', show: 'اعرض عمليات نشرها', none: 'لم يُعدّ ملف سياسات لهذه الدولة بعد.', thisYr: 'هذا العام', layerHint: 'استخدم مفتاح الطبقات أعلى الخريطة لتلوين الدول حسب الجاهزية أو النشاط، ثم اختر دولة.' }
@@ -675,7 +695,7 @@ class Component extends DCLogic {
         cty.hasHead = !!hk; cty.headV = hk ? digits(hk[L]) : ''; cty.headWhat = hk ? hk[2 + L] : ''; cty.headDue = hk ? (hk[4] == null ? t.noDate : Array.isArray(hk[4]) ? digits(hk[4][L]) : t.byYr.replace('{y}', yr(hk[4]))) : '';
         const nowY2 = new Date().getFullYear(), nowMs = Date.now(), cand = [];
         (P3.deadlines || []).forEach(x => { const ms = Date.parse(x.date + 'T23:59:59Z'); if (ms >= nowMs) cand.push({ key: x.date, when: fdate(x.date), soon: this.weeksTxt(Math.ceil((ms - nowMs) / 864e5), ar, num), what: ar ? x.ar : x.en }); });
-        (P3.progs || []).forEach(g => (g[6] || []).forEach(k => { if (typeof k[4] === 'number' && k[4] >= nowY2) cand.push({ key: k[4] + '-12-31', when: yr(k[4]), soon: k[4] === nowY2 ? CT.thisYr : k[4] === nowY2 + 1 ? t.awayNext : t.away.replace('{n}', num(k[4] - nowY2)), what: digits(k[L]) + ' · ' + k[2 + L] }); }));
+        (P3.progs || []).forEach(g => (g[6] || []).forEach(k => { if (typeof k[4] === 'number' && k[4] >= nowY2) cand.push({ key: k[4] + '-12-31', when: yr(k[4]), soon: k[4] === nowY2 ? CT.thisYr : k[4] === nowY2 + 1 ? t.awayNext : (ar ? this.arN(k[4] - nowY2, ['بعد عام', 'بعد عامين', 'بعد # سنوات', 'بعد # عاماً'], num) : t.away.replace('{n}', num(k[4] - nowY2))), what: digits(k[L]) + ' · ' + k[2 + L] }); }));
         cand.sort((a, b) => a.key.localeCompare(b.key));
         cty.hasNext = cand.length > 0; Object.assign(cty, cand[0] ? { nextWhen: cand[0].when, nextSoon: cand[0].soon, nextWhat: cand[0].what } : {});
       }
@@ -718,12 +738,12 @@ class Component extends DCLogic {
     const nowY = new Date().getFullYear(), todayMs = Date.now();
     const dl = [];
     Object.entries(this.POLICY).forEach(([c, P2]) => {
-      (P2.progs || []).forEach(g => { const byY = {}; (g[6] || []).forEach(k => { if (typeof k[4] === 'number' && k[4] >= nowY && k[4] <= nowY + 6) (byY[k[4]] = byY[k[4]] || []).push(k); }); Object.entries(byY).forEach(([y, ks]) => dl.push({ key: y + '-12-31', c, when: yr(+y), v: digits(ks[0][L]), what: ks[0][2 + L], prog: g[L], more: ks.length > 1 ? (ar ? '+' + num(ks.length - 1) + ' أهداف أخرى' : '+' + num(ks.length - 1) + ' more target' + (ks.length > 2 ? 's' : '')) : '', exact: false, yrs: +y - nowY })); });
+      (P2.progs || []).forEach(g => { const byY = {}; (g[6] || []).forEach(k => { if (typeof k[4] === 'number' && k[4] >= nowY && k[4] <= nowY + 6) (byY[k[4]] = byY[k[4]] || []).push(k); }); Object.entries(byY).forEach(([y, ks]) => dl.push({ key: y + '-12-31', c, when: yr(+y), v: digits(ks[0][L]), what: ks[0][2 + L], prog: g[L], more: ks.length > 1 ? (ar ? '+ ' + this.arN(ks.length - 1, ['هدف آخر', 'هدفان آخران', '# أهداف أخرى', '# هدفاً آخر'], num) : '+' + num(ks.length - 1) + ' more target' + (ks.length > 2 ? 's' : '')) : '', exact: false, yrs: +y - nowY })); });
       (P2.deadlines || []).forEach(x => { const ms = Date.parse(x.date + 'T23:59:59Z'); if (ms >= todayMs) dl.push({ key: x.date, c, when: fdate(x.date), v: '', what: ar ? x.ar : x.en, prog: '', exact: true, days: Math.ceil((ms - todayMs) / 864e5), url: x.url }); });
     });
     dl.sort((a, b) => a.key.localeCompare(b.key) || ccName(a.c).localeCompare(ccName(b.c)));
     const wk = d => this.weeksTxt(d, ar, num);
-    const deadlines = dl.map(x => ({ ...x, flag: this.flagUrl(x.c), name: ccName(x.c), hasV: !!x.v, soon: x.exact ? wk(x.days) : x.yrs === 0 ? t.awayNow : x.yrs === 1 ? t.awayNext : t.away.replace('{n}', num(x.yrs)), hot: x.exact || x.yrs <= 1 ? 'var(--accent)' : 'var(--line-strong)', hotTxt: x.exact || x.yrs <= 1 ? 'var(--accent-text)' : 'var(--fg-subtle)', pick: () => { this.setState({ pc: x.c }); this.go('strategies', x.c); } }));
+    const deadlines = dl.map(x => ({ ...x, flag: this.flagUrl(x.c), name: ccName(x.c), hasV: !!x.v, soon: x.exact ? wk(x.days) : x.yrs === 0 ? t.awayNow : x.yrs === 1 ? t.awayNext : (ar ? this.arN(x.yrs, ['بعد عام', 'بعد عامين', 'بعد # سنوات', 'بعد # عاماً'], num) : t.away.replace('{n}', num(x.yrs))), hot: x.exact || x.yrs <= 1 ? 'var(--accent)' : 'var(--line-strong)', hotTxt: x.exact || x.yrs <= 1 ? 'var(--accent-text)' : 'var(--fg-subtle)', pick: () => { this.setState({ pc: x.c }); this.go('strategies', x.c); } }));
     const dlT = ar ? { title: 'المواعيد النهائية القادمة', sub: 'كل هدف ومهلة تنظيمية مؤرخة في ملفات الدول، من الأقرب إلى الأبعد. اختر بطاقة لفتح ملف الدولة.', prev: 'السابق', next: 'التالي' } : { title: 'Upcoming deadlines', sub: 'Every dated target and regulatory deadline in the country dossiers, soonest first. Select one to open its dossier.', prev: 'Earlier', next: 'Later' };
     const SW = ar ? ['غير متوفر', 'جزئي', 'متقدم'] : ['None', 'Partial', 'Strong'], SC = ['var(--line-strong)', 'var(--accent-text)', 'var(--sand)'];
     const scoreRows = this.PCC.map(c => ({ c, sc: this.scoreOf(c) })).filter(x => x.sc).map(({ c, sc }) => { const total = sc.reduce((a, d) => a + d.v, 0), max = sc.length * 2; return { cc: c, flag: this.flagUrl(c), name: ccName(c), total, totalTxt: num(total) + ' / ' + num(max), w: Math.round(total / max * 100) + '%', cells: sc.map((d, i) => ({ v: d.v, label: this.SCORE_DIMS[i][1 + L] + ': ' + SW[d.v], segs: [1, 2].map(n => ({ bg: n <= d.v ? SC[d.v] : 'var(--line)' })) })), bg: c === pcK ? 'var(--accent-soft)' : 'transparent', pick: () => { this.setState({ pc: c }); this.go('strategies', c); } }; }).sort((a, b) => b.total - a.total || a.name.localeCompare(b.name));
@@ -732,7 +752,7 @@ class Component extends DCLogic {
     const cmp = this.READY.map(r => { const c = r[0], P2 = this.POLICY[c]; const base = { cc: c, flag: this.flagUrl(c), name: ccName(c), dep: num(r[1]), co: num(r[2]), dw: (r[1] / mxD * 100).toFixed(1) + '%', cw: (r[2] / mxC * 100).toFixed(1) + '%', bg: c === pcK ? 'var(--accent-soft)' : 'transparent' };
       if (!P2) return { ...base, robo: t.notProfiled, roboFg: 'var(--fg-subtle)', dotBg: 'transparent', dotBd: 'var(--line-strong)', v: 'None set', what: '', due: 'n/a', away: '', pick: () => {}, noPick: 'true', cur: 'default' };
       const k = P2.progs[P2.head[0]][6][P2.head[1]], d = k[4];
-      return { ...base, robo: P2.robo[L], roboFg: P2.robo[2] ? 'var(--fg)' : 'var(--fg-muted)', dotBg: P2.robo[2] === 2 ? 'var(--accent)' : 'transparent', dotBd: P2.robo[2] ? 'var(--accent)' : 'var(--line-strong)', v: digits(k[L]), what: k[2 + L], due: typeof d === 'number' ? yr(d) : (d == null ? t.noDate : digits(d[L])), away: typeof d === 'number' ? (d - new Date().getFullYear() > 1 ? t.away.replace('{n}', num(d - new Date().getFullYear())) : d - new Date().getFullYear() === 1 ? t.awayNext : d === new Date().getFullYear() ? t.awayNow : t.awayPast) : (d == null ? t.noDate : ''), pick: () => { this.setState({ pc: c }); this.go('strategies', c); }, noPick: 'false', cur: 'pointer' }; });
+      return { ...base, robo: P2.robo[L], roboFg: P2.robo[2] ? 'var(--fg)' : 'var(--fg-muted)', dotBg: P2.robo[2] === 2 ? 'var(--accent)' : 'transparent', dotBd: P2.robo[2] ? 'var(--accent)' : 'var(--line-strong)', v: digits(k[L]), what: k[2 + L], due: typeof d === 'number' ? yr(d) : (d == null ? t.noDate : digits(d[L])), away: typeof d === 'number' ? (d - new Date().getFullYear() > 1 ? (ar ? this.arN(d - new Date().getFullYear(), ['بعد عام', 'بعد عامين', 'بعد # سنوات', 'بعد # عاماً'], num) : t.away.replace('{n}', num(d - new Date().getFullYear()))) : d - new Date().getFullYear() === 1 ? t.awayNext : d === new Date().getFullYear() ? t.awayNow : t.awayPast) : (d == null ? t.noDate : ''), pick: () => { this.setState({ pc: c }); this.go('strategies', c); }, noPick: 'false', cur: 'pointer' }; });
 
     // events
     const df2 = new Intl.DateTimeFormat(loc, { month: 'short', timeZone: 'UTC' }), dfm = new Intl.DateTimeFormat(loc, { month: 'long', year: 'numeric', timeZone: 'UTC' });
@@ -873,7 +893,7 @@ class Component extends DCLogic {
       suggest: (ar ? ['روبوت بشري', 'الرياض', 'مسيّرات', 'جيتكس'] : ['Humanoid', 'Riyadh', 'Drones', 'GITEX']).map(label => ({ label, go: () => { this.setState({ q: label }); this.searchRef.current && this.searchRef.current.focus(); } })),
       onSearchKey: e => { if (e.key === 'ArrowDown') { const o = document.querySelector('#rm-results [role=option]'); if (o) { e.preventDefault(); o.focus(); } } },
       onOptKey: e => { const os = [...document.querySelectorAll('#rm-results [role=option]')], i = os.indexOf(e.currentTarget); if (e.key === 'ArrowDown' && os[i + 1]) { e.preventDefault(); os[i + 1].focus(); } else if (e.key === 'ArrowUp') { e.preventDefault(); (os[i - 1] || this.searchRef.current).focus(); } else if (e.key === 'Escape') { this.searchRef.current.focus(); } }, heroPins: JSON.stringify(this.DEP.map(heroPinOf)),
-      brief: this.BRIEF.map((b, i) => ({ idx: nf2.format(i + 1), cc: b[0], country: ccName(b[0]), date: fdate(b[1]), srcLine: t.source + ': ' + b[2], title: b[3 + L], take: b[5 + L], img: b[7], hasImg: !!b[7], noImg: !b[7], panelSrc: b[2], credit: (ar ? 'الصورة: ' : 'Image: ') + b[8], srcUrl: b[9], hasUrl: !!b[9], noUrl: !b[9] })),
+      brief: this.BRIEF.map((b, i) => ({ idx: nf2.format(i + 1), cc: b[0], country: ccName(b[0]), date: fdate(b[1]), srcLine: t.source + ': ' + this.srcTx(b[2], ar), title: b[3 + L], take: b[5 + L], img: b[7], hasImg: !!b[7], noImg: !b[7], panelSrc: b[2], credit: (ar ? 'الصورة: ' : 'Image: ') + b[8], srcUrl: b[9], hasUrl: !!b[9], noUrl: !b[9] })),
       cChips, sChips, tChips, ...fx, mapPins: JSON.stringify(depF.map(pinOf)), selId: S.sel || '', fCountry: S.fCountry, padEnd: S.w <= 1180 ? '0' : '432',
       ...ctyFx, tLegend, sLegend, catGrid, catT: CF, catOpen: S.w > 900, hasSel: !!selD, noSel: !selD && !(S.cty && this.CC[S.cty]), sel, clearSel: () => this.setState({ sel: null }), panelList,
       panelTitle: selD ? t.panelRecord : (S.cty && this.CC[S.cty]) ? CT.title : t.panelLatest, showing: t.showing.replace('{a}', num(depF.length)).replace('{b}', num(this.DEP.length)),
@@ -885,7 +905,7 @@ class Component extends DCLogic {
       labs: this.LABS.map(g => ({ title: g[L], items: g[2].map(l => ({ name: l[L], city: l[2 + L], note: l[4 + L] })) })),
       evChips, evCChips, months, noEvents: !months.length, later, hasLater: later.length > 0,
       spot: (() => { const h0 = this.STORIES[0], hm = h0 && h0.home; if (!hm) return { kicker: t.spotKicker, title: t.spotTitle, dek: t.spotDek, quote: t.spotQuote, who: t.spotWho, src: t.spotSrc, cap: t.spotCap, credit: t.spotCredit, alt: t.spotAlt, img: '/media/brief/gecko-adnoc-raptor.jpg' }; return { kicker: tx(hm.kicker), title: tx(hm.title), dek: tx(hm.dek), quote: tx(hm.quote), who: tx(hm.who), src: tx(hm.src), cap: tx(hm.cap || h0.hero.cap), credit: tx(hm.credit || h0.hero.credit), alt: tx(h0.hero.alt), img: hm.img || h0.hero.src }; })(),
-      spotStats: ((this.STORIES[0] && this.STORIES[0].home && this.STORIES[0].home.stats) || t.spotStats.map(x => ({ v: x[0], en: x[1], ar: x[1] }))).map(x => ({ v: digits(x.v), label: tx(x) })),
+      spotStats: ((this.STORIES[0] && this.STORIES[0].home && this.STORIES[0].home.stats) || t.spotStats.map(x => ({ v: x[0], en: x[1], ar: x[1] }))).map(x => ({ v: digits(ar && x.v_ar ? x.v_ar : x.v), label: tx(x) })),
       sample: this.BRIEF.map((b, i) => ({ idx: nf2.format(i + 1), title: b[3 + L] })),
       email: S.email, onEmail: e => this.setState({ email: e.target.value }), subscribed: S.subscribed, notSubscribed: !S.subscribed,
       subscribe: e => {

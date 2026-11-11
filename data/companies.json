@@ -8,7 +8,7 @@
     "secondary": "service",
     "stage": "corp",
     "summary": "Dubai distributor of Pudu, Unitree and AgiBot robots; opened UAE's first humanoid robot showroom on Sheikh Zayed Road.",
-    "summary_ar": "موزّع في دبي لروبوتات بودو ويونيتري وأجيبوت، افتتح أول صالة عرض للروبوتات البشرية في الإمارات على شارع الشيخ زايد.",
+    "summary_ar": "موزّع في دبي لروبوتات بودو ويونيتري وأجي بوت، افتتح أول صالة عرض للروبوتات البشرية في الإمارات على شارع الشيخ زايد.",
     "website": "https://yslootahrobotics.com/",
     "logo": "/media/logos/ys-lootah-robotics.png",
     "source": "The National",
@@ -74,7 +74,7 @@
   {
     "id": "iq-robotics",
     "name": "IQ Robotics",
-    "name_ar": "آي كيو روبوتيكس",
+    "name_ar": "آي كيو روبوتكس",
     "country": "AE",
     "category": "integrator",
     "secondary": "amr",
@@ -99,15 +99,15 @@
     "image": "/media/companies/iq-robotics.jpg",
     "image_cap": {
       "en": "IQ Robotics goods-to-person robots in a fulfilment centre",
-      "ar": "روبوتات آي كيو روبوتيكس لنقل البضائع في مركز تنفيذ الطلبات"
+      "ar": "روبوتات آي كيو روبوتكس لنقل البضائع في مركز تنفيذ الطلبات"
     },
     "image_alt": {
       "en": "Orange IQ Robotics mobile robots carrying shelving pods, some draped with UAE and Saudi flags, across a warehouse floor",
-      "ar": "روبوتات متنقلة برتقالية من آي كيو روبوتيكس تحمل رفوف تخزين، بعضها مزين بعلمي الإمارات والسعودية، في أرضية مستودع"
+      "ar": "روبوتات متنقلة برتقالية من آي كيو روبوتكس تحمل رفوف تخزين، بعضها مزين بعلمي الإمارات والسعودية، في أرضية مستودع"
     },
     "image_credit": {
       "en": "Image: IQ Robotics",
-      "ar": "الصورة: آي كيو روبوتيكس"
+      "ar": "الصورة: آي كيو روبوتكس"
     },
     "image_url": "https://www.iqrobotics.com/wp-content/uploads/2022/07/Homepage-photo-2.png",
     "image_page": "https://www.iqrobotics.com/"
@@ -115,7 +115,7 @@
   {
     "id": "micropolis-robotics",
     "name": "Micropolis Robotics",
-    "name_ar": "ميكروبوليس روبوتيكس",
+    "name_ar": "ميكروبوليس روبوتكس",
     "country": "AE",
     "category": "service",
     "secondary": "av",
@@ -143,7 +143,7 @@
     },
     "image_credit": {
       "en": "Image: Micropolis Robotics",
-      "ar": "الصورة: ميكروبوليس روبوتيكس"
+      "ar": "الصورة: ميكروبوليس روبوتكس"
     },
     "image_url": "https://micropolis.ai/api/media/file/public-safety-convoy.webp",
     "image_page": "https://micropolis.ai/"
@@ -221,7 +221,7 @@
   {
     "id": "gecko-robotics",
     "name": "Gecko Robotics",
-    "name_ar": "جيكو روبوتيكس",
+    "name_ar": "جيكو روبوتكس",
     "country": "AE",
     "category": "inspection",
     "stage": "growth",
@@ -251,11 +251,11 @@
     },
     "image_alt": {
       "en": "A Gecko Robotics crawler robot climbing the wall of an oil storage tank while a technician in a hard hat monitors it from a tablet",
-      "ar": "روبوت زاحف من جيكو روبوتيكس يتسلق جدار خزان نفط بينما يراقبه فني يرتدي خوذة عبر جهاز لوحي"
+      "ar": "روبوت زاحف من جيكو روبوتكس يتسلق جدار خزان نفط بينما يراقبه فني يرتدي خوذة عبر جهاز لوحي"
     },
     "image_credit": {
       "en": "Image: Gecko Robotics",
-      "ar": "الصورة: جيكو روبوتيكس"
+      "ar": "الصورة: جيكو روبوتكس"
     },
     "image_url": "https://cdn.sanity.io/images/11oyz1i4/production/7ac16a0089e23939e41bc18100998de20d022c16-1400x1400.avif?w=1400&fm=jpg",
     "image_page": "https://www.geckorobotics.com/oil-and-gas"
@@ -263,7 +263,7 @@
   {
     "id": "autogo",
     "name": "AutoGo",
-    "name_ar": "أوتوجو",
+    "name_ar": "أوتو جو",
     "country": "AE",
     "category": "av",
     "stage": "corp",
@@ -592,7 +592,7 @@
   {
     "id": "x-gen",
     "name": "X-GEN",
-    "name_ar": "إكس-جن",
+    "name_ar": "إكس-جين",
     "country": "EG",
     "category": "integrator",
     "secondary": "agri",
@@ -648,7 +648,7 @@
   {
     "id": "egrobots",
     "name": "Egrobots",
-    "name_ar": "إيجروبوتس",
+    "name_ar": "إيجي روبوتس",
     "country": "EG",
     "category": "agri",
     "stage": "seed",
@@ -909,7 +909,7 @@
   {
     "id": "unitree",
     "name": "Unitree Robotics",
-    "name_ar": "يونيتري روبوتيكس",
+    "name_ar": "يونيتري روبوتكس",
     "country": "AE",
     "category": "humanoid",
     "secondary": "inspection",
@@ -944,7 +944,7 @@
     },
     "image_credit": {
       "en": "Image: Unitree Robotics",
-      "ar": "الصورة: يونيتري روبوتيكس"
+      "ar": "الصورة: يونيتري روبوتكس"
     },
     "image_url": "https://www.unitree.com/images/9485f82d12cb4195997219f8ad17b178_3840x2160.jpg",
     "image_page": "https://www.unitree.com/"
@@ -999,7 +999,7 @@
     "category": "software",
     "stage": "corp",
     "summary": "Abu Dhabi AI-for-energy joint venture of ADNOC and G42's Presight; made the RoboWell autonomous well-control system and is in a three-year AI and robotics inspection programme with ADNOC Gas and Gecko.",
-    "summary_ar": "مشروع مشترك في أبوظبي بين أدنوك و«بريسايت» التابعة لمجموعة G42 متخصص في الذكاء الاصطناعي لقطاع الطاقة؛ طوّر نظام RoboWell للتحكم الذاتي في الآبار، ويشارك مع أدنوك للغاز وجيكو روبوتيكس في برنامج مدته ثلاث سنوات للفحص بالذكاء الاصطناعي والروبوتات.",
+    "summary_ar": "مشروع مشترك في أبوظبي بين أدنوك و«بريسايت» التابعة لمجموعة G42 متخصص في الذكاء الاصطناعي لقطاع الطاقة؛ طوّر نظام RoboWell للتحكم الذاتي في الآبار، ويشارك مع أدنوك للغاز وجيكو روبوتكس في برنامج مدته ثلاث سنوات للفحص بالذكاء الاصطناعي والروبوتات.",
     "website": "https://aiq.ae/",
     "logo": "/media/logos/aiq.png",
     "source": "ADNOC Gas",
@@ -1243,7 +1243,7 @@
   {
     "id": "matternet",
     "name": "Matternet",
-    "name_ar": "ماترنت",
+    "name_ar": "ماتيرنت",
     "country": "SA",
     "hq": "US",
     "hq_city": "Mountain View, CA",
@@ -1256,7 +1256,7 @@
     "summary_ar": "مصنّعة طائرة التوصيل المسيّرة M2 الحاصلة على شهادة نوع من إدارة الطيران الفيدرالية الأمريكية، ومشغّلة شبكات توصيل بالطائرات المسيّرة، ومقرها ماونتن فيو في كاليفورنيا بالولايات المتحدة.",
     "mena_link": {
       "en": "In January 2025 Saudi Arabia's General Authority of Civil Aviation approved Matternet's M2 delivery drone for operations, the first such approval GACA has granted, accepting its FAA type certificate; Matternet is targeting drone delivery in Riyadh.",
-      "ar": "في يناير 2025 وافقت الهيئة العامة للطيران المدني السعودية على تشغيل طائرة التوصيل المسيّرة M2 من ماترنت، في أول موافقة من نوعها تمنحها الهيئة استناداً إلى شهادة النوع الصادرة عن إدارة الطيران الفيدرالية الأمريكية، وتستهدف الشركة خدمات التوصيل بالطائرات المسيّرة في الرياض."
+      "ar": "في يناير 2025 وافقت الهيئة العامة للطيران المدني السعودية على تشغيل طائرة التوصيل المسيّرة M2 من ماتيرنت، في أول موافقة من نوعها تمنحها الهيئة استناداً إلى شهادة النوع الصادرة عن إدارة الطيران الفيدرالية الأمريكية، وتستهدف الشركة خدمات التوصيل بالطائرات المسيّرة في الرياض."
     },
     "mena_source": "DroneLife",
     "mena_source_url": "https://dronelife.com/2025/01/27/matternet-receives-approval-for-m2-drone-operations-in-saudi-arabia/",
@@ -1848,7 +1848,7 @@
   {
     "id": "boston-dynamics",
     "name": "Boston Dynamics",
-    "name_ar": "بوسطن داينامكس",
+    "name_ar": "بوسطن دايناميكس",
     "country": "AE",
     "hq": "US",
     "hq_city": "Waltham, MA",
@@ -1862,7 +1862,7 @@
     "summary_ar": "روبوت Spot رباعي الأرجل للفحص وروبوت Stretch للمستودعات والروبوت البشري Atlas؛ مملوكة لهيونداي ومقرها والثام، الولايات المتحدة.",
     "mena_link": {
       "en": "In October 2025 Boston Dynamics signed an exclusive UAE alliance with Abu Dhabi's Analog, which became its sole certified reseller, integrator and service partner. The first Spot deployments are with Abu Dhabi's Department of Municipalities and Transport, for park inspections, environmental monitoring and accessibility checks.",
-      "ar": "في أكتوبر 2025 أبرمت بوسطن داينامكس تحالفاً حصرياً في الإمارات مع شركة أنالوغ في أبوظبي، التي أصبحت موزّعها ومُكامِلها وشريك خدماتها المعتمد الوحيد، على أن تبدأ أولى عمليات نشر روبوت Spot مع دائرة البلديات والنقل في أبوظبي لفحص الحدائق ورصد البيئة وإمكانية الوصول."
+      "ar": "في أكتوبر 2025 أبرمت بوسطن دايناميكس تحالفاً حصرياً في الإمارات مع شركة أنالوج في أبوظبي، التي أصبحت موزّعها ومُكامِلها وشريك خدماتها المعتمد الوحيد، على أن تبدأ أولى عمليات نشر روبوت Spot مع دائرة البلديات والنقل في أبوظبي لفحص الحدائق ورصد البيئة وإمكانية الوصول."
     },
     "mena_source": "eeNews Europe",
     "mena_source_url": "https://www.eenewseurope.com/en/boston-dynamics-analog-deploy-physical-intelligence-in-uae",
@@ -2123,7 +2123,7 @@
     },
     "image_credit": {
       "en": "Image: UBTECH Robotics",
-      "ar": "الصورة: يوبيتك روبوتيكس"
+      "ar": "الصورة: يوبيتك روبوتكس"
     },
     "image_url": "https://owebsite-cdn.ubtrobot.com/resources/image/2025/07/17/698771693350981.jpg",
     "image_page": "https://www.ubtrobot.com/en/humanoid/products/walker-s2"
@@ -2215,7 +2215,7 @@
   {
     "id": "agibot",
     "name": "AgiBot",
-    "name_ar": "أجيبوت",
+    "name_ar": "أجي بوت",
     "country": "SA",
     "hq": "CN",
     "hq_city": "Shanghai",
@@ -2230,7 +2230,7 @@
     "summary_ar": "شركة من شنغهاي تصنع روبوتات شبيهة بالبشر متعددة الأغراض (سلاسل A2 وG2 وX2) والروبوت الرباعي D1.",
     "mena_link": {
       "en": "In September 2026 AgiBot began renting humanoid robots in Saudi Arabia from SAR 2,000 a day, launching the robot-as-a-service offer at LEAP 2026 in Riyadh. In the UAE its robots are sold by Dubai distributor YS Lootah Robotics.",
-      "ar": "في سبتمبر 2026 بدأت أجيبوت تأجير روبوتاتها الشبيهة بالبشر في السعودية بأسعار تبدأ من 2,000 ريال يوميًا، وأطلقت خدمة «الروبوت كخدمة» خلال مؤتمر ليب 2026 في الرياض. وفي الإمارات تبيع روبوتاتها شركة «واي إس لوتاه للروبوتات» الموزّعة في دبي."
+      "ar": "في سبتمبر 2026 بدأت أجي بوت تأجير روبوتاتها الشبيهة بالبشر في السعودية بأسعار تبدأ من 2,000 ريال يوميًا، وأطلقت خدمة «الروبوت كخدمة» خلال مؤتمر ليب 2026 في الرياض. وفي الإمارات تبيع روبوتاتها شركة «واي إس لوتاه للروبوتات» الموزّعة في دبي."
     },
     "mena_source": "Jawlah",
     "mena_source_url": "https://jawlah.co/en/64348",
@@ -2259,7 +2259,7 @@
   {
     "id": "falcon-tech-robotics",
     "name": "Falcon Tech Robotics",
-    "name_ar": "فالكون تك روبوتيكس",
+    "name_ar": "فالكون تك روبوتكس",
     "country": "AE",
     "hq": "AE",
     "hq_city": "Abu Dhabi",
@@ -2711,7 +2711,7 @@
   {
     "id": "pudu-robotics",
     "name": "Pudu Robotics",
-    "name_ar": "بودو روبوتيكس",
+    "name_ar": "بودو روبوتكس",
     "country": "AE",
     "hq": "CN",
     "hq_city": "Shenzhen",
@@ -2729,7 +2729,7 @@
     "summary_ar": "شركة من شنتشن تصنع روبوتات الخدمة للمطاعم والفنادق والمستشفيات والمباني، ومنها روبوتا التوصيل «بيلابوت» و«كيتي بوت» وروبوتات التنظيف التجارية.",
     "mena_link": {
       "en": "Sold and supported across the GCC through local distributors: YS Lootah Robotics carries Pudu robots in Dubai (2026), and Pudu launched its BellaBot, KettyBot and PuduBot in Saudi Arabia with Proven Robotics in October 2021. Pudu sponsored World FM Day 2026 in Riyadh.",
-      "ar": "تُباع روبوتاتها وتُدعم في دول الخليج عبر موزعين محليين: توزّع «واي إس لوتاه للروبوتات» روبوتات بودو في دبي (2026)، وأطلقت بودو روبوتات «بيلابوت» و«كيتي بوت» و«بودوبوت» في السعودية مع «بروفن روبوتيكس» في أكتوبر 2021، ورعت يوم إدارة المرافق العالمي 2026 في الرياض."
+      "ar": "تُباع روبوتاتها وتُدعم في دول الخليج عبر موزعين محليين: توزّع «واي إس لوتاه للروبوتات» روبوتات بودو في دبي (2026)، وأطلقت بودو روبوتات «بيلابوت» و«كيتي بوت» و«بودوبوت» في السعودية مع «بروفن روبوتكس» في أكتوبر 2021، ورعت يوم إدارة المرافق العالمي 2026 في الرياض."
     },
     "mena_source": "The National",
     "mena_source_url": "https://www.thenationalnews.com/news/uae/2026/11/06/uae-opens-its-first-humanoid-robotics-showroom-as-dubai-races-to-200000-robots/",
@@ -2750,7 +2750,7 @@
     },
     "image_credit": {
       "en": "Image: Pudu Robotics",
-      "ar": "الصورة: بودو روبوتيكس"
+      "ar": "الصورة: بودو روبوتكس"
     },
     "image_url": "https://cdn.pudutech.com/Food_and_Beverage_ecca2bbd37.webp",
     "image_page": "https://www.pudurobotics.com/en"

@@ -712,10 +712,10 @@
     "source": "Dubai Media Office"
    },
    "drones": {
-    "v": 2,
+    "v": 1,
     "note": {
-     "en": "The DCAA has issued BVLOS delivery approvals, and Keeta resumed commercial drone delivery in Dubai in Sept 2026 after the nationwide suspension declared in Feb 2026.",
-     "ar": "أصدرت هيئة دبي للطيران المدني موافقات للتوصيل خارج مدى الرؤية، واستأنفت كيتا التوصيل التجاري بالطائرات بدون طيار في دبي في سبتمبر 2026 بعد التعليق الشامل المعلن في فبراير 2026."
+     "en": "Partial: Dubai has resumed licensed BVLOS delivery (Keeta Drone, Sept 2026), but the nationwide GCAA suspension declared in Feb 2026 has not been formally lifted in the sources we found.",
+     "ar": "جزئي: استؤنف التوصيل المرخّص خارج مدى الرؤية في دبي (كيتا درون، سبتمبر 2026)، لكن التعليق الشامل الذي أعلنته الهيئة العامة للطيران المدني في فبراير 2026 لم يُرفع رسمياً وفق المصادر التي اطّلعنا عليها."
     },
     "url": "https://www.zawya.com/en/press-release/companies-news/keeta-drone-resumes-drone-delivery-operations-in-dubai-475216",
     "source": "Zawya (Keeta Drone press release)"
@@ -5537,7 +5537,7 @@
    ],
    "why": [
     "It is the only state channel that walks Tunisian factories through automation: a diagnostic first, then matched suppliers and support through five regional competence centres. For integrators and robot vendors, the Hub and the label are the obvious way to reach buyers in the automotive-component and electronics plants that the 2027 and 2030 export targets depend on, and Sousse-based Enova Robotics shows local robot makers already exist.",
-    "هو القناة الحكومية الوحيدة التي ترافق المصانع التونسية نحو الأتمتة: تشخيص أولاً، ثم ربط بالمزوّدين ودعم عبر خمسة مراكز كفاءات جهوية. وبالنسبة إلى مدمجي الأنظمة وبائعي الروبوتات، يمثل المركز الوطني والعلامة الطريق الأوضح للوصول إلى مصانع مكونات السيارات والإلكترونيات التي تعتمد عليها أهداف التصدير لعامَي 2027 و2030، فيما تثبت شركة «إينوفا روبوتيكس» في سوسة وجود مصنّعين محليين للروبوتات."
+    "هو القناة الحكومية الوحيدة التي ترافق المصانع التونسية نحو الأتمتة: تشخيص أولاً، ثم ربط بالمزوّدين ودعم عبر خمسة مراكز كفاءات جهوية. وبالنسبة إلى مدمجي الأنظمة وبائعي الروبوتات، يمثل المركز الوطني والعلامة الطريق الأوضح للوصول إلى مصانع مكونات السيارات والإلكترونيات التي تعتمد عليها أهداف التصدير لعامَي 2027 و2030، فيما تثبت شركة «إينوفا روبوتكس» في سوسة وجود مصنّعين محليين للروبوتات."
    ],
    "note": [
     "The programme gives advice, diagnostics and recognition, not equipment grants; no budget or firm target was announced at the September 2026 launch. The 400-firm, 2,900-trainee and 50-startup figures are cumulative results since 2018, as stated by the ministry. The industry portfolio was being run on an acting basis by the Minister of Equipment at the time of the launch. The automotive and electronics targets come from separate sector pacts.",

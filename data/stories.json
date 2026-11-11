@@ -198,7 +198,7 @@
      },
      "suf": {
       "en": "m",
-      "ar": " مليون درهم"
+      "ar": " ملايين درهم"
      },
      "en": "Ceiling of the 2024 ADNOC Gas–Gecko contract",
      "ar": "سقف عقد أدنوك للغاز وجيكو في 2024"
@@ -388,7 +388,7 @@
       "ar": "أدنوك للإمداد والخدمات تكشف عن سفن إنزال تُشغَّل عن بُعد"
      },
      "en": "Two 60-metre vessels, built with France’s SeaOwl and steered from a control centre in Mussafah.",
-     "ar": "سفينتان بطول 60 متراً بُنيتا مع شركة «سي آول» الفرنسية وتُداران من مركز تحكم في مصفح.",
+     "ar": "سفينتان بطول 60 متراً بُنيتا مع شركة «سي أول» الفرنسية وتُداران من مركز تحكم في مصفح.",
      "src": 16,
      "img": "/media/spotlight/adnocls-remote-landing-craft.jpg"
     },
@@ -1148,7 +1148,8 @@
         {
          "v": "AED110m",
          "en": "Ceiling of ADNOC Gas’s 2024 Gecko contract",
-         "ar": "سقف عقد أدنوك للغاز مع جيكو في 2024"
+         "ar": "سقف عقد أدنوك للغاز مع جيكو في 2024",
+         "v_ar": "110 ملايين درهم"
         },
         {
          "v": "$300m+",
@@ -1306,7 +1307,8 @@
     {
      "v": "Tens",
      "en": "Robots deployed a day in the region",
-     "ar": "روبوتات تُنشر يومياً في المنطقة"
+     "ar": "روبوتات تُنشر يومياً في المنطقة",
+     "v_ar": "عشرات"
     },
     {
      "v": "3–5×",

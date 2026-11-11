@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-11-11",
+    "record": {"en": "Doha driverless robotaxi (deployment record)", "ar": "سيارات الأجرة ذاتية القيادة في الدوحة (سجل نشر)"},
+    "href": "/database?tab=deployments&id=d24",
+    "was": {"en": "Said fully driverless robotaxi rides had “launched” as a commercial service.", "ar": "ذكر أن رحلات الأجرة ذاتية القيادة بالكامل «أُطلقت» كخدمة تجارية."},
+    "now": {"en": "The rides run as phase 2 of a Ministry of Transport trial; no approval for a commercial driverless service was found.", "ar": "تعمل الرحلات ضمن المرحلة الثانية من تجربة وزارة المواصلات، ولم نعثر على موافقة لتشغيل خدمة تجارية بلا سائق."},
+    "source": "https://www.thepeninsulaqatar.com/article/03/08/2026/qatar-advances-driverless-robotaxi-trials-after-achieving-94-success-rate"
+  },
+  {
     "date": "2026-11-09",
     "record": {"en": "Robotic villa challenge (deployment record)", "ar": "تحدي الفيلا الروبوتية (سجل نشر)"},
     "href": "/database?tab=deployments&id=d32",

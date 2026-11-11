@@ -30,15 +30,14 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 - [x] **Bugs found in the audit** fixed (10 Nov 2026): raw target dates, Alat/Mowasalat match (now whole-word,
   also for logos and photos), notices for unknown `?c=` / `?s=` links, events separators, cross-month ranges, TBC
   months instead of invented dates, empty event filters hidden, Kenyo link replaced with Gulf News.
-- [ ] **Newsletter sample and stale copy (audit).** The sample is labelled "No. 45" (implies 44 past issues), its
-  counts disagree with the data, "Updated 9 Nov 2026" is fixed text, two brief takeaways point to events ending
-  10 Nov, and the "Added this week" flags are set by hand.
-- [ ] **Country cards say "Source not yet recorded"** on every country, against "every record links to its
-  primary source". Add sources or change the wording.
-- [ ] **Arabic polish (audit):** number agreement ("12 شركات", "1 عمليات نشر"), English left in Arabic mode ("Tens",
-  "(press release)"), "AED110 مليون درهم", inconsistent spellings of company names.
-- [ ] **Score/dossier consistency (audit):** Qatar "Deployments tracked 2" vs "Verified deployments: None"; UAE drones
-  "Strong" while the drone suspension is in force; Qatar robotaxi "launched" vs dossier "still a trial".
+- [x] **Newsletter sample and stale copy** (11 Nov 2026): sample issue date, counts, tracker date and "new" flags
+  now come from the data (flags expire 14 days after a record is added); time-bound brief takeaways reworded.
+- [x] **Country card sources** (11 Nov 2026): cards link to the dossier's source list; countries without a dossier
+  explain that counts come from the linked records.
+- [x] **Arabic polish** (11 Nov 2026): number agreement everywhere a count meets a noun, "(press release)" and stat
+  values translated, "110 ملايين درهم", one spelling per company name. A native-speaker read before launch is still advised.
+- [x] **Score/dossier consistency** (11 Nov 2026): any verified deployment now scores at least Partial; UAE drones
+  Partial while the GCAA suspension stands; Doha robotaxi record says trial (logged in corrections).
 - [ ] **Launch plumbing (audit):** add `sitemap.xml`, a branded `404.html`, canonical tags and per-page
   descriptions; confirm "Enforce HTTPS" is ticked in GitHub Pages settings; decide on (privacy-friendly)
   analytics. (Button contrast fixed by the indigo rebrand, 10 Nov 2026.)

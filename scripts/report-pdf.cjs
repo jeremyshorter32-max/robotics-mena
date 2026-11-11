@@ -68,7 +68,7 @@ function build(lang) {
     if (b.t === 'h') return `<h3>${esc(tx(b))}</h3>`;
     if (b.t === 'quote') return `<blockquote class="avoid"><p>${esc(tx(b))}</p><cite>${esc(tx(b.who))}</cite></blockquote>`;
     if (b.t === 'img') return fig(b.src, tx(b.cap), tx(b.credit), tx(b.alt), !!b.maxw);
-    if (b.t === 'stats') return `<div class="stats avoid">${b.items.map(i => `<div><b>${esc(i.v)}</b><span>${esc(tx(i))}</span></div>`).join('')}</div>`;
+    if (b.t === 'stats') return `<div class="stats avoid">${b.items.map(i => `<div><b>${esc(ar && i.v_ar ? i.v_ar : i.v)}</b><span>${esc(tx(i))}</span></div>`).join('')}</div>`;
     if (b.t === 'list') return `<ul class="ticks">${b.items.map(i => `<li>${esc(tx(i))}</li>`).join('')}</ul>`;
     if (b.t === 'w') return W[b.w] ? W[b.w]() : '';
     return '';
