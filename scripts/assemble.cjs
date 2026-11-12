@@ -9,6 +9,10 @@ const read = f => fs.readFileSync(path.join(root, f), 'utf8');
 const data = {};
 for (const name of ['companies', 'deployments', 'events', 'countries', 'brief', 'stories', 'site', 'policy', 'corrections']) data[name] = JSON.parse(read(`data/${name}.json`));
 data.builtAt = new Date().toISOString().slice(0, 10);
+// Hand-picked X posts: only approved ones reach the site (SHOW_SUGGESTED=1 previews suggestions locally).
+data.xposts = (fs.existsSync(path.join(root, 'data/xposts.json')) ? JSON.parse(read('data/xposts.json')) : [])
+  .filter(x => x.status === 'approved' || (process.env.SHOW_SUGGESTED === '1' && x.status === 'suggested'))
+  .sort((a, b) => b.date.localeCompare(a.date));
 
 const logic = read('src/logic.js');
 const headBrand = read('partials/head-brand.html').trim();

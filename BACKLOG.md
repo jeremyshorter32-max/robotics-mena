@@ -52,6 +52,10 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   blocking it as "Miscellaneous or Unknown": Zscaler (sitereview.zscaler.com), Palo Alto, Fortinet, Cisco Talos,
   Symantec/Broadcom, Netskope, Forcepoint, McAfee/Trellix, Check Point.
 
+- [x] **"From X this week" strip** (12 Nov 2026): hand-picked posts from official accounts in `data/xposts.json`,
+  shown as plain cards; X's embed loads only on "Show post" (privacy page updated). Posts appear only once their
+  status is "approved". The Sunday routine suggests new ones.
+
 ## Content and research
 
 - [ ] **Arabic brand name.** The new logo reads «روبوتات الشرق الأوسط وشمال أفريقيا», but the site's Arabic text still

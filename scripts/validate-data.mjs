@@ -135,6 +135,21 @@ Object.entries(policy).forEach(([cc, P]) => {
 });
 
 // Excluded countries anywhere in the data, and their flag files
+// X posts (data/xposts.json): hand-picked, shown on the site only once status is "approved".
+const xposts = fs.existsSync(path.join(ROOT, 'data', 'xposts.json')) ? readData('xposts') : [];
+xposts.forEach((x, i) => {
+  const w = `xposts[${i}]`;
+  need(x, w, ['id', 'url', 'author', 'handle', 'date', 'excerpt', 'note', 'note_ar', 'country', 'status']);
+  if (!/^\d{5,25}$/.test(x.id || '')) errors.push(`${w}: id must be the numeric post id`);
+  if (x.url && !new RegExp(`^https://(x|twitter)\\.com/[A-Za-z0-9_]{1,15}/status/${x.id}$`).test(x.url)) errors.push(`${w}: url must be https://x.com/<handle>/status/<id>`);
+  date(x.date, w, 'date'); if (!['suggested', 'approved', 'hidden'].includes(x.status)) errors.push(`${w}: status must be suggested, approved or hidden`);
+  if (EXCLUDED_COUNTRIES.has(x.country)) errors.push(`${w}: excluded country`);
+  if (x.country && !countryCodes.has(x.country)) errors.push(`${w}: unknown country ${x.country}`);
+  if (x.type && !(x.type in ROBOT_TYPES)) errors.push(`${w}: unknown robot type ${x.type}`);
+  if (x.company && !coIds.has(x.company)) errors.push(`${w}: unknown company ${x.company}`);
+  if ((x.excerpt || '').length > 240) errors.push(`${w}: excerpt longer than 240 characters (quote briefly, the embed shows the rest)`);
+});
+uniq(xposts, 'id', 'xposts.json');
 const flagFiles = fs.readdirSync(path.join(ROOT, 'media', 'flags'));
 EXCLUDED_COUNTRIES.forEach(cc => { if (flagFiles.includes(cc.toLowerCase() + '.svg')) errors.push(`media/flags/${cc.toLowerCase()}.svg must not be in the site`); });
 ['deployments', 'events', 'countries', 'brief'].forEach(n => D[n].forEach((r, i) => { if (EXCLUDED_COUNTRIES.has(r.country) || EXCLUDED_COUNTRIES.has(r.code)) errors.push(`${n}[${i}]: excluded country`); }));

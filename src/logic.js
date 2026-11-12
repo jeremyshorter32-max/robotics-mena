@@ -408,6 +408,15 @@ class Component extends DCLogic {
   arN(n, f, num) { const w = n === 1 ? f[0] : n === 2 ? f[1] : (n % 100 >= 3 && n % 100 <= 10) ? f[2] : f[3]; return w.replace('#', num ? num(n) : String(n)); }
   // Source labels like "Zawya (press release)" in Arabic mode.
   srcTx(x, ar) { return ar ? String(x || '').replace(/\s*\(press release\)/gi, ' (بيان صحفي)').replace(/\s*\(company website\)/gi, ' (موقع الشركة)') : x; }
+  // Loads X's embed script on first use, then renders the post in place (no tracking before the click).
+  showX(id, theme) {
+    this.setState(st => ({ xShow: { ...(st.xShow || {}), [id]: true } }));
+    const render = () => { const el = document.getElementById('x-embed-' + id); if (el && window.twttr && window.twttr.widgets && !el.childElementCount) window.twttr.widgets.createTweet(id, el, { dnt: true, theme: theme === 'dark' ? 'dark' : 'light', conversation: 'none', align: 'center' }); };
+    if (window.twttr && window.twttr.widgets) { setTimeout(render, 0); return; }
+    if (!this._xLoading) { this._xLoading = []; const sc = document.createElement('script'); sc.src = 'https://platform.twitter.com/widgets.js'; sc.async = true; sc.charset = 'utf-8';
+      sc.onload = () => { const q = this._xLoading || []; this._xLoading = null; (window.twttr && window.twttr.ready ? window.twttr.ready : f => f())(() => q.forEach(f => f())); }; document.head.appendChild(sc); }
+    if (this._xLoading) this._xLoading.push(render); else setTimeout(render, 0);
+  }
   flagUrl(cc) { return cc ? '/media/flags/' + String(cc).toLowerCase() + '.svg' : ''; }
   dbOpen(tab, id) { this._dbReturn = document.activeElement; this.setState({ dbTab: tab, dbSel: id }); }
   dbVals(c) {
@@ -480,6 +489,9 @@ class Component extends DCLogic {
         if (o.url) extra.push(link(o.url, d.visit));
         desc = tr(o, 'relevance');
       }
+      // Featured X posts about this company or country.
+      (D.xposts || []).filter(x => (tab === 'companies' && x.company === o.id) || (tab === 'countries' && x.country === o.code)).slice(0, 3)
+        .forEach(x => extra.push({ url: x.url, label: (ar ? 'على X: ' : 'On X: ') + x.author + ' · ' + fdate(x.date) }));
       const hasSrc = !!(srcName || srcUrl);
       card = {
         kind: d.kind[tab], badge: r.badge, title: r.name, alt: r.alt, cc: r.cc || '', hasCc: !!r.cc && tab !== 'countries', flag: this.flagUrl(r.cc), ccName: r.cc ? cn(r.cc) : '', desc, hasDesc: !!desc,
@@ -779,13 +791,13 @@ class Component extends DCLogic {
       goNewsletter: e => { e.preventDefault(); this.openBrief(e.currentTarget); },
       resetSignup: e => { e && e.preventDefault(); this.dropPref('subscriber'); this.setState({ subscribed: false, email: '' }); setTimeout(() => { const el = document.getElementById('rm-brief-email'); el && el.focus(); }, 60); },
       pvT: ar ? {
-        crumb: 'الخصوصية', title: 'سياسة الخصوصية', sub: 'ما الذي نجمعه، ولماذا، ومن يعالجه، وكيف تطلب حذفه. بلغة بسيطة.', updated: 'آخر تحديث: 11 نوفمبر 2026',
+        crumb: 'الخصوصية', title: 'سياسة الخصوصية', sub: 'ما الذي نجمعه، ولماذا، ومن يعالجه، وكيف تطلب حذفه. بلغة بسيطة.', updated: 'آخر تحديث: 12 نوفمبر 2026',
         summaryTitle: 'باختصار', summary: ['لا نبيع بياناتك ولا نؤجرها ولا نشاركها.', 'لا إعلانات ولا أدوات تتبّع ولا تحليلات، ولا نضع ملفات تعريف ارتباط.', 'نجمع فقط ما تكتبه بنفسك في نماذجنا.', 'يمكنك طلب نسخة من بياناتك أو حذفها في أي وقت.'],
         sections: [
           { h: 'من نحن', ps: ['روبوتكس مينا («نحن») منصة مستقلة توثّق الروبوتات في الشرق الأوسط وشمال أفريقيا. للتواصل بشأن الخصوصية: contact@roboticsmena.com.'] },
           { h: 'ما الذي نجمعه', ps: ['الاشتراك في الموجز الأسبوعي (النافذة المنبثقة، ومربع النشرة، ونموذج فتح تقارير «تحت الضوء»): بريدك الإلكتروني، والصفحة التي اشتركت منها، ولغة الموقع.', 'نموذج «أضف إلى السجل»: المعلومات التي تكتبها عن شركة أو عملية نشر أو فعالية، وبريدك الإلكتروني إن أضفته.', 'نموذج «اعمل معنا»: اسمك وبريدك الإلكتروني ومؤسستك ومنصبك والمجال الذي تختاره ورسالتك.', 'الرسائل التي ترسلها إلى بريدنا.', 'لا نجمع أي بيانات أخرى عنك، ولا نستخدم أدوات تحليل أو تتبّع.'] },
           { h: 'لماذا نستخدمها', ps: ['لإرسال الموجز الأسبوعي إليك إذا اشتركت، وللرد على رسائلك وطلبات التعاون، ولمراجعة ما ترسله إلى السجل والتحقق منه. لا نستخدم بياناتك لأي غرض آخر، ولن نضيفك إلى قائمة بريدية ما لم تشترك بنفسك.'] },
-          { h: 'من يعالجها نيابة عنا', ps: ['FormSubmit (formsubmit.co) ينقل ما ترسله عبر نماذجنا إلى بريدنا الإلكتروني.', 'مزوّد البريد الإلكتروني الخاص بنا يحفظ الرسائل في صندوق الوارد.', 'نحتفظ بنسخة من الاشتراكات والطلبات في جدول خاص على Google Sheets لا يطّلع عليه أحد سوانا.', 'يُستضاف الموقع على GitHub Pages، وقد يسجّل خادم الاستضافة عنوان IP الخاص بك كما تفعل أي خدمة استضافة.', 'يحمّل متصفحك الخطوط من Google Fonts، فيرى Google عنوان IP الخاص بك عند ذلك.', 'لا نشارك بياناتك مع أي جهة أخرى، ولا نبيعها أو نؤجرها.'] },
+          { h: 'من يعالجها نيابة عنا', ps: ['FormSubmit (formsubmit.co) ينقل ما ترسله عبر نماذجنا إلى بريدنا الإلكتروني.', 'مزوّد البريد الإلكتروني الخاص بنا يحفظ الرسائل في صندوق الوارد.', 'نحتفظ بنسخة من الاشتراكات والطلبات في جدول خاص على Google Sheets لا يطّلع عليه أحد سوانا.', 'يُستضاف الموقع على GitHub Pages، وقد يسجّل خادم الاستضافة عنوان IP الخاص بك كما تفعل أي خدمة استضافة.', 'يحمّل متصفحك الخطوط من Google Fonts، فيرى Google عنوان IP الخاص بك عند ذلك.', 'منشورات منصة X (تويتر سابقاً): نعرض المنشورات المختارة كبطاقات بسيطة، ولا يُحمّل متصفحك المنشور من X إلا إذا اخترت «اعرض المنشور»، وقد تضع X حينها ملفات تعريف ارتباط وفق سياستها للخصوصية.', 'لا نشارك بياناتك مع أي جهة أخرى، ولا نبيعها أو نؤجرها.'] },
           { h: 'ما يُحفظ في متصفحك', ps: ['يحفظ الموقع في متصفحك فقط (وليس على خوادمنا): لغتك المفضلة، والوضع الفاتح أو الداكن، وبريدك الإلكتروني إن اشتركت كي تبقى التقارير مفتوحة لك. لا نضع ملفات تعريف ارتباط. يمكنك حذف ذلك بمسح بيانات الموقع من متصفحك، أو باختيار «استخدم بريداً آخر» في نافذة الاشتراك.'] },
           { h: 'مدة الاحتفاظ', ps: [
             'لا نحتفظ بالبيانات الشخصية إلا للمدة التي نحتاجها للغرض الذي قدّمتها من أجله، ثم نحذفها. ونراجع ما لدينا مرة واحدة على الأقل كل عام.',
@@ -801,13 +813,13 @@ class Component extends DCLogic {
           { h: 'التعديلات', ps: ['سننشر أي تعديل على هذه السياسة في هذه الصفحة مع تاريخ التحديث.'] }
         ]
       } : {
-        crumb: 'Privacy', title: 'Privacy policy', sub: 'What we collect, why, who processes it and how to have it deleted. In plain language.', updated: 'Last updated: 11 November 2026',
+        crumb: 'Privacy', title: 'Privacy policy', sub: 'What we collect, why, who processes it and how to have it deleted. In plain language.', updated: 'Last updated: 12 November 2026',
         summaryTitle: 'In short', summary: ['We never sell, rent or share your data.', 'No ads, no trackers, no analytics, and we set no cookies.', 'We only collect what you type into our forms.', 'You can ask for a copy of your data, or for it to be deleted, at any time.'],
         sections: [
           { h: 'Who we are', ps: ['Robotics MENA (“we”) is an independent record of robotics across the Middle East and North Africa. For anything about privacy, write to contact@roboticsmena.com.'] },
           { h: 'What we collect', ps: ['Signing up for the weekly brief (the “Get the brief” pop-up, the newsletter box, or the form that unlocks Spotlight reports): your email address, the page you signed up from and the site language.', 'The Submit form: the details you enter about a company, deployment or event, and your email address if you add one.', 'The Work with us form: your name, email address, organisation, role, the area you choose and your message.', 'Emails you send us.', 'We collect nothing else about you, and we use no analytics or tracking tools.'] },
           { h: 'Why we use it', ps: ['To send you the weekly brief if you signed up, to reply to your messages and enquiries, and to review and verify what you submit to the record. We use your data for nothing else, and we will not add you to a mailing list unless you sign up yourself.'] },
-          { h: 'Who processes it for us', ps: ['FormSubmit (formsubmit.co) relays what you send through our forms to our email inbox.', 'Our email provider stores messages in our inbox.', 'We keep a copy of sign-ups and enquiries in a private Google Sheets spreadsheet, which only we can open.', 'The site is hosted on GitHub Pages, whose servers may log your IP address, as any web host does.', 'Your browser loads fonts from Google Fonts, so Google sees your IP address when it does.', 'We share your data with no one else, and never sell or rent it.'] },
+          { h: 'Who processes it for us', ps: ['FormSubmit (formsubmit.co) relays what you send through our forms to our email inbox.', 'Our email provider stores messages in our inbox.', 'We keep a copy of sign-ups and enquiries in a private Google Sheets spreadsheet, which only we can open.', 'The site is hosted on GitHub Pages, whose servers may log your IP address, as any web host does.', 'Your browser loads fonts from Google Fonts, so Google sees your IP address when it does.', 'Posts from X (formerly Twitter): the posts we feature are shown as plain cards. Only if you choose “Show post” does your browser load that post from X, which may set cookies under X’s own privacy policy.', 'We share your data with no one else, and never sell or rent it.'] },
           { h: 'What is stored in your browser', ps: ['The site stores a few things in your own browser only, not on our servers: your language, light or dark mode, and your email address if you signed up, so research reports stay unlocked for you. We set no cookies. You can remove these by clearing this site’s data in your browser, or by choosing “Use a different email” in the sign-up pop-up.'] },
           { h: 'How long we keep it', ps: [
             'We keep personal data only as long as we need it for the reason you gave it to us, then delete it. We review what we hold at least once a year.',
@@ -830,6 +842,20 @@ class Component extends DCLogic {
           hasMissPc: !!rc, missPc: ar ? `لم ننشر ملفاً عن ${rn} بعد، لذلك تعرض الصفحة ملف الإمارات العربية المتحدة.` : `We haven’t published a dossier for ${rn} yet, so this page shows the United Arab Emirates.`,
           missPcHref: this.CC[rc] ? '/database?tab=countries&id=' + rc : '/database?tab=countries', missPcLbl: ar ? `اطّلع على شركات ${rn} وعمليات النشر فيها` : `See ${rn}’s companies and deployments`,
           hasMissS: badS, missS: ar ? 'لم نجد هذا التقرير، لذلك تعرض الصفحة أحدث تقاريرنا.' : 'We couldn’t find that report, so this page shows our latest one.'
+        };
+      })(),
+      // Hand-picked X posts: a plain card first; X's own code loads only when the reader asks for the post.
+      ...(() => {
+        const XP = (window.RM_DATA.xposts || []).slice(0, 6), CO = window.RM_DATA.companies;
+        return {
+          hasX: this.PAGE === 'home' && XP.length > 0,
+          xT: ar ? { title: 'من منصة X هذا الأسبوع', sub: 'منشورات مختارة من حسابات رسمية، يختارها محرّرونا. لا يُحمَّل أي شيء من X إلا عندما تختار «اعرض المنشور».', show: 'اعرض المنشور', view: 'اعرضه على X', priv: 'عند عرض منشور، يُحمّل متصفحك محتوى من X، وقد تضع X ملفات تعريف ارتباط وفق سياستها.' }
+            : { title: 'From X this week', sub: 'Posts from official accounts, picked by our editors. Nothing loads from X until you choose “Show post”.', show: 'Show post', view: 'View on X', priv: 'Showing a post loads it from X, which may set cookies under its own policy.' },
+          xposts: XP.map(x => { const co = x.company && CO.find(c => c.id === x.company); const shown = !!(S.xShow || {})[x.id]; return {
+            id: x.id, author: x.author, handle: x.handle, date: fdate(x.date), excerpt: x.excerpt, note: ar ? (x.note_ar || x.note) : x.note, url: x.url,
+            flag: this.flagUrl(x.country), cname: this.CC[x.country] ? this.CC[x.country][L] : x.country, hasType: !!(x.type && this.TYPES[x.type]), typeLabel: x.type && this.TYPES[x.type] ? this.TYPES[x.type][L] : '',
+            hasCo: !!co, coName: co ? (ar ? (co.name_ar || co.name) : co.name) : '', coHref: co ? '/database?tab=companies&id=' + co.id : '',
+            embedId: 'x-embed-' + x.id, hidden: !shown, show: () => this.showX(x.id, theme) }; })
         };
       })(),
       privHref: '/privacy', privLbl: ar ? 'سياسة الخصوصية' : 'Privacy policy',

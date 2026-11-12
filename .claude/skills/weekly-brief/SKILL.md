@@ -32,23 +32,31 @@ without the owner's explicit approval in this conversation.**
 4. Add any new deployments, companies or events to `data/*.json` with `added: <today>` (deployments also
    `is_new: true`, and clear last week's `is_new`). Link new deployments to policy programmes where one
    applies (`data/policy.json`, programme `[7]` list).
-5. Optional: `data/newsletter.json` with `subject`, `preview_text` and a one-paragraph `intro`
+5. **From X**: suggest 2–4 posts from official accounts (governments, regulators, operators, the companies
+   themselves) about this week's news. Verify each with X's oEmbed endpoint
+   (`curl -sL "https://publish.twitter.com/oembed?url=<post url>&omit_script=1"`): author, wording and date
+   must match. Never scrape x.com. Add them to `data/xposts.json` with `status: "suggested"`, a short excerpt
+   (first sentence, under 240 characters), and a one-line `note`/`note_ar`. On approval they become
+   `"approved"`; set older ones to `"hidden"` so the strip shows the latest 3–6. Never pick posts with
+   content the site excludes (Israeli companies or flag) or personal accounts of private individuals.
+6. Optional: `data/newsletter.json` with `subject`, `preview_text` and a one-paragraph `intro`
    (the editor's note). Leave it out if there is nothing to add; the defaults are fine.
-6. Check: `SITE_PASSWORD=testpass123 ./scripts/build-site.sh` must pass (it validates the data).
-7. `node scripts/newsletter.mjs draft`: builds `newsletter/out/preview.html` and creates or updates the
+7. Check: `SITE_PASSWORD=testpass123 ./scripts/build-site.sh` must pass (it validates the data).
+8. `node scripts/newsletter.mjs draft`: builds `newsletter/out/preview.html` and creates or updates the
    **draft** in Kit (it does not send).
-8. Commit and push the branch (not main).
-9. Send the owner `newsletter/out/preview.html` (SendUserFile, display "render") and a short message:
-   the subject line, the five headlines with their countries, what else changed in the database, and:
+9. Commit and push the branch (not main).
+10. Send the owner `newsletter/out/preview.html` (SendUserFile, display "render") and a short message:
+   the subject line, the five headlines with their countries, the suggested X posts (author + one line each), what else changed in the database, and:
    "Reply **approve** to send on Monday at 07:00 Gulf time, tell me what to change, or say **rerun**."
 
 ## 2. Owner replies
-- **Change request**: make the change, rerun steps 6–9 (the draft in Kit is updated in place) and send
+- **Change request**: make the change, rerun steps 7–10 (the draft in Kit is updated in place) and send
   the new preview. Repeat until approved.
 - **Rerun**: discard this week's picks (`git checkout main -- data/`), redo the research with the owner's
-  direction, then steps 3–9.
+  direction, then steps 3–10.
 - **Approve**:
-  1. Merge the branch into main and push (the site's brief updates on deploy).
+  1. Set this week's suggested X posts the owner kept to `"approved"`, merge the branch into main and push
+     (the site's brief and X strip update on deploy).
   2. `node scripts/newsletter.mjs schedule` (next Monday 03:00 UTC = 07:00 Gulf).
   3. `node scripts/newsletter.mjs status` and confirm the send time to the owner in one line.
   4. Commit `newsletter/state.json` to main.

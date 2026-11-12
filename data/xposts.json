@@ -1,0 +1,62 @@
+[
+  {
+    "id": "2118279593908142426",
+    "url": "https://x.com/ADNOCGroup/status/2118279593908142426",
+    "author": "ADNOC Group",
+    "handle": "ADNOCGroup",
+    "date": "2026-11-05",
+    "excerpt": "ADNOC Onshore and @geckorobotics signed an agreement at ADIPEC 2026 to advance robotic inspection across ADNOC Onshore's field operations…",
+    "note": "The agreement behind this week’s Spotlight report, announced by ADNOC itself.",
+    "note_ar": "الاتفاقية التي يتناولها تقرير «تحت الضوء» هذا الأسبوع، كما أعلنتها أدنوك.",
+    "country": "AE",
+    "type": "inspection",
+    "company": "gecko-robotics",
+    "status": "suggested",
+    "added": "2026-11-12"
+  },
+  {
+    "id": "2019421063608955238",
+    "url": "https://x.com/DXBMediaOffice/status/2019421063608955238",
+    "author": "Dubai Media Office",
+    "handle": "DXBMediaOffice",
+    "date": "2026-02-05",
+    "excerpt": "Hamdan bin Mohammed launches the official operations of fully autonomous RT6 taxi vehicles developed by Baidu Apollo Go, as part of Dubai’s smart mobility ecosystem.",
+    "note": "The day Dubai’s fully driverless taxis began official operations.",
+    "note_ar": "اليوم الذي بدأت فيه سيارات الأجرة ذاتية القيادة بالكامل عملياتها الرسمية في دبي.",
+    "country": "AE",
+    "type": "av",
+    "company": "apollo-go",
+    "status": "suggested",
+    "added": "2026-11-12"
+  },
+  {
+    "id": "1989973488468463749",
+    "url": "https://x.com/rta_dubai/status/1989973488468463749",
+    "author": "RTA",
+    "handle": "rta_dubai",
+    "date": "2025-11-16",
+    "excerpt": "#RTA and Joby Aviation have completed the first crewed eVTOL aerial taxi flight from Margham to Al Maktoum International Airport…",
+    "note": "Dubai’s first crewed air-taxi flight between two real sites.",
+    "note_ar": "أول رحلة تاكسي جوي مأهولة في دبي بين موقعين فعليين.",
+    "country": "AE",
+    "type": "drone",
+    "company": "joby-aviation",
+    "status": "suggested",
+    "added": "2026-11-12"
+  },
+  {
+    "id": "1949779364712952157",
+    "url": "https://x.com/WeRide_ai/status/1949779364712952157",
+    "author": "WeRide",
+    "handle": "WeRide_ai",
+    "date": "2025-07-28",
+    "excerpt": "Our Robotaxi has just secured Saudi Arabia’s first Robotaxi autonomous driving permit from @Saudi_TGA!",
+    "note": "Saudi Arabia’s first robotaxi permit, as announced by the company (a company claim).",
+    "note_ar": "أول تصريح لسيارات الأجرة ذاتية القيادة في السعودية، كما أعلنته الشركة (ادعاء من الشركة).",
+    "country": "SA",
+    "type": "av",
+    "company": "weride",
+    "status": "suggested",
+    "added": "2026-11-12"
+  }
+]
