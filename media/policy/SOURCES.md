@@ -6,7 +6,7 @@ Photos and logos for each country dossier's featured initiative, taken from offi
 |---|---|---|
 | ae-feat.jpg | Image: Abu Dhabi Media Office | https://www.mediaoffice.abudhabi/en/technology/in-the-presence-of-hamdan-bin-mohamed-bin-zayed-smart-and-autonomous-vehicles-industries-savi-cluster-launches-at-masdar-city/ |
 | ae-logo.png | SAVI (logo) | https://savi.investwithabudhabi.com/logo.svg |
-| sa-feat.jpg | Photo: Asharq Al-Awsat | https://english.aawsat.com/node/5215036 |
+| sa-gmt-rebar.jpg | Image: GMT Robotics (company image; replaced an Asharq Al-Awsat photo, 13 Nov 2026) | https://b3940074.assetcdn.net/2.0/3940074/wp-content/uploads/2025/03/GMTRobotics_MICRO_ARCAS_automatized_solution-1-scaled.jpg |
 | sa-logo.png | Future Factories Program (logo) | https://saudipedia.com/var/site/storage/images/6/8/3/4/2474386-1-eng-GB/9bc8b383aeb2-97178.jpg |
 | qa-feat.jpg | Image: Gulf Times | https://www.gulf-times.com/article/728814/qatar/driverless-robotaxis-move-a-step-closer-to-dohas-roads |
 | qa-logo.png | Ministry of Transport, State of Qatar (logo) | https://www.mot.gov.qa/sites/default/files/logo_0.png |

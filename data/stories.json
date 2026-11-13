@@ -20,18 +20,18 @@
    "ar": "تحليل روبوتات الشرق الأوسط وشمال أفريقيا"
   },
   "hero": {
-   "src": "/media/spotlight/gecko-raptor-adipec-2026.jpg",
+   "src": "/media/spotlight/gecko-inspectors-thickness-map.jpg",
    "alt": {
-    "en": "Gecko Robotics Raptor wall-climbing inspection robot on a steel surface at ADIPEC, Abu Dhabi",
-    "ar": "روبوت الفحص «رابتور» من جيكو روبوتكس يتسلّق سطحاً فولاذياً في أديبك، أبوظبي"
+    "en": "Two inspectors in hard hats beside a Gecko crawler on a steel pipe, with a colour-coded wall-thickness map on screen",
+    "ar": "مفتشان بخوذتين بجانب روبوت زاحف من جيكو على أنبوب فولاذي، مع خريطة ملوّنة لسماكة الجدران على الشاشة"
    },
    "cap": {
-    "en": "Gecko’s Raptor at ADIPEC, Abu Dhabi, November 2026",
-    "ar": "«رابتور» من جيكو في أديبك، أبوظبي، نوفمبر 2026"
+    "en": "A Gecko crawler and the live wall-thickness map it builds",
+    "ar": "روبوت زاحف من جيكو وخريطة سماكة الجدران التي يرسمها مباشرة"
    },
    "credit": {
-    "en": "Photo: Victor Besa / The National",
-    "ar": "تصوير: فيكتور بيسا / ذا ناشونال"
+    "en": "Image: Gecko Robotics",
+    "ar": "الصورة: جيكو روبوتكس"
    }
   },
   "sources": [
@@ -422,7 +422,7 @@
      "en": "Gecko shows its new wall-climbing robot, which ADNOC is deploying to find structural weaknesses and assess damage.",
      "ar": "تعرض جيكو روبوتها الجديد المتسلّق للجدران، الذي تنشره أدنوك لرصد مواطن الضعف الإنشائي وتقييم الأضرار.",
      "src": 1,
-     "img": "/media/spotlight/gecko-raptor-adipec-2026.jpg"
+     "img": "/media/spotlight/gecko-inspectors-thickness-map.jpg"
     },
     {
      "date": "2026-11-04",
@@ -479,7 +479,7 @@
       "en": "3–5× faster than Gecko’s previous robot (company claim)",
       "ar": "أسرع بثلاث إلى خمس مرات من روبوت جيكو السابق (بحسب الشركة)"
      },
-     "img": "/media/spotlight/gecko-raptor-adipec-2026.jpg",
+     "img": "/media/spotlight/gecko-inspectors-thickness-map.jpg",
      "src": 1,
      "co": "gecko-robotics"
     },
@@ -1075,18 +1075,18 @@
       },
       {
        "t": "img",
-       "src": "/media/spotlight/gecko-crawler-wall.jpg",
+       "src": "/media/spotlight/gecko-crawler-electronics.jpg",
        "alt": {
-        "en": "Gecko Robotics crawler robot on a steel display wall at a trade show",
-        "ar": "روبوت زاحف من جيكو روبوتكس على جدار فولاذي في معرض"
+        "en": "Close-up of a hand holding a Gecko crawler’s sensor electronics and cabling",
+        "ar": "لقطة قريبة ليد تمسك بإلكترونيات المستشعرات وكابلات روبوت جيكو الزاحف"
        },
        "cap": {
-        "en": "A Gecko crawler detects corrosion in places that are hard to reach by hand.",
-        "ar": "روبوت زاحف من جيكو يرصد التآكل في أماكن يصعب الوصول إليها يدوياً."
+        "en": "Inside a Gecko crawler: the sensor electronics that read wall thickness.",
+        "ar": "من داخل روبوت جيكو الزاحف: إلكترونيات المستشعرات التي تقيس سماكة الجدران."
        },
        "credit": {
-        "en": "Photo: Cody Combs / The National",
-        "ar": "تصوير: كودي كومبس / ذا ناشونال"
+        "en": "Image: Gecko Robotics",
+        "ar": "الصورة: جيكو روبوتكس"
        }
       }
      ]
@@ -1240,20 +1240,19 @@
       },
       {
        "t": "img",
-       "src": "/media/spotlight/adipec-2026-adnoc-humanoid.jpg",
+       "src": "/media/spotlight/taurob-offshore-deck.jpg",
        "alt": {
-        "en": "Humanoid robot branded ADNOC Robotics on the ADIPEC 2026 exhibition floor",
-        "ar": "روبوت بشري يحمل علامة أدنوك للروبوتات في معرض أديبك 2026"
+        "en": "Tracked Taurob inspection robot on the deck of an offshore platform",
+        "ar": "روبوت فحص مجنزر من تاوروب على سطح منصة بحرية"
        },
        "cap": {
-        "en": "An ADNOC-branded humanoid at ADIPEC 2026.",
-        "ar": "روبوت بشري يحمل علامة أدنوك في أديبك 2026."
+        "en": "A Taurob inspection robot on an offshore deck. ADNOC runs one at its Taweelah gas compression plant.",
+        "ar": "روبوت فحص من تاوروب على سطح منصة بحرية. تشغّل أدنوك واحداً في محطة الطويلة لضغط الغاز."
        },
        "credit": {
-        "en": "Photo: Erik Arazas / Emarat Al Youm",
-        "ar": "تصوير: إريك أرازاس / الإمارات اليوم"
-       },
-       "maxw": "380px"
+        "en": "Image: Taurob",
+        "ar": "الصورة: تاوروب"
+       }
       },
       {
        "t": "p",
@@ -1325,14 +1324,14 @@
     "en": "Source: The National, 4 Nov 2026. Raptor was unveiled at ADIPEC, Abu Dhabi.",
     "ar": "المصدر: ذا ناشونال، 4 نوفمبر 2026. كُشف عن «رابتور» في معرض أديبك، أبوظبي."
    },
-   "img": "/media/brief/gecko-adnoc-raptor.jpg",
+   "img": "/media/brief/gecko-inspectors-thickness-map.jpg",
    "cap": {
-    "en": "Raptor at ADIPEC, Abu Dhabi · Nov 2026",
-    "ar": "رابتور في أديبك، أبوظبي · نوفمبر 2026"
+    "en": "A Gecko crawler and its live wall-thickness map",
+    "ar": "روبوت جيكو الزاحف وخريطة سماكة الجدران المباشرة"
    },
    "credit": {
-    "en": "Photo: Victor Besa / The National",
-    "ar": "تصوير: فيكتور بيسا / ذا ناشونال"
+    "en": "Image: Gecko Robotics",
+    "ar": "الصورة: جيكو روبوتكس"
    }
   }
  }

@@ -30,9 +30,11 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   from `data/brief.json` or the build date so it can't go stale. -->
 - [x] **Editorial policy and corrections (audit, 10 Nov).** Published at /editorial with a corrections log (`data/corrections.json`).<!-- Footer "Read the policy" goes to `/submit`, and the
   footer promises corrections are logged. Publish a short editorial and corrections page (or change the copy). -->
-- [ ] **Image rights (audit).** Brief, Spotlight and policy images include agency and newspaper photos (The National,
-  WAM, Gulf Times, Asharq Al-Awsat, MedEdge, Dubai Media Office). A credit is not a licence: confirm permission,
-  switch to official press-kit images, or replace them before going public.
+- [x] **Image rights (audit).** Done 13 Nov 2026: the five highest-risk newspaper photos (six placements: Lootah
+  brief tile, Spotlight cover and home tile, Gecko chapter image, ADNOC humanoid, Saudi policy feature) were replaced with
+  company images (YS Lootah, Gecko, Taurob, GMT Robotics) and the report PDFs rebuilt. Every image credit on the site now
+  has a "Request removal" link (email to contact@roboticsmena.com, image and page prefilled). The remaining agency and
+  newspaper photos stay credited, covered by that link and the editorial page's removal line.
 - [x] **Bugs found in the audit** fixed (10 Nov 2026): raw target dates, Alat/Mowasalat match (now whole-word,
   also for logos and photos), notices for unknown `?c=` / `?s=` links, events separators, cross-month ranges, TBC
   months instead of invented dates, empty event filters hidden, Kenyo link replaced with Gulf News.

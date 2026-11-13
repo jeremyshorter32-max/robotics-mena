@@ -113,7 +113,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
     </div>
   </div>
   <div style="position:relative;margin-top:96px;border-top:1px solid var(--line);background:var(--bg-glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)">
-    <div aria-hidden="true" style="position:absolute;bottom:100%;inset-inline:0;pointer-events:none"><div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter) 10px;display:flex;justify-content:flex-end"><span class="rm-hero-cr" style="font:400 11px/16px var(--font-num);color:#F3F1EC;background:rgba(17,18,22,.55);padding:2px 8px;border-radius:3px"></span></div></div>
+    <div style="position:absolute;bottom:100%;inset-inline:0;pointer-events:none"><div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter) 10px;display:flex;justify-content:flex-end"><span class="rm-hero-cr" style="pointer-events:auto;font:400 11px/16px var(--font-num);color:#F3F1EC;background:rgba(17,18,22,.55);padding:2px 8px;border-radius:3px"></span></div></div>
     <div style="max-width:1440px;margin:0 auto;padding:16px var(--gutter) 0;display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-num);color:var(--fg-subtle)"><span style="width:6px;height:6px;transform:rotate(45deg);background:var(--accent)"></span>{{ statsUpd }}</div>
     <div role="list" style="margin:0 auto;max-width:1440px;padding:0 var(--gutter);display:grid;grid-template-columns:var(--stats-cols)">
       <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
@@ -148,7 +148,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
       <li style="scroll-snap-align:start;display:flex;flex-direction:column;gap:20px;padding:28px;background:var(--bg-raised);border:1px solid var(--line);border-top:2px solid var(--fg);min-height:400px;min-width:0">
         <sc-if value="{{ b.hasImg }}"><figure style="margin:-28px -28px 0;position:relative;aspect-ratio:16 / 10;overflow:hidden;background:var(--bg-hover);border-bottom:1px solid var(--line)">
           <img src="{{ b.img }}" alt="" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
-          <figcaption style="position:absolute;inset-inline-start:0;bottom:0;padding:3px 8px;background:rgba(17,18,22,.80);color:#F3F1EC;font:400 11px/16px var(--font-num)">{{ b.credit }}</figcaption>
+          <figcaption style="position:absolute;inset-inline-start:0;bottom:0;padding:3px 8px;background:rgba(17,18,22,.80);color:#F3F1EC;font:400 11px/16px var(--font-num)">{{ b.credit }}<sc-if value="{{ b.rmv }}"> · <a href="{{ b.rmv }}" data-rmv="" style="color:inherit;text-decoration:underline;text-underline-offset:2px;white-space:nowrap">{{ t.rmv }}</a></sc-if></figcaption>
         </figure></sc-if>
         <sc-if value="{{ b.noImg }}"><figure aria-hidden="true" style="margin:-28px -28px 0;position:relative;aspect-ratio:16 / 10;overflow:hidden;background:#26246E;color:#F3F1EC;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:24px 28px">
           <span style="position:relative;font:500 40px/1 var(--font-num);letter-spacing:.04em;color:#E3E2F2">{{ b.cc }}</span>
@@ -229,7 +229,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
       <div style="position:relative;aspect-ratio:4 / 3;background:var(--bg-raised);overflow:hidden;border:1px solid var(--line)">
         <img src="{{ spot.img }}" alt="{{ spot.alt }}" width="1000" height="750" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
       </div>
-      <figcaption style="display:flex;justify-content:space-between;gap:16px;font:400 12px/16px var(--font-num);color:var(--fg-subtle)"><span>{{ spot.cap }}</span><span>{{ spot.credit }}</span></figcaption>
+      <figcaption style="display:flex;justify-content:space-between;gap:16px;font:400 12px/16px var(--font-num);color:var(--fg-subtle)"><span>{{ spot.cap }}</span><span>{{ spot.credit }}<sc-if value="{{ spot.rmv }}"> · <a href="{{ spot.rmv }}" data-rmv="" style="color:inherit;text-decoration:underline;text-underline-offset:2px;white-space:nowrap">{{ t.rmv }}</a></sc-if></span></figcaption>
     </figure>
     <article style="display:flex;flex-direction:column;gap:24px">
       <div style="margin-bottom:4px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.s8n }} · {{ spot.kicker }}</div>
