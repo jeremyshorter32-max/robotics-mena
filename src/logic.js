@@ -55,9 +55,14 @@ class Component extends DCLogic {
     const hero = document.getElementById('top'), slides = hero ? [...hero.querySelectorAll('.rm-hero-slide')] : [], cr = hero && hero.querySelector('.rm-hero-cr');
     if (!slides.length) return;
     const show = i => { slides.forEach((s, k) => k === i ? s.setAttribute('data-on', '') : s.removeAttribute('data-on')); if (cr) cr.textContent = slides[i].dataset.cr || ''; };
-    show(0); hero.setAttribute('data-live', '');
+    // A different photo on every visit: random start, never the one shown last time (remembered in this browser only).
+    let last = -1; try { last = +(localStorage.getItem('rm-hero-last') ?? -1); } catch (e) {}
+    let i = Math.floor(Math.random() * slides.length); if (slides.length > 1 && i === last) i = (i + 1 + Math.floor(Math.random() * (slides.length - 1))) % slides.length;
+    try { localStorage.setItem('rm-hero-last', String(i)); } catch (e) {}
+    slides.forEach(s => { s.style.transition = 'none'; }); show(i); hero.setAttribute('data-live', '');
+    requestAnimationFrame(() => requestAnimationFrame(() => slides.forEach(s => { s.style.transition = ''; })));
     if (slides.length < 2 || this.reduced) return;
-    let i = 0, seen = true, hover = false;
+    let seen = true, hover = false;
     const io = new IntersectionObserver(es => { seen = es.some(e => e.isIntersecting); }); io.observe(hero);
     const enter = () => { hover = true; }, leave = () => { hover = false; };
     hero.addEventListener('mouseenter', enter); hero.addEventListener('mouseleave', leave);
