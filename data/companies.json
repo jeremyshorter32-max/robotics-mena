@@ -4576,120 +4576,6 @@
     "mena_date": "2026-07-02"
   },
   {
-    "id": "berkeley-services",
-    "name": "Berkeley Services",
-    "name_ar": "بيركلي سيرفيسز",
-    "country": "AE",
-    "category": "service",
-    "secondary": "integrator",
-    "stage": "corp",
-    "summary": "UAE facilities-management group (Klüh International subsidiary, est. 1984) whose cleaning teams use robotic floor cleaners; HQ Dubai, branch in Abu Dhabi.",
-    "summary_ar": "مجموعة إماراتية لإدارة المرافق تابعة لشركة كلوه الألمانية، تأسست عام 1984، وتستخدم فرق التنظيف لديها روبوتات لتنظيف الأرضيات؛ مقرها دبي ولها فرع في أبوظبي.",
-    "website": "https://www.berkeleyuae.com/",
-    "logo": "",
-    "source": "Berkeley Services (company site)",
-    "source_url": "https://www.berkeleyuae.com/technology",
-    "added": "2026-11-13",
-    "hq": "AE",
-    "hq_city": "Dubai",
-    "mena_countries": [
-      "AE"
-    ],
-    "mena_link": {
-      "en": "In April 2018 Berkeley Services Group, as UAE University's facilities-management partner, supplied an Avidbots Neo autonomous floor-scrubbing robot to the UAEU campus via Al Yousuf Robotics.",
-      "ar": "في أبريل 2018 زوّدت مجموعة بيركلي سيرفيسز، بصفتها شريك إدارة المرافق لجامعة الإمارات، حرم الجامعة بروبوت تنظيف الأرضيات الذاتي «أفيدبوتس نيو» عبر شركة اليوسف للروبوتات."
-    },
-    "mena_source": "Avidbots / PR Newswire",
-    "mena_source_url": "https://www.prnewswire.com/in/news-releases/avidbots-bringing-robots-to-the-education-market-in-the-united-arab-emirates-uae-679954503.html",
-    "mena_date": "2018-04-17",
-    "self_reported": true
-  },
-  {
-    "id": "farnek",
-    "name": "Farnek",
-    "name_ar": "فارنك",
-    "country": "AE",
-    "category": "service",
-    "secondary": "integrator",
-    "stage": "corp",
-    "summary": "Swiss-owned UAE facilities-management firm (est. 1980) running 'Farnek Hybrid Units' that pair cleaning crews with SoftBank Robotics cleaning robots.",
-    "summary_ar": "شركة إدارة مرافق إماراتية مملوكة لجهة سويسرية تأسست عام 1980، تشغّل «وحدات فارنك الهجينة» التي تجمع فرق التنظيف مع روبوتات تنظيف من سوفت بنك روبوتكس.",
-    "website": "https://www.farnek.com/",
-    "logo": "",
-    "source": "Farnek",
-    "source_url": "https://www.farnek.com/dubai-airports-roll-out-major-robotic-cleaning-programme/",
-    "added": "2026-11-13",
-    "hq": "AE",
-    "hq_city": "Dubai",
-    "mena_countries": [
-      "AE"
-    ],
-    "mena_link": {
-      "en": "In November 2025 Farnek and Dubai Airports said more than 30 autonomous cleaning robots were deployed across DXB Terminals 1 and 2, Concourse D, Dubai Cargo Village and DWC under a five-year FM contract.",
-      "ar": "في نوفمبر 2025 أعلنت فارنك ومطارات دبي نشر أكثر من 30 روبوت تنظيف ذاتي في المبنيين 1 و2 والكونكورس D بمطار دبي الدولي وقرية دبي للشحن ومطار آل مكتوم الدولي ضمن عقد إدارة مرافق مدته خمس سنوات."
-    },
-    "mena_source": "Farnek",
-    "mena_source_url": "https://www.farnek.com/dubai-airports-roll-out-major-robotic-cleaning-programme/",
-    "mena_date": "2025-11-17"
-  },
-  {
-    "id": "hitek-ai",
-    "name": "HITEK AI",
-    "name_ar": "هايتك إيه آي",
-    "country": "AE",
-    "category": "software",
-    "secondary": "integrator",
-    "stage": "growth",
-    "summary": "Dubai smart-FM software firm (Farnek's digital sister company) offering robot-as-a-service cleaning with SoftBank Robotics' Whiz and Phantas, managed via its CAFMTEK platform.",
-    "summary_ar": "شركة برمجيات لإدارة المرافق الذكية في دبي (الشركة الرقمية الشقيقة لفارنك) تقدّم خدمة الروبوت كخدمة للتنظيف بروبوتي «ويز» و«فانتاس» من سوفت بنك روبوتكس عبر منصتها CAFMTEK.",
-    "website": "https://www.hitek.ai/",
-    "logo": "",
-    "source": "HITEK AI",
-    "source_url": "https://www.hitek.ai/press-release/robot-as-a-service-hitek-softbank-collaboration/",
-    "added": "2026-11-13",
-    "hq": "AE",
-    "hq_city": "Dubai",
-    "mena_countries": [
-      "AE",
-      "SA"
-    ],
-    "mena_link": {
-      "en": "In 2025 HITEK AI launched a Robot-as-a-Service offer with SoftBank Robotics UK for businesses in the UAE and Saudi Arabia, integrating Whiz and Phantas cleaning robots into its CAFMTEK FM platform.",
-      "ar": "أطلقت هايتك إيه آي في 2025 خدمة «الروبوت كخدمة» بالشراكة مع سوفت بنك روبوتكس البريطانية للشركات في الإمارات والسعودية، بدمج روبوتي التنظيف «ويز» و«فانتاس» في منصتها CAFMTEK."
-    },
-    "mena_source": "HITEK AI",
-    "mena_source_url": "https://www.hitek.ai/press-release/robot-as-a-service-hitek-softbank-collaboration/",
-    "mena_date": "2025-08-06",
-    "self_reported": true
-  },
-  {
-    "id": "emrill",
-    "name": "Emrill",
-    "name_ar": "إمريل",
-    "country": "AE",
-    "category": "service",
-    "stage": "corp",
-    "summary": "UAE integrated facilities-management provider that added LionsBot LeoMop cleaning robots to its fleet, starting at Dubai Festival City Mall.",
-    "summary_ar": "مزوّد إماراتي لخدمات إدارة المرافق المتكاملة أضاف روبوتات التنظيف «ليو موب» من لايونزبوت إلى أسطوله، بدءاً من دبي فستيفال سيتي مول.",
-    "website": "https://www.emrill.com/",
-    "logo": "",
-    "source": "Zawya",
-    "source_url": "https://www.zawya.com/en/press-release/companies-news/emrill-launches-advanced-sustainable-cleaning-robot-in-partnership-with-dubai-festival-city-mall-oi0as362",
-    "added": "2026-11-13",
-    "hq": "AE",
-    "hq_city": "Dubai",
-    "mena_countries": [
-      "AE"
-    ],
-    "mena_link": {
-      "en": "In November 2022 Emrill launched its first cleaning robot for a retail site, a LionsBot LeoMop, at Al-Futtaim's Dubai Festival City Mall.",
-      "ar": "في نوفمبر 2022 أطلقت إمريل أول روبوت تنظيف لها في موقع تجاري، وهو «ليو موب» من لايونزبوت، في دبي فستيفال سيتي مول التابع لمجموعة الفطيم."
-    },
-    "mena_source": "Zawya",
-    "mena_source_url": "https://www.zawya.com/en/press-release/companies-news/emrill-launches-advanced-sustainable-cleaning-robot-in-partnership-with-dubai-festival-city-mall-oi0as362",
-    "mena_date": "2022-11-03"
-  },
-  {
     "id": "acme-intralog",
     "name": "Acme Intralog",
     "name_ar": "أكمي إنترالوج",
@@ -4973,5 +4859,59 @@
     "mena_source": "Gulf Times",
     "mena_source_url": "https://www.gulf-times.com/article/732788/business/snoonu-leverages-local-rd-to-drive-autonomous-logistics",
     "mena_date": "2026-09-07"
+  },
+  {
+    "id": "lionsbot",
+    "name": "LionsBot",
+    "name_ar": "ليونز بوت",
+    "country": "AE",
+    "category": "service",
+    "stage": "b",
+    "summary": "Singapore maker of autonomous cleaning robots (LeoMop, LeoScrub); its LeoMop runs at Dubai Festival City Mall.",
+    "summary_ar": "شركة سنغافورية تصنع روبوتات تنظيف ذاتية التشغيل (LeoMop وLeoScrub)، ويعمل روبوتها LeoMop في دبي فستيفال سيتي مول.",
+    "website": "https://www.lionsbot.com/",
+    "logo": "",
+    "source": "Zawya (Emrill press release)",
+    "source_url": "https://www.zawya.com/en/press-release/companies-news/emrill-launches-advanced-sustainable-cleaning-robot-in-partnership-with-dubai-festival-city-mall-oi0as362",
+    "added": "2026-11-13",
+    "hq": "SG",
+    "hq_city": "Singapore",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "Its LeoMop cleaning robot went into service at Dubai Festival City Mall in November 2022, bought through UAE supplier Hygiene Tech.",
+      "ar": "بدأ روبوت التنظيف LeoMop العمل في دبي فستيفال سيتي مول في نوفمبر 2022، بعد شرائه عبر المورّد الإماراتي هايجين تك."
+    },
+    "mena_source": "Zawya",
+    "mena_source_url": "https://www.zawya.com/en/press-release/companies-news/emrill-launches-advanced-sustainable-cleaning-robot-in-partnership-with-dubai-festival-city-mall-oi0as362",
+    "mena_date": "2022-11-03"
+  },
+  {
+    "id": "avidbots",
+    "name": "Avidbots",
+    "name_ar": "أفيدبوتس",
+    "country": "AE",
+    "category": "service",
+    "stage": "b",
+    "summary": "Canadian maker of the Neo autonomous floor-scrubbing robot; supplied UAE University in 2018 and supports UAE customers.",
+    "summary_ar": "شركة كندية تصنع روبوت Neo لتنظيف الأرضيات ذاتياً؛ زوّدت جامعة الإمارات به في 2018 وتدعم عملاءها في الإمارات.",
+    "website": "https://avidbots.com/",
+    "logo": "",
+    "source": "PR Newswire",
+    "source_url": "https://www.prnewswire.com/in/news-releases/avidbots-bringing-robots-to-the-education-market-in-the-united-arab-emirates-uae-679954503.html",
+    "added": "2026-11-13",
+    "hq": "CA",
+    "hq_city": "Kitchener",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "In April 2018 its Neo robot started cleaning at UAE University in Al Ain, through local partner Al Yousuf Robotics.",
+      "ar": "في أبريل 2018 بدأ روبوت Neo التنظيف في جامعة الإمارات بالعين عبر الشريك المحلي اليوسف للروبوتات."
+    },
+    "mena_source": "PR Newswire",
+    "mena_source_url": "https://www.prnewswire.com/in/news-releases/avidbots-bringing-robots-to-the-education-market-in-the-united-arab-emirates-uae-679954503.html",
+    "mena_date": "2018-04-17"
   }
 ]
