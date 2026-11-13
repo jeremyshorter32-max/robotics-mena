@@ -51,8 +51,13 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   Open Graph tags from each page's title and description, every page has its own description. GoatCounter added
   (site code `roboticsmena`). (Button contrast fixed by the indigo rebrand, 10 Nov 2026.)
 - [x] **Launch plumbing, owner side** (13 Nov 2026): "Enforce HTTPS" ticked; GoatCounter account created (`roboticsmena`).
-- [ ] **After launch:** add the site to Google Search Console and Bing Webmaster Tools and submit
-  https://roboticsmena.com/sitemap.xml.
+- [x] **Search engines, site side** (13 Nov 2026): IndexNow key (`static/<key>.txt`, key in `data/site.json`) and
+  `scripts/indexnow.mjs`, run by the Deploy site action after every deploy (first ping: HTTP 202 for 10 URLs);
+  Organization/WebSite structured data with the database search on the home page.
+- [ ] **Search engines, owner side:** create the Google Search Console property ("URL prefix", https://roboticsmena.com/)
+  and paste the verification code to Claude (or verify by DNS), submit the sitemap; then import into Bing Webmaster Tools.
+- [ ] **Web-filter submissions:** pack and Claude-in-Chrome prompt in `docs/launch/web-filter-submissions.md`; log ticket
+  numbers here when done.
 - [x] **Password turned off** (13 Nov 2026): the deploy builds with `PUBLIC_LAUNCH=true`; every other open item was deferred
   by the owner. Owner to do: delete the `SITE_PASSWORD` repository secret (no longer used), then submit roboticsmena.com
   for web-filter categorisation (Science/Technology or News): Zscaler (sitereview.zscaler.com), Palo Alto, Fortinet,
