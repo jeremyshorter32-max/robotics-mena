@@ -71,6 +71,7 @@ class Component extends DCLogic {
   }
   componentDidMount() {
     setTimeout(() => this.initHero(), 0);
+    this._xEsc = e => { if (e.key === 'Escape' && this.state.xOpen) this.setState({ xOpen: null }); }; window.addEventListener('keydown', this._xEsc);
     this.markExternal();
     if ('MutationObserver' in window) { this.extMO = new MutationObserver(() => { if (this.extRaf) return; this.extRaf = requestAnimationFrame(() => { this.extRaf = 0; this.markExternal(); }); }); this.extMO.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] }); }
     // On phones, picking a pin or country lifts the map page's bottom sheet so the details show.
@@ -126,7 +127,7 @@ class Component extends DCLogic {
   railStep(el) { const li = el.querySelector('li'); return li ? li.getBoundingClientRect().width + (parseFloat(getComputedStyle(el).columnGap) || 0) : el.clientWidth; }
   railUpdate(k) { const el = this.railEl(k); if (!el) return; const x = Math.abs(el.scrollLeft), n = el.querySelectorAll('li').length, i = Math.round(x / this.railStep(el)), end = x + el.clientWidth >= el.scrollWidth - 4; const o = this.state.rails[k]; if (o.i !== i || o.n !== n || o.end !== end) this.setState(s => ({ rails: { ...s.rails, [k]: { i, n, end } } })); }
   railMove(k, d) { const el = this.railEl(k); if (!el) return; const r = this.state.rails[k]; if ((d < 0 && r.i === 0) || (d > 0 && r.end)) return; const rtl = getComputedStyle(el).direction === 'rtl'; el.scrollBy({ left: d * this.railStep(el) * (rtl ? -1 : 1), behavior: this.reduced ? 'auto' : 'smooth' }); }
-  componentWillUnmount() { this._hero && this._hero(); this.extMO && this.extMO.disconnect(); this.rpIO && this.rpIO.disconnect(); this.onRp && window.removeEventListener('scroll', this.onRp); this.onLbKey && window.removeEventListener('keydown', this.onLbKey); this.mapIO && this.mapIO.disconnect(); window.removeEventListener('scroll', this.onSpy); window.removeEventListener('rm:pin', this.onPin); window.removeEventListener('rm:country', this.onCty); window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.onResize); }
+  componentWillUnmount() { this._hero && this._hero(); this._xEsc && window.removeEventListener('keydown', this._xEsc); this.extMO && this.extMO.disconnect(); this.rpIO && this.rpIO.disconnect(); this.onRp && window.removeEventListener('scroll', this.onRp); this.onLbKey && window.removeEventListener('keydown', this.onLbKey); this.mapIO && this.mapIO.disconnect(); window.removeEventListener('scroll', this.onSpy); window.removeEventListener('rm:pin', this.onPin); window.removeEventListener('rm:country', this.onCty); window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.onResize); }
 
   go(id, c) { const el = document.getElementById(id); if (!el) { window.location.href = this.pageHref(id, c); return; } window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - this.navH() - 8, behavior: this.reduced ? 'auto' : 'smooth' }); }
 
@@ -433,13 +434,15 @@ class Component extends DCLogic {
   srcTx(x, ar) { return ar ? String(x || '').replace(/\s*\(press release\)/gi, ' (بيان صحفي)').replace(/\s*\(company website\)/gi, ' (موقع الشركة)') : x; }
   // Loads X's embed script on first use, then renders the post in place (no tracking before the click).
   showX(id, theme) {
-    this.setState(st => ({ xShow: { ...(st.xShow || {}), [id]: true } }));
-    const render = () => { const el = document.getElementById('x-embed-' + id); if (el && window.twttr && window.twttr.widgets && !el.childElementCount) window.twttr.widgets.createTweet(id, el, { dnt: true, theme: theme === 'dark' ? 'dark' : 'light', conversation: 'none', align: 'center' }); };
-    if (window.twttr && window.twttr.widgets) { setTimeout(render, 0); return; }
+    this.setState({ xOpen: id });
+    const render = () => { const el = document.getElementById('x-embed-modal'); if (!el || !window.twttr || !window.twttr.widgets) return; el.innerHTML = ''; window.twttr.widgets.createTweet(id, el, { dnt: true, theme: theme === 'dark' ? 'dark' : 'light', conversation: 'none', align: 'center' }); };
+    const go = () => setTimeout(render, 30);
+    if (window.twttr && window.twttr.widgets) { go(); return; }
     if (!this._xLoading) { this._xLoading = []; const sc = document.createElement('script'); sc.src = 'https://platform.twitter.com/widgets.js'; sc.async = true; sc.charset = 'utf-8';
       sc.onload = () => { const q = this._xLoading || []; this._xLoading = null; (window.twttr && window.twttr.ready ? window.twttr.ready : f => f())(() => q.forEach(f => f())); }; document.head.appendChild(sc); }
-    if (this._xLoading) this._xLoading.push(render); else setTimeout(render, 0);
+    if (this._xLoading) this._xLoading.push(go); else go();
   }
+
   // Forgiving search shared by every search box: ignores case, accents, spaces and punctuation ("field ai" finds
   // FieldAI), normalises Arabic letter variants, matches words in any order and allows one typo in words of 5+ letters.
   // Returns 0 for no match, otherwise a score (name matches rank first).
@@ -890,15 +893,17 @@ class Component extends DCLogic {
       // Hand-picked X posts: a plain card first; X's own code loads only when the reader asks for the post.
       ...(() => {
         const XP = (window.RM_DATA.xposts || []).slice(0, 6), CO = window.RM_DATA.companies;
+        const open = XP.find(x => x.id === S.xOpen);
         return {
+          xOpen: !!open, xOpenUrl: open ? open.url : '', xClose: () => this.setState({ xOpen: null }), xKeep: e => e.stopPropagation(),
           hasX: this.PAGE === 'home' && XP.length > 0,
-          xT: ar ? { title: 'من منصة X هذا الأسبوع', sub: 'منشورات مختارة من حسابات رسمية، يختارها محرّرونا. لا يُحمَّل أي شيء من X إلا عندما تختار «اعرض المنشور».', show: 'اعرض المنشور', view: 'اعرضه على X', priv: 'عند عرض منشور، يُحمّل متصفحك محتوى من X، وقد تضع X ملفات تعريف ارتباط وفق سياستها.' }
-            : { title: 'From X this week', sub: 'Posts from official accounts, picked by our editors. Nothing loads from X until you choose “Show post”.', show: 'Show post', view: 'View on X', priv: 'Showing a post loads it from X, which may set cookies under its own policy.' },
-          xposts: XP.map(x => { const co = x.company && CO.find(c => c.id === x.company); const shown = !!(S.xShow || {})[x.id]; return {
+          xT: ar ? { title: 'من منصة X هذا الأسبوع', sub: 'منشورات مختارة من حسابات رسمية، يختارها محرّرونا. لا يُحمَّل أي شيء من X إلا عندما تختار «اعرض المنشور».', show: 'اعرض المنشور', view: 'اعرضه على X', dlg: 'منشور من X', loading: 'جارٍ تحميل المنشور من X…', priv: 'عند عرض منشور، يُحمّل متصفحك محتوى من X، وقد تضع X ملفات تعريف ارتباط وفق سياستها.' }
+            : { title: 'From X this week', sub: 'Posts from official accounts, picked by our editors. Nothing loads from X until you choose “Show post”.', show: 'Show post', view: 'View on X', dlg: 'Post from X', loading: 'Loading the post from X…', priv: 'Showing a post loads it from X, which may set cookies under its own policy.' },
+          xposts: XP.map(x => { const co = x.company && CO.find(c => c.id === x.company); return {
             id: x.id, author: x.author, handle: x.handle, date: fdate(x.date), excerpt: x.excerpt, note: ar ? (x.note_ar || x.note) : x.note, url: x.url,
             flag: this.flagUrl(x.country), cname: this.CC[x.country] ? this.CC[x.country][L] : x.country, hasType: !!(x.type && this.TYPES[x.type]), typeLabel: x.type && this.TYPES[x.type] ? this.TYPES[x.type][L] : '',
             hasCo: !!co, coName: co ? (ar ? (co.name_ar || co.name) : co.name) : '', coHref: co ? '/database?tab=companies&id=' + co.id : '',
-            embedId: 'x-embed-' + x.id, hidden: !shown, show: () => this.showX(x.id, theme) }; })
+            show: () => this.showX(x.id, theme) }; })
         };
       })(),
       privHref: '/privacy', privLbl: ar ? 'سياسة الخصوصية' : 'Privacy policy',
