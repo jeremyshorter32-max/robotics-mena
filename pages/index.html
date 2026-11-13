@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Robotics MENA — Robotics across the Middle East &amp; North Africa</title>
 <meta name="description" content="A curated, sourced record of who is building and deploying robotics, physical AI and automation across the Middle East and North Africa.">
-<script>/*@config {"page":"home","nav":["brief","map","spotlight","newsletter"],"t":{"en":{"s8n":"03 · Spotlight","s9n":"04 · Newsletter"},"ar":{"s8n":"03 · تحت الضوء","s9n":"04 · النشرة"}}}*/</script>
+<script>/*@config {"page":"home","nav":["brief","map","spotlight","newsletter"],"t":{"en":{"s8n":"02 · Spotlight","s9n":"03 · Newsletter"},"ar":{"s8n":"02 · تحت الضوء","s9n":"03 · النشرة"}}}*/</script>
 <script src="/support.js"></script>
 </head>
 <body>
@@ -13,8 +13,6 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap">
-<script src="/vendor/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"></script>
-<script src="/vendor/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67"></script>
 <script src="/image-slot.js"></script>
 <style>
 html,body{margin:0;padding:0;background:#F3F1EC}
@@ -218,72 +216,6 @@ html,body{margin:0;padding:0;background:#F3F1EC}
   </div>
 </section>
 </sc-if>
-
-<section id="map" data-screen-label="03 Deployments map" style="border-top:1px solid var(--line);padding-top:var(--sec-pad)">
-  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:var(--grid);column-gap:var(--gap);row-gap:24px;padding-bottom:32px">
-    <header style="grid-column:var(--span-label);max-width:640px;display:flex;flex-direction:column;gap:8px">
-      <div style="margin-bottom:4px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.s2n }}</div>
-      <h2 style="margin:0;font-size:var(--fs-h2);line-height:1.15;letter-spacing:var(--track-tight);font-weight:600">{{ t.s2 }}</h2>
-      <p style="margin:0;color:var(--fg-muted)">{{ t.s2sub }}</p>
-    </header>
-    <div style="grid-column:var(--span-main);align-self:end;display:flex;justify-content:flex-end"><a href="{{ mapFullHref }}" style="display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border:1px solid var(--fg);border-radius:3px;font-size:14px;font-weight:500;white-space:nowrap">{{ t.mapOpen }} <span aria-hidden="true">{{ arrow }}</span></a></div>
-  </div>
-  <div style="position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)">
-    <div ref="{{ mapRef }}" style="height:var(--map-h);position:relative;background:var(--map-sea)">
-      <sc-if value="{{ mapNear }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="mena-map" from="./mena-map.js" mode="full" autotour="on" dir="{{ dir }}" pins="{{ mapPins }}" selected="{{ selId }}" focus="{{ fCountry }}" pad-end="{{ padEnd }}" label="{{ t.s2 }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import></sc-if>
-      <div style="position:absolute;top:16px;inset-inline-start:16px;font:400 12px/16px var(--font-num);color:var(--fg-subtle);background:var(--bg-glass);padding:6px 10px;border:1px solid var(--line);display:var(--d-nav);white-space:nowrap">{{ t.mapHelp }}</div>
-    </div>
-    <aside style="position:var(--panel-pos);top:var(--panel-top);inset-inline-end:var(--panel-end);margin:var(--panel-margin);width:var(--panel-w);max-height:var(--panel-maxh);overflow:auto;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:3px">
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)">
-        <span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ panelTitle }}</span>
-        <span style="font:500 12px var(--font-num);color:var(--fg-muted)">{{ showing }}</span>
-      </div>
-      <sc-if value="{{ hasSel }}" hint-placeholder-val="{{ false }}">
-        <article style="padding:20px;display:flex;flex-direction:column;gap:20px">
-          <div style="display:flex;gap:16px;align-items:flex-start">
-            <div style="width:56px;height:56px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;color:var(--fg)"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ sel.icon }}"></path></svg></div>
-            <div style="display:flex;flex-direction:column;gap:6px;min-width:0;flex:1">
-              <span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--sand)">{{ sel.kindLabel }}</span>
-              <sc-if value="{{ sel.isNew }}"><span style="align-self:flex-start;font:600 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--accent-ink);background:var(--accent);padding:2px 6px">{{ t.newLbl }}</span></sc-if>
-              <h3 style="margin:0;font-size:22px;line-height:1.3;font-weight:600;letter-spacing:var(--track-tight)">{{ sel.robot }}</h3>
-              <div style="font-size:13px;color:var(--fg-muted)">{{ sel.typeLabel }} · {{ sel.sector }}</div>
-            </div>
-            <button onClick="{{ clearSel }}" aria-label="{{ t.close }}" style="width:32px;height:32px;flex:none;background:transparent;border:1px solid var(--line-strong);border-radius:3px;cursor:pointer;color:var(--fg-muted)">✕</button>
-          </div>
-          <sc-if value="{{ sel.hasSummary }}"><p style="margin:0;font-size:14px;line-height:1.55;color:var(--fg-muted)">{{ sel.summary }}</p></sc-if>
-          <dl style="margin:0;display:grid;grid-template-columns:88px minmax(0,1fr);row-gap:12px;column-gap:16px;font-size:14px;border-top:1px solid var(--line);padding-top:16px">
-            <dt style="color:var(--fg-subtle)">{{ t.operator }}</dt><dd style="margin:0;display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="width:24px;height:24px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ sel.opBadge.bg }};font:600 11px/1 var(--font-num);letter-spacing:.02em;color:var(--fg)"><sc-if value="{{ sel.opBadge.hasImg }}"><img src="{{ sel.opBadge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:{{ sel.opBadge.fit }};padding:{{ sel.opBadge.pad }};display:block"></sc-if><sc-if value="{{ sel.opBadge.noImg }}">{{ sel.opBadge.mono }}</sc-if></span>{{ sel.operator }}</dd>
-            <dt style="color:var(--fg-subtle)">{{ t.site }}</dt><dd style="margin:0">{{ sel.site }}</dd>
-            <dt style="color:var(--fg-subtle)">{{ t.country }}</dt><dd style="margin:0">{{ sel.country }}</dd>
-            <dt style="color:var(--fg-subtle)">{{ t.date }}</dt><dd style="margin:0;font-family:var(--font-num);font-size:13px">{{ sel.date }}</dd>
-          </dl>
-          <div style="padding:12px 0 0;border-top:1px solid var(--line);font-size:13px;color:var(--fg-subtle)"><sc-if value="{{ sel.hasUrl }}"><a href="{{ sel.srcUrl }}" target="_blank" rel="noopener noreferrer" style="color:var(--accent-text)">{{ sel.srcLine }} {{ arrow }}</a></sc-if><sc-if value="{{ sel.noUrl }}">{{ sel.srcLine }}</sc-if></div>
-        </article>
-      </sc-if>
-      <sc-if value="{{ noSel }}" hint-placeholder-val="{{ true }}">
-        <ul style="list-style:none;margin:0;padding:0">
-          <sc-for list="{{ panelList }}" as="d" hint-placeholder-count="6">
-            <li style="border-bottom:1px solid var(--line)">
-              <button onClick="{{ d.pick }}" style="display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:12px;align-items:start;width:100%;padding:14px 20px;background:transparent;border:0;cursor:pointer;text-align:start;transition:background .15s" style-hover="background:var(--bg-hover)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--fg-muted);margin-top:2px"><path d="{{ d.icon }}"></path></svg>
-                <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:500;color:var(--fg)">{{ d.robot }}</span><span style="font-size:12px;color:var(--fg-subtle)"><span style="color:var(--sand)">{{ d.kindLabel }}</span> · {{ d.op }} · {{ d.site }}</span></span>
-                <span style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><span style="font:400 12px var(--font-num);color:var(--fg-subtle);white-space:nowrap">{{ d.date }}</span><sc-if value="{{ d.isNew }}"><span style="width:6px;height:6px;transform:rotate(45deg);background:var(--accent)"></span></sc-if></span>
-              </button>
-            </li>
-          </sc-for>
-        </ul>
-        <sc-if value="{{ mapMore }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toggleMapAll }}" style="width:100%;height:44px;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--accent-text);font-size:14px;font-weight:500;cursor:pointer">{{ mapMoreLbl }}</button></sc-if>
-        <div style="padding:12px 20px;font-size:12px;color:var(--fg-subtle)">{{ t.pickHint }}</div>
-      </sc-if>
-    </aside>
-  </div>
-  <div style="max-width:1440px;margin:0 auto;padding:16px var(--gutter) 0;display:flex;flex-wrap:wrap;gap:24px;align-items:center;font-size:12px;color:var(--fg-subtle);padding-bottom:var(--sec-pad)">
-    <span style="display:flex;align-items:center;gap:8px"><span style="display:flex;gap:3px"><span style="width:10px;height:10px;border-radius:50%;background:var(--t-arm)"></span><span style="width:10px;height:10px;border-radius:50%;background:var(--t-av)"></span><span style="width:10px;height:10px;border-radius:50%;background:var(--t-drone)"></span><span style="width:10px;height:10px;border-radius:50%;background:var(--t-amr)"></span></span>{{ t.legPin }}</span>
-    <span style="display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:50%;border:3px solid var(--t-arm);border-inline-end-color:var(--t-av);border-bottom-color:var(--t-drone);background:var(--bg-raised)"></span>{{ t.legCluster }}</span>
-    <span style="display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;border-radius:50%;border:1px solid var(--accent);opacity:.6"></span>{{ t.legNew }}</span>
-    <span style="margin-inline-start:auto;font-family:var(--font-num)">{{ t.mapSource }} · {{ statsUpd }}</span>
-  </div>
-</section>
 
 <section id="categories" data-screen-label="04 Categories" style="border-top:1px solid var(--line);padding:var(--sec-pad) 0">
   <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:var(--grid);column-gap:var(--gap);row-gap:24px">

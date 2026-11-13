@@ -681,7 +681,7 @@ class Component extends DCLogic {
     let results = [];
     if (q) {
       const co = rank(this.CO, c => [c[0] + ' ' + c[1], c[6], c[7], this.CATS[c[3]][L], ccName(c[2])]).slice(0, 4).map(c => ({ title: c[L], sub: this.CATS[c[3]][L] + ' · ' + ccName(c[2]), go: () => { window.location.href = '/database?tab=companies&id=' + encodeURIComponent(c[8]); } }));
-      const dp = rank(this.DEP, d => [d.robot[0] + ' ' + d.robot[1], d.op[0], d.op[1], d.site[0], d.site[1], this.TYPES[d.type][L], this.SECTORS[d.sector][L]]).slice(0, 4).map(d => ({ title: d.robot[L], sub: d.site[L], go: () => { this.setState({ q: '', sel: d.id, fCountry: '', fSector: '', fType: '' }); this.go('map'); } }));
+      const dp = rank(this.DEP, d => [d.robot[0] + ' ' + d.robot[1], d.op[0], d.op[1], d.site[0], d.site[1], this.TYPES[d.type][L], this.SECTORS[d.sector][L]]).slice(0, 4).map(d => ({ title: d.robot[L], sub: d.site[L], go: () => { window.location.href = '/database?tab=deployments&id=' + encodeURIComponent(d.id); } }));
       const ev = rank(this.EVENTS, e => [e[3] + ' ' + e[4], e[5], e[6]]).slice(0, 3).map(e => ({ title: e[3 + L], sub: e[5 + L] + ' · ' + fdate(e[1]), go: () => { this.setState({ q: '' }); this.go('events'); } }));
       const st0 = this.state; const st = rank(this.STRATS, s => [s[1] + ' ' + s[2], s[3], s[4], ccName(s[0])]).slice(0, 3).map(s => ({ title: s[1 + L], sub: ccName(s[0]), go: () => { this.setState({ q: '' }); this.setState({ pc: this.POLICY[s[0]] ? s[0] : st0.pc }); this.go('strategies', s[0]); } }));
       results = [[t.grpCo, co], [t.grpDep, dp], [t.grpEv, ev], [t.grpStr, st]].filter(g => g[1].length).map(g => ({ label: g[0], items: g[1] }));
