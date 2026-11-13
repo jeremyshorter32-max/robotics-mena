@@ -434,6 +434,22 @@ class Component extends DCLogic {
       sc.onload = () => { const q = this._xLoading || []; this._xLoading = null; (window.twttr && window.twttr.ready ? window.twttr.ready : f => f())(() => q.forEach(f => f())); }; document.head.appendChild(sc); }
     if (this._xLoading) this._xLoading.push(render); else setTimeout(render, 0);
   }
+  // Forgiving search shared by every search box: ignores case, accents, spaces and punctuation ("field ai" finds
+  // FieldAI), normalises Arabic letter variants, matches words in any order and allows one typo in words of 5+ letters.
+  // Returns 0 for no match, otherwise a score (name matches rank first).
+  normQ(x) { return String(x || '').toLowerCase().normalize('NFKD').replace(/[̀-ًͯ-ٰٟـ]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/&/g, ' and ').replace(/[^a-z0-9؀-ۿ]+/g, ' ').trim(); }
+  near(a, b) { if (Math.abs(a.length - b.length) > 1) return false; let i = 0, j = 0, e = 0; while (i < a.length && j < b.length) { if (a[i] === b[j]) { i++; j++; continue; } if (++e > 1) return false; if (a[i] === b[j + 1] && a[i + 1] === b[j]) { i += 2; j += 2; continue; } if (a.length > b.length) i++; else if (b.length > a.length) j++; else { i++; j++; } } return e + (a.length - i) + (b.length - j) <= 1; }
+  qScore(q, name, ...rest) {
+    const nq = this.normQ(q); if (!nq) return 1;
+    const toks = nq.split(' '), cq = nq.replace(/ /g, '');
+    const prep = x => { const n = this.normQ(x); return { n, c: n.replace(/ /g, ''), w: n.split(' ') }; };
+    const N = prep(name), R = prep(rest.filter(Boolean).join(' '));
+    const tokIn = (t, H) => H.n.includes(t) || H.c.includes(t) || (t.length >= 5 && H.w.some(w => this.near(t, w) || this.near(t, w.slice(0, t.length)) || this.near(t, w.slice(0, t.length + 1))));
+    const all = H => toks.every(t => tokIn(t, H)) || H.c.includes(cq);
+    if (all(N)) return 100 - (N.c.indexOf(cq) === 0 || N.n.startsWith(nq) ? 0 : 20) - Math.min(N.c.length, 40) / 4;
+    const B = { n: N.n + ' ' + R.n, c: N.c + R.c, w: N.w.concat(R.w) };
+    return all(B) ? 40 : 0;
+  }
   flagUrl(cc) { return cc ? '/media/flags/' + String(cc).toLowerCase() + '.svg' : ''; }
   dbOpen(tab, id) { this._dbReturn = document.activeElement; this.setState({ dbTab: tab, dbSel: id }); }
   dbVals(c) {
@@ -456,11 +472,13 @@ class Component extends DCLogic {
       events: D.events.map(o => ({ o, badge: this.badgeOf(o.name, o.logo), id: o.id, cc: o.country, facet: o.type, date: o.start, name: tr(o, 'name'), alt: tr(o, 'venue') || '', c2: (this.ETYPES[o.type] || [o.type, o.type])[L], c3: tr(o, 'city'), c4: cn(o.country), c5: range(o), size: 0 }))
     };
     const all = recs[tab];
-    const q = lc(S.dbQ).trim();
-    const hay = r => lc([r.name, r.alt, r.c2, r.c3, r.c4, r.c5, r.hayx || '', ...Object.values(r.o).filter(v => typeof v === 'string')].join(' '));
-    let rows = all.filter(r => (!q || q.split(/\s+/).every(w => hay(r).includes(w))) && (!S.dbCountry || (r.ccs || [r.cc]).includes(S.dbCountry)) && (!S.dbFacet || r.facet === S.dbFacet || r.facet2 === S.dbFacet) && (tab !== 'companies' || !S.dbOrigin || r.origin === S.dbOrigin));
-    const sort = S.dbSort || (tab === 'countries' ? 'size' : 'recent');
-    if (sort === 'az') rows.sort((a, b) => a.name.localeCompare(b.name, lang));
+    const q = String(S.dbQ || '').trim();
+    const score = r => q ? this.qScore(q, r.name + ' ' + (r.o.name_ar || r.o.title_ar || '') + ' ' + (r.alt || ''), r.c2, r.c3, r.c4, r.c5, r.hayx || '', ...Object.values(r.o).filter(v => typeof v === 'string')) : 1;
+    all.forEach(r => { r._s = score(r); });
+    let rows = all.filter(r => r._s > 0 && (!S.dbCountry || (r.ccs || [r.cc]).includes(S.dbCountry)) && (!S.dbFacet || r.facet === S.dbFacet || r.facet2 === S.dbFacet) && (tab !== 'companies' || !S.dbOrigin || r.origin === S.dbOrigin));
+    const sort = S.dbSort || (q ? 'best' : tab === 'countries' ? 'size' : 'recent');
+    if (sort === 'best') rows.sort((a, b) => b._s - a._s || a.name.localeCompare(b.name, lang));
+    else if (sort === 'az') rows.sort((a, b) => a.name.localeCompare(b.name, lang));
     else if (sort === 'size' || tab === 'countries' && sort === 'recent') rows.sort((a, b) => b.size - a.size || a.name.localeCompare(b.name, lang));
     else rows.sort((a, b) => tab === 'events' ? (a.date || '').localeCompare(b.date || '') : (b.date || '').localeCompare(a.date || ''));
     const LIMIT = 50, shown = S.dbAll ? rows : rows.slice(0, LIMIT);
@@ -650,14 +668,15 @@ class Component extends DCLogic {
     const stats = [[RMD.companies.length, t.stCo, 'companies'], [RMD.deployments.length, t.stDep, 'deployments'], [RMD.countries.length, t.stCt, 'countries'], [RMD.events.filter(e => (e.end || e.start) >= todayIso && e.start <= in90Iso).length, t.stEv, 'events']].map(([v, label, tabK], i) => ({ label, href: '/database?tab=' + tabK, ps: i % (narrow ? 2 : 4) ? '24px' : '0', bd: i % (narrow ? 2 : 4) ? '1px solid var(--line)' : '0', el: React.createElement(this.Ticker, { value: v, fmt: num, key: lang + v }) }));
 
     // search
-    const q = S.q.trim().toLowerCase();
-    const hit = (...xs) => xs.some(x => x && x.toLowerCase().includes(q));
+    const q = S.q.trim();
+    const hit = (...xs) => this.qScore(q, ...xs) > 0;
+    const rank = (arr, f) => arr.map(x => [x, this.qScore(q, ...f(x))]).filter(x => x[1] > 0).sort((a, b) => b[1] - a[1]).map(x => x[0]);
     let results = [];
     if (q) {
-      const co = this.CO.filter(c => hit(c[0], c[1], c[6], c[7], this.CATS[c[3]][L], ccName(c[2]))).slice(0, 4).map(c => ({ title: c[L], sub: this.CATS[c[3]][L] + ' · ' + ccName(c[2]), go: () => { window.location.href = '/database?tab=companies&id=' + encodeURIComponent(c[8]); } }));
-      const dp = this.DEP.filter(d => hit(d.robot[0], d.robot[1], d.op[0], d.op[1], d.site[0], d.site[1], this.TYPES[d.type][L], this.SECTORS[d.sector][L])).slice(0, 4).map(d => ({ title: d.robot[L], sub: d.site[L], go: () => { this.setState({ q: '', sel: d.id, fCountry: '', fSector: '', fType: '' }); this.go('map'); } }));
-      const ev = this.EVENTS.filter(e => hit(e[3], e[4], e[5], e[6])).slice(0, 3).map(e => ({ title: e[3 + L], sub: e[5 + L] + ' · ' + fdate(e[1]), go: () => { this.setState({ q: '' }); this.go('events'); } }));
-      const st0 = this.state; const st = this.STRATS.filter(s => hit(s[1], s[2], s[3], s[4], ccName(s[0]))).slice(0, 3).map(s => ({ title: s[1 + L], sub: ccName(s[0]), go: () => { this.setState({ q: '' }); this.setState({ pc: this.POLICY[s[0]] ? s[0] : st0.pc }); this.go('strategies', s[0]); } }));
+      const co = rank(this.CO, c => [c[0] + ' ' + c[1], c[6], c[7], this.CATS[c[3]][L], ccName(c[2])]).slice(0, 4).map(c => ({ title: c[L], sub: this.CATS[c[3]][L] + ' · ' + ccName(c[2]), go: () => { window.location.href = '/database?tab=companies&id=' + encodeURIComponent(c[8]); } }));
+      const dp = rank(this.DEP, d => [d.robot[0] + ' ' + d.robot[1], d.op[0], d.op[1], d.site[0], d.site[1], this.TYPES[d.type][L], this.SECTORS[d.sector][L]]).slice(0, 4).map(d => ({ title: d.robot[L], sub: d.site[L], go: () => { this.setState({ q: '', sel: d.id, fCountry: '', fSector: '', fType: '' }); this.go('map'); } }));
+      const ev = rank(this.EVENTS, e => [e[3] + ' ' + e[4], e[5], e[6]]).slice(0, 3).map(e => ({ title: e[3 + L], sub: e[5 + L] + ' · ' + fdate(e[1]), go: () => { this.setState({ q: '' }); this.go('events'); } }));
+      const st0 = this.state; const st = rank(this.STRATS, s => [s[1] + ' ' + s[2], s[3], s[4], ccName(s[0])]).slice(0, 3).map(s => ({ title: s[1 + L], sub: ccName(s[0]), go: () => { this.setState({ q: '' }); this.setState({ pc: this.POLICY[s[0]] ? s[0] : st0.pc }); this.go('strategies', s[0]); } }));
       results = [[t.grpCo, co], [t.grpDep, dp], [t.grpEv, ev], [t.grpStr, st]].filter(g => g[1].length).map(g => ({ label: g[0], items: g[1] }));
     }
 
