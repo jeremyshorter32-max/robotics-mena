@@ -34,3 +34,6 @@ jobs:
           path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
+      - name: Tell search engines about the pages (IndexNow)
+        run: sleep 30 && node scripts/indexnow.mjs
+        continue-on-error: true

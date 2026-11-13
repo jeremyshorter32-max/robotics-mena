@@ -14,6 +14,7 @@ rm -rf _site
 mkdir _site
 cp -r *.js vendor CNAME .nojekyll .image-slots.state.json favicon.ico _site/
 cp redirects/*.html _site/
+cp static/*.txt _site/   # IndexNow key file (see scripts/indexnow.mjs)
 cp -r media brand _site/
 node scripts/validate-data.mjs
 node scripts/assemble.cjs _site
