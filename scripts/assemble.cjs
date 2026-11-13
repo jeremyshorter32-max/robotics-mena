@@ -34,6 +34,9 @@ for (const file of fs.readdirSync(path.join(root, 'pages')).filter(f => f.endsWi
              .replace('/*@logic*/', () => logic)
              .replace('</head>', () => headBrand + '\n</head>')
              .replace('<!--@brief-modal-->', () => briefModal);
+  // Privacy-friendly analytics (GoatCounter: no cookies, no personal data). Counts only on the live domain.
+  const gc = (data.site || {}).goatcounter;
+  if (gc) html = html.replace('</body>', () => `<script>if(!/^(www\\.)?roboticsmena\\.com$/.test(location.hostname))window.goatcounter={no_onload:true};</script><script data-goatcounter="https://${gc}.goatcounter.com/count" async src="/vendor/goatcounter-count.js"></script>\n</body>`);
   if (html.includes('<!--@brief-modal-->') || !html.includes('rm-brief-panel')) throw new Error(`${file}: missing the Get the brief pop-up`);
   fs.writeFileSync(path.join(out, file), bust(html));
 }
