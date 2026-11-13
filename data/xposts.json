@@ -11,7 +11,7 @@
     "country": "AE",
     "type": "inspection",
     "company": "gecko-robotics",
-    "status": "suggested",
+    "status": "approved",
     "added": "2026-11-12"
   },
   {
@@ -26,7 +26,7 @@
     "country": "AE",
     "type": "av",
     "company": "apollo-go",
-    "status": "suggested",
+    "status": "approved",
     "added": "2026-11-12"
   },
   {
@@ -41,7 +41,7 @@
     "country": "AE",
     "type": "drone",
     "company": "joby-aviation",
-    "status": "suggested",
+    "status": "approved",
     "added": "2026-11-12"
   },
   {
@@ -56,7 +56,7 @@
     "country": "SA",
     "type": "av",
     "company": "weride",
-    "status": "suggested",
+    "status": "approved",
     "added": "2026-11-12"
   }
 ]
