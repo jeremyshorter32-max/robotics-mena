@@ -497,7 +497,7 @@ class Component extends DCLogic {
       let desc = '', srcName = o.source || '', srcUrl = o.source_url || '', srcNote = '', extra = [];
       if (tab === 'companies') {
         fields.push([F.category, r.c2 + (o.secondary && this.CATS[o.secondary] ? ' · ' + this.CATS[o.secondary][L] : '')], [OT.hq, (o.hq_city && !ar ? o.hq_city + ', ' : '') + cn(o.hq || o.country) + (r.intl ? ' · ' + OT.intl : '')], [OT.active, r.ccs.map(cn).join(ar ? '، ' : ', ')], [F.stage, r.c4], [F.listed, r.c5]);
-        if (o.mena_link) menaBox = { title: OT.menaTitle, text: ar ? (o.mena_link.ar || o.mena_link.en) : o.mena_link.en, src: OT.menaSrc + ': ' + this.srcTx(o.mena_source || (o.mena_source_url || '').replace(/^https?:\/\/(www\.)?/, '').split('/')[0], ar) + (o.mena_date ? ' · ' + fdate(o.mena_date) : ''), url: o.mena_source_url || '', hasUrl: !!o.mena_source_url, flag: this.flagUrl(o.hq), hq: cn(o.hq) };
+        if (o.mena_link) menaBox = { title: OT.menaTitle, text: ar ? (o.mena_link.ar || o.mena_link.en) : o.mena_link.en, src: OT.menaSrc + ': ' + this.srcTx(o.mena_source || (o.mena_source_url || '').replace(/^https?:\/\/(www\.)?/, '').split('/')[0], ar) + (o.mena_date ? ' · ' + fdate(o.mena_date) : ''), url: o.mena_source_url || '', hasUrl: !!o.mena_source_url, flag: this.flagUrl(o.hq), hq: cn(o.hq), flags: [...new Set((o.mena_countries && o.mena_countries.length ? o.mena_countries : [o.country]).filter(Boolean))].map(cc => ({ src: this.flagUrl(cc), name: cn(cc) })) };
         desc = tr(o, 'summary');
         pic = picOf(o);
         if (o.website) extra.push(link(o.website, d.visit));
@@ -529,7 +529,8 @@ class Component extends DCLogic {
         .forEach(x => extra.push({ url: x.url, label: (ar ? 'على X: ' : 'On X: ') + x.author + ' · ' + fdate(x.date) }));
       const hasSrc = !!(srcName || srcUrl);
       card = {
-        kind: d.kind[tab], badge: r.badge, title: r.name, alt: r.alt, cc: r.cc || '', hasCc: !!r.cc && tab !== 'countries', flag: this.flagUrl(r.cc), ccName: r.cc ? cn(r.cc) : '', desc, hasDesc: !!desc,
+        kind: d.kind[tab], badge: r.badge, title: r.name, alt: r.alt, cc: r.cc || '', // Companies: the flag beside the name is the country of origin (HQ); the MENA box carries the MENA flags.
+        hasCc: !!r.cc && tab !== 'countries', flag: this.flagUrl(tab === 'companies' ? (o.hq || r.cc) : r.cc), ccName: (tab === 'companies' ? (o.hq || r.cc) : r.cc) ? cn(tab === 'companies' ? (o.hq || r.cc) : r.cc) : '', desc, hasDesc: !!desc,
         fields: fields.filter(f => f[1]).map(f => ({ k: f[0], v: f[1] })),
         srcLine: (o.self_reported ? (ar ? 'مصدره الشركة نفسها · ' : 'Company-reported · ') : '') + (hasSrc ? d.source + ': ' + this.srcTx(srcName || srcUrl.replace(/^https?:\/\/(www\.)?/, '').split('/')[0], ar) : (srcNote || d.noSource)),
         srcUrl, hasSrcUrl: !!srcUrl, openSrc: d.open,
