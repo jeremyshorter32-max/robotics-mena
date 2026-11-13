@@ -9,7 +9,9 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   from script.google.com (steps in `integrations/google-sheets/README.md`; it already points at the Sheet
   `1Af2GzhWl5YkrGS-XZ46HMJ3MlFqK2V1kAqFL9stzqXI`), put the `/exec` URL in `data/site.json` as `sheet_url`,
   publish, and send one test entry. Until then, forms only arrive by email. -->
-- [ ] **Newsletter on Kit (in progress, 11 Nov 2026).** Decided: Kit free plan, English only, Monday 07:00 Gulf,
+- [ ] **Newsletter on Kit (in progress, 11 Nov 2026).** Until it is ready, the site runs a **waitlist** (13 Nov 2026): every sign-up form says
+  "Join the waitlist" and entries go to the inbox and the Google Sheet "Sign-ups" tab; import them into Kit as the first
+  subscribers (`syncAllSignupsToKit`), then switch the copy back to "Subscribe" in `src/logic.js` (nl*, subscribe, gate*, privBody). Decided: Kit free plan, English only, Monday 07:00 Gulf,
   owner approves each issue in a Claude conversation. Built: `scripts/newsletter.mjs` (email from site data, Kit
   draft/schedule), `.claude/skills/weekly-brief/SKILL.md` (Sunday routine), Kit sign-up sync in
   `integrations/google-sheets/Code.gs`. Still to do: owner creates the Kit account (sender address, domain
