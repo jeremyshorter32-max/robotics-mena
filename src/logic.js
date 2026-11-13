@@ -496,7 +496,7 @@ class Component extends DCLogic {
     const score = r => q ? this.qScore(q, r.name + ' ' + (r.o.name_ar || r.o.title_ar || '') + ' ' + (r.alt || ''), r.c2, r.c3, r.c4, r.c5, r.hayx || '', ...Object.values(r.o).filter(v => typeof v === 'string')) : 1;
     all.forEach(r => { r._s = score(r); });
     let rows = all.filter(r => r._s > 0 && (!S.dbCountry || (r.ccs || [r.cc]).includes(S.dbCountry)) && (!S.dbFacet || r.facet === S.dbFacet || r.facet2 === S.dbFacet) && (tab !== 'companies' || !S.dbOrigin || r.origin === S.dbOrigin));
-    const sort = S.dbSort || (q ? 'best' : tab === 'countries' ? 'size' : 'recent');
+    const sort = S.dbSort || (q ? 'best' : tab === 'companies' || tab === 'countries' ? 'az' : 'recent');
     if (sort === 'best') rows.sort((a, b) => b._s - a._s || a.name.localeCompare(b.name, lang));
     else if (sort === 'az') rows.sort((a, b) => a.name.localeCompare(b.name, lang));
     else if (sort === 'size' || tab === 'countries' && sort === 'recent') rows.sort((a, b) => b.size - a.size || a.name.localeCompare(b.name, lang));
@@ -573,7 +573,7 @@ class Component extends DCLogic {
         onFacet: e => this.setState({ dbFacet: e.target.value }),
         hasOrigin: tab === 'companies', origin: S.dbOrigin || '', onOrigin: e => this.setState({ dbOrigin: e.target.value }), originLabel: OT.origin,
         originOpts: [['', OT.all], ['regional', OT.regional], ['intl', OT.intl]].map(([v, l]) => opt(v, l + ' (' + num(v ? all.filter(x => x.origin === v).length : all.length) + ')', S.dbOrigin || '')),
-        sort, sortOpts: (tab === 'countries' ? ['size', 'az'] : ['recent', 'az']).map(k => opt(k, k === 'recent' && tab === 'events' ? (ar ? 'الأقرب' : 'Soonest') : d.sorts[k], sort)), onSort: e => this.setState({ dbSort: e.target.value }),
+        sort, sortOpts: (tab === 'countries' ? ['az', 'size'] : tab === 'companies' ? ['az', 'recent'] : ['recent', 'az']).map(k => opt(k, k === 'recent' && tab === 'events' ? (ar ? 'الأقرب' : 'Soonest') : d.sorts[k], sort)), onSort: e => this.setState({ dbSort: e.target.value }),
         showing: d.showing.replace('{a}', num(rows.length)).replace('{b}', num(all.length)),
         rows: shown.map(x => ({ id: x.id, badge: x.badge, name: x.name, alt: x.alt, c2: x.c2, c3: x.c3, c4: x.c4, c5: x.c5, cc: x.cc, open: () => this.dbOpen(tab, x.id) })),
         empty: !rows.length, filtered: !!(q || S.dbCountry || S.dbFacet || S.dbOrigin), clear: () => this.setState({ dbQ: '', dbCountry: '', dbFacet: '', dbOrigin: '' }),
