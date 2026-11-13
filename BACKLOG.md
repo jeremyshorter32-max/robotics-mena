@@ -66,22 +66,27 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   names, start date) and update the text if anything changed.
 
 - [ ] **Defence and weapons drone makers: include or not?** Ten were found and held back pending an editorial
-  decision: EDGE Group (UAE), SR2Vector, United Defense Company, INTRA Defense Technologies, Haris Unmanned
+  decision (add Marakeb Technologies: UAE Navy combat-system partner, also civilian USVs; listed for now): EDGE Group (UAE), SR2Vector, United Defense Company, INTRA Defense Technologies, Haris Unmanned
   Systems, SERB Advanced Industries (Saudi Arabia), Barzan Holdings (Qatar), Shield AI (US), Exail (France),
   Saildrone (US, Fifth Fleet). Records are ready to add if the answer is yes.
-- [ ] **Second research pass.** The first pass (Nov 2026) added 63 companies but every agent stopped early on the
-  session's web-search limit. Not yet covered well: medical, education, agriculture, service-robot distributors
-  (Pudu/Keenon/Unitree dealers), Khalifa University/MBZUAI spin-outs, Jordan, Iraq, Libya, Bahrain, industrial
-  arm makers (ABB, KUKA, FANUC…). Leads already noted: BTR.tech partners, Unique Group (UAE subsea), iFarm (UAE),
-  Planys, Milkor UAE, Furhat, Elroy Air/Barq, LimX Dynamics, Jiangsu Yunmu humanoid deal, Robot Ahmed (Bahrain),
-  Buildroid AI, Hollyway/XAR (Morocco), Tekever, Corvus Drones, Harmattan AI, Faraday Future (UAE partners),
-  Yango Tech Robotics (confirm HQ), Black Buffalo 3D / Struxure.
-- [ ] **Thinly sourced new entries to re-check.** Some new companies are sourced only from their own websites
-  (e.g. Aerosmart, Airscope, Drone Film Arabia, RoboMecs, Shamal, Aerial Solutions, Lebotics, Avelabs, Robotics
-  Corner, Clear Sky Drones, KAT) or from older coverage (Marakeb 2023, Firnas Aero 2020, ATLAN Space 2020).
+- [x] **Second research pass** (13 Nov 2026): +26 companies, +25 deployments (medical, agri, education, cleaning-robot
+  operators and dealers, KAUST/KU spin-outs, Qatar/Oman/Jordan/Bahrain), every source opened and checked to load.
+- [ ] **Leads from the second pass, not yet publishable** (low confidence or own-site only): LYBOTICS (Libya), EduRobotKits,
+  DARBCO (Jordan), ATLAB, Al Yousuf Robotics, Jacky's, Hygiene Tech, Inc Robotics, Albariq, Ednex, Icosium, Hollyway/XAR
+  (Morocco), Iraq's first robotic surgery at Warith (date unconfirmed), Jiangsu Yunmu humanoid pact (sponsored content only),
+  AgiBot–Vodafone Qatar MoU (8 Nov 2026), iFarm, AgriEdge, Nupology. Industrial arm makers (ABB/Almarai, Kawasaki RAK,
+  FANUC, KUKA…) still uncovered: their sites block automated access.
+- [ ] **Miral HQ cleaning robot.** Not publicly sourced yet. Likely operated by Berkeley Services (UAE FM contractor, now
+  listed); the robot brand is unknown. Add a deployment when a press release, Miral post or photo with permission exists.
+- [ ] **Bahrain drones.** Search results say Bahrain suspended civil drone activity from April 2026; confirm from the official
+  notice and reflect it in Bahrain's records.
+- [x] **Thin entries re-checked** (13 Nov 2026): Shamal, Avelabs (now part of Arrow), Marakeb, Firnas, ATLAN confirmed;
+  Aerosmart, Airscope, Drone Film Arabia, RoboMecs, Lebotics, Clear Sky Drones, KAT, Robotics Corner labelled
+  "Company-reported" on the site; Aerial Solutions removed (military drone JV, Defense News 2022).
 
-- [ ] **VORTEXINFO in Qatar.** Listed with its Abu Dhabi showcase (ADSW, Jan 2026); no Qatar presence found.
-  Add Qatar if a source turns up.
+- [ ] **VORTEXINFO in Qatar.** Checked 13 Nov 2026 in English and Chinese: no Qatar office, registration, deployment,
+  MoU or client found; record stays UAE-only. Still to check: parent Hanjia Design's annual-report subsidiary list,
+  the QFC public register and Qatar's commercial registry.
 - [x] **Link deployments to policy programmes** (13 Nov 2026): `scripts/link-programmes.mjs` suggests and applies links;
   wired into the scanner PR, the research-report and weekly-brief skills. The 16 unlinked deployments were reviewed:
   none is clearly driven by a profiled programme, so none was linked.
