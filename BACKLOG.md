@@ -50,9 +50,9 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   `scripts/assemble.cjs` / `build-site.sh`, branded bilingual `404.html` (`static/404.html`), canonical and per-page
   Open Graph tags from each page's title and description, every page has its own description. GoatCounter added
   (site code `roboticsmena`). (Button contrast fixed by the indigo rebrand, 10 Nov 2026.)
-- [ ] **Launch plumbing, owner side:** tick "Enforce HTTPS" in GitHub Pages settings; create the GoatCounter account at
-  goatcounter.com with the code `roboticsmena`; after launch, add the site to Google Search Console and Bing Webmaster
-  Tools and submit https://roboticsmena.com/sitemap.xml.
+- [x] **Launch plumbing, owner side** (13 Nov 2026): "Enforce HTTPS" ticked; GoatCounter account created (`roboticsmena`).
+- [ ] **After launch:** add the site to Google Search Console and Bing Webmaster Tools and submit
+  https://roboticsmena.com/sitemap.xml.
 - [ ] **Turn off the password** (only after the above): change `scripts/build-site.sh` so it publishes without
   StatiCrypt, remove the `noindex, nofollow` tag it adds and the robots block, delete the `SITE_PASSWORD`
   repository secret, then check every page, search engines' access and the social preview image.
