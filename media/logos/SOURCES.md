@@ -218,3 +218,15 @@ No usable logo found for FalconViz, Sager Drones, AutoGo, Sinaha Technology, Apo
 | terrasense.png | TerraSense | Name tile (no public logo found) |
 | code-three-fourteen.png | CODE Three Fourteen | Name tile (no public logo found) |
 | wakan-tech.png | Wakan Tech | Name tile (no public logo found) |
+
+## Added 13 Nov 2026
+| File | Source |
+|---|---|
+| kuka.png | https://www.kuka.com (header logo SVG) |
+| universal-robots.png | https://www.universal-robots.com/assets/header-logo-desktop.svg |
+| fanuc.png | https://www.fanuc.eu/sites/default/files/decoupled_domain/FANUC_Logo_RGB_503x112px.svg |
+| abb-robotics.png | Wikimedia Commons, File:ABB_logo.svg |
+| kawasaki-robotics.png | Wikimedia Commons, File:Kawasaki_Heavy_Industries_Logo.svg |
+| darbco.png | https://new.darbco.com/images/Navbar-Logo.svg |
+| jackys-business-solutions.png | https://www.jackys.com (site icon) |
+| atlab.png, inc-robotics.png, albariq-equipment.png, bk-fire.png, hollyway.png | Name tiles (no usable logo found) |

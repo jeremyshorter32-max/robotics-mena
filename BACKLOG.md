@@ -79,11 +79,18 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   Saildrone (US, Fifth Fleet). Records are ready to add if the answer is yes.
 - [x] **Second research pass** (13 Nov 2026): +26 companies, +25 deployments (medical, agri, education, cleaning-robot
   operators and dealers, KAUST/KU spin-outs, Qatar/Oman/Jordan/Bahrain), every source opened and checked to load.
-- [ ] **Leads from the second pass, not yet publishable** (low confidence or own-site only): LYBOTICS (Libya), EduRobotKits,
-  DARBCO (Jordan), ATLAB, Al Yousuf Robotics, Jacky's, Hygiene Tech, Inc Robotics, Albariq, Ednex, Icosium, Hollyway/XAR
-  (Morocco), Iraq's first robotic surgery at Warith (date unconfirmed), Jiangsu Yunmu humanoid pact (sponsored content only),
-  AgiBot–Vodafone Qatar MoU (8 Nov 2026), iFarm, AgriEdge, Nupology. Industrial arm makers (ABB/Almarai, Kawasaki RAK,
-  FANUC, KUKA…) still uncovered: their sites block automated access.
+- [x] **Second-pass leads checked** (13 Nov 2026). Added companies: DARBCO (JO), ATLAB (AE), Jacky's Business Solutions (AE),
+  Inc Robotics (SA), Albariq Equipment (AE), BK Fire/Icosium (DZ), Hollyway (SG → MA, EG), and the arm makers KUKA, ABB Robotics,
+  Universal Robots, FANUC and Kawasaki Robotics. Added deployments d63–d66 (KUKA at Almarai Al Kharj, KUKA RoboCafé Dubai,
+  Hollyway–XAR drone plant in Morocco, No Competition–Jiangsu Yunmu humanoid framework). Rejected: EduRobotKits (no trace),
+  iFarm and AgriEdge (not robotics). AgiBot–Vodafone Qatar was already added as d59.
+- [ ] **Leads still weak or blocked:** Ednex and Nupology (own site only), XAR Aerospace (one source), Al Yousuf Robotics (nothing since
+  2018, site behind a bot check), Hygiene Tech (city and website unconfirmed; 2021 LeoMop deployment for an FM firm), ABB robots at
+  Almarai (only on ABB pages that would not load), Comau (trade-show presence only), Yaskawa, Doosan, Techman, Stäubli and Epson
+  (no usable MENA source).
+- [ ] **Libya and Iraq are not covered countries.** LYBOTICS (Tripoli youth robotics, FIRST Tech Challenge) and Iraq's first robotic
+  surgery (Warith International Cancer Institute, Karbala, 2 Mar 2026, robot unnamed) are sourced but need LY and IQ added to
+  `data/countries.json` (and the map) first. Owner to decide.
 - [ ] **Miral HQ cleaning robot.** Not publicly sourced yet. Likely operated by FM contractor Berkeley Services (not listed:
   FM companies are out of scope); the robot maker is unknown. Add the maker and a deployment when a public source exists.
 - [ ] **Bahrain drones.** Search results say Bahrain suspended civil drone activity from April 2026; confirm from the official
