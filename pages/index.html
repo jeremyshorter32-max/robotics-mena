@@ -41,7 +41,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
 @media (max-width:1180px){[data-rm][dir]{--hero-img-w:76%;--hero-fade-a:28%;--hero-fade-b:40%}}
 @media (max-width:900px){[data-rm][dir]{--hero-img-w:100%;--hero-img-pos:78% 70%;--hero-fade-a:44%;--hero-fade-b:58%;--hero-fade-c:80%}}
 @keyframes rm-hero-kb{from{transform:scale(1.08)}to{transform:scale(1)}}
-.rm-hero-slide{opacity:0;transition:opacity 1.4s ease}.rm-hero-slide[data-on]{opacity:1;animation:rm-hero-kb 9s ease-out both}#top:not([data-live]) .rm-hero-slide:first-child{opacity:1;animation:rm-hero-kb 22s ease-out both}
+.rm-hero-slide{opacity:0;transition:opacity 1.4s ease}.rm-hero-slide[data-on]{opacity:1;animation:rm-hero-kb 9s ease-out both}.rm-hero-cr:empty{display:none}#top:not([data-live]) .rm-hero-slide:first-child{opacity:1;animation:rm-hero-kb 22s ease-out both}
 @keyframes rm-live{0%,100%{opacity:1}50%{opacity:.35}}
 @media (prefers-reduced-motion:reduce){[data-rm] *{transition:none!important;animation:none!important}}
 </style>
@@ -79,7 +79,6 @@ html,body{margin:0;padding:0;background:#F3F1EC}
   </div>
   <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(var(--fade-dir), var(--bg) 0%, var(--bg) var(--hero-fade-a), color-mix(in srgb, var(--bg) 45%, transparent) var(--hero-fade-b), transparent var(--hero-fade-c))"></div>
   <div aria-hidden="true" style="position:absolute;inset-inline:0;bottom:0;height:120px;pointer-events:none;background:linear-gradient(to top,var(--bg),transparent)"></div>
-  <span class="rm-hero-cr" aria-hidden="true" style="position:absolute;z-index:2;bottom:14px;inset-inline-end:var(--gutter);font:400 11px/16px var(--font-num);color:var(--fg-subtle)"></span>
   
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:var(--hero-pad) var(--gutter) 0;display:grid;grid-template-columns:var(--grid);column-gap:var(--gap)">
     <div style="grid-column:1 / -1;max-width:780px;display:flex;flex-direction:column;gap:32px">
@@ -116,6 +115,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
     </div>
   </div>
   <div style="position:relative;margin-top:96px;border-top:1px solid var(--line);background:var(--bg-glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)">
+    <div aria-hidden="true" style="position:absolute;bottom:100%;inset-inline:0;pointer-events:none"><div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter) 10px;display:flex;justify-content:flex-end"><span class="rm-hero-cr" style="font:400 11px/16px var(--font-num);color:#F3F1EC;background:rgba(17,18,22,.55);padding:2px 8px;border-radius:3px"></span></div></div>
     <div style="max-width:1440px;margin:0 auto;padding:16px var(--gutter) 0;display:flex;align-items:center;gap:8px;font:400 12px/16px var(--font-num);color:var(--fg-subtle)"><span style="width:6px;height:6px;transform:rotate(45deg);background:var(--accent)"></span>{{ statsUpd }}</div>
     <div role="list" style="margin:0 auto;max-width:1440px;padding:0 var(--gutter);display:grid;grid-template-columns:var(--stats-cols)">
       <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
