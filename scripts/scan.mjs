@@ -13,6 +13,7 @@ import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { z } from 'zod';
 import { betaZodOutputFormat } from '@anthropic-ai/sdk/helpers/beta/zod';
+import { suggest as suggestProgrammes } from './link-programmes.mjs';
 import { ROOT, SECTORS, ROBOT_TYPES, COMPANY_CATEGORIES, STAGES, EVENT_TYPES, MENA, EXCLUDED_COUNTRIES, ISO_DATE, readData, writeData, norm, slug, normUrl } from './lib/taxonomy.mjs';
 
 const MODEL = 'claude-opus-5-5';
@@ -226,6 +227,12 @@ function summary() {
   if (A.companies.length) lines.push('### Companies', ...A.companies.map(c => `- **${c.name}** (${c.country}, ${c.category}): ${c.summary} ${link(c.source, c.source_url)}`), '');
   if (A.events.length) lines.push('### Events', ...A.events.map(e => `- **${e.name}**: ${e.city} (${e.country}), ${e.start}${e.end !== e.start ? ' to ' + e.end : ''}${e.dates_confirmed ? '' : ' (dates to be confirmed)'}. ${link('Event page', e.url)}`), '');
   if (A.countries.length) lines.push('### New countries added', ...A.countries.map(c => `- ${c}`), '');
+  // Policy programmes: ask the reviewer to link new deployments where a programme drives them.
+  if (A.deployments.length) {
+    lines.push('### Link to policy programmes', 'Tick each new deployment once checked. Link it only if a source shows the programme drives it: `node scripts/link-programmes.mjs --apply <id>=<CC>:<n>`.', '');
+    A.deployments.forEach(d => { const s = suggestProgrammes(d); lines.push(`- [ ] **${d.id}** ${d.title}: ` + (s.length ? s.map(x => `${x.cc}:${x.i} ${x.name}`).join(' or ') : 'no matching programme')); });
+    lines.push('');
+  }
   if (report.skipped.length) lines.push('<details><summary>Skipped (' + report.skipped.length + ')</summary>', '', ...report.skipped.map(s => `- ${s}`), '', '</details>', '');
   return { text: lines.join('\n'), total };
 }

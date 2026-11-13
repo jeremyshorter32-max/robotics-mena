@@ -348,16 +348,16 @@
     stop() { if (!this.playing) return; this.playing = false; clearInterval(this.tick); this.render(); }
     connectedCallback() {
       if (!this.hasAttribute('mode')) this.setAttribute('mode', 'full');
-      load('lo').then(g => { this.geo = g; this.render(); });
+      load('lo').then(g => { this.geo = g; this.render(); this.setupAutoTour(); });
       this.ro = new ResizeObserver(() => this.render()); this.ro.observe(this);
       this.labels();
     }
-    disconnectedCallback() { this.ro && this.ro.disconnect(); cancelAnimationFrame(this.raf); clearInterval(this.tick); }
+    disconnectedCallback() { if (this._auto) { this._auto.done = true; clearTimeout(this._auto.t); this._auto.io && this._auto.io.disconnect(); document.removeEventListener('visibilitychange', this._auto.vis); this._auto = null; } this.ro && this.ro.disconnect(); cancelAnimationFrame(this.raf); clearInterval(this.tick); }
     attributeChangedCallback(n, o, v) {
       if (o === v) return;
       if (n === 'focus') { this.animateTo(this.focusBox()); return; }
       if (n === 'dir' || n === 'labels') this.labels();
-      if (n === 'pins') { this.fresh.clear(); if (!this.playing) this.tlIdx = -1; this.spider = null; this.endTour(false); }
+      if (n === 'pins') { this.fresh.clear(); if (!this.playing) this.tlIdx = -1; this.spider = null; this.endTour(false); if (this._auto && this._auto.go) this._auto.go(); }
       if (n === 'suppliers') this.supHl = null;
       if (n === 'selected') { this.hideCard(); if (v) this.hover = { key: 'p:' + v, sel: true }; }
       this.render();
@@ -441,18 +441,33 @@
       }
     }
     // Guided tour: fly to the latest deployments one by one, with a caption card at each.
-    startTour() {
+    startTour(ambient) {
       const ps = this.pins().slice().sort((a, b) => (b.d || '').localeCompare(a.d || '')).slice(0, 5);
       if (!ps.length) return;
       this.stop(); this.spider = null; this.supHl = null;
-      this.tour = { ids: ps.map(p => p.id), i: -1 };
+      this.tour = { ids: ps.map(p => p.id), i: -1, ambient: !!ambient };
       this.tourStep(0);
+    }
+    // Home page: an ambient, looping tour while the map is on screen. It stops for good at the first
+    // interaction, pauses when off screen or in a hidden tab, and never runs with reduced motion.
+    setupAutoTour() {
+      if (this._auto || !this.hasAttribute('autotour') || reduced()) return;
+      const A = this._auto = { seen: false, done: false, t: 0 };
+      const go = () => { clearTimeout(A.t); if (A.done || this.tour || !A.seen || document.hidden || this.mode() !== 'full') return; A.t = setTimeout(() => { if (!A.done && A.seen && !document.hidden && !this.tour) this.startTour(true); }, 1800); };
+      const pause = () => { clearTimeout(A.t); if (this.tour && this.tour.ambient) this.endTour(false); };
+      // A click on the tour card itself turns the ambient tour into a normal one; anything else ends it.
+      const quit = e => { if (A.done) return; A.done = true; clearTimeout(A.t); if (this.tour && this.tour.ambient) { if (e && e.composedPath && e.composedPath().includes(this.cardEl)) this.tour.ambient = false; else this.endTour(false); } A.io && A.io.disconnect(); document.removeEventListener('visibilitychange', A.vis); };
+      A.io = new IntersectionObserver(es => { A.seen = es.some(e => e.isIntersecting && e.intersectionRatio >= 0.5); A.seen ? go() : pause(); }, { threshold: [0, 0.5] });
+      A.io.observe(this);
+      A.vis = () => (document.hidden ? pause() : go()); document.addEventListener('visibilitychange', A.vis);
+      ['pointerdown', 'wheel', 'keydown', 'touchstart', 'focusin'].forEach(ev => this.addEventListener(ev, quit, { passive: true, capture: true }));
+      A.go = go;
     }
     tourStep(i) {
       const T = this.tour; if (!T) return;
       clearTimeout(T.tm);
       if (i < 0) i = 0;
-      if (i >= T.ids.length) { this.endTour(true); return; }
+      if (i >= T.ids.length) { if (T.ambient) i = 0; else { this.endTour(true); return; } }
       T.i = i; T.dwell = reduced() ? 9000 : 7000;
       const p = this.allPins().find(x => x.id === T.ids[i]);
       const bx = this.padBox([p], 2.4);

@@ -87,7 +87,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
       <sc-for list="{{ catGrid }}" as="g" hint-placeholder-count="2">
         <div style="display:flex;flex-direction:column;gap:10px">
           <span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ g.title }}</span>
-          <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px">
+          <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:8px">
             <sc-for list="{{ g.items }}" as="c" hint-placeholder-count="6">
               <li><a href="{{ c.href }}" onClick="{{ c.pick }}" aria-current="{{ c.on }}" style="height:100%;display:flex;align-items:center;gap:12px;padding:10px 12px;background:{{ c.bg }};border:1px solid {{ c.bd }};border-radius:3px;opacity:{{ c.op }};transition:border-color .15s" style-hover="border-color:var(--fg)">
                 <span aria-hidden="true" style="width:36px;height:36px;flex:none;border-radius:50%;background:{{ c.col }};display:grid;place-items:center;color:var(--pin-ink,#fff)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{ c.icon }}"></path></svg></span>
@@ -104,7 +104,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
       <sc-for list="{{ db.tabs }}" as="c" hint-placeholder-count="4"><button role="tab" id="{{ c.id }}" aria-selected="{{ c.pressed }}" aria-controls="rm-db-table" tabindex="{{ c.ti }}" onClick="{{ c.onClick }}" style="flex:none;height:40px;padding:0 14px;border:1px solid {{ c.bd }};background:{{ c.bg }};color:{{ c.fg }};border-radius:3px;font-size:14px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s,border-color .15s">{{ c.label }}<span style="font:500 12px var(--font-num);color:{{ c.nfg }}">{{ c.n }}</span></button></sc-for>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px var(--gap);align-items:end">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px var(--gap);align-items:end">
       <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--fg-subtle);min-width:0;grid-column:span 2">{{ db.t.search }}
         <span style="position:relative;display:block">
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="position:absolute;inset-inline-start:12px;top:12px;color:var(--fg-subtle)"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg>
@@ -179,7 +179,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
       </div>
       <sc-if value="{{ db.card.hasDesc }}"><p style="margin:16px 24px 0;font-size:15px;line-height:1.6;color:var(--fg-muted);text-wrap:pretty">{{ db.card.desc }}</p></sc-if>
       <sc-if value="{{ db.card.hasMena }}"><section aria-label="{{ db.card.mena.title }}" style="margin:16px 24px 0;padding:16px;border:1px solid var(--line-strong);border-inline-start:3px solid var(--accent);background:var(--bg-raised);display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:center;gap:8px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--accent-text)"><img src="{{ db.card.mena.flag }}" alt="" width="20" height="15" style="display:block;border:1px solid var(--line)">{{ db.card.mena.title }}</div><p style="margin:0;font-size:15px;line-height:1.6;color:var(--fg)">{{ db.card.mena.text }}</p><sc-if value="{{ db.card.mena.hasUrl }}"><a href="{{ db.card.mena.url }}" target="_blank" rel="noopener" style="align-self:flex-start;font-size:12px;color:var(--fg-subtle);border-bottom:1px solid var(--line-strong)">{{ db.card.mena.src }} <span aria-hidden="true">↗</span></a></sc-if></section></sc-if>
-      <dl style="margin:20px 24px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:0 24px;border-top:1px solid var(--line)">
+      <dl style="margin:20px 24px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,170px),1fr));gap:0 24px;border-top:1px solid var(--line)">
         <sc-for list="{{ db.card.fields }}" as="f"><div style="padding:12px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:2px;min-width:0"><dt style="font-size:12px;color:var(--fg-subtle)">{{ f.k }}</dt><dd style="margin:0;font-size:15px;color:var(--fg);overflow-wrap:anywhere">{{ f.v }}</dd></div></sc-for>
       </dl>
       <div style="margin:16px 24px 0;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-size:13px;color:var(--fg-muted)">
@@ -190,7 +190,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
       <sc-if value="{{ db.card.hasRel }}">
         <div style="margin:20px 24px 0;display:flex;flex-direction:column">
           <h3 style="margin:0 0 4px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ db.card.relTitle }}</h3>
-          <sc-for list="{{ db.card.rel }}" as="x"><button onClick="{{ x.open }}" style="display:flex;align-items:center;gap:12px;padding:10px 0;background:transparent;border:0;border-bottom:1px solid var(--line);text-align:start;cursor:pointer;color:var(--fg);font:inherit" style-hover="color:var(--accent-text)"><span aria-hidden="true" style="width:28px;height:28px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ x.badge.bg }};font:600 10px/1 var(--font-num);letter-spacing:.02em;color:var(--fg)"><sc-if value="{{ x.badge.hasImg }}"><img src="{{ x.badge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:{{ x.badge.fit }};padding:{{ x.badge.pad }};display:block"></sc-if><sc-if value="{{ x.badge.noImg }}">{{ x.badge.mono }}</sc-if></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:600">{{ x.label }}</span><span style="font-size:12px;color:var(--fg-subtle)">{{ x.sub }}</span></span></button></sc-for>
+          <sc-for list="{{ db.card.rel }}" as="x"><button onClick="{{ x.open }}" style="display:flex;align-items:center;gap:12px;padding:10px 0;background:transparent;border:0;border-bottom:1px solid var(--line);text-align:start;cursor:pointer;color:var(--fg);font:inherit" style-hover="color:var(--accent-text)"><span aria-hidden="true" style="width:28px;height:28px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ x.badge.bg }};font:600 11px/1 var(--font-num);letter-spacing:.02em;color:var(--fg)"><sc-if value="{{ x.badge.hasImg }}"><img src="{{ x.badge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:{{ x.badge.fit }};padding:{{ x.badge.pad }};display:block"></sc-if><sc-if value="{{ x.badge.noImg }}">{{ x.badge.mono }}</sc-if></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:600">{{ x.label }}</span><span style="font-size:12px;color:var(--fg-subtle)">{{ x.sub }}</span></span></button></sc-for>
         </div>
       </sc-if>
       <div style="margin:20px 0 0;padding:16px 24px 24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center">
@@ -206,7 +206,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
 
 <footer data-screen-label="03 Footer" style="position:relative;overflow:hidden;isolation:isolate;border-top:1px solid var(--line);padding:72px 0 40px;background:var(--bg)">
   <div style="max-width:1440px;margin:0 auto 48px;padding:0 var(--gutter)"><a href="{{ homeHref }}" style="display:inline-block"><span class="rm-logo rm-logo--bilingual" role="img" aria-label="Robotics MENA · روبوتات الشرق الأوسط وشمال أفريقيا" style="--logo-h:48px"></span></a></div>
-  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px var(--gap)">
+  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px var(--gap)">
     <sc-for list="{{ t.foot }}" as="f" hint-placeholder-count="4">
       <div style="display:flex;flex-direction:column;gap:12px">
         <h3 style="margin:0;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ f.h }}</h3>

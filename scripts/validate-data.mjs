@@ -154,6 +154,12 @@ uniq(xposts, 'id', 'xposts.json');
 const walkFiles = d => fs.readdirSync(path.join(ROOT, d)).filter(f => /\.(js|cjs|mjs|json|html)$/.test(f)).map(f => path.join(d, f));
 ['src', 'data', 'pages', 'partials'].flatMap(walkFiles).concat(['scripts/report-pdf.cjs', 'scripts/newsletter.mjs'])
   .forEach(f => { if (fs.readFileSync(path.join(ROOT, f), 'utf8').includes('روبوتكس مينا')) errors.push(`${f}: uses the old Arabic name «روبوتكس مينا»; use «روبوتات الشرق الأوسط وشمال أفريقيا»`); });
+// Supplier map: international companies are drawn from their HQ city; warn when the city has no coordinates yet.
+{ const src = fs.readFileSync(path.join(ROOT, 'src/logic.js'), 'utf8'), m = /\n  HQ_LL = (\{[^\n]*\});/.exec(src);
+  const HQ = m ? Function(`return (${m[1]})`)() : {};
+  D.companies.filter(c => c.hq && !(c.hq in MENA) && c.hq_city && !HQ[c.hq_city])
+    .forEach(c => console.warn(`Warning: ${c.name}: HQ city "${c.hq_city}" has no map coordinates; add it to HQ_LL in src/logic.js (drawn from the country capital until then).`));
+  D.companies.filter(c => c.hq && !(c.hq in MENA) && !c.hq_city).forEach(c => console.warn(`Warning: ${c.name}: international supplier without hq_city (drawn from the country capital).`)); }
 const flagFiles = fs.readdirSync(path.join(ROOT, 'media', 'flags'));
 EXCLUDED_COUNTRIES.forEach(cc => { if (flagFiles.includes(cc.toLowerCase() + '.svg')) errors.push(`media/flags/${cc.toLowerCase()}.svg must not be in the site`); });
 ['deployments', 'events', 'countries', 'brief'].forEach(n => D[n].forEach((r, i) => { if (EXCLUDED_COUNTRIES.has(r.country) || EXCLUDED_COUNTRIES.has(r.code)) errors.push(`${n}[${i}]: excluded country`); }));

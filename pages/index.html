@@ -224,7 +224,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
   </div>
   <div style="position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)">
     <div ref="{{ mapRef }}" style="height:var(--map-h);position:relative;background:var(--map-sea)">
-      <sc-if value="{{ mapNear }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="mena-map" from="./mena-map.js" mode="full" dir="{{ dir }}" pins="{{ mapPins }}" selected="{{ selId }}" focus="{{ fCountry }}" pad-end="{{ padEnd }}" label="{{ t.s2 }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import></sc-if>
+      <sc-if value="{{ mapNear }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="mena-map" from="./mena-map.js" mode="full" autotour="on" dir="{{ dir }}" pins="{{ mapPins }}" selected="{{ selId }}" focus="{{ fCountry }}" pad-end="{{ padEnd }}" label="{{ t.s2 }}" style="position:absolute;inset:0" hint-size="100%,100%"></x-import></sc-if>
       <div style="position:absolute;top:16px;inset-inline-start:16px;font:400 12px/16px var(--font-num);color:var(--fg-subtle);background:var(--bg-glass);padding:6px 10px;border:1px solid var(--line);display:var(--d-nav);white-space:nowrap">{{ t.mapHelp }}</div>
     </div>
     <aside style="position:var(--panel-pos);top:var(--panel-top);inset-inline-end:var(--panel-end);margin:var(--panel-margin);width:var(--panel-w);max-height:var(--panel-maxh);overflow:auto;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:3px">
@@ -246,7 +246,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
           </div>
           <sc-if value="{{ sel.hasSummary }}"><p style="margin:0;font-size:14px;line-height:1.55;color:var(--fg-muted)">{{ sel.summary }}</p></sc-if>
           <dl style="margin:0;display:grid;grid-template-columns:88px minmax(0,1fr);row-gap:12px;column-gap:16px;font-size:14px;border-top:1px solid var(--line);padding-top:16px">
-            <dt style="color:var(--fg-subtle)">{{ t.operator }}</dt><dd style="margin:0;display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="width:24px;height:24px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ sel.opBadge.bg }};font:600 9px/1 var(--font-num);letter-spacing:.02em;color:var(--fg)"><sc-if value="{{ sel.opBadge.hasImg }}"><img src="{{ sel.opBadge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:{{ sel.opBadge.fit }};padding:{{ sel.opBadge.pad }};display:block"></sc-if><sc-if value="{{ sel.opBadge.noImg }}">{{ sel.opBadge.mono }}</sc-if></span>{{ sel.operator }}</dd>
+            <dt style="color:var(--fg-subtle)">{{ t.operator }}</dt><dd style="margin:0;display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="width:24px;height:24px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ sel.opBadge.bg }};font:600 11px/1 var(--font-num);letter-spacing:.02em;color:var(--fg)"><sc-if value="{{ sel.opBadge.hasImg }}"><img src="{{ sel.opBadge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:{{ sel.opBadge.fit }};padding:{{ sel.opBadge.pad }};display:block"></sc-if><sc-if value="{{ sel.opBadge.noImg }}">{{ sel.opBadge.mono }}</sc-if></span>{{ sel.operator }}</dd>
             <dt style="color:var(--fg-subtle)">{{ t.site }}</dt><dd style="margin:0">{{ sel.site }}</dd>
             <dt style="color:var(--fg-subtle)">{{ t.country }}</dt><dd style="margin:0">{{ sel.country }}</dd>
             <dt style="color:var(--fg-subtle)">{{ t.date }}</dt><dd style="margin:0;font-family:var(--font-num);font-size:13px">{{ sel.date }}</dd>
@@ -291,7 +291,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
       <sc-for list="{{ catGrid }}" as="g" hint-placeholder-count="2">
         <div style="display:flex;flex-direction:column;gap:10px">
           <span style="font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ g.title }}</span>
-          <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px">
+          <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:8px">
             <sc-for list="{{ g.items }}" as="c" hint-placeholder-count="6">
               <li><a href="{{ c.href }}" onClick="{{ c.pick }}" aria-current="{{ c.on }}" style="height:100%;display:flex;align-items:center;gap:12px;padding:10px 12px;background:{{ c.bg }};border:1px solid {{ c.bd }};border-radius:3px;opacity:{{ c.op }};transition:border-color .15s" style-hover="border-color:var(--fg)">
                 <span aria-hidden="true" style="width:36px;height:36px;flex:none;border-radius:50%;background:{{ c.col }};display:grid;place-items:center;color:var(--pin-ink,#fff)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{ c.icon }}"></path></svg></span>
@@ -373,7 +373,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
       <p style="margin:0;font-size:16px;color:var(--fg-muted);text-wrap:pretty">{{ t.wk.homeDek }}</p>
       <a href="/work" style="align-self:flex-start;margin-top:8px;display:inline-flex;align-items:center;height:44px;padding:0 20px;background:var(--accent);color:var(--accent-ink);border-radius:3px;font-size:15px;font-weight:600">{{ t.wk.cta }}</a>
     </div>
-    <ul style="grid-column:var(--span-main);list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px">
+    <ul style="grid-column:var(--span-main);list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:12px">
       <sc-for list="{{ wkWays }}" as="w" hint-placeholder-count="6">
         <li><a href="{{ w.href }}" style="height:100%;display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid var(--line-strong);border-radius:3px;background:var(--bg-raised);transition:border-color .15s" style-hover="border-color:var(--accent)"><strong style="font-size:15px;font-weight:600">{{ w.label }}</strong><span style="font-size:13px;line-height:1.5;color:var(--fg-muted)">{{ w.desc }}</span></a></li>
       </sc-for>
@@ -385,7 +385,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
 
 <footer data-screen-label="07 Footer" style="position:relative;overflow:hidden;isolation:isolate;border-top:1px solid var(--line);padding:72px 0 40px;background:var(--bg)">
   <div style="max-width:1440px;margin:0 auto 48px;padding:0 var(--gutter)"><a href="{{ homeHref }}" style="display:inline-block"><span class="rm-logo rm-logo--bilingual" role="img" aria-label="Robotics MENA · روبوتات الشرق الأوسط وشمال أفريقيا" style="--logo-h:48px"></span></a></div>
-  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px var(--gap)">
+  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px var(--gap)">
     <sc-for list="{{ t.foot }}" as="f" hint-placeholder-count="4">
       <div style="display:flex;flex-direction:column;gap:12px">
         <h3 style="margin:0;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ f.h }}</h3>

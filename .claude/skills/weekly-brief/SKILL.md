@@ -30,8 +30,8 @@ without the owner's explicit approval in this conversation.**
    `image_credit` only if licence-safe). The takeaway says why it matters, in one or two plain sentences,
    with no "watch this event" phrasing that goes stale once the event has passed.
 4. Add any new deployments, companies or events to `data/*.json` with `added: <today>` (deployments also
-   `is_new: true`, and clear last week's `is_new`). Link new deployments to policy programmes where one
-   applies (`data/policy.json`, programme `[7]` list).
+   `is_new: true`, and clear last week's `is_new`). Link new deployments to policy programmes where a source
+   shows the programme drives them: `node scripts/link-programmes.mjs --new`, then `--apply <id>=<CC>:<n>`.
 5. **From X**: suggest 2–4 posts from official accounts (governments, regulators, operators, the companies
    themselves) about this week's news. Verify each with X's oEmbed endpoint
    (`curl -sL "https://publish.twitter.com/oembed?url=<post url>&omit_script=1"`): author, wording and date

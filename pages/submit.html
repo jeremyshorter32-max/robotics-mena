@@ -85,7 +85,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
         </div>
         <div id="rm-tabpanel" role="tabpanel" aria-labelledby="{{ tabId }}">
         <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
-          <form onSubmit="{{ submitForm }}" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px var(--gap)">
+          <form onSubmit="{{ submitForm }}" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:20px var(--gap)">
             <sc-for list="{{ fields }}" as="f" hint-placeholder-count="6">
               <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--fg-muted)"><span>{{ f.label }}<sc-if value="{{ f.req }}"><span aria-hidden="true" style="color:var(--fg-subtle)"> *</span></sc-if></span>
                 <input name="{{ f.name }}" required="{{ f.req }}" type="{{ f.type }}" placeholder="{{ f.ph }}" dir="{{ f.dir }}" style="height:44px;padding:0 12px;background:var(--bg-raised);border:1px solid var(--line-strong);border-radius:3px;font-size:15px;color:var(--fg)">
@@ -118,7 +118,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
 
 <footer data-screen-label="03 Footer" style="position:relative;overflow:hidden;isolation:isolate;border-top:1px solid var(--line);padding:72px 0 40px;background:var(--bg)">
   <div style="max-width:1440px;margin:0 auto 48px;padding:0 var(--gutter)"><a href="{{ homeHref }}" style="display:inline-block"><span class="rm-logo rm-logo--bilingual" role="img" aria-label="Robotics MENA · روبوتات الشرق الأوسط وشمال أفريقيا" style="--logo-h:48px"></span></a></div>
-  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px var(--gap)">
+  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px var(--gap)">
     <sc-for list="{{ t.foot }}" as="f" hint-placeholder-count="4">
       <div style="display:flex;flex-direction:column;gap:12px">
         <h3 style="margin:0;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ f.h }}</h3>

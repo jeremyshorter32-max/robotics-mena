@@ -82,19 +82,19 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 
 - [ ] **VORTEXINFO in Qatar.** Listed with its Abu Dhabi showcase (ADSW, Jan 2026); no Qatar presence found.
   Add Qatar if a source turns up.
-- [ ] **Link new deployments to policy programmes.** Add this step to the research-report skill
-  (`.claude/skills/research-report/SKILL.md`) and the weekly scanner checklist, so programme "On the ground"
-  lists on the policy page stay current.
-- [ ] **Supplier map coordinates.** New international suppliers whose HQ city is not in `HQ_LL`
-  (`src/logic.js`) are drawn from their country's capital. Add the city when a new one appears
-  (a build warning for this would help).
+- [x] **Link deployments to policy programmes** (13 Nov 2026): `scripts/link-programmes.mjs` suggests and applies links;
+  wired into the scanner PR, the research-report and weekly-brief skills. The 16 unlinked deployments were reviewed:
+  none is clearly driven by a profiled programme, so none was linked.
+- [x] **Supplier map coordinates** (13 Nov 2026): Mountain View added; the build warns when an international
+  supplier's HQ city has no coordinates.
 
 ## Nice to have
 
 - [ ] Hide the inbox address in form URLs by switching FormSubmit to its random alias (offered in the
   FormSubmit dashboard after activation), so scrapers can't harvest contact@roboticsmena.com from the code.
-- [ ] Run the map's guided tour on a loop on the home page.
-- [ ] Map on phones: a swipe-up bottom sheet for the deployment list instead of the panel under the map.
+- [x] Home-page map runs an ambient looping tour while in view; stops at first interaction; off with reduced motion (13 Nov 2026).
+- [x] Map page on phones: swipe-up bottom sheet (peek / half / full) for the deployment list; full mobile check of
+  every page on 3 phone sizes, EN and AR (13 Nov 2026): fixed 320px-wide overflow and 9–10px badge text.
 
 ## Done recently (for reference)
 

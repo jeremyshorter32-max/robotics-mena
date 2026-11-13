@@ -59,6 +59,10 @@ Rules to put in every research prompt:
    - add a logo at `media/logos/<id>.png`: official logo, trimmed and centred on a white 256×256 tile, plus a row in `media/logos/SOURCES.md`.
 6. Add `related` links (directory records, deployments, `/map`), and `pdf` paths `/media/reports/<id>-en.pdf` and `/media/reports/<id>-ar.pdf`.
 7. Optionally add a deployment record to `data/deployments.json` if the story is a new deployment and it isn't there yet.
+8. **Link deployments to policy programmes.** Run `node scripts/link-programmes.mjs` and, for each deployment
+   the story adds or touches, link it to the national programme that drives it (`--apply <id>=<CC>:<n>`), but only
+   when a source shows the link (funding, licence, sandbox, named target, the programme's own announcement).
+   The programme's "On the ground" list on the policy page then shows it.
 
 Run `npm run validate`. It checks the report: required fields, Arabic present, images exist, source numbers in range, providers in the directory, and statuses known. Fix everything it reports.
 

@@ -101,7 +101,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
 
 <footer data-screen-label="03 Footer" style="position:relative;overflow:hidden;isolation:isolate;border-top:1px solid var(--line);padding:72px 0 40px;background:var(--bg)">
   <div style="max-width:1440px;margin:0 auto 48px;padding:0 var(--gutter)"><a href="{{ homeHref }}" style="display:inline-block"><span class="rm-logo rm-logo--bilingual" role="img" aria-label="Robotics MENA · روبوتات الشرق الأوسط وشمال أفريقيا" style="--logo-h:48px"></span></a></div>
-  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px var(--gap)">
+  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px var(--gap)">
     <sc-for list="{{ t.foot }}" as="f" hint-placeholder-count="4">
       <div style="display:flex;flex-direction:column;gap:12px">
         <h3 style="margin:0;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ f.h }}</h3>

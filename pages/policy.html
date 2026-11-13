@@ -134,7 +134,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
           <span aria-hidden="true" style="display:block;height:6px;background:var(--line);max-width:220px"><span style="display:block;height:100%;width:{{ pc.score.pct }};background:var(--accent)"></span></span>
           <a href="#scorecard" style="font-size:13px;color:var(--accent-text)">{{ scT.how }} <span aria-hidden="true">↓</span></a>
         </div>
-        <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px">
+        <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,160px),1fr));gap:8px">
           <sc-for list="{{ pc.score.dims }}" as="d" hint-placeholder-count="8">
             <li title="{{ d.note }}" style="padding:10px 12px;border:1px solid var(--line);background:var(--bg-raised);display:flex;flex-direction:column;gap:6px">
               <span style="font-size:12px;line-height:1.35;color:var(--fg-muted)">{{ d.label }}</span>
@@ -146,7 +146,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
       </div>
       <details style="padding:0 var(--dos-pad);border-bottom:1px solid var(--line)">
         <summary style="cursor:pointer;padding:14px 0;font-size:14px;font-weight:500;color:var(--accent-text)">{{ scT.why }}</summary>
-        <ul style="list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:0 var(--gap)">
+        <ul style="list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:0 var(--gap)">
           <sc-for list="{{ pc.score.dims }}" as="d" hint-placeholder-count="8">
             <li style="padding:10px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:52px minmax(0,1fr);gap:4px 12px;font-size:14px;line-height:1.5">
               <span style="padding-top:6px"><span style="display:grid;grid-template-columns:repeat(2,18px);gap:3px"><sc-for list="{{ d.segs }}" as="sg"><span style="height:5px;background:{{ sg.bg }};border-radius:1px"></span></sc-for></span></span>
@@ -168,7 +168,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
                 </div>
                 <span style="flex:none;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);border:1px solid {{ p.tagBd }};padding:2px 8px;color:{{ p.tagFg }}">{{ p.scope }}</span>
               </div>
-              <ul aria-label="{{ t.pTargets }}" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px">
+              <ul aria-label="{{ t.pTargets }}" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),1fr));gap:12px">
                 <sc-for list="{{ p.kpis }}" as="k">
                   <li style="background:var(--bg-raised);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:6px">
                     <span style="font:500 24px/28px var(--font-num);letter-spacing:-0.02em;color:var(--fg)">{{ k.v }}</span>
@@ -183,7 +183,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
                   <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
                     <sc-for list="{{ p.deps }}" as="dp" hint-placeholder-count="2">
                       <li><a href="{{ dp.href }}" style="display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px">
-                        <span aria-hidden="true" style="width:28px;height:28px;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ dp.badge.bg }};font:600 10px/1 var(--font-num);color:var(--fg)"><sc-if value="{{ dp.badge.hasImg }}"><img src="{{ dp.badge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if><sc-if value="{{ dp.badge.noImg }}">{{ dp.badge.mono }}</sc-if></span>
+                        <span aria-hidden="true" style="width:28px;height:28px;border:1px solid var(--line-strong);display:grid;place-items:center;overflow:hidden;background:{{ dp.badge.bg }};font:600 11px/1 var(--font-num);color:var(--fg)"><sc-if value="{{ dp.badge.hasImg }}"><img src="{{ dp.badge.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if><sc-if value="{{ dp.badge.noImg }}">{{ dp.badge.mono }}</sc-if></span>
                         <span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ dp.title }}</span>
                         <span style="font:400 12px/1 var(--font-num);color:var(--fg-subtle);white-space:nowrap">{{ dp.when }} <span aria-hidden="true">{{ arrow }}</span></span>
                       </a></li>
@@ -228,7 +228,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
         <sc-for list="{{ pc.regGroups }}" as="g" hint-placeholder-count="3">
           <div style="padding-top:12px">
             <h5 style="margin:0 0 4px;font-size:14px;font-weight:600">{{ g.label }}</h5>
-            <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));column-gap:var(--gap)">
+            <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));column-gap:var(--gap)">
               <sc-for list="{{ g.items }}" as="r" hint-placeholder-count="2">
                 <li style="border-top:1px solid var(--line);padding:12px 0;display:flex;flex-direction:column;gap:6px">
                   <span style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start">
@@ -247,7 +247,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
       </sc-if>
       <div id="pubs" style="padding:8px var(--dos-pad) var(--dos-pad);border-top:1px solid var(--line);scroll-margin-top:80px">
         <h4 style="margin:0;padding:16px 0 4px;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ t.pPubs }}</h4>
-        <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));column-gap:var(--gap)">
+        <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));column-gap:var(--gap)">
           <sc-for list="{{ pc.pubs }}" as="u" hint-placeholder-count="4">
             <li style="border-bottom:1px solid var(--line);padding:14px 0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;align-items:start">
               <sc-if value="{{ u.hasUrl }}"><a href="{{ u.url }}" target="_blank" rel="noopener noreferrer" style="font-size:15px;font-weight:500;line-height:1.4;text-wrap:pretty">{{ u.title }} <span aria-hidden="true" style="color:var(--fg-subtle)">{{ arrow }}</span></a></sc-if>
@@ -292,11 +292,11 @@ html,body{margin:0;padding:0;background:#F3F1EC}
       </div>
       <div data-rail="" tabindex="0" style="overflow-x:auto;border:1px solid var(--line-strong);background:var(--bg)">
         <div role="table" aria-label="{{ t.pCompare }}" style="min-width:980px">
-          <div role="row" style="display:grid;grid-template-columns:minmax(150px,1fr) minmax(170px,1.1fr) minmax(240px,1.9fr) 112px minmax(140px,1fr) minmax(140px,1fr);gap:var(--gap);padding:12px 20px;border-bottom:1px solid var(--fg);font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">
+          <div role="row" style="display:grid;grid-template-columns:minmax(min(100%,150px),1fr) minmax(170px,1.1fr) minmax(240px,1.9fr) 112px minmax(min(100%,140px),1fr) minmax(min(100%,140px),1fr);gap:var(--gap);padding:12px 20px;border-bottom:1px solid var(--fg);font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">
             <sc-for list="{{ t.pCols }}" as="h"><span role="columnheader">{{ h }}</span></sc-for>
           </div>
           <sc-for list="{{ cmp }}" as="r" hint-placeholder-count="8">
-            <div role="row" style="display:grid;grid-template-columns:minmax(150px,1fr) minmax(170px,1.1fr) minmax(240px,1.9fr) 112px minmax(140px,1fr) minmax(140px,1fr);gap:var(--gap);align-items:start;padding:16px 20px;border-bottom:1px solid var(--line);background:{{ r.bg }};font-size:14px">
+            <div role="row" style="display:grid;grid-template-columns:minmax(min(100%,150px),1fr) minmax(170px,1.1fr) minmax(240px,1.9fr) 112px minmax(min(100%,140px),1fr) minmax(min(100%,140px),1fr);gap:var(--gap);align-items:start;padding:16px 20px;border-bottom:1px solid var(--line);background:{{ r.bg }};font-size:14px">
               <span role="rowheader"><button onClick="{{ r.pick }}" aria-disabled="{{ r.noPick }}" style="display:inline-flex;align-items:center;gap:8px;padding:0;background:transparent;border:0;cursor:{{ r.cur }};font-size:14px;font-weight:600;text-align:start" style-hover="color:var(--accent-text)"><img src="{{ r.flag }}" alt="" loading="lazy" style="width:20px;height:15px;object-fit:cover;display:block;flex:none;border:1px solid var(--line);border-radius:2px">{{ r.name }}</button></span>
               <span role="cell" style="display:flex;gap:8px;align-items:flex-start"><span aria-hidden="true" style="flex:none;margin-top:6px;width:8px;height:8px;transform:rotate(45deg);background:{{ r.dotBg }};border:1px solid {{ r.dotBd }}"></span><span style="color:{{ r.roboFg }}">{{ r.robo }}</span></span>
               <span role="cell" style="display:flex;flex-direction:column;gap:2px"><span style="font:500 17px/24px var(--font-num);color:var(--fg)">{{ r.v }}</span><span style="font-size:13px;color:var(--fg-muted)">{{ r.what }}</span></span>
@@ -345,7 +345,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
 
 <footer data-screen-label="04 Footer" style="position:relative;overflow:hidden;isolation:isolate;border-top:1px solid var(--line);padding:72px 0 40px;background:var(--bg)">
   <div style="max-width:1440px;margin:0 auto 48px;padding:0 var(--gutter)"><a href="{{ homeHref }}" style="display:inline-block"><span class="rm-logo rm-logo--bilingual" role="img" aria-label="Robotics MENA · روبوتات الشرق الأوسط وشمال أفريقيا" style="--logo-h:48px"></span></a></div>
-  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px var(--gap)">
+  <div style="max-width:1440px;margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px var(--gap)">
     <sc-for list="{{ t.foot }}" as="f" hint-placeholder-count="4">
       <div style="display:flex;flex-direction:column;gap:12px">
         <h3 style="margin:0;font:500 12px/16px var(--font-label);letter-spacing:var(--label-track);text-transform:var(--label-case);color:var(--fg-subtle)">{{ f.h }}</h3>
