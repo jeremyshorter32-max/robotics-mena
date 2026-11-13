@@ -76,9 +76,8 @@ If Claude declines a request for policy reasons, the scanner uses the API's serv
 
 While in private preview, every page, including the database contents, is encrypted behind a password screen (StatiCrypt), and search engines are told not to index it.
 
-- **Password:** the `SITE_PASSWORD` repository secret (Settings → Secrets and variables → Actions). Change it there, then re-run the Deploy site action.
-- **Launch publicly:** add a repository *variable* `PUBLIC_LAUNCH` = `true` (same settings page, Variables tab), then re-run the action.
-- **Safety:** if `SITE_PASSWORD` is missing and `PUBLIC_LAUNCH` isn't `true`, the deploy fails instead of publishing unprotected.
+- **Public since 13 Nov 2026:** the Deploy site action builds with `PUBLIC_LAUNCH=true` (no password, search engines allowed, sitemap at /sitemap.xml).
+- **Back to private:** set `SITE_PASSWORD` as a repository secret and replace `PUBLIC_LAUNCH: 'true'` in `.github/workflows` with `SITE_PASSWORD: ${{ secrets.SITE_PASSWORD }}`; the build then encrypts every page again.
 - The source files and `data/` in this repo are readable on GitHub while the repo is public. The password protects the website, not the repo.
 
 `CNAME` holds the custom domain. `.nojekyll` tells GitHub Pages to serve files as-is.

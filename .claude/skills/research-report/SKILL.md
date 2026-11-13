@@ -81,7 +81,7 @@ Check that the cover isn't overflowing, no image or card is split badly, the Ara
 ## 5. Build and test in a browser
 
 ```bash
-SITE_PASSWORD=testpass123 ./scripts/build-site.sh
+PUBLIC_LAUNCH=true ./scripts/build-site.sh
 python3 scripts/serve-site.py _site 8767 &      # restart it after every build (the build deletes _site)
 ```
 With Playwright (`require('playwright')`): unlock the password screen (fill `input[type=password]`, tick the remember checkbox, click `.staticrypt-decrypt-button`), then check:

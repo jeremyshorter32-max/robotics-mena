@@ -53,12 +53,10 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 - [x] **Launch plumbing, owner side** (13 Nov 2026): "Enforce HTTPS" ticked; GoatCounter account created (`roboticsmena`).
 - [ ] **After launch:** add the site to Google Search Console and Bing Webmaster Tools and submit
   https://roboticsmena.com/sitemap.xml.
-- [ ] **Turn off the password** (only after the above): change `scripts/build-site.sh` so it publishes without
-  StatiCrypt, remove the `noindex, nofollow` tag it adds and the robots block, delete the `SITE_PASSWORD`
-  repository secret, then check every page, search engines' access and the social preview image.
-  Then submit roboticsmena.com for web-filter categorisation (Science/Technology or News) so work networks stop
-  blocking it as "Miscellaneous or Unknown": Zscaler (sitereview.zscaler.com), Palo Alto, Fortinet, Cisco Talos,
-  Symantec/Broadcom, Netskope, Forcepoint, McAfee/Trellix, Check Point.
+- [x] **Password turned off** (13 Nov 2026): the deploy builds with `PUBLIC_LAUNCH=true`; every other open item was deferred
+  by the owner. Owner to do: delete the `SITE_PASSWORD` repository secret (no longer used), then submit roboticsmena.com
+  for web-filter categorisation (Science/Technology or News): Zscaler (sitereview.zscaler.com), Palo Alto, Fortinet,
+  Cisco Talos, Symantec/Broadcom, Netskope, Forcepoint, McAfee/Trellix, Check Point.
 
 - [x] **"From X this week" strip** (12 Nov 2026): hand-picked posts from official accounts in `data/xposts.json`,
   shown as plain cards; X's embed loads only on "Show post" (privacy page updated). Posts appear only once their

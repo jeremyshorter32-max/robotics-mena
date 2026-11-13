@@ -41,7 +41,7 @@ without the owner's explicit approval in this conversation.**
    content the site excludes (Israeli companies or flag) or personal accounts of private individuals.
 6. Optional: `data/newsletter.json` with `subject`, `preview_text` and a one-paragraph `intro`
    (the editor's note). Leave it out if there is nothing to add; the defaults are fine.
-7. Check: `SITE_PASSWORD=testpass123 ./scripts/build-site.sh` must pass (it validates the data).
+7. Check: `PUBLIC_LAUNCH=true ./scripts/build-site.sh` must pass (it validates the data).
 8. `node scripts/newsletter.mjs draft`: builds `newsletter/out/preview.html` and creates or updates the
    **draft** in Kit (it does not send).
 9. Commit and push the branch (not main).

@@ -25,11 +25,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Build (password-protected unless PUBLIC_LAUNCH is true)
+      - name: Build (public since launch, 13 Nov 2026)
         run: ./scripts/build-site.sh
         env:
-          SITE_PASSWORD: ${{ secrets.SITE_PASSWORD }}
-          PUBLIC_LAUNCH: ${{ vars.PUBLIC_LAUNCH }}
+          PUBLIC_LAUNCH: 'true'
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
