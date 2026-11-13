@@ -12,6 +12,16 @@ The highest-risk newspaper photos were replaced with company images on 13 Nov 20
 | xgen-egypt-robotics.jpg | X-GEN (promotional image) | Supplied by the site owner. A staged promotional composite, not a documentary photo, so the credit says so. |
 | gecko-inspectors-thickness-map.jpg (home Spotlight, 4:3 crop) | Gecko Robotics (company image; replaced a The National photo, 13 Nov 2026) | https://www.geckorobotics.com/ |
 
+## Week 46 (9 – 15 Nov 2026)
+
+| File | Credit | Source |
+|---|---|---|
+| saudi-av-passenger-rules.jpg | Robotics MENA (designed tile; no official image published) | Made with the brand tile template |
+| naver-nuri-riyadh.jpg | NAVER LABS (company image, 800×500 crop of /media/companies/naver-labs.jpg) | See media/companies/SOURCES.md |
+| egypt-da-vinci-sofmedica.jpg | Sofmedica (company image) | https://sofmedica.com/wp-content/uploads/2022/07/Women-in-robotic-surgery.jpg |
+| xgen-pudu-egypt.jpg | Pudu Robotics (company image, crop of /media/companies/pudu-robotics.jpg) | See media/companies/SOURCES.md |
+| agibot-vodafone-qatar.jpg | AgiBot (company image, crop of /media/companies/agibot.jpg) | See media/companies/SOURCES.md |
+
 ## Spotlight analysis images (`media/spotlight/`)
 
 | File | Credit | Source |
