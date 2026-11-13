@@ -41,6 +41,7 @@ html,body{margin:0;padding:0;background:#F3F1EC}
 @media (max-width:1180px){[data-rm][dir]{--hero-img-w:76%;--hero-fade-a:28%;--hero-fade-b:40%}}
 @media (max-width:900px){[data-rm][dir]{--hero-img-w:100%;--hero-img-pos:78% 70%;--hero-fade-a:44%;--hero-fade-b:58%;--hero-fade-c:80%}}
 @keyframes rm-hero-kb{from{transform:scale(1.08)}to{transform:scale(1)}}
+.rm-hero-slide{opacity:0;transition:opacity 1.4s ease}.rm-hero-slide[data-on]{opacity:1;animation:rm-hero-kb 9s ease-out both}#top:not([data-live]) .rm-hero-slide:first-child{opacity:1;animation:rm-hero-kb 22s ease-out both}
 @keyframes rm-live{0%,100%{opacity:1}50%{opacity:.35}}
 @media (prefers-reduced-motion:reduce){[data-rm] *{transition:none!important;animation:none!important}}
 </style>
@@ -68,12 +69,17 @@ html,body{margin:0;padding:0;background:#F3F1EC}
 
 <header id="top" data-screen-label="01 Hero" style="position:relative;overflow:hidden;border-bottom:1px solid var(--line)">
   <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;background:var(--bg)">
-    <img src="/media/brand/hero-delivery-robots.jpg" srcset="/media/brand/hero-delivery-robots-800.jpg 800w, /media/brand/hero-delivery-robots.jpg 1000w" sizes="100vw" alt="" fetchpriority="high" decoding="async" style="position:absolute;top:0;inset-inline-end:0;width:var(--hero-img-w);height:min(100%, calc(100svh - 64px));object-fit:cover;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent);object-position:var(--hero-img-pos);filter:var(--hero-img-filter);animation:rm-hero-kb 22s ease-out both">
+    <img class="rm-hero-slide" data-on="" data-cr="" src="/media/brand/hero-delivery-robots.jpg" srcset="/media/brand/hero-delivery-robots-800.jpg 800w, /media/brand/hero-delivery-robots.jpg 1000w" sizes="100vw" alt="" fetchpriority="high" decoding="async" style="position:absolute;top:0;inset-inline-end:0;width:var(--hero-img-w);height:min(100%, calc(100svh - 64px));object-fit:cover;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent);filter:var(--hero-img-filter);object-position:var(--hero-img-pos)">
+    <img class="rm-hero-slide" data-cr="Photo: Pony.ai" src="/media/companies/pony-ai.jpg" alt="" loading="lazy" decoding="async" style="position:absolute;top:0;inset-inline-end:0;width:var(--hero-img-w);height:min(100%, calc(100svh - 64px));object-fit:cover;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent);filter:var(--hero-img-filter);object-position:62% 50%">
+    <img class="rm-hero-slide" data-cr="Photo: Unitree Robotics" src="/media/companies/unitree.jpg" alt="" loading="lazy" decoding="async" style="position:absolute;top:0;inset-inline-end:0;width:var(--hero-img-w);height:min(100%, calc(100svh - 64px));object-fit:cover;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent);filter:var(--hero-img-filter);object-position:55% 60%">
+    <img class="rm-hero-slide" data-cr="Photo: YS Lootah Robotics" src="/media/companies/ys-lootah-robotics.jpg" alt="" loading="lazy" decoding="async" style="position:absolute;top:0;inset-inline-end:0;width:var(--hero-img-w);height:min(100%, calc(100svh - 64px));object-fit:cover;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent);filter:var(--hero-img-filter);object-position:58% 50%">
+    <img class="rm-hero-slide" data-cr="Photo: Field AI" src="/media/companies/fieldai.jpg" alt="" loading="lazy" decoding="async" style="position:absolute;top:0;inset-inline-end:0;width:var(--hero-img-w);height:min(100%, calc(100svh - 64px));object-fit:cover;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent);filter:var(--hero-img-filter);object-position:60% 60%">
     <div style="position:absolute;inset:0;background:var(--hero-tint);mix-blend-mode:multiply"></div>
     <div style="position:absolute;inset:0;background-image:radial-gradient(var(--dot) 1px,transparent 1.2px);background-size:22px 22px"></div>
   </div>
   <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(var(--fade-dir), var(--bg) 0%, var(--bg) var(--hero-fade-a), color-mix(in srgb, var(--bg) 45%, transparent) var(--hero-fade-b), transparent var(--hero-fade-c))"></div>
   <div aria-hidden="true" style="position:absolute;inset-inline:0;bottom:0;height:120px;pointer-events:none;background:linear-gradient(to top,var(--bg),transparent)"></div>
+  <span class="rm-hero-cr" aria-hidden="true" style="position:absolute;z-index:2;bottom:14px;inset-inline-end:var(--gutter);font:400 11px/16px var(--font-num);color:var(--fg-subtle)"></span>
   
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:var(--hero-pad) var(--gutter) 0;display:grid;grid-template-columns:var(--grid);column-gap:var(--gap)">
     <div style="grid-column:1 / -1;max-width:780px;display:flex;flex-direction:column;gap:32px">

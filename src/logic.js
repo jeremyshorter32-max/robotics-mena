@@ -49,7 +49,23 @@ class Component extends DCLogic {
       a.setAttribute('rel', rel.join(' '));
     });
   }
+  // Home hero slideshow: crossfades the .rm-hero-slide images directly in the DOM (no re-render), with the photo
+  // credit beside it. Pauses off screen, in a hidden tab and on hover; stays on the first image with reduced motion.
+  initHero() {
+    const hero = document.getElementById('top'), slides = hero ? [...hero.querySelectorAll('.rm-hero-slide')] : [], cr = hero && hero.querySelector('.rm-hero-cr');
+    if (!slides.length) return;
+    const show = i => { slides.forEach((s, k) => k === i ? s.setAttribute('data-on', '') : s.removeAttribute('data-on')); if (cr) cr.textContent = slides[i].dataset.cr || ''; };
+    show(0); hero.setAttribute('data-live', '');
+    if (slides.length < 2 || this.reduced) return;
+    let i = 0, seen = true, hover = false;
+    const io = new IntersectionObserver(es => { seen = es.some(e => e.isIntersecting); }); io.observe(hero);
+    const enter = () => { hover = true; }, leave = () => { hover = false; };
+    hero.addEventListener('mouseenter', enter); hero.addEventListener('mouseleave', leave);
+    const t = setInterval(() => { if (document.hidden || !seen || hover) return; i = (i + 1) % slides.length; show(i); }, 6500);
+    this._hero = () => { clearInterval(t); io.disconnect(); hero.removeEventListener('mouseenter', enter); hero.removeEventListener('mouseleave', leave); };
+  }
   componentDidMount() {
+    setTimeout(() => this.initHero(), 0);
     this.markExternal();
     if ('MutationObserver' in window) { this.extMO = new MutationObserver(() => { if (this.extRaf) return; this.extRaf = requestAnimationFrame(() => { this.extRaf = 0; this.markExternal(); }); }); this.extMO.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] }); }
     // On phones, picking a pin or country lifts the map page's bottom sheet so the details show.
@@ -105,7 +121,7 @@ class Component extends DCLogic {
   railStep(el) { const li = el.querySelector('li'); return li ? li.getBoundingClientRect().width + (parseFloat(getComputedStyle(el).columnGap) || 0) : el.clientWidth; }
   railUpdate(k) { const el = this.railEl(k); if (!el) return; const x = Math.abs(el.scrollLeft), n = el.querySelectorAll('li').length, i = Math.round(x / this.railStep(el)), end = x + el.clientWidth >= el.scrollWidth - 4; const o = this.state.rails[k]; if (o.i !== i || o.n !== n || o.end !== end) this.setState(s => ({ rails: { ...s.rails, [k]: { i, n, end } } })); }
   railMove(k, d) { const el = this.railEl(k); if (!el) return; const r = this.state.rails[k]; if ((d < 0 && r.i === 0) || (d > 0 && r.end)) return; const rtl = getComputedStyle(el).direction === 'rtl'; el.scrollBy({ left: d * this.railStep(el) * (rtl ? -1 : 1), behavior: this.reduced ? 'auto' : 'smooth' }); }
-  componentWillUnmount() { this.extMO && this.extMO.disconnect(); this.rpIO && this.rpIO.disconnect(); this.onRp && window.removeEventListener('scroll', this.onRp); this.onLbKey && window.removeEventListener('keydown', this.onLbKey); this.mapIO && this.mapIO.disconnect(); window.removeEventListener('scroll', this.onSpy); window.removeEventListener('rm:pin', this.onPin); window.removeEventListener('rm:country', this.onCty); window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.onResize); }
+  componentWillUnmount() { this._hero && this._hero(); this.extMO && this.extMO.disconnect(); this.rpIO && this.rpIO.disconnect(); this.onRp && window.removeEventListener('scroll', this.onRp); this.onLbKey && window.removeEventListener('keydown', this.onLbKey); this.mapIO && this.mapIO.disconnect(); window.removeEventListener('scroll', this.onSpy); window.removeEventListener('rm:pin', this.onPin); window.removeEventListener('rm:country', this.onCty); window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.onResize); }
 
   go(id, c) { const el = document.getElementById(id); if (!el) { window.location.href = this.pageHref(id, c); return; } window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - this.navH() - 8, behavior: this.reduced ? 'auto' : 'smooth' }); }
 
@@ -355,7 +371,7 @@ class Component extends DCLogic {
     en: {
       title: 'Database', sub: 'Every company, deployment, country and event we track, in one searchable place. Click any row for the full record and its source.',
       tabs: { companies: 'Companies', deployments: 'Deployments', countries: 'Countries', events: 'Events' },
-      search: 'Search this table', country: 'Country', all: 'All', anyCountry: 'All countries', sort: 'Sort',
+      search: 'Search this database', country: 'Country', all: 'All', anyCountry: 'All countries', sort: 'Sort',
       facet: { companies: 'Category', deployments: 'Robot type', events: 'Event type' },
       sorts: { recent: 'Most recent', az: 'A–Z', size: 'Most deployments' },
       showing: 'Showing {a} of {b}', none: 'No entries match. Try a different search or clear the filters.', clear: 'Clear filters', more: 'Show all {n}',
@@ -369,7 +385,7 @@ class Component extends DCLogic {
     ar: {
       title: 'قاعدة البيانات', sub: 'كل الشركات وعمليات النشر والدول والفعاليات التي نتابعها، في مكان واحد قابل للبحث. اضغط أي صف لعرض السجل الكامل ومصدره.',
       tabs: { companies: 'الشركات', deployments: 'عمليات النشر', countries: 'الدول', events: 'الفعاليات' },
-      search: 'ابحث في هذا الجدول', country: 'الدولة', all: 'الكل', anyCountry: 'كل الدول', sort: 'الترتيب',
+      search: 'ابحث في قاعدة البيانات هذه', country: 'الدولة', all: 'الكل', anyCountry: 'كل الدول', sort: 'الترتيب',
       facet: { companies: 'الفئة', deployments: 'نوع الروبوت', events: 'نوع الفعالية' },
       sorts: { recent: 'الأحدث', az: 'أبجدياً', size: 'الأكثر نشراً' },
       showing: 'عرض {a} من {b}', none: 'لا توجد نتائج مطابقة. جرّب بحثاً آخر أو امسح عوامل التصفية.', clear: 'مسح عوامل التصفية', more: 'عرض الكل ({n})',

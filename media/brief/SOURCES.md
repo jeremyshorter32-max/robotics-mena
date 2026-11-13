@@ -27,4 +27,8 @@ Most are editorial photos owned by the publisher or a news agency: get permissio
 | File | Credit | Source |
 |---|---|---|
 | hero-robot-arm.jpg, hero-robot-arm-960.jpg | Supplied by the site owner | Cropped around the robot arm (previous hero) |
-| hero-delivery-robots.jpg, hero-delivery-robots-800.jpg | Supplied by the site owner | Delivery robots (current hero, on trial) |
+| hero-delivery-robots.jpg, hero-delivery-robots-800.jpg | Supplied by the site owner | Delivery robots (slide 1 of the hero slideshow) |
+| /media/companies/pony-ai.jpg | Pony.ai (press image) | Slide 2: robotaxi in Doha |
+| /media/companies/unitree.jpg | Unitree Robotics (press image) | Slide 3: robot dogs in a refinery |
+| /media/companies/ys-lootah-robotics.jpg | YS Lootah Robotics (press image) | Slide 4: humanoid showroom, Dubai |
+| /media/companies/fieldai.jpg | Field AI (press image) | Slide 5: robot dog on a construction site |
