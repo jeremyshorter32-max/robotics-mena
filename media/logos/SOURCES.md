@@ -164,3 +164,57 @@ No usable logo found for FalconViz, Sager Drones, AutoGo, Sinaha Technology, Apo
 | lodd-autonomous.png | LODD Autonomous | https://lodd.com/wp-content/uploads/2026/04/White-with-Green-logo-300x169.webp |
 | cargox.png | CargoX | https://i0.wp.com/cargo-x.ai/wp-content/uploads/2026/01/CargoX-logos_White.png?fit=4168%2C1251&ssl=1 |
 | ac3d.png | AC3D | https://ac3d-us.com/wp-content/uploads/2024/01/ac3d-logo.svg |
+| apollo-go.png | Apollo Go | https://www.apollo.auto/abolo/images/logo.png |
+| falconviz.png | FalconViz | https://www.falconviz.com/apple-touch-icon.png |
+| tulip-technologies.png | Tulip Technologies | https://tuliptechs.com/wp-content/uploads/2025/05/cropped-tulip-logo-fav_0-192x192.png |
+| sager-drones.png | Sager Drones | https://www.sagerdrone.com/frontend/img/sager_log.svg |
+| leapting.png | LEAPTING | https://www.leapting.com/_nuxt/img/logo.f8538b6.svg |
+| action-to-action-robotics.png | Action To Action Robotics | https://static.wixstatic.com/media/1c5a1d_2ba1a5843c57475b91c305da904b0133%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/1c5a1d_2ba1a5843c57475b91c305da904b0133%7Emv2.png |
+| rdi-robots.png | RDI Robots | https://static.tildacdn.com/tild6662-3533-4163-b062-656437666436/logo.svg |
+| btr-tech.png | btr.tech | https://cdn.prod.website-files.com/6541e2199da289c899e9b5ca/656942ea051ab3cc42736f0c_favicon-256.png |
+| spexal.png | Spexal | https://www.spexal.com/web/image/website/1/logo/Spexal?unique=ebe3fc9 |
+| deepleaf.png | DeepLeaf | https://deepleaf.org/brand/DeepLeaf_logo_light.svg |
+| droneway.png | Droneway | https://droneway.ma/wp-content/uploads/2019/10/cropped-logo-droneway-2020-192x192.png |
+| nooragri-noor-solutions-agri.png | NoorAgri (Noor Solutions Agri) | https://www.nooragri.com/images/NoorAgri.svg |
+| savoye.png | SAVOYE | https://www.savoye.com/wp-content/uploads/2022/09/cropped-cropped-SAVOYE_BRANDVIDEO-2_Moment-1.jpg |
+| zimmer-biomet.png | Zimmer Biomet | https://www.zimmerbiomet.com/etc.clientlibs/zb-common/clientlibs/clientlib-base/resources/img/favicon.ico |
+| vertical-aerospace.png | Vertical Aerospace | https://vertical-aerospace.com/wp-content/themes/vertical/dist/assets/images/apple-touch-icon.png |
+| skyports.png | Skyports | https://cdn.prod.website-files.com/69c17ab4aa497ef1736d7289/69c17baff0928f563157a9d5_relume-817605.png |
+| oxa.png | Oxa | https://oxa.tech/images/favicons/favicon.svg |
+| applied-intuition.png | Applied Intuition | https://www.appliedintuition.com/icon2.png?icon2.38f6ef9c.png |
+| eve-air-mobility.png | Eve Air Mobility | https://www.eveairmobility.com/storage/2023/03/favicon-300x300-2-300x300.png |
+| nvidia.png | NVIDIA |  |
+| stryker.png | Stryker | https://www.stryker.com/etc/designs/stryker/images/header/logo.png |
+| cyberdyne.png | Cyberdyne | https://www.cyberdyne.jp/media/19855/company-logo.svg?1794591630 |
+| omnicell.png | Omnicell | https://www.omnicell.com/globalassets/us-footer/omnicell-logo-r-hz-grn-rgb-300.png |
+| techno-wave.png | Techno Wave | https://technowave-eg.com/uploads/0.20862400_16351660546176a76632ef3.png |
+| kumrah-ai.png | Kumrah AI | https://cdn.prod.website-files.com/697efa46480d445d23117b42/697effa9a29abc206434e87e_KUMRAH%20AI%20logo.svg |
+| robocare.png | RoboCare | https://robocare.tn/brand/icon.png |
+| acme-intralog.png | Acme Intralog | https://acme-world.com/app/default/assets/images/Acme+Logo+2025.svg?v=1791653638 |
+| kair.png | KAIR | https://www.kair-me.com/favicon.png |
+| unique-group.png | Unique Group | https://www.uniquegroup.com/wp-content/uploads/2022/06/cropped-favicon-180x180.png |
+| planys-technologies.png | Planys Technologies | https://planystech.com/wp-content/uploads/2026/03/planys-logo.gif |
+| furhat-robotics.png | Furhat Robotics | https://cdn.prod.website-files.com/66b323f041094f01cd836ea9/6724320867afcbb10436c25d_Furhat-Logo-White.png |
+| elroy-air.png | Elroy Air | https://elroyair.com/icons/favicon.svg |
+| yango-group.png | Yango Group | https://static.yango.tech/s3/taxi-front/txf-yango-career-frontend/0.135.1/_next/static/media/logo.f99fa8f6.png |
+| lionsbot.png | LionsBot | https://www.lionsbot.com/apple-touch-icon.png |
+| avidbots.png | Avidbots | https://avidbots.com/_resources/themes/main/images/favicons/apple-touch-icon.png |
+| autogo.png | AutoGo | App Store icon (K2) |
+| buildroid-ai.png | Buildroid AI | site icon |
+| enova-robotics.png | Enova Robotics | site icon |
+| marakeb-technologies.png | Marakeb Technologies | site icon |
+| sinaha-technology.png | Sinaha Technology | Sinaha site icon |
+| snoonu-robotics.png | Snoonu Robotics | Snoonu site icon |
+| microport-medbot.png | MicroPort MedBot | MicroPort group icon |
+| x-gen.png | X-GEN | X-GEN promotional image |
+| nuqul-building-solutions.png | Nuqul Building Solutions | Name tile (no public logo found) |
+| nomadd-desert-solar-solutions.png | NOMADD Desert Solar Solutions | Name tile (no public logo found) |
+| robot-ahmed.png | Robot Ahmed | Name tile (no public logo found) |
+| black-buffalo-3d.png | Black Buffalo 3D | Name tile (no public logo found) |
+| 3dxb-group.png | 3DXB Group | Name tile (no public logo found) |
+| guanli.png | Guanli | Name tile (no public logo found) |
+| kenyo.png | Kenyo | Name tile (no public logo found) |
+| droneleaf.png | DroneLeaf | Name tile (no public logo found) |
+| terrasense.png | TerraSense | Name tile (no public logo found) |
+| code-three-fourteen.png | CODE Three Fourteen | Name tile (no public logo found) |
+| wakan-tech.png | Wakan Tech | Name tile (no public logo found) |
