@@ -78,8 +78,8 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   (Morocco), Iraq's first robotic surgery at Warith (date unconfirmed), Jiangsu Yunmu humanoid pact (sponsored content only),
   AgiBot–Vodafone Qatar MoU (8 Nov 2026), iFarm, AgriEdge, Nupology. Industrial arm makers (ABB/Almarai, Kawasaki RAK,
   FANUC, KUKA…) still uncovered: their sites block automated access.
-- [ ] **Miral HQ cleaning robot.** Not publicly sourced yet. Likely operated by Berkeley Services (UAE FM contractor, now
-  listed); the robot brand is unknown. Add a deployment when a press release, Miral post or photo with permission exists.
+- [ ] **Miral HQ cleaning robot.** Not publicly sourced yet. Likely operated by FM contractor Berkeley Services (not listed:
+  FM companies are out of scope); the robot maker is unknown. Add the maker and a deployment when a public source exists.
 - [ ] **Bahrain drones.** Search results say Bahrain suspended civil drone activity from April 2026; confirm from the official
   notice and reflect it in Bahrain's records.
 - [x] **Thin entries re-checked** (13 Nov 2026): Shamal, Avelabs (now part of Arrow), Marakeb, Firnas, ATLAN confirmed;
