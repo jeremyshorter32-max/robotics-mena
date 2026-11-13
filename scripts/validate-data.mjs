@@ -150,6 +150,10 @@ xposts.forEach((x, i) => {
   if ((x.excerpt || '').length > 240) errors.push(`${w}: excerpt longer than 240 characters (quote briefly, the embed shows the rest)`);
 });
 uniq(xposts, 'id', 'xposts.json');
+// Arabic brand name: the logo's «روبوتات الشرق الأوسط وشمال أفريقيا», never the old «روبوتكس مينا».
+const walkFiles = d => fs.readdirSync(path.join(ROOT, d)).filter(f => /\.(js|cjs|mjs|json|html)$/.test(f)).map(f => path.join(d, f));
+['src', 'data', 'pages', 'partials'].flatMap(walkFiles).concat(['scripts/report-pdf.cjs', 'scripts/newsletter.mjs'])
+  .forEach(f => { if (fs.readFileSync(path.join(ROOT, f), 'utf8').includes('روبوتكس مينا')) errors.push(`${f}: uses the old Arabic name «روبوتكس مينا»; use «روبوتات الشرق الأوسط وشمال أفريقيا»`); });
 const flagFiles = fs.readdirSync(path.join(ROOT, 'media', 'flags'));
 EXCLUDED_COUNTRIES.forEach(cc => { if (flagFiles.includes(cc.toLowerCase() + '.svg')) errors.push(`media/flags/${cc.toLowerCase()}.svg must not be in the site`); });
 ['deployments', 'events', 'countries', 'brief'].forEach(n => D[n].forEach((r, i) => { if (EXCLUDED_COUNTRIES.has(r.country) || EXCLUDED_COUNTRIES.has(r.code)) errors.push(`${n}[${i}]: excluded country`); }));
