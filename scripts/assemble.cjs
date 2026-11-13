@@ -26,10 +26,19 @@ const ver = f => crypto.createHash('sha1').update(fs.readFileSync(path.join(root
 const VERSIONED = ['mena-map.js'];
 const bust = html => VERSIONED.reduce((h, f) => h.split(`"./${f}"`).join(`"./${f}?v=${ver(f)}"`).split(`"/${f}"`).join(`"/${f}?v=${ver(f)}"`), html);
 
+const pagesOut = [];
 for (const file of fs.readdirSync(path.join(root, 'pages')).filter(f => f.endsWith('.html'))) {
   let html = read(`pages/${file}`);
   const cfg = /<script>\/\*@config (.*?)\*\/<\/script>/.exec(html);
   if (!cfg || !html.includes('/*@logic*/')) throw new Error(`${file}: missing @config or @logic marker`);
+  // Search and sharing tags from the page's own <title> and description: canonical address, Open Graph title/description/URL.
+  const SITE = 'https://' + read('CNAME').trim(), slug = file.replace(/\.html$/, ''), url = SITE + (slug === 'index' ? '/' : '/' + slug);
+  const attr = v => v.replace(/&(?!amp;|lt;|gt;|quot;|#)/g, '&amp;').replace(/"/g, '&quot;');
+  const title = ((/<title>([^<]*)<\/title>/.exec(html) || [])[1] || 'Robotics MENA');
+  const desc = (/<meta name="description" content="([^"]*)">/.exec(html) || [])[1];
+  if (!desc) throw new Error(`${file}: missing <meta name="description">`);
+  html = html.replace('</title>', () => `</title>\n<link rel="canonical" href="${url}"><meta property="og:url" content="${url}"><meta property="og:title" content="${attr(title)}"><meta property="og:description" content="${desc}">`);
+  pagesOut.push(url);
   html = html.replace(cfg[0], () => `<script>window.RM_PAGE=${safeJson(JSON.parse(cfg[1]))};window.RM_DATA=${safeJson(data)};</script>`)
              .replace('/*@logic*/', () => logic)
              .replace('</head>', () => headBrand + '\n</head>')
@@ -40,4 +49,9 @@ for (const file of fs.readdirSync(path.join(root, 'pages')).filter(f => f.endsWi
   if (html.includes('<!--@brief-modal-->') || !html.includes('rm-brief-panel')) throw new Error(`${file}: missing the Get the brief pop-up`);
   fs.writeFileSync(path.join(out, file), bust(html));
 }
+// Branded "page not found" page (served by GitHub Pages for any missing address) and the sitemap for search engines.
+fs.writeFileSync(path.join(out, '404.html'), read('static/404.html').replace('</head>', () => headBrand + '\n</head>'));
+const order = u => (u.endsWith('/') ? 0 : 1);
+fs.writeFileSync(path.join(out, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+  pagesOut.sort((a, b) => order(a) - order(b) || a.localeCompare(b)).map(u => `  <url><loc>${u}</loc><lastmod>${data.builtAt}</lastmod></url>`).join('\n') + '\n</urlset>\n');
 console.log(`Assembled pages with ${data.companies.length} companies, ${data.deployments.length} deployments, ${data.events.length} events, ${data.countries.length} countries.`);

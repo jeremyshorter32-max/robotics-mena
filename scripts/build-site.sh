@@ -18,6 +18,10 @@ cp -r media brand _site/
 node scripts/validate-data.mjs
 node scripts/assemble.cjs _site
 
+# Public crawl rules (replaced below with "Disallow: /" while the site is password-protected).
+DOMAIN="$(tr -d '[:space:]' < CNAME)"
+printf 'User-agent: *\nAllow: /\n\nSitemap: https://%s/sitemap.xml\n' "$DOMAIN" > _site/robots.txt
+
 if [ "${DEV:-}" = "1" ]; then
   echo "DEV=1: local preview build, no password."
   exit 0

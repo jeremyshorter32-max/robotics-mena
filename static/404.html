@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Robotics MENA</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap">
+<style>
+:root{--bg:#F3F1EC;--fg:#111216;--muted:#5E6070;--line:#DEDBD3;--accent:#26246E;--on-accent:#F3F1EC;--mark:#26246E;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#111216;--fg:#F3F1EC;--muted:#A3A5B3;--line:#2A2C35;--accent:#A9A7DE;--on-accent:#111216;--mark:#F3F1EC;color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.55 'IBM Plex Sans','IBM Plex Sans Arabic',system-ui,sans-serif;display:flex;flex-direction:column}
+header,main{width:100%;max-width:1120px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+header{padding-block:20px;border-bottom:1px solid var(--line);max-width:none}
+header div{max-width:1120px;margin:0 auto}
+header a{display:inline-block}
+main{flex:1;display:flex;flex-direction:column;justify-content:center;gap:20px;padding-block:64px}
+.code{font:500 13px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font-weight:600;font-size:clamp(32px,6vw,56px);line-height:1.05;letter-spacing:-.03em;max-width:18ch;text-wrap:balance}
+p{margin:0;max-width:60ch;color:var(--muted)}
+[lang=ar]{font-family:'IBM Plex Sans Arabic','IBM Plex Sans',sans-serif}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.links a{display:inline-flex;align-items:center;height:44px;padding:0 18px;border:1px solid var(--line);border-radius:3px;color:var(--fg);text-decoration:none;font-weight:600;font-size:15px}
+.links a:first-child{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.links a:hover{border-color:var(--fg)}
+.links a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ar{border-top:1px solid var(--line);padding-top:20px;margin-top:12px;display:flex;flex-direction:column;gap:8px}
+</style>
+</head>
+<body>
+<header><div><a href="/" aria-label="Robotics MENA home"><span class="rm-logo" style="--logo-h:36px"></span></a></div></header>
+<main>
+  <span class="code">404 · Page not found</span>
+  <h1>This page isn’t in the record.</h1>
+  <p>The link may be old or mistyped. Companies, deployments and events can all be found from the database search.</p>
+  <div class="links">
+    <a href="/database">Search the database</a>
+    <a href="/">Home</a>
+    <a href="/map">Deployments map</a>
+  </div>
+  <div class="ar" lang="ar" dir="rtl">
+    <h2 style="margin:0;font-size:22px;font-weight:600">هذه الصفحة غير موجودة في سجلّنا.</h2>
+    <p>قد يكون الرابط قديماً أو مكتوباً بشكل خاطئ. ابحث عن الشركات والمشاريع والفعاليات في <a href="/database" style="color:var(--accent)">قاعدة البيانات</a> أو عُد إلى <a href="/" style="color:var(--accent)">الصفحة الرئيسية</a>.</p>
+  </div>
+</main>
+</body>
+</html>

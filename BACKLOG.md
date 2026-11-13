@@ -46,9 +46,13 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   values translated, "110 ملايين درهم", one spelling per company name. A native-speaker read before launch is still advised.
 - [x] **Score/dossier consistency** (11 Nov 2026): any verified deployment now scores at least Partial; UAE drones
   Partial while the GCAA suspension stands; Doha robotaxi record says trial (logged in corrections).
-- [ ] **Launch plumbing (audit):** add `sitemap.xml`, a branded `404.html`, canonical tags and per-page
-  descriptions; confirm "Enforce HTTPS" is ticked in GitHub Pages settings; analytics: GoatCounter added 13 Nov 2026
-  (site code `roboticsmena` in `data/site.json`; owner to create the account at goatcounter.com with that code). (Button contrast fixed by the indigo rebrand, 10 Nov 2026.)
+- [x] **Launch plumbing (audit), site side** done 13 Nov 2026: `sitemap.xml` and a public `robots.txt` built by
+  `scripts/assemble.cjs` / `build-site.sh`, branded bilingual `404.html` (`static/404.html`), canonical and per-page
+  Open Graph tags from each page's title and description, every page has its own description. GoatCounter added
+  (site code `roboticsmena`). (Button contrast fixed by the indigo rebrand, 10 Nov 2026.)
+- [ ] **Launch plumbing, owner side:** tick "Enforce HTTPS" in GitHub Pages settings; create the GoatCounter account at
+  goatcounter.com with the code `roboticsmena`; after launch, add the site to Google Search Console and Bing Webmaster
+  Tools and submit https://roboticsmena.com/sitemap.xml.
 - [ ] **Turn off the password** (only after the above): change `scripts/build-site.sh` so it publishes without
   StatiCrypt, remove the `noindex, nofollow` tag it adds and the robots block, delete the `SITE_PASSWORD`
   repository secret, then check every page, search engines' access and the social preview image.
