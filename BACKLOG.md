@@ -79,8 +79,9 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   Decided 14 Nov: no admin page on the public site and no portal password; a Cloudflare Worker on a `workers.dev`
   address behind Cloudflare Access with Google sign-in (DNS stays at GoDaddy, so email on Microsoft 365 is untouched);
   $0 on free plans; roles owner / editor / viewer for future collaborators. Phase 1 built 14 Nov (`admin/`: approvals inbox with
-  record-level preview, approve/send back/reject, agent runs, leads; 16 tests). Next: owner does the one-time Cloudflare +
-  GitHub App setup in `admin/README.md`, then deploy; the weekly scanner must be switched on to fill the inbox.
+  record-level preview, approve/send back/reject, agent runs, leads; 16 tests). Deployed 14 Nov to
+  https://roboticsmena-admin.broken-heart-81fa.workers.dev (refuses everything until Access is set up). Next: Access
+  application + AUD tag, ROLES, then the GitHub App (`admin/README.md`); the weekly scanner must be switched on to fill the inbox.
 
 
 ## Content and research
