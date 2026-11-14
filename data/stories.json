@@ -1,19 +1,19 @@
 [
  {
   "id": "dubai-robot-villa",
-  "date": "2026-11-09",
+  "date": "2026-11-14",
   "read_min": 9,
   "kicker": {
    "en": "Construction · Dubai Municipality · 04 ConTech Valley",
    "ar": "البناء · بلدية دبي · وادي التقنيات الإنشائية 04"
   },
   "title": {
-   "en": "Dubai’s robot-built villa is the right test. It needs a public scorecard.",
-   "ar": "فيلا دبي التي تبنيها الروبوتات اختبار في محله، لكنها تحتاج إلى بطاقة تقييم علنية"
+   "en": "Dubai’s robot-built villa has a plan. The robots have yet to arrive.",
+   "ar": "لفيلا دبي الروبوتية خطة، لكن الروبوتات لم تصل بعد"
   },
   "dek": {
-   "en": "Ten months after Dubai Municipality launched a global challenge to build a villa with robots, there is still no named consortium, no specifications and no start date. The idea is sound; its value depends on what Dubai measures and publishes.",
-   "ar": "بعد عشرة أشهر من إطلاق بلدية دبي تحدياً عالمياً لبناء فيلا بالروبوتات، لا يزال التحالف بلا أسماء، والمواصفات وتاريخ البدء غير معلنة. الفكرة سليمة، وقيمتها رهن بما ستقيسه دبي وتنشره."
+   "en": "Dubai’s challenge to build a villa with robots now has a published plan: five lead partners, a plot in Al Barsha, eight robotic trades and a 62-week programme. Ten months after launch, no robot maker has been named and no construction has been reported. Its value depends on what Dubai measures and publishes.",
+   "ar": "بات لتحدي دبي لبناء فيلا بالروبوتات خطة منشورة: خمسة شركاء رئيسيين، وقطعة أرض في البرشاء، وثماني مهام روبوتية، وبرنامج مدته 62 أسبوعاً. وبعد عشرة أشهر من الإطلاق لم يُكشف أي صانع روبوتات ولم يُعلن بدء البناء. وتتوقف قيمته على ما ستقيسه دبي وتنشره."
   },
   "by": {
    "en": "Robotics MENA analysis",
@@ -202,6 +202,12 @@
     "title": "بلدية دبي تُطلق تحدياً عالمياً لبناء فيلا سكنية باستخدام أنظمة البناء الروبوتية",
     "date": "2026-01-27",
     "url": "https://www.emaratalyoum.com/local-section/other/2026-01-27-1.2010131"
+   },
+   {
+    "name": "DXB ConTech (Dubai Construction Technology Business Group)",
+    "title": "Dubai Robotics Villa Challenge: programme page",
+    "date": "2026-04-13",
+    "url": "https://dxbcontech.com/robotics-villa/"
    }
   ],
   "related": [
@@ -239,22 +245,18 @@
    "gate_after": 1,
    "glance": [
     {
-     "n": 25,
-     "suf": {
-      "en": "+",
-      "ar": "+"
-     },
-     "en": "Companies and universities in the consortium, per Dubai Municipality. None has been named.",
-     "ar": "شركة وجامعة في التحالف بحسب بلدية دبي، ولم يُكشف عن أيٍّ منها."
+     "n": 5,
+     "en": "Lead partners named on the programme page (April 2026). The wider consortium of “more than 25” is still unnamed.",
+     "ar": "شركاء رئيسيون مذكورون في صفحة البرنامج (أبريل 2026)، فيما لا يزال التحالف الأوسع الذي يضم «أكثر من 25» جهة بلا أسماء."
     },
     {
-     "n": 8,
+     "n": 62,
      "suf": {
-      "en": " months",
-      "ar": " أشهر"
+      "en": " weeks",
+      "ar": " أسبوعاً"
      },
-     "en": "Length of the challenge, plus two months to document results. No start date has been published.",
-     "ar": "مدة التحدي، تليها شهران لتوثيق النتائج. ولم يُعلن تاريخ البدء."
+     "en": "Length of the published programme, labelled Q2–Q4 2026. No start of construction has been reported.",
+     "ar": "مدة البرنامج المنشور، الموسوم بالربعين الثاني والرابع من 2026، ولم يُعلن بدء البناء."
     },
     {
      "n": 25,
@@ -274,19 +276,19 @@
    "findings": [
     {
      "title": {
-      "en": "A good test, thinly documented",
-      "ar": "اختبار جيد بتوثيق شحيح"
+      "en": "A plan on paper, no robots yet",
+      "ar": "خطة على الورق، ولا روبوتات بعد"
      },
-     "en": "Ten months after launch there is no published list of consortium members, no villa specifications and no start date.",
-     "ar": "بعد عشرة أشهر من الإطلاق لا توجد قائمة منشورة بأعضاء التحالف، ولا مواصفات للفيلا، ولا تاريخ للبدء."
+     "en": "An April programme page names five partners, a 460 m² two-storey villa in Al Barsha and a 62-week plan. By mid-November no robot maker had been named and no construction reported.",
+     "ar": "تسمّي صفحة البرنامج المنشورة في أبريل خمسة شركاء وفيلا من طابقين بمساحة 460 متراً مربعاً في البرشاء وخطة من 62 أسبوعاً. وحتى منتصف نوفمبر لم يُكشف أي صانع روبوتات ولم يُعلن بدء البناء."
     },
     {
      "title": {
       "en": "Two partners, two visions",
       "ar": "شريكان ورؤيتان"
      },
-     "en": "Würth pitches humanoid robots; Dubai Municipality’s own visuals show 3D-printed walls. Which robots will do what is not public.",
-     "ar": "تروّج فورت للروبوتات البشرية، بينما تُظهر مرئيات بلدية دبي جدراناً مطبوعة. ولم يُكشف أيّ الروبوتات ستؤدي أيّ مهمة."
+     "en": "Würth pitches humanoid robots; Dubai Municipality’s visuals show 3D-printed walls. The plan sets eight robotic trades, one maker each, and none has been named.",
+     "ar": "تروّج فورت للروبوتات البشرية، بينما تُظهر مرئيات بلدية دبي جدراناً مطبوعة. وتحدد الخطة ثماني مهام روبوتية لكل منها صانع واحد، ولم يُكشف أيٌّ منهم."
     },
     {
      "title": {
@@ -349,30 +351,30 @@
       "ar": "ما هو موثّق"
      },
      "title": {
-      "en": "A launch, two partners and renders",
-      "ar": "إطلاق وشريكان وتصاميم حاسوبية"
+      "en": "A detailed plan, no robots yet",
+      "ar": "خطة مفصلة، ولا روبوتات بعد"
      },
      "sub": {
-      "en": "Everything else is still to be published",
-      "ar": "وكل ما عدا ذلك لم يُنشر بعد"
+      "en": "Programme page (April 2026) and municipality releases",
+      "ar": "صفحة البرنامج (أبريل 2026) وبيانات البلدية"
      },
      "physical": true,
      "items": [
       {
-       "en": "No named consortium members",
-       "ar": "لا أسماء لأعضاء التحالف"
+       "en": "Five lead partners: Dubai Municipality, Zacua Ventures, Würth, AbvTek and AUS/AUD",
+       "ar": "خمسة شركاء رئيسيين: بلدية دبي، وزاكوا فنتشرز، وفورت، وأبفتك، والجامعة الأمريكية في الشارقة ودبي"
       },
       {
-       "en": "No size, storeys, budget or cost per square metre",
-       "ar": "لا مساحة ولا عدد طوابق ولا ميزانية ولا تكلفة للمتر المربع"
+       "en": "A villa of about 460 m², ground plus one floor, on a plot in Al Barsha First",
+       "ar": "فيلا بمساحة نحو 460 متراً مربعاً من طابق أرضي وأول على قطعة أرض في البرشاء الأولى"
       },
       {
-       "en": "No start date, so no end date",
-       "ar": "لا تاريخ بدء، وبالتالي لا تاريخ انتهاء"
+       "en": "A 62-week programme labelled Q2–Q4 2026, with no start of construction reported",
+       "ar": "برنامج مدته 62 أسبوعاً موسوم بالربعين الثاني والرابع من 2026، دون إعلان بدء البناء"
       },
       {
-       "en": "No photo of robots working on the site",
-       "ar": "لا صورة لروبوتات تعمل في الموقع"
+       "en": "No robot maker named for any of the eight trades",
+       "ar": "لم يُكشف صانع روبوتات لأيٍّ من المهام الثماني"
       },
       {
        "en": "No definition of “entirely”: the Arabic release says “integrated”",
@@ -473,6 +475,16 @@
      "src": 1
     },
     {
+     "date": "2026-04-13",
+     "title": {
+      "en": "Programme plan published",
+      "ar": "نشر خطة البرنامج"
+     },
+     "en": "DXB ConTech publishes the plan: five partners, a 460 m² villa in Al Barsha First, eight robotic trades and a 62-week programme.",
+     "ar": "مجموعة DXB ConTech تنشر الخطة: خمسة شركاء، وفيلا بمساحة 460 متراً مربعاً في البرشاء الأولى، وثماني مهام روبوتية، وبرنامج مدته 62 أسبوعاً.",
+     "src": 29
+    },
+    {
      "date": "2026-07",
      "title": {
       "en": "Qatar runs late",
@@ -531,8 +543,8 @@
      },
      "status": "announced",
      "where": {
-      "en": "Robotic villa, Expo City Dubai",
-      "ar": "الفيلا الروبوتية، مدينة إكسبو دبي"
+      "en": "Robotic villa (site: Al Barsha First, per the programme page)",
+      "ar": "الفيلا الروبوتية (الموقع: البرشاء الأولى بحسب صفحة البرنامج)"
      },
      "en": "Würth says the villa will be a “living laboratory” to test and validate humanoid robots in real residential construction. One stood on stage at the launch.",
      "ar": "تقول فورت إن الفيلا ستكون «مختبراً حياً» لاختبار الروبوتات البشرية في بناء سكني حقيقي، ووقف أحدها على المنصة عند الإطلاق.",
@@ -652,8 +664,8 @@
       "en": "Documented, with caveats",
       "ar": "موثّق مع تحفّظات"
      },
-     "en": "Repeated in January and October, but the wording shifted from “companies and academic institutions” to “companies plus universities”, and no member has been named.",
-     "ar": "تكرر في يناير وأكتوبر، لكن الصياغة تغيّرت من «شركات ومؤسسات أكاديمية» إلى «شركات إلى جانب جامعات»، ولم يُكشف أيّ عضو.",
+     "en": "Repeated in January and October, but the wording shifted from “companies and academic institutions” to “companies plus universities”. The programme page names five lead partners; the rest are unnamed.",
+     "ar": "تكرر في يناير وأكتوبر، لكن الصياغة تغيّرت من «شركات ومؤسسات أكاديمية» إلى «شركات إلى جانب جامعات». وتسمّي صفحة البرنامج خمسة شركاء رئيسيين، أما البقية فبلا أسماء.",
      "src": 3
     },
     {
@@ -753,8 +765,8 @@
       "en": "Any time",
       "ar": "في أي وقت"
      },
-     "en": "The consortium list: who is building the villa, and which robot does which task.",
-     "ar": "قائمة التحالف: من يبني الفيلا، وأيّ روبوت يؤدي أيّ مهمة."
+     "en": "The robot makers chosen for the eight trades, and which robot does which task.",
+     "ar": "صانعو الروبوتات الذين سيُختارون للمهام الثماني، وأيّ روبوت يؤدي أيّ مهمة."
     },
     {
      "status": "open",
@@ -762,8 +774,8 @@
       "en": "Any time",
       "ar": "في أي وقت"
      },
-     "en": "A start date, a site and basic specifications: size, storeys and budget.",
-     "ar": "تاريخ البدء والموقع والمواصفات الأساسية: المساحة وعدد الطوابق والميزانية."
+     "en": "Construction starting on site, and a realistic finish date: 62 weeks cannot fit inside Q2–Q4 2026.",
+     "ar": "بدء البناء في الموقع وتاريخ إنجاز واقعي، إذ لا يمكن أن تتسع 62 أسبوعاً للفترة من الربع الثاني إلى الرابع من 2026."
     },
     {
      "status": "open",
@@ -964,18 +976,18 @@
      "blocks": [
       {
        "t": "p",
-       "en": "On 27 January 2026, Dubai Municipality launched a global challenge to build “the world’s first villa” using robotic construction systems. It named two partners, the construction-technology investor Zacua Ventures and Würth, and a consortium of more than 25 companies and academic institutions. The site is 04 ConTech Valley, a construction-technology hub at Expo City Dubai.",
-       "ar": "في 27 يناير 2026 أطلقت بلدية دبي تحدياً عالمياً لبناء «أول فيلا في العالم» بأنظمة البناء الروبوتية، وسمّت شريكين هما المستثمر في تقنيات البناء «زاكوا فنتشرز» و«فورت»، إلى جانب تحالف يضم أكثر من 25 شركة ومؤسسة أكاديمية. والموقع هو «وادي التقنيات الإنشائية 04»، مركز تقنيات البناء في مدينة إكسبو دبي."
+       "en": "On 27 January 2026, Dubai Municipality launched a global challenge to build “the world’s first villa” using robotic construction systems. It named two partners, the construction-technology investor Zacua Ventures and Würth, and a consortium of more than 25 companies and academic institutions, and presented the project as a “live applied laboratory” at 04 ConTech Valley, the construction-technology hub at Expo City Dubai.",
+       "ar": "في 27 يناير 2026 أطلقت بلدية دبي تحدياً عالمياً لبناء «أول فيلا في العالم» بأنظمة البناء الروبوتية، وسمّت شريكين هما المستثمر في تقنيات البناء «زاكوا فنتشرز» و«فورت»، إلى جانب تحالف يضم أكثر من 25 شركة ومؤسسة أكاديمية، وقدّمت المشروع بوصفه «مختبراً تطبيقياً حياً» في «وادي التقنيات الإنشائية 04»، مركز تقنيات البناء في مدينة إكسبو دبي."
       },
       {
        "t": "p",
-       "en": "Ten months later, the project is still described as a plan. At WETEX in October, the municipality said it was “showcasing its plans to build” the villa, over an eight-month challenge followed by two months to document results. It has not published a start date, the villa’s size or budget, or the names of the companies building it. The only images are the launch event and computer renders.",
-       "ar": "وبعد عشرة أشهر لا يزال المشروع يوصف بأنه خطة. ففي معرض ويتيكس في أكتوبر قالت البلدية إنها «تستعرض خططها لبناء» الفيلا، ضمن تحدٍّ مدته ثمانية أشهر يليه شهران لتوثيق النتائج. ولم تنشر تاريخ البدء ولا مساحة الفيلا أو ميزانيتها ولا أسماء الشركات المنفذة، والصور الوحيدة هي حفل الإطلاق وتصاميم حاسوبية."
+       "en": "In April, the programme’s lead, the Dubai Construction Technology Business Group (DXB ConTech), published the most detailed plan so far. It names five lead partners: Dubai Municipality as owner, Zacua Ventures to source 8 to 10 robotics providers, Würth Professional Solutions to run the site, AbvTek as architect and project manager, and the American Universities of Sharjah and Dubai for research. It describes a villa of about 460 m² over two floors on a plot in Al Barsha First, rather than at Expo City, built across eight robotic trades with one provider each, in a 62-week programme labelled Q2–Q4 2026. Ten months after launch, though, no provider has been named, no construction has been reported, and at WETEX in October the municipality was still “showcasing its plans to build” the villa.",
+       "ar": "وفي أبريل نشرت الجهة القائدة للبرنامج، مجموعة دبي لأعمال تقنيات البناء (DXB ConTech)، أكثر الخطط تفصيلاً حتى الآن. وتسمّي خمسة شركاء رئيسيين: بلدية دبي مالكةً للتحدي، و«زاكوا فنتشرز» لاختيار 8 إلى 10 من مزوّدي الروبوتات، و«فورت للحلول المهنية» لإدارة الموقع، و«أبفتك» مهندساً معمارياً ومديراً للمشروع، والجامعة الأمريكية في الشارقة ودبي للبحث. وتصف فيلا بمساحة نحو 460 متراً مربعاً من طابقين على قطعة أرض في البرشاء الأولى لا في مدينة إكسبو، تُبنى عبر ثماني مهام روبوتية لكل منها مزوّد واحد، ضمن برنامج مدته 62 أسبوعاً موسوم بالربعين الثاني والرابع من 2026. غير أنه بعد عشرة أشهر من الإطلاق لم يُكشف أي مزوّد ولم يُعلن بدء البناء، وفي معرض ويتيكس في أكتوبر كانت البلدية لا تزال «تستعرض خططها لبناء» الفيلا."
       },
       {
        "t": "p",
-       "en": "That gap matters, because this could be one of the most useful construction experiments in the region: a full house, built under real regulations, with robots doing as much of the work as possible. Its value depends on what Dubai measures and publishes.",
-       "ar": "وهذه الفجوة مهمة، لأن المشروع قد يكون من أكثر تجارب البناء فائدة في المنطقة: منزل كامل يُبنى وفق اشتراطات حقيقية، وتؤدي فيه الروبوتات أكبر قدر ممكن من العمل. وتتوقف قيمته على ما ستقيسه دبي وتنشره."
+       "en": "The plan is a good one, and its gaps matter: the 62 weeks cannot fit inside the stated 2026 window, the municipality still speaks of an eight-month challenge, and the two sources place the villa in different parts of the city. This could be one of the most useful construction experiments in the region: a full house, built under real regulations, with robots doing as much of the work as possible. Its value depends on what Dubai measures and publishes.",
+       "ar": "الخطة جيدة، وثغراتها مهمة: فلا يمكن أن تتسع 62 أسبوعاً للإطار الزمني المعلن في 2026، والبلدية لا تزال تتحدث عن تحدٍّ مدته ثمانية أشهر، والمصدران يضعان الفيلا في منطقتين مختلفتين من المدينة. وقد يكون المشروع من أكثر تجارب البناء فائدة في المنطقة: منزل كامل يُبنى وفق اشتراطات حقيقية، وتؤدي فيه الروبوتات أكبر قدر ممكن من العمل. وتتوقف قيمته على ما ستقيسه دبي وتنشره."
       },
       {
        "t": "w",
@@ -1155,8 +1167,8 @@
      "blocks": [
       {
        "t": "p",
-       "en": "Dubai is right to run this test, and right to run it on a real house rather than a pavilion. But a challenge without a scorecard is a showcase. Before the robots start, the municipality should publish the consortium, the villa’s specifications and the measures it will report: the share of work done by robots, task by task; cost per square metre against a conventional villa built to the same design; schedule; defects; and the human labour still needed.",
-       "ar": "دبي محقة في إجراء هذا الاختبار، ومحقة في إجرائه على منزل حقيقي لا جناح عرض. لكن التحدي بلا بطاقة تقييم يبقى عرضاً. وقبل أن تبدأ الروبوتات العمل، ينبغي للبلدية أن تنشر أعضاء التحالف ومواصفات الفيلا والمؤشرات التي ستعلنها: نسبة العمل الروبوتي لكل مهمة، وتكلفة المتر المربع مقارنة بفيلا تقليدية بالتصميم نفسه، والجدول الزمني، والعيوب، والعمالة البشرية التي ظلت مطلوبة.",
+       "en": "Dubai is right to run this test, and right to run it on a real house rather than a pavilion. The April plan promises open data and benchmarks for time, cost, quality, safety and productivity, which is exactly what is needed. But a plan without robots on site is still a showcase. The municipality should now confirm the site and a realistic schedule, name the robotics providers as they are chosen, and commit to reporting the share of work done by robots task by task, cost per square metre against a conventional villa built to the same design, schedule, defects, and the human labour still needed.",
+       "ar": "دبي محقة في إجراء هذا الاختبار، ومحقة في إجرائه على منزل حقيقي لا جناح عرض. وتعد خطة أبريل ببيانات مفتوحة ومؤشرات للوقت والتكلفة والجودة والسلامة والإنتاجية، وهذا بالضبط المطلوب. لكن الخطة بلا روبوتات في الموقع تبقى عرضاً. وينبغي للبلدية الآن أن تؤكد الموقع وجدولاً زمنياً واقعياً، وأن تعلن مزوّدي الروبوتات فور اختيارهم، وأن تلتزم بنشر نسبة العمل الروبوتي لكل مهمة، وتكلفة المتر المربع مقارنة بفيلا تقليدية بالتصميم نفسه، والجدول الزمني، والعيوب، والعمالة البشرية التي ظلت مطلوبة.",
        "lead": true
       },
       {
@@ -1180,8 +1192,8 @@
       },
       {
        "t": "p",
-       "en": "We will update this report when Dubai Municipality names the consortium or sets a start date. If you are part of the consortium and can share details on the record, write to contact@roboticsmena.com.",
-       "ar": "سنحدّث هذا التقرير عندما تعلن بلدية دبي أعضاء التحالف أو تحدد تاريخ البدء. وإن كنت جزءاً من التحالف ويمكنك مشاركة تفاصيل علنية، فراسلنا على contact@roboticsmena.com."
+       "en": "We will update this report when the robotics providers are named or construction starts. If you are part of the project and can share details on the record, write to contact@roboticsmena.com.",
+       "ar": "سنحدّث هذا التقرير عند الإعلان عن مزوّدي الروبوتات أو بدء البناء. وإن كنت جزءاً من المشروع ويمكنك مشاركة تفاصيل علنية، فراسلنا على contact@roboticsmena.com."
       }
      ]
     },
@@ -1211,12 +1223,12 @@
     "ar": "روبوتات البناء"
    },
    "title": {
-    "en": "Dubai’s robot-built villa: a bold test with few details so far",
-    "ar": "فيلا دبي الروبوتية: اختبار جريء بتفاصيل قليلة حتى الآن"
+    "en": "Dubai’s robot-built villa has a plan. The robots have yet to arrive.",
+    "ar": "لفيلا دبي الروبوتية خطة، لكن الروبوتات لم تصل بعد"
    },
    "dek": {
-    "en": "Dubai Municipality wants the world’s first villa built with robotic construction systems at Expo City’s 04 ConTech Valley. Ten months on, the consortium, specifications and start date are still unpublished.",
-    "ar": "تريد بلدية دبي بناء أول فيلا في العالم بأنظمة البناء الروبوتية في وادي التقنيات الإنشائية 04 بمدينة إكسبو. وبعد عشرة أشهر لم يُنشر بعدُ التحالف ولا المواصفات ولا تاريخ البدء."
+    "en": "A published plan names five partners, a 460 m² villa in Al Barsha and a 62-week programme. Ten months after launch, no robot maker has been named and no construction has been reported.",
+    "ar": "تسمّي خطة منشورة خمسة شركاء وفيلا بمساحة 460 متراً مربعاً في البرشاء وبرنامجاً مدته 62 أسبوعاً. وبعد عشرة أشهر من الإطلاق لم يُكشف أي صانع روبوتات ولم يُعلن بدء البناء."
    },
    "quote": {
     "en": "“This is not a showcase installation or a conceptual prototype.”",
@@ -1228,24 +1240,24 @@
    },
    "stats": [
     {
-     "v": "25+",
-     "en": "Consortium members, none named",
-     "ar": "عضواً في التحالف، بلا أسماء"
+     "v": "5",
+     "en": "Lead partners named, April 2026",
+     "ar": "شركاء رئيسيون مُعلنون، أبريل 2026"
     },
     {
-     "v": "8+2",
-     "en": "Months to build, then document",
-     "ar": "أشهر للبناء ثم التوثيق"
+     "v": "62",
+     "en": "Weeks in the plan; no site start reported",
+     "ar": "أسبوعاً في الخطة، دون إعلان بدء البناء"
     },
     {
      "v": "0",
-     "en": "Published photos of robots at work on site",
-     "ar": "صور منشورة لروبوتات تعمل في الموقع"
+     "en": "Robot makers named for its eight trades",
+     "ar": "صانعو روبوتات مُعلنون لمهامها الثماني"
     }
    ],
    "src": {
-    "en": "Sources: Dubai Municipality, 27 Jan and 20 Oct 2026; Khaleej Times, 21 Oct 2026.",
-    "ar": "المصادر: بلدية دبي، 27 يناير و20 أكتوبر 2026؛ خليج تايمز، 21 أكتوبر 2026."
+    "en": "Sources: Dubai Municipality, 27 Jan and 20 Oct 2026; DXB ConTech programme page, Apr 2026; Khaleej Times, 21 Oct 2026.",
+    "ar": "المصادر: بلدية دبي، 27 يناير و20 أكتوبر 2026؛ صفحة برنامج DXB ConTech، أبريل 2026؛ خليج تايمز، 21 أكتوبر 2026."
    },
    "img": "/media/spotlight/robot-villa-launch.jpg",
    "cap": {
