@@ -86,6 +86,23 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   Owner to do: the Sheet stats key for the waitlist panel. Later: Google sign-in, rename the workers.dev subdomain; the weekly scanner must be switched on to fill the inbox.
 
 
+## Social (10K followers on each platform)
+
+Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,creator,community}`. Set up on 14 Nov 2026.
+- [x] **Social system v1** (14 Nov 2026): strategy and milestones, voice, account set-up pack, cadence, the queue validator, posting pack and
+  metrics (`scripts/social.mjs`), the card, PDF-carousel and Reel renderer (`scripts/social-cards.cjs`), profile banners and highlight covers
+  (`brand/social/`), four agent skills, portal approval for `social/` branches, tests. First week (2026-w47, 22 posts) written and rendered.
+- [ ] **Owner: create the accounts** (`social/SETUP.md`): Instagram @roboticsmena (business, linked to a Facebook Page), X @roboticsmena,
+  Reddit u/RoboticsMENA and r/RoboticsMENA. Upload the banners. Tell Claude the final handles and the LinkedIn page URL (for `social/accounts.json`).
+- [ ] **Owner: scheduler.** Connect LinkedIn, Instagram and X to Buffer (free plan) or use the native schedulers.
+- [ ] **Redeploy the admin portal** so it accepts `social/` pull requests (`admin/src/inbox.mjs` changed 14 Nov): `npx wrangler deploy` in `admin/`.
+- [ ] **Switch on the scheduled tasks:** Sunday social run (Analyst → Strategist → Creator) after the brief, and the weekday Community run.
+- [ ] **Site links once the handles exist:** footer icons, `sameAs` in the Organization structured data, the newsletter footer, "Follow us" in the brief pop-up.
+- [ ] **Owner decisions:** paid boost ($5 to $10 a day on LinkedIn or Instagram); X Premium for reply reach; filming at GITEX (7 Dec) and Big 5 (23 Nov).
+- [ ] **Later: portal Social tab** (today's posts with copy buttons and images, a follower-count form) to replace the GitHub issue and PR body.
+- [ ] **Later: auto-publishing via APIs** (LinkedIn Community Management API app review, the Instagram Graph API via a Meta app, the X API paid tier, the Reddit API),
+  still with approval in the portal first.
+
 ## Content and research
 
 - [x] **Arabic brand name** (13 Nov 2026): «روبوتات الشرق الأوسط وشمال أفريقيا» everywhere (short forms such as

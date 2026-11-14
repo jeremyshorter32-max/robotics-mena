@@ -1,0 +1,875 @@
+{
+  "week": "2026-w47",
+  "theme": "Launch week: what the database shows, plus the fortnight's signals",
+  "notes": "First week on social. LinkedIn is live. X, Instagram and Reddit posts go out once the accounts exist (social/SETUP.md). Post the launch items first on each new account. The signals are from 6 to 12 Nov because this queue was written before Sunday's brief. If the w47 brief is approved first, the Creator swaps Thursday's carousel for it.",
+  "posts": [
+    {
+      "id": "w47-li-launch",
+      "platform": "linkedin",
+      "format": "document",
+      "pillar": "data",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-16T08:30+04:00",
+      "text": "Robotics MENA is live: every robot doing real work across the Middle East & North Africa, verified and in one place.\n\nWhat's in the database today:\n▸ 174 companies, from start-ups to the global makers selling here\n▸ 66 verified deployments, each with a primary source and a date\n▸ Policy and national targets for 11 countries\n▸ 39 events, from Big 5 to GITEX\n\nThe UAE leads with 26 deployments, then Saudi Arabia (17) and Egypt (6). Healthcare is the biggest buyer.\n\nEverything is free, in English and Arabic, and updated every week. Links in the comments.\n\n#Robotics #MENA #UAE #SaudiArabia #Automation",
+      "first_comment": "Explore the database and map: https://roboticsmena.com/?utm_source=linkedin&utm_medium=social&utm_campaign=2026-w47\nThe weekly brief (5 verified signals every Monday): https://roboticsmena.com/?utm_source=linkedin&utm_medium=social&utm_campaign=2026-w47#brief",
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "Now live",
+          "title": "Every robot working in the Middle East & North Africa. **Verified.**",
+          "body": "A free bilingual database of companies, deployments, policy and events.",
+          "foot": "Swipe →"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "The database",
+          "value": "174",
+          "label": "robotics companies with a sourced MENA presence",
+          "body": "83 in the UAE, 41 in Saudi Arabia, and the global makers deploying here.",
+          "foot": "Source: roboticsmena.com database, 14 Nov 2026"
+        },
+        {
+          "template": "bars",
+          "size": "portrait",
+          "kicker": "66 verified deployments",
+          "title": "Where the robots are working",
+          "rows": [
+            {
+              "label": "UAE",
+              "value": 26
+            },
+            {
+              "label": "Saudi Arabia",
+              "value": 17
+            },
+            {
+              "label": "Egypt",
+              "value": 6
+            },
+            {
+              "label": "Qatar",
+              "value": 5
+            },
+            {
+              "label": "Oman",
+              "value": 4
+            },
+            {
+              "label": "Morocco",
+              "value": 2
+            },
+            {
+              "label": "Jordan",
+              "value": 2
+            },
+            {
+              "label": "Other (4)",
+              "value": 4
+            }
+          ],
+          "foot": "Deployments with a primary source and date. Source: roboticsmena.com, 14 Nov 2026"
+        },
+        {
+          "template": "list",
+          "size": "portrait",
+          "kicker": "National targets",
+          "title": "What governments have promised",
+          "items": [
+            "**UAE:** 200,000 robots across services, logistics and industry by 2032",
+            "**Saudi Arabia:** 4,000 factories made smart and automated by 2030",
+            "**Bahrain:** 300 smart factories in 2026",
+            "**Morocco:** 200,000 people trained and certified in AI by 2030",
+            "**Kuwait:** drone licensing regulations due by 31 Dec 2026"
+          ],
+          "foot": "Sources linked on roboticsmena.com/policy"
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Get 5 verified signals every Monday",
+          "body": "Follow Robotics MENA and join the weekly brief at roboticsmena.com"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database"
+        }
+      ]
+    },
+    {
+      "id": "w47-li-gecko",
+      "platform": "linkedin",
+      "format": "image",
+      "pillar": "deployment",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-17T08:30+04:00",
+      "text": "Deployment of the week: wall-climbing robots inspecting ADNOC's energy facilities.\n\n▸ Who: Gecko Robotics with ADNOC, plus a new ADNOC Onshore agreement\n▸ What it does: the Raptor robot climbs tanks, pipes and boiler walls and maps wall thickness with ultrasound, so people don't have to work at height or inside assets\n▸ Scale: tens of machines running daily in the UAE\n▸ Why it matters: after a year of damage to Gulf energy infrastructure, inspection robots are being bought as infrastructure, not as pilots\n\nIt's one of 4 inspection deployments in our database. Full record and our ADIPEC analysis in the comments.\n\n#Robotics #Energy #UAE #Inspection",
+      "first_comment": "The record: https://roboticsmena.com/database?tab=deployments&id=d03&utm_source=linkedin&utm_medium=social&utm_campaign=2026-w47\nOur Spotlight on ADNOC's robots at ADIPEC: https://roboticsmena.com/spotlight?s=gecko-adnoc-raptor&utm_source=linkedin&utm_medium=social&utm_campaign=2026-w47",
+      "tags": [
+        "Gecko Robotics (company page: type @Gecko Robotics and pick it from LinkedIn's list)",
+        "ADNOC (company page: type @ADNOC and pick it from the list)"
+      ],
+      "cards": [
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Deployment of the week · UAE",
+          "title": "Wall-climbing robots now inspect ADNOC facilities daily",
+          "body": "Gecko Robotics' Raptor maps wall thickness on tanks and pipes, with tens of machines running every day in the UAE.",
+          "image": "/media/spotlight/gecko-inspectors-thickness-map.jpg",
+          "image_credit": "Photo: Gecko Robotics",
+          "foot": "Source: The National, 4 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "The National",
+          "url": "https://www.thenationalnews.com/future/technology/2026/11/04/how-wall-climbing-robots-could-help-gulf-energy-producers-recover-from-attacks/"
+        }
+      ]
+    },
+    {
+      "id": "w47-li-sectors",
+      "platform": "linkedin",
+      "format": "image",
+      "pillar": "data",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-18T08:30+04:00",
+      "text": "The biggest robot buyer in the Middle East isn't logistics or oil and gas. It's hospitals.\n\nOf the 66 verified deployments in our database, 17 are in healthcare: surgical robots in Riyadh, Kuwait's public hospitals, AKDITAL's network in Morocco, and now Egypt's planned da Vinci pilots.\n\nConstruction and logistics follow with 10 each. Mobility (robotaxis and autonomous shuttles) has 7.\n\nWhat this means: the region's buyers are already used to paying for capital-heavy robots with long procurement cycles. That's useful context for anyone selling here.\n\nThe sector filter is in the database. Link in the comments.\n\n#Robotics #Healthcare #MENA #MedTech",
+      "first_comment": "Filter deployments by sector: https://roboticsmena.com/database?tab=deployments&utm_source=linkedin&utm_medium=social&utm_campaign=2026-w47",
+      "cards": [
+        {
+          "template": "bars",
+          "size": "portrait",
+          "kicker": "Data · 66 deployments",
+          "title": "Hospitals are MENA's **No. 1** robot buyer",
+          "rows": [
+            {
+              "label": "Healthcare",
+              "value": 17
+            },
+            {
+              "label": "Construction",
+              "value": 10
+            },
+            {
+              "label": "Logistics",
+              "value": 10
+            },
+            {
+              "label": "Mobility",
+              "value": 7
+            },
+            {
+              "label": "Retail",
+              "value": 5
+            },
+            {
+              "label": "Hospitality",
+              "value": 4
+            },
+            {
+              "label": "Energy",
+              "value": 4
+            }
+          ],
+          "foot": "Verified deployments by sector. Source: roboticsmena.com, 14 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database?tab=deployments"
+        }
+      ]
+    },
+    {
+      "id": "w47-li-signals",
+      "platform": "linkedin",
+      "format": "document",
+      "pillar": "signals",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-19T08:30+04:00",
+      "text": "5 robotics signals from MENA in the past fortnight, each verified at the source:\n\n1. Egypt plans da Vinci robotic-surgery pilots in public hospitals with Sofmedica\n2. NAVER sets H1 2027 for NURI delivery robots in Riyadh housing complexes\n3. X-GEN becomes Pudu's first partner in Africa and brings drone docks to Egypt\n4. Vodafone Qatar signs an MoU to deploy AgiBot embodied-AI robots\n5. Dubai gets its first humanoid robot showroom: buy from Dh50,000, rent from under Dh5,000\n\nThe pattern: robots are moving from trade-show stands into procurement, with pilots, partner networks and rental models.\n\nSources in the carousel. The brief comes out every Monday; link in the comments.\n\n#Robotics #MENA #Egypt #Qatar #SaudiArabia",
+      "first_comment": "Get the weekly brief: https://roboticsmena.com/?utm_source=linkedin&utm_medium=social&utm_campaign=2026-w47#brief",
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "Signals · 6 to 12 Nov 2026",
+          "title": "5 robotics moves across MENA you should know about",
+          "foot": "Swipe →"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "01 · Egypt · Healthcare",
+          "title": "Egypt plans robotic-surgery pilots in public hospitals",
+          "body": "The health minister discussed bringing back and expanding da Vinci surgery with Sofmedica, starting with one or two pilots. Sofmedica has set up a Cairo company as its regional hub.",
+          "foot": "Source: Maspero, 12 Nov 2026"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "02 · Saudi Arabia · Delivery",
+          "title": "NAVER's NURI delivery robots launch in Riyadh in H1 2027",
+          "body": "Commercial launch in residential complexes, linked to the Balady+ mapping app of NAVER's joint venture with the National Housing Company.",
+          "foot": "Source: Seoul Economic Daily, 12 Nov 2026"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "03 · Egypt · Service robots",
+          "title": "X-GEN becomes Pudu's first partner in Africa",
+          "body": "Three deals, including Hollyway drone docks, add to X-GEN's plan to assemble robots and drones locally.",
+          "foot": "Source: TechAfrica News, 11 Nov 2026"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "04 · Qatar · Humanoids",
+          "title": "Vodafone Qatar and AgiBot sign an embodied-AI MoU",
+          "body": "Signed at MWC26 Doha, the MoU explores deploying AgiBot robots over Vodafone's network for government, business and education.",
+          "foot": "Source: QNA, 8 Nov 2026"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "05 · UAE · Humanoids",
+          "title": "Dubai's first humanoid robot showroom opens",
+          "body": "Lootah Robotics, on Sheikh Zayed Road: buy from Dh50,000 to Dh3m, or rent from under Dh5,000.",
+          "foot": "Source: The National, 6 Nov 2026"
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "5 verified signals, every Monday",
+          "body": "Free weekly brief at roboticsmena.com"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Maspero",
+          "url": "https://www.maspero.eg/science-and-technology/2026/11/12/1005059/"
+        },
+        {
+          "name": "Seoul Economic Daily",
+          "url": "https://en.sedaily.com/business/2026/11/12/naver-to-launch-outdoor-delivery-robots-in-saudi-arabia"
+        },
+        {
+          "name": "TechAfrica News",
+          "url": "https://techafricanews.com/2026/11/11/egypt-x-gen-three-deals-robotics-drone-technologies/"
+        },
+        {
+          "name": "QNA",
+          "url": "https://qna.org.qa/en/News-Area/News/2026-11/8/vodafone-qatar-agibot-sign-mou-to-explore-deploying-embodied-ai-robotics-solutions"
+        },
+        {
+          "name": "The National",
+          "url": "https://www.thenationalnews.com/news/uae/2026/11/06/uae-opens-its-first-humanoid-robotics-showroom-as-dubai-races-to-200000-robots/"
+        }
+      ]
+    },
+    {
+      "id": "w47-li-poll",
+      "platform": "linkedin",
+      "format": "poll",
+      "pillar": "community",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-20T08:30+04:00",
+      "text": "Dubai Future Week starts this week, and the Emirates Robotics Competition finals are on Saturday 21 Nov.\n\nWhile we're on the future: which robots will most people in the Gulf actually meet first, at scale?\n\nDubai already has 160+ self-driving vehicles registered. Riyadh gets delivery robots in 2027. Hospitals are the biggest buyers today.\n\nVote, and tell us in the comments what you've seen in person.\n\n#Robotics #DubaiFutureWeek #UAE #KSA",
+      "poll": {
+        "question": "Which robots will Gulf residents meet first at scale?",
+        "options": [
+          "Robotaxis",
+          "Delivery robots",
+          "Surgical robots",
+          "Humanoids in shops"
+        ]
+      },
+      "sources": [
+        {
+          "name": "Emirates 24|7 (RTA figures)",
+          "url": "https://www.emirates247.com/uae/dubai-has-160-self-driving-vehicles-on-its-roads-and-is-targeting-4000-by-2030/7226"
+        }
+      ]
+    },
+    {
+      "id": "w47-ig-launch",
+      "platform": "instagram",
+      "format": "carousel",
+      "pillar": "data",
+      "lang": "en+ar",
+      "status": "draft",
+      "slot": "2026-11-16T19:30+04:00",
+      "text": "Every robot working in the Middle East & North Africa, verified. 🤖\n\n174 companies. 66 deployments with a source and a date. 11 countries' robotics policies and targets. Free, in English and Arabic.\n\nSwipe to see where the robots are, and follow for 5 verified signals every Monday.\n\nكل الروبوتات العاملة في الشرق الأوسط وشمال أفريقيا، في مكان واحد وموثّقة: 174 شركة و66 عملية نشر بمصادرها. تابعونا لملخص أسبوعي كل يوم اثنين.\n\nLink in bio.\n\n#robotics #dubairobotics #saudivision2030 #mena #روبوتات #الذكاء_الاصطناعي #uae",
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "Now live",
+          "title": "Every robot working in the Middle East & North Africa. **Verified.**",
+          "foot": "Swipe →"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "Robots at work",
+          "value": "66",
+          "label": "verified deployments across 11 countries",
+          "body": "Each one has a primary source and a date.",
+          "foot": "Source: roboticsmena.com, 14 Nov 2026"
+        },
+        {
+          "template": "bars",
+          "size": "portrait",
+          "kicker": "By country",
+          "title": "Where the robots are working",
+          "rows": [
+            {
+              "label": "UAE",
+              "value": 26
+            },
+            {
+              "label": "Saudi Arabia",
+              "value": 17
+            },
+            {
+              "label": "Egypt",
+              "value": 6
+            },
+            {
+              "label": "Qatar",
+              "value": 5
+            },
+            {
+              "label": "Oman",
+              "value": 4
+            },
+            {
+              "label": "Morocco",
+              "value": 2
+            },
+            {
+              "label": "Jordan",
+              "value": 2
+            }
+          ],
+          "foot": "Source: roboticsmena.com, 14 Nov 2026"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "The big promise",
+          "value": "200,000",
+          "label": "robots the UAE plans to deploy by 2032",
+          "body": "Across services, logistics and industry.",
+          "foot": "Source: roboticsmena.com/policy"
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Follow for 5 verified signals every Monday",
+          "body": "EN + عربي",
+          "handles": "@roboticsmena"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database"
+        }
+      ]
+    },
+    {
+      "id": "w47-ig-gecko-reel",
+      "platform": "instagram",
+      "format": "reel",
+      "pillar": "deployment",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-17T19:30+04:00",
+      "text": "Robots that climb walls so people don't have to. 🧗\n\nGecko Robotics' Raptor crawls up tanks and pipes at ADNOC facilities, mapping wall thickness with ultrasound. Tens of machines now run daily in the UAE.\n\nDeployment of the week. More on our ADIPEC analysis via the link in bio.\n\n#robotics #uae #abudhabi #energy #inspection #engineering #روبوتات",
+      "media_note": "Add a trending audio track in the Instagram app before posting. If Gecko shares a short clip of the Raptor climbing, put it first (with credit). Ask them by DM.",
+      "tags": [
+        "Gecko Robotics and ADNOC: tag them as collaborators if their Instagram accounts are confirmed (handles not checked yet)"
+      ],
+      "reel_seconds": 3,
+      "cards": [
+        {
+          "template": "cover",
+          "size": "story",
+          "kicker": "Deployment of the week",
+          "title": "This robot climbs **steel walls** at ADNOC"
+        },
+        {
+          "template": "signal",
+          "size": "story",
+          "kicker": "UAE · Energy",
+          "title": "Gecko's Raptor maps wall thickness with ultrasound",
+          "image": "/media/spotlight/gecko-inspectors-thickness-map.jpg",
+          "image_credit": "Photo: Gecko Robotics",
+          "body": "On tanks, pipes and boilers: no scaffolding, no people at height."
+        },
+        {
+          "template": "stat",
+          "size": "story",
+          "kicker": "Scale",
+          "value": "10s",
+          "label": "of machines running daily in the UAE",
+          "body": "Plus a new ADNOC Onshore agreement.",
+          "foot": "Source: The National, 4 Nov 2026"
+        },
+        {
+          "template": "cta",
+          "size": "story",
+          "title": "Every robot at work in MENA, verified",
+          "handles": "@roboticsmena"
+        }
+      ],
+      "sources": [
+        {
+          "name": "The National",
+          "url": "https://www.thenationalnews.com/future/technology/2026/11/04/how-wall-climbing-robots-could-help-gulf-energy-producers-recover-from-attacks/"
+        }
+      ]
+    },
+    {
+      "id": "w47-ig-dubai-av-reel",
+      "platform": "instagram",
+      "format": "reel",
+      "pillar": "data",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-19T19:30+04:00",
+      "text": "Dubai has 160+ self-driving vehicles registered. Here's where that number goes next. 🚕\n\n70 are already on Jumeirah roads with WeRide and Apollo Go, and they've covered about 4 million km. The target is 4,000 by 2030.\n\nWould you ride in one?\n\n#dubai #robotaxi #selfdriving #autonomousvehicles #rta #uae #دبي",
+      "media_note": "Add a trending audio track in the app. A 3-second phone clip of a robotaxi in Jumeirah, filmed by us, would make a strong first frame.",
+      "cards": [
+        {
+          "template": "cover",
+          "size": "story",
+          "kicker": "Dubai in numbers",
+          "title": "How many **driverless cars** does Dubai have?"
+        },
+        {
+          "template": "stat",
+          "size": "story",
+          "kicker": "Registered",
+          "value": "160+",
+          "label": "self-driving vehicles in Dubai",
+          "foot": "Source: RTA via Emirates 24|7"
+        },
+        {
+          "template": "stat",
+          "size": "story",
+          "kicker": "On the road",
+          "value": "70",
+          "label": "already driving in Jumeirah, about 4 million km so far",
+          "foot": "Source: RTA via Emirates 24|7"
+        },
+        {
+          "template": "stat",
+          "size": "story",
+          "kicker": "The target",
+          "value": "4,000",
+          "label": "self-driving vehicles by 2030",
+          "foot": "Source: RTA via Emirates 24|7"
+        },
+        {
+          "template": "cta",
+          "size": "story",
+          "title": "Track every robot deployment in MENA",
+          "handles": "@roboticsmena"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Emirates 24|7",
+          "url": "https://www.emirates247.com/uae/dubai-has-160-self-driving-vehicles-on-its-roads-and-is-targeting-4000-by-2030/7226"
+        }
+      ]
+    },
+    {
+      "id": "w47-ig-targets",
+      "platform": "instagram",
+      "format": "carousel",
+      "pillar": "explainer",
+      "lang": "en+ar",
+      "status": "draft",
+      "slot": "2026-11-21T12:00+04:00",
+      "text": "What MENA governments have promised on robots and automation, in one swipe. 📋\n\nWe track each target with its source and how much progress there's been. Which country do you think hits its target first?\n\nماذا وعدت الحكومات في المنطقة؟ أهداف الروبوتات والأتمتة في الإمارات والسعودية والبحرين والمغرب والكويت.\n\nFull policy tracker: link in bio.\n\n#robotics #vision2030 #uae #saudiarabia #morocco #bahrain #روبوتات",
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "Policy tracker",
+          "title": "What MENA governments have **promised** on robots"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "UAE · by 2032",
+          "value": "200,000",
+          "label": "robots across services, logistics and industry",
+          "foot": "Source: roboticsmena.com/policy"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "Saudi Arabia · by 2030",
+          "value": "4,000",
+          "label": "factories transformed into smart, automated facilities",
+          "foot": "Source: roboticsmena.com/policy"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "Bahrain · 2026",
+          "value": "300",
+          "label": "factories made smart, assessed on the Smart Industry Readiness Index",
+          "foot": "Source: roboticsmena.com/policy"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "Morocco · by 2030",
+          "value": "200,000",
+          "label": "people trained and certified in AI",
+          "foot": "Source: roboticsmena.com/policy"
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "11 countries tracked, with sources",
+          "body": "Policy tracker at roboticsmena.com/policy",
+          "handles": "@roboticsmena"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA policy tracker",
+          "url": "https://roboticsmena.com/policy"
+        }
+      ]
+    },
+    {
+      "id": "w47-x-launch",
+      "platform": "x",
+      "format": "thread",
+      "pillar": "data",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-16T09:00+04:00",
+      "thread": [
+        "We built a verified database of every robot doing real work across the Middle East & North Africa.\n\n174 companies. 66 deployments, each with a source and a date. Policy targets for 11 countries. In English and Arabic, and free.\n\nHere's what it shows 🧵",
+        "1/ The UAE leads with 26 deployments, then Saudi Arabia (17), Egypt (6), Qatar (5) and Oman (4).",
+        "2/ The biggest buyer isn't oil and gas. It's hospitals: 17 of the 66 deployments are in healthcare, from Riyadh to Kuwait to AKDITAL's surgical network in Morocco.",
+        "3/ Dubai has 160+ self-driving vehicles registered, 70 on Jumeirah roads, and a target of 4,000 by 2030.",
+        "4/ The biggest promise: the UAE's 200,000 robots by 2032. Saudi Arabia aims for 4,000 smart factories by 2030.",
+        "5/ Every Monday we pick 5 verified signals. Follow @roboticsmena, and explore the map: https://roboticsmena.com/map?utm_source=x&utm_medium=social&utm_campaign=2026-w47"
+      ],
+      "cards": [
+        {
+          "template": "cover",
+          "size": "landscape",
+          "kicker": "Now live",
+          "title": "Every robot working in the Middle East & North Africa. **Verified.**"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database"
+        },
+        {
+          "name": "Emirates 24|7",
+          "url": "https://www.emirates247.com/uae/dubai-has-160-self-driving-vehicles-on-its-roads-and-is-targeting-4000-by-2030/7226"
+        }
+      ]
+    },
+    {
+      "id": "w47-x-countries",
+      "platform": "x",
+      "format": "post",
+      "pillar": "data",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-16T17:00+04:00",
+      "text": "Where MENA's robots are actually working: 66 verified deployments by country.\n\n🇦🇪 26 · 🇸🇦 17 · 🇪🇬 6 · 🇶🇦 5 · 🇴🇲 4\n\nWhich country is under-counted? Tell us and we'll check it.",
+      "cards": [
+        {
+          "template": "bars",
+          "size": "landscape",
+          "kicker": "66 verified deployments",
+          "title": "Where the robots are working",
+          "rows": [
+            {
+              "label": "UAE",
+              "value": 26
+            },
+            {
+              "label": "Saudi Arabia",
+              "value": 17
+            },
+            {
+              "label": "Egypt",
+              "value": 6
+            },
+            {
+              "label": "Qatar",
+              "value": 5
+            },
+            {
+              "label": "Oman",
+              "value": 4
+            }
+          ],
+          "foot": "Source: roboticsmena.com, 14 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database?tab=deployments"
+        }
+      ]
+    },
+    {
+      "id": "w47-x-gecko",
+      "platform": "x",
+      "format": "post",
+      "pillar": "deployment",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-17T09:00+04:00",
+      "text": "🇦🇪 Deployment of the week: Gecko Robotics' wall-climbing Raptor robots now inspect @ADNOCGroup facilities, with tens of machines running daily in the UAE.\n\nInspection robots are being bought as infrastructure, not pilots.\n\nhttps://roboticsmena.com/spotlight?s=gecko-adnoc-raptor&utm_source=x&utm_medium=social&utm_campaign=2026-w47",
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "Deployment of the week · UAE",
+          "title": "Wall-climbing robots now inspect ADNOC facilities daily",
+          "foot": "Source: The National, 4 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "The National",
+          "url": "https://www.thenationalnews.com/future/technology/2026/11/04/how-wall-climbing-robots-could-help-gulf-energy-producers-recover-from-attacks/"
+        }
+      ]
+    },
+    {
+      "id": "w47-x-egypt-surgery",
+      "platform": "x",
+      "format": "post",
+      "pillar": "signals",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-17T17:00+04:00",
+      "text": "🇪🇬 Egypt plans da Vinci robotic-surgery pilots in public hospitals with Sofmedica, starting with one or two programmes. Sofmedica has set up a Cairo company as its regional hub.\n\nHealthcare is already MENA's biggest robot buyer.\n\nSource: Maspero https://www.maspero.eg/science-and-technology/2026/11/12/1005059/",
+      "sources": [
+        {
+          "name": "Maspero",
+          "url": "https://www.maspero.eg/science-and-technology/2026/11/12/1005059/"
+        }
+      ]
+    },
+    {
+      "id": "w47-x-sectors",
+      "platform": "x",
+      "format": "post",
+      "pillar": "data",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-18T09:00+04:00",
+      "text": "The Middle East's No. 1 robot buyer is hospitals, not oil and gas.\n\nVerified deployments by sector:\nHealthcare 17\nConstruction 10\nLogistics 10\nMobility 7\nRetail 5\n\nFrom our database of 66 deployments across MENA.",
+      "cards": [
+        {
+          "template": "bars",
+          "size": "landscape",
+          "kicker": "Data · 66 deployments",
+          "title": "Hospitals are MENA's **No. 1** robot buyer",
+          "rows": [
+            {
+              "label": "Healthcare",
+              "value": 17
+            },
+            {
+              "label": "Construction",
+              "value": 10
+            },
+            {
+              "label": "Logistics",
+              "value": 10
+            },
+            {
+              "label": "Mobility",
+              "value": 7
+            },
+            {
+              "label": "Retail",
+              "value": 5
+            }
+          ],
+          "foot": "Source: roboticsmena.com, 14 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database?tab=deployments"
+        }
+      ]
+    },
+    {
+      "id": "w47-x-naver-ar",
+      "platform": "x",
+      "format": "post",
+      "pillar": "signals",
+      "lang": "ar",
+      "status": "draft",
+      "slot": "2026-11-18T17:00+04:00",
+      "text": "🇸🇦 نافر تحدد النصف الأول من 2027 لإطلاق روبوتات التوصيل «نوري» تجارياً في مجمّعات سكنية بالرياض، مرتبطةً بتطبيق «بلدي+» للخرائط التابع لمشروعها المشترك مع الشركة الوطنية للإسكان.\n\nالمصدر: Seoul Economic Daily\nhttps://en.sedaily.com/business/2026/11/12/naver-to-launch-outdoor-delivery-robots-in-saudi-arabia",
+      "sources": [
+        {
+          "name": "Seoul Economic Daily",
+          "url": "https://en.sedaily.com/business/2026/11/12/naver-to-launch-outdoor-delivery-robots-in-saudi-arabia"
+        }
+      ]
+    },
+    {
+      "id": "w47-x-spotlight",
+      "platform": "x",
+      "format": "post",
+      "pillar": "explainer",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-19T09:00+04:00",
+      "text": "ADNOC's real AI story at ADIPEC wasn't the OpenAI deal. It was the robots.\n\nWall-climbing crawlers, explosion-proof inspectors and remotely operated ships, bought as infrastructure after a year of war damage.\n\nOur analysis: https://roboticsmena.com/spotlight?s=gecko-adnoc-raptor&utm_source=x&utm_medium=social&utm_campaign=2026-w47",
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "Spotlight · UAE · Energy",
+          "title": "ADNOC's real AI story at ADIPEC wasn't the OpenAI deal. It was the robots.",
+          "foot": "Robotics MENA analysis, 7 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA Spotlight",
+          "url": "https://roboticsmena.com/spotlight?s=gecko-adnoc-raptor"
+        }
+      ]
+    },
+    {
+      "id": "w47-x-events",
+      "platform": "x",
+      "format": "post",
+      "pillar": "community",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-19T17:00+04:00",
+      "text": "Robotics in Dubai this week:\n\n▸ World Police Summit, until 18 Nov, DWTC\n▸ Dubai Future Week, 18 to 21 Nov\n▸ Emirates Robotics Competition finals, Sat 21 Nov: 10 university teams\n▸ Next: Big 5 Global from 23 Nov\n\nGoing to any of them? Send us what you see.",
+      "sources": [
+        {
+          "name": "Robotics MENA events",
+          "url": "https://roboticsmena.com/events"
+        },
+        {
+          "name": "Zawya",
+          "url": "https://www.zawya.com/en/press-release/events-conferences/10-university-teams-to-compete-in-emirates-robotic-competition-finals-during-the-inaugural-dubai-future-week-2026-1854412"
+        }
+      ]
+    },
+    {
+      "id": "w47-x-vodafone-ar",
+      "platform": "x",
+      "format": "post",
+      "pillar": "signals",
+      "lang": "ar",
+      "status": "draft",
+      "slot": "2026-11-20T11:00+04:00",
+      "text": "🇶🇦 فودافون قطر توقع مذكرة تفاهم مع أجي بوت على هامش MWC26 الدوحة، لاستكشاف نشر روبوتات الذكاء الاصطناعي المتجسّد عبر شبكتها للجهات الحكومية والشركات والمؤسسات التعليمية.\n\nالمصدر: وكالة الأنباء القطرية\nhttps://qna.org.qa/en/News-Area/News/2026-11/8/vodafone-qatar-agibot-sign-mou-to-explore-deploying-embodied-ai-robotics-solutions",
+      "sources": [
+        {
+          "name": "QNA",
+          "url": "https://qna.org.qa/en/News-Area/News/2026-11/8/vodafone-qatar-agibot-sign-mou-to-explore-deploying-embodied-ai-robotics-solutions"
+        }
+      ]
+    },
+    {
+      "id": "w47-x-dubai-av",
+      "platform": "x",
+      "format": "post",
+      "pillar": "data",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-21T12:00+04:00",
+      "text": "🇦🇪 Dubai self-driving vehicles, per @rta_dubai:\n\n160+ registered\n70 on Jumeirah roads (WeRide, Apollo Go)\n~4 million km driven\nTarget: 4,000 by 2030\n\nThat's 25 times today's fleet in about four years.",
+      "sources": [
+        {
+          "name": "Emirates 24|7",
+          "url": "https://www.emirates247.com/uae/dubai-has-160-self-driving-vehicles-on-its-roads-and-is-targeting-4000-by-2030/7226"
+        }
+      ]
+    },
+    {
+      "id": "w47-rd-welcome",
+      "platform": "reddit",
+      "format": "text",
+      "pillar": "signals",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-16T18:00+04:00",
+      "subreddit": "RoboticsMENA",
+      "title": "Welcome to r/RoboticsMENA, plus the past fortnight: Egypt's robotic-surgery pilots, NAVER's Riyadh delivery robots, and 3 more",
+      "text": "Hi all. This community is for robots, drones, autonomous vehicles and physical AI doing real work across the Middle East & North Africa. I run roboticsmena.com, a free database where every deployment has a source and a date, so I'll post what we verify here every week. Please add what we miss.\n\n**The past fortnight (6 to 12 Nov):**\n\n- **Egypt:** the health ministry plans da Vinci robotic-surgery pilots in public hospitals with Sofmedica ([Maspero](https://www.maspero.eg/science-and-technology/2026/11/12/1005059/))\n- **Saudi Arabia:** NAVER says its NURI delivery robots launch commercially in Riyadh housing complexes in H1 2027 ([Seoul Economic Daily](https://en.sedaily.com/business/2026/11/12/naver-to-launch-outdoor-delivery-robots-in-saudi-arabia))\n- **Egypt:** X-GEN becomes Pudu's first partner in Africa ([TechAfrica News](https://techafricanews.com/2026/11/11/egypt-x-gen-three-deals-robotics-drone-technologies/))\n- **Qatar:** Vodafone Qatar and AgiBot sign an embodied-AI MoU ([QNA](https://qna.org.qa/en/News-Area/News/2026-11/8/vodafone-qatar-agibot-sign-mou-to-explore-deploying-embodied-ai-robotics-solutions))\n- **UAE:** Lootah Robotics opens a humanoid showroom on Sheikh Zayed Road; rentals from under Dh5,000 ([The National](https://www.thenationalnews.com/news/uae/2026/11/06/uae-opens-its-first-humanoid-robotics-showroom-as-dubai-races-to-200000-robots/))\n\nWhat else happened in your country? Comments in Arabic are welcome too.",
+      "sources": [
+        {
+          "name": "Maspero",
+          "url": "https://www.maspero.eg/science-and-technology/2026/11/12/1005059/"
+        }
+      ]
+    },
+    {
+      "id": "w47-rd-data",
+      "platform": "reddit",
+      "format": "text",
+      "pillar": "data",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-18T18:00+04:00",
+      "subreddit": "RoboticsMENA",
+      "title": "[OC] 66 verified robot deployments across MENA: hospitals are the biggest buyer, not oil and gas",
+      "text": "We counted every deployment in our database that has a primary source and a date (66 so far).\n\n**By sector:** healthcare 17, construction 10, logistics 10, mobility 7, retail 5, hospitality 4, energy 4.\n\n**By country:** UAE 26, Saudi Arabia 17, Egypt 6, Qatar 5, Oman 4, Morocco 2, Jordan 2, and one each in Bahrain, Algeria, Kuwait and Tunisia.\n\nTwo caveats: English and Arabic sources are easier for us to find than French ones, so the Maghreb is probably under-counted. And a deployment can be one surgical robot or a fleet of 70 robotaxis.\n\nWhat surprises you here? What are we missing in Morocco, Tunisia and Algeria?\n\n(The data is at roboticsmena.com/database if you want to check or correct a record.)",
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database?tab=deployments"
+        }
+      ]
+    },
+    {
+      "id": "w47-rd-question",
+      "platform": "reddit",
+      "format": "text",
+      "pillar": "community",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-21T16:00+04:00",
+      "subreddit": "RoboticsMENA",
+      "title": "Which robot have you actually seen working in the region, in person?",
+      "text": "Not a demo at an expo. A robot doing a real job: a cleaning robot in a mall, a delivery robot, a robotaxi, a surgical robot at your hospital, a drone doing inspections.\n\nWhere was it, and did it work well? We'll check the good ones and add them to the map (with credit if you want it)."
+    }
+  ]
+}
