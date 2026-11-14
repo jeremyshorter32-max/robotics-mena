@@ -61,9 +61,7 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   (`scripts/catmon/`, `.github/workflows/categorization-monitor.yml`, README "Categorization monitor"). Live check: all
   three currently report "needs manual check" (Fortinet robots.txt disallows the lookup; Symantec needs its own POST after
   a human check; McAfee returns 403), so it alerts once per vendor to check by hand.
-- [ ] **Categorization monitor, open decisions:** add Playwright as a devDependency so the Symantec browser check can run on
-  Actions (owner to approve; it would still meet the human check); confirm FormSubmit delivers the monitor's emails (first
-  alert will tell); add Palo Alto / Talos / Check Point once a read-only, no-login lookup exists.
+- [x] **Categorization monitor** (decided 14 Nov 2026): no Playwright dependency; blocked vendors stay "needs manual check".
 - [ ] **Web-filter submissions:** pack and Claude-in-Chrome prompt in `docs/launch/web-filter-submissions.md`; log ticket
   numbers here when done.
 - [x] **Password turned off** (13 Nov 2026): the deploy builds with `PUBLIC_LAUNCH=true`; every other open item was deferred
@@ -101,7 +99,8 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
   and "daily social engagement" Mon–Fri 07:13 Gulf. Both stop with "Social system not merged into main yet" until this work is on main.
 - [x] **Site links** (14 Nov 2026): "Follow Robotics MENA" row in every page footer and the brief pop-up's thank-you step,
   `sameAs` in the Organization structured data, and the newsletter footer, all read from `social/accounts.json`.
-- [ ] **Owner decisions:** paid boost ($5 to $10 a day on LinkedIn or Instagram); X Premium for reply reach; filming at GITEX (7 Dec) and Big 5 (23 Nov).
+- [ ] **Owner decisions:** paid boost ($5 to $10 a day on LinkedIn or Instagram) under consideration (14 Nov); X Premium and event filming
+  not taken up for now.
 - [ ] **Later: portal Social tab** (today's posts with copy buttons and images, a follower-count form) to replace the GitHub issue and PR body.
 - [ ] **Later: auto-publishing via APIs** (LinkedIn Community Management API app review, the Instagram Graph API via a Meta app, the X API paid tier, the Reddit API),
   still with approval in the portal first.
@@ -115,13 +114,9 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
   into `main` (it predates the Nov 2026 rebrand: re-run `node scripts/report-pdf.cjs dubai-robot-villa` after merging) (it becomes the home-page Spotlight). Before launching, check for news since 9 Nov 2026 (consortium
   names, start date) and update the text if anything changed.
 
-- [ ] **Week 46 extras: keep or remove?** The brief was rolled back to week 45 on 14 Nov, but four week-46 deployments
-  (d59 Vodafone Qatar–AgiBot, d60 NAVER Riyadh, d61 Egypt robotic surgery, d62 X-GEN–Pudu, still flagged new) and the Saudi
-  AV-rule source update stayed live. Owner to decide.
-- [ ] **Defence and weapons drone makers: include or not?** Ten were found and held back pending an editorial
-  decision (add Marakeb Technologies: UAE Navy combat-system partner, also civilian USVs; listed for now): EDGE Group (UAE), SR2Vector, United Defense Company, INTRA Defense Technologies, Haris Unmanned
-  Systems, SERB Advanced Industries (Saudi Arabia), Barzan Holdings (Qatar), Shield AI (US), Exail (France),
-  Saildrone (US, Fifth Fleet). Records are ready to add if the answer is yes.
+- [x] **Week 46 extras** (decided 14 Nov 2026): kept (d59–d62 and the Saudi AV-rule source update stay live).
+- [x] **Defence and weapons makers** (decided 14 Nov 2026): not included. The ten held-back records stay out, Marakeb Technologies
+  was removed, and the weekly scan and request skills already exclude defence and weapons makers.
 - [x] **Second research pass** (13 Nov 2026): +26 companies, +25 deployments (medical, agri, education, cleaning-robot
   operators and dealers, KAUST/KU spin-outs, Qatar/Oman/Jordan/Bahrain), every source opened and checked to load.
 - [x] **Second-pass leads checked** (13 Nov 2026). Added companies: DARBCO (JO), ATLAB (AE), Jacky's Business Solutions (AE),
@@ -133,11 +128,9 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
   2018, site behind a bot check), Hygiene Tech (city and website unconfirmed; 2021 LeoMop deployment for an FM firm), ABB robots at
   Almarai (only on ABB pages that would not load), Comau (trade-show presence only), Yaskawa, Doosan, Techman, Stäubli and Epson
   (no usable MENA source).
-- [ ] **Libya and Iraq are not covered countries.** LYBOTICS (Tripoli youth robotics, FIRST Tech Challenge) and Iraq's first robotic
-  surgery (Warith International Cancer Institute, Karbala, 2 Mar 2026, robot unnamed) are sourced but need LY and IQ added to
-  `data/countries.json` (and the map) first. Owner to decide.
-- [ ] **Miral HQ cleaning robot.** Not publicly sourced yet. Likely operated by FM contractor Berkeley Services (not listed:
-  FM companies are out of scope); the robot maker is unknown. Add the maker and a deployment when a public source exists.
+- [x] **Libya and Iraq** (decided 14 Nov 2026): not added as covered countries; LYBOTICS and the Warith surgery stay out.
+- [ ] **Miral HQ cleaning robot.** Researched 14 Nov 2026: Gausium (the owner's guess) is now a company record, but no public source
+  names the maker, contractor or deployment at Miral HQ. Add a deployment only if the owner supplies a source (e.g. a branded photo or post).
 - [x] **Bahrain drones** (14 Nov 2026): confirmed on the official government portal (bahrain.bh, page updated 30 Aug 2026):
   all drone operations and permit applications suspended since 28 Mar 2026. Added as a regulation in the Bahrain dossier and
   cited in the drones score (still Partial).

@@ -2928,26 +2928,6 @@
     "logo": "/media/logos/al-seer-marine.png"
   },
   {
-    "id": "marakeb-technologies",
-    "name": "Marakeb Technologies",
-    "name_ar": "مراكب للتقنيات",
-    "country": "AE",
-    "category": "marine",
-    "stage": "growth",
-    "summary": "UAE maker of unmanned surface vessels and the MAP Pro kit that converts crewed boats to remote or autonomous operation; built a 21.25m multi-mission USV for the UAE Navy.",
-    "summary_ar": "شركة إماراتية تصنع الزوارق السطحية غير المأهولة ونظام «ماب برو» الذي يحوّل القوارب المأهولة إلى التشغيل عن بُعد أو الذاتي، وطورت زورقاً متعدد المهام بطول 21.25 متراً للقوات البحرية الإماراتية.",
-    "website": "https://marakeb.tech",
-    "source": "Zawya (press release)",
-    "source_url": "https://www.zawya.com/en/press-release/companies-news/marakeb-technologies-develops-2125m-multi-mission-unmanned-surface-vessel-for-the-uae-navy-oimw9j6b",
-    "added": "2026-11-09",
-    "hq": "AE",
-    "hq_city": "Abu Dhabi",
-    "mena_countries": [
-      "AE"
-    ],
-    "logo": "/media/logos/marakeb-technologies.png"
-  },
-  {
     "id": "sigma-enterprises",
     "name": "Sigma Enterprises",
     "name_ar": "سيغما إنتربرايزز",
@@ -5210,5 +5190,49 @@
     "mena_source": "The North Africa Post",
     "mena_source_url": "https://northafricapost.com/90825-industrial-drones-hollyway-sets-up-plant-in-morocco.html",
     "mena_date": "2025-09-23"
+  },
+  {
+    "id": "gausium",
+    "name": "Gausium",
+    "name_ar": "غاوسيوم",
+    "country": "AE",
+    "category": "service",
+    "stage": "growth",
+    "summary": "Shanghai maker of autonomous commercial cleaning robots (Scrubber 50/75, Vacuum 40, Phantas, Omnie), founded in 2013 as Gaussian Robotics, with more than 9,400 customers in over 70 countries.",
+    "summary_ar": "شركة في شنغهاي تصنع روبوتات التنظيف التجارية الذاتية (سكرابر 50/75، فاكيوم 40، فانتاس، أومني)، تأسست عام 2013 باسم غاوسيان روبوتكس، ولديها أكثر من 9,400 عميل في أكثر من 70 دولة.",
+    "website": "https://gausium.com/",
+    "logo": "/media/logos/gausium.png",
+    "source": "Gausium",
+    "source_url": "https://gausium.com/company-profile/",
+    "added": "2026-11-14",
+    "hq": "CN",
+    "hq_city": "Shanghai",
+    "mena_countries": [
+      "AE",
+      "SA",
+      "QA"
+    ],
+    "mena_link": {
+      "en": "Sells through Gulf distributors Albariq Equipment (UAE, Saudi Arabia, Qatar), Inc Robotics (Saudi Arabia, UAE) and Acme Intralog (Dubai, since 2023), and lists Doha's Hamad International Airport among its airport customers.",
+      "ar": "تبيع عبر موزّعين خليجيين هم البارق للمعدات (الإمارات والسعودية وقطر) وإنك روبوتكس (السعودية والإمارات) وأكمي إنترالوج (دبي، منذ 2023)، وتُدرج مطار حمد الدولي في الدوحة بين عملائها من المطارات."
+    },
+    "mena_source": "Zawya (press release)",
+    "mena_source_url": "https://www.zawya.com/en/press-release/companies-news/acme-partners-with-gausium-to-launch-ai-powered-autonomous-cleaning-and-service-robots-in-the-middle-east-ps1zphsv",
+    "mena_date": "2023-05-18",
+    "image": "/media/companies/gausium.jpg",
+    "image_cap": {
+      "en": "Gausium cleaning robots on the Inc Robotics stand at The Big 5 Saudi, Riyadh",
+      "ar": "روبوتات تنظيف من غاوسيوم في جناح إنك روبوتكس بمعرض ذا بيغ 5 السعودية في الرياض"
+    },
+    "image_alt": {
+      "en": "Several white Gausium autonomous floor-cleaning robots displayed on an exhibition stand",
+      "ar": "عدة روبوتات بيضاء ذاتية لتنظيف الأرضيات من غاوسيوم معروضة في جناح بمعرض"
+    },
+    "image_credit": {
+      "en": "Image: Gausium",
+      "ar": "الصورة: غاوسيوم"
+    },
+    "image_url": "https://gausium.com/wp-content/uploads/2022/04/1_Gaussian-Robotics_Inc-Robotics_The-Big-5-Saudi_compressed-scaled.jpeg",
+    "image_page": "https://gausium.com/news/gaussian-robotics-and-inc-robotics-co-exhibit-at-the-big-5-saudi/"
   }
 ]
