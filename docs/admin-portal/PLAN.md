@@ -9,7 +9,7 @@ downloaded, the repository is readable, and anything secret in a page's code is 
 login would also be the weakest link. So:
 
 - **The public site stays read-only.** Nothing on roboticsmena.com can change data.
-- **The portal is a separate app at `admin.roboticsmena.com`**, and nobody reaches even its login page without first
+- **The portal is a separate app (first on a Cloudflare `workers.dev` address, later optionally `admin.roboticsmena.com`)**, and nobody reaches even its login page without first
   passing an identity gate run by a specialist provider (recommended: **Cloudflare Access**, free for small teams):
   - only the owner's identity is on the allow-list (Google or GitHub sign-in, with a passkey / hardware key as the
     second factor); there is **no portal password** to steal or brute-force;
@@ -79,15 +79,39 @@ Cloudflare Worker (API) — verifies token, holds secrets, rate-limits, logs eve
 
 Agent runs stay in GitHub Actions (where the scanner already runs), so the portal only starts them and reads results.
 
-## Decisions needed from the owner
+## Decisions (14 Nov 2026)
 
-1. Is roboticsmena.com's DNS on Cloudflare, or can it move there? (Needed for Cloudflare Access on `admin.`; the site
-   itself can stay on GitHub Pages.) If not, the fallback is the same design behind GitHub sign-in on a small hosted app.
-2. Which identity to sign in with: Google or GitHub (both support passkeys)?
-3. Should anyone else ever get access (e.g. an editor with approve-only rights)?
+**Where DNS lives (checked 14 Nov 2026):** GoDaddy (nameservers `ns47/ns48.domaincontrol.com`). The site points at GitHub
+Pages (four A records, `www` CNAME to GitHub), and the domain's **email runs on Microsoft 365 through GoDaddy** (MX to
+`roboticsmena-com.mail.protection.outlook.com`, GoDaddy SPF and the Microsoft tenant TXT record).
+
+**Decision: do not move DNS.** Moving the nameservers to Cloudflare would be free and reversible, but it is the one step
+that could interrupt email (every Microsoft 365 record GoDaddy manages would have to be copied exactly) and it buys
+little: Cloudflare Access can protect a Worker on its own `*.workers.dev` address without the domain being on
+Cloudflare. So v1 lives at a Cloudflare address such as `roboticsmena-admin.<account>.workers.dev`, protected by
+Cloudflare Access. Nothing about the live site or email changes. A friendlier `admin.roboticsmena.com` can come later by
+moving DNS (free; do it with an email checklist) and is a one-line change in the portal.
+
+**Cost:** $0. Workers free plan (100,000 requests/day) and Cloudflare Zero Trust free plan (up to 50 users). Cloudflare
+may ask for a card when Zero Trust is first enabled even on the free plan; nothing is charged unless a paid plan is chosen.
+
+**Sign-in:** Google sign-in (the owner already uses Google for the sign-up Sheet; it works on phone and supports
+passkeys), set up as an identity provider in Cloudflare Access. Fully reversible: the identity provider and the allowed
+emails are settings in Cloudflare and can be swapped (e.g. to GitHub or one-time email codes) at any time.
+
+**Other people later:** designed in from the start. Access lets in only listed emails; the portal maps each email to a role:
+`owner` (everything, including running agents and secrets), `editor` (approve, edit and send back items; no agent
+runs, no settings), `viewer` (dashboards only). Adding someone = add their email in Cloudflare and give them a role;
+removing = delete it. Every action is logged with who did it. Emails are kept in Cloudflare/Worker settings, not in the
+public repo.
+
+**One-time setup the owner does (about 15 minutes, guided when we get there):** create a free Cloudflare account, enable
+Zero Trust (free plan), add Google as a login method, and create a GitHub App for this repository (its key goes into the
+Worker's secrets, never into the repo).
 
 ## Next steps
 
-1. Owner answers the three questions above.
-2. Build phase 1 in a separate folder (`admin/`) with tests; nothing public changes.
-3. Turn on the weekly scanner (README "To do") so the approvals inbox has real items.
+1. Build phase 1 code (UI + Worker API + tests) in `admin/`; it can be written and tested before any Cloudflare setup.
+2. Owner does the one-time Cloudflare and GitHub App setup, then deploy and lock down with Access.
+3. Build phase 1 in a separate folder (`admin/`) with tests; nothing public changes.
+4. Turn on the weekly scanner (README "To do") so the approvals inbox has real items.

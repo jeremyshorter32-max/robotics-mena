@@ -74,12 +74,13 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   shown as plain cards; X's embed loads only on "Show post" (privacy page updated). Posts appear only once their
   status is "approved". The Sunday routine suggests new ones.
 
-- [ ] **Admin portal (private, owner only)** (requested 14 Nov 2026). Approvals and ad-hoc pushes for the weekly data,
-  running the research agents, traffic (GoatCounter) and sign-ups (Sheet/Kit) in one place. Plan and phases in
-  `docs/admin-portal/PLAN.md`. Decided: **no admin page on the public site and no portal password**: a separate app at
-  `admin.roboticsmena.com` behind an identity gate (Cloudflare Access, one allow-listed identity + passkey), secrets only
-  on the server, every change made as a git commit/PR. Waiting on the owner: DNS on Cloudflare? Google or GitHub
-  sign-in? Anyone else ever needing access?
+- [ ] **Admin portal (private)** (requested 14 Nov 2026). Approvals and ad-hoc pushes for the weekly data, running the
+  research agents, traffic (GoatCounter) and sign-ups (Sheet/Kit) in one place. Plan: `docs/admin-portal/PLAN.md`.
+  Decided 14 Nov: no admin page on the public site and no portal password; a Cloudflare Worker on a `workers.dev`
+  address behind Cloudflare Access with Google sign-in (DNS stays at GoDaddy, so email on Microsoft 365 is untouched);
+  $0 on free plans; roles owner / editor / viewer for future collaborators. Next: build phase 1 in `admin/`; owner does
+  the one-time Cloudflare + GitHub App setup.
+
 
 ## Content and research
 
