@@ -49,6 +49,8 @@ Each card in `cards` is a spec rendered by `scripts/social-cards.cjs` (the heade
    problems: text cut off, an empty slide, a wrong credit.
 4. `node scripts/social.mjs validate <week> --media` must pass.
 5. `node scripts/social.mjs preview <week>` writes the posting pack `social/out/<week>.html` (not committed).
+6. Rebuild the Content Library (`node scripts/social-library.mjs`, see `social/README.md`). In an interactive session, republish it to
+   the owner's existing Content Library artifact (its URL is in `social/README.md`).
 
 ## 4. Send for approval
 1. Commit `social/queue/<week>.json`, `social/cards/<week>/`, the plan and any reports to `social/<week>` (repository author, attribution trailer). Push.

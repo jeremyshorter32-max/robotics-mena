@@ -72,6 +72,24 @@ test('platform formats: LinkedIn poll and document, Instagram carousel', () => {
   assert.ok(errs(q({ ...ig, cards: [...ig.cards, { template: 'signal', size: 'portrait', title: 'T', image: '/media/press/x.jpg' }] })).some(e => /rights-cleared/.test(e)));
 });
 
+test('every committed campaign validates', () => {
+  const dir = path.join(ROOT, 'social/campaigns');
+  for (const f of fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith('.json')) : []) assert.deepEqual(validateQueue(readJson(path.join(dir, f))).errors, [], f);
+});
+
+test('placeholders only in templates, never on cards', () => {
+  assert.ok(errs(q(post({ text: 'Day [[N]] at GITEX' }))).some(e => /placeholders/.test(e)));
+  assert.deepEqual(errs(q(post({ text: 'Day [[N]] at GITEX', template: true }))), []);
+  assert.ok(errs(q(post({ template: true, cards: [{ template: 'cover', size: 'landscape', title: 'Day [[N]]' }] }))).some(e => /not allowed on cards/.test(e)));
+});
+
+test('a campaign needs no week and no cadence', () => {
+  const c = { campaign: 'launch-2026', posts: [post({ slot: '2026-12-07T10:00+04:00' })], kit: [{ id: 'k1', title: 'T', text: 'Hello' }] };
+  assert.deepEqual(errs(c), []);
+  assert.deepEqual(missingSlots(c, readJson(path.join(ROOT, 'social/cadence.json'))), []);
+  assert.ok(errs({ ...c, kit: [{ id: 'k2', title: 'T', text: 'An Israeli startup' }] }).some(e => /excluded/.test(e)));
+});
+
 test('every committed queue validates and fills the cadence', () => {
   const cadence = readJson(path.join(ROOT, 'social/cadence.json'));
   for (const f of fs.readdirSync(path.join(ROOT, 'social/queue')).filter(f => f.endsWith('.json'))) {

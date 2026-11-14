@@ -21,11 +21,24 @@ The agents draft. **The owner approves (in the admin portal) and posts.** Nothin
 - **Monday:** comment `followers linkedin=N x=N instagram=N reddit=N` (reddit = r/RoboticsMENA members) on the engagement issue (the Analyst records it).
 - **1st of the month:** use LinkedIn's "Invite to follow" credits.
 
+## Content Library (view and download everything)
+**https://claude.ai/artifact/VLvATizyqX8AuX4t3WtmM2** (private to the owner). It shows every post from last week onwards plus campaigns, with copy buttons,
+media previews, per-file downloads, a "Download all media (.zip)" button per collection, the profile kit, and a "Posted" tick per post
+(remembered in your browser). Rebuild it after any change with `node scripts/social-library.mjs` (writes `social/out/library/`, not committed),
+then republish `social/out/library/index.html` to that URL with `root: social/out/library`, the files listed in `social/out/library/files.json`
+and the `downloads` capability.
+
+## Campaigns
+`campaigns/<id>.json` has the same shape as a weekly queue, plus `"campaign": "<id>"`, a `kit` of ready-to-paste copy (personal posts, emails,
+DMs, checklists) and optional `"template": true` posts with `[[placeholders]]`. `campaigns/<id>.md` is the plan. The Strategist copies each campaign
+post into its week's queue. Current: **launch-2026** (Launch to GITEX, 15 Nov to 14 Dec 2026).
+
 ## Tools
 ```bash
 node scripts/social.mjs validate [week|all] [--media]   # limits, sources, utm, handles, excluded content
 node scripts/social.mjs slots 2026-w48                    # cadence slots and which are empty
-node scripts/social-cards.cjs week 2026-w47               # render cards → cards/<week>/ (+ PDF carousels, Reel MP4s)
+node scripts/social-cards.cjs week 2026-w47               # render cards → cards/<week>/ (+ PDF carousels, Reel MP4s); also a campaign id
+node scripts/social-library.mjs                           # rebuild the Content Library page → out/library/
 node scripts/social.mjs preview 2026-w47                  # posting pack → out/2026-w47.html (copy buttons + images)
 node scripts/social.mjs pack 2026-w47                     # pull-request body
 node scripts/social.mjs metrics add linkedin=420 x=180    # record counts; `metrics report` for pace

@@ -10,14 +10,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT } from './lib/taxonomy.mjs';
-import { SOCIAL, PLATFORMS, validateQueue, missingSlots, slotDate, readJson, queuePath, cardFiles, extraFiles, xLength, weekStart } from './lib/social.mjs';
+import { SOCIAL, PLATFORMS, validateQueue, missingSlots, slotDate, readJson, queuePath, cardFiles, extraFiles, xLength, folderOf, allQueues } from './lib/social.mjs';
 
 const [cmd, ...args] = process.argv.slice(2);
 const flags = new Set(args.filter(a => a.startsWith('--')));
 const pos = args.filter(a => !a.startsWith('--'));
 const cadence = () => readJson(path.join(SOCIAL, 'cadence.json'));
 const loadQueue = week => { const f = queuePath(week); if (!fs.existsSync(f)) die(`no queue for ${week} (${path.relative(ROOT, f)})`); return readJson(f); };
-const weeks = () => fs.readdirSync(path.join(SOCIAL, 'queue')).filter(f => /^\d{4}-w\d{2}\.json$/.test(f)).map(f => f.slice(0, -5)).sort();
+const weeks = allQueues;
 function die(m) { console.error(m); process.exit(1); }
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const NAMES = { linkedin: 'LinkedIn', x: 'X', instagram: 'Instagram', reddit: 'Reddit' };
@@ -73,7 +73,7 @@ function pack() {
     else if (p.text) out.push('```', p.text, '```');
     if (p.poll) out.push(`Poll: ${p.poll.question} → ${p.poll.options.join(' / ')}`, '');
     if (p.first_comment) out.push('First comment:', '```', p.first_comment, '```');
-    const media = [...cardFiles(week, p), ...extraFiles(week, p)];
+    const media = [...cardFiles(folderOf(q), p), ...extraFiles(folderOf(q), p)];
     if (media.length) out.push('Media: ' + media.map(f => `\`${f}\``).join(', '), '');
     if (p.media_note) out.push(`Media note: ${p.media_note}`, '');
     if (p.sources?.length) out.push('Sources: ' + p.sources.map(s => `[${s.name}](${s.url})`).join(', '), '');
@@ -91,14 +91,14 @@ function preview() {
   const days = {};
   byTime(q).forEach(p => (days[p.slot.slice(0, 10)] ||= []).push(p));
   const posts = Object.entries(days).map(([d, ps]) => `<h2>${new Date(d + 'T12:00Z').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' })}</h2>` + ps.map(p => {
-    const media = cardFiles(week, p);
+    const media = cardFiles(folderOf(q), p);
     return `<article class="post ${p.platform}"><header><span class="pf">${NAMES[p.platform]}</span><span>${p.slot.slice(11, 16)} GST · ${esc(p.format)}${p.lang ? ' · ' + p.lang : ''}</span><span class="st">${esc(p.status)}</span></header>
 ${p.subreddit ? copy(`Title for r/${p.subreddit}`, p.title) : ''}
 ${p.thread ? p.thread.map((t, i) => copy(`Post ${i + 1}/${p.thread.length} · ${xLength(t)}/280`, t)).join('') : p.text ? copy(p.platform === 'x' ? `Post · ${xLength(p.text)}/280` : p.platform === 'instagram' ? 'Caption' : 'Text', p.text) : ''}
 ${p.poll ? copy('Poll', `${p.poll.question}\n${p.poll.options.join('\n')}`) : ''}
 ${p.first_comment ? copy('First comment', p.first_comment) : ''}
 ${media.length ? `<div class="media">${media.map(f => `<a href="${rel(f)}" download><img src="${rel(f)}" loading="lazy" alt=""></a>`).join('')}</div>` : ''}
-${extraFiles(week, p).map(f => `<p><a href="${rel(f)}" download>Download ${path.extname(f).slice(1).toUpperCase()}</a></p>`).join('')}
+${extraFiles(folderOf(q), p).map(f => `<p><a href="${rel(f)}" download>Download ${path.extname(f).slice(1).toUpperCase()}</a></p>`).join('')}
 ${p.media_note ? `<p class="note">🎬 ${esc(p.media_note)}</p>` : ''}
 ${p.tags?.length ? `<p class="note">Tag: ${p.tags.map(esc).join(' · ')}</p>` : ''}
 ${p.sources?.length ? `<p class="src">Sources: ${p.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</p>` : ''}

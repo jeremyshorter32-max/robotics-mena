@@ -1,0 +1,397 @@
+{
+  "campaign": "launch-2026",
+  "title": "Launch to GITEX",
+  "theme": "Fill the new profiles, get the first followers, and own GITEX Global week",
+  "range": [
+    "2026-11-15",
+    "2026-12-14"
+  ],
+  "notes": "The plan, checklist and GITEX shot list are in social/campaigns/launch-2026.md. Posts dated in a coming week are copied into that week's queue by the Strategist (keeping their ids), so they go through the normal weekly approval as well. Template posts (\"template\": true) have [[placeholders]] the owner fills in on the day.",
+  "kit": [
+    {
+      "id": "k-personal-linkedin",
+      "title": "Your personal LinkedIn post (Monday 16 Nov, after the page's launch carousel)",
+      "channel": "LinkedIn, your personal profile",
+      "note": "Post it from your own profile within an hour of the page's 08:30 post, and reshare the page's carousel underneath. Edit the first line so it sounds like you.",
+      "text": "I've been building Robotics MENA: a free, verified database of robots doing real work across the Middle East & North Africa. Today it goes social.\n\nWhat's in it so far:\n▸ 174 robotics companies with a sourced presence in the region\n▸ 66 deployments, each with a primary source and a date\n▸ Policy profiles and national targets for 11 countries\n▸ 39 events\n\nA few things the data already shows:\n▸ The UAE leads with 26 deployments, then Saudi Arabia (17) and Egypt (6)\n▸ Hospitals are the biggest buyer: 17 of the 66 deployments are in healthcare\n▸ Dubai has 160+ self-driving vehicles registered, with a target of 4,000 by 2030\n\nEvery Monday we publish 5 verified signals, in English and Arabic.\n\nIf you work with robots in the region and we've missed you, tell me. Listing is free and can't be bought.\n\nFollow the page: https://www.linkedin.com/company/roboticsmena/\n\n#Robotics #MENA #UAE #SaudiArabia"
+    },
+    {
+      "id": "k-company-message",
+      "title": "Message to the companies and operators we feature",
+      "channel": "LinkedIn message or email from contact@roboticsmena.com",
+      "note": "Send it the day their post goes out, to a press, marketing or partnerships contact. Fill in the [[brackets]]. Send it once per company; no follow-up chasing.",
+      "text": "Hi [[first name]],\n\nWe've just launched Robotics MENA, a free and independent database of robots working across the Middle East & North Africa, with a primary source for every record.\n\nToday we featured [[company]]'s [[deployment, e.g. Raptor inspection robots at ADNOC]] as our deployment of the week: [[link to the post]]\n\nIf it's useful to you, a follow or a reshare would help us a lot as a new publication. And if anything in the record is wrong or out of date, tell me and we'll correct it (our corrections are logged publicly).\n\nThe full record is here: [[roboticsmena.com record link]]\n\nBest,\n[[your name]]\nRobotics MENA · roboticsmena.com"
+    },
+    {
+      "id": "k-who-to-message",
+      "title": "Who to message in launch week",
+      "channel": "Checklist",
+      "note": "One message each, the day their post goes out. Find the contact on their own website or LinkedIn page.",
+      "text": "Mon 16 Nov: none (launch day; focus on your personal post and invites)\nTue 17 Nov: Gecko Robotics, ADNOC (deployment of the week)\nWed 18 Nov: Sofmedica (Egypt robotic-surgery pilots)\nThu 19 Nov: NAVER Labs, X-GEN, Pudu Robotics, Vodafone Qatar, AgiBot, Lootah Robotics (the 5-signals carousel)\nFri 20 Nov: RTA Dubai, WeRide, Apollo Go (Dubai self-driving numbers)"
+    },
+    {
+      "id": "k-waitlist-email",
+      "title": "Email to the waitlist: we're on social",
+      "channel": "Email to waitlist sign-ups (bcc), from contact@roboticsmena.com",
+      "note": "Send once, on Monday 16 Nov after the launch posts are live. Put every address in Bcc, never To or Cc. Until the Kit newsletter is ready, this is the only email the waitlist gets.",
+      "text": "Subject: Robotics MENA is now on LinkedIn, X, Instagram and Reddit\n\nHi,\n\nThanks for joining the Robotics MENA waitlist. While the weekly email gets ready, you can already follow the brief where you spend your time:\n\nLinkedIn: https://www.linkedin.com/company/roboticsmena/\nX: https://x.com/roboticsmena\nInstagram: https://www.instagram.com/roboticsmena/\nReddit: https://www.reddit.com/r/RoboticsMENA/\n\nEvery Monday we post 5 verified robotics signals from the Middle East & North Africa, in English and Arabic. Each one links to its source.\n\nIf you'd rather not hear from us, reply \"unsubscribe\" and we'll remove you.\n\nRobotics MENA\nroboticsmena.com"
+    },
+    {
+      "id": "k-linkedin-invites",
+      "title": "LinkedIn page invites",
+      "channel": "LinkedIn page admin view → Grow → Invite to follow",
+      "note": "The credits reset monthly, so use them all on 16 Nov and again on 1 Dec.",
+      "text": "Who to invite first (1st-degree connections only):\n1. People working in robotics, automation, drones or autonomous vehicles in MENA\n2. Operators that buy robots: hospitals, energy, construction, logistics, facilities, airports, ports, retail\n3. Government innovation, smart-city and economic-development teams\n4. Investors and accelerators covering MENA deep tech\n5. Journalists and newsletter writers covering Gulf tech\nSkip personal friends with no link to the field: invites they ignore don't help."
+    },
+    {
+      "id": "k-pin",
+      "title": "What to pin",
+      "channel": "Checklist",
+      "note": "Pinned posts are what new visitors see first.",
+      "text": "X: pin the launch thread (Mon 16 Nov 09:00). From 7 Dec, pin the GITEX live thread instead, then switch back.\nInstagram: pin the launch carousel (Mon 16 Nov) and the \"How we verify\" post.\nLinkedIn: feature the launch carousel in the page's Featured section.\nReddit: pin (sticky) the welcome post in r/RoboticsMENA, and from 6 Dec the GITEX megathread as the second sticky."
+    },
+    {
+      "id": "k-follow",
+      "title": "Accounts for @roboticsmena to follow on X (by hand)",
+      "channel": "X, done by you",
+      "note": "Following relevant accounts by hand is fine; follow/unfollow tactics are not. Follow 20 to 30 a day at most so X doesn't flag the new account.",
+      "text": "Confirmed handles: @ADNOCGroup, @DXBMediaOffice, @rta_dubai, @WeRide_ai\nThen: the official X accounts of the companies, operators and agencies in our database. Use the X link on each organisation's own website, not search results, so you follow the real account."
+    }
+  ],
+  "posts": [
+    {
+      "id": "lc-li-crosspost",
+      "platform": "linkedin",
+      "format": "text",
+      "pillar": "community",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-15T10:00+04:00",
+      "text": "Robotics MENA is now on X, Instagram and Reddit as well as LinkedIn.\n\nSame rule everywhere: every robot deployment, company and policy we post has a primary source and a date.\n\n▸ X: news and data as it happens, in English and Arabic\n▸ Instagram: deployments and data in Reels and carousels\n▸ Reddit: r/RoboticsMENA, a community for people working with robots in the region\n\nOur full launch goes out tomorrow at 08:30 Gulf time. Links in the comments.\n\n#Robotics #MENA",
+      "first_comment": "X: https://x.com/roboticsmena\nInstagram: https://www.instagram.com/roboticsmena/\nReddit: https://www.reddit.com/r/RoboticsMENA/\nThe database: https://roboticsmena.com/?utm_source=linkedin&utm_medium=social&utm_campaign=launch-2026"
+    },
+    {
+      "id": "lc-ig-who",
+      "platform": "instagram",
+      "format": "image",
+      "pillar": "explainer",
+      "lang": "en+ar",
+      "status": "draft",
+      "slot": "2026-11-15T11:00+04:00",
+      "text": "This is the MENA robotics desk. 🤖\n\nWe track every robot doing real work across the Middle East & North Africa: deployments, companies, government targets and events. Verified, with a source for everything.\n\nنوثّق كل روبوت يعمل فعلاً في الشرق الأوسط وشمال أفريقيا: عمليات النشر والشركات والأهداف الحكومية والفعاليات، ولكل معلومة مصدرها.\n\nLink in bio.\n\n#robotics #mena #uae #saudiarabia #روبوتات",
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "Robotics MENA",
+          "title": "The MENA robotics desk",
+          "body": "Every robot deployment, company, policy and event across the Middle East & North Africa. Verified, in English and Arabic."
+        }
+      ]
+    },
+    {
+      "id": "lc-ig-verify",
+      "platform": "instagram",
+      "format": "carousel",
+      "pillar": "explainer",
+      "lang": "en+ar",
+      "status": "draft",
+      "slot": "2026-11-15T11:30+04:00",
+      "text": "How we decide what goes in. ✅\n\nRobotics news is full of demos and promises. We only record what we can source: who deployed what, where, and when.\n\nكيف نتحقق: مصدر أصلي وتاريخ لكل سجل، ونسجّل التصحيحات علناً.\n\nOur editorial policy and corrections log: link in bio.\n\n#robotics #factcheck #mena #روبوتات",
+      "cards": [
+        {
+          "template": "list",
+          "size": "portrait",
+          "kicker": "Our rules",
+          "title": "How we verify",
+          "items": [
+            "**A primary source** for every record: the regulator, the operator or the company itself",
+            "**A date** on every claim",
+            "**Company claims labelled** as company-reported",
+            "**Corrections logged** in public on our editorial page",
+            "**Listing is free** and can't be bought"
+          ]
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Spotted something we missed?",
+          "body": "Send it with a source at roboticsmena.com/submit",
+          "handles": "@roboticsmena"
+        }
+      ]
+    },
+    {
+      "id": "lc-ig-expect",
+      "platform": "instagram",
+      "format": "carousel",
+      "pillar": "explainer",
+      "lang": "en+ar",
+      "status": "draft",
+      "slot": "2026-11-15T12:00+04:00",
+      "text": "What you'll get by following. 📅\n\nA weekly rhythm, built from our database of robots at work in the region.\n\nكل اثنين: خمس إشارات موثّقة عن الروبوتات في المنطقة، بالعربية والإنجليزية.\n\nFirst full brief: Monday.\n\n#robotics #dubai #riyadh #doha #cairo #روبوتات",
+      "cards": [
+        {
+          "template": "list",
+          "size": "portrait",
+          "kicker": "Every week",
+          "title": "What you'll see here",
+          "items": [
+            "**Monday:** 5 verified signals from across the region",
+            "**Deployment of the week:** a real robot doing a real job",
+            "**Data:** rankings and maps from our database",
+            "**Events:** GITEX, Big 5, LEAP and the robotics competitions",
+            "**In Arabic and English**"
+          ]
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Follow for the Monday brief",
+          "handles": "@roboticsmena"
+        }
+      ]
+    },
+    {
+      "id": "lc-x-hello",
+      "platform": "x",
+      "format": "post",
+      "pillar": "community",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-15T12:00+04:00",
+      "text": "Hello, X. We're Robotics MENA: the MENA robotics desk.\n\nVerified robot deployments, companies, policy and events across the Middle East & North Africa, in English and Arabic.\n\nLaunch thread tomorrow, 09:00 Gulf time.\n\nhttps://roboticsmena.com/?utm_source=x&utm_medium=social&utm_campaign=launch-2026",
+      "cards": [
+        {
+          "template": "cover",
+          "size": "landscape",
+          "kicker": "Hello",
+          "title": "The MENA robotics desk. **Verified.**"
+        }
+      ]
+    },
+    {
+      "id": "lc-li-gitex-preview",
+      "platform": "linkedin",
+      "format": "image",
+      "pillar": "community",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-12-03T08:30+04:00",
+      "text": "GITEX Global starts on Monday: 7 to 11 Dec at the Dubai Exhibition Centre, Expo City Dubai.\n\nWe'll cover the robots: what's being deployed in the region, by whom, and where. Not the keynote headlines.\n\n▸ A live thread on X every day\n▸ Stories from the floor on Instagram\n▸ A recap here on Monday 14 Dec\n\nShowing robotics or automation at GITEX? Tell us your hall and stand in the comments.\n\n#GITEX #GITEXGlobal #Robotics #Dubai",
+      "first_comment": "Our events calendar: https://roboticsmena.com/events?utm_source=linkedin&utm_medium=social&utm_campaign=launch-2026",
+      "cards": [
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Event · UAE · 7 to 11 Dec 2026",
+          "title": "GITEX Global: we're covering **the robots**",
+          "body": "Dubai Exhibition Centre, Expo City Dubai. Daily live coverage on X and Instagram.",
+          "foot": "Source: gitex.com"
+        }
+      ],
+      "sources": [
+        {
+          "name": "GITEX Global",
+          "url": "https://www.gitex.com/gitex-global-2026"
+        }
+      ]
+    },
+    {
+      "id": "lc-x-gitex-preview",
+      "platform": "x",
+      "format": "post",
+      "pillar": "community",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-12-03T17:00+04:00",
+      "text": "🇦🇪 GITEX Global runs 7 to 11 Dec at Expo City Dubai. We'll run one live thread a day on the robots: who's deploying what in the region.\n\nExhibiting robotics or automation? Reply with your hall and stand.",
+      "sources": [
+        {
+          "name": "GITEX Global",
+          "url": "https://www.gitex.com/gitex-global-2026"
+        }
+      ]
+    },
+    {
+      "id": "lc-ig-uae-numbers",
+      "platform": "instagram",
+      "format": "carousel",
+      "pillar": "data",
+      "lang": "en+ar",
+      "status": "draft",
+      "slot": "2026-12-05T12:00+04:00",
+      "refresh": "Recompute the UAE company and deployment counts from data/*.json when this is copied into week 49, and re-render.",
+      "text": "UAE robotics before GITEX, in four numbers. 📊\n\nWhat we'll be checking against on the show floor next week.\n\nالروبوتات في الإمارات قبل جيتكس، في أربعة أرقام.\n\nFollow for daily GITEX coverage from Monday.\n\n#GITEX #dubai #uae #robotics #روبوتات",
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "Before GITEX",
+          "title": "UAE robotics in **4 numbers**"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "Companies",
+          "value": "83",
+          "label": "robotics companies based in or listed under the UAE in our database",
+          "foot": "Source: roboticsmena.com, 14 Nov 2026"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "Deployments",
+          "value": "26",
+          "label": "verified robot deployments in the UAE, the most in the region",
+          "foot": "Source: roboticsmena.com, 14 Nov 2026"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "On Dubai roads",
+          "value": "160+",
+          "label": "self-driving vehicles registered in Dubai",
+          "foot": "Source: RTA via Emirates 24|7"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "The target",
+          "value": "200,000",
+          "label": "robots across services, logistics and industry by 2032",
+          "foot": "Source: roboticsmena.com/policy"
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Daily GITEX coverage from Monday",
+          "handles": "@roboticsmena"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database"
+        },
+        {
+          "name": "Emirates 24|7",
+          "url": "https://www.emirates247.com/uae/dubai-has-160-self-driving-vehicles-on-its-roads-and-is-targeting-4000-by-2030/7226"
+        }
+      ]
+    },
+    {
+      "id": "lc-x-gitex-eve",
+      "platform": "x",
+      "format": "post",
+      "pillar": "community",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-12-06T18:00+04:00",
+      "text": "GITEX Global starts tomorrow. Our live thread goes up at 10:00 Gulf time each day: robots doing real work, who makes them, and where in MENA they're deployed.\n\nTurn on notifications for @roboticsmena if you're not going."
+    },
+    {
+      "id": "lc-rd-gitex-megathread",
+      "platform": "reddit",
+      "format": "text",
+      "pillar": "community",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-12-06T18:00+04:00",
+      "subreddit": "RoboticsMENA",
+      "title": "GITEX Global 2026 (7 to 11 Dec, Dubai): megathread for robots, stands and questions",
+      "text": "GITEX Global runs 7 to 11 Dec at the Dubai Exhibition Centre in Expo City Dubai.\n\nUse this thread for:\n\n- robots and automation worth seeing (hall and stand if you know them)\n- photos and short clips from the floor (please don't post people's faces without asking them)\n- questions for exhibitors that we can ask in person\n\nI'll add what we see each day in the comments. Sticky until the show ends."
+    },
+    {
+      "id": "lc-x-gitex-live",
+      "platform": "x",
+      "format": "thread",
+      "pillar": "community",
+      "lang": "en",
+      "status": "draft",
+      "template": true,
+      "slot": "2026-12-07T10:00+04:00",
+      "media_note": "Use the same template every day from 7 to 11 Dec: change Day [[N]], add one reply per robot with a photo or a 5 to 10 second clip you filmed. Pin the day's thread. Only name a deployment or customer if the exhibitor told you it's live and public, and say so.",
+      "thread": [
+        "GITEX Global, day [[N]]: the robots we saw doing real work, and who makes them. Live thread, updated through the day 🧵",
+        "[[Robot name]] by [[maker]] ([[country]]), [[hall/stand]].\n\nWhat it does: [[one line]].\nIn MENA: [[where it's deployed, per the exhibitor, or 'not deployed in the region yet']].",
+        "That's day [[N]]. Every robot we can verify goes into our database with a source: https://roboticsmena.com/database?utm_source=x&utm_medium=social&utm_campaign=launch-2026"
+      ]
+    },
+    {
+      "id": "lc-ig-gitex-stories",
+      "platform": "instagram",
+      "format": "story",
+      "pillar": "community",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-12-07T09:30+04:00",
+      "media_note": "Five story frames, one per day (Day 1 to Day 5). Post the day's frame first each morning, then your photos and clips from the floor on top. Add each to a GITEX highlight.",
+      "cards": [
+        {
+          "template": "stat",
+          "size": "story",
+          "theme": "dark",
+          "page": "",
+          "kicker": "Live from GITEX Global",
+          "value": "Day 1",
+          "label": "The robots on the floor at Expo City Dubai",
+          "foot": "7 Dec 2026 · Follow @roboticsmena"
+        },
+        {
+          "template": "stat",
+          "size": "story",
+          "theme": "dark",
+          "page": "",
+          "kicker": "Live from GITEX Global",
+          "value": "Day 2",
+          "label": "The robots on the floor at Expo City Dubai",
+          "foot": "8 Dec 2026 · Follow @roboticsmena"
+        },
+        {
+          "template": "stat",
+          "size": "story",
+          "theme": "dark",
+          "page": "",
+          "kicker": "Live from GITEX Global",
+          "value": "Day 3",
+          "label": "The robots on the floor at Expo City Dubai",
+          "foot": "9 Dec 2026 · Follow @roboticsmena"
+        },
+        {
+          "template": "stat",
+          "size": "story",
+          "theme": "dark",
+          "page": "",
+          "kicker": "Live from GITEX Global",
+          "value": "Day 4",
+          "label": "The robots on the floor at Expo City Dubai",
+          "foot": "10 Dec 2026 · Follow @roboticsmena"
+        },
+        {
+          "template": "stat",
+          "size": "story",
+          "theme": "dark",
+          "page": "",
+          "kicker": "Live from GITEX Global",
+          "value": "Day 5",
+          "label": "The robots on the floor at Expo City Dubai",
+          "foot": "11 Dec 2026 · Follow @roboticsmena"
+        }
+      ]
+    },
+    {
+      "id": "lc-li-gitex-recap",
+      "platform": "linkedin",
+      "format": "text",
+      "pillar": "community",
+      "lang": "en",
+      "status": "draft",
+      "template": true,
+      "slot": "2026-12-14T08:30+04:00",
+      "media_note": "The Creator turns this into a document carousel from your notes and photos once GITEX ends. Send them by Sunday 13 Dec.",
+      "text": "GITEX Global 2026: the robots that mattered for the Middle East & North Africa.\n\nFive days at Expo City Dubai. What we saw that's actually being deployed in the region:\n\n▸ [[robot, maker: where it's deployed]]\n▸ [[robot, maker: where it's deployed]]\n▸ [[robot, maker: where it's deployed]]\n\nThe pattern: [[one sentence]].\n\nEvery deployment we could verify is now in our database, with its source. Link in the comments.\n\n#GITEX #Robotics #UAE #MENA",
+      "first_comment": "The database: https://roboticsmena.com/database?utm_source=linkedin&utm_medium=social&utm_campaign=launch-2026"
+    }
+  ]
+}

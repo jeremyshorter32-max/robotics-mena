@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Renders branded social images with Playwright (the same Chromium the report PDFs use).
-//   node scripts/social-cards.cjs week <YYYY-wNN> [postId…]   cards for a week's queue → social/cards/<week>/
+//   node scripts/social-cards.cjs week <YYYY-wNN|campaign> [postId…]   cards for a week or campaign → social/cards/<name>/
 //        <postId>-<n>.png for every card; LinkedIn document posts also get <postId>.pdf; Instagram reels <postId>.mp4
 //   node scripts/social-cards.cjs banners                      profile headers and highlight covers → brand/social/
 // Card spec (in the queue): { template: cover|signal|stat|bars|list|cta, size: portrait|square|story|landscape,
@@ -115,7 +115,7 @@ function makeReel(pngs, out, secs = 3) {
 }
 
 async function renderWeek(week, only) {
-  const q = JSON.parse(fs.readFileSync(path.join(ROOT, 'social/queue', week + '.json'), 'utf8'));
+  const q = JSON.parse(fs.readFileSync(path.join(ROOT, 'social', /^\d{4}-w\d{2}$/.test(week) ? 'queue' : 'campaigns', week + '.json'), 'utf8'));
   const dir = path.join(ROOT, 'social/cards', week);
   fs.mkdirSync(dir, { recursive: true });
   const browser = await chromium.launch();

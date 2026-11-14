@@ -97,6 +97,9 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
   `social/accounts.json` marked live. All four links checked by the owner on the live site. Reddit links to the site are allowed
   from 12 Dec 2026. Reddit blocks automated reads from cloud sessions, so the owner gives the Reddit counts too.
 - [ ] **Owner:** turn on two-factor authentication on all accounts; link Instagram to a Facebook Page (needed for Buffer).
+- [x] **Launch campaign and Content Library** (14 Nov 2026): `social/campaigns/launch-2026.{json,md}` (profile-filling posts for 15 Nov,
+  launch-week outreach kit, GITEX run-up, live templates and story frames, recap, checklist and shot list) and the Content Library page
+  (https://claude.ai/artifact/VLvATizyqX8AuX4t3WtmM2, `scripts/social-library.mjs`) for viewing, copying and downloading every post.
 - [ ] **Owner: scheduler.** Connect LinkedIn, Instagram and X to Buffer (free plan) or use the native schedulers.
 - [x] **Admin portal redeployed** (14 Nov 2026, version 85664a39): it now accepts `social/` pull requests; still behind Access, secrets kept.
 - [x] **Scheduled tasks switched on** (14 Nov 2026): "weekly social run" Sun 15:37 Gulf (Analyst → Strategist → Creator, after the 13:43 brief)

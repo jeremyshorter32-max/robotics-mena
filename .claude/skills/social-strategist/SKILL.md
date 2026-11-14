@@ -21,6 +21,9 @@ the Community agent engages; the owner approves and posts. Read `social/STRATEGY
 - Fresh records: `data/deployments.json`, `companies.json` and `events.json` entries with `added` in the last 14 days, and the open `scan/...` pull request.
 - Events in the next 21 days: `data/events.json` (`start` from tomorrow to 21 days ahead).
 - `social/accounts.json` (which accounts are live) and `social/cadence.json` (the slots).
+- **Campaigns:** `social/campaigns/*.json` and their `.md` plans. Every campaign post whose `slot` falls in the coming week must be copied into
+  the week's queue with the same `id`, and counts as filling that slot. Recompute any numbers named in a post's `refresh` note from `data/*.json`
+  first. Keep `"template": true` posts as templates. Follow the campaign's `.md` plan for that week (events, owner tasks, reply targets).
 
 ## 2. Write `social/plans/<week>.md`
 Keep it under a page. Sections:
