@@ -138,9 +138,13 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
   Aerosmart, Airscope, Drone Film Arabia, RoboMecs, Lebotics, Clear Sky Drones, KAT, Robotics Corner labelled
   "Company-reported" on the site; Aerial Solutions removed (military drone JV, Defense News 2022).
 
-- [ ] **VORTEXINFO in Qatar.** Checked 13 Nov 2026 in English and Chinese: no Qatar office, registration, deployment,
-  MoU or client found; record stays UAE-only. Still to check: parent Hanjia Design's annual-report subsidiary list,
-  the QFC public register and Qatar's commercial registry.
+- [x] **VORTEXINFO in Qatar** (checked 14 Nov 2026): no Qatar entity, office or registration. Parent 汉嘉数智 (SZ 300746, owns 51%)
+  lists ~91 subsidiaries, all in mainland China, and no overseas assets (2025 annual report, 2026 half-year report). Its 2025
+  report only claims "high-level recognition" in Qatar and Abu Dhabi, naming no client. Qatar MOCI trade names and the QSTP
+  directory: nothing. Record stays UAE-only.
+- [ ] **VORTEXINFO, two registries to check by hand** (they block automated access): the QFC public register
+  (https://eservices.qfc.qa/QFCPublicRegister/PublicRegister.aspx) and Qatar's Single Window CR inquiry (https://sw.gov.qa);
+  search "Vortex", "Vortexinfo", "Hanjia", "Fortai", "فورتكس". Optional; only changes the record if something turns up.
 - [x] **Link deployments to policy programmes** (13 Nov 2026): `scripts/link-programmes.mjs` suggests and applies links;
   wired into the scanner PR, the research-report and weekly-brief skills. The 16 unlinked deployments were reviewed:
   none is clearly driven by a profiled programme, so none was linked.
