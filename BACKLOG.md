@@ -56,6 +56,13 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   Organization/WebSite structured data with the database search on the home page.
 - [ ] **Search engines, owner side:** create the Google Search Console property ("URL prefix", https://roboticsmena.com/)
   and paste the verification code to Claude (or verify by DNS), submit the sitemap; then import into Bing Webmaster Tools.
+- [x] **Categorization monitor v1** (14 Nov 2026): read-only scheduled checker for Fortinet, Symantec and McAfee
+  (`scripts/catmon/`, `.github/workflows/categorization-monitor.yml`, README "Categorization monitor"). Live check: all
+  three currently report "needs manual check" (Fortinet robots.txt disallows the lookup; Symantec needs its own POST after
+  a human check; McAfee returns 403), so it alerts once per vendor to check by hand.
+- [ ] **Categorization monitor, open decisions:** add Playwright as a devDependency so the Symantec browser check can run on
+  Actions (owner to approve; it would still meet the human check); confirm FormSubmit delivers the monitor's emails (first
+  alert will tell); add Palo Alto / Talos / Check Point once a read-only, no-login lookup exists.
 - [ ] **Web-filter submissions:** pack and Claude-in-Chrome prompt in `docs/launch/web-filter-submissions.md`; log ticket
   numbers here when done.
 - [x] **Password turned off** (13 Nov 2026): the deploy builds with `PUBLIC_LAUNCH=true`; every other open item was deferred

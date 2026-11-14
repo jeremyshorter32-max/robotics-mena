@@ -1,0 +1,53 @@
+name: Categorization monitor
+
+# Read-only check of how web-filter vendors categorise roboticsmena.com (see README, "Categorization monitor").
+# Runs every 12 hours; each vendor's own cadence (config.json) decides whether it is checked on a given run.
+# Results are committed to monitoring/categorization/ (the Deploy site action ignores that folder).
+on:
+  schedule:
+    - cron: '17 5,17 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Check every vendor now, ignoring the cadence'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: categorization-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Make sure the issue label exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh label create categorization --color 26246E --description "Web-filter categorization monitor" --force || true
+      - name: Check the vendors
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          CATMON_WEBHOOK_URL: ${{ secrets.CATMON_WEBHOOK_URL }}
+          CATMON_FORMSUBMIT_ENDPOINT: ${{ secrets.CATMON_FORMSUBMIT_ENDPOINT }}
+        run: node scripts/catmon/run.mjs ${{ inputs.force && '--force' || '' }} --summary "$GITHUB_STEP_SUMMARY"
+      - name: Save the history
+        run: |
+          if git diff --quiet -- monitoring/ && [ -z "$(git status --porcelain monitoring/)" ]; then echo "Nothing checked this run."; exit 0; fi
+          git config user.name "robotics-mena-monitor[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add monitoring/
+          git commit -m "Categorization monitor: $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0; sleep $((i * 5)); done
+          echo "::error::Could not push the monitoring history"; exit 1

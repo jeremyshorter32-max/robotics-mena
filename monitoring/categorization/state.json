@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "note": "Latest state per vendor|domain, written by scripts/catmon. Seeded with the manual baseline of 14 Nov 2026 so the first automatic result that matches it does not trigger an alert.",
+  "entries": {
+    "fortinet|roboticsmena.com": {
+      "raw_status": "Category: Not Rated",
+      "normalized_status": "UNCATEGORIZED",
+      "current_category": null,
+      "target_category": "Information Technology",
+      "target_reached": false,
+      "note": "baseline (manual check after submission, 14 Nov 2026)",
+      "notified_signature": "UNCATEGORIZED|",
+      "last_informative": { "status": "UNCATEGORIZED", "category": null, "at": "2026-11-14T00:00:00.000Z" }
+    },
+    "symantec|roboticsmena.com": {
+      "raw_status": "This URL has not yet been rated; a pending related submission already exists",
+      "normalized_status": "PENDING",
+      "current_category": null,
+      "target_category": "Technology/Internet",
+      "target_reached": false,
+      "note": "baseline (manual check after submission, 14 Nov 2026)",
+      "notified_signature": "PENDING|",
+      "last_informative": { "status": "PENDING", "category": null, "at": "2026-11-14T00:00:00.000Z" }
+    },
+    "mcafee|roboticsmena.com": {
+      "raw_status": "Uncategorized URL · Uncategorized · Unverified",
+      "normalized_status": "UNCATEGORIZED",
+      "current_category": null,
+      "target_category": "Technical Information",
+      "target_reached": false,
+      "note": "baseline (manual check after submission, 14 Nov 2026)",
+      "notified_signature": "UNCATEGORIZED|",
+      "last_informative": { "status": "UNCATEGORIZED", "category": null, "at": "2026-11-14T00:00:00.000Z" }
+    }
+  }
+}

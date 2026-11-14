@@ -6,7 +6,9 @@
   "scripts": {
     "build": "DEV=1 ./scripts/build-site.sh",
     "scan": "node scripts/scan.mjs",
-    "validate": "node scripts/validate-data.mjs"
+    "validate": "node scripts/validate-data.mjs",
+    "test": "node --test test/catmon/*.test.mjs",
+    "catmon": "node scripts/catmon/run.mjs"
   },
   "engines": {
     "node": ">=20"

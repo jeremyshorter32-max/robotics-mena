@@ -3,6 +3,8 @@ name: Deploy site
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'monitoring/**'   # categorization monitor history; not part of the site
   workflow_dispatch:
 
 permissions:

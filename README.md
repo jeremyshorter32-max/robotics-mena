@@ -61,6 +61,77 @@ Setup (one time): add an `ANTHROPIC_API_KEY` repository secret, and allow Action
 Test the merge step offline: `node scripts/scan.mjs --from-file findings.json`.
 If Claude declines a request for policy reasons, the scanner uses the API's server-side fallback (`fallbacks: "default"`).
 
+## Categorization monitor (web filters)
+
+Work networks block sites their web filter hasn't categorised. After roboticsmena.com was submitted to the filter vendors
+(see `docs/launch/web-filter-submissions.md`), `.github/workflows/categorization-monitor.yml` re-checks each vendor's
+**public** lookup and alerts when the status changes, above all when the site reaches the target category.
+
+**It is read-only.** It never submits or re-submits a categorization, never fills in or submits a form, never clicks
+anything and never tries to solve a captcha or "verify you're human" check. Plain requests are GET only; in the
+headless-browser strategy every non-GET request the vendor page tries to make is aborted. It honours `robots.txt`
+(including `Crawl-delay`), sends a descriptive User-Agent, makes one lookup per vendor per domain per run, and retries
+transient failures (network errors, 429, 5xx) with jittered back-off. `test/catmon/safety.test.mjs` enforces this.
+
+**What to expect from the three v1 vendors (checked live on 14 Nov 2026):**
+
+| Vendor | Automatic result today | Why |
+|---|---|---|
+| Fortinet | `BLOCKED`, needs manual check | its `robots.txt` has `Disallow: /*?*`, which covers the `webfilter?q=` lookup |
+| Symantec / Broadcom | `BLOCKED`, needs manual check | the result is only fetched by the page's own POST after a human check; the read-only guard never sends it |
+| McAfee / Trellix | `BLOCKED`, needs manual check | the site (and its `robots.txt`) answers automated clients with 403 |
+
+So for now the monitor mainly records a dated history and, after `blockedAlertAfter` (3) blocked runs in a row, sends
+**one** "please check manually" alert per vendor with the link. If a vendor opens up (robots rule removed, bot wall
+dropped, a public read-only endpoint appears), the parsers already read the result pages and the alerts work as designed.
+
+**Running it**
+
+```
+npm run catmon -- --check-once      # check every enabled vendor now and print; saves nothing, sends nothing
+npm run catmon -- --status          # latest saved state + manual-check links (no network)
+npm run catmon                      # what the schedule runs: due vendors only, saves history, notifies on change
+npm run catmon -- --force --vendor fortinet --domain roboticsmena.com,example.org
+npm test                            # parser, robots, agent and safety tests (node:test, no extra dependencies)
+```
+
+Behind the sandbox proxy, Node's `fetch` needs `NODE_USE_ENV_PROXY=1` (not needed on GitHub Actions).
+
+**Statuses.** Each check is saved as a `CheckResult` (`vendor, domain, checked_at, raw_status, normalized_status,
+current_category, target_category, target_reached, note`), where `normalized_status` is `UNCATEGORIZED`, `PENDING`,
+`CATEGORIZED`, `BLOCKED` or `ERROR`. A parser that meets an unfamiliar page returns `ERROR` ("layout may have changed")
+rather than guessing a category, and a parser crash only affects its own vendor.
+
+**Files**
+- `monitoring/categorization/config.json`: domains, vendors, cadence and notification channels (validated on load).
+- `monitoring/categorization/history.jsonl`: every check, append-only. `state.json`: latest state per vendor and domain,
+  seeded with the manual baseline of 14 Nov 2026 so a matching first result does not alert.
+- `scripts/catmon/`: `run.mjs` (CLI), `agent.mjs` (the run), `decide.mjs` (cadence, change detection, de-duplication),
+  `fetch.mjs`, `robots.mjs`, `notify.mjs`, `store.mjs`, `vendors/<id>.mjs` (one parser per vendor).
+
+**Schedule.** The workflow runs at 05:17 and 17:17 UTC. Each vendor is checked when due: Fortinet every 12 h, the others
+every 24 h, and weekly once the target category is reached (`afterTargetCadenceHours`; set it to `null` to stop).
+Results are committed to `monitoring/`, which the Deploy site action ignores.
+
+**Notifications** (only on a change, never twice for the same state; an alert that no channel delivered is retried next run):
+- email to contact@roboticsmena.com through the FormSubmit relay the site's forms already use (no secret). After switching
+  FormSubmit to its random alias, put the alias URL in the `CATMON_FORMSUBMIT_ENDPOINT` secret;
+- a GitHub issue labelled `categorization` (GitHub emails you about it);
+- optionally Slack or any incoming webhook: add the URL as the `CATMON_WEBHOOK_URL` secret.
+
+**Adding a vendor**
+1. Add an entry to `vendors` in `config.json`: `id`, `name`, `enabled`, `module`, `strategy` (`http` or `browser`),
+   `lookupUrl` and `manualCheckUrl` (use `{domain}`), `targetCategory`, `cadenceHours`, `afterTargetCadenceHours`,
+   `requiresLogin`, `notes`.
+2. Add `scripts/catmon/vendors/<id>.mjs` exporting `parse(html, { domain, target })` that returns
+   `{ raw_status, normalized_status, current_category, note }`, register it in `vendors/index.mjs`, and add fixtures and
+   tests under `test/catmon/`. No other code changes are needed.
+
+Palo Alto, Cisco Talos and Check Point are listed but disabled: their lookups need a login, which v1 does not support
+(the config refuses `enabled: true` with `requiresLogin: true`). Zscaler and Netskope are customer-only and left out.
+The `browser` strategy uses Playwright if it is installed; it is not a project dependency, so on GitHub Actions the
+Symantec check records "browser strategy unavailable" (same outcome as the human check it would meet anyway).
+
 ## To do
 
 - [ ] **Switch on the weekly scanner.**
