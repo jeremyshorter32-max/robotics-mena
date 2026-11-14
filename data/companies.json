@@ -5234,5 +5234,33 @@
     },
     "image_url": "https://gausium.com/wp-content/uploads/2022/04/1_Gaussian-Robotics_Inc-Robotics_The-Big-5-Saudi_compressed-scaled.jpeg",
     "image_page": "https://gausium.com/news/gaussian-robotics-and-inc-robotics-co-exhibit-at-the-big-5-saudi/"
+  },
+  {
+    "id": "wurth-professional-solutions",
+    "name": "Würth Professional Solutions",
+    "name_ar": "فورت للحلول المهنية",
+    "country": "AE",
+    "category": "integrator",
+    "secondary": "humanoid",
+    "stage": "corp",
+    "summary": "Würth Group company supplying construction and industrial solutions in the GCC; its Red Link plan brings humanoid robots and robot dogs to construction sites, starting with Dubai's robotic villa.",
+    "summary_ar": "شركة تابعة لمجموعة فورت تقدّم حلولاً للبناء والصناعة في دول الخليج؛ وتُدخل خطتها «ريد لينك» الروبوتات البشرية والكلاب الآلية إلى مواقع البناء، بدءاً من الفيلا الروبوتية في دبي.",
+    "website": "https://www.wuerth-professional.com/",
+    "source": "Gulf Construction",
+    "source_url": "https://gulfconstructiononline.com/Article/389715/",
+    "added": "2026-11-09",
+    "hq": "DE",
+    "hq_city": "Künzelsau",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "Named partner of Dubai Municipality's robotic villa challenge (January 2026) and a technology and execution partner of the 04 ConTech Valley hub at Expo City Dubai, where it plans to test humanoid robots; it is also setting up a regional engineering and innovation hub in Dubai.",
+      "ar": "شريك معلَن في تحدي الفيلا الروبوتية الذي أطلقته بلدية دبي (يناير 2026)، وشريك تقني وتنفيذي في مركز وادي التقنيات الإنشائية 04 بمدينة إكسبو دبي حيث يعتزم اختبار الروبوتات البشرية، كما يؤسس مركزاً إقليمياً للهندسة والابتكار في دبي."
+    },
+    "mena_source": "Economy Middle East",
+    "mena_source_url": "https://economymiddleeast.com/news/wurth-professional-solutions-partners-with-dubai-municipality-and-zacua-ventures-to-drive-humanoid-robotics-at-expo-city-contech-innovation-hub/",
+    "mena_date": "2026-01-29",
+    "logo": "/media/logos/wurth-professional-solutions.png"
   }
 ]
