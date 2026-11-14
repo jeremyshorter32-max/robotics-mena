@@ -96,7 +96,8 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
   Reddit u/RoboticsMENA and r/RoboticsMENA. Upload the banners. Tell Claude the final handles and the LinkedIn page URL (for `social/accounts.json`).
 - [ ] **Owner: scheduler.** Connect LinkedIn, Instagram and X to Buffer (free plan) or use the native schedulers.
 - [ ] **Redeploy the admin portal** so it accepts `social/` pull requests (`admin/src/inbox.mjs` changed 14 Nov): `npx wrangler deploy` in `admin/`.
-- [ ] **Switch on the scheduled tasks:** Sunday social run (Analyst → Strategist → Creator) after the brief, and the weekday Community run.
+- [x] **Scheduled tasks switched on** (14 Nov 2026): "weekly social run" Sun 15:37 Gulf (Analyst → Strategist → Creator, after the 13:43 brief)
+  and "daily social engagement" Mon–Fri 07:13 Gulf. Both stop with "Social system not merged into main yet" until this work is on main.
 - [ ] **Site links once the handles exist:** footer icons, `sameAs` in the Organization structured data, the newsletter footer, "Follow us" in the brief pop-up.
 - [ ] **Owner decisions:** paid boost ($5 to $10 a day on LinkedIn or Instagram); X Premium for reply reach; filming at GITEX (7 Dec) and Big 5 (23 Nov).
 - [ ] **Later: portal Social tab** (today's posts with copy buttons and images, a follower-count form) to replace the GitHub issue and PR body.
