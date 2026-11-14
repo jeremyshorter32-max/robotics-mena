@@ -82,8 +82,8 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   record-level preview, approve/send back/reject, agent runs, leads; 16 tests). Deployed 14 Nov to
   https://roboticsmena-admin.broken-heart-81fa.workers.dev behind Cloudflare Access (one-time PIN, owner
   contact@roboticsmena.com) with the GitHub App `robotics-mena-admin` connected (14 Nov). Requests, Backlog and Metrics tabs added
-  14 Nov; research runs as Claude scheduled tasks (zero cost, no API key). Owner to do: GoatCounter read-only key and
-  the Sheet stats key for the Metrics tab. Later: Google sign-in, rename the workers.dev subdomain; the weekly scanner must be switched on to fill the inbox.
+  14 Nov; research runs as Claude scheduled tasks (zero cost, no API key). GoatCounter read-only key connected 14 Nov.
+  Owner to do: the Sheet stats key for the waitlist panel. Later: Google sign-in, rename the workers.dev subdomain; the weekly scanner must be switched on to fill the inbox.
 
 
 ## Content and research
