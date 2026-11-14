@@ -81,8 +81,9 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   $0 on free plans; roles owner / editor / viewer for future collaborators. Phase 1 built 14 Nov (`admin/`: approvals inbox with
   record-level preview, approve/send back/reject, agent runs, leads; 16 tests). Deployed 14 Nov to
   https://roboticsmena-admin.broken-heart-81fa.workers.dev behind Cloudflare Access (one-time PIN, owner
-  contact@roboticsmena.com) with the GitHub App `robotics-mena-admin` connected (14 Nov). Later: Google sign-in, rename the
-  workers.dev subdomain, phase 2; the weekly scanner must be switched on to fill the inbox.
+  contact@roboticsmena.com) with the GitHub App `robotics-mena-admin` connected (14 Nov). Requests, Backlog and Metrics tabs added
+  14 Nov; research runs as Claude scheduled tasks (zero cost, no API key). Owner to do: GoatCounter read-only key and
+  the Sheet stats key for the Metrics tab. Later: Google sign-in, rename the workers.dev subdomain; the weekly scanner must be switched on to fill the inbox.
 
 
 ## Content and research

@@ -5,6 +5,8 @@
 // Signs you in as DEV_AUTH_EMAIL (default owner@localhost) with DEV_ROLE (default owner). Localhost only.
 import http from 'node:http';
 import { handle } from './src/index.mjs';
+import fs from 'node:fs';
+const local = p => { try { return fs.readFileSync(new URL('../' + p, import.meta.url), 'utf8'); } catch { return null; } };
 
 const args = process.argv.slice(2), port = Number(args[args.indexOf('--port') + 1]) || 8788, demo = args.includes('--demo');
 const email = process.env.DEV_AUTH_EMAIL || 'owner@localhost';
@@ -27,10 +29,15 @@ function demoGitHub() {
       if (p.startsWith('/repos/{repo}/pulls?')) return prs;
       if ((m = /^\/repos\/\{repo\}\/pulls\/(\d+)$/.exec(p))) return prs.find(x => x.number === +m[1]);
       if ((m = /^\/repos\/\{repo\}\/pulls\/(\d+)\/files/.exec(p))) return files[m[1]];
+      if (p === '/repos/{repo}/contents/BACKLOG.md?ref=main') return { sha: 'demo', content: Buffer.from(local('BACKLOG.md') || '', 'utf8').toString('base64') };
+      if (p.startsWith('/repos/{repo}/issues?labels=agent-request')) return [
+        { number: 21, title: '[Check a lead] Aramco robotics lab in Dhahran', state: 'open', labels: [{ name: 'agent-request' }, { name: 'request:lead' }, { name: 'in-progress' }], comments: 1, created_at: '2026-11-15T09:00:00Z', html_url: '#' },
+        { number: 20, title: '[Research report] Saudi humanoid deployments', state: 'open', labels: [{ name: 'agent-request' }, { name: 'request:research' }], comments: 0, created_at: '2026-11-15T08:00:00Z', html_url: '#' },
+        { number: 18, title: '[Fix or update a record] KUKA HQ city', state: 'closed', labels: [{ name: 'agent-request' }, { name: 'request:fix' }], comments: 2, created_at: '2026-11-13T08:00:00Z', closed_at: '2026-11-14T08:00:00Z', html_url: '#' }];
       if (p.startsWith('/repos/{repo}/actions/runs')) return { workflow_runs: [{ id: 1, name: 'Deploy site', event: 'push', status: 'completed', conclusion: 'success', created_at: '2026-11-16T05:10:00Z', html_url: '#' }, { id: 2, name: 'Categorization monitor', event: 'schedule', status: 'completed', conclusion: 'success', created_at: '2026-11-16T05:17:00Z', html_url: '#' }, { id: 3, name: 'Weekly database scan', event: 'workflow_dispatch', status: 'in_progress', conclusion: null, created_at: '2026-11-16T06:00:00Z', html_url: '#' }] };
       throw Object.assign(new Error('not in demo'), { status: 404 }); },
     post: async p => (p === '/repos/{repo}/issues' ? { number: 101, html_url: '#' } : {}), put: async () => ({ merged: true, sha: 'demo' }), patch: ok,
-    fileAt: async (path, ref) => (path === 'data/companies.json' ? JSON.stringify(ref === 'b' ? base : head) : '[]'),
+    fileAt: async (path, ref) => (path === 'data/companies.json' && ref !== 'main' ? JSON.stringify(ref === 'b' ? base : head) : ref === 'main' ? local(path) : '[]'),
   };
 }
 

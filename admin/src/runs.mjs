@@ -2,7 +2,8 @@
 // validated inputs and a minimum role.
 
 export const WORKFLOWS = {
-  'scan.yml': { name: 'Weekly database scan', role: 'owner', inputs: { days: v => { const n = Number(v ?? 7); if (!Number.isInteger(n) || n < 1 || n > 60) throw new Error('days must be 1–60'); return String(n); } } },
+  // The API-key scanner (scan.yml) is deliberately not listed: research runs as Claude scheduled tasks on the owner's
+  // subscription instead (see admin/README.md, "Claude tasks"), so nothing here can incur API charges.
   'categorization-monitor.yml': { name: 'Categorization monitor', role: 'owner', inputs: { force: v => (v ? 'true' : 'false') } },
 };
 

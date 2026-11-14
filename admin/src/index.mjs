@@ -3,7 +3,11 @@
 import { identify, requireRole, checkWrite } from './auth.mjs';
 import { makeGitHub } from './github.mjs';
 import { listInbox, getItem, approve, sendBack, reject } from './inbox.mjs';
-import { listRuns, startRun, addLead, WORKFLOWS } from './runs.mjs';
+import { listRuns, startRun, WORKFLOWS } from './runs.mjs';
+import { getBacklog, setDone, addItem } from './backlog.mjs';
+import { getMetrics } from './metrics.mjs';
+import { createRequest, listRequests, KINDS } from './requests.mjs';
+import { requireRole as need } from './auth.mjs';
 import { page } from './ui.mjs';
 
 const SECURITY = {
@@ -34,7 +38,8 @@ export async function handle(request, env, deps = {}) {
     const gh = deps.github || makeGitHub(env, deps.ghDeps);
     let m;
 
-    if (method === 'GET' && path === '/api/me') return json({ email: user.email, role: user.role, repo: env.GITHUB_REPO, workflows: Object.entries(WORKFLOWS).map(([file, w]) => ({ file, name: w.name, role: w.role })) });
+    if (method === 'GET' && path === '/api/me') return json({ email: user.email, role: user.role, repo: env.GITHUB_REPO, workflows: Object.entries(WORKFLOWS).map(([file, w]) => ({ file, name: w.name, role: w.role })),
+      requestKinds: Object.entries(KINDS).map(([id, k]) => ({ id, label: k.label, hint: k.hint, role: k.role })) });
     if (method === 'GET' && path === '/api/inbox') return json(await listInbox(gh));
     if (method === 'GET' && (m = /^\/api\/inbox\/(\d+)$/.exec(path))) return json(await getItem(gh, prNumber(m[1])));
     if (method === 'POST' && (m = /^\/api\/inbox\/(\d+)\/(approve|send-back|reject)$/.exec(path))) {
@@ -53,11 +58,18 @@ export async function handle(request, env, deps = {}) {
       console.log(JSON.stringify({ audit: 'run', workflow: m[1], by: user.email, at: new Date().toISOString() }));
       return json(out);
     }
-    if (method === 'POST' && path === '/api/leads') {
-      requireRole(user, 'editor');
-      const b = await body(request);
-      return json(await addLead(gh, { url: b.url, note: b.note, email: user.email }));
+    if (method === 'GET' && path === '/api/requests') return json(await listRequests(gh));
+    if (method === 'POST' && (path === '/api/requests' || path === '/api/leads')) {
+      const b = await body(request), kind = path === '/api/leads' ? 'lead' : b.kind;
+      need(user, (KINDS[kind] || { role: 'owner' }).role);
+      const out = await createRequest(gh, { kind, text: b.text ?? b.note, link: b.link ?? b.url, email: user.email });
+      console.log(JSON.stringify({ audit: 'request', kind, issue: out.number, by: user.email, at: new Date().toISOString() }));
+      return json(out);
     }
+    if (method === 'GET' && path === '/api/backlog') return json(await getBacklog(gh));
+    if (method === 'POST' && path === '/api/backlog/done') { requireRole(user, 'editor'); const b = await body(request); return json(await setDone(gh, { id: String(b.id || ''), done: !!b.done, email: user.email })); }
+    if (method === 'POST' && path === '/api/backlog/add') { requireRole(user, 'editor'); const b = await body(request); return json(await addItem(gh, { section: String(b.section || ''), text: b.text, email: user.email })); }
+    if (method === 'GET' && path === '/api/metrics') return json(await getMetrics(gh, env, deps.metrics));
     return json({ error: 'Not found' }, 404);
   } catch (e) {
     const status = e.status || 500;

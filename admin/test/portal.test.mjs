@@ -56,20 +56,20 @@ test('the portal can never publish code: non-agent branches and non-data files a
 
 test('viewers cannot approve, send back, reject, run agents or add leads', async () => {
   const t = await as('viewer@example.com');
-  for (const [p, b] of [['/api/inbox/7/approve', { head_sha: 'abc123' }], ['/api/inbox/7/send-back', { note: 'x' }], ['/api/inbox/7/reject', {}], ['/api/runs/scan.yml', { days: 7 }], ['/api/leads', { url: 'https://example.com' }]]) {
+  for (const [p, b] of [['/api/inbox/7/approve', { head_sha: 'abc123' }], ['/api/inbox/7/send-back', { note: 'x' }], ['/api/inbox/7/reject', {}], ['/api/runs/categorization-monitor.yml', { force: true }], ['/api/leads', { url: 'https://example.com' }]]) {
     const { res, github } = await call(req(p, { method: 'POST', token: t, body: b }));
     assert.equal(res.status, 403, p); assert.equal(github.calls.filter(c => c[0] !== 'GET').length, 0, p);
   }
 });
 
-test('only the owner can start agent runs, and only allow-listed workflows with validated inputs', async () => {
+test('only the owner can start runs, only allow-listed workflows, and the paid API scanner is not one of them', async () => {
   const e = await as('editor@example.com'), o = await as('owner@example.com');
-  assert.equal((await call(req('/api/runs/scan.yml', { method: 'POST', token: e, body: { days: 7 } }))).res.status, 403);
-  const ok = await call(req('/api/runs/scan.yml', { method: 'POST', token: o, body: { days: 14 } }));
+  assert.equal((await call(req('/api/runs/categorization-monitor.yml', { method: 'POST', token: e, body: { force: true } }))).res.status, 403);
+  const ok = await call(req('/api/runs/categorization-monitor.yml', { method: 'POST', token: o, body: { force: true } }));
   assert.equal(ok.res.status, 200);
-  assert.deepEqual(ok.github.calls.find(c => c[0] === 'POST')[2], { ref: 'main', inputs: { days: '14' } });
+  assert.deepEqual(ok.github.calls.find(c => c[0] === 'POST')[2], { ref: 'main', inputs: { force: 'true' } });
+  assert.equal((await call(req('/api/runs/scan.yml', { method: 'POST', token: o, body: { days: 7 } }))).res.status, 404, 'API-key scanner cannot be started (zero-cost rule)');
   assert.equal((await call(req('/api/runs/deploy.yml', { method: 'POST', token: o, body: {} }))).res.status, 404);
-  assert.equal((await call(req('/api/runs/scan.yml', { method: 'POST', token: o, body: { days: 999 } }))).res.status, 400);
 });
 
 test('cross-site and non-JSON writes are refused before anything happens', async () => {
@@ -88,7 +88,7 @@ test('send back needs a note; reject comments and closes; leads become labelled 
   const rj = await call(req('/api/inbox/7/reject', { method: 'POST', token: t, body: { note: 'Duplicate' } }));
   assert.deepEqual(rj.github.calls.find(c => c[0] === 'PATCH')[2], { state: 'closed' });
   const lead = await call(req('/api/leads', { method: 'POST', token: t, body: { url: 'https://example.com/news', note: 'New AMR plant in Jeddah' } }));
-  assert.equal(lead.body.number, 99); assert.deepEqual(lead.github.calls.find(c => c[1] === '/repos/{repo}/issues')[2].labels, ['lead']);
+  assert.equal(lead.body.number, 99); assert.deepEqual(lead.github.calls.find(c => c[1] === '/repos/{repo}/issues')[2].labels, ['agent-request', 'request:lead']);
   assert.equal((await call(req('/api/leads', { method: 'POST', token: t, body: { url: 'javascript:alert(1)' } }))).res.status, 400);
 });
 

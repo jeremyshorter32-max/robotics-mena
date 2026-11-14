@@ -48,3 +48,11 @@ Edit the code in Apps Script, then **Deploy → Manage deployments → (pencil) 
 - The Sheet is private to your Google account; the web app can only append rows.
 - Free Google accounts allow tens of thousands of web app calls a day, far more than the site needs.
 - If the Sheet URL is empty in `data/site.json`, the site simply skips this step and keeps emailing.
+
+## Admin portal metrics (optional)
+
+The admin portal's Metrics tab can show sign-up counts (never names or emails). After pasting the latest `Code.gs`:
+1. Project Settings → Script properties → add `STATS_KEY` with a long random value.
+2. Deploy → Manage deployments → edit the web app → Version: **New version** → Deploy (the URL stays the same).
+3. In Cloudflare (Workers → roboticsmena-admin → Settings → Variables and secrets) add the secrets `SHEET_STATS_URL`
+   (the `/exec` URL) and `SHEET_STATS_KEY` (the same random value).

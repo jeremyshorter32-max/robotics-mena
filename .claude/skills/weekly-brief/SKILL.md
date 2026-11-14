@@ -49,6 +49,19 @@ without the owner's explicit approval in this conversation.**
    the subject line, the five headlines with their countries, the suggested X posts (author + one line each), what else changed in the database, and:
    "Reply **approve** to send on Monday at 07:00 Gulf time, tell me what to change, or say **rerun**."
 
+## 1b. Scheduled run (admin portal mode)
+When this runs as the Sunday Claude scheduled task (nobody to reply in chat):
+- If the repository is not in the session, use `add_repo` (owner `jeremyshorter32-max`, repo `robotics-mena`, access `push`),
+  clone it as the tool says, then `register_repo_root`.
+- Do steps 1–7 and 9. Skip step 8 unless the Kit key is configured (a Kit 401/403 means it isn't; carry on without it).
+- Instead of step 10, open a pull request from the brief branch with the REST API:
+  `gh api repos/jeremyshorter32-max/robotics-mena/pulls -f title="Weekly brief: week <NN>" -f head=brief/<YYYY>-w<NN> -f base=main -f body=...`
+  The body has the subject line, the five headlines with countries and sources, suggested X posts, and database changes.
+  Only `data/`, `media/` and `newsletter/` may change, so the owner can approve it in the admin portal.
+- **Approval = the owner merging that pull request in the portal.** Never merge it yourself. Suggested X posts stay
+  `"suggested"` in the pull request; the owner approves posts by asking in a request or a chat.
+- Change requests arrive as portal requests of kind `brief`; the `agent-requests` task applies them to the same branch.
+
 ## 2. Owner replies
 - **Change request**: make the change, rerun steps 7–10 (the draft in Kit is updated in place) and send
   the new preview. Repeat until approved.

@@ -1,16 +1,44 @@
-# Robotics MENA admin portal (phase 1)
+# Robotics MENA admin portal
 
-A private web app for approving and publishing what the agents produce, starting agent runs and adding leads.
+A private web app for approvals, requests to Claude, the development backlog and site metrics.
+Live at https://roboticsmena-admin.broken-heart-81fa.workers.dev (Cloudflare Access sign-in).
 Plan and later phases: `docs/admin-portal/PLAN.md`.
 
-## What phase 1 does
+## What it does
 
-- **Approvals:** lists the open pull requests the agents create (`scan/`, `brief/`, `report/`, `data/` branches). Each
-  item shows, record by record, what would be added, changed or removed in `data/*.json`, with sources linked.
-  **Approve and publish** (squash-merges; the site deploys in ~2 minutes), **Send back** with a note (comment +
-  `changes-requested` label) or **Reject** (comment + close).
-- **Agent runs:** recent GitHub Actions runs; the owner can start the weekly scan (days back) or a web-filter check.
-- **Add a lead:** a link + note becomes a GitHub issue labelled `lead` for the next research run.
+- **Approvals:** open pull requests from Claude's work (`scan/`, `brief/`, `report/`, `data/` branches) with a
+  record-by-record preview; **Approve and publish** (squash-merge; the site deploys in ~2 minutes), **Send back** with a
+  note, or **Reject**.
+- **Requests:** ask Claude for work (check a lead, fix a record, change the brief, a focused scan, a research report, a site
+  change). Each becomes a GitHub issue labelled `agent-request`; Claude's daily task does it and opens a pull request.
+- **Backlog:** `BACKLOG.md` by section; tick items off or add new ones (each change is a commit on main).
+- **Metrics:** site traffic (GoatCounter), waitlist sign-ups (Google Sheet, counts only), database growth per week and the
+  latest additions, the brief on the site, the last deploy, and web-filter status.
+- **Runs:** GitHub Actions runs (deploys, the web-filter monitor).
+
+## Zero running cost: Claude tasks instead of an API key
+
+Research and writing run as **Claude scheduled tasks** on the owner's Claude subscription (each run is a fresh cloud
+session in the "Robotics MENA" environment), not through the paid Anthropic API. `scan.yml` (API key) stays switched off
+and cannot be started from the portal.
+
+| Task | When (Gulf time) | Skill it follows | Output |
+|---|---|---|---|
+| Weekly database scan | Saturday 11:17 | `.claude/skills/weekly-scan` | `scan/<date>` pull request |
+| Weekly brief draft | Sunday 13:43 | `.claude/skills/weekly-brief` (portal mode) | `brief/<year>-w<NN>` pull request |
+| Portal requests | daily 21:23 | `.claude/skills/agent-requests` | one pull request per request |
+
+They use the subscription's usage allowance (a busy day may make a run wait; nothing is charged). Manage them in the
+Claude app (scheduled tasks), or ask Claude to change the times. Everything else is on free plans: Cloudflare (portal and
+sign-in), GitHub (repo, Actions, Pages), GoatCounter, Google Sheets.
+
+## Connecting metrics (optional, owner)
+
+- **Traffic:** in GoatCounter (https://roboticsmena.goatcounter.com) open *Settings → API*, create a key with only
+  **Read statistics**, and add it in Cloudflare (*Workers → roboticsmena-admin → Settings → Variables and secrets*) as the
+  secret `GOATCOUNTER_TOKEN`. Paste it there yourself; it never needs to pass through chat.
+- **Waitlist:** see `integrations/google-sheets/README.md`, "Admin portal metrics" (adds `SHEET_STATS_URL` and
+  `SHEET_STATS_KEY`).
 
 ## Security model
 
@@ -71,5 +99,5 @@ nothing else depends on them.
 ## Files
 
 `src/index.mjs` (routes), `src/auth.mjs` (Access token check, roles, cross-site guard), `src/github.mjs` (GitHub App
-token, API), `src/inbox.mjs` (approvals and record-level diff), `src/runs.mjs` (allowed workflows, leads),
+token, API), `src/inbox.mjs` (approvals and record-level diff), `src/runs.mjs` (allowed workflows), `src/requests.mjs`, `src/backlog.mjs`, `src/metrics.mjs`,
 `src/ui.mjs` (the page), `wrangler.toml` (Worker config, no secrets), `dev-server.mjs` (local preview), `test/`.

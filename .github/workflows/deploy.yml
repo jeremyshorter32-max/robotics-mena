@@ -7,6 +7,9 @@ on:
       - 'monitoring/**'   # categorization monitor history; not part of the site
       - 'admin/**'        # admin portal (deployed to Cloudflare separately)
       - 'docs/**'
+      - 'BACKLOG.md'
+      - '.claude/**'
+      - 'test/**'
   workflow_dispatch:
 
 permissions:
