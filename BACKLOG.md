@@ -115,6 +115,9 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
   into `main` (it predates the Nov 2026 rebrand: re-run `node scripts/report-pdf.cjs dubai-robot-villa` after merging) (it becomes the home-page Spotlight). Before launching, check for news since 9 Nov 2026 (consortium
   names, start date) and update the text if anything changed.
 
+- [ ] **Week 46 extras: keep or remove?** The brief was rolled back to week 45 on 14 Nov, but four week-46 deployments
+  (d59 Vodafone Qatar–AgiBot, d60 NAVER Riyadh, d61 Egypt robotic surgery, d62 X-GEN–Pudu, still flagged new) and the Saudi
+  AV-rule source update stayed live. Owner to decide.
 - [ ] **Defence and weapons drone makers: include or not?** Ten were found and held back pending an editorial
   decision (add Marakeb Technologies: UAE Navy combat-system partner, also civilian USVs; listed for now): EDGE Group (UAE), SR2Vector, United Defense Company, INTRA Defense Technologies, Haris Unmanned
   Systems, SERB Advanced Industries (Saudi Arabia), Barzan Holdings (Qatar), Shield AI (US), Exail (France),
