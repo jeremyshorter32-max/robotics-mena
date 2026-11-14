@@ -26,7 +26,7 @@ function fakeNet(pages) {
 }
 const mockNotifier = (delivered = true) => { const sent = []; return { sent, send: async n => { sent.push(n); return [{ channel: 'mock', ok: delivered, delivered }]; } }; };
 const clock = start => { let t = Date.parse(start); return { now: () => new Date(t), advance: h => { t += h * 3600e3; } }; };
-const baseline = () => memoryStore(JSON.parse(fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), '../../monitoring/categorization/state.json'), 'utf8')));
+const baseline = () => memoryStore(JSON.parse(fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), 'fixtures/state-baseline.json'), 'utf8')));
 const pagesAt = (forti, syma, mcaf) => ({
   'www.fortiguard.com': { status: 200, body: F(forti) }, 'sitereview.bluecoat.com': { status: 200, body: F(syma) }, 'sitelookup.mcafee.com': { status: 200, body: F(mcaf) },
 });

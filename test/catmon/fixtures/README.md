@@ -10,3 +10,6 @@
 When a vendor's real result page is seen (e.g. saved from a manual check with "Save page as…"), add it here as
 `<vendor>-<state>.captured.html` and extend `test/catmon/parsers.test.mjs`. If the reconstructed fixtures drift from
 reality, the parser will report `ERROR` ("layout may have changed") rather than a wrong category.
+
+`state-baseline.json` is a frozen copy of the seeded `monitoring/categorization/state.json` (14 Nov 2026 baseline), so the
+tests do not depend on whatever the live monitor has written since.
