@@ -918,6 +918,9 @@ class Component extends DCLogic {
         };
       })(),
       privHref: '/privacy', privLbl: ar ? 'سياسة الخصوصية' : 'Privacy policy',
+      // Our social profiles, from data/site.json "social" (footer bottom bar).
+      socials: Object.entries((window.RM_DATA.site || {}).social || {}).map(([k, href]) => { const l = { linkedin: 'LinkedIn', x: 'X', instagram: 'Instagram', reddit: 'Reddit' }[k] || k;
+        return { l, href, aria: ar ? 'روبوتات الشرق الأوسط وشمال أفريقيا على ' + l : 'Robotics MENA on ' + l }; }),
       edT: ar ? {
         crumb: 'السياسة التحريرية', title: 'السياسة التحريرية والتصحيحات', sub: 'كيف نبحث ونتحقق ونصحّح ما ننشره.',
         sections: [

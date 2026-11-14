@@ -41,7 +41,7 @@ for (const file of fs.readdirSync(path.join(root, 'pages')).filter(f => f.endsWi
   pagesOut.push(url);
   // Structured data for search engines on the home page: the site's name, logo and its database search.
   if (slug === 'index') html = html.replace('</head>', () => `<script type="application/ld+json">${safeJson({ '@context': 'https://schema.org', '@graph': [
-    { '@type': 'Organization', '@id': SITE + '/#org', name: 'Robotics MENA', alternateName: 'روبوتات الشرق الأوسط وشمال أفريقيا', url: SITE + '/', logo: SITE + '/brand/icons/icon-512.png', email: (data.site || {}).contact_email || 'contact@roboticsmena.com' },
+    { '@type': 'Organization', '@id': SITE + '/#org', name: 'Robotics MENA', alternateName: 'روبوتات الشرق الأوسط وشمال أفريقيا', url: SITE + '/', logo: SITE + '/brand/icons/icon-512.png', email: (data.site || {}).contact_email || 'contact@roboticsmena.com', sameAs: Object.values((data.site || {}).social || {}) },
     { '@type': 'WebSite', '@id': SITE + '/#website', name: 'Robotics MENA', url: SITE + '/', inLanguage: ['en', 'ar'], publisher: { '@id': SITE + '/#org' },
       potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: SITE + '/database?q={search_term_string}' }, 'query-input': 'required name=search_term_string' } }] })}</script>\n</head>`);
   html = html.replace(cfg[0], () => `<script>window.RM_PAGE=${safeJson(JSON.parse(cfg[1]))};window.RM_DATA=${safeJson(data)};</script>`)

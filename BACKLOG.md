@@ -99,7 +99,9 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
 - [x] **Admin portal redeployed** (14 Nov 2026, version 85664a39): it now accepts `social/` pull requests; still behind Access, secrets kept.
 - [x] **Scheduled tasks switched on** (14 Nov 2026): "weekly social run" Sun 15:37 Gulf (Analyst → Strategist → Creator, after the 13:43 brief)
   and "daily social engagement" Mon–Fri 07:13 Gulf. Both stop with "Social system not merged into main yet" until this work is on main.
-- [ ] **Site links once the handles exist:** footer icons, `sameAs` in the Organization structured data, the newsletter footer, "Follow us" in the brief pop-up.
+- [x] **Site links** (14 Nov 2026): LinkedIn, X, Instagram and Reddit in every page's footer, `sameAs` in the Organization structured data and
+  the newsletter footer, all from `data/site.json` "social".
+- [ ] **Later:** "Follow us" on the brief pop-up's thank-you step.
 - [ ] **Owner decisions:** paid boost ($5 to $10 a day on LinkedIn or Instagram); X Premium for reply reach; filming at GITEX (7 Dec) and Big 5 (23 Nov).
 - [ ] **Later: portal Social tab** (today's posts with copy buttons and images, a follower-count form) to replace the GitHub issue and PR body.
 - [ ] **Later: auto-publishing via APIs** (LinkedIn Community Management API app review, the Instagram Graph API via a Meta app, the X API paid tier, the Reddit API),

@@ -24,6 +24,9 @@ const read = n => JSON.parse(fs.readFileSync(path.join(ROOT, 'data', n + '.json'
 const readOpt = n => { try { return read(n); } catch { return {}; } };
 
 const C = { indigo: '#26246E', paper: '#F3F1EC', ink: '#111216', muted: '#5E6070', line: '#DEDBD3', tint: '#E3E2F2' };
+// "Follow us" line from data/site.json "social".
+const SOCIAL_NAMES = { linkedin: 'LinkedIn', x: 'X', instagram: 'Instagram', reddit: 'Reddit' };
+const FOLLOW = (() => { const s = Object.entries(readOpt('site').social || {}); return s.length ? 'Follow us on ' + s.map(([k, u]) => `<a href="${u}" style="color:${C.indigo}">${SOCIAL_NAMES[k] || k}</a>`).join(' · ') + '.<br><br>' : ''; })();
 const SANS = "'IBM Plex Sans',Helvetica,Arial,sans-serif", MONO = "'IBM Plex Mono',Menlo,Consolas,monospace";
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const D = iso => new Date(iso + 'T12:00:00Z');
@@ -99,7 +102,7 @@ export function build() {
   ${map ? rule + map : ''}
   ${ev ? rule + ev : ''}
   ${rule}
-  ${sec(`<div style="font:400 13px/1.55 ${SANS};color:${C.muted}">Every item links to its primary source. Spotted an error or have a tip? Reply to this email or write to contact@roboticsmena.com.<br><br>You are receiving this because you signed up at <a href="${SITE}" style="color:${C.indigo}">roboticsmena.com</a>. We never sell or share your email. <a href="${SITE}/privacy" style="color:${C.indigo}">Privacy policy</a></div>`)}
+  ${sec(`<div style="font:400 13px/1.55 ${SANS};color:${C.muted}">Every item links to its primary source. Spotted an error or have a tip? Reply to this email or write to contact@roboticsmena.com.<br><br>${FOLLOW}You are receiving this because you signed up at <a href="${SITE}" style="color:${C.indigo}">roboticsmena.com</a>. We never sell or share your email. <a href="${SITE}/privacy" style="color:${C.indigo}">Privacy policy</a></div>`)}
 </table></td></tr></table>`;
 
   fs.mkdirSync(OUT, { recursive: true });
