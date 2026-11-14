@@ -1,6 +1,6 @@
 {
   "_note": "Handles and status of each account. The owner creates the accounts (social/SETUP.md); agents read this file. 'created' sets Reddit's no-links period (4 weeks).",
-  "linkedin":  { "status": "live", "handle": "Robotics MENA", "url": "", "tag": "@Robotics MENA" },
+  "linkedin":  { "status": "live", "handle": "Robotics MENA", "url": "https://www.linkedin.com/company/roboticsmena/", "tag": "@Robotics MENA" },
   "instagram": { "status": "live", "handle": "roboticsmena", "url": "https://www.instagram.com/roboticsmena/", "created": "2026-11-14" },
   "x":         { "status": "live", "handle": "roboticsmena", "url": "https://x.com/roboticsmena", "created": "2026-11-14" },
   "reddit":    { "status": "live", "handle": "u/roboticsmena", "url": "https://www.reddit.com/user/roboticsmena/", "created": "2026-11-14",

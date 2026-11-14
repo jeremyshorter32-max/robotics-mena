@@ -94,7 +94,7 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
   (`brand/social/`), four agent skills, portal approval for `social/` branches, tests. First week (2026-w47, 22 posts) written and rendered.
 - [x] **Accounts created** (14 Nov 2026): Instagram @roboticsmena, X @roboticsmena, Reddit u/roboticsmena and r/RoboticsMENA (`social/accounts.json`).
   Reddit links to the site are allowed from 12 Dec 2026. Reddit blocks automated reads from cloud sessions, so the owner gives the Reddit counts too.
-- [ ] **Owner:** send the LinkedIn page URL; turn on two-factor authentication on all accounts; link Instagram to a Facebook Page (needed for Buffer).
+- [ ] **Owner:** turn on two-factor authentication on all accounts; link Instagram to a Facebook Page (needed for Buffer).
 - [ ] **Owner: scheduler.** Connect LinkedIn, Instagram and X to Buffer (free plan) or use the native schedulers.
 - [x] **Admin portal redeployed** (14 Nov 2026, version 85664a39): it now accepts `social/` pull requests; still behind Access, secrets kept.
 - [x] **Scheduled tasks switched on** (14 Nov 2026): "weekly social run" Sun 15:37 Gulf (Analyst → Strategist → Creator, after the 13:43 brief)
