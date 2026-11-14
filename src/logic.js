@@ -169,6 +169,8 @@ class Component extends DCLogic {
   FORM_URL = (window.RM_DATA.site || {}).form_url || (window.RM_DATA.site || {}).signup_url || '';
   SHEET_URL = (window.RM_DATA.site || {}).sheet_url || '';
   CONTACT = (window.RM_DATA.site || {}).contact_email || 'contact@roboticsmena.com';
+  // Official social profiles (from social/accounts.json via the assembler); each gets its platform icon.
+  SOCIAL = (window.RM_DATA.social || []).map(x => ({ ...x, style: `--ico:url(/media/social/${x.id}.svg)` }));
   // "Request removal" link shown beside every image credit: an email to the editors with the image, its credit and
   // the page filled in, so a rights holder can ask for a photo to come down in one step.
   rmvHref(src, credit) {
@@ -265,7 +267,7 @@ class Component extends DCLogic {
       searchPh: 'Search companies, deployments, events, strategies', tryLbl: 'Try', evType: 'Type', stripTitle: 'Join the waitlist to get these five signals every Monday', stripSub: 'Five signals, one primary source each.', noResults: 'Nothing matches yet. Try a city, a company or a robot type.',
       stCo: 'Companies tracked', stDep: 'Deployments mapped', stCt: 'Countries covered', stEv: 'Events, next 90 days', updated: 'Updated',
       grpCo: 'Companies', grpDep: 'Deployments', grpEv: 'Events', grpStr: 'Strategies',
-      s1n: 'The Brief', s1: 'This week’s five signals', s1sub: 'What moved in MENA robotics this week, and why it matters to anyone building, using or following the field.', s1week: 'Week 45 · 2 – 8 Nov 2026', takeaway: 'Takeaway', source: 'Source',
+      followUs: 'Follow Robotics MENA', s1n: 'The Brief', s1: 'This week’s five signals', s1sub: 'What moved in MENA robotics this week, and why it matters to anyone building, using or following the field.', s1week: 'Week 45 · 2 – 8 Nov 2026', takeaway: 'Takeaway', source: 'Source',
       s2n: 'Deployments', s2: 'Deployments map', s2sub: 'Every robot we can verify, working on a real site in the region.',
       fCountry: 'Country', fSector: 'Sector', fType: 'Robot type', all: 'All', clearAll: 'Clear filters',
       panelLatest: 'Latest deployments & entrants', panelRecord: 'Deployment record', showing: '{a} of {b}',
@@ -321,7 +323,7 @@ class Component extends DCLogic {
       searchPh: 'ابحث في الشركات وعمليات النشر والفعاليات والاستراتيجيات', tryLbl: 'جرّب', evType: 'النوع', stripTitle: 'انضم إلى قائمة الانتظار لتصلك هذه الإشارات الخمس كل اثنين', stripSub: 'خمس إشارات، ولكل منها مصدر أصلي.', noResults: 'لا نتائج بعد. جرّب اسم مدينة أو شركة أو نوع روبوت.',
       stCo: 'شركة مرصودة', stDep: 'عملية نشر على الخريطة', stCt: 'دولة مشمولة', stEv: 'فعالية خلال 90 يوماً', updated: 'حُدّث في',
       grpCo: 'الشركات', grpDep: 'عمليات النشر', grpEv: 'الفعاليات', grpStr: 'الاستراتيجيات',
-      s1n: 'الموجز', s1: 'خمس إشارات هذا الأسبوع', s1sub: 'ما الذي تغيّر في قطاع الروبوتات بالمنطقة هذا الأسبوع، ولماذا يهمّ كل من يبني الروبوتات أو يستخدمها أو يتابعها.', s1week: 'الأسبوع 45 · 2 – 8 نوفمبر 2026', takeaway: 'الخلاصة', source: 'المصدر',
+      followUs: 'تابِعونا', s1n: 'الموجز', s1: 'خمس إشارات هذا الأسبوع', s1sub: 'ما الذي تغيّر في قطاع الروبوتات بالمنطقة هذا الأسبوع، ولماذا يهمّ كل من يبني الروبوتات أو يستخدمها أو يتابعها.', s1week: 'الأسبوع 45 · 2 – 8 نوفمبر 2026', takeaway: 'الخلاصة', source: 'المصدر',
       s2n: 'عمليات النشر', s2: 'خريطة عمليات النشر', s2sub: 'كل روبوت أمكننا التحقق منه، يعمل في موقع حقيقي في المنطقة.',
       fCountry: 'الدولة', fSector: 'القطاع', fType: 'نوع الروبوت', all: 'الكل', clearAll: 'مسح الفلاتر',
       panelLatest: 'أحدث عمليات النشر والوافدين الجدد', panelRecord: 'سجل عملية النشر', showing: '{a} من {b}',
@@ -1015,6 +1017,7 @@ class Component extends DCLogic {
       onPTabKey: e => { const i = this.PCC.indexOf(pcK); let d = 0; if (e.key === 'ArrowRight') d = ar ? -1 : 1; if (e.key === 'ArrowLeft') d = ar ? 1 : -1; if (!d) return; e.preventDefault(); const k = this.PCC[(i + d + this.PCC.length) % this.PCC.length]; this.setState({ pc: k }, () => { const b = document.getElementById('rm-ptab-' + k); b && b.focus(); }); },
       tabs, fields, tabId: 'rm-tab-' + S.tab,
       onTabKey: e => { const i = tabKeys.indexOf(S.tab), rtl = ar; let d = 0; if (e.key === 'ArrowRight') d = rtl ? -1 : 1; if (e.key === 'ArrowLeft') d = rtl ? 1 : -1; if (!d) return; e.preventDefault(); const k = tabKeys[(i + d + 3) % 3]; this.setState({ tab: k, submitted: false }, () => { const b = document.getElementById('rm-tab-' + k); b && b.focus(); }); },
+      social: this.SOCIAL, hasSocial: this.SOCIAL.length > 0,
       submitted: S.submitted, notSubmitted: !S.submitted, submitErr: !!S.submitErr, contact: this.CONTACT, contactHref: 'mailto:' + this.CONTACT,
       submitForm: e => { e.preventDefault(); const fd = {}; try { new FormData(e.target).forEach((v, k) => { if (String(v).trim()) fd[k] = String(v).trim(); }); } catch (e2) {} const kind = { company: 'Company', deployment: 'Deployment', event: 'Event' }[S.tab] || S.tab; const reply = Object.keys(fd).find(k => /email/.test(k)); this.setState({ submitted: true, submitErr: false }); this.post(this.FORM_URL, { _subject: 'New submission · ' + kind + (fd[Object.keys(fd)[0]] ? ' · ' + fd[Object.keys(fd)[0]] : ''), ...(reply ? { _replyto: fd[reply] } : {}), submission_type: kind, ...fd, page: location.href, language: lang }, 'submission').then(ok => { if (!ok) this.setState({ submitErr: true }); }); }, resetForm: () => this.setState({ submitted: false }),
       ...this.dbVals({ S, lang, ar, L, num, fdate, ccName, narrow, t })

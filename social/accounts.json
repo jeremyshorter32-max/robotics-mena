@@ -1,8 +1,27 @@
 {
   "_note": "Handles and status of each account. The owner creates the accounts (social/SETUP.md); agents read this file.",
-  "linkedin":  { "status": "live",    "handle": "Robotics MENA", "url": "", "tag": "@Robotics MENA" },
-  "instagram": { "status": "to-create", "handle": "roboticsmena", "url": "https://www.instagram.com/roboticsmena/" },
-  "x":         { "status": "to-create", "handle": "roboticsmena", "url": "https://x.com/roboticsmena" },
-  "reddit":    { "status": "to-create", "handle": "u/RoboticsMENA", "url": "https://www.reddit.com/user/RoboticsMENA/",
-                 "community": "r/RoboticsMENA", "community_url": "https://www.reddit.com/r/RoboticsMENA/" }
+  "linkedin": {
+    "status": "live",
+    "handle": "roboticsmena",
+    "url": "https://www.linkedin.com/company/roboticsmena/",
+    "tag": "@Robotics MENA"
+  },
+  "instagram": {
+    "status": "live",
+    "handle": "roboticsmena",
+    "url": "https://www.instagram.com/roboticsmena/"
+  },
+  "x": {
+    "status": "live",
+    "handle": "roboticsmena",
+    "url": "https://x.com/roboticsmena"
+  },
+  "reddit": {
+    "status": "live",
+    "handle": "u/RoboticsMENA",
+    "url": "https://www.reddit.com/user/RoboticsMENA/",
+    "community": "r/RoboticsMENA",
+    "community_url": "https://www.reddit.com/r/RoboticsMENA/"
+  },
+  "_confirmed": "2026-11-14: owner confirmed all accounts are created under @roboticsmena. LinkedIn URL assumed from the handle; confirm."
 }

@@ -9,6 +9,11 @@ const read = f => fs.readFileSync(path.join(root, f), 'utf8');
 const data = {};
 for (const name of ['companies', 'deployments', 'events', 'countries', 'brief', 'stories', 'site', 'policy', 'corrections']) data[name] = JSON.parse(read(`data/${name}.json`));
 data.builtAt = new Date().toISOString().slice(0, 10);
+// Official social profiles (social/accounts.json): only accounts marked live are linked from the site.
+const SOCIAL_NAMES = { linkedin: 'LinkedIn', x: 'X', instagram: 'Instagram', reddit: 'Reddit' };
+data.social = (() => { try { const acc = JSON.parse(read('social/accounts.json'));
+  return Object.keys(SOCIAL_NAMES).filter(k => acc[k] && acc[k].status === 'live' && /^https:\/\//.test(acc[k].community_url || acc[k].url || ''))
+    .map(k => ({ id: k, name: SOCIAL_NAMES[k], url: acc[k].community_url || acc[k].url })); } catch (e) { return []; } })();
 // Hand-picked X posts: only approved ones reach the site (SHOW_SUGGESTED=1 previews suggestions locally).
 data.xposts = (fs.existsSync(path.join(root, 'data/xposts.json')) ? JSON.parse(read('data/xposts.json')) : [])
   .filter(x => x.status === 'approved' || (process.env.SHOW_SUGGESTED === '1' && x.status === 'suggested'))
@@ -41,7 +46,7 @@ for (const file of fs.readdirSync(path.join(root, 'pages')).filter(f => f.endsWi
   pagesOut.push(url);
   // Structured data for search engines on the home page: the site's name, logo and its database search.
   if (slug === 'index') html = html.replace('</head>', () => `<script type="application/ld+json">${safeJson({ '@context': 'https://schema.org', '@graph': [
-    { '@type': 'Organization', '@id': SITE + '/#org', name: 'Robotics MENA', alternateName: 'روبوتات الشرق الأوسط وشمال أفريقيا', url: SITE + '/', logo: SITE + '/brand/icons/icon-512.png', email: (data.site || {}).contact_email || 'contact@roboticsmena.com' },
+    { '@type': 'Organization', '@id': SITE + '/#org', name: 'Robotics MENA', alternateName: 'روبوتات الشرق الأوسط وشمال أفريقيا', url: SITE + '/', logo: SITE + '/brand/icons/icon-512.png', email: (data.site || {}).contact_email || 'contact@roboticsmena.com', ...(data.social.length ? { sameAs: data.social.map(x => x.url) } : {}) },
     { '@type': 'WebSite', '@id': SITE + '/#website', name: 'Robotics MENA', url: SITE + '/', inLanguage: ['en', 'ar'], publisher: { '@id': SITE + '/#org' },
       potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: SITE + '/database?q={search_term_string}' }, 'query-input': 'required name=search_term_string' } }] })}</script>\n</head>`);
   html = html.replace(cfg[0], () => `<script>window.RM_PAGE=${safeJson(JSON.parse(cfg[1]))};window.RM_DATA=${safeJson(data)};</script>`)
