@@ -80,8 +80,9 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   address behind Cloudflare Access with Google sign-in (DNS stays at GoDaddy, so email on Microsoft 365 is untouched);
   $0 on free plans; roles owner / editor / viewer for future collaborators. Phase 1 built 14 Nov (`admin/`: approvals inbox with
   record-level preview, approve/send back/reject, agent runs, leads; 16 tests). Deployed 14 Nov to
-  https://roboticsmena-admin.broken-heart-81fa.workers.dev (refuses everything until Access is set up). Next: Access
-  application + AUD tag, ROLES, then the GitHub App (`admin/README.md`); the weekly scanner must be switched on to fill the inbox.
+  https://roboticsmena-admin.broken-heart-81fa.workers.dev behind Cloudflare Access (one-time PIN, owner
+  contact@roboticsmena.com) with the GitHub App `robotics-mena-admin` connected (14 Nov). Later: Google sign-in, rename the
+  workers.dev subdomain, phase 2; the weekly scanner must be switched on to fill the inbox.
 
 
 ## Content and research
