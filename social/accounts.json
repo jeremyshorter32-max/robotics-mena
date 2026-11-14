@@ -1,9 +1,31 @@
 {
-  "_note": "Handles and status of each account. The owner creates the accounts (social/SETUP.md); agents read this file. 'created' sets Reddit's no-links period (4 weeks).",
-  "linkedin":  { "status": "live", "handle": "Robotics MENA", "url": "https://www.linkedin.com/company/roboticsmena/", "tag": "@Robotics MENA" },
-  "instagram": { "status": "live", "handle": "roboticsmena", "url": "https://www.instagram.com/roboticsmena/", "created": "2026-11-14" },
-  "x":         { "status": "live", "handle": "roboticsmena", "url": "https://x.com/roboticsmena", "created": "2026-11-14" },
-  "reddit":    { "status": "live", "handle": "u/roboticsmena", "url": "https://www.reddit.com/user/roboticsmena/", "created": "2026-11-14",
-                 "links_allowed_from": "2026-12-12",
-                 "community": "r/RoboticsMENA", "community_url": "https://www.reddit.com/r/RoboticsMENA/" }
+  "_note": "Handles and status of each account. The owner creates the accounts (social/SETUP.md); agents read this file, and the site footer, structured data and newsletter link to every account marked live. 'created' sets Reddit's no-links period (4 weeks).",
+  "linkedin": {
+    "status": "live",
+    "handle": "roboticsmena",
+    "url": "https://www.linkedin.com/company/roboticsmena/",
+    "tag": "@Robotics MENA"
+  },
+  "instagram": {
+    "status": "live",
+    "handle": "roboticsmena",
+    "url": "https://www.instagram.com/roboticsmena/",
+    "created": "2026-11-14"
+  },
+  "x": {
+    "status": "live",
+    "handle": "roboticsmena",
+    "url": "https://x.com/roboticsmena",
+    "created": "2026-11-14"
+  },
+  "reddit": {
+    "status": "live",
+    "handle": "u/RoboticsMENA",
+    "url": "https://www.reddit.com/user/RoboticsMENA/",
+    "created": "2026-11-14",
+    "links_allowed_from": "2026-12-12",
+    "community": "r/RoboticsMENA",
+    "community_url": "https://www.reddit.com/r/RoboticsMENA/"
+  },
+  "_confirmed": "2026-11-14: owner confirmed all accounts are created under @roboticsmena and gave the LinkedIn page URL."
 }

@@ -54,8 +54,9 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 - [x] **Search engines, site side** (13 Nov 2026): IndexNow key (`static/<key>.txt`, key in `data/site.json`) and
   `scripts/indexnow.mjs`, run by the Deploy site action after every deploy (first ping: HTTP 202 for 10 URLs);
   Organization/WebSite structured data with the database search on the home page.
-- [ ] **Search engines, owner side:** create the Google Search Console property ("URL prefix", https://roboticsmena.com/)
-  and paste the verification code to Claude (or verify by DNS), submit the sitemap; then import into Bing Webmaster Tools.
+- [x] **Google Search Console** (14 Nov 2026): URL-prefix property https://roboticsmena.com/ verified with an HTML tag
+  (in `partials/head-brand.html`; keep it, removing it un-verifies the site) and `sitemap.xml` submitted.
+- [x] **Bing Webmaster Tools** (14 Nov 2026): imported from Google Search Console; IndexNow notifies Bing on every deploy.
 - [x] **Categorization monitor v1** (14 Nov 2026): read-only scheduled checker for Fortinet, Symantec and McAfee
   (`scripts/catmon/`, `.github/workflows/categorization-monitor.yml`, README "Categorization monitor"). Live check: all
   three currently report "needs manual check" (Fortinet robots.txt disallows the lookup; Symantec needs its own POST after
@@ -92,16 +93,16 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
 - [x] **Social system v1** (14 Nov 2026): strategy and milestones, voice, account set-up pack, cadence, the queue validator, posting pack and
   metrics (`scripts/social.mjs`), the card, PDF-carousel and Reel renderer (`scripts/social-cards.cjs`), profile banners and highlight covers
   (`brand/social/`), four agent skills, portal approval for `social/` branches, tests. First week (2026-w47, 22 posts) written and rendered.
-- [x] **Accounts created** (14 Nov 2026): Instagram @roboticsmena, X @roboticsmena, Reddit u/roboticsmena and r/RoboticsMENA (`social/accounts.json`).
-  Reddit links to the site are allowed from 12 Dec 2026. Reddit blocks automated reads from cloud sessions, so the owner gives the Reddit counts too.
+- [x] **Accounts created** (14 Nov 2026) under @roboticsmena: LinkedIn (linkedin.com/company/roboticsmena, confirmed by the owner), Instagram, X,
+  Reddit (u/RoboticsMENA, r/RoboticsMENA); `social/accounts.json` marked live. Reddit links to the site are allowed from 12 Dec 2026.
+  Reddit blocks automated reads from cloud sessions, so the owner gives the Reddit counts too.
 - [ ] **Owner:** turn on two-factor authentication on all accounts; link Instagram to a Facebook Page (needed for Buffer).
 - [ ] **Owner: scheduler.** Connect LinkedIn, Instagram and X to Buffer (free plan) or use the native schedulers.
 - [x] **Admin portal redeployed** (14 Nov 2026, version 85664a39): it now accepts `social/` pull requests; still behind Access, secrets kept.
 - [x] **Scheduled tasks switched on** (14 Nov 2026): "weekly social run" Sun 15:37 Gulf (Analyst → Strategist → Creator, after the 13:43 brief)
-  and "daily social engagement" Mon–Fri 07:13 Gulf. Both stop with "Social system not merged into main yet" until this work is on main.
-- [x] **Site links** (14 Nov 2026): LinkedIn, X, Instagram and Reddit in every page's footer, `sameAs` in the Organization structured data and
-  the newsletter footer, all from `data/site.json` "social".
-- [ ] **Later:** "Follow us" on the brief pop-up's thank-you step.
+  and "daily social engagement" Mon–Fri 07:13 Gulf.
+- [x] **Site links** (14 Nov 2026): "Follow Robotics MENA" row in every page footer and the brief pop-up's thank-you step,
+  `sameAs` in the Organization structured data, and the newsletter footer, all read from `social/accounts.json`.
 - [ ] **Owner decisions:** paid boost ($5 to $10 a day on LinkedIn or Instagram); X Premium for reply reach; filming at GITEX (7 Dec) and Big 5 (23 Nov).
 - [ ] **Later: portal Social tab** (today's posts with copy buttons and images, a follower-count form) to replace the GitHub issue and PR body.
 - [ ] **Later: auto-publishing via APIs** (LinkedIn Community Management API app review, the Instagram Graph API via a Meta app, the X API paid tier, the Reddit API),

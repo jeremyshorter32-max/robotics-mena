@@ -19,14 +19,19 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = path.join(ROOT, 'newsletter', 'out');
 const STATE = path.join(ROOT, 'newsletter', 'state.json');
 const SITE = 'https://roboticsmena.com';
+// Follow links (live accounts in social/accounts.json), shown in the email footer.
+const SOCIAL_LINE = (() => { try {
+  const acc = JSON.parse(fs.readFileSync(new URL('../social/accounts.json', import.meta.url), 'utf8'));
+  const names = { linkedin: 'LinkedIn', x: 'X', instagram: 'Instagram', reddit: 'Reddit' };
+  const links = Object.keys(names).filter(k => acc[k]?.status === 'live' && (acc[k].community_url || acc[k].url))
+    .map(k => `<a href="${acc[k].community_url || acc[k].url}" style="color:inherit">${names[k]}</a>`);
+  return links.length ? `<br>Follow us: ${links.join(' · ')}` : '';
+} catch { return ''; } })();
 const API = 'https://api.kit.com/v4';
 const read = n => JSON.parse(fs.readFileSync(path.join(ROOT, 'data', n + '.json'), 'utf8'));
 const readOpt = n => { try { return read(n); } catch { return {}; } };
 
 const C = { indigo: '#26246E', paper: '#F3F1EC', ink: '#111216', muted: '#5E6070', line: '#DEDBD3', tint: '#E3E2F2' };
-// "Follow us" line from data/site.json "social".
-const SOCIAL_NAMES = { linkedin: 'LinkedIn', x: 'X', instagram: 'Instagram', reddit: 'Reddit' };
-const FOLLOW = (() => { const s = Object.entries(readOpt('site').social || {}); return s.length ? 'Follow us on ' + s.map(([k, u]) => `<a href="${u}" style="color:${C.indigo}">${SOCIAL_NAMES[k] || k}</a>`).join(' · ') + '.<br><br>' : ''; })();
 const SANS = "'IBM Plex Sans',Helvetica,Arial,sans-serif", MONO = "'IBM Plex Mono',Menlo,Consolas,monospace";
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const D = iso => new Date(iso + 'T12:00:00Z');
@@ -102,7 +107,7 @@ export function build() {
   ${map ? rule + map : ''}
   ${ev ? rule + ev : ''}
   ${rule}
-  ${sec(`<div style="font:400 13px/1.55 ${SANS};color:${C.muted}">Every item links to its primary source. Spotted an error or have a tip? Reply to this email or write to contact@roboticsmena.com.<br><br>${FOLLOW}You are receiving this because you signed up at <a href="${SITE}" style="color:${C.indigo}">roboticsmena.com</a>. We never sell or share your email. <a href="${SITE}/privacy" style="color:${C.indigo}">Privacy policy</a></div>`)}
+  ${sec(`<div style="font:400 13px/1.55 ${SANS};color:${C.muted}">Every item links to its primary source. Spotted an error or have a tip? Reply to this email or write to contact@roboticsmena.com.${SOCIAL_LINE}<br><br>You are receiving this because you signed up at <a href="${SITE}" style="color:${C.indigo}">roboticsmena.com</a>. We never sell or share your email. <a href="${SITE}/privacy" style="color:${C.indigo}">Privacy policy</a></div>`)}
 </table></td></tr></table>`;
 
   fs.mkdirSync(OUT, { recursive: true });

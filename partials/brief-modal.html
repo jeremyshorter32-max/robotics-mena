@@ -21,6 +21,7 @@
       </sc-if>
       <sc-if value="{{ subscribed }}">
         <div role="status" style="display:flex;gap:12px;align-items:flex-start;padding:16px;border:1px solid var(--accent);background:var(--bg-raised)"><span aria-hidden="true" style="width:8px;height:8px;margin-top:8px;flex:none;transform:rotate(45deg);background:var(--accent)"></span><span style="font-size:15px;line-height:1.5">{{ t.nlDone }}</span></div>
+        <sc-if value="{{ hasSocial }}"><div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px"><span style="font-size:13px;color:var(--fg-subtle)">{{ t.followUs }}</span><sc-for list="{{ social }}" as="so"><a class="rm-soc" href="{{ so.url }}" target="_blank" rel="me noopener" style="{{ so.style }}"><i aria-hidden="true"></i>{{ so.name }}</a></sc-for></div></sc-if>
         <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px">
           <button type="button" onClick="{{ closeBrief }}" style="height:40px;padding:0 18px;background:transparent;border:1px solid var(--line-strong);border-radius:3px;font-size:14px;color:var(--fg);cursor:pointer">{{ t.briefBack }}</button>
           <button type="button" onClick="{{ resetSignup }}" style="height:40px;padding:0;background:transparent;border:0;font-size:14px;color:var(--accent-text);text-decoration:underline;text-underline-offset:3px;cursor:pointer">{{ t.briefReset }}</button>
