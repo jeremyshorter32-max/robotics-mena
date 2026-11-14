@@ -15,8 +15,8 @@
         "category": null,
         "at": "2026-11-14T00:00:00.000Z"
       },
-      "checked_at": "2026-11-14T05:57:28.336Z",
-      "consecutive_blocked": 1
+      "checked_at": "2026-11-14T13:39:58.548Z",
+      "consecutive_blocked": 2
     },
     "symantec|roboticsmena.com": {
       "raw_status": "browser strategy unavailable: Playwright is not installed",
@@ -31,8 +31,8 @@
         "category": null,
         "at": "2026-11-14T00:00:00.000Z"
       },
-      "checked_at": "2026-11-14T05:57:28.606Z",
-      "consecutive_blocked": 1
+      "checked_at": "2026-11-14T13:39:58.626Z",
+      "consecutive_blocked": 2
     },
     "mcafee|roboticsmena.com": {
       "raw_status": "not fetched (robots.txt)",
@@ -47,9 +47,9 @@
         "category": null,
         "at": "2026-11-14T00:00:00.000Z"
       },
-      "checked_at": "2026-11-14T05:57:28.799Z",
-      "consecutive_blocked": 1
+      "checked_at": "2026-11-14T13:39:58.981Z",
+      "consecutive_blocked": 2
     }
   },
-  "updated_at": "2026-11-14T05:57:28.800Z"
+  "updated_at": "2026-11-14T13:39:58.981Z"
 }
