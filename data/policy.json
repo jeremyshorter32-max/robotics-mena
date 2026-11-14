@@ -4163,6 +4163,26 @@
    {
     "area": "drone",
     "title": {
+     "en": "Suspension of all drone operations and permit applications",
+     "ar": "تعليق جميع عمليات الطائرات بدون طيار وطلبات التصاريح"
+    },
+    "body": {
+     "en": "Ministry of Transportation and Telecommunications (Civil Aviation)",
+     "ar": "وزارة المواصلات والاتصالات (الطيران المدني)"
+    },
+    "year": 2026,
+    "status": "suspended",
+    "summary": {
+     "en": "Since 28 March 2026 all drone activities and related approvals are suspended \"until announced\", including drone operations and the processing of permit applications. The official government portal still says so (page updated 30 Aug 2026).",
+     "ar": "منذ 28 مارس 2026 عُلّقت جميع أنشطة الطائرات بدون طيار والموافقات المتعلقة بها «حتى إشعار آخر»، بما في ذلك تشغيل المسيّرات ومعالجة طلبات التصاريح. ولا تزال البوابة الحكومية الرسمية تنصّ على ذلك (حُدّثت الصفحة في 30 أغسطس 2026)."
+    },
+    "url": "https://www.bahrain.bh/wps/portal/en/BNP/ExploreBahrain/Drones",
+    "source": "Bahrain.bh (government portal)",
+    "date": "2026-03-28"
+   },
+   {
+    "area": "drone",
+    "title": {
      "en": "Interior Ministry ban on all drone use “until further notice”",
      "ar": "حظر وزارة الداخلية استخدام الطائرات بدون طيار «حتى إشعار آخر»"
     },
@@ -4173,8 +4193,8 @@
     "year": 2026,
     "status": "in_force",
     "summary": {
-     "en": "Imposed on 28 March 2026 during Iranian drone and missile attacks, the ban covers all drone flying. We found no report of it being lifted, so commercial drone work is on hold even though the new aviation decree-law provides a licensing route.",
-     "ar": "فُرض الحظر في 28 مارس 2026 خلال الهجمات الإيرانية بالمسيّرات والصواريخ، ويشمل كل أشكال تشغيل الطائرات بدون طيار. ولم نجد ما يفيد برفعه، ما يعني توقف الأعمال التجارية بالمسيّرات رغم أن المرسوم بقانون الجديد يتيح مساراً للترخيص."
+     "en": "Imposed on 28 March 2026 during Iranian drone and missile attacks, the ban covers all drone flying. The government portal still lists all drone operations as suspended (page updated 30 Aug 2026), so commercial drone work is on hold even though the new aviation decree-law provides a licensing route.",
+     "ar": "فُرض الحظر في 28 مارس 2026 خلال الهجمات الإيرانية بالمسيّرات والصواريخ، ويشمل كل أشكال تشغيل الطائرات بدون طيار. ولا تزال البوابة الحكومية تُدرج جميع عمليات المسيّرات معلّقة (حُدّثت الصفحة في 30 أغسطس 2026)، ما يعني توقف الأعمال التجارية بالمسيّرات رغم أن المرسوم بقانون الجديد يتيح مساراً للترخيص."
     },
     "url": "https://alwatannews.net/bahrain/article/4077032/%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9-%D8%AD%D8%B8%D8%B1-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D8%B1%D8%A7%D8%AA-%D8%A8%D8%AF%D9%88%D9%86-%D8%B7%D9%8A%D8%A7%D8%B1-%D8%A7%D9%84%D8%AF%D8%B1%D9%88%D9%86-%D9%85%D9%86-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D9%88%D8%AD%D8%AA%D9%89-%D8%A5%D8%B4%D8%B9%D8%A7%D8%B1-%D8%A2%D8%AE%D8%B1",
     "source": "Al Watan (Bahrain)",
@@ -4323,11 +4343,11 @@
    "drones": {
     "v": 1,
     "note": {
-     "en": "A September 2026 decree-law created a full drone licensing regime, but the Interior Ministry's March 2026 ban on all drone use has not been reported lifted, and no delivery or BVLOS approvals are known.",
-     "ar": "أنشأ مرسوم بقانون في سبتمبر 2026 نظاماً متكاملاً لترخيص المسيّرات، لكن لم يُعلن رفع حظر وزارة الداخلية على استخدامها منذ مارس 2026، ولا نعلم بموافقات للتوصيل أو للطيران خارج مدى الرؤية."
+     "en": "A September 2026 decree-law created a full drone licensing regime, but all drone operations and permit applications remain suspended since 28 March 2026 according to the government portal (updated 30 Aug 2026), and no delivery or BVLOS approvals are known.",
+     "ar": "أنشأ مرسوم بقانون في سبتمبر 2026 نظاماً متكاملاً لترخيص المسيّرات، لكن جميع عمليات المسيّرات وطلبات التصاريح لا تزال معلّقة منذ 28 مارس 2026 وفق البوابة الحكومية (المحدّثة في 30 أغسطس 2026)، ولا نعلم بموافقات للتوصيل أو للطيران خارج مدى الرؤية."
     },
-    "url": "https://akhbar-alkhaleej.com/news/article/1450804",
-    "source": "Akhbar Al Khaleej"
+    "url": "https://www.bahrain.bh/wps/portal/en/BNP/ExploreBahrain/Drones",
+    "source": "Bahrain.bh (government portal)"
    },
    "sandbox": {
     "v": 1,
