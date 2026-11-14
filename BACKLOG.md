@@ -56,8 +56,7 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   Organization/WebSite structured data with the database search on the home page.
 - [x] **Google Search Console** (14 Nov 2026): URL-prefix property https://roboticsmena.com/ verified with an HTML tag
   (in `partials/head-brand.html`; keep it, removing it un-verifies the site) and `sitemap.xml` submitted.
-- [ ] **Bing Webmaster Tools:** import the site from Google Search Console (bing.com/webmasters → Import). IndexNow already
-  notifies Bing on every deploy.
+- [x] **Bing Webmaster Tools** (14 Nov 2026): imported from Google Search Console; IndexNow notifies Bing on every deploy.
 - [x] **Categorization monitor v1** (14 Nov 2026): read-only scheduled checker for Fortinet, Symantec and McAfee
   (`scripts/catmon/`, `.github/workflows/categorization-monitor.yml`, README "Categorization monitor"). Live check: all
   three currently report "needs manual check" (Fortinet robots.txt disallows the lookup; Symantec needs its own POST after
