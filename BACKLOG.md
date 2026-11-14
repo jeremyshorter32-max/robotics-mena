@@ -90,7 +90,7 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 
 - [x] **Arabic brand name** (13 Nov 2026): «روبوتات الشرق الأوسط وشمال أفريقيا» everywhere (short forms such as
   «سجلّنا» in running text); the build now rejects the old «روبوتكس مينا».
-- [ ] **Launch the Dubai robotic villa report (ready, not launched).** Draft on branch `draft/robot-villa`
+- [x] **Launch the Dubai robotic villa report (ready, not launched).** Draft on branch `draft/robot-villa`
   (`/spotlight?s=dubai-robot-villa`, EN/AR PDFs, adds Würth Professional Solutions). To launch: merge the branch
   into `main` (it predates the Nov 2026 rebrand: re-run `node scripts/report-pdf.cjs dubai-robot-villa` after merging) (it becomes the home-page Spotlight). Before launching, check for news since 9 Nov 2026 (consortium
   names, start date) and update the text if anything changed.
