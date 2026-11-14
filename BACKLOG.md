@@ -138,8 +138,9 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
   `data/countries.json` (and the map) first. Owner to decide.
 - [ ] **Miral HQ cleaning robot.** Not publicly sourced yet. Likely operated by FM contractor Berkeley Services (not listed:
   FM companies are out of scope); the robot maker is unknown. Add the maker and a deployment when a public source exists.
-- [ ] **Bahrain drones.** Search results say Bahrain suspended civil drone activity from April 2026; confirm from the official
-  notice and reflect it in Bahrain's records.
+- [x] **Bahrain drones** (14 Nov 2026): confirmed on the official government portal (bahrain.bh, page updated 30 Aug 2026):
+  all drone operations and permit applications suspended since 28 Mar 2026. Added as a regulation in the Bahrain dossier and
+  cited in the drones score (still Partial).
 - [x] **Thin entries re-checked** (13 Nov 2026): Shamal, Avelabs (now part of Arrow), Marakeb, Firnas, ATLAN confirmed;
   Aerosmart, Airscope, Drone Film Arabia, RoboMecs, Lebotics, Clear Sky Drones, KAT, Robotics Corner labelled
   "Company-reported" on the site; Aerial Solutions removed (military drone JV, Defense News 2022).
