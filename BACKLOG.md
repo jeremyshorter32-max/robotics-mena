@@ -78,8 +78,9 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   research agents, traffic (GoatCounter) and sign-ups (Sheet/Kit) in one place. Plan: `docs/admin-portal/PLAN.md`.
   Decided 14 Nov: no admin page on the public site and no portal password; a Cloudflare Worker on a `workers.dev`
   address behind Cloudflare Access with Google sign-in (DNS stays at GoDaddy, so email on Microsoft 365 is untouched);
-  $0 on free plans; roles owner / editor / viewer for future collaborators. Next: build phase 1 in `admin/`; owner does
-  the one-time Cloudflare + GitHub App setup.
+  $0 on free plans; roles owner / editor / viewer for future collaborators. Phase 1 built 14 Nov (`admin/`: approvals inbox with
+  record-level preview, approve/send back/reject, agent runs, leads; 16 tests). Next: owner does the one-time Cloudflare +
+  GitHub App setup in `admin/README.md`, then deploy; the weekly scanner must be switched on to fill the inbox.
 
 
 ## Content and research

@@ -132,6 +132,11 @@ Palo Alto, Cisco Talos and Check Point are listed but disabled: their lookups ne
 The `browser` strategy uses Playwright if it is installed; it is not a project dependency, so on GitHub Actions the
 Symantec check records "browser strategy unavailable" (same outcome as the human check it would meet anyway).
 
+## Admin portal
+
+A private app for approving agent output, starting agent runs and adding leads: see `admin/README.md` (security model,
+local demo with `npm run admin:demo`, one-time Cloudflare and GitHub App setup) and `docs/admin-portal/PLAN.md`.
+
 ## To do
 
 - [ ] **Switch on the weekly scanner.**

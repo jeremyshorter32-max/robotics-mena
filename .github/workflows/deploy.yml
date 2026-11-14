@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths-ignore:
       - 'monitoring/**'   # categorization monitor history; not part of the site
+      - 'admin/**'        # admin portal (deployed to Cloudflare separately)
+      - 'docs/**'
   workflow_dispatch:
 
 permissions:

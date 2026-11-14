@@ -111,7 +111,7 @@ Worker's secrets, never into the repo).
 
 ## Next steps
 
-1. Build phase 1 code (UI + Worker API + tests) in `admin/`; it can be written and tested before any Cloudflare setup.
+1. ~~Build phase 1 code (UI + Worker API + tests) in `admin/`~~ done 14 Nov 2026 (see `admin/README.md`).
 2. Owner does the one-time Cloudflare and GitHub App setup, then deploy and lock down with Access.
 3. Build phase 1 in a separate folder (`admin/`) with tests; nothing public changes.
 4. Turn on the weekly scanner (README "To do") so the approvals inbox has real items.

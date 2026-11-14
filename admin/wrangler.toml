@@ -1,0 +1,15 @@
+# Cloudflare Worker config for the admin portal (see admin/README.md).
+# Deploy: npx wrangler@4 deploy --config admin/wrangler.toml   (wrangler is not a project dependency)
+name = "roboticsmena-admin"
+main = "src/index.mjs"
+compatibility_date = "2026-10-01"
+workers_dev = true          # served at https://roboticsmena-admin.<account>.workers.dev, protected by Cloudflare Access
+preview_urls = false        # no unprotected preview URLs
+
+[vars]
+GITHUB_REPO = "jeremyshorter32-max/robotics-mena"
+# Set in the Cloudflare dashboard or with `npx wrangler secret put <NAME>` (never in this file):
+#   ACCESS_TEAM_DOMAIN       e.g. roboticsmena.cloudflareaccess.com
+#   ACCESS_AUD               the Access application's "Application Audience (AUD) tag"
+#   ROLES                    JSON, e.g. {"you@example.com":"owner"}; roles: owner, editor, viewer
+#   GITHUB_APP_ID, GITHUB_INSTALLATION_ID, GITHUB_APP_PRIVATE_KEY (the .pem contents)
