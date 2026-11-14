@@ -38,12 +38,13 @@ plan: different formats, times or topics, or a paid boost if the owner approves 
 ## 2. Position: what we are on social
 
 **"The MENA robotics desk."** Every robot deployment, company, law and event across the Middle East and North Africa,
-verified and sourced, in English and Arabic. The database on roboticsmena.com is the evidence behind each post.
+verified and sourced. The database on roboticsmena.com is the evidence behind each post. **Social posts are in English only to start**
+(owner, 14 Nov 2026); Arabic is a later expansion (see section 7).
 
 What we have that nobody else has, and must use in every post:
 1. **The database:** 174 companies, 66 deployments, 39 events and the policy targets of 11 countries. It's structured, so we can count, rank and map.
 2. **Verification:** every claim has a primary source and a date, and corrections are logged in public. Say so. It is the reason to follow us rather than a news aggregator.
-3. **Bilingual:** Arabic-language robotics coverage is thin. Arabic posts are an underserved niche with a very large audience.
+3. **One clear voice:** English-only posts keep the launch simple and consistent. (The site itself stays bilingual, and Arabic social posts are a later growth lever: Arabic-language robotics coverage is thin.)
 4. **Regional view:** single-country outlets cover the UAE or Saudi Arabia. We compare all of them, and comparisons get shared.
 
 ## 3. Content pillars
@@ -81,13 +82,13 @@ Every post either teaches one fact or sends people to one record. Never post opi
   1. **Reels** are the only format that reliably reaches non-followers. Add a trending audio track in the app before posting. The agents can't choose audio.
   2. **Collab posts** with the companies and events we feature (Instagram's Collab feature puts the post on both profiles).
   3. **Hook in the first frame:** a number or a surprising robot ("Dubai can rent you a humanoid for under Dh5,000").
-  4. **Bilingual captions:** English first, then Arabic. Use 5 to 8 specific hashtags (#dubairobotics, #saudivision2030, #روبوتات), never 30 generic ones.
+  4. **Captions in English.** Use 5 to 8 specific hashtags (#dubairobotics, #saudivision2030, #abudhabi), never 30 generic ones.
   5. Highlights: Brief, Data, Deployments, Events, About. The link in the bio goes to roboticsmena.com with UTM tags.
 
 ### X (to create: @roboticsmena)
 - **Cadence:** 3 to 5 posts a day on weekdays and 1 to 2 at weekends, plus 10 to 20 replies a day.
 - **Formats:** Monday 09:00: brief thread (one post per signal, the link in the last post). Daily: one signal post with
-  a card, one data point, and quote-posts of official accounts (the X posts in `data/xposts.json`). Arabic posts 2 to 3 times a week.
+  a card, one data point, and quote-posts of official accounts (the X posts in `data/xposts.json`). 
 - **Growth levers:**
   1. **Fast, useful replies** to the big regional accounts (Dubai Media Office, RTA, SDAIA, NEOM, ADNOC, KACST, the
      ministries) within minutes of their robotics posts, adding a fact from our database. The Community agent
@@ -131,6 +132,8 @@ Every post either teaches one fact or sends people to one record. Never post opi
 6. **Corrections:** if a post was wrong, post a correction on the same platform within 24 hours and log it in `data/corrections.json`.
 
 ## 7. What would speed this up (owner decisions)
+- **Arabic posts (later):** once the English accounts have momentum, add Arabic captions on Instagram and 2 to 3 Arabic posts a week on X.
+  Switch it on by adding "ar" to `languages` in `social/cadence.json`.
 - **Paid boost:** $5 to $10 a day on LinkedIn or Instagram follower campaigns aimed at GCC robotics, construction, energy and healthcare job titles
   would probably bring both forward by months. It's not in the plan until the owner says yes.
 - **Video:** a phone and 10 minutes at each event (GITEX, Big 5) gives us original Reels nobody else has. That's worth more than any template.

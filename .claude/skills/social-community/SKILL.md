@@ -28,7 +28,7 @@ Use web search in English and Arabic. Do not scrape x.com, linkedin.com or insta
 ## 2. Draft
 For each item, a reply that **adds a verified fact** from our database or the source. Never write "Great post!" or a bare link.
 - **X replies (5 to 10):** 1 or 2 sentences of 200 characters or fewer, with a fact and, when it fits, a deep link to the record (with
-  `utm_source=x&utm_medium=social&utm_campaign=<week>`). Put the most time-sensitive first. Arabic replies to Arabic posts.
+  `utm_source=x&utm_medium=social&utm_campaign=<week>`). Put the most time-sensitive first. Replies are in English, also to Arabic posts.
 - **LinkedIn comments (3 to 5):** for company or operator announcements: 2 to 3 sentences with context from the database
   ("That makes it the 5th robotic-surgery deployment we've verified in Saudi Arabia this year…"). No links in comments.
 - **Reddit comments (3 to 5):** helpful and conversational, answering the actual question with sources. While u/RoboticsMENA is

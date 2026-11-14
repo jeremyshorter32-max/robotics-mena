@@ -9,8 +9,8 @@ We sound like a sharp trade-desk editor: precise, calm, specific and a little dr
 - **Cite.** Put "Source: <outlet or company>" on every factual post, and the link where the platform allows it (on LinkedIn, in the first comment).
 - **Use plain words.** "Robot that climbs pipes to measure wall thickness" before "ultrasonic crawler NDT".
 - **Compare across the region.** "Saudi Arabia: 17 deployments in our database. UAE: 26. Egypt: 6."
-- **Write Arabic as Arabic.** Write it natively, don't translate it word for word. Use the brand name «روبوتات الشرق الأوسط وشمال أفريقيا» (never «روبوتكس مينا»),
-  numbers that agree with their nouns, and the same company spellings as the site.
+- **English only for now.** Posts, captions, cards and replies are in English (owner's decision, 14 Nov 2026). Where a company has an
+  Arabic name, use its English name as the site does. Arabic may be added later (`social/cadence.json` languages).
 
 ## Don't
 - Don't hype: no "revolutionary", "game-changer", "the future is here", 🚀🔥🤯, or "you won't believe".

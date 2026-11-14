@@ -106,11 +106,13 @@ export function validateQueue(q, opts = {}) {
     if (!k.id || !k.title || !k.text) errors.push(`${w}: needs id, title and text`);
     if (EXCLUDED_TERMS.test(k.text || '')) errors.push(`${w}: mentions an excluded country`);
     if (BANNED_PHRASES.test(k.text || '')) errors.push(`${w}: uses a phrase social/VOICE.md bans`);
+    if (!(opts.languages || allowedLanguages()).includes('ar') && /[\u0600-\u06FF]/.test(k.text || '')) errors.push(`${w}: has Arabic text, but social copy is English only for now`);
   });
   const ids = new Set();
   let ownLinksOutside = 0;
   const known = opts.handles || knownHandles();
   const cleared = opts.images || clearedImages();
+  const langs = opts.languages || allowedLanguages();
   q.posts.forEach((p, i) => {
     const w = `posts[${i}] ${p.id || '(no id)'}`;
     if (!p.id || !/^[a-z0-9-]+$/.test(p.id)) E(w, 'id must be lowercase letters, digits and hyphens');
@@ -122,11 +124,13 @@ export function validateQueue(q, opts = {}) {
     if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(\+|-)\d{2}:\d{2}$/.test(p.slot || '')) E(w, 'slot must look like 2026-11-16T08:30+04:00');
     else if (!q.campaign && weekOf(new Date(p.slot.slice(0, 10) + 'T12:00Z')) !== q.week) W(w, `slot ${p.slot} is outside ${q.week}`);
     if (p.lang && !['en', 'ar', 'en+ar'].includes(p.lang)) E(w, 'lang must be en, ar or en+ar');
+    if (p.lang && p.lang.split('+').some(l => !langs.includes(l))) E(w, `lang "${p.lang}" is not switched on (social/cadence.json languages: ${langs.join(', ')})`);
 
     const text = allText(p);
     // [[placeholders]] are for templates the owner fills in on the day (live event coverage); never in a ready post.
     if (/\[\[[^\]]*\]\]/.test(text) && !p.template) E(w, 'has [[placeholders]] but is not marked "template": true');
     if (p.template && (p.cards || []).some(c => /\[\[/.test(JSON.stringify(c)))) E(w, 'placeholders are not allowed on cards (they are rendered as images)');
+    if (!langs.includes('ar') && /[\u0600-\u06FF]/.test(text)) E(w, 'has Arabic text, but posts are English only for now (social/cadence.json languages)');
     if (EXCLUDED_TERMS.test(text)) E(w, 'mentions an excluded country (CLAUDE.md: no Israeli companies, flag or sources)');
     if (BANNED_PHRASES.test(text)) E(w, 'uses a phrase social/VOICE.md bans');
     (p.sources || []).forEach((s, j) => {
@@ -204,6 +208,10 @@ export function validateQueue(q, opts = {}) {
   });
   if (ownLinksOutside > 1) errors.push(`queue: ${ownLinksOutside} Reddit posts outside r/RoboticsMENA link to roboticsmena.com (max 1 a week)`);
   return { errors, warnings };
+}
+
+export function allowedLanguages(file = path.join(SOCIAL, 'cadence.json')) {
+  return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')).languages || ['en', 'ar'] : ['en', 'ar'];
 }
 
 export function clearedImages(file = path.join(SOCIAL, 'images.json')) {

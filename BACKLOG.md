@@ -98,6 +98,9 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
 - [x] **Launch campaign and Content Library** (14 Nov 2026): `social/campaigns/launch-2026.{json,md}` (profile-filling posts for 15 Nov,
   launch-week outreach kit, GITEX run-up, live templates and story frames, recap, checklist and shot list) and the Content Library page
   (https://claude.ai/artifact/VLvATizyqX8AuX4t3WtmM2, `scripts/social-library.mjs`) for viewing, copying and downloading every post.
+- [x] **English-only social** (owner, 14 Nov 2026): all post, card and kit copy rewritten in English; the validator refuses Arabic
+  while `social/cadence.json` languages is ["en"]. Owner to drop "EN/عربي" from the Instagram and X bios.
+- [ ] **Later: Arabic social posts** (add "ar" to `social/cadence.json` languages; Strategy section 7).
 - [ ] **Social pack v2 sign-off** (14 Nov 2026): photo-led redesign using the site's cleared press images (`social/images.json`),
   cards as JPEG, 4 more X posts with cards. Owner reviews at https://claude.ai/artifact/Ao2fSzm4HETqS8Toybg9EU; then Claude applies
   the requested changes and republishes the Content Library with the approved posts.

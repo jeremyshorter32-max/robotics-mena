@@ -9,7 +9,7 @@ import { AGENT_BRANCH, PUBLISHABLE_PATH, kindOf } from '../../admin/src/inbox.mj
 const post = over => ({ id: 'w47-x-a', platform: 'x', format: 'post', pillar: 'signals', slot: '2026-11-16T09:00+04:00', status: 'draft',
   text: 'Fact. Source: X', sources: [{ name: 'Src', url: 'https://example.com/a' }], ...over });
 const q = (...posts) => ({ week: '2026-w47', posts });
-const errs = qq => validateQueue(qq, { handles: { x: new Set(['roboticsmena', 'rta_dubai']), instagram: new Set(['roboticsmena']) } }).errors;
+const errs = (qq, more = {}) => validateQueue(qq, { handles: { x: new Set(['roboticsmena', 'rta_dubai']), instagram: new Set(['roboticsmena']) }, languages: ['en', 'ar'], ...more }).errors;
 
 test('X weighted length: links 23, emoji 2, flags 2, Arabic 1', () => {
   assert.equal(xLength('abc'), 3);
@@ -34,6 +34,14 @@ test('ISO weeks and slots', () => {
 });
 
 test('a valid post passes', () => assert.deepEqual(errs(q(post())), []));
+
+test('English only: Arabic text and lang ar are refused when only en is switched on', () => {
+  const en = { languages: ['en'] };
+  assert.ok(errs(q(post({ text: 'روبوتات في دبي' })), en).some(e => /English only/.test(e)));
+  assert.ok(errs(q(post({ lang: 'ar' })), en).some(e => /not switched on/.test(e)));
+  assert.deepEqual(errs(q(post({ lang: 'en' })), en), []);
+  assert.ok(errs({ campaign: 'c', posts: [], kit: [{ id: 'k', title: 'T', text: 'مرحبا' }] }, en).some(e => /English only/.test(e)));
+});
 
 test('excluded country, banned phrases and excluded sources are errors', () => {
   assert.ok(errs(q(post({ text: 'Deal with an Israeli startup' }))).some(e => /excluded country/.test(e)));

@@ -9,7 +9,7 @@ the house style in [VOICE.md](VOICE.md), and account creation in [SETUP.md](SETU
 |---|---|---|---|
 | `social-analyst` | Sun (start of the social run) | Follower counts, pace against milestones, post performance, experiment result | `reports/<week>.md`, `metrics.json` |
 | `social-strategist` | Sun, after the Analyst; 1st of the month | Week plan: slot by slot, events, tags, one experiment; monthly review and plan changes | `plans/<week>.md`, `STRATEGY.md` |
-| `social-creator` | Sun, after the Strategist; breaking news | Copy for all 4 platforms (EN/AR), branded cards, PDF carousels, Reels; validates; opens the pull request | `queue/<week>.json`, `cards/<week>/`, PR `social/<week>` |
+| `social-creator` | Sun, after the Strategist; breaking news | Copy for all 4 platforms (English), branded cards, PDF carousels, Reels; validates; opens the pull request | `queue/<week>.json`, `cards/<week>/`, PR `social/<week>` |
 | `social-community` | Mon to Fri mornings | Replies, comments and Reddit threads to join, breaking news, leads, handle checks | A comment on the `social-engage` issue |
 
 The agents draft. **The owner approves (in the admin portal) and posts.** Nothing is published automatically.

@@ -1,6 +1,6 @@
 ---
 name: social-creator
-description: Robotics MENA social Creator. Turns the week's plan into ready-to-post content for LinkedIn, Instagram, X and Reddit (copy in English and Arabic, branded cards, LinkedIn PDF carousels, Instagram Reels), validates it, renders the images and opens one pull request for approval in the admin portal. Use for the Sunday social run (after social-strategist), or when the owner asks to "write the social posts", "make a post about <x>", "redo <post>" or "draft a breaking-news post".
+description: Robotics MENA social Creator. Turns the week's plan into ready-to-post content for LinkedIn, Instagram, X and Reddit (copy in English, branded cards, LinkedIn PDF carousels, Instagram Reels), validates it, renders the images and opens one pull request for approval in the admin portal. Use for the Sunday social run (after social-strategist), or when the owner asks to "write the social posts", "make a post about <x>", "redo <post>" or "draft a breaking-news post".
 ---
 
 # Social Creator: write, design, validate, send for approval
@@ -15,12 +15,12 @@ run the `social-strategist` skill first.
 ## 1. Write the queue
 Create or update `social/queue/<week>.json` (copy the shape of the newest existing week). One entry per planned slot:
 - `id` `w<NN>-<platform short>-<slug>` (li, ig, x, rd), `platform`, `format`, `pillar`, `slot` (`YYYY-MM-DDTHH:MM+04:00`),
-  `lang` (`en`, `ar` or `en+ar`), `status: "draft"`, the copy, `cards`, `sources` (`{name, url}`), and optionally `tags`, `media_note` and `first_comment`.
+  `lang` (`en`; posts are English only while `social/cadence.json` languages is ["en"]), `status: "draft"`, the copy, `cards`, `sources` (`{name, url}`), and optionally `tags`, `media_note` and `first_comment`.
 - **Copy per platform** (the limits are checked by the validator):
   - LinkedIn: `text` with a hook under 210 characters, ▸ bullets, 3 to 5 hashtags at the end. Links go in `first_comment`, never in `text`. A `document`
     post is a carousel (3 or more cards, which becomes a PDF). A `poll` needs `poll.question` and 2 to 4 `poll.options` of 30 characters or fewer.
   - X: `text` (post) or `thread` (list of posts), each 280 weighted characters or fewer (a link counts as 23). 0 to 2 hashtags. A country flag emoji leads a signal.
-  - Instagram: `text` is the caption (hook first, English then Arabic, 5 to 8 specific hashtags, "link in bio"). Use `carousel` with 2 to 20
+  - Instagram: `text` is the caption (hook first, in English, 5 to 8 specific hashtags, "link in bio"). Use `carousel` with 2 to 20
     `portrait` cards, or `reel`, which needs `story`-size cards and becomes an MP4 slideshow. Always add a `media_note` reminding the owner to add a trending audio track.
   - Reddit: `subreddit`, `title` and `text` (markdown). It's a person talking: no hashtags, no emoji, no UTM tags. Disclose
     that roboticsmena.com is ours. Outside r/RoboticsMENA, at most 1 post a week may link to our site, and only once the account is 4 weeks old.
@@ -28,8 +28,8 @@ Create or update `social/queue/<week>.json` (copy the shape of the newest existi
   `/database?tab=deployments&id=<id>`, `/database?tab=companies&id=<id>`, `/policy?c=<CC>`, `/spotlight?s=<id>`, `/map`, `/events`.
 - **@-mentions** on X and Instagram only for handles in `social/handles.json`. Otherwise name the organisation in plain text and put
   "tag if confirmed: <org>" in `tags`. On LinkedIn, write the organisation's name and list it in `tags`, because the owner picks the company page when posting.
-- **Arabic** is written natively, not translated word by word. Use the site's spellings (`title_ar`, `operator_ar` in `data/*.json`)
-  and the brand name «روبوتات الشرق الأوسط وشمال أفريقيا».
+- **English only for now** (owner, 14 Nov 2026). Write every post, card and kit text in English. Use companies' English names as the site
+  does. Arabic comes back only when `social/cadence.json` languages includes "ar"; then use the site's Arabic spellings (`title_ar`, `operator_ar`).
 
 ## 2. Cards (images)
 Each card in `cards` is a spec rendered by `scripts/social-cards.cjs` (the header of that file lists the fields):
