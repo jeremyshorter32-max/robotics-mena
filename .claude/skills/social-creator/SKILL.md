@@ -36,8 +36,14 @@ Each card in `cards` is a spec rendered by `scripts/social-cards.cjs` (the heade
 `cover` (dark, carousel opener), `signal` (kicker, title, body, source), `stat` (big `value` and `label`), `bars` (ranked `rows` from the database),
 `list` (up to 5 `items`), `cta` (closing slide). Sizes: `portrait` (LinkedIn and Instagram feed), `story` (Reels and Stories),
 `landscape` (X), `square`. `**bold**` in a title shows in the brand colour. Every factual card has a `foot` with "Source: <name>, <date>".
-- Photos: only `image` paths from `/media/brief`, `/media/spotlight` or `/media/companies` (images the site has cleared), always with `image_credit`.
-  Never newspaper or agency photos, never AI-generated images of real people, places or robots.
+- **Photos lead (design v2).** Give every signal, deployment and cover card an `image` when `social/images.json` has a cleared photo
+  of that company, operator or programme. Only images listed there can be used: company or government press images, or the owner's own.
+  The renderer prints "Photo: <credit>" itself. Set `caption: true` when the photo is illustrative rather than of the exact story, so the
+  credit also says what it shows. Never use a photo that implies something false (another company's robot on a "deployed at X" card, or
+  stand photos for an event the photo isn't from). To add an image, check its source page, add it to `media/` and `social/images.json` with
+  credit, `shows` and `source`. Never newspaper or agency photos, and never AI-generated images of real people, places or robots.
+  Layouts: photo band over text (portrait, square, story), split text and photo (landscape), indigo-toned cover (`cover` + `image`),
+  and a photo mosaic on `cta` slides. Cards render as JPEG.
 - Counts and rankings are computed from `data/*.json` on the day you write them (use node one-liners), never from memory, and the
   card's foot says "Source: roboticsmena.com, <date>".
 

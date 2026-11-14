@@ -85,7 +85,8 @@
           "size": "portrait",
           "kicker": "Robotics MENA",
           "title": "The MENA robotics desk",
-          "body": "Every robot deployment, company, policy and event across the Middle East & North Africa. Verified, in English and Arabic."
+          "body": "Every robot deployment, company, policy and event across the Middle East & North Africa. Verified, in English and Arabic.",
+          "image": "/media/brand/hero-robot-arm.jpg"
         }
       ]
     },
@@ -142,7 +143,8 @@
             "**Data:** rankings and maps from our database",
             "**Events:** GITEX, Big 5, LEAP and the robotics competitions",
             "**In Arabic and English**"
-          ]
+          ],
+          "image": "/media/brand/hero-delivery-robots.jpg"
         },
         {
           "template": "cta",
@@ -166,7 +168,8 @@
           "template": "cover",
           "size": "landscape",
           "kicker": "Hello",
-          "title": "The MENA robotics desk. **Verified.**"
+          "title": "The MENA robotics desk. **Verified.**",
+          "image": "/media/brand/hero-robot-arm.jpg"
         }
       ]
     },
@@ -228,7 +231,8 @@
           "template": "cover",
           "size": "portrait",
           "kicker": "Before GITEX",
-          "title": "UAE robotics in **4 numbers**"
+          "title": "UAE robotics in **4 numbers**",
+          "image": "/media/policy/ae-feat.jpg"
         },
         {
           "template": "stat",
@@ -236,7 +240,9 @@
           "kicker": "Companies",
           "value": "83",
           "label": "robotics companies based in or listed under the UAE in our database",
-          "foot": "Source: roboticsmena.com, 14 Nov 2026"
+          "foot": "Source: roboticsmena.com, 14 Nov 2026",
+          "image": "/media/companies/ys-lootah-robotics.jpg",
+          "caption": true
         },
         {
           "template": "stat",
@@ -244,7 +250,9 @@
           "kicker": "Deployments",
           "value": "26",
           "label": "verified robot deployments in the UAE, the most in the region",
-          "foot": "Source: roboticsmena.com, 14 Nov 2026"
+          "foot": "Source: roboticsmena.com, 14 Nov 2026",
+          "image": "/media/spotlight/gecko-inspectors-thickness-map.jpg",
+          "caption": true
         },
         {
           "template": "stat",
@@ -260,7 +268,9 @@
           "kicker": "The target",
           "value": "200,000",
           "label": "robots across services, logistics and industry by 2032",
-          "foot": "Source: roboticsmena.com/policy"
+          "foot": "Source: roboticsmena.com/policy",
+          "image": "/media/policy/ae-feat.jpg",
+          "caption": true
         },
         {
           "template": "cta",
@@ -329,54 +339,59 @@
       "media_note": "Five story frames, one per day (Day 1 to Day 5). Post the day's frame first each morning, then your photos and clips from the floor on top. Add each to a GITEX highlight.",
       "cards": [
         {
-          "template": "stat",
+          "template": "cover",
           "size": "story",
-          "theme": "dark",
           "page": "",
           "kicker": "Live from GITEX Global",
-          "value": "Day 1",
-          "label": "The robots on the floor at Expo City Dubai",
-          "foot": "7 Dec 2026 · Follow @roboticsmena"
+          "foot": "7 Dec 2026 · Follow @roboticsmena",
+          "title": "Day 1",
+          "body": "The robots on the floor at Expo City Dubai",
+          "image": "/media/brand/hero-robot-arm.jpg",
+          "focus": "center 30%"
         },
         {
-          "template": "stat",
+          "template": "cover",
           "size": "story",
-          "theme": "dark",
           "page": "",
           "kicker": "Live from GITEX Global",
-          "value": "Day 2",
-          "label": "The robots on the floor at Expo City Dubai",
-          "foot": "8 Dec 2026 · Follow @roboticsmena"
+          "foot": "8 Dec 2026 · Follow @roboticsmena",
+          "title": "Day 2",
+          "body": "The robots on the floor at Expo City Dubai",
+          "image": "/media/brand/hero-robot-arm.jpg",
+          "focus": "center 30%"
         },
         {
-          "template": "stat",
+          "template": "cover",
           "size": "story",
-          "theme": "dark",
           "page": "",
           "kicker": "Live from GITEX Global",
-          "value": "Day 3",
-          "label": "The robots on the floor at Expo City Dubai",
-          "foot": "9 Dec 2026 · Follow @roboticsmena"
+          "foot": "9 Dec 2026 · Follow @roboticsmena",
+          "title": "Day 3",
+          "body": "The robots on the floor at Expo City Dubai",
+          "image": "/media/brand/hero-robot-arm.jpg",
+          "focus": "center 30%"
         },
         {
-          "template": "stat",
+          "template": "cover",
           "size": "story",
-          "theme": "dark",
           "page": "",
           "kicker": "Live from GITEX Global",
-          "value": "Day 4",
-          "label": "The robots on the floor at Expo City Dubai",
-          "foot": "10 Dec 2026 · Follow @roboticsmena"
+          "foot": "10 Dec 2026 · Follow @roboticsmena",
+          "title": "Day 4",
+          "body": "The robots on the floor at Expo City Dubai",
+          "image": "/media/brand/hero-robot-arm.jpg",
+          "focus": "center 30%"
         },
         {
-          "template": "stat",
+          "template": "cover",
           "size": "story",
-          "theme": "dark",
           "page": "",
           "kicker": "Live from GITEX Global",
-          "value": "Day 5",
-          "label": "The robots on the floor at Expo City Dubai",
-          "foot": "11 Dec 2026 · Follow @roboticsmena"
+          "foot": "11 Dec 2026 · Follow @roboticsmena",
+          "title": "Day 5",
+          "body": "The robots on the floor at Expo City Dubai",
+          "image": "/media/brand/hero-robot-arm.jpg",
+          "focus": "center 30%"
         }
       ]
     },

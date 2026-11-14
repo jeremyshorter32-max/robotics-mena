@@ -74,6 +74,19 @@ h3.section{font:600 12px var(--mono);letter-spacing:.12em;text-transform:upperca
 .kitcard .ch{font:500 12px var(--mono);color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
 .grid .m{width:auto}.grid .m img{width:100%}
+.rev{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-top:10px;border-top:1px solid var(--line)}
+.rev .st{font:600 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--bg);color:var(--muted)}
+.rev .st.ok{background:var(--ok-tint);color:var(--ok)}.rev .st.ch{background:var(--warn-tint);color:var(--warn)}
+.rev button{font:500 13px var(--sans);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;padding:6px 12px;cursor:pointer}
+.rev button.okb[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.rev button.chb[aria-pressed="true"]{background:var(--warn);border-color:var(--warn);color:var(--surface)}
+.rev textarea{flex-basis:100%;min-height:58px;font:14px/1.45 var(--sans);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;resize:vertical}
+.post.ok{border-color:var(--ok)}.post.ch{border-color:var(--warn)}
+.tally{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin-top:12px;font-size:14px}
+.tally b{font:600 18px var(--mono)}
+.changes{display:grid;gap:8px;padding:14px 16px;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin-top:12px}
+.changes h2{margin:0;font-size:18px}.changes ul{margin:0;padding-inline-start:20px;color:var(--muted);font-size:14px;display:grid;gap:4px}
+.credits{font-size:13px;color:var(--muted)}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:14px;max-width:min(92vw,520px);z-index:20}
 .dlnote{font-size:13px;color:var(--muted);margin:0}
 @media (max-width:640px){.post{grid-template-columns:minmax(0,1fr)}.meta{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 12px}.meta .time{font-size:16px}}
@@ -149,7 +162,7 @@ function selectIt(pre) { const r = document.createRange(); r.selectNodeContents(
 const copyBlock = (label, text, extra = '') => `<div class="copy"><div class="lab"><span>${esc(label)}${extra}</span><button type="button" data-copy>Copy</button></div><pre>${esc(text)}</pre></div>`;
 function mediaItem(f) {
   const ext = f.split('.').pop(), name = f.split('/').pop();
-  const prev = ext === 'png' ? `<img src="${esc(f)}" alt="${esc(name)}" loading="lazy">` : ext === 'mp4' ? `<video src="${esc(f)}" controls muted playsinline preload="metadata"></video>` : `<div class="file">${ext.toUpperCase()}</div>`;
+  const prev = /^(png|jpg)$/.test(ext) ? `<img src="${esc(f)}" alt="${esc(name)}" loading="lazy">` : ext === 'mp4' ? `<video src="${esc(f)}" controls muted playsinline preload="metadata"></video>` : `<div class="file">${ext.toUpperCase()}</div>`;
   return `<div class="m${/landscape|x-/.test(name) ? '' : ''}">${prev}<button type="button" data-dl="${esc(f)}">Download ${ext.toUpperCase()}</button></div>`;
 }
 
@@ -169,11 +182,12 @@ function postCard(p) {
   if (p.tags.length) parts.push(`<p class="note"><b>Tag:</b> ${p.tags.map(esc).join(' · ')}</p>`);
   if (p.sources.length) parts.push(`<p class="src">Sources: ${p.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</p>`);
   const done = posted.has(p.id);
-  return `<article class="post${done ? ' done' : ''}" id="p-${esc(p.id)}">
+  const rv = reviews[p.id] || {};
+  return `<article class="post${done ? ' done' : ''}${rv.status === 'approved' ? ' ok' : rv.status === 'changes' ? ' ch' : ''}" id="p-${esc(p.id)}">
     <div class="meta"><span class="pf" style="--c:var(${pfVar})"><i></i>${pfName}</span><span class="time">${p.slot.slice(11, 16)}</span>
       <span>${esc(p.format)} · ${esc(p.lang)}</span>${p.template ? '<span class="tag tpl">Template</span>' : `<span class="tag">${esc(p.status)}</span>`}
       <label class="donebox"><input type="checkbox" data-done="${esc(p.id)}"${done ? ' checked' : ''}> Posted</label></div>
-    <div class="body">${parts.join('')}</div></article>`;
+    <div class="body">${parts.join('')}${DATA.review ? reviewBlock(p.id) : ''}</div></article>`;
 }
 
 function renderCollection(c) {
@@ -200,16 +214,56 @@ function renderProfile() {
     <h3 class="section">Files</h3><div class="grid">${DATA.profile.files.map(f => `<div class="m"><img src="${esc(f)}" alt="${esc(f.split('/').pop())}" loading="lazy"><span class="note">${esc(f.split('/').pop())}</span><button type="button" data-dl="${esc(f)}">Download PNG</button></div>`).join('')}</div>`;
 }
 
+// Sign-off: one document per post in the artifact's db (reviews/<post id>), read back by Claude.
+let reviews = {}, rdb = null, dbState = DATA.review ? 'loading' : 'off';
+function reviewBlock(id) {
+  const r = reviews[id] || {}, st = r.status;
+  const label = st === 'approved' ? '<span class="st ok">Approved</span>' : st === 'changes' ? '<span class="st ch">Changes requested</span>' : '<span class="st">Not reviewed</span>';
+  const off = dbState !== 'ready' ? ' disabled' : '';
+  return `<div class="rev" data-rev="${esc(id)}">${label}<span class="spacer" style="flex:1"></span>
+    <button type="button" class="okb" data-review="approved" aria-pressed="${st === 'approved'}"${off}>Approve</button>
+    <button type="button" class="chb" data-review="changes" aria-pressed="${st === 'changes'}"${off}>Request changes</button>
+    <textarea id="note-${esc(id)}" placeholder="Notes for Claude (what to change)"${off}>${esc(r.note || '')}</textarea></div>`;
+}
+async function saveReview(id, patch) {
+  if (!rdb) return;
+  const cur = reviews[id] || {}, next = { status: cur.status || 'pending', note: cur.note || '', ...patch, at: new Date().toISOString() };
+  try { await rdb.doc(id).set(next); } catch (e) { toast('Could not save (' + ((e && e.code) || 'error') + '). Try again in a moment.'); }
+}
+function tallyHtml() {
+  if (!DATA.review) return '';
+  const all = DATA.collections.flatMap(c => c.posts.map(p => p.id));
+  const ok = all.filter(i => (reviews[i] || {}).status === 'approved').length, ch = all.filter(i => (reviews[i] || {}).status === 'changes').length;
+  const msg = dbState === 'loading' ? 'Loading saved decisions…' : dbState === 'slow' ? "Saved decisions can't be reached yet. Your choices will save once they load." : dbState === 'none' ? "Sign-off isn't available in this view. Open the page on claude.ai, signed in." : "Decisions save as you go. Claude reads them when you say you're done.";
+  return `<div class="tally"><span><b>${ok}</b> approved</span><span><b>${ch}</b> changes</span><span><b>${all.length - ok - ch}</b> to review</span><span class="spacer" style="flex:1"></span><span class="note">${esc(msg)}</span></div>`;
+}
+if (DATA.review) {
+  const timer = setTimeout(() => { if (dbState === 'loading') { dbState = 'slow'; route(); } }, 10000);
+  ((window.claude && window.claude.use) ? window.claude.use('db') : Promise.resolve(null)).then(db => {
+    if (!db) { clearTimeout(timer); dbState = 'none'; route(); return; }
+    rdb = db.collection('reviews');
+    rdb.onSnapshot(snap => {
+      reviews = {}; snap.docs.forEach(d => { reviews[d.id] = d.data(); });
+      if (!snap.metadata.fromCache) { clearTimeout(timer); dbState = 'ready'; }
+      else if (dbState === 'loading') dbState = 'ready';
+      const y = scrollY; route(); scrollTo(0, y);
+    }, () => { clearTimeout(timer); dbState = 'none'; route(); });
+  }).catch(() => { clearTimeout(timer); dbState = 'none'; route(); });
+}
+
 function route() {
   const ids = DATA.collections.map(c => c.name).concat('profile');
   const want = location.hash.slice(1), current = ids.includes(want) ? want : (DATA.collections.find(c => c.kind === 'campaign') || DATA.collections[0] || { name: 'profile' }).name;
   $('#tabs').innerHTML = DATA.collections.map(c => `<a href="#${c.name}"${c.name === current ? ' aria-current="page"' : ''}>${esc(c.title)}<small>${c.posts.length}</small></a>`).join('') + `<a href="#profile"${current === 'profile' ? ' aria-current="page"' : ''}>Profile kit</a>`;
   const c = DATA.collections.find(x => x.name === current);
-  $('#view').innerHTML = c ? renderCollection(c) : renderProfile();
+  const active = document.activeElement && document.activeElement.id;
+  $('#view').innerHTML = (DATA.intro ? `<div class="changes">${DATA.intro}</div>` : '') + tallyHtml() + (c ? renderCollection(c) : renderProfile());
+  if (active && document.getElementById(active)) { const el = document.getElementById(active); el.focus(); if (el.setSelectionRange) el.setSelectionRange(el.value.length, el.value.length); }
 }
 
 document.addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.review) { const id = b.closest('[data-rev]').dataset.rev; const cur = (reviews[id] || {}).status; saveReview(id, { status: cur === b.dataset.review ? 'pending' : b.dataset.review, note: ($('#note-' + CSS.escape(id)) || {}).value || '' }); return; }
   if (b.hasAttribute('data-copy')) copyText(b);
   else if (b.dataset.dl) download(b.dataset.dl, b);
   else if (b.dataset.zip) { const c = DATA.collections.find(x => x.name === b.dataset.zip); downloadZip(b.dataset.zip === 'profile' ? 'profile-kit' : b.dataset.zip, c ? c.files : DATA.profile.files, b); }
@@ -220,6 +274,11 @@ document.addEventListener('change', e => {
   const id = e.target.dataset && e.target.dataset.done; if (!id) return;
   e.target.checked ? posted.add(id) : posted.delete(id); store.set('rm-posted', [...posted]);
   e.target.closest('.post').classList.toggle('done', e.target.checked);
+});
+document.addEventListener('focusout', e => {
+  const t = e.target; if (!t.matches || !t.matches('.rev textarea')) return;
+  const id = t.closest('[data-rev]').dataset.rev; if ((reviews[id] || {}).note === t.value || (!reviews[id] && !t.value)) return;
+  saveReview(id, { note: t.value });
 });
 window.addEventListener('hashchange', route);
 

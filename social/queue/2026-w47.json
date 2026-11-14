@@ -20,7 +20,8 @@
           "kicker": "Now live",
           "title": "Every robot working in the Middle East & North Africa. **Verified.**",
           "body": "A free bilingual database of companies, deployments, policy and events.",
-          "foot": "Swipe →"
+          "foot": "Swipe →",
+          "image": "/media/brand/hero-robot-arm.jpg"
         },
         {
           "template": "stat",
@@ -29,7 +30,9 @@
           "value": "174",
           "label": "robotics companies with a sourced MENA presence",
           "body": "83 in the UAE, 41 in Saudi Arabia, and the global makers deploying here.",
-          "foot": "Source: roboticsmena.com database, 14 Nov 2026"
+          "foot": "Source: roboticsmena.com database, 14 Nov 2026",
+          "image": "/media/companies/ys-lootah-robotics.jpg",
+          "caption": true
         },
         {
           "template": "bars",
@@ -84,7 +87,9 @@
             "**Morocco:** 200,000 people trained and certified in AI by 2030",
             "**Kuwait:** drone licensing regulations due by 31 Dec 2026"
           ],
-          "foot": "Sources linked on roboticsmena.com/policy"
+          "foot": "Sources linked on roboticsmena.com/policy",
+          "image": "/media/policy/ae-feat.jpg",
+          "caption": true
         },
         {
           "template": "cta",
@@ -122,7 +127,6 @@
           "title": "Wall-climbing robots now inspect ADNOC facilities daily",
           "body": "Gecko Robotics' Raptor maps wall thickness on tanks and pipes, with tens of machines running every day in the UAE.",
           "image": "/media/spotlight/gecko-inspectors-thickness-map.jpg",
-          "image_credit": "Photo: Gecko Robotics",
           "foot": "Source: The National, 4 Nov 2026"
         }
       ],
@@ -179,7 +183,8 @@
               "value": 4
             }
           ],
-          "foot": "Verified deployments by sector. Source: roboticsmena.com, 14 Nov 2026"
+          "foot": "Verified deployments by sector. Source: roboticsmena.com, 14 Nov 2026",
+          "image": "/media/brief/egypt-da-vinci-sofmedica.jpg"
         }
       ],
       "sources": [
@@ -205,7 +210,8 @@
           "size": "portrait",
           "kicker": "Signals · 6 to 12 Nov 2026",
           "title": "5 robotics moves across MENA you should know about",
-          "foot": "Swipe →"
+          "foot": "Swipe →",
+          "image": "/media/brand/hero-delivery-robots.jpg"
         },
         {
           "template": "signal",
@@ -213,7 +219,8 @@
           "kicker": "01 · Egypt · Healthcare",
           "title": "Egypt plans robotic-surgery pilots in public hospitals",
           "body": "The health minister discussed bringing back and expanding da Vinci surgery with Sofmedica, starting with one or two pilots. Sofmedica has set up a Cairo company as its regional hub.",
-          "foot": "Source: Maspero, 12 Nov 2026"
+          "foot": "Source: Maspero, 12 Nov 2026",
+          "image": "/media/brief/egypt-da-vinci-sofmedica.jpg"
         },
         {
           "template": "signal",
@@ -221,7 +228,8 @@
           "kicker": "02 · Saudi Arabia · Delivery",
           "title": "NAVER's NURI delivery robots launch in Riyadh in H1 2027",
           "body": "Commercial launch in residential complexes, linked to the Balady+ mapping app of NAVER's joint venture with the National Housing Company.",
-          "foot": "Source: Seoul Economic Daily, 12 Nov 2026"
+          "foot": "Source: Seoul Economic Daily, 12 Nov 2026",
+          "image": "/media/companies/naver-labs.jpg"
         },
         {
           "template": "signal",
@@ -229,7 +237,8 @@
           "kicker": "03 · Egypt · Service robots",
           "title": "X-GEN becomes Pudu's first partner in Africa",
           "body": "Three deals, including Hollyway drone docks, add to X-GEN's plan to assemble robots and drones locally.",
-          "foot": "Source: TechAfrica News, 11 Nov 2026"
+          "foot": "Source: TechAfrica News, 11 Nov 2026",
+          "image": "/media/companies/pudu-robotics.jpg"
         },
         {
           "template": "signal",
@@ -237,7 +246,8 @@
           "kicker": "04 · Qatar · Humanoids",
           "title": "Vodafone Qatar and AgiBot sign an embodied-AI MoU",
           "body": "Signed at MWC26 Doha, the MoU explores deploying AgiBot robots over Vodafone's network for government, business and education.",
-          "foot": "Source: QNA, 8 Nov 2026"
+          "foot": "Source: QNA, 8 Nov 2026",
+          "image": "/media/companies/agibot.jpg"
         },
         {
           "template": "signal",
@@ -245,7 +255,8 @@
           "kicker": "05 · UAE · Humanoids",
           "title": "Dubai's first humanoid robot showroom opens",
           "body": "Lootah Robotics, on Sheikh Zayed Road: buy from Dh50,000 to Dh3m, or rent from under Dh5,000.",
-          "foot": "Source: The National, 6 Nov 2026"
+          "foot": "Source: The National, 6 Nov 2026",
+          "image": "/media/brief/lootah-humanoid-studio.jpg"
         },
         {
           "template": "cta",
@@ -317,7 +328,8 @@
           "size": "portrait",
           "kicker": "Now live",
           "title": "Every robot working in the Middle East & North Africa. **Verified.**",
-          "foot": "Swipe →"
+          "foot": "Swipe →",
+          "image": "/media/brand/hero-robot-arm.jpg"
         },
         {
           "template": "stat",
@@ -326,7 +338,9 @@
           "value": "66",
           "label": "verified deployments across 11 countries",
           "body": "Each one has a primary source and a date.",
-          "foot": "Source: roboticsmena.com, 14 Nov 2026"
+          "foot": "Source: roboticsmena.com, 14 Nov 2026",
+          "image": "/media/companies/pony-ai.jpg",
+          "caption": true
         },
         {
           "template": "bars",
@@ -372,7 +386,9 @@
           "value": "200,000",
           "label": "robots the UAE plans to deploy by 2032",
           "body": "Across services, logistics and industry.",
-          "foot": "Source: roboticsmena.com/policy"
+          "foot": "Source: roboticsmena.com/policy",
+          "image": "/media/policy/ae-feat.jpg",
+          "caption": true
         },
         {
           "template": "cta",
@@ -408,7 +424,8 @@
           "template": "cover",
           "size": "story",
           "kicker": "Deployment of the week",
-          "title": "This robot climbs **steel walls** at ADNOC"
+          "title": "This robot climbs **steel walls** at ADNOC",
+          "image": "/media/spotlight/gecko-crawler-electronics.jpg"
         },
         {
           "template": "signal",
@@ -416,7 +433,6 @@
           "kicker": "UAE · Energy",
           "title": "Gecko's Raptor maps wall thickness with ultrasound",
           "image": "/media/spotlight/gecko-inspectors-thickness-map.jpg",
-          "image_credit": "Photo: Gecko Robotics",
           "body": "On tanks, pipes and boilers: no scaffolding, no people at height."
         },
         {
@@ -426,7 +442,8 @@
           "value": "10s",
           "label": "of machines running daily in the UAE",
           "body": "Plus a new ADNOC Onshore agreement.",
-          "foot": "Source: The National, 4 Nov 2026"
+          "foot": "Source: The National, 4 Nov 2026",
+          "image": "/media/companies/gecko-robotics.jpg"
         },
         {
           "template": "cta",
@@ -511,7 +528,8 @@
           "template": "cover",
           "size": "portrait",
           "kicker": "Policy tracker",
-          "title": "What MENA governments have **promised** on robots"
+          "title": "What MENA governments have **promised** on robots",
+          "image": "/media/policy/ae-feat.jpg"
         },
         {
           "template": "stat",
@@ -519,7 +537,9 @@
           "kicker": "UAE · by 2032",
           "value": "200,000",
           "label": "robots across services, logistics and industry",
-          "foot": "Source: roboticsmena.com/policy"
+          "foot": "Source: roboticsmena.com/policy",
+          "image": "/media/policy/ae-feat.jpg",
+          "caption": true
         },
         {
           "template": "stat",
@@ -527,7 +547,9 @@
           "kicker": "Saudi Arabia · by 2030",
           "value": "4,000",
           "label": "factories transformed into smart, automated facilities",
-          "foot": "Source: roboticsmena.com/policy"
+          "foot": "Source: roboticsmena.com/policy",
+          "image": "/media/companies/gmt-robotics.jpg",
+          "caption": true
         },
         {
           "template": "stat",
@@ -543,7 +565,9 @@
           "kicker": "Morocco · by 2030",
           "value": "200,000",
           "label": "people trained and certified in AI",
-          "foot": "Source: roboticsmena.com/policy"
+          "foot": "Source: roboticsmena.com/policy",
+          "image": "/media/policy/ma-feat.jpg",
+          "caption": true
         },
         {
           "template": "cta",
@@ -581,7 +605,8 @@
           "template": "cover",
           "size": "landscape",
           "kicker": "Now live",
-          "title": "Every robot working in the Middle East & North Africa. **Verified.**"
+          "title": "Every robot working in the Middle East & North Africa. **Verified.**",
+          "image": "/media/brand/hero-robot-arm.jpg"
         }
       ],
       "sources": [
@@ -657,7 +682,8 @@
           "size": "landscape",
           "kicker": "Deployment of the week · UAE",
           "title": "Wall-climbing robots now inspect ADNOC facilities daily",
-          "foot": "Source: The National, 4 Nov 2026"
+          "foot": "Source: The National, 4 Nov 2026",
+          "image": "/media/spotlight/gecko-inspectors-thickness-map.jpg"
         }
       ],
       "sources": [
@@ -680,6 +706,16 @@
         {
           "name": "Maspero",
           "url": "https://www.maspero.eg/science-and-technology/2026/11/12/1005059/"
+        }
+      ],
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "Egypt · Healthcare",
+          "title": "Robotic-surgery pilots planned for Egypt's public hospitals",
+          "foot": "Source: Maspero, 12 Nov 2026",
+          "image": "/media/brief/egypt-da-vinci-sofmedica.jpg"
         }
       ]
     },
@@ -744,6 +780,17 @@
           "name": "Seoul Economic Daily",
           "url": "https://en.sedaily.com/business/2026/11/12/naver-to-launch-outdoor-delivery-robots-in-saudi-arabia"
         }
+      ],
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "lang": "ar",
+          "kicker": "السعودية · روبوتات التوصيل",
+          "title": "نافر تطلق روبوتات «نوري» في الرياض خلال النصف الأول من 2027",
+          "foot": "المصدر: Seoul Economic Daily",
+          "image": "/media/companies/naver-labs.jpg"
+        }
       ]
     },
     {
@@ -761,7 +808,9 @@
           "size": "landscape",
           "kicker": "Spotlight · UAE · Energy",
           "title": "ADNOC's real AI story at ADIPEC wasn't the OpenAI deal. It was the robots.",
-          "foot": "Robotics MENA analysis, 7 Nov 2026"
+          "foot": "Robotics MENA analysis, 7 Nov 2026",
+          "image": "/media/spotlight/taurob-inspector-taweelah.jpg",
+          "caption": true
         }
       ],
       "sources": [
@@ -789,6 +838,21 @@
           "name": "Zawya",
           "url": "https://www.zawya.com/en/press-release/events-conferences/10-university-teams-to-compete-in-emirates-robotic-competition-finals-during-the-inaugural-dubai-future-week-2026-1854412"
         }
+      ],
+      "cards": [
+        {
+          "template": "list",
+          "size": "landscape",
+          "kicker": "This week in Dubai",
+          "title": "Robotics on the calendar",
+          "items": [
+            "**World Police Summit:** until 18 Nov, DWTC",
+            "**Dubai Future Week:** 18 to 21 Nov",
+            "**Emirates Robotics Competition:** finals 21 Nov",
+            "**Big 5 Global:** from 23 Nov"
+          ],
+          "foot": "Source: roboticsmena.com/events"
+        }
       ]
     },
     {
@@ -804,6 +868,17 @@
         {
           "name": "QNA",
           "url": "https://qna.org.qa/en/News-Area/News/2026-11/8/vodafone-qatar-agibot-sign-mou-to-explore-deploying-embodied-ai-robotics-solutions"
+        }
+      ],
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "lang": "ar",
+          "kicker": "قطر · روبوتات بشرية",
+          "title": "فودافون قطر وأجي بوت توقعان مذكرة تفاهم للذكاء الاصطناعي المتجسّد",
+          "foot": "المصدر: وكالة الأنباء القطرية",
+          "image": "/media/companies/agibot.jpg"
         }
       ]
     },

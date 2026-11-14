@@ -100,6 +100,9 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
 - [x] **Launch campaign and Content Library** (14 Nov 2026): `social/campaigns/launch-2026.{json,md}` (profile-filling posts for 15 Nov,
   launch-week outreach kit, GITEX run-up, live templates and story frames, recap, checklist and shot list) and the Content Library page
   (https://claude.ai/artifact/VLvATizyqX8AuX4t3WtmM2, `scripts/social-library.mjs`) for viewing, copying and downloading every post.
+- [ ] **Social pack v2 sign-off** (14 Nov 2026): photo-led redesign using the site's cleared press images (`social/images.json`),
+  cards as JPEG, 4 more X posts with cards. Owner reviews at https://claude.ai/artifact/Ao2fSzm4HETqS8Toybg9EU; then Claude applies
+  the requested changes and republishes the Content Library with the approved posts.
 - [ ] **Owner: scheduler.** Connect LinkedIn, Instagram and X to Buffer (free plan) or use the native schedulers.
 - [x] **Admin portal redeployed** (14 Nov 2026, version 85664a39): it now accepts `social/` pull requests; still behind Access, secrets kept.
 - [x] **Scheduled tasks switched on** (14 Nov 2026): "weekly social run" Sun 15:37 Gulf (Analyst → Strategist → Creator, after the 13:43 brief)

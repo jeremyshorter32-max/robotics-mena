@@ -28,6 +28,12 @@ media previews, per-file downloads, a "Download all media (.zip)" button per col
 then republish `social/out/library/index.html` to that URL with `root: social/out/library`, the files listed in `social/out/library/files.json`
 and the `downloads` capability.
 
+## Design v2 and images
+Cards are photo-led wherever a cleared press image exists (see `scripts/social-cards.cjs` for the layouts). Only images in `social/images.json`
+can appear on a card: company or government press images and the owner's own, never newspaper or agency photos, each credited on the card.
+The v2 sign-off page is https://claude.ai/artifact/Ao2fSzm4HETqS8Toybg9EU (`node scripts/social-library.mjs --review --intro <file>` builds it;
+decisions are stored in its `reviews` collection, one document per post id).
+
 ## Campaigns
 `campaigns/<id>.json` has the same shape as a weekly queue, plus `"campaign": "<id>"`, a `kit` of ready-to-paste copy (personal posts, emails,
 DMs, checklists) and optional `"template": true` posts with `[[placeholders]]`. `campaigns/<id>.md` is the plan. The Strategist copies each campaign

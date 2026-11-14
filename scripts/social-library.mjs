@@ -8,7 +8,11 @@ import path from 'node:path';
 import { ROOT } from './lib/taxonomy.mjs';
 import { allQueues, readJson, queuePath, folderOf, cardFiles, extraFiles, isWeek, weekOf, xLength } from './lib/social.mjs';
 
-const OUT = path.join(ROOT, 'social/out/library');
+// --review builds the sign-off version (approve / request changes per post, saved in the artifact's db) into social/out/review/.
+const REVIEW = process.argv.includes('--review');
+const OUT = path.join(ROOT, 'social/out', REVIEW ? 'review' : 'library');
+const introArg = process.argv.indexOf('--intro');
+const INTRO = introArg > 0 ? fs.readFileSync(path.resolve(process.argv[introArg + 1]), 'utf8') : '';
 const sinceArg = process.argv.indexOf('--since');
 const since = sinceArg > 0 ? process.argv[sinceArg + 1] : weekOf(new Date(Date.now() - 7 * 864e5));
 fs.rmSync(OUT, { recursive: true, force: true });
@@ -38,12 +42,14 @@ const collections = allQueues().filter(n => !isWeek(n) || n >= since).map(name =
 // Profile kit: avatar, banners, highlight covers.
 const kitFiles = fs.readdirSync(path.join(ROOT, 'brand/social')).filter(f => f.endsWith('.png')).sort().map(f => copyIn(`brand/social/${f}`, `profile/${f}`));
 
-const DATA = { built: new Date().toISOString().slice(0, 10), accounts, collections, profile: { files: kitFiles } };
+const DATA = { built: new Date().toISOString().slice(0, 10), accounts, collections, profile: { files: kitFiles }, review: REVIEW, intro: INTRO };
 const tpl = fs.readFileSync(path.join(ROOT, 'social/library-template.html'), 'utf8');
-fs.writeFileSync(path.join(OUT, 'index.html'), tpl.replace('/*@DATA*/null', () => JSON.stringify(DATA).replace(/</g, '\\u003c')));
+let page = tpl.replace('/*@DATA*/null', () => JSON.stringify(DATA).replace(/</g, '\\u003c'));
+if (REVIEW) page = page.replace('<title>Robotics MENA Content Library</title>', '<title>Social Pack Sign-off</title>').replace('<h1>Content Library</h1>', '<h1>Social pack sign-off</h1>');
+fs.writeFileSync(path.join(OUT, 'index.html'), page);
 
 const all = [];
 (function walk(d) { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); fs.statSync(p).isDirectory() ? walk(p) : all.push(path.relative(OUT, p)); } })(OUT);
 fs.writeFileSync(path.join(OUT, 'files.json'), JSON.stringify(all.filter(f => f !== 'index.html' && f !== 'files.json'), null, 1));
 const mb = all.reduce((s, f) => s + fs.statSync(path.join(OUT, f)).size, 0) / 1048576;
-console.log(`social/out/library: ${collections.length} collections, ${collections.reduce((s, c) => s + c.posts.length, 0)} posts, ${all.length - 1} files, ${mb.toFixed(1)} MB`);
+console.log(`social/out/${REVIEW ? 'review' : 'library'}: ${collections.length} collections, ${collections.reduce((s, c) => s + c.posts.length, 0)} posts, ${all.length - 1} files, ${mb.toFixed(1)} MB`);

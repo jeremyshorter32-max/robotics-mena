@@ -83,7 +83,7 @@ export function slotDate(week, day, time, tz = '+04:00') {
   return `${d.toISOString().slice(0, 10)}T${time}${tz}`;
 }
 
-export const cardFiles = (week, post) => (post.cards || []).map((_, i) => `social/cards/${week}/${post.id}-${i + 1}.png`);
+export const cardFiles = (week, post) => (post.cards || []).map((_, i) => `social/cards/${week}/${post.id}-${i + 1}.jpg`);
 export const extraFiles = (week, post) => [
   ...(post.platform === 'linkedin' && post.format === 'document' ? [`social/cards/${week}/${post.id}.pdf`] : []),
   ...(post.format === 'reel' ? [`social/cards/${week}/${post.id}.mp4`] : []),
@@ -110,6 +110,7 @@ export function validateQueue(q, opts = {}) {
   const ids = new Set();
   let ownLinksOutside = 0;
   const known = opts.handles || knownHandles();
+  const cleared = opts.images || clearedImages();
   q.posts.forEach((p, i) => {
     const w = `posts[${i}] ${p.id || '(no id)'}`;
     if (!p.id || !/^[a-z0-9-]+$/.test(p.id)) E(w, 'id must be lowercase letters, digits and hyphens');
@@ -193,17 +194,20 @@ export function validateQueue(q, opts = {}) {
       if (c.template !== 'cta' && !c.title && !c.value) E(cw, 'needs a title');
       if (c.template === 'bars' && !(c.rows || []).every(r => r.label && Number.isFinite(r.value))) E(cw, 'bars need rows of {label, value}');
       if ((c.title || '').length > 140) W(cw, 'title over 140 characters will be small on a phone');
-      if (c.image) {
-        // Only images the site already uses with a rights-cleared credit (company or government press images).
-        if (!/^\/media\/(brief|spotlight|companies)\/[a-z0-9._-]+\.(jpg|jpeg|png|webp)$/.test(c.image)) E(cw, 'image must be a rights-cleared site image in /media/brief, /media/spotlight or /media/companies');
-        else if (!fs.existsSync(path.join(ROOT, c.image))) E(cw, `image ${c.image} does not exist`);
-        if (!c.image_credit) E(cw, 'image needs image_credit (printed on the card)');
-      }
+      // Photos: only images cleared in social/images.json (company or government press images, or the owner's own).
+      [c.image, ...(c.images || [])].filter(Boolean).forEach(img => {
+        if (!cleared[img]) E(cw, `image ${img} is not a rights-cleared image in social/images.json`);
+        else if (!fs.existsSync(path.join(ROOT, img))) E(cw, `image ${img} does not exist`);
+      });
     });
     if (opts.media) [...cardFiles(folderOf(q), p), ...extraFiles(folderOf(q), p)].forEach(f => { if (!fs.existsSync(path.join(ROOT, f))) E(w, `missing ${f} (run: node scripts/social-cards.cjs week ${folderOf(q)})`); });
   });
   if (ownLinksOutside > 1) errors.push(`queue: ${ownLinksOutside} Reddit posts outside r/RoboticsMENA link to roboticsmena.com (max 1 a week)`);
   return { errors, warnings };
+}
+
+export function clearedImages(file = path.join(SOCIAL, 'images.json')) {
+  return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')).images || {} : {};
 }
 
 export function knownHandles(file = path.join(SOCIAL, 'handles.json')) {
