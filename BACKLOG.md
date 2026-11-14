@@ -74,6 +74,13 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   shown as plain cards; X's embed loads only on "Show post" (privacy page updated). Posts appear only once their
   status is "approved". The Sunday routine suggests new ones.
 
+- [ ] **Admin portal (private, owner only)** (requested 14 Nov 2026). Approvals and ad-hoc pushes for the weekly data,
+  running the research agents, traffic (GoatCounter) and sign-ups (Sheet/Kit) in one place. Plan and phases in
+  `docs/admin-portal/PLAN.md`. Decided: **no admin page on the public site and no portal password**: a separate app at
+  `admin.roboticsmena.com` behind an identity gate (Cloudflare Access, one allow-listed identity + passkey), secrets only
+  on the server, every change made as a git commit/PR. Waiting on the owner: DNS on Cloudflare? Google or GitHub
+  sign-in? Anyone else ever needing access?
+
 ## Content and research
 
 - [x] **Arabic brand name** (13 Nov 2026): «روبوتات الشرق الأوسط وشمال أفريقيا» everywhere (short forms such as
