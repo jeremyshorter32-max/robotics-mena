@@ -18,7 +18,7 @@ The agents draft. **The owner approves (in the admin portal) and posts.** Nothin
 - **Sun or Mon (15 to 20 min):** approve the "Social: week NN" pull request in the portal. Open the posting pack, load the week into Buffer
   (LinkedIn, Instagram, X) or the native schedulers, and add trending audio to Reels in Instagram.
 - **Every weekday (10 to 20 min):** open the week's "Social engagement" issue. Post the replies and comments you agree with, and post Reddit items by hand.
-- **Monday:** comment `followers linkedin=N x=N instagram=N` on the engagement issue (the Analyst records it).
+- **Monday:** comment `followers linkedin=N x=N instagram=N reddit=N` (reddit = r/RoboticsMENA members) on the engagement issue (the Analyst records it).
 - **1st of the month:** use LinkedIn's "Invite to follow" credits.
 
 ## Tools
