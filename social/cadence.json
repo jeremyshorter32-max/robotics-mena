@@ -1,0 +1,31 @@
+{
+  "_note": "Weekly slots the Creator fills (Gulf time, UTC+4). The validator warns when a week's queue misses a slot. Days: mon..sun.",
+  "timezone": "+04:00",
+  "slots": [
+    { "platform": "linkedin",  "day": "mon", "time": "08:30", "format": "document", "pillar": "signals",    "what": "Weekly brief carousel (5 signals + CTA)" },
+    { "platform": "linkedin",  "day": "tue", "time": "08:30", "format": "image",    "pillar": "deployment", "what": "Deployment of the week" },
+    { "platform": "linkedin",  "day": "wed", "time": "08:30", "format": "image",    "pillar": "data",       "what": "Data chart / ranking" },
+    { "platform": "linkedin",  "day": "thu", "time": "08:30", "format": "image",    "pillar": "explainer",  "what": "Explainer or Spotlight teaser" },
+    { "platform": "linkedin",  "day": "fri", "time": "08:30", "format": "poll",     "pillar": "community",  "what": "Poll or events of the week" },
+
+    { "platform": "instagram", "day": "mon", "time": "19:30", "format": "carousel", "pillar": "signals",    "what": "Brief carousel" },
+    { "platform": "instagram", "day": "tue", "time": "19:30", "format": "reel",     "pillar": "deployment", "what": "Reel: deployment of the week" },
+    { "platform": "instagram", "day": "thu", "time": "19:30", "format": "reel",     "pillar": "data",       "what": "Reel: data in 15 seconds" },
+    { "platform": "instagram", "day": "sat", "time": "12:00", "format": "carousel", "pillar": "explainer",  "what": "Explainer / data carousel" },
+
+    { "platform": "x", "day": "mon", "time": "09:00", "format": "thread", "pillar": "signals",    "what": "Weekly brief thread" },
+    { "platform": "x", "day": "mon", "time": "17:00", "format": "post",   "pillar": "data",       "what": "Data point" },
+    { "platform": "x", "day": "tue", "time": "09:00", "format": "post",   "pillar": "deployment", "what": "Deployment of the week" },
+    { "platform": "x", "day": "tue", "time": "17:00", "format": "post",   "pillar": "signals",    "what": "Signal" },
+    { "platform": "x", "day": "wed", "time": "09:00", "format": "post",   "pillar": "data",       "what": "Data point" },
+    { "platform": "x", "day": "wed", "time": "17:00", "format": "post",   "pillar": "signals",    "what": "Signal (Arabic)" },
+    { "platform": "x", "day": "thu", "time": "09:00", "format": "post",   "pillar": "explainer",  "what": "Explainer / Spotlight" },
+    { "platform": "x", "day": "thu", "time": "17:00", "format": "post",   "pillar": "community",  "what": "Events / question" },
+    { "platform": "x", "day": "fri", "time": "11:00", "format": "post",   "pillar": "signals",    "what": "Signal (Arabic)" },
+    { "platform": "x", "day": "sat", "time": "12:00", "format": "post",   "pillar": "data",       "what": "Weekend data point" },
+
+    { "platform": "reddit", "day": "mon", "time": "18:00", "format": "text", "pillar": "signals",   "what": "r/RoboticsMENA weekly roundup", "subreddit": "RoboticsMENA" },
+    { "platform": "reddit", "day": "wed", "time": "18:00", "format": "text", "pillar": "data",      "what": "r/RoboticsMENA data / discussion", "subreddit": "RoboticsMENA" },
+    { "platform": "reddit", "day": "sat", "time": "16:00", "format": "text", "pillar": "community", "what": "r/RoboticsMENA discussion / question", "subreddit": "RoboticsMENA" }
+  ]
+}

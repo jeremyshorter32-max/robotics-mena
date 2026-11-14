@@ -1,0 +1,9 @@
+{
+  "_note": "Social handles we may @-tag. Only add a handle once it has been checked: on the organisation's own website (header or footer link), X's oEmbed for one of its posts, or the platform's verified badge. Record how in 'checked'. Never guess a handle: tagging the wrong account is worse than tagging none.",
+  "orgs": {
+    "adnoc":        { "name": "ADNOC Group",       "x": "ADNOCGroup",     "checked": "X oEmbed of x.com/ADNOCGroup/status/2118279593908142426 (data/xposts.json), 12 Nov 2026" },
+    "dubai-media-office": { "name": "Dubai Media Office", "x": "DXBMediaOffice", "checked": "X oEmbed (data/xposts.json), 12 Nov 2026" },
+    "rta-dubai":    { "name": "RTA Dubai",         "x": "rta_dubai",      "checked": "X oEmbed (data/xposts.json), 12 Nov 2026" },
+    "weride":       { "name": "WeRide",            "x": "WeRide_ai",      "checked": "X oEmbed (data/xposts.json), 12 Nov 2026" }
+  }
+}

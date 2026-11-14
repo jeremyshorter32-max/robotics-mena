@@ -7,7 +7,7 @@
     "build": "DEV=1 ./scripts/build-site.sh",
     "scan": "node scripts/scan.mjs",
     "validate": "node scripts/validate-data.mjs",
-    "test": "node --test test/catmon/*.test.mjs admin/test/*.test.mjs",
+    "test": "node --test test/catmon/*.test.mjs test/social/*.test.mjs admin/test/*.test.mjs",
     "catmon": "node scripts/catmon/run.mjs",
     "admin:demo": "node admin/dev-server.mjs --demo"
   },

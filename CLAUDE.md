@@ -10,3 +10,5 @@
   assembled by `scripts/assemble.cjs`; shared pop-up in `partials/brief-modal.html`.
 - Israeli companies and the Israeli flag must never appear on the site (enforced by
   `EXCLUDED_COUNTRIES` in the validator).
+- **Social:** plan, voice and set-up in `social/` (start with `social/README.md`); agents are the `social-*` skills. Posts are drafted into
+  `social/queue/<week>.json`, checked by `node scripts/social.mjs validate`, and approved in the admin portal. The agents never post, reply or follow.

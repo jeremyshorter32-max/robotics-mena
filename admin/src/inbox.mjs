@@ -1,10 +1,10 @@
-// The approvals inbox: open pull requests produced by the agents (weekly scan, brief, research reports, data edits).
+// The approvals inbox: open pull requests produced by the agents (weekly scan, brief, research reports, data edits, social queue).
 // The portal can only merge pull requests that (1) come from an agent branch, (2) target main and (3) change data and
 // media only, so even a misused portal cannot publish code. Approval is tied to the exact commit that was reviewed.
 
-export const AGENT_BRANCH = /^(scan|brief|report|data)\//;
-export const PUBLISHABLE_PATH = /^(data|media|newsletter)\//;
-const KIND = { scan: 'Weekly scan', brief: 'Weekly brief', report: 'Research report', data: 'Data edit' };
+export const AGENT_BRANCH = /^(scan|brief|report|data|social)\//;
+export const PUBLISHABLE_PATH = /^(data|media|newsletter|social)\//;
+const KIND = { scan: 'Weekly scan', brief: 'Weekly brief', report: 'Research report', data: 'Data edit', social: 'Social posts' };
 
 export const kindOf = branch => KIND[(AGENT_BRANCH.exec(branch) || [])[1]] || 'Other';
 
@@ -46,9 +46,9 @@ export async function getItem(gh, number) {
   const problems = [];
   if (p.state !== 'open') problems.push('this pull request is not open');
   if (p.base.ref !== 'main') problems.push('it does not target main');
-  if (!AGENT_BRANCH.test(p.head.ref)) problems.push(`branch "${p.head.ref}" is not an agent branch (scan/, brief/, report/, data/)`);
+  if (!AGENT_BRANCH.test(p.head.ref)) problems.push(`branch "${p.head.ref}" is not an agent branch (scan/, brief/, report/, data/, social/)`);
   const outside = files.filter(f => !PUBLISHABLE_PATH.test(f.filename) || (f.previous_filename && !PUBLISHABLE_PATH.test(f.previous_filename)));
-  if (outside.length) problems.push(`it changes files outside data/, media/ and newsletter/ (${outside.map(f => f.filename).slice(0, 5).join(', ')}); review it on GitHub`);
+  if (outside.length) problems.push(`it changes files outside data/, media/, newsletter/ and social/ (${outside.map(f => f.filename).slice(0, 5).join(', ')}); review it on GitHub`);
   if (files.length >= 100) problems.push('it changes 100 or more files; review it on GitHub');
   if (p.draft) problems.push('it is still a draft');
   if (p.mergeable === false) problems.push('it has conflicts with main');

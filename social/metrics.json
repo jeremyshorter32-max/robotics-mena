@@ -1,0 +1,43 @@
+{
+  "_note": "Follower counts, one entry per check. Add with: node scripts/social.mjs metrics add linkedin=N instagram=N x=N reddit=N",
+  "goal": 10000,
+  "target_dates": {
+    "linkedin": "2027-09-30",
+    "instagram": "2027-10-31",
+    "x": "2028-01-31",
+    "reddit": "2028-03-31"
+  },
+  "milestones": {
+    "2026-12-31": {
+      "linkedin": 600,
+      "instagram": 400,
+      "x": 300,
+      "reddit": 150
+    },
+    "2027-02-28": {
+      "linkedin": 2000,
+      "instagram": 1500,
+      "x": 1200,
+      "reddit": 600
+    },
+    "2027-05-31": {
+      "linkedin": 5000,
+      "instagram": 4500,
+      "x": 3500,
+      "reddit": 2000
+    },
+    "2027-08-31": {
+      "linkedin": 8500,
+      "instagram": 8000,
+      "x": 6000,
+      "reddit": 4000
+    },
+    "2027-11-30": {
+      "linkedin": 12000,
+      "instagram": 11000,
+      "x": 8500,
+      "reddit": 6500
+    }
+  },
+  "entries": []
+}
