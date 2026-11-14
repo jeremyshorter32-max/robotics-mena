@@ -96,7 +96,7 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
 - [ ] **Owner: create the accounts** (`social/SETUP.md`): Instagram @roboticsmena (business, linked to a Facebook Page), X @roboticsmena,
   Reddit u/RoboticsMENA and r/RoboticsMENA. Upload the banners. Tell Claude the final handles and the LinkedIn page URL (for `social/accounts.json`).
 - [ ] **Owner: scheduler.** Connect LinkedIn, Instagram and X to Buffer (free plan) or use the native schedulers.
-- [ ] **Redeploy the admin portal** so it accepts `social/` pull requests (`admin/src/inbox.mjs` changed 14 Nov): `npx wrangler deploy` in `admin/`.
+- [x] **Admin portal redeployed** (14 Nov 2026) so it accepts `social/` pull requests.
 - [x] **Scheduled tasks switched on** (14 Nov 2026): "weekly social run" Sun 15:37 Gulf (Analyst → Strategist → Creator, after the 13:43 brief)
   and "daily social engagement" Mon–Fri 07:13 Gulf. Both stop with "Social system not merged into main yet" until this work is on main.
 - [ ] **Site links once the handles exist:** footer icons, `sameAs` in the Organization structured data, the newsletter footer, "Follow us" in the brief pop-up.
