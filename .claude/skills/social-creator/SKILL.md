@@ -1,6 +1,6 @@
 ---
 name: social-creator
-description: Robotics MENA social Creator. Turns the week's plan into ready-to-post content for LinkedIn, Instagram, X and Reddit (copy in English and Arabic, branded cards, LinkedIn PDF carousels, Instagram Reels), validates it, renders the images and opens one pull request for approval in the admin portal. Use for the Sunday social run (after social-strategist), or when the owner asks to "write the social posts", "make a post about <x>", "redo <post>" or "draft a breaking-news post".
+description: Robotics MENA social Creator. Turns the week's plan into ready-to-post content for LinkedIn, Instagram, X and Reddit (copy in English, branded cards, LinkedIn PDF carousels, Instagram Reels), validates it, renders the images and opens one pull request for approval in the admin portal. Use for the Sunday social run (after social-strategist), or when the owner asks to "write the social posts", "make a post about <x>", "redo <post>" or "draft a breaking-news post".
 ---
 
 # Social Creator: write, design, validate, send for approval
@@ -15,12 +15,12 @@ run the `social-strategist` skill first.
 ## 1. Write the queue
 Create or update `social/queue/<week>.json` (copy the shape of the newest existing week). One entry per planned slot:
 - `id` `w<NN>-<platform short>-<slug>` (li, ig, x, rd), `platform`, `format`, `pillar`, `slot` (`YYYY-MM-DDTHH:MM+04:00`),
-  `lang` (`en`, `ar` or `en+ar`), `status: "draft"`, the copy, `cards`, `sources` (`{name, url}`), and optionally `tags`, `media_note` and `first_comment`.
+  `lang` (`en`; posts are English only while `social/cadence.json` languages is ["en"]), `status: "draft"`, the copy, `cards`, `sources` (`{name, url}`), and optionally `tags`, `media_note` and `first_comment`.
 - **Copy per platform** (the limits are checked by the validator):
   - LinkedIn: `text` with a hook under 210 characters, ▸ bullets, 3 to 5 hashtags at the end. Links go in `first_comment`, never in `text`. A `document`
     post is a carousel (3 or more cards, which becomes a PDF). A `poll` needs `poll.question` and 2 to 4 `poll.options` of 30 characters or fewer.
   - X: `text` (post) or `thread` (list of posts), each 280 weighted characters or fewer (a link counts as 23). 0 to 2 hashtags. A country flag emoji leads a signal.
-  - Instagram: `text` is the caption (hook first, English then Arabic, 5 to 8 specific hashtags, "link in bio"). Use `carousel` with 2 to 20
+  - Instagram: `text` is the caption (hook first, in English, 5 to 8 specific hashtags, "link in bio"). Use `carousel` with 2 to 20
     `portrait` cards, or `reel`, which needs `story`-size cards and becomes an MP4 slideshow. Always add a `media_note` reminding the owner to add a trending audio track.
   - Reddit: `subreddit`, `title` and `text` (markdown). It's a person talking: no hashtags, no emoji, no UTM tags. Disclose
     that roboticsmena.com is ours. Outside r/RoboticsMENA, at most 1 post a week may link to our site, and only once the account is 4 weeks old.
@@ -28,16 +28,22 @@ Create or update `social/queue/<week>.json` (copy the shape of the newest existi
   `/database?tab=deployments&id=<id>`, `/database?tab=companies&id=<id>`, `/policy?c=<CC>`, `/spotlight?s=<id>`, `/map`, `/events`.
 - **@-mentions** on X and Instagram only for handles in `social/handles.json`. Otherwise name the organisation in plain text and put
   "tag if confirmed: <org>" in `tags`. On LinkedIn, write the organisation's name and list it in `tags`, because the owner picks the company page when posting.
-- **Arabic** is written natively, not translated word by word. Use the site's spellings (`title_ar`, `operator_ar` in `data/*.json`)
-  and the brand name «روبوتات الشرق الأوسط وشمال أفريقيا».
+- **English only for now** (owner, 14 Nov 2026). Write every post, card and kit text in English. Use companies' English names as the site
+  does. Arabic comes back only when `social/cadence.json` languages includes "ar"; then use the site's Arabic spellings (`title_ar`, `operator_ar`).
 
 ## 2. Cards (images)
 Each card in `cards` is a spec rendered by `scripts/social-cards.cjs` (the header of that file lists the fields):
 `cover` (dark, carousel opener), `signal` (kicker, title, body, source), `stat` (big `value` and `label`), `bars` (ranked `rows` from the database),
 `list` (up to 5 `items`), `cta` (closing slide). Sizes: `portrait` (LinkedIn and Instagram feed), `story` (Reels and Stories),
 `landscape` (X), `square`. `**bold**` in a title shows in the brand colour. Every factual card has a `foot` with "Source: <name>, <date>".
-- Photos: only `image` paths from `/media/brief`, `/media/spotlight` or `/media/companies` (images the site has cleared), always with `image_credit`.
-  Never newspaper or agency photos, never AI-generated images of real people, places or robots.
+- **Photos lead (design v2).** Give every signal, deployment and cover card an `image` when `social/images.json` has a cleared photo
+  of that company, operator or programme. Only images listed there can be used: company or government press images, or the owner's own.
+  The renderer prints "Photo: <credit>" itself. Set `caption: true` when the photo is illustrative rather than of the exact story, so the
+  credit also says what it shows. Never use a photo that implies something false (another company's robot on a "deployed at X" card, or
+  stand photos for an event the photo isn't from). To add an image, check its source page, add it to `media/` and `social/images.json` with
+  credit, `shows` and `source`. Never newspaper or agency photos, and never AI-generated images of real people, places or robots.
+  Layouts: photo band over text (portrait, square, story), split text and photo (landscape), indigo-toned cover (`cover` + `image`),
+  and a photo mosaic on `cta` slides. Cards render as JPEG.
 - Counts and rankings are computed from `data/*.json` on the day you write them (use node one-liners), never from memory, and the
   card's foot says "Source: roboticsmena.com, <date>".
 
@@ -49,6 +55,8 @@ Each card in `cards` is a spec rendered by `scripts/social-cards.cjs` (the heade
    problems: text cut off, an empty slide, a wrong credit.
 4. `node scripts/social.mjs validate <week> --media` must pass.
 5. `node scripts/social.mjs preview <week>` writes the posting pack `social/out/<week>.html` (not committed).
+6. Rebuild the Content Library (`node scripts/social-library.mjs`, see `social/README.md`). In an interactive session, republish it to
+   the owner's existing Content Library artifact (its URL is in `social/README.md`).
 
 ## 4. Send for approval
 1. Commit `social/queue/<week>.json`, `social/cards/<week>/`, the plan and any reports to `social/<week>` (repository author, attribution trailer). Push.

@@ -83,7 +83,7 @@ export function slotDate(week, day, time, tz = '+04:00') {
   return `${d.toISOString().slice(0, 10)}T${time}${tz}`;
 }
 
-export const cardFiles = (week, post) => (post.cards || []).map((_, i) => `social/cards/${week}/${post.id}-${i + 1}.png`);
+export const cardFiles = (week, post) => (post.cards || []).map((_, i) => `social/cards/${week}/${post.id}-${i + 1}.jpg`);
 export const extraFiles = (week, post) => [
   ...(post.platform === 'linkedin' && post.format === 'document' ? [`social/cards/${week}/${post.id}.pdf`] : []),
   ...(post.format === 'reel' ? [`social/cards/${week}/${post.id}.mp4`] : []),
@@ -98,10 +98,21 @@ export function validateQueue(q, opts = {}) {
   const errors = [], warnings = [];
   const E = (w, m) => errors.push(`${w}: ${m}`), W = (w, m) => warnings.push(`${w}: ${m}`);
   if (!q || !Array.isArray(q.posts)) return { errors: ['queue: needs a "posts" list'], warnings };
-  try { weekStart(q.week); } catch (e) { errors.push(`queue: ${e.message}`); }
+  if (q.campaign !== undefined) { if (!/^[a-z0-9-]+$/.test(q.campaign)) errors.push('queue: campaign must be lowercase letters, digits and hyphens'); }
+  else try { weekStart(q.week); } catch (e) { errors.push(`queue: ${e.message}`); }
+  // Ready-to-paste copy that isn't a scheduled post (personal posts, emails, DMs): same editorial checks.
+  (q.kit || []).forEach((k, i) => {
+    const w = `kit[${i}] ${k.id || ''}`;
+    if (!k.id || !k.title || !k.text) errors.push(`${w}: needs id, title and text`);
+    if (EXCLUDED_TERMS.test(k.text || '')) errors.push(`${w}: mentions an excluded country`);
+    if (BANNED_PHRASES.test(k.text || '')) errors.push(`${w}: uses a phrase social/VOICE.md bans`);
+    if (!(opts.languages || allowedLanguages()).includes('ar') && /[\u0600-\u06FF]/.test(k.text || '')) errors.push(`${w}: has Arabic text, but social copy is English only for now`);
+  });
   const ids = new Set();
   let ownLinksOutside = 0;
   const known = opts.handles || knownHandles();
+  const cleared = opts.images || clearedImages();
+  const langs = opts.languages || allowedLanguages();
   q.posts.forEach((p, i) => {
     const w = `posts[${i}] ${p.id || '(no id)'}`;
     if (!p.id || !/^[a-z0-9-]+$/.test(p.id)) E(w, 'id must be lowercase letters, digits and hyphens');
@@ -111,10 +122,15 @@ export function validateQueue(q, opts = {}) {
     if (!STATUSES.includes(p.status)) E(w, `status must be one of ${STATUSES.join(', ')}`);
     if (p.pillar && !PILLARS.includes(p.pillar)) E(w, `pillar must be one of ${PILLARS.join(', ')}`);
     if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(\+|-)\d{2}:\d{2}$/.test(p.slot || '')) E(w, 'slot must look like 2026-11-16T08:30+04:00');
-    else if (!q.week || weekOf(new Date(p.slot.slice(0, 10) + 'T12:00Z')) !== q.week) W(w, `slot ${p.slot} is outside ${q.week}`);
+    else if (!q.campaign && weekOf(new Date(p.slot.slice(0, 10) + 'T12:00Z')) !== q.week) W(w, `slot ${p.slot} is outside ${q.week}`);
     if (p.lang && !['en', 'ar', 'en+ar'].includes(p.lang)) E(w, 'lang must be en, ar or en+ar');
+    if (p.lang && p.lang.split('+').some(l => !langs.includes(l))) E(w, `lang "${p.lang}" is not switched on (social/cadence.json languages: ${langs.join(', ')})`);
 
     const text = allText(p);
+    // [[placeholders]] are for templates the owner fills in on the day (live event coverage); never in a ready post.
+    if (/\[\[[^\]]*\]\]/.test(text) && !p.template) E(w, 'has [[placeholders]] but is not marked "template": true');
+    if (p.template && (p.cards || []).some(c => /\[\[/.test(JSON.stringify(c)))) E(w, 'placeholders are not allowed on cards (they are rendered as images)');
+    if (!langs.includes('ar') && /[\u0600-\u06FF]/.test(text)) E(w, 'has Arabic text, but posts are English only for now (social/cadence.json languages)');
     if (EXCLUDED_TERMS.test(text)) E(w, 'mentions an excluded country (CLAUDE.md: no Israeli companies, flag or sources)');
     if (BANNED_PHRASES.test(text)) E(w, 'uses a phrase social/VOICE.md bans');
     (p.sources || []).forEach((s, j) => {
@@ -182,17 +198,24 @@ export function validateQueue(q, opts = {}) {
       if (c.template !== 'cta' && !c.title && !c.value) E(cw, 'needs a title');
       if (c.template === 'bars' && !(c.rows || []).every(r => r.label && Number.isFinite(r.value))) E(cw, 'bars need rows of {label, value}');
       if ((c.title || '').length > 140) W(cw, 'title over 140 characters will be small on a phone');
-      if (c.image) {
-        // Only images the site already uses with a rights-cleared credit (company or government press images).
-        if (!/^\/media\/(brief|spotlight|companies)\/[a-z0-9._-]+\.(jpg|jpeg|png|webp)$/.test(c.image)) E(cw, 'image must be a rights-cleared site image in /media/brief, /media/spotlight or /media/companies');
-        else if (!fs.existsSync(path.join(ROOT, c.image))) E(cw, `image ${c.image} does not exist`);
-        if (!c.image_credit) E(cw, 'image needs image_credit (printed on the card)');
-      }
+      // Photos: only images cleared in social/images.json (company or government press images, or the owner's own).
+      [c.image, ...(c.images || [])].filter(Boolean).forEach(img => {
+        if (!cleared[img]) E(cw, `image ${img} is not a rights-cleared image in social/images.json`);
+        else if (!fs.existsSync(path.join(ROOT, img))) E(cw, `image ${img} does not exist`);
+      });
     });
-    if (opts.media) [...cardFiles(q.week, p), ...extraFiles(q.week, p)].forEach(f => { if (!fs.existsSync(path.join(ROOT, f))) E(w, `missing ${f} (run: node scripts/social-cards.cjs week ${q.week})`); });
+    if (opts.media) [...cardFiles(folderOf(q), p), ...extraFiles(folderOf(q), p)].forEach(f => { if (!fs.existsSync(path.join(ROOT, f))) E(w, `missing ${f} (run: node scripts/social-cards.cjs week ${folderOf(q)})`); });
   });
   if (ownLinksOutside > 1) errors.push(`queue: ${ownLinksOutside} Reddit posts outside r/RoboticsMENA link to roboticsmena.com (max 1 a week)`);
   return { errors, warnings };
+}
+
+export function allowedLanguages(file = path.join(SOCIAL, 'cadence.json')) {
+  return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')).languages || ['en', 'ar'] : ['en', 'ar'];
+}
+
+export function clearedImages(file = path.join(SOCIAL, 'images.json')) {
+  return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')).images || {} : {};
 }
 
 export function knownHandles(file = path.join(SOCIAL, 'handles.json')) {
@@ -205,9 +228,17 @@ export function knownHandles(file = path.join(SOCIAL, 'handles.json')) {
 
 // Slots from social/cadence.json that a queue does not fill (same platform, day and format).
 export function missingSlots(q, cadence) {
+  if (q.campaign) return [];
   const have = new Set(q.posts.filter(p => p.status !== 'skipped').map(p => `${p.platform}|${p.slot.slice(0, 16)}`));
   return cadence.slots.filter(s => !have.has(`${s.platform}|${slotDate(q.week, s.day, s.time, cadence.timezone).slice(0, 16)}`));
 }
 
 export const readJson = f => JSON.parse(fs.readFileSync(f, 'utf8'));
-export const queuePath = week => path.join(SOCIAL, 'queue', `${week}.json`);
+// A queue is a week (social/queue/2026-w47.json) or a campaign (social/campaigns/launch-2026.json, "campaign": "launch-2026").
+export const isWeek = name => /^\d{4}-w\d{2}$/.test(name);
+export const queuePath = name => path.join(SOCIAL, isWeek(name) ? 'queue' : 'campaigns', `${name}.json`);
+export const folderOf = q => q.campaign || q.week;
+export const allQueues = () => [
+  ...fs.readdirSync(path.join(SOCIAL, 'queue')).filter(f => /^\d{4}-w\d{2}\.json$/.test(f)),
+  ...(fs.existsSync(path.join(SOCIAL, 'campaigns')) ? fs.readdirSync(path.join(SOCIAL, 'campaigns')).filter(f => f.endsWith('.json')) : []),
+].map(f => f.slice(0, -5)).sort();

@@ -20,18 +20,19 @@ Use web search in English and Arabic. Do not scrape x.com, linkedin.com or insta
   the author, wording and date must match.
 - **Company news** that will be on LinkedIn: newsroom releases from the companies and operators in our database.
 - **Reddit:** new threads in r/robotics, r/dubai, r/UAE, r/saudiarabia, r/qatar, r/Egypt, r/oman, r/Morocco, r/Jordan, r/drones,
-  r/SelfDrivingCars, r/humanoidrobots and r/Futurology that mention robots, drones, robotaxis or automation in MENA. Use Reddit's
-  public JSON (`https://www.reddit.com/r/<sub>/search.json?q=<terms>&restrict_sr=1&sort=new&t=day`) with a plain
-  User-Agent such as `roboticsmena-research/1.0` (never a person's name or email). Also check r/RoboticsMENA's new posts and unanswered comments.
+  r/SelfDrivingCars, r/humanoidrobots and r/Futurology that mention robots, drones, robotaxis or automation in MENA. Find them with
+  web search (for example `site:reddit.com/r/dubai robot`). Reddit refuses automated requests from cloud sessions (HTTP 403), so don't
+  fetch reddit.com directly or try to get around the block. Draft from what the search result shows, and give the owner the thread link to read
+  before replying. Remind the owner to check r/RoboticsMENA's new posts and comments themselves.
 
 ## 2. Draft
 For each item, a reply that **adds a verified fact** from our database or the source. Never write "Great post!" or a bare link.
 - **X replies (5 to 10):** 1 or 2 sentences of 200 characters or fewer, with a fact and, when it fits, a deep link to the record (with
-  `utm_source=x&utm_medium=social&utm_campaign=<week>`). Put the most time-sensitive first. Arabic replies to Arabic posts.
+  `utm_source=x&utm_medium=social&utm_campaign=<week>`). Put the most time-sensitive first. Replies are in English, also to Arabic posts.
 - **LinkedIn comments (3 to 5):** for company or operator announcements: 2 to 3 sentences with context from the database
   ("That makes it the 5th robotic-surgery deployment we've verified in Saudi Arabia this year…"). No links in comments.
 - **Reddit comments (3 to 5):** helpful and conversational, answering the actual question with sources. While u/RoboticsMENA is
-  younger than 4 weeks (see `accounts.json`), no links to roboticsmena.com at all. After that, link only when it directly answers
+  younger than 4 weeks (before `reddit.links_allowed_from` in `accounts.json`), no links to roboticsmena.com at all. After that, link only when it directly answers
   the question, and say it's our site. No more than one comment per thread.
 - **Breaking news:** if a major verified story broke (a new national programme, a large deployment, a first in the region), draft one
   X post and one LinkedIn post following the Creator's rules, and say whether it is worth a breaking-news pull request (`social-creator`).

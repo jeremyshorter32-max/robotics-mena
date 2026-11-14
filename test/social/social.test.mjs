@@ -9,7 +9,7 @@ import { AGENT_BRANCH, PUBLISHABLE_PATH, kindOf } from '../../admin/src/inbox.mj
 const post = over => ({ id: 'w47-x-a', platform: 'x', format: 'post', pillar: 'signals', slot: '2026-11-16T09:00+04:00', status: 'draft',
   text: 'Fact. Source: X', sources: [{ name: 'Src', url: 'https://example.com/a' }], ...over });
 const q = (...posts) => ({ week: '2026-w47', posts });
-const errs = qq => validateQueue(qq, { handles: { x: new Set(['roboticsmena', 'rta_dubai']), instagram: new Set(['roboticsmena']) } }).errors;
+const errs = (qq, more = {}) => validateQueue(qq, { handles: { x: new Set(['roboticsmena', 'rta_dubai']), instagram: new Set(['roboticsmena']) }, languages: ['en', 'ar'], ...more }).errors;
 
 test('X weighted length: links 23, emoji 2, flags 2, Arabic 1', () => {
   assert.equal(xLength('abc'), 3);
@@ -34,6 +34,14 @@ test('ISO weeks and slots', () => {
 });
 
 test('a valid post passes', () => assert.deepEqual(errs(q(post())), []));
+
+test('English only: Arabic text and lang ar are refused when only en is switched on', () => {
+  const en = { languages: ['en'] };
+  assert.ok(errs(q(post({ text: 'روبوتات في دبي' })), en).some(e => /English only/.test(e)));
+  assert.ok(errs(q(post({ lang: 'ar' })), en).some(e => /not switched on/.test(e)));
+  assert.deepEqual(errs(q(post({ lang: 'en' })), en), []);
+  assert.ok(errs({ campaign: 'c', posts: [], kit: [{ id: 'k', title: 'T', text: 'مرحبا' }] }, en).some(e => /English only/.test(e)));
+});
 
 test('excluded country, banned phrases and excluded sources are errors', () => {
   assert.ok(errs(q(post({ text: 'Deal with an Israeli startup' }))).some(e => /excluded country/.test(e)));
@@ -70,6 +78,24 @@ test('platform formats: LinkedIn poll and document, Instagram carousel', () => {
   const ig = { id: 'w47-ig-a', platform: 'instagram', format: 'carousel', pillar: 'community', slot: '2026-11-16T19:30+04:00', status: 'draft', text: 'Cap', cards: [{ template: 'cover', size: 'portrait', title: 'T' }] };
   assert.ok(errs(q(ig)).some(e => /2 to 20 cards/.test(e)));
   assert.ok(errs(q({ ...ig, cards: [...ig.cards, { template: 'signal', size: 'portrait', title: 'T', image: '/media/press/x.jpg' }] })).some(e => /rights-cleared/.test(e)));
+});
+
+test('every committed campaign validates', () => {
+  const dir = path.join(ROOT, 'social/campaigns');
+  for (const f of fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith('.json')) : []) assert.deepEqual(validateQueue(readJson(path.join(dir, f))).errors, [], f);
+});
+
+test('placeholders only in templates, never on cards', () => {
+  assert.ok(errs(q(post({ text: 'Day [[N]] at GITEX' }))).some(e => /placeholders/.test(e)));
+  assert.deepEqual(errs(q(post({ text: 'Day [[N]] at GITEX', template: true }))), []);
+  assert.ok(errs(q(post({ template: true, cards: [{ template: 'cover', size: 'landscape', title: 'Day [[N]]' }] }))).some(e => /not allowed on cards/.test(e)));
+});
+
+test('a campaign needs no week and no cadence', () => {
+  const c = { campaign: 'launch-2026', posts: [post({ slot: '2026-12-07T10:00+04:00' })], kit: [{ id: 'k1', title: 'T', text: 'Hello' }] };
+  assert.deepEqual(errs(c), []);
+  assert.deepEqual(missingSlots(c, readJson(path.join(ROOT, 'social/cadence.json'))), []);
+  assert.ok(errs({ ...c, kit: [{ id: 'k2', title: 'T', text: 'An Israeli startup' }] }).some(e => /excluded/.test(e)));
 });
 
 test('every committed queue validates and fills the cadence', () => {
