@@ -1,7 +1,7 @@
 {
   "week": "2026-w47",
   "theme": "Launch week: what the database shows, plus the fortnight's signals",
-  "notes": "Launch week. All four accounts are live. On each new account, post the launch item first and pin it (X: the thread; Instagram: the carousel; Reddit: the welcome post). The signals are from 6 to 12 Nov because this queue was written before Sunday's brief. If the w47 brief is approved first, the Creator swaps Thursday's carousel for it. The foundation posts for Sun 15 Nov are in the Launch to GITEX campaign.",
+  "notes": "Launch week. All four accounts are live. On each new account, post the launch item first and pin it (X: the thread; Instagram: the carousel; Reddit: the welcome post, posted 15 Nov). Thursday's LinkedIn carousel follows the week-47 brief (pull request #6), with the Glydways results in place of the Lootah showroom. Other signal posts use items from 6 to 12 Nov, which are in this week's brief too. The profile-filling posts for Sun 15 Nov are in the Launch to GITEX campaign.",
   "posts": [
     {
       "id": "w47-li-launch",
@@ -202,25 +202,24 @@
       "lang": "en",
       "status": "draft",
       "slot": "2026-11-19T08:30+04:00",
-      "text": "5 robotics signals from MENA in the past fortnight, each verified at the source:\n\n1. Egypt plans da Vinci robotic-surgery pilots in public hospitals with Sofmedica\n2. NAVER sets H1 2027 for NURI delivery robots in Riyadh housing complexes\n3. X-GEN becomes Pudu's first partner in Africa and brings drone docks to Egypt\n4. Vodafone Qatar signs an MoU to deploy AgiBot embodied-AI robots\n5. Dubai gets its first humanoid robot showroom: buy from Dh50,000, rent from under Dh5,000\n\nThe pattern: robots are moving from trade-show stands into procurement, with pilots, partner networks and rental models.\n\nSources in the carousel. The brief comes out every Monday; link in the comments.\n\n#Robotics #MENA #Egypt #Qatar #SaudiArabia",
+      "text": "This week's 5 robotics signals from MENA, each verified at the source:\n\n1. Dubai's Glydways driverless pod trial at Bluewaters logs 3,000+ rides in four weeks\n2. NAVER sets H1 2027 for NURI delivery robots in Riyadh housing complexes\n3. Egypt plans da Vinci robotic-surgery pilots in public hospitals with Sofmedica\n4. X-GEN becomes Pudu's first partner in Africa and brings drone docks to Egypt\n5. Vodafone Qatar signs an MoU to deploy AgiBot embodied-AI robots\n\nThe pattern: robots are reaching buyers through local partners (a housing JV, an Egyptian integrator, a Gulf telco) and through trials with published results.\n\nSources in the carousel. The brief comes out every Monday; link in the comments.\n\n#Robotics #MENA #UAE #Egypt #SaudiArabia",
       "first_comment": "Get the weekly brief: https://roboticsmena.com/?utm_source=linkedin&utm_medium=social&utm_campaign=2026-w47#brief",
       "cards": [
         {
           "template": "cover",
           "size": "portrait",
-          "kicker": "Signals · 6 to 12 Nov 2026",
-          "title": "5 robotics moves across MENA you should know about",
+          "kicker": "Signals · 8 to 14 Nov 2026",
+          "title": "5 robotics moves across MENA this week",
           "foot": "Swipe →",
           "image": "/media/brand/hero-delivery-robots.jpg"
         },
         {
           "template": "signal",
           "size": "portrait",
-          "kicker": "01 · Egypt · Healthcare",
-          "title": "Egypt plans robotic-surgery pilots in public hospitals",
-          "body": "The health minister discussed bringing back and expanding da Vinci surgery with Sofmedica, starting with one or two pilots. Sofmedica has set up a Cairo company as its regional hub.",
-          "foot": "Source: Maspero, 12 Nov 2026",
-          "image": "/media/brief/egypt-da-vinci-sofmedica.jpg"
+          "kicker": "01 · UAE · Mobility",
+          "title": "Dubai's driverless pod trial logs 3,000+ rides in four weeks",
+          "body": "Two Glydways pods at Bluewaters ran with over 99% availability (company figures). The RTA is studying a 2.8 km route to National Paints Metro Station; no service date yet.",
+          "foot": "Source: Khaleej Times, 10 Nov 2026"
         },
         {
           "template": "signal",
@@ -234,7 +233,16 @@
         {
           "template": "signal",
           "size": "portrait",
-          "kicker": "03 · Egypt · Service robots",
+          "kicker": "03 · Egypt · Healthcare",
+          "title": "Egypt plans robotic-surgery pilots in public hospitals",
+          "body": "The health minister discussed bringing back and expanding da Vinci surgery with Sofmedica, starting with one or two pilots. Sofmedica has set up a Cairo company as its regional hub.",
+          "foot": "Source: Maspero, 12 Nov 2026",
+          "image": "/media/brief/egypt-da-vinci-sofmedica.jpg"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "04 · Egypt · Service robots",
           "title": "X-GEN becomes Pudu's first partner in Africa",
           "body": "Three deals, including Hollyway drone docks, add to X-GEN's plan to assemble robots and drones locally.",
           "foot": "Source: TechAfrica News, 11 Nov 2026",
@@ -243,20 +251,11 @@
         {
           "template": "signal",
           "size": "portrait",
-          "kicker": "04 · Qatar · Humanoids",
+          "kicker": "05 · Qatar · Humanoids",
           "title": "Vodafone Qatar and AgiBot sign an embodied-AI MoU",
           "body": "Signed at MWC26 Doha, the MoU explores deploying AgiBot robots over Vodafone's network for government, business and education.",
           "foot": "Source: QNA, 8 Nov 2026",
           "image": "/media/companies/agibot.jpg"
-        },
-        {
-          "template": "signal",
-          "size": "portrait",
-          "kicker": "05 · UAE · Humanoids",
-          "title": "Dubai's first humanoid robot showroom opens",
-          "body": "Lootah Robotics, on Sheikh Zayed Road: buy from Dh50,000 to Dh3m, or rent from under Dh5,000.",
-          "foot": "Source: The National, 6 Nov 2026",
-          "image": "/media/brief/lootah-humanoid-studio.jpg"
         },
         {
           "template": "cta",
@@ -266,6 +265,10 @@
         }
       ],
       "sources": [
+        {
+          "name": "Khaleej Times",
+          "url": "https://www.khaleejtimes.com/transport/dubais-driverless-pod-trial-bluewaters-completed"
+        },
         {
           "name": "Maspero",
           "url": "https://www.maspero.eg/science-and-technology/2026/11/12/1005059/"
@@ -281,10 +284,6 @@
         {
           "name": "QNA",
           "url": "https://qna.org.qa/en/News-Area/News/2026-11/8/vodafone-qatar-agibot-sign-mou-to-explore-deploying-embodied-ai-robotics-solutions"
-        },
-        {
-          "name": "The National",
-          "url": "https://www.thenationalnews.com/news/uae/2026/11/06/uae-opens-its-first-humanoid-robotics-showroom-as-dubai-races-to-200000-robots/"
         }
       ]
     },
