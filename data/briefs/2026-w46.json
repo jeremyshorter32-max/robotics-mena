@@ -1,0 +1,76 @@
+{
+  "week": "2026-w46",
+  "label": "Week 46 · 9 – 15 Nov 2026",
+  "covers": [
+    "2026-11-09",
+    "2026-11-15"
+  ],
+  "published": "2026-11-15",
+  "items": [
+    {
+      "id": "glydways-bluewaters-results",
+      "country": "AE",
+      "date": "2026-11-10",
+      "title": "Dubai's driverless pod trial at Bluewaters logs 3,000+ rides in four weeks",
+      "title_ar": "تجربة الكبسولات ذاتية القيادة في بلوواترز بدبي تسجّل أكثر من 3,000 رحلة في أربعة أسابيع",
+      "takeaway": "Two Glydways pods ran with over 99% availability, by the company's count. The RTA is now studying a 2.8 km route from National Paints Metro Station to Bluewaters, but has set no service date.",
+      "takeaway_ar": "عملت كبسولتان من غلايدوايز بجاهزية تجاوزت 99% بحسب الشركة. وتدرس هيئة الطرق والمواصلات الآن مساراً بطول 2.8 كم من محطة مترو ناشونال بينتس إلى بلوواترز، من دون تحديد موعد للخدمة.",
+      "source": "Khaleej Times",
+      "source_url": "https://www.khaleejtimes.com/transport/dubais-driverless-pod-trial-bluewaters-completed",
+      "image": "/media/brief/glydways-bluewaters.jpg",
+      "image_credit": "Glydways"
+    },
+    {
+      "id": "naver-nuri-riyadh-2027",
+      "country": "SA",
+      "date": "2026-11-12",
+      "title": "NAVER sets the first half of 2027 for NURI delivery robots in Riyadh",
+      "title_ar": "نافر تحدد النصف الأول من 2027 لإطلاق روبوتات التوصيل «نوري» في الرياض",
+      "takeaway": "Outdoor delivery robots will serve Riyadh housing complexes, tied to Balady+, the mapping app of NAVER's joint venture with the National Housing Company: a launch built on a local partner, not a pilot.",
+      "takeaway_ar": "ستخدم روبوتات التوصيل الخارجية مجمّعات سكنية في الرياض، مرتبطةً بتطبيق «بلدي+» للخرائط التابع لمشروع نافر المشترك مع الشركة الوطنية للإسكان: إطلاق قائم على شريك محلي، لا مجرد تجربة.",
+      "source": "Seoul Economic Daily",
+      "source_url": "https://en.sedaily.com/business/2026/11/12/naver-to-launch-outdoor-delivery-robots-in-saudi-arabia",
+      "image": "/media/brief/naver-nuri-riyadh.jpg",
+      "image_credit": "NAVER LABS"
+    },
+    {
+      "id": "egypt-robotic-surgery-pilots",
+      "country": "EG",
+      "date": "2026-11-12",
+      "title": "Egypt plans robotic-surgery pilots in public hospitals with Sofmedica",
+      "title_ar": "مصر تخطط لبرامج تجريبية للجراحة الروبوتية في المستشفيات الحكومية مع سوف ميديكا",
+      "takeaway": "The health ministry wants to bring back and expand da Vinci surgery, starting with one or two pilot programmes and growing with the results. Hospitals remain the region's biggest robot buyers.",
+      "takeaway_ar": "تريد وزارة الصحة إعادة جراحات «دا فينشي» وتوسيعها، بدءاً ببرنامج أو برنامجين تجريبيين ثم التوسع وفق النتائج. وتظل المستشفيات أكبر مشترٍ للروبوتات في المنطقة.",
+      "source": "Maspero",
+      "source_url": "https://www.maspero.eg/science-and-technology/2026/11/12/1005059/",
+      "image": "/media/brief/egypt-da-vinci-sofmedica.jpg",
+      "image_credit": "Sofmedica"
+    },
+    {
+      "id": "xgen-pudu-hollyway-egypt",
+      "country": "EG",
+      "date": "2026-11-11",
+      "title": "X-GEN becomes Pudu's first partner in Africa and brings Hollyway drone docks to Egypt",
+      "title_ar": "إكس-جين أول شريك لبودو في أفريقيا وتجلب محطات هوليواي للطائرات المسيّرة إلى مصر",
+      "takeaway": "Deals signed at Cairo ICT give one Egyptian integrator service robots and exclusive drone docks: global makers are entering Egypt through local partners.",
+      "takeaway_ar": "اتفاقات وُقّعت في معرض القاهرة الدولي للاتصالات تمنح مُكامِلاً مصرياً واحداً روبوتات خدمة ومحطات حصرية للطائرات المسيّرة: الشركات العالمية تدخل مصر عبر شركاء محليين.",
+      "source": "TechAfrica News",
+      "source_url": "https://techafricanews.com/2026/11/11/egypt-x-gen-three-deals-robotics-drone-technologies/",
+      "image": "/media/brief/xgen-pudu-egypt.jpg",
+      "image_credit": "Pudu Robotics"
+    },
+    {
+      "id": "vodafone-qatar-agibot",
+      "country": "QA",
+      "date": "2026-11-08",
+      "title": "Vodafone Qatar and AgiBot sign an MoU to deploy embodied-AI robots",
+      "title_ar": "فودافون قطر وأجي بوت توقعان مذكرة تفاهم لنشر روبوتات الذكاء الاصطناعي المتجسّد",
+      "takeaway": "Signed at MWC26 Doha, it explores robots for government, business and education running over Vodafone's network: Gulf telcos are positioning themselves as robot distributors.",
+      "takeaway_ar": "وُقّعت المذكرة في MWC26 الدوحة، وتستكشف تشغيل روبوتات للجهات الحكومية والشركات والتعليم عبر شبكة فودافون: شركات الاتصالات الخليجية تتهيأ لتكون موزّعاً للروبوتات.",
+      "source": "QNA",
+      "source_url": "https://qna.org.qa/en/News-Area/News/2026-11/8/vodafone-qatar-agibot-sign-mou-to-explore-deploying-embodied-ai-robotics-solutions",
+      "image": "/media/brief/agibot-vodafone-qatar.jpg",
+      "image_credit": "AgiBot"
+    }
+  ]
+}

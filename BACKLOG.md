@@ -172,8 +172,11 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
   (interactive page + EN/AR PDFs), newest first, filterable by country and topic. Viewing anything needs an email sign-up
   that **commits the reader to receive future briefs** (clear consent wording next to the button, linked privacy page).
   Notes for the build:
-  - **Archive the briefs:** today `data/brief.json` is overwritten each week. Keep each week's brief in
-    `data/briefs/<YYYY>-w<NN>.json` (the weekly-brief skill writes it on approval); backfill week 45 (and week 46 from git).
+  - [x] **Archive the briefs** (done 15 Nov 2026): each week's brief is kept in `data/briefs/<YYYY>-w<NN>.json`
+    (`scripts/archive-brief.mjs`; the weekly-brief skill adds it to the brief's own pull request, so approving the brief archives it).
+    Back-filled: week 45 (2 – 8 Nov) from git and week 46 (9 – 15 Nov, the current brief). The withdrawn 13 Nov week-46 draft is
+    superseded by the published week 46 and stays only in git. Validated on every build (same rules as the live brief).
+    Spotlight reports are already kept in `data/stories.json` with PDFs in `media/reports/`. Old git branches are kept.
   - **Same wall as the reports:** reuse the existing Spotlight gate (sign-up → FormSubmit + Google Sheet → Kit once
     connected), so one sign-up unlocks everything and returning readers stay unlocked.
   - **Honest about protection:** the site is static, so the current gate is a soft wall (the content is in the page code).
