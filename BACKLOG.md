@@ -83,6 +83,9 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   contact@roboticsmena.com) with the GitHub App `robotics-mena-admin` connected (14 Nov). Requests, Backlog and Metrics tabs added
   14 Nov; research runs as Claude scheduled tasks (zero cost, no API key). GoatCounter and the Sheet's sign-up counts connected
   14 Nov (all Metrics panels live). Later: Google sign-in, rename the workers.dev subdomain; the weekly scanner must be switched on to fill the inbox.
+- [x] **Admin portal: Schedule tab** (15 Nov 2026): the Claude scheduled tasks (`admin/scheduled-tasks.json`), next run, last result,
+  missed runs, links to results and sessions, the last 10 runs, live refresh every minute. Runs log themselves with
+  `node scripts/run-log.mjs <task> <status>` on the "Scheduled task log" issue (label `agent-runs`); each task's prompt must call it.
 
 
 ## Social (10K followers on each platform)

@@ -12,6 +12,16 @@ const args = process.argv.slice(2), port = Number(args[args.indexOf('--port') + 
 const email = process.env.DEV_AUTH_EMAIL || 'owner@localhost';
 const env = { DEV_AUTH_EMAIL: email, ROLES: JSON.stringify({ [email]: process.env.DEV_ROLE || 'owner' }), GITHUB_REPO: process.env.GITHUB_REPO || 'jeremyshorter32-max/robotics-mena', GITHUB_TOKEN: process.env.GITHUB_TOKEN };
 
+import { formatRunComment } from './src/schedule.mjs';
+function demoRuns() {
+  const h = n => new Date(Date.now() - n * 3600e3).toISOString();
+  return [
+    { body: formatRunComment({ task: 'weekly-scan', status: 'succeeded', at: h(30), result: 'https://example.com/pull/1', session: 'https://claude.ai/code', summary: '3 companies, 2 deployments added' }), html_url: '#' },
+    { body: formatRunComment({ task: 'portal-requests', status: 'nothing-to-do', at: h(10), summary: 'No new requests' }), html_url: '#' },
+    { body: formatRunComment({ task: 'daily-engagement', status: 'started', at: h(0.2), session: 'https://claude.ai/code' }), html_url: '#' },
+    { body: formatRunComment({ task: 'weekly-social', status: 'failed', at: h(50), session: 'https://claude.ai/code', summary: 'Push refused (403): repository not attached to the scheduled task' }), html_url: '#' },
+  ];
+}
 function demoGitHub() {
   const base = [{ id: 'kuka', name: 'KUKA', country: 'SA' }, { id: 'oldco', name: 'OldCo', country: 'AE' }];
   const head = [{ id: 'kuka', name: 'KUKA', country: 'SA', mena_countries: ['SA', 'AE'] },
@@ -34,6 +44,8 @@ function demoGitHub() {
         { number: 21, title: '[Check a lead] Aramco robotics lab in Dhahran', state: 'open', labels: [{ name: 'agent-request' }, { name: 'request:lead' }, { name: 'in-progress' }], comments: 1, created_at: '2026-11-15T09:00:00Z', html_url: '#' },
         { number: 20, title: '[Research report] Saudi humanoid deployments', state: 'open', labels: [{ name: 'agent-request' }, { name: 'request:research' }], comments: 0, created_at: '2026-11-15T08:00:00Z', html_url: '#' },
         { number: 18, title: '[Fix or update a record] KUKA HQ city', state: 'closed', labels: [{ name: 'agent-request' }, { name: 'request:fix' }], comments: 2, created_at: '2026-11-13T08:00:00Z', closed_at: '2026-11-14T08:00:00Z', html_url: '#' }];
+      if (p.startsWith('/repos/{repo}/issues?labels=agent-runs')) return [{ number: 30, title: 'Scheduled task log', comments: 4, html_url: '#' }];
+      if (p.startsWith('/repos/{repo}/issues/30/comments')) return demoRuns();
       if (p.startsWith('/repos/{repo}/actions/runs')) return { workflow_runs: [{ id: 1, name: 'Deploy site', event: 'push', status: 'completed', conclusion: 'success', created_at: '2026-11-16T05:10:00Z', html_url: '#' }, { id: 2, name: 'Categorization monitor', event: 'schedule', status: 'completed', conclusion: 'success', created_at: '2026-11-16T05:17:00Z', html_url: '#' }, { id: 3, name: 'Weekly database scan', event: 'workflow_dispatch', status: 'in_progress', conclusion: null, created_at: '2026-11-16T06:00:00Z', html_url: '#' }] };
       throw Object.assign(new Error('not in demo'), { status: 404 }); },
     post: async p => (p === '/repos/{repo}/issues' ? { number: 101, html_url: '#' } : {}), put: async () => ({ merged: true, sha: 'demo' }), patch: ok,

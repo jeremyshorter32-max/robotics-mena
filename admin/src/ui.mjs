@@ -35,8 +35,10 @@ a{color:var(--brand)}nav{flex-wrap:wrap}
 .item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line)}.item:last-child{border-bottom:0}
 .item input{width:18px;height:18px;margin-top:3px;flex:none}.item .t{font-weight:600}.item.done .t{text-decoration:line-through;color:var(--muted)}
 details>summary{cursor:pointer}select{font:inherit;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);max-width:100%}.problems{color:var(--bad)}.add{color:var(--ok)}.rem{color:var(--bad)}
+.task{display:flex;flex-direction:column;gap:6px}.task.missed,.task.failed,.task.no-result{border-left:4px solid var(--bad)}.task.running{border-left:4px solid var(--warn)}.task.succeeded,.task.nothing-to-do{border-left:4px solid var(--ok)}
+.task h2{margin:0}.kv{display:grid;grid-template-columns:max-content 1fr;gap:2px 12px;font-size:14px}.kv dt{color:var(--muted)}.kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
 </style></head><body>
-<header><b>Robotics MENA · Admin</b><nav aria-label="Sections"><button data-tab="inbox" aria-current="page">Approvals</button><button data-tab="requests">Requests</button><button data-tab="backlog">Backlog</button><button data-tab="metrics">Metrics</button><button data-tab="runs">Runs</button></nav><span class="who" id="who"></span></header>
+<header><b>Robotics MENA · Admin</b><nav aria-label="Sections"><button data-tab="inbox" aria-current="page">Approvals</button><button data-tab="requests">Requests</button><button data-tab="backlog">Backlog</button><button data-tab="metrics">Metrics</button><button data-tab="schedule">Schedule</button><button data-tab="runs">Runs</button></nav><span class="who" id="who"></span></header>
 <main id="main"><p class="muted">Loading…</p></main>
 <script nonce="${nonce}">
 const $=(t,a={},...k)=>{const e=document.createElement(t);for(const[n,v]of Object.entries(a)){if(n==='on')for(const[ev,f]of Object.entries(v))e.addEventListener(ev,f);else if(v!=null&&v!==false)e.setAttribute(n,v===true?'':v)}for(const c of k.flat(Infinity))if(c!=null&&c!==false)e.append(c.nodeType?c:document.createTextNode(String(c)));return e};
@@ -45,7 +47,7 @@ const fmt=s=>s?new Date(s).toLocaleString(undefined,{dateStyle:'medium',timeStyl
 const main=document.getElementById('main');let me=null;const can=r=>({viewer:1,editor:2,owner:3})[me.role]>=({viewer:1,editor:2,owner:3})[r];
 const show=(...n)=>{main.replaceChildren(...n.flat(Infinity).filter(x=>x!=null&&x!==false))};const err=e=>$('p',{class:'msg problems',role:'alert'},e.message||String(e));
 document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.tab)));
-function go(tab,arg){document.querySelectorAll('nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===tab?'page':'false'));location.hash=tab+(arg?'-'+arg:'');({inbox,runs,requests,backlog,metrics,item})[tab](arg)}
+function go(tab,arg){clearInterval(schedTimer);clearInterval(agoTimer);document.querySelectorAll('nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===tab?'page':'false'));location.hash=tab+(arg?'-'+arg:'');({inbox,runs,requests,backlog,metrics,item,schedule})[tab](arg)}
 
 async function inbox(){show($('h1',{},'Approvals'),$('p',{class:'muted'},'Agent pull requests waiting for a decision. Only data, media and newsletter changes can be published from here.'),$('p',{class:'muted'},'Loading…'));
  try{const items=await api('/api/inbox');show($('h1',{},'Approvals'),$('p',{class:'muted'},items.length?items.length+' waiting':'Nothing waiting. New items appear when the weekly scan or the brief runs.'),
@@ -95,6 +97,30 @@ async function backlog(){show($('h1',{},'Backlog'),$('p',{class:'muted'},'Loadin
   can('editor')?$('div',{class:'card',style:'display:flex;flex-direction:column;gap:10px'},$('label',{for:'bl-text'},'Add an item'),$('div',{class:'row'},sec,t),$('div',{},$('button',{class:'act primary',on:{click:async()=>{msg.textContent='Saving…';try{await api('/api/backlog/add',{section:sec.value,text:t.value});backlog()}catch(e){msg.textContent=e.message}}}},'Add to backlog'))):null,
   $('label',{class:'row'},showDone,'Show completed items'),msg,secs);applyFilter()}
 
+let schedTimer=null,agoTimer=null;
+const STATE={succeeded:['ok','Succeeded'],'nothing-to-do':['ok','Nothing to do'],failed:['bad','Failed'],missed:['bad','Missed'],'no-result':['bad','No result'],running:['warn','Running'],waiting:['','Waiting for first run'],'config-error':['bad','Config error']};
+const pill=s=>{const[c,l]=STATE[s]||['',s];return $('span',{class:'pill '+c},l)};
+const rel=s=>{if(!s)return'';const d=(Date.parse(s)-Date.now())/6e4,a=Math.abs(d),t=a<1?'now':a<60?Math.round(a)+' min':a<2880?Math.round(a/60)+' h':Math.round(a/1440)+' days';return t==='now'?'now':d>0?'in '+t:t+' ago'};
+const links=r=>[r.result?$('a',{href:r.result,target:'_blank',rel:'noopener noreferrer'},'Result'):null,r.session?$('a',{href:r.session,target:'_blank',rel:'noopener noreferrer'},'Claude session'):null,r.comment?$('a',{href:r.comment,target:'_blank',rel:'noopener noreferrer'},'Log entry'):null].filter(Boolean).flatMap((x,i)=>i?[' · ',x]:[x]);
+async function schedule(){const head=$('p',{class:'muted',role:'status','aria-live':'polite'},'Loading…');const box=$('div',{class:'list'});let gen=null;
+ show($('h1',{},'Schedule'),$('p',{class:'muted'},'Claude’s scheduled tasks: when each runs, whether its last run worked, and where its results are. Refreshes every minute.'),head,box);
+ const tick=()=>{if(gen)head.textContent='Updated '+(Date.now()-Date.parse(gen)<6e4?'just now':rel(gen))+' · refreshes every minute'};
+ async function load(){try{const d=await api('/api/schedule');gen=d.generated;tick();
+  const notes=[];if(d.source==='bundled')notes.push($('p',{class:'msg'},'Showing the built-in task list: admin/scheduled-tasks.json is not on main yet.'));
+  if(d.logError)notes.push(err({message:'Could not read the run log: '+d.logError}));
+  if(!d.log)notes.push($('p',{class:'msg'},'No runs recorded yet. Each task writes to the “Scheduled task log” issue when it runs, so results appear here after the next scheduled run.'));
+  else notes.push($('p',{class:'muted'},$('a',{href:d.log.url,target:'_blank',rel:'noopener noreferrer'},'Open the run log on GitHub')));
+  box.replaceChildren(...notes,...d.tasks.map(t=>{const l=t.last;return $('section',{class:'card task '+t.state},
+   $('div',{class:'row'},$('h2',{},t.name),pill(t.state),$('span',{class:'mono muted',style:'margin-left:auto'},t.trigger||'')),
+   $('dl',{class:'kv'},$('dt',{},'Runs'),$('dd',{},t.when),$('dt',{},'Next run'),$('dd',{},t.next?fmt(t.next)+' ('+rel(t.next)+')':'–'),
+    $('dt',{},'Produces'),$('dd',{},t.produces||''),$('dt',{},'Results'),$('dd',{},t.results||''),
+    $('dt',{},l&&l.status==='missed'?'Last scheduled':'Last run'),$('dd',{},l?[fmt(l.at)+' ('+rel(l.at)+')',l.result||l.session||l.comment?' · ':'',links(l)]:'None recorded yet'),
+    l&&l.summary?[$('dt',{},'Note'),$('dd',{},l.summary)]:null,t.error?[$('dt',{},'Problem'),$('dd',{class:'problems'},t.error)]:null),
+   t.history.length>1?$('details',{},$('summary',{class:'muted'},'History (last '+t.history.length+')'),$('div',{class:'scroll'},$('table',{},$('tr',{},$('th',{},'When'),$('th',{},'Status'),$('th',{},'Links'),$('th',{},'Note')),
+    t.history.map(h=>$('tr',{},$('td',{},fmt(h.at)),$('td',{},pill(h.status)),$('td',{},links(h)),$('td',{},h.summary||'')))))):null)}))}
+  catch(e){head.textContent='';box.replaceChildren(err(e))}}
+ await load();schedTimer=setInterval(()=>{if(!document.hidden)load()},60e3);agoTimer=setInterval(tick,15e3)}
+
 function bars(data,key){const max=Math.max(1,...data.map(d=>d[key]||0));return [$('div',{class:'bars',role:'img','aria-label':data.map(d=>d.label+': '+(d[key]||0)).join(', ')},data.map(d=>$('span',{style:'height:'+Math.round(100*(d[key]||0)/max)+'%','data-v':String(d[key]||0)}))),$('div',{class:'axis'},$('span',{},data[0]?.label||''),$('span',{},data[data.length-1]?.label||''))]}
 const tbl=(rows,cols)=>$('div',{class:'scroll'},$('table',{},$('tr',{},cols.map(c=>$('th',{},c[0]))),rows.map(r=>$('tr',{},cols.map(c=>$('td',{},c[1](r)))))));
 const kpi=(n,l)=>$('div',{},$('span',{class:'big'},n==null?'–':Number(n).toLocaleString()),$('span',{class:'muted'},l));
@@ -117,5 +143,5 @@ async function metrics(){show($('h1',{},'Metrics'),$('p',{class:'muted'},'Loadin
   Array.isArray(m.monitor)&&m.monitor.length?[$('h2',{},'Web filters'),tbl(m.monitor,[['Vendor',r=>r.vendor],['Status',r=>$('span',{class:'pill '+(r.reached?'ok':r.status==='BLOCKED'?'warn':'')},r.reached?'reached':r.status)],['Target',r=>r.target],['Checked',r=>fmt(r.checked)]])]:null);
  show($('h1',{},'Metrics'),$('p',{class:'muted'},'Updated '+fmt(m.generated)),$('div',{class:'grid'},traffic,wait,db,ops))}
 
-api('/api/me').then(m=>{me=m;document.getElementById('who').textContent=m.email+' · '+m.role;const h=location.hash.slice(1);const k=/^item-(\\d+)$/.exec(h);k?go('item',k[1]):go(['inbox','runs','requests','backlog','metrics'].includes(h)?h:'inbox')}).catch(e=>show($('h1',{},'Robotics MENA · Admin'),err(e)));
+api('/api/me').then(m=>{me=m;document.getElementById('who').textContent=m.email+' · '+m.role;const h=location.hash.slice(1);const k=/^item-(\\d+)$/.exec(h);k?go('item',k[1]):go(['inbox','schedule','runs','requests','backlog','metrics'].includes(h)?h:'inbox')}).catch(e=>show($('h1',{},'Robotics MENA · Admin'),err(e)));
 </script></body></html>`;
