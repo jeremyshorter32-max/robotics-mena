@@ -120,11 +120,10 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
 
 - [x] **Arabic brand name** (13 Nov 2026): «روبوتات الشرق الأوسط وشمال أفريقيا» everywhere (short forms such as
   «سجلّنا» in running text); the build now rejects the old «روبوتكس مينا».
-- [ ] **Launch the Dubai robotic villa report (ready, not launched).** Draft on branch `draft/robot-villa`
-  (`/spotlight?s=dubai-robot-villa`, EN/AR PDFs, adds Würth Professional Solutions). To launch: merge the branch
-  into `main` (it predates the Nov 2026 rebrand: re-run `node scripts/report-pdf.cjs dubai-robot-villa` after merging) (it becomes the home-page Spotlight). Before launching, check for news since 9 Nov 2026 (consortium
-  names, start date) and update the text if anything changed.
-
+- [x] **Dubai robotic villa report launched** (15 Nov 2026): reworked around DXB ConTech's April programme plan (five partners,
+  460 m² villa in Al Barsha First, eight robotic trades, 62 weeks) with a positive framing on robotics adoption in construction;
+  EN/AR PDFs rebuilt; now the home-page Spotlight. Würth Professional Solutions added. The PDF script now takes section headings
+  from each report (the old "ADNOC robotics timeline" heading no longer leaks into other reports).
 - [x] **Week 46 extras** (decided 14 Nov 2026): kept (d59–d62 and the Saudi AV-rule source update stay live).
 - [x] **Defence and weapons makers** (decided 14 Nov 2026): not included. The ten held-back records stay out, Marakeb Technologies
   was removed, and the weekly scan and request skills already exclude defence and weapons makers.
