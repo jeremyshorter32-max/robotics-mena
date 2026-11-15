@@ -59,15 +59,37 @@ D.events.forEach((e, i) => {
 });
 uniq(D.events, 'id', 'events');
 
-D.brief.forEach((b, i) => {
-  const w = `brief[${i}] ${b.id}`;
+const checkBriefItem = (b, w) => {
   need(b, w, ['id', 'country', 'date', 'title', 'takeaway', 'source']);
   if (!countryCodes.has(b.country)) errors.push(`${w}: country "${b.country}" is not in countries.json`);
   date(b.date, w, 'date'); url(b.source_url, w, 'source_url');
   if (!b.image) errors.push(`${w}: every brief item needs an image (company or government press image, or an image of the solution provider); the blue placeholder must never go live`);
   if (b.image) { if (!/^\/media\/brief\/[a-z0-9._-]+\.(jpg|jpeg|png|webp)$/.test(b.image)) errors.push(`${w}: image must look like /media/brief/name.jpg`); else if (!fs.existsSync(path.join(ROOT, b.image))) errors.push(`${w}: image file ${b.image} does not exist`); if (!b.image_credit) errors.push(`${w}: image needs an image_credit`); }
-});
+  if (EXCLUDED_COUNTRIES.has(b.country)) errors.push(`${w}: excluded country`);
+};
+D.brief.forEach((b, i) => checkBriefItem(b, `brief[${i}] ${b.id}`));
 uniq(D.brief, 'id', 'brief');
+
+// Brief archive (data/briefs/<YYYY>-w<NN>.json, written by scripts/archive-brief.mjs): every past week, for the resources page.
+{
+  const dir = path.join(ROOT, 'data', 'briefs');
+  const files = fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith('.json')).sort() : [];
+  for (const f of files) {
+    const w = `briefs/${f}`;
+    let a; try { a = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')); } catch (e) { errors.push(`${w}: not valid JSON`); continue; }
+    if (!/^\d{4}-w\d{2}\.json$/.test(f) || a.week !== f.slice(0, -5)) errors.push(`${w}: file name must be <week>.json and match "week" (${a.week})`);
+    need(a, w, ['week', 'label', 'published']); date(a.published, w, 'published');
+    if (!Array.isArray(a.covers) || a.covers.length !== 2) errors.push(`${w}: covers must be [monday, sunday]`); else a.covers.forEach(d => date(d, w, 'covers'));
+    if (!Array.isArray(a.items) || !a.items.length) errors.push(`${w}: needs items`);
+    else { a.items.forEach((b, i) => { checkBriefItem(b, `${w} items[${i}] ${b.id}`); if (a.covers && (b.date > a.covers[1])) errors.push(`${w} items[${i}]: dated after the week it is filed under`); }); uniq(a.items, 'id', w); }
+  }
+  // The live brief should be archived too (the weekly-brief skill does it in the same pull request).
+  const newest = D.brief.map(b => b.date).filter(Boolean).sort().pop();
+  if (newest) {
+    const live = JSON.stringify(D.brief), match = files.map(f => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))).find(a => JSON.stringify(a.items) === live);
+    if (!match) console.warn('Warning: data/brief.json is not in the archive yet; run: node scripts/archive-brief.mjs');
+  }
+}
 
 // Spotlight research reports (data/stories.json): see .claude/skills/research-report/SKILL.md
 const stories = fs.existsSync(path.join(ROOT, 'data', 'stories.json')) ? readData('stories') : [];

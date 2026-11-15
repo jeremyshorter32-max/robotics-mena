@@ -43,7 +43,10 @@ without the owner's explicit approval in this conversation.**
    content the site excludes (Israeli companies or flag) or personal accounts of private individuals.
 6. Optional: `data/newsletter.json` with `subject`, `preview_text` and a one-paragraph `intro`
    (the editor's note). Leave it out if there is nothing to add; the defaults are fine.
-7. Check: `PUBLIC_LAUNCH=true ./scripts/build-site.sh` must pass (it validates the data).
+7. **Archive the brief** (for the resources page): `node scripts/archive-brief.mjs --published <the Monday it goes out, YYYY-MM-DD>`.
+   It writes `data/briefs/<YYYY>-w<NN>.json` (the week of the newest item, as the home page labels it) in the same commit, so approving
+   the brief also archives it. Never edit or delete older files in `data/briefs/`: they are the archive of past briefs.
+   Check: `PUBLIC_LAUNCH=true ./scripts/build-site.sh` must pass (it validates the data and the archive).
 8. `node scripts/newsletter.mjs draft`: builds `newsletter/out/preview.html` and creates or updates the
    **draft** in Kit (it does not send).
 9. Commit and push the branch (not main).
@@ -65,7 +68,7 @@ When this runs as the Sunday Claude scheduled task (nobody to reply in chat):
 - Change requests arrive as portal requests of kind `brief`; the `agent-requests` task applies them to the same branch.
 
 ## 2. Owner replies
-- **Change request**: make the change, rerun steps 7–10 (the draft in Kit is updated in place) and send
+- **Change request**: make the change (rerun the archive step so `data/briefs/` matches), rerun steps 7–10 (the draft in Kit is updated in place) and send
   the new preview. Repeat until approved.
 - **Rerun**: discard this week's picks (`git checkout main -- data/`), redo the research with the owner's
   direction, then steps 3–10.
