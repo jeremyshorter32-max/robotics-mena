@@ -1,7 +1,7 @@
 {
   "week": "2026-w47",
   "theme": "Launch week: what the database shows, plus the fortnight's signals",
-  "notes": "Launch week. All four accounts are live. On each new account, post the launch item first and pin it (X: the thread; Instagram: the carousel; Reddit: the welcome post, posted 15 Nov). Thursday's LinkedIn carousel follows the week-47 brief (pull request #6), with the Glydways results in place of the Lootah showroom. Other signal posts use items from 6 to 12 Nov, which are in this week's brief too. The profile-filling posts for Sun 15 Nov are in the Launch to GITEX campaign.",
+  "notes": "Launch week. All four accounts are live. On each new account, post the launch item first and pin it (X: the thread; Instagram: the carousel; Reddit: the welcome post, posted 15 Nov). Thursday's LinkedIn carousel follows the week-47 brief (pull request #6), with the Glydways results in place of the Lootah showroom. Other signal posts use items from 6 to 12 Nov, which are in this week's brief too. The profile-filling posts for Sun 15 Nov are in the Launch to GITEX campaign. ADNOC report launch (added 15 Nov): LinkedIn carousel, X thread, Instagram carousel and an r/RoboticsMENA post on Wed 18 Nov, before the Dubai villa report goes live (approve PR #10 from Thu 19 Nov). Thursday's w47-x-spotlight repeats the report's hook; consider dropping it.",
   "posts": [
     {
       "id": "w47-li-launch",
@@ -942,6 +942,346 @@
       "subreddit": "RoboticsMENA",
       "title": "Which robot have you actually seen working in the region, in person?",
       "text": "Not a demo at an expo. A robot doing a real job: a cleaning robot in a mall, a delivery robot, a robotaxi, a surgical robot at your hospital, a drone doing inspections.\n\nWhere was it, and did it work well? We'll check the good ones and add them to the map (with credit if you want it)."
+    },
+    {
+      "id": "w47-li-adnoc-report",
+      "platform": "linkedin",
+      "format": "document",
+      "pillar": "explainer",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-18T12:30+04:00",
+      "text": "ADNOC says it has 70 robotics use cases deployed or in development. We mapped the ones on the record.\n\nOur new Spotlight report on ADNOC's robots:\n▸ 5 providers, from wall-climbing crawlers to remotely operated ships\n▸ What is live, what is on order and what is still a trial\n▸ Every headline number checked: measured result, projection, contract ceiling or company claim\n▸ What to watch next, starting with the ARGOS operator robot due at Taweelah by the end of 2026\n\nThe biggest energy company in the Gulf is buying robots at scale. The next step is publishing what they deliver.\n\nFree to read. Link in the comments.\n\n#Robotics #Energy #UAE #ADNOC #Inspection",
+      "first_comment": "Read the report (free, English and Arabic PDFs): https://roboticsmena.com/spotlight?s=gecko-adnoc-raptor&utm_source=linkedin&utm_medium=social&utm_campaign=2026-w47",
+      "tags": [
+        "ADNOC",
+        "Gecko Robotics",
+        "Taurob",
+        "ADNOC Drilling",
+        "ADNOC L&S",
+        "SeaOwl",
+        "Unitree Robotics"
+      ],
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "New Spotlight report",
+          "title": "ADNOC's real AI story is **physical**",
+          "body": "Wall-climbing crawlers, explosion-proof inspectors, an automated rig and remotely operated ships.",
+          "foot": "Swipe →",
+          "image": "/media/spotlight/gecko-crawler-electronics.jpg"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "In ADNOC’s words",
+          "value": "70",
+          "label": "robotics use cases deployed or in development",
+          "body": "Said on an ADIPEC panel. ADNOC has published no list, so we mapped the ones on the record.",
+          "foot": "Source: Khaleej Times, 3 Nov 2026",
+          "image": "/media/spotlight/taurob-inspector-taweelah.jpg",
+          "caption": true
+        },
+        {
+          "template": "list",
+          "size": "portrait",
+          "kicker": "The fleet on the record",
+          "title": "5 providers, from steel walls to ships",
+          "items": [
+            "**Gecko Robotics:** Raptor wall-climbing crawler, deploying across ADNOC sites",
+            "**Taurob:** explosion-proof inspector, live at Taweelah since May 2026",
+            "**ADNOC Drilling:** AD-300 island rig with automated pipe handling, delivered June 2026",
+            "**ADNOC L&S with SeaOwl:** two 60 m remotely operated landing craft, on order",
+            "**Unitree:** quadruped and humanoid trials agreed with ADNOC Onshore, Nov 2026"
+          ],
+          "foot": "Sources: company releases and trade press, May–Nov 2026; full list in the report"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "Gecko Raptor",
+          "value": "3–5×",
+          "label": "faster than Gecko’s previous robot",
+          "body": "A company claim, not an independent test. The report rates every headline number like this.",
+          "foot": "Source: The National, 4 Nov 2026",
+          "image": "/media/spotlight/gecko-inspectors-thickness-map.jpg"
+        },
+        {
+          "template": "list",
+          "size": "portrait",
+          "kicker": "What to watch",
+          "title": "The next proof points",
+          "items": [
+            "**By end-2026:** ARGOS operator robot enters service at Taweelah",
+            "**Ongoing:** how many Raptors ADNOC fields, and the first published results",
+            "**Late 2026 or 2027:** the remotely operated landing craft arrive",
+            "**Open:** whether Gecko starts building robots in the UAE"
+          ],
+          "foot": "Source: Robotics MENA Spotlight, Nov 2026"
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Read the full report, free",
+          "body": "roboticsmena.com/spotlight · English and Arabic PDFs"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA Spotlight: ADNOC robots",
+          "url": "https://roboticsmena.com/spotlight?s=gecko-adnoc-raptor"
+        },
+        {
+          "name": "The National, 4 Nov 2026",
+          "url": "https://www.thenationalnews.com/future/technology/2026/11/04/how-wall-climbing-robots-could-help-gulf-energy-producers-recover-from-attacks/"
+        },
+        {
+          "name": "Khaleej Times, 3 Nov 2026",
+          "url": "https://www.khaleejtimes.com/uae/adnoc-expansion-ai-robotics-energy-operations"
+        },
+        {
+          "name": "Hydrocarbon Processing, 21 May 2026",
+          "url": "https://hydrocarbonprocessing.com/news/2026/05/adnoc-deploys-heavy-duty-inspector-robot-for-hazardous-environments/"
+        },
+        {
+          "name": "OE Digital, 25 Jun 2026",
+          "url": "https://www.oedigital.com/news/540638-walking-into-the-future-adnoc-drilling-unveils-first-ai-powered-island-rig"
+        },
+        {
+          "name": "Attaqa, 4 Nov 2026",
+          "url": "https://attaqa.net/?p=651656"
+        },
+        {
+          "name": "ADNOC Gas, 2 Nov 2025",
+          "url": "https://adnocgas.ae/en/news-and-media/press-releases/2025/gecko-aiq"
+        },
+        {
+          "name": "ADNOC L&S release via Zawya, 13 Nov 2025",
+          "url": "https://www.zawya.com/en/press-release/companies-news/adnoc-ls-unveils-the-uaes-first-autonomous-offshore-vessels-to-enhance-operational-efficiency-and-increase-sustainability-503125"
+        },
+        {
+          "name": "Riviera, 18 Dec 2025",
+          "url": "https://www.rivieramm.com/news-content-hub/adnoc-targets-5m-barrels-per-day-with-ai-fleet-efficiency-gains-87210"
+        }
+      ]
+    },
+    {
+      "id": "w47-x-adnoc-report",
+      "platform": "x",
+      "format": "thread",
+      "pillar": "explainer",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-18T12:00+04:00",
+      "thread": [
+        "New report: the robots behind @ADNOCGroup.\n\nADNOC says it has 70 robotics use cases deployed or in development. We mapped the ones on the record, and checked every headline number. 🧵",
+        "On the record:\n▸ Gecko Robotics' Raptor wall-climbers, deploying\n▸ Taurob's explosion-proof inspector, live at Taweelah since May\n▸ AD-300 island rig, delivered in June\n▸ Two remotely operated landing craft, on order\n▸ Unitree humanoid trials, agreed in Nov",
+        "The numbers need care. Raptor is \"3–5× faster\" than Gecko's last robot: a company claim. \"$300m+ savings\" for ADNOC Gas: a five-year projection. We grade each one in the report.",
+        "Next proof point: the ARGOS operator robot, due in service at Taweelah by the end of 2026.\n\nFree report, English and Arabic PDFs:\nhttps://roboticsmena.com/spotlight?s=gecko-adnoc-raptor&utm_source=x&utm_medium=social&utm_campaign=2026-w47"
+      ],
+      "tags": [
+        "tag if confirmed: Gecko Robotics",
+        "tag if confirmed: Taurob"
+      ],
+      "cards": [
+        {
+          "template": "cover",
+          "size": "landscape",
+          "kicker": "New Spotlight report",
+          "title": "ADNOC's real AI story is **physical**",
+          "body": "5 providers, 70 use cases claimed, every number checked.",
+          "image": "/media/spotlight/gecko-crawler-electronics.jpg"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA Spotlight: ADNOC robots",
+          "url": "https://roboticsmena.com/spotlight?s=gecko-adnoc-raptor"
+        },
+        {
+          "name": "The National, 4 Nov 2026",
+          "url": "https://www.thenationalnews.com/future/technology/2026/11/04/how-wall-climbing-robots-could-help-gulf-energy-producers-recover-from-attacks/"
+        },
+        {
+          "name": "Khaleej Times, 3 Nov 2026",
+          "url": "https://www.khaleejtimes.com/uae/adnoc-expansion-ai-robotics-energy-operations"
+        },
+        {
+          "name": "Hydrocarbon Processing, 21 May 2026",
+          "url": "https://hydrocarbonprocessing.com/news/2026/05/adnoc-deploys-heavy-duty-inspector-robot-for-hazardous-environments/"
+        },
+        {
+          "name": "OE Digital, 25 Jun 2026",
+          "url": "https://www.oedigital.com/news/540638-walking-into-the-future-adnoc-drilling-unveils-first-ai-powered-island-rig"
+        },
+        {
+          "name": "Attaqa, 4 Nov 2026",
+          "url": "https://attaqa.net/?p=651656"
+        },
+        {
+          "name": "ADNOC Gas, 2 Nov 2025",
+          "url": "https://adnocgas.ae/en/news-and-media/press-releases/2025/gecko-aiq"
+        },
+        {
+          "name": "ADNOC L&S release via Zawya, 13 Nov 2025",
+          "url": "https://www.zawya.com/en/press-release/companies-news/adnoc-ls-unveils-the-uaes-first-autonomous-offshore-vessels-to-enhance-operational-efficiency-and-increase-sustainability-503125"
+        },
+        {
+          "name": "Riviera, 18 Dec 2025",
+          "url": "https://www.rivieramm.com/news-content-hub/adnoc-targets-5m-barrels-per-day-with-ai-fleet-efficiency-gains-87210"
+        }
+      ]
+    },
+    {
+      "id": "w47-ig-adnoc-report",
+      "platform": "instagram",
+      "format": "carousel",
+      "pillar": "explainer",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-18T19:30+04:00",
+      "text": "The robots working for the Gulf's biggest energy company. 🛢️\n\nADNOC says it has 70 robotics use cases deployed or in development. Our new Spotlight report maps the ones on the record: wall-climbing crawlers, explosion-proof inspectors, an automated island rig, remotely operated ships and humanoid trials.\n\nSwipe for the fleet. The full report is free, link in bio.\n\n#robotics #uae #abudhabi #energy #oilandgas #inspection #automation #engineering",
+      "media_note": "Add a trending audio track before posting. Update the link in bio to the report before this goes out.",
+      "tags": [
+        "tag if confirmed: ADNOC",
+        "tag if confirmed: Gecko Robotics"
+      ],
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "New Spotlight report",
+          "title": "ADNOC's real AI story is **physical**",
+          "body": "The robots on the record, and what they still have to prove.",
+          "foot": "Swipe →",
+          "image": "/media/spotlight/gecko-crawler-electronics.jpg"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Deploying",
+          "title": "Gecko’s Raptor climbs steel walls",
+          "body": "Scans tanks, pipes and boiler walls with sound waves, without taking them offline.",
+          "foot": "Source: The National, 4 Nov 2026",
+          "image": "/media/spotlight/gecko-inspectors-thickness-map.jpg"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Live since May 2026",
+          "title": "Taurob’s explosion-proof inspector at Taweelah",
+          "body": "Autonomous rounds for gas leaks and hotspots, with LiDAR and thermal cameras.",
+          "foot": "Source: Hydrocarbon Processing, 21 May 2026",
+          "image": "/media/spotlight/taurob-inspector-taweelah.jpg"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "On order",
+          "title": "Remotely operated landing craft",
+          "body": "Two 60-metre vessels with no crew accommodation, steered from a control centre in Mussafah.",
+          "foot": "Source: ADNOC L&S, Nov 2025",
+          "image": "/media/spotlight/adnocls-remote-landing-craft.jpg",
+          "caption": true
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Read the full report, free",
+          "body": "Link in bio · English and Arabic PDFs"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA Spotlight: ADNOC robots",
+          "url": "https://roboticsmena.com/spotlight?s=gecko-adnoc-raptor"
+        },
+        {
+          "name": "The National, 4 Nov 2026",
+          "url": "https://www.thenationalnews.com/future/technology/2026/11/04/how-wall-climbing-robots-could-help-gulf-energy-producers-recover-from-attacks/"
+        },
+        {
+          "name": "Khaleej Times, 3 Nov 2026",
+          "url": "https://www.khaleejtimes.com/uae/adnoc-expansion-ai-robotics-energy-operations"
+        },
+        {
+          "name": "Hydrocarbon Processing, 21 May 2026",
+          "url": "https://hydrocarbonprocessing.com/news/2026/05/adnoc-deploys-heavy-duty-inspector-robot-for-hazardous-environments/"
+        },
+        {
+          "name": "OE Digital, 25 Jun 2026",
+          "url": "https://www.oedigital.com/news/540638-walking-into-the-future-adnoc-drilling-unveils-first-ai-powered-island-rig"
+        },
+        {
+          "name": "Attaqa, 4 Nov 2026",
+          "url": "https://attaqa.net/?p=651656"
+        },
+        {
+          "name": "ADNOC Gas, 2 Nov 2025",
+          "url": "https://adnocgas.ae/en/news-and-media/press-releases/2025/gecko-aiq"
+        },
+        {
+          "name": "ADNOC L&S release via Zawya, 13 Nov 2025",
+          "url": "https://www.zawya.com/en/press-release/companies-news/adnoc-ls-unveils-the-uaes-first-autonomous-offshore-vessels-to-enhance-operational-efficiency-and-increase-sustainability-503125"
+        },
+        {
+          "name": "Riviera, 18 Dec 2025",
+          "url": "https://www.rivieramm.com/news-content-hub/adnoc-targets-5m-barrels-per-day-with-ai-fleet-efficiency-gains-87210"
+        }
+      ]
+    },
+    {
+      "id": "w47-rd-adnoc-report",
+      "platform": "reddit",
+      "format": "text",
+      "pillar": "explainer",
+      "lang": "en",
+      "status": "draft",
+      "slot": "2026-11-18T20:00+04:00",
+      "subreddit": "RoboticsMENA",
+      "title": "ADNOC says it has 70 robotics use cases. We mapped the ones that are actually on the record",
+      "text": "We (Robotics MENA, roboticsmena.com, this is our own site) just published a report on the robots ADNOC is using or buying. At ADIPEC an ADNOC Offshore executive put the number at 70 use cases deployed or in development, but there's no public list, so we went through releases and trade press to see what is actually confirmed.\n\nWhat we could confirm:\n\nGecko Robotics' Raptor, a wall-climbing crawler that scans steel with ultrasound, is being deployed across ADNOC facilities.\nTaurob's explosion-proof inspection robot has been in live operation at the Taweelah gas compression plant since May 2026.\nADNOC Drilling's AD-300 island rig, with automated pipe handling, was delivered in June 2026.\nADNOC L&S has two 60-metre remotely operated landing craft on order with SeaOwl. Delivery dates differ between sources (late 2026 or 2027).\nADNOC Onshore agreed in November to trial Unitree robots, including humanoids.\n\nMost of the headline numbers are company claims, projections or contract ceilings rather than measured results, and we tried to label each one. Curious whether anyone here works with inspection robots on Gulf sites: do the speed claims hold up in practice?\n\nReport (free): https://roboticsmena.com/spotlight?s=gecko-adnoc-raptor\nSource for the 70 figure: Khaleej Times, https://www.khaleejtimes.com/uae/adnoc-expansion-ai-robotics-energy-operations",
+      "tags": [],
+      "cards": [],
+      "sources": [
+        {
+          "name": "Robotics MENA Spotlight: ADNOC robots",
+          "url": "https://roboticsmena.com/spotlight?s=gecko-adnoc-raptor"
+        },
+        {
+          "name": "The National, 4 Nov 2026",
+          "url": "https://www.thenationalnews.com/future/technology/2026/11/04/how-wall-climbing-robots-could-help-gulf-energy-producers-recover-from-attacks/"
+        },
+        {
+          "name": "Khaleej Times, 3 Nov 2026",
+          "url": "https://www.khaleejtimes.com/uae/adnoc-expansion-ai-robotics-energy-operations"
+        },
+        {
+          "name": "Hydrocarbon Processing, 21 May 2026",
+          "url": "https://hydrocarbonprocessing.com/news/2026/05/adnoc-deploys-heavy-duty-inspector-robot-for-hazardous-environments/"
+        },
+        {
+          "name": "OE Digital, 25 Jun 2026",
+          "url": "https://www.oedigital.com/news/540638-walking-into-the-future-adnoc-drilling-unveils-first-ai-powered-island-rig"
+        },
+        {
+          "name": "Attaqa, 4 Nov 2026",
+          "url": "https://attaqa.net/?p=651656"
+        },
+        {
+          "name": "ADNOC Gas, 2 Nov 2025",
+          "url": "https://adnocgas.ae/en/news-and-media/press-releases/2025/gecko-aiq"
+        },
+        {
+          "name": "ADNOC L&S release via Zawya, 13 Nov 2025",
+          "url": "https://www.zawya.com/en/press-release/companies-news/adnoc-ls-unveils-the-uaes-first-autonomous-offshore-vessels-to-enhance-operational-efficiency-and-increase-sustainability-503125"
+        },
+        {
+          "name": "Riviera, 18 Dec 2025",
+          "url": "https://www.rivieramm.com/news-content-hub/adnoc-targets-5m-barrels-per-day-with-ai-fleet-efficiency-gains-87210"
+        }
+      ]
     }
   ]
 }
