@@ -129,7 +129,9 @@ ${layout === 'split' ? `h1{font-size:${58 * u}px}h1.big{font-size:${70 * u}px}.b
 </style></head><body><div class="card">${body}</div>
 <script>
 window.fit = () => { const ms = [...document.querySelectorAll('.main')]; const els = [...document.querySelectorAll('.fit')];
-  for (let i = 0; i < 50 && ms.some(m => m.scrollHeight > m.clientHeight + 1); i++) els.forEach(e => { e.style.fontSize = (parseFloat(getComputedStyle(e).fontSize) * 0.95) + 'px'; }); };
+  // Shrink while text overflows, but stop as soon as shrinking no longer helps (fixed padding can leave a few pixels over).
+  const over = () => Math.max(0, ...ms.map(m => m.scrollHeight - m.clientHeight));
+  for (let i = 0, prev = Infinity; i < 50 && over() > 12 && over() < prev; i++) { prev = over(); els.forEach(e => { e.style.fontSize = (parseFloat(getComputedStyle(e).fontSize) * 0.95) + 'px'; }); } };
 </script></body></html>`;
 }
 
@@ -237,7 +239,7 @@ async function renderBanners() {
 }
 
 const [cmd, ...rest] = process.argv.slice(2);
-(cmd === 'week' && rest[0] ? renderWeek(rest[0], rest.slice(1)) : cmd === 'banners' ? renderBanners()
+if (require.main === module) (cmd === 'week' && rest[0] ? renderWeek(rest[0], rest.slice(1)) : cmd === 'banners' ? renderBanners()
   : Promise.reject(new Error('usage: social-cards.cjs week <YYYY-wNN> [postId…] | banners'))).catch(e => { console.error(e.message); process.exit(1); });
 
 module.exports = { cardHtml };
