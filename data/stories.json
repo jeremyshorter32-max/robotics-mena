@@ -12,8 +12,8 @@
    "ar": "فيلا دبي الروبوتية قد تصبح المعيار العالمي لروبوتات البناء"
   },
   "dek": {
-   "en": "Dubai wants to build the world’s first villa with robots doing the work, from excavation to interior finishes. A published plan names five partners, a 460 m² villa in Al Barsha, eight robotic trades and a 62-week programme. If it delivers, and shares its results openly, the industry gets its first full-house benchmark for robotic construction.",
-   "ar": "تريد دبي بناء أول فيلا في العالم تؤدي فيها الروبوتات العمل، من الحفر إلى التشطيبات الداخلية. وتسمّي خطة منشورة خمسة شركاء وفيلا بمساحة 460 متراً مربعاً في البرشاء وثماني مهام روبوتية وبرنامجاً مدته 62 أسبوعاً. وإذا نجح المشروع وشارك نتائجه علناً، فسيحصل القطاع على أول معيار لبناء منزل كامل بالروبوتات."
+   "en": "Dubai wants to build the world’s first villa with robots doing the work, from excavation to interior finishes, an important step for bringing robotics into everyday construction processes. A published plan names five partners, a 460 m² villa in Al Barsha, eight robotic trades and a 62-week programme. If it delivers, and shares its results openly, the industry gets its first full-house benchmark for robotic construction.",
+   "ar": "تريد دبي بناء أول فيلا في العالم تؤدي فيها الروبوتات العمل، من الحفر إلى التشطيبات الداخلية، في خطوة مهمة نحو إدخال الروبوتات في عمليات البناء اليومية. وتسمّي خطة منشورة خمسة شركاء وفيلا بمساحة 460 متراً مربعاً في البرشاء وثماني مهام روبوتية وبرنامجاً مدته 62 أسبوعاً. وإذا نجح المشروع وشارك نتائجه علناً، فسيحصل القطاع على أول معيار لبناء منزل كامل بالروبوتات."
   },
   "by": {
    "en": "Robotics MENA analysis",
@@ -1169,8 +1169,8 @@
      "blocks": [
       {
        "t": "p",
-       "en": "Dubai is right to run this test, and right to run it on a real house rather than a pavilion. The April plan promises exactly what the industry needs: open data and benchmarks for time, cost, quality, safety and productivity. To make the most of it, the results should show the share of work done by robots task by task, cost per square metre against a conventional villa built to the same design, schedule, defects, and the human labour still needed.",
-       "ar": "دبي محقة في إجراء هذا الاختبار، ومحقة في إجرائه على منزل حقيقي لا جناح عرض. وتعد خطة أبريل بما يحتاجه القطاع تماماً: بيانات مفتوحة ومؤشرات للوقت والتكلفة والجودة والسلامة والإنتاجية. وللاستفادة القصوى منها، ينبغي أن تُظهر النتائج نسبة العمل الروبوتي لكل مهمة، وتكلفة المتر المربع مقارنة بفيلا تقليدية بالتصميم نفسه، والجدول الزمني، والعيوب، والعمالة البشرية التي ظلت مطلوبة.",
+       "en": "This is an important step for the adoption of robotics in construction. Most building work is still done by hand, and robots have so far appeared on Gulf sites one task at a time: a printer here, an inspection robot there. A whole house built across every trade, under real regulations, would show how robots fit into the full construction process, from design and permits to handover. Dubai is right to run this test, and right to run it on a real house rather than a pavilion. The April plan promises exactly what the industry needs: open data and benchmarks for time, cost, quality, safety and productivity. To make the most of it, the results should show the share of work done by robots task by task, cost per square metre against a conventional villa built to the same design, schedule, defects, and the human labour still needed.",
+       "ar": "هذه خطوة مهمة لاعتماد الروبوتات في قطاع البناء. فمعظم أعمال البناء لا تزال تُنجز يدوياً، ولم تظهر الروبوتات في مواقع الخليج حتى الآن إلا لمهمة واحدة في كل مرة: طابعة هنا وروبوت فحص هناك. ومنزل كامل يُبنى عبر كل المهام ووفق اشتراطات حقيقية سيُظهر كيف تندمج الروبوتات في عملية البناء بأكملها، من التصميم والتصاريح حتى التسليم. دبي محقة في إجراء هذا الاختبار، ومحقة في إجرائه على منزل حقيقي لا جناح عرض. وتعد خطة أبريل بما يحتاجه القطاع تماماً: بيانات مفتوحة ومؤشرات للوقت والتكلفة والجودة والسلامة والإنتاجية. وللاستفادة القصوى منها، ينبغي أن تُظهر النتائج نسبة العمل الروبوتي لكل مهمة، وتكلفة المتر المربع مقارنة بفيلا تقليدية بالتصميم نفسه، والجدول الزمني، والعيوب، والعمالة البشرية التي ظلت مطلوبة.",
        "lead": true
       },
       {
