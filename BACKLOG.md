@@ -167,7 +167,8 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
 
 ## Features
 
-- [ ] **Resources page: archive of past briefs and Spotlight reports, behind a sign-up wall** (requested 15 Nov 2026).
+- [x] **Resources page: archive of past briefs and Spotlight reports, behind a sign-up wall** (requested 15 Nov 2026; built 15 Nov:
+  `/resources`, `pages/resources.html`, `rsVals` in `src/logic.js`; in the nav, footer, brief pop-up and sitemap; privacy page updated).
   A new `/resources` page listing every past weekly brief (by week, with its five signals) and every Spotlight report
   (interactive page + EN/AR PDFs), newest first, filterable by country and topic. Viewing anything needs an email sign-up
   that **commits the reader to receive future briefs** (clear consent wording next to the button, linked privacy page).
@@ -186,6 +187,13 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
     accordingly; record consent text and date in the Sheet.
   - Add to nav and footer, the sitemap (the listing page only), the brief pop-up ("Browse past briefs"), and the portal Metrics
     (archive sign-ups).
+  - Built as specified, with these choices: briefs and reports are listed (titles, week labels) before sign-up, and the signals and PDFs
+    open after it. The gate is the site-wide one, so earlier sign-ups are already unlocked. Topic filters are tagged from each item's
+    own words (Healthcare, Mobility, Delivery & logistics, Humanoids & embodied AI, Drones, Industry & energy, Service robots); a `topic`
+    field on brief items would make that exact. Consent wording (English, plus the Arabic shown) and its time go to the Sheet as
+    `consent` and `consent_at` columns, and to the FormSubmit email.
+- [ ] **Resources page, still to do:** archive sign-ups in the portal Metrics (signed_up_from = "Resources archive"); Kit double
+  opt-in once Kit is connected; the signed-link (truly private) option if the archive ever needs to be private.
 
 ## Nice to have
 

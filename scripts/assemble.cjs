@@ -9,6 +9,9 @@ const read = f => fs.readFileSync(path.join(root, f), 'utf8');
 const data = {};
 for (const name of ['companies', 'deployments', 'events', 'countries', 'brief', 'stories', 'site', 'policy', 'corrections']) data[name] = JSON.parse(read(`data/${name}.json`));
 data.builtAt = new Date().toISOString().slice(0, 10);
+// Archived weekly briefs (data/briefs/<YYYY>-w<NN>.json, written by scripts/archive-brief.mjs) for the resources page, newest first.
+data.briefs = fs.existsSync(path.join(root, 'data/briefs')) ? fs.readdirSync(path.join(root, 'data/briefs')).filter(f => /^\d{4}-w\d{2}\.json$/.test(f)).sort().reverse()
+  .map(f => JSON.parse(read(`data/briefs/${f}`))) : [];
 // Official social profiles (social/accounts.json): only accounts marked live are linked from the site.
 const SOCIAL_NAMES = { linkedin: 'LinkedIn', x: 'X', instagram: 'Instagram', reddit: 'Reddit' };
 data.social = (() => { try { const acc = JSON.parse(read('social/accounts.json'));
