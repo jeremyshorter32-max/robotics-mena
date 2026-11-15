@@ -22,6 +22,12 @@ The highest-risk newspaper photos were replaced with company images on 13 Nov 20
 | xgen-pudu-egypt.jpg | Pudu Robotics (company image, crop of /media/companies/pudu-robotics.jpg) | See media/companies/SOURCES.md |
 | agibot-vodafone-qatar.jpg | AgiBot (company image, crop of /media/companies/agibot.jpg) | See media/companies/SOURCES.md |
 
+## Week 47 (16 – 22 Nov 2026)
+
+| File | Credit | Source |
+|---|---|---|
+| glydways-bluewaters.jpg | Glydways (company press image, 800×500 crop) | https://www.glydways.com/wp-content/uploads/2026/11/Glydcars_Bluewaters-Dubai.webp (Glydways newsroom, https://www.glydways.com/news/) |
+
 ## Spotlight analysis images (`media/spotlight/`)
 
 | File | Credit | Source |

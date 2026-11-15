@@ -16,8 +16,10 @@ without the owner's explicit approval in this conversation.**
   and tell the owner the week was skipped.
 - Follow CLAUDE.md: no Israeli companies or flag; never get around paywalls or bot blocks; every item needs
   a primary source and a date.
-- Images: none in the email. On the site, use only company or government press images, or no image.
-  Never newspaper or agency photos (see the image-rights audit, Nov 2026).
+- Images: none in the email. On the site **every signal must have an image** (the build fails without one; never
+  publish with the blue placeholder). Use a company or government press image of the story, or else a press image
+  of the solution provider (its own site or newsroom). Never newspaper or agency photos (image-rights audit, Nov 2026).
+  Crop to 800×500 in `media/brief/`, log it in `media/brief/SOURCES.md`, and credit the company.
 
 ## 1. Draft (Sunday run)
 1. `git checkout main && git pull`. Create branch `brief/<YYYY>-w<NN>` (ISO week of the coming brief).
@@ -26,8 +28,8 @@ without the owner's explicit approval in this conversation.**
    where needed. Check the leads in BACKLOG.md and the weekly scanner's latest pull request, if any.
 3. Pick **five signals**: things that changed (deployments, laws, deals, launches), not opinion. Spread
    across countries and robot types where the news allows. For each, write in `data/brief.json`:
-   `id, country, date, title, title_ar, takeaway, takeaway_ar, source, source_url` (+ `image`,
-   `image_credit` only if licence-safe). The takeaway says why it matters, in one or two plain sentences,
+   `id, country, date, title, title_ar, takeaway, takeaway_ar, source, source_url` `image`,
+   `image_credit` (required; see the image rule above). The takeaway says why it matters, in one or two plain sentences,
    with no "watch this event" phrasing that goes stale once the event has passed.
 4. Add any new deployments, companies or events to `data/*.json` with `added: <today>` (deployments also
    `is_new: true`, and clear last week's `is_new`). Link new deployments to policy programmes where a source

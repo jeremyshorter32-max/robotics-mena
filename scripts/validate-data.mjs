@@ -64,6 +64,7 @@ D.brief.forEach((b, i) => {
   need(b, w, ['id', 'country', 'date', 'title', 'takeaway', 'source']);
   if (!countryCodes.has(b.country)) errors.push(`${w}: country "${b.country}" is not in countries.json`);
   date(b.date, w, 'date'); url(b.source_url, w, 'source_url');
+  if (!b.image) errors.push(`${w}: every brief item needs an image (company or government press image, or an image of the solution provider); the blue placeholder must never go live`);
   if (b.image) { if (!/^\/media\/brief\/[a-z0-9._-]+\.(jpg|jpeg|png|webp)$/.test(b.image)) errors.push(`${w}: image must look like /media/brief/name.jpg`); else if (!fs.existsSync(path.join(ROOT, b.image))) errors.push(`${w}: image file ${b.image} does not exist`); if (!b.image_credit) errors.push(`${w}: image needs an image_credit`); }
 });
 uniq(D.brief, 'id', 'brief');
