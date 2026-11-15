@@ -92,11 +92,22 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
   metrics (`scripts/social.mjs`), the card, PDF-carousel and Reel renderer (`scripts/social-cards.cjs`), profile banners and highlight covers
   (`brand/social/`), four agent skills, portal approval for `social/` branches, tests. First week (2026-w47, 22 posts) written and rendered.
 - [x] **Accounts created** (14 Nov 2026) under @roboticsmena: LinkedIn, Instagram, X, Reddit (u/RoboticsMENA, r/RoboticsMENA);
-  `social/accounts.json` marked live. All four links checked by the owner on the live site.
+  `social/accounts.json` marked live. All four links checked by the owner on the live site. Reddit links to the site are allowed
+  from 12 Dec 2026. Reddit blocks automated reads from cloud sessions, so the owner gives the Reddit counts too.
+- [ ] **Owner:** turn on two-factor authentication on all accounts; link Instagram to a Facebook Page (needed for Buffer).
+- [x] **Launch campaign and Content Library** (14 Nov 2026): `social/campaigns/launch-2026.{json,md}` (profile-filling posts for 15 Nov,
+  launch-week outreach kit, GITEX run-up, live templates and story frames, recap, checklist and shot list) and the Content Library page
+  (https://claude.ai/artifact/VLvATizyqX8AuX4t3WtmM2, `scripts/social-library.mjs`) for viewing, copying and downloading every post.
+- [x] **English-only social** (owner, 14 Nov 2026): all post, card and kit copy rewritten in English; the validator refuses Arabic
+  while `social/cadence.json` languages is ["en"]. Owner to drop "EN/عربي" from the Instagram and X bios.
+- [ ] **Later: Arabic social posts** (add "ar" to `social/cadence.json` languages; Strategy section 7).
+- [ ] **Social pack v2 sign-off** (14 Nov 2026): photo-led redesign using the site's cleared press images (`social/images.json`),
+  cards as JPEG, 4 more X posts with cards. Owner reviews at https://claude.ai/artifact/Ao2fSzm4HETqS8Toybg9EU; then Claude applies
+  the requested changes and republishes the Content Library with the approved posts.
 - [ ] **Owner: scheduler.** Connect LinkedIn, Instagram and X to Buffer (free plan) or use the native schedulers.
-- [x] **Admin portal redeployed** (14 Nov 2026) so it accepts `social/` pull requests.
+- [x] **Admin portal redeployed** (14 Nov 2026, version 85664a39): it now accepts `social/` pull requests; still behind Access, secrets kept.
 - [x] **Scheduled tasks switched on** (14 Nov 2026): "weekly social run" Sun 15:37 Gulf (Analyst → Strategist → Creator, after the 13:43 brief)
-  and "daily social engagement" Mon–Fri 07:13 Gulf. Both stop with "Social system not merged into main yet" until this work is on main.
+  and "daily social engagement" Mon–Fri 07:13 Gulf.
 - [x] **Site links** (14 Nov 2026): "Follow Robotics MENA" row in every page footer and the brief pop-up's thank-you step,
   `sameAs` in the Organization structured data, and the newsletter footer, all read from `social/accounts.json`.
 - [ ] **Owner decisions:** paid boost ($5 to $10 a day on LinkedIn or Instagram) under consideration (14 Nov); X Premium and event filming

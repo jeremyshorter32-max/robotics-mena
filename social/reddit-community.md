@@ -5,7 +5,7 @@
 2. **Source your claims.** News posts need a link to the original announcement or a credible report. Rumours must be labelled.
 3. **No spam or undisclosed promotion.** Companies may share their own news once a week if they say it's theirs. Recruiters use the monthly jobs thread.
 4. **Be civil. No politics or conflict debates.** We discuss what machines do, not who should win.
-5. **English or Arabic, both welcome.** Please add a translation if you can.
+5. **Posts in English, please.** Arabic or French sources are welcome; add a one-line English summary.
 6. **No defence or weapons promotion.**
 
 ## Post flairs

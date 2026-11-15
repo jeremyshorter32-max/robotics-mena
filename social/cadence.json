@@ -1,6 +1,8 @@
 {
   "_note": "Weekly slots the Creator fills (Gulf time, UTC+4). The validator warns when a week's queue misses a slot. Days: mon..sun.",
   "timezone": "+04:00",
+  "languages": ["en"],
+  "_languages": "English only to start (owner, 14 Nov 2026). Add \"ar\" here to allow Arabic posts again.",
   "slots": [
     { "platform": "linkedin",  "day": "mon", "time": "08:30", "format": "document", "pillar": "signals",    "what": "Weekly brief carousel (5 signals + CTA)" },
     { "platform": "linkedin",  "day": "tue", "time": "08:30", "format": "image",    "pillar": "deployment", "what": "Deployment of the week" },
@@ -18,10 +20,10 @@
     { "platform": "x", "day": "tue", "time": "09:00", "format": "post",   "pillar": "deployment", "what": "Deployment of the week" },
     { "platform": "x", "day": "tue", "time": "17:00", "format": "post",   "pillar": "signals",    "what": "Signal" },
     { "platform": "x", "day": "wed", "time": "09:00", "format": "post",   "pillar": "data",       "what": "Data point" },
-    { "platform": "x", "day": "wed", "time": "17:00", "format": "post",   "pillar": "signals",    "what": "Signal (Arabic)" },
+    { "platform": "x", "day": "wed", "time": "17:00", "format": "post",   "pillar": "signals",    "what": "Signal" },
     { "platform": "x", "day": "thu", "time": "09:00", "format": "post",   "pillar": "explainer",  "what": "Explainer / Spotlight" },
     { "platform": "x", "day": "thu", "time": "17:00", "format": "post",   "pillar": "community",  "what": "Events / question" },
-    { "platform": "x", "day": "fri", "time": "11:00", "format": "post",   "pillar": "signals",    "what": "Signal (Arabic)" },
+    { "platform": "x", "day": "fri", "time": "11:00", "format": "post",   "pillar": "signals",    "what": "Signal" },
     { "platform": "x", "day": "sat", "time": "12:00", "format": "post",   "pillar": "data",       "what": "Weekend data point" },
 
     { "platform": "reddit", "day": "mon", "time": "18:00", "format": "text", "pillar": "signals",   "what": "r/RoboticsMENA weekly roundup", "subreddit": "RoboticsMENA" },

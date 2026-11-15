@@ -21,6 +21,9 @@ the Community agent engages; the owner approves and posts. Read `social/STRATEGY
 - Fresh records: `data/deployments.json`, `companies.json` and `events.json` entries with `added` in the last 14 days, and the open `scan/...` pull request.
 - Events in the next 21 days: `data/events.json` (`start` from tomorrow to 21 days ahead).
 - `social/accounts.json` (which accounts are live) and `social/cadence.json` (the slots).
+- **Campaigns:** `social/campaigns/*.json` and their `.md` plans. Every campaign post whose `slot` falls in the coming week must be copied into
+  the week's queue with the same `id`, and counts as filling that slot. Recompute any numbers named in a post's `refresh` note from `data/*.json`
+  first. Keep `"template": true` posts as templates. Follow the campaign's `.md` plan for that week (events, owner tasks, reply targets).
 
 ## 2. Write `social/plans/<week>.md`
 Keep it under a page. Sections:
@@ -29,14 +32,13 @@ Keep it under a page. Sections:
    the record or signal it uses (id plus source), and the angle. Rules:
    - Every slot uses something verified: a brief item, a database record or a count from `data/*.json`. No slot without a source.
    - The same story may appear on several platforms in different forms, but never twice on one platform in a week.
-   - Spread countries: no more than half the week's posts about the UAE. Use Arabic for at least 2 X posts and every Instagram caption.
+   - Spread countries: no more than half the week's posts about the UAE. Everything is in English (social/cadence.json languages).
    - Deployment of the week: the most visual recent deployment that has a rights-cleared image or a clear story. Name who to tag.
 3. **Event coverage:** for each event in the window, decide: preview post, live thread (X), Stories (Instagram), recap (LinkedIn).
    Big events (GITEX, Big 5, LEAP, ADIPEC, World Police Summit) get a plan from the week before.
 4. **Tag and partner targets:** organisations to tag, and which of their handles are confirmed in `social/handles.json`.
    If a needed handle is missing, add a task for the Community agent to confirm it (on the organisation's own website).
-5. **Experiment:** exactly one test a week, with a measurable question (for example "Do Arabic-first Reels get more reach than
-   English-first?" or "Does a 07:30 LinkedIn post beat 08:30?"). Say how the Analyst will read the result.
+5. **Experiment:** exactly one test a week, with a measurable question (for example "Do Reels with a number in the first frame get more reach?" or "Does a 07:30 LinkedIn post beat 08:30?"). Say how the Analyst will read the result.
 6. **Accounts not live yet:** list them. The Creator still drafts their posts so the owner has a backlog ready at launch.
 
 ## 3. Monthly review (1st of the month, or when asked)

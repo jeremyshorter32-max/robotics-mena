@@ -1,0 +1,30 @@
+{
+  "_note": "Images cleared for social cards. Only press images published by the company or government itself (or supplied by the owner), credited on the card. Newspaper and news-agency photos are never used (WAM, KUNA, Petra, Gulf Times, MedEdge, La Presse, Horizons and the like). 'shows' says what is actually in the picture, so a card never implies it shows something else. The renderer prints 'Photo: <credit>' and adds 'shows' when a card sets caption: true. Add an image only after checking its source page; rights holders can ask for removal at contact@roboticsmena.com.",
+  "images": {
+    "/media/brand/hero-robot-arm.jpg":              { "credit": "Robotics MENA",          "shows": "Industrial robot arm",                                   "source": "Supplied by the owner" },
+    "/media/brand/hero-delivery-robots.jpg":        { "credit": "Robotics MENA",          "shows": "Delivery robots",                                        "source": "Supplied by the owner" },
+    "/media/spotlight/gecko-inspectors-thickness-map.jpg": { "credit": "Gecko Robotics", "shows": "Inspectors with a Gecko crawler and a wall-thickness map", "source": "https://www.geckorobotics.com/" },
+    "/media/spotlight/gecko-crawler-electronics.jpg": { "credit": "Gecko Robotics",       "shows": "Gecko inspection crawler",                               "source": "https://www.geckorobotics.com/" },
+    "/media/companies/gecko-robotics.jpg":          { "credit": "Gecko Robotics",         "shows": "Gecko Robotics crawler",                                 "source": "https://www.geckorobotics.com/" },
+    "/media/spotlight/taurob-offshore-deck.jpg":    { "credit": "Taurob",                 "shows": "Taurob inspection robot on an offshore deck",            "source": "https://www.taurob.com/" },
+    "/media/spotlight/taurob-inspector-taweelah.jpg": { "credit": "ADNOC",                "shows": "Taurob inspector robot at an ADNOC site",                "source": "https://jpt.spe.org/adnoc-touts-robotic-deployment-with-more-to-come" },
+    "/media/spotlight/adnocls-remote-landing-craft.jpg": { "credit": "ADNOC L&S (rendering)", "shows": "Rendering of ADNOC L&S's autonomous landing craft",  "source": "https://www.oedigital.com/news/532459-adnoc-l-s-presents-uae-s-first-autonomous-offshore-vessels" },
+    "/media/brief/lootah-humanoid-studio.jpg":      { "credit": "YS Lootah Robotics",     "shows": "Humanoid robots at Lootah's Dubai showroom",            "source": "https://yslootahrobotics.com/media/humanoid.webp" },
+    "/media/companies/ys-lootah-robotics.jpg":      { "credit": "YS Lootah Robotics",     "shows": "Humanoid robot showroom, Dubai",                         "source": "media/companies/SOURCES.md" },
+    "/media/brief/qmic-mwc-doha.jpg":               { "credit": "QMIC",                   "shows": "QMIC embodied-AI demo",                                  "source": "https://qmic.com/" },
+    "/media/brief/egypt-da-vinci-sofmedica.jpg":    { "credit": "Sofmedica",              "shows": "Surgeons with a robotic surgery system",                 "source": "https://sofmedica.com/" },
+    "/media/companies/naver-labs.jpg":              { "credit": "NAVER LABS",             "shows": "NAVER LABS robots",                                      "source": "https://www.naverlabs.com/" },
+    "/media/companies/pudu-robotics.jpg":            { "credit": "Pudu Robotics",          "shows": "Pudu service robot",                                     "source": "https://www.pudutech.com/" },
+    "/media/companies/agibot.jpg":                  { "credit": "AgiBot",                 "shows": "AgiBot humanoid robots",                                 "source": "https://www.agibot.com/" },
+    "/media/companies/pony-ai.jpg":                 { "credit": "Pony.ai",                "shows": "Pony.ai robotaxi in Doha",                               "source": "media/companies/SOURCES.md" },
+    "/media/companies/unitree.jpg":                 { "credit": "Unitree Robotics",       "shows": "Unitree robot dogs at an industrial site",               "source": "https://www.unitree.com/" },
+    "/media/companies/fieldai.jpg":                 { "credit": "Field AI",               "shows": "Robot dog on a construction site",                       "source": "media/companies/SOURCES.md" },
+    "/media/companies/gmt-robotics.jpg":            { "credit": "GMT Robotics",           "shows": "GMT rebar-tying robot",                                  "source": "https://www.gmtrobotics.com/" },
+    "/media/companies/iq-robotics.jpg":             { "credit": "IQ Robotics",            "shows": "IQ Robotics warehouse robots",                           "source": "https://www.iqrobotics.com/" },
+    "/media/companies/keeta-drone.jpg":             { "credit": "Keeta Drone",            "shows": "Keeta delivery drone",                                   "source": "https://www.keetadrone.com/" },
+    "/media/companies/raedbots.jpg":                { "credit": "Raedbots",               "shows": "Raedbots industrial robot",                              "source": "https://www.raedbots.com/" },
+    "/media/companies/ubtech-robotics.jpg":         { "credit": "UBTech Robotics",        "shows": "UBTech humanoid robot",                                  "source": "https://www.ubtrobot.com/" },
+    "/media/policy/ae-feat.jpg":                    { "credit": "Abu Dhabi Media Office", "shows": "Launch of the SAVI autonomous-vehicles cluster, Masdar City", "source": "https://www.mediaoffice.abudhabi/" },
+    "/media/policy/ma-feat.jpg":                    { "credit": "Morocco's Ministry of Digital Transition", "shows": "Jazari institutes general assemblies", "source": "https://www.mmsp.gov.ma/" }
+  }
+}

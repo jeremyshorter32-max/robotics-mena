@@ -9,10 +9,10 @@ description: Robotics MENA social Analyst. Records follower counts on LinkedIn, 
 Repository as in the other social skills. Branch `social/<coming week>` (create it from main if it doesn't exist).
 
 ## 1. Collect
-1. **Reddit (automatic):** `curl -sA "roboticsmena-research/1.0" https://www.reddit.com/r/RoboticsMENA/about.json` → `data.subscribers`
-   (only once `social/accounts.json` says the community is live).
-2. **LinkedIn, Instagram, X:** there is no free API access, so use the counts the owner gives: a line like
-   `followers linkedin=420 x=180 instagram=250` in chat, or in an owner comment on the week's `social-engage` issue (check the author is the repository owner).
+1. **All four platforms come from the owner.** There is no free API access, and Reddit refuses automated requests from cloud sessions
+   (HTTP 403), so never try to fetch the numbers. Use a line like `followers linkedin=420 x=180 instagram=250 reddit=40` (reddit = r/RoboticsMENA members)
+   in chat, or in an owner comment on the week's `social-engage` issue (check the author is the repository owner).
+2. If a count is missing, leave it blank.
    If there are no counts newer than 8 days, ask for them in the report (one line) and carry on.
 3. Record: `node scripts/social.mjs metrics add linkedin=<n> instagram=<n> x=<n> reddit=<n> --date <YYYY-MM-DD>` (only platforms you have).
 4. **Post performance (optional, when available):** CSV or screenshot exports the owner drops into `social/insights/<week>/`

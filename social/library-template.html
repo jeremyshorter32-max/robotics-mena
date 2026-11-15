@@ -1,0 +1,289 @@
+<title>Robotics MENA Content Library</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap">
+<style>
+/* Layout: a posting desk. Sticky collection tabs, then a day-by-day run sheet of post cards: when / where on the left, copy and media on the right. */
+:root{
+  --bg:#F3F1EC; --surface:#FFFFFF; --ink:#111216; --muted:#5E6070; --line:#DEDBD3; --brand:#26246E; --brand-tint:#E3E2F2; --on-brand:#F3F1EC;
+  --ok:#1F6B45; --ok-tint:#E2F0E7; --warn:#8A5A00; --warn-tint:#F7ECD3;
+  --li:#0A66C2; --x:#111216; --ig:#C13584; --rd:#D93A00;
+  --sans:'IBM Plex Sans','IBM Plex Sans Arabic',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111216; --surface:#1A1B22; --ink:#F3F1EC; --muted:#A6A7B5; --line:#2C2D38; --brand:#A9A7E0; --brand-tint:#25244A; --on-brand:#111216;
+  --ok:#7CCB9C; --ok-tint:#173226; --warn:#E7B860; --warn-tint:#3A2E14; --li:#5AA6F0; --x:#F3F1EC; --ig:#E77DB8; --rd:#FF7A45; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111216; --surface:#1A1B22; --ink:#F3F1EC; --muted:#A6A7B5; --line:#2C2D38; --brand:#A9A7E0; --brand-tint:#25244A; --on-brand:#111216;
+  --ok:#7CCB9C; --ok-tint:#173226; --warn:#E7B860; --warn-tint:#3A2E14; --li:#5AA6F0; --x:#F3F1EC; --ig:#E77DB8; --rd:#FF7A45; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--sans);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--brand)}
+.wrap{max-width:1040px;margin:0 auto}
+header.top{padding-block:28px 18px;display:flex;flex-direction:column;gap:10px}
+.eyebrow{font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+h1{margin:0;font-size:clamp(26px,4.5vw,38px);line-height:1.1;letter-spacing:-.02em;font-weight:600;text-wrap:balance}
+.sub{margin:0;color:var(--muted);max-width:68ch}
+.accounts{display:flex;flex-wrap:wrap;gap:6px 16px;font:500 13px var(--mono)}
+.accounts a{text-decoration:none;border-bottom:1px solid var(--line)}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding-block:8px 0;scrollbar-width:none}
+nav.tabs a{flex:none;text-decoration:none;color:var(--muted);font:500 14px var(--sans);padding:8px 12px 10px;border-bottom:3px solid transparent}
+nav.tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--brand)}
+nav.tabs small{font:500 11px var(--mono);color:var(--muted);margin-inline-start:6px}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-block:16px}
+.chip{font:500 13px var(--sans);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 12px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.bar .spacer{flex:1}
+.btn{font:500 13px var(--sans);border:1px solid var(--brand);background:var(--brand);color:var(--on-brand);border-radius:6px;padding:7px 12px;cursor:pointer;white-space:nowrap}
+.btn.ghost{background:transparent;color:var(--brand)}
+.btn:focus-visible,.chip:focus-visible,nav.tabs a:focus-visible,input:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.intro{display:grid;gap:6px;padding:14px 16px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.intro h2{margin:0;font-size:20px;letter-spacing:-.01em}
+.intro p{margin:0;color:var(--muted);font-size:14px}
+h3.section{font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:28px 0 10px}
+.day{font:600 17px var(--sans);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.post{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:16px;margin-bottom:12px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.post.done{opacity:.55}
+.meta{display:flex;flex-direction:column;gap:6px;font:500 12px var(--mono);color:var(--muted)}
+.meta .time{font:600 20px var(--mono);color:var(--ink)}
+.pf{display:inline-flex;align-items:center;gap:6px;font:600 13px var(--sans);color:var(--ink)}
+.pf i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.tag{align-self:flex-start;font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:4px;background:var(--brand-tint);color:var(--brand)}
+.tag.tpl{background:var(--warn-tint);color:var(--warn)}
+.donebox{display:flex;align-items:center;gap:6px;cursor:pointer;color:var(--ink);font:500 13px var(--sans);margin-top:4px}
+.body{display:flex;flex-direction:column;gap:10px;min-width:0}
+.copy{border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.copy .lab{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 10px;background:var(--bg);font:500 11px var(--mono);color:var(--muted);letter-spacing:.04em}
+.copy .lab .over{color:#B42318}
+.copy pre{margin:0;padding:10px 12px;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.55 var(--sans);unicode-bidi:plaintext}
+.copy button{font:500 12px var(--sans);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:5px;padding:3px 10px;cursor:pointer}
+.media{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px}
+.m{flex:none;display:flex;flex-direction:column;gap:6px;width:150px}
+.m img,.m video{width:150px;height:auto;max-width:100%;border-radius:6px;border:1px solid var(--line);background:var(--bg);display:block}
+.m.wide,.m.wide img{width:240px}
+.m .file{height:150px;display:grid;place-items:center;border:1px dashed var(--line);border-radius:6px;font:600 13px var(--mono);color:var(--muted)}
+.m button{font:500 12px var(--sans);border:1px solid var(--line);background:var(--surface);color:var(--brand);border-radius:5px;padding:4px 8px;cursor:pointer}
+.note{margin:0;font-size:13px;color:var(--muted)}
+.note b{color:var(--ink);font-weight:600}
+.warnnote{margin:0;font-size:13px;padding:8px 10px;border-radius:6px;background:var(--warn-tint);color:var(--warn)}
+.src{font-size:13px;color:var(--muted)}
+.kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:12px}
+.kitcard{display:flex;flex-direction:column;gap:8px;padding:14px;background:var(--surface);border:1px solid var(--line);border-radius:8px;min-width:0}
+.kitcard h4{margin:0;font-size:15px}
+.kitcard .ch{font:500 12px var(--mono);color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.grid .m{width:auto}.grid .m img{width:100%}
+.rev{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-top:10px;border-top:1px solid var(--line)}
+.rev .st{font:600 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--bg);color:var(--muted)}
+.rev .st.ok{background:var(--ok-tint);color:var(--ok)}.rev .st.ch{background:var(--warn-tint);color:var(--warn)}
+.rev button{font:500 13px var(--sans);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;padding:6px 12px;cursor:pointer}
+.rev button.okb[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.rev button.chb[aria-pressed="true"]{background:var(--warn);border-color:var(--warn);color:var(--surface)}
+.rev textarea{flex-basis:100%;min-height:58px;font:14px/1.45 var(--sans);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;resize:vertical}
+.post.ok{border-color:var(--ok)}.post.ch{border-color:var(--warn)}
+.tally{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin-top:12px;font-size:14px}
+.tally b{font:600 18px var(--mono)}
+.changes{display:grid;gap:8px;padding:14px 16px;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin-top:12px}
+.changes h2{margin:0;font-size:18px}.changes ul{margin:0;padding-inline-start:20px;color:var(--muted);font-size:14px;display:grid;gap:4px}
+.credits{font-size:13px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:14px;max-width:min(92vw,520px);z-index:20}
+.dlnote{font-size:13px;color:var(--muted);margin:0}
+@media (max-width:640px){.post{grid-template-columns:minmax(0,1fr)}.meta{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 12px}.meta .time{font-size:16px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">Robotics MENA · social desk</span>
+    <h1>Content Library</h1>
+    <p class="sub" id="sub">Every post ready to go: copy it with one tap, download its images, PDFs and Reels, and tick it off when it's posted. Times are Gulf time (UTC+4).</p>
+    <div class="accounts" id="accounts"></div>
+  </header>
+  <nav class="tabs" id="tabs" aria-label="Collections"></nav>
+  <main id="view"></main>
+</div>
+<div class="toast" id="toast" hidden></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+<script>
+const DATA = /*@DATA*/null;
+const PF = { linkedin: ['LinkedIn', '--li'], x: ['X', '--x'], instagram: ['Instagram', '--ig'], reddit: ['Reddit', '--rd'] };
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const store = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+let posted = new Set(store.get('rm-posted', [])), filter = store.get('rm-filter', 'all'), hideDone = store.get('rm-hide', false);
+const dayFmt = d => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
+const shortDay = d => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' });
+
+function toast(msg) { const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast.h); toast.h = setTimeout(() => t.hidden = true, 3200); }
+
+// Downloads go through the viewer's save prompt (the page itself can't start a download).
+let dlP = (window.claude && window.claude.use) ? window.claude.use('downloads').catch(() => null) : Promise.resolve(null);
+async function download(url, btn) {
+  const dl = await dlP;
+  if (!dl) { toast('Downloads need the page open on claude.ai. On a phone you can also press and hold an image to save it.'); return; }
+  const old = btn.textContent; btn.textContent = 'Preparing…'; btn.disabled = true;
+  try {
+    const blob = await (await fetch(url)).blob();
+    await dl.save({ filename: 'roboticsmena-' + url.split('/').pop(), data: blob });
+    toast('Saved ' + url.split('/').pop());
+  } catch (e) {
+    if (e && e.code === 'declined') {} else if (e && e.code === 'rate_limited') toast('One download at a time. Finish the open prompt, then try again.');
+    else toast('That file could not be saved here (' + ((e && e.code) || 'error') + ').');
+  } finally { btn.textContent = old; btn.disabled = false; }
+}
+
+// "Download all": zip the collection's files in the browser, then one save prompt.
+async function downloadZip(name, files, btn) {
+  const dl = await dlP;
+  if (!dl) { toast('Downloads need the page open on claude.ai.'); return; }
+  if (!window.JSZip) { toast('The zip tool did not load. Download the files one by one.'); return; }
+  const old = btn.textContent; btn.disabled = true;
+  try {
+    const zip = new JSZip();
+    for (const [i, f] of files.entries()) { btn.textContent = `Packing ${i + 1} of ${files.length}…`; zip.file(f.split('/').slice(1).join('/'), await (await fetch(f)).blob()); }
+    btn.textContent = 'Preparing…';
+    const blob = await zip.generateAsync({ type: 'blob', compression: 'STORE' });
+    await dl.save({ filename: `roboticsmena-${name}.zip`, data: blob });
+    toast(`Saved roboticsmena-${name}.zip`);
+  } catch (e) {
+    if (!(e && e.code === 'declined')) toast('The zip could not be saved here (' + ((e && e.code) || 'error') + ').');
+  } finally { btn.textContent = old; btn.disabled = false; }
+}
+
+function copyText(btn) {
+  const pre = btn.closest('.copy, .kitcard').querySelector('pre');
+  const done = () => { btn.textContent = 'Copied'; setTimeout(() => btn.textContent = 'Copy', 1300); };
+  try { navigator.clipboard.writeText(pre.innerText).then(done, () => selectIt(pre)); } catch { selectIt(pre); }
+}
+function selectIt(pre) { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast('Text selected: copy it from the menu.'); }
+
+const copyBlock = (label, text, extra = '') => `<div class="copy"><div class="lab"><span>${esc(label)}${extra}</span><button type="button" data-copy>Copy</button></div><pre>${esc(text)}</pre></div>`;
+function mediaItem(f) {
+  const ext = f.split('.').pop(), name = f.split('/').pop();
+  const prev = /^(png|jpg)$/.test(ext) ? `<img src="${esc(f)}" alt="${esc(name)}" loading="lazy">` : ext === 'mp4' ? `<video src="${esc(f)}" controls muted playsinline preload="metadata"></video>` : `<div class="file">${ext.toUpperCase()}</div>`;
+  return `<div class="m${/landscape|x-/.test(name) ? '' : ''}">${prev}<button type="button" data-dl="${esc(f)}">Download ${ext.toUpperCase()}</button></div>`;
+}
+
+function postCard(p) {
+  const [pfName, pfVar] = PF[p.platform];
+  const len = p.platform === 'x' && p.xlen ? ` · ${p.xlen}/280` : '';
+  const parts = [];
+  if (p.subreddit) parts.push(copyBlock(`Title for r/${p.subreddit}`, p.title));
+  if (p.thread.length) p.thread.forEach((t, i) => parts.push(copyBlock(`Post ${i + 1} of ${p.thread.length} · ${t.n}/280`, t.t)));
+  else if (p.text) parts.push(copyBlock(p.platform === 'instagram' ? 'Caption' : p.platform === 'reddit' ? 'Body' : 'Text' , p.text, len));
+  if (p.poll) parts.push(copyBlock('Poll', p.poll.question + '\n' + p.poll.options.join('\n')));
+  if (p.first_comment) parts.push(copyBlock('First comment', p.first_comment));
+  if (p.media.length) parts.push(`<div class="media">${p.media.map(mediaItem).join('')}</div>`);
+  if (p.template) parts.push(`<p class="warnnote"><b>Template.</b> Fill in the [[brackets]] on the day before posting.</p>`);
+  if (p.refresh) parts.push(`<p class="warnnote">${esc(p.refresh)}</p>`);
+  if (p.media_note) parts.push(`<p class="note"><b>Note:</b> ${esc(p.media_note)}</p>`);
+  if (p.tags.length) parts.push(`<p class="note"><b>Tag:</b> ${p.tags.map(esc).join(' · ')}</p>`);
+  if (p.sources.length) parts.push(`<p class="src">Sources: ${p.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</p>`);
+  const done = posted.has(p.id);
+  const rv = reviews[p.id] || {};
+  return `<article class="post${done ? ' done' : ''}${rv.status === 'approved' ? ' ok' : rv.status === 'changes' ? ' ch' : ''}" id="p-${esc(p.id)}">
+    <div class="meta"><span class="pf" style="--c:var(${pfVar})"><i></i>${pfName}</span><span class="time">${p.slot.slice(11, 16)}</span>
+      <span>${esc(p.format)} · ${esc(p.lang)}</span>${p.template ? '<span class="tag tpl">Template</span>' : `<span class="tag">${esc(p.status)}</span>`}
+      <label class="donebox"><input type="checkbox" data-done="${esc(p.id)}"${done ? ' checked' : ''}> Posted</label></div>
+    <div class="body">${parts.join('')}${DATA.review ? reviewBlock(p.id) : ''}</div></article>`;
+}
+
+function renderCollection(c) {
+  const posts = c.posts.filter(p => (filter === 'all' || p.platform === filter) && !(hideDone && posted.has(p.id)));
+  const byDay = {}; posts.forEach(p => (byDay[p.slot.slice(0, 10)] ||= []).push(p));
+  const counts = Object.keys(PF).map(k => [k, c.posts.filter(p => p.platform === k).length]).filter(x => x[1]);
+  const doneN = c.posts.filter(p => posted.has(p.id)).length;
+  return `<div class="bar">
+      <button class="chip" data-f="all" aria-pressed="${filter === 'all'}">All ${c.posts.length}</button>
+      ${counts.map(([k, n]) => `<button class="chip" data-f="${k}" aria-pressed="${filter === k}">${PF[k][0]} ${n}</button>`).join('')}
+      <button class="chip" data-hide aria-pressed="${hideDone}">Hide posted (${doneN})</button>
+      <span class="spacer"></span>${c.files.length ? `<button class="btn" data-zip="${esc(c.name)}">Download all media (.zip, ${c.files.length} files)</button>` : ''}
+    </div>
+    <div class="intro"><h2>${esc(c.title)}</h2><p>${esc(c.theme)}</p>${c.range[0] ? `<p>${shortDay(c.range[0])} to ${shortDay(c.range[1])} · ${c.posts.length} posts${c.kit.length ? ` · ${c.kit.length} ready-to-paste extras` : ''}</p>` : ''}${c.notes ? `<p>${esc(c.notes)}</p>` : ''}</div>
+    ${c.kit.length && filter === 'all' ? `<h3 class="section">Ready to paste: emails, messages and checklists</h3><div class="kit">${c.kit.map(k => `<div class="kitcard"><h4>${esc(k.title)}</h4><span class="ch">${esc(k.channel || '')}</span>${k.note ? `<p class="note">${esc(k.note)}</p>` : ''}<div class="copy"><div class="lab"><span>Text</span><button type="button" data-copy>Copy</button></div><pre>${esc(k.text)}</pre></div></div>`).join('')}</div>` : ''}
+    <h3 class="section">Posts by day</h3>
+    ${Object.keys(byDay).length ? Object.entries(byDay).map(([d, ps]) => `<h4 class="day">${dayFmt(d)}</h4>${ps.map(postCard).join('')}`).join('') : '<p class="note">Nothing to show with these filters.</p>'}`;
+}
+
+function renderProfile() {
+  const a = DATA.accounts;
+  return `<div class="bar"><span class="spacer"></span><button class="btn" data-zip="profile">Download profile kit (.zip)</button></div>
+    <div class="intro"><h2>Profile kit</h2><p>Avatar, banners for X, LinkedIn and Reddit, and Instagram highlight covers (Brief, Data, Deploy, Events, About).</p></div>
+    <h3 class="section">Files</h3><div class="grid">${DATA.profile.files.map(f => `<div class="m"><img src="${esc(f)}" alt="${esc(f.split('/').pop())}" loading="lazy"><span class="note">${esc(f.split('/').pop())}</span><button type="button" data-dl="${esc(f)}">Download PNG</button></div>`).join('')}</div>`;
+}
+
+// Sign-off: one document per post in the artifact's db (reviews/<post id>), read back by Claude.
+let reviews = {}, rdb = null, dbState = DATA.review ? 'loading' : 'off';
+function reviewBlock(id) {
+  const r = reviews[id] || {}, st = r.status;
+  const label = st === 'approved' ? '<span class="st ok">Approved</span>' : st === 'changes' ? '<span class="st ch">Changes requested</span>' : '<span class="st">Not reviewed</span>';
+  const off = dbState !== 'ready' ? ' disabled' : '';
+  return `<div class="rev" data-rev="${esc(id)}">${label}<span class="spacer" style="flex:1"></span>
+    <button type="button" class="okb" data-review="approved" aria-pressed="${st === 'approved'}"${off}>Approve</button>
+    <button type="button" class="chb" data-review="changes" aria-pressed="${st === 'changes'}"${off}>Request changes</button>
+    <textarea id="note-${esc(id)}" placeholder="Notes for Claude (what to change)"${off}>${esc(r.note || '')}</textarea></div>`;
+}
+async function saveReview(id, patch) {
+  if (!rdb) return;
+  const cur = reviews[id] || {}, next = { status: cur.status || 'pending', note: cur.note || '', ...patch, at: new Date().toISOString() };
+  try { await rdb.doc(id).set(next); } catch (e) { toast('Could not save (' + ((e && e.code) || 'error') + '). Try again in a moment.'); }
+}
+function tallyHtml() {
+  if (!DATA.review) return '';
+  const all = DATA.collections.flatMap(c => c.posts.map(p => p.id));
+  const ok = all.filter(i => (reviews[i] || {}).status === 'approved').length, ch = all.filter(i => (reviews[i] || {}).status === 'changes').length;
+  const msg = dbState === 'loading' ? 'Loading saved decisions…' : dbState === 'slow' ? "Saved decisions can't be reached yet. Your choices will save once they load." : dbState === 'none' ? "Sign-off isn't available in this view. Open the page on claude.ai, signed in." : "Decisions save as you go. Claude reads them when you say you're done.";
+  return `<div class="tally"><span><b>${ok}</b> approved</span><span><b>${ch}</b> changes</span><span><b>${all.length - ok - ch}</b> to review</span><span class="spacer" style="flex:1"></span><span class="note">${esc(msg)}</span></div>`;
+}
+if (DATA.review) {
+  const timer = setTimeout(() => { if (dbState === 'loading') { dbState = 'slow'; route(); } }, 10000);
+  ((window.claude && window.claude.use) ? window.claude.use('db') : Promise.resolve(null)).then(db => {
+    if (!db) { clearTimeout(timer); dbState = 'none'; route(); return; }
+    rdb = db.collection('reviews');
+    rdb.onSnapshot(snap => {
+      reviews = {}; snap.docs.forEach(d => { reviews[d.id] = d.data(); });
+      if (!snap.metadata.fromCache) { clearTimeout(timer); dbState = 'ready'; }
+      else if (dbState === 'loading') dbState = 'ready';
+      const y = scrollY; route(); scrollTo(0, y);
+    }, () => { clearTimeout(timer); dbState = 'none'; route(); });
+  }).catch(() => { clearTimeout(timer); dbState = 'none'; route(); });
+}
+
+function route() {
+  const ids = DATA.collections.map(c => c.name).concat('profile');
+  const want = location.hash.slice(1), current = ids.includes(want) ? want : (DATA.collections.find(c => c.kind === 'campaign') || DATA.collections[0] || { name: 'profile' }).name;
+  $('#tabs').innerHTML = DATA.collections.map(c => `<a href="#${c.name}"${c.name === current ? ' aria-current="page"' : ''}>${esc(c.title)}<small>${c.posts.length}</small></a>`).join('') + `<a href="#profile"${current === 'profile' ? ' aria-current="page"' : ''}>Profile kit</a>`;
+  const c = DATA.collections.find(x => x.name === current);
+  const active = document.activeElement && document.activeElement.id;
+  $('#view').innerHTML = (DATA.intro ? `<div class="changes">${DATA.intro}</div>` : '') + tallyHtml() + (c ? renderCollection(c) : renderProfile());
+  if (active && document.getElementById(active)) { const el = document.getElementById(active); el.focus(); if (el.setSelectionRange) el.setSelectionRange(el.value.length, el.value.length); }
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.review) { const id = b.closest('[data-rev]').dataset.rev; const cur = (reviews[id] || {}).status; saveReview(id, { status: cur === b.dataset.review ? 'pending' : b.dataset.review, note: ($('#note-' + CSS.escape(id)) || {}).value || '' }); return; }
+  if (b.hasAttribute('data-copy')) copyText(b);
+  else if (b.dataset.dl) download(b.dataset.dl, b);
+  else if (b.dataset.zip) { const c = DATA.collections.find(x => x.name === b.dataset.zip); downloadZip(b.dataset.zip === 'profile' ? 'profile-kit' : b.dataset.zip, c ? c.files : DATA.profile.files, b); }
+  else if (b.dataset.f) { filter = b.dataset.f; store.set('rm-filter', filter); route(); }
+  else if (b.hasAttribute('data-hide')) { hideDone = !hideDone; store.set('rm-hide', hideDone); route(); }
+});
+document.addEventListener('change', e => {
+  const id = e.target.dataset && e.target.dataset.done; if (!id) return;
+  e.target.checked ? posted.add(id) : posted.delete(id); store.set('rm-posted', [...posted]);
+  e.target.closest('.post').classList.toggle('done', e.target.checked);
+});
+document.addEventListener('focusout', e => {
+  const t = e.target; if (!t.matches || !t.matches('.rev textarea')) return;
+  const id = t.closest('[data-rev]').dataset.rev; if ((reviews[id] || {}).note === t.value || (!reviews[id] && !t.value)) return;
+  saveReview(id, { note: t.value });
+});
+window.addEventListener('hashchange', route);
+
+const acc = DATA.accounts;
+$('#accounts').innerHTML = [['linkedin', 'LinkedIn'], ['x', 'X'], ['instagram', 'Instagram'], ['reddit', 'r/RoboticsMENA']].filter(([k]) => acc[k] && acc[k].status === 'live')
+  .map(([k, n]) => `<a href="${esc(acc[k].community_url || acc[k].url)}" target="_blank" rel="noopener">${n}</a>`).join('') + `<span style="color:var(--muted)">Built ${esc(DATA.built)}</span>`;
+route();
+</script>

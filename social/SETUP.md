@@ -22,7 +22,7 @@ Brand files for every profile are in `brand/social/` (made by `node scripts/soci
    Bio (≤150):
    ```
    Every robot deployment in the Middle East & North Africa, verified.
-   Weekly brief · data · maps · EN/عربي
+   Weekly brief · data · maps
    ```
    Link: `https://roboticsmena.com/?utm_source=instagram&utm_medium=social&utm_campaign=bio`
 5. Make the five highlights from the `ig-highlight-*` covers (post one Story each, add it to a highlight, then archive it).
@@ -32,7 +32,7 @@ Brand files for every profile are in `brand/social/` (made by `node scripts/soci
 2. Name: `Robotics MENA`, header `banner-x.png`, location `Middle East & North Africa`, website `https://roboticsmena.com`.
    Bio (≤160):
    ```
-   The MENA robotics desk. Verified deployments, companies, policy & events across the Middle East & North Africa. Weekly brief ↓ | عربي/EN
+   The MENA robotics desk. Verified deployments, companies, policy & events across the Middle East & North Africa. Weekly brief ↓
    ```
 3. Settings → Your account → Account information → Category: Media & News (a Professional account, which is free).
 4. Pin the launch thread after it goes out.
@@ -42,7 +42,7 @@ Brand files for every profile are in `brand/social/` (made by `node scripts/soci
 1. Sign up at reddit.com with the username **RoboticsMENA**. Verify the email.
 2. Profile: display name `Robotics MENA desk`, about: `I run roboticsmena.com, a verified database of robots working across the Middle East & North Africa. Always happy to share sources.`
    Use the avatar and banner. Turn on "Show active communities".
-3. Create the community **r/RoboticsMENA** (public). Description: `Robots, automation and physical AI across the Middle East & North Africa: deployments, companies, policy, events, jobs. EN & عربي.`
+3. Create the community **r/RoboticsMENA** (public). Description: `Robots, automation and physical AI across the Middle East & North Africa: deployments, companies, policy, events, jobs.`
    Upload the icon and banner, then paste the rules and flairs from `social/reddit-community.md`.
 4. **New accounts are limited.** Many communities hide posts from accounts with little karma or under 30 days old, so the plan starts with comments only.
 

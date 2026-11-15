@@ -1,11 +1,14 @@
 #!/usr/bin/env node
 // Renders branded social images with Playwright (the same Chromium the report PDFs use).
-//   node scripts/social-cards.cjs week <YYYY-wNN> [postId…]   cards for a week's queue → social/cards/<week>/
-//        <postId>-<n>.png for every card; LinkedIn document posts also get <postId>.pdf; Instagram reels <postId>.mp4
+//   node scripts/social-cards.cjs week <YYYY-wNN|campaign> [postId…]   cards for a week or campaign → social/cards/<name>/
+//        <postId>-<n>.jpg for every card; LinkedIn document posts also get <postId>.pdf; Instagram reels <postId>.mp4
 //   node scripts/social-cards.cjs banners                      profile headers and highlight covers → brand/social/
 // Card spec (in the queue): { template: cover|signal|stat|bars|list|cta, size: portrait|square|story|landscape,
 //   theme?: light|dark, kicker?, title, body?, foot?, value?, label?, rows?: [{label, value, note?}], items?: [..],
-//   image?: '/media/…' (rights-cleared site image), image_credit?, lang?: en|ar, page?: '2/6' }
+//   image?: a path listed in social/images.json (credit printed automatically), caption?: true (also say what it shows),
+//   focus?: CSS background-position, images?: [paths] (cta/cover mosaic), lang?: en|ar, page?: '2/6' }
+// Layouts: photo band over text (portrait, square, story), split text and photo (landscape), indigo-toned full-bleed
+// cover, and a photo mosaic for closing slides. Cards without an image keep the typographic layouts.
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
@@ -13,7 +16,7 @@ const { chromium } = require('playwright');
 
 const ROOT = path.join(__dirname, '..');
 const SIZES = { portrait: [1080, 1350], square: [1080, 1080], story: [1080, 1920], landscape: [1200, 675] };
-const SCALE = { portrait: 1, square: 0.92, story: 1.04, landscape: 0.8 };
+const SCALE = { portrait: 1, square: 0.92, story: 1.14, landscape: 0.8 };
 const svg64 = f => 'data:image/svg+xml;base64,' + fs.readFileSync(path.join(ROOT, 'brand/logo', f)).toString('base64');
 const LOGO = { light: svg64('lockup-horizontal-indigo.svg'), dark: svg64('lockup-horizontal-white.svg'), bilLight: svg64('lockup-bilingual-indigo.svg'),
   bilDark: svg64('lockup-bilingual-white.svg'), symDark: svg64('symbol-white.svg'), symLight: svg64('symbol-indigo.svg') };
@@ -21,62 +24,112 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '
 const md = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
 const FONTS = `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">`;
 
+// Images cleared for social (social/images.json): credit and what each photo shows.
+const IMAGES = JSON.parse(fs.readFileSync(path.join(ROOT, 'social/images.json'), 'utf8')).images;
+const MOSAIC = ['/media/spotlight/gecko-inspectors-thickness-map.jpg', '/media/brief/lootah-humanoid-studio.jpg', '/media/companies/pony-ai.jpg', '/media/brief/egypt-da-vinci-sofmedica.jpg'];
+const url = p => 'file://' + path.join(ROOT, p);
+const creditOf = (c, p = c.image) => c.image_credit || (IMAGES[p] ? 'Photo: ' + IMAGES[p].credit + (c.caption ? ' · ' + IMAGES[p].shows : '') : '');
+
+// v2 "field desk" design: photos lead wherever a cleared press image exists; data and lists stay typographic.
 function cardHtml(c) {
   const [W, H] = SIZES[c.size] || SIZES.portrait;
   const u = SCALE[c.size] || 1;
-  const dark = c.theme ? c.theme === 'dark' : ['cover', 'cta'].includes(c.template);
   const ar = c.lang === 'ar';
-  const pad = (c.size === 'story' ? 96 : 80) * u, padTop = (c.size === 'story' ? 150 : 72) * u;
-  let main = '';
-  if (c.template === 'stat') {
-    main = `${c.kicker ? `<div class="kicker">${esc(c.kicker)}</div>` : ''}<div class="value fit">${esc(c.value)}</div><div class="label fit">${md(c.label || c.title)}</div>${c.body ? `<div class="body fit">${md(c.body)}</div>` : ''}`;
-  } else if (c.template === 'bars') {
-    const max = Math.max(...c.rows.map(r => r.value));
-    main = `${c.kicker ? `<div class="kicker">${esc(c.kicker)}</div>` : ''}<h1 class="fit sm">${md(c.title)}</h1><div class="bars">${c.rows.map((r, i) =>
-      `<div class="row"><div class="rl">${esc(r.label)}</div><div class="track"><div class="bar${i === 0 ? ' top' : ''}" style="width:${Math.max(2, r.value / max * 100)}%"></div></div><div class="rv">${esc(r.note ?? r.value)}</div></div>`).join('')}</div>${c.body ? `<div class="body fit">${md(c.body)}</div>` : ''}`;
-  } else if (c.template === 'list') {
-    main = `${c.kicker ? `<div class="kicker">${esc(c.kicker)}</div>` : ''}<h1 class="fit sm">${md(c.title)}</h1><ol class="items fit">${(c.items || []).map(x => `<li><span>${md(x)}</span></li>`).join('')}</ol>`;
-  } else if (c.template === 'cta') {
-    main = `<img class="sym" src="${dark ? LOGO.symDark : LOGO.symLight}" alt=""><h1 class="fit">${md(c.title || 'Follow the MENA robotics desk')}</h1>${c.body ? `<div class="body fit">${md(c.body)}</div>` : ''}<div class="handles">${esc(c.handles || '@roboticsmena · roboticsmena.com')}</div>`;
-  } else {
-    // cover and signal
-    main = `${c.image ? `<div class="photo" style="background-image:url('${'file://' + path.join(ROOT, c.image)}')"><span>${esc(c.image_credit || '')}</span></div>` : ''}
-${c.kicker ? `<div class="kicker">${esc(c.kicker)}</div>` : ''}<h1 class="fit${c.template === 'cover' ? ' big' : ''}">${md(c.title)}</h1>${c.body ? `<div class="body fit">${md(c.body)}</div>` : ''}`;
-  }
-  const logo = c.template === 'cta' ? '' : `<img class="logo" src="${dark ? (ar ? LOGO.bilDark : LOGO.dark) : (ar ? LOGO.bilLight : LOGO.light)}" alt="">`;
+  const land = c.size === 'landscape', story = c.size === 'story';
+  const T = c.template;
+  const mosaic = T === 'cta' || (T === 'cover' && !c.image && c.images) ? (c.images || MOSAIC) : null;
+  const photo = c.image && !mosaic ? c.image : null;
+  const layout = mosaic ? 'mosaic' : photo ? (T === 'cover' ? 'duotone' : land ? 'split' : 'band') : 'plain';
+  const dark = c.theme ? c.theme === 'dark' : ['cover', 'cta'].includes(T) || layout === 'duotone' || layout === 'split';
+  const padX = (story ? 92 : 76) * u;
+  const bandH = story ? 820 : c.size === 'square' ? 520 : 660;   // story: 820 × 1.14 ≈ 935px   // never taller than the press images can fill without heavy upscaling
+
+  const kicker = c.kicker ? `<div class="kicker">${esc(c.kicker)}</div>` : '';
+  let inner = '';
+  if (T === 'stat') inner = `${kicker}<div class="value fit">${esc(c.value)}</div><div class="label fit">${md(c.label || c.title)}</div>${c.body ? `<div class="body fit">${md(c.body)}</div>` : ''}`;
+  else if (T === 'bars') { const max = Math.max(...c.rows.map(r => r.value));
+    inner = `${kicker}<h1 class="fit sm">${md(c.title)}</h1><div class="bars">${c.rows.map((r, i) => `<div class="row"><div class="rl">${esc(r.label)}</div><div class="track"><div class="bar${i === 0 ? ' top' : ''}" style="width:${Math.max(2, r.value / max * 100)}%"></div></div><div class="rv">${esc(r.note ?? r.value)}</div></div>`).join('')}</div>${c.body ? `<div class="body fit">${md(c.body)}</div>` : ''}`; }
+  else if (T === 'list') inner = `${kicker}<h1 class="fit sm">${md(c.title)}</h1><ol class="items fit">${(c.items || []).map(x => `<li><span>${md(x)}</span></li>`).join('')}</ol>`;
+  else if (T === 'cta') inner = `<h1 class="fit">${md(c.title || 'Follow the MENA robotics desk')}</h1>${c.body ? `<div class="body fit">${md(c.body)}</div>` : ''}<div class="handles">${esc(c.handles || '@roboticsmena · roboticsmena.com')}</div>`;
+  else inner = `${kicker}<h1 class="fit${T === 'cover' ? ' big' : ''}">${md(c.title)}</h1>${c.body ? `<div class="body fit">${md(c.body)}</div>` : ''}`;
+
+  const logoSrc = dark ? (ar ? LOGO.bilDark : LOGO.dark) : (ar ? LOGO.bilLight : LOGO.light);
+  const page = c.page ? `<span class="page">${esc(c.page)}</span>` : '';
+  const foot = `<div class="foot"><span>${md(c.foot || '')}</span><span class="url">roboticsmena.com</span></div>`;
+  const credit = photo ? `<span class="credit">${esc(creditOf(c))}</span>` : '';
+
+  let body;
+  if (layout === 'band') body = `
+    <div class="band" style="height:${bandH * u}px;background-image:url('${url(photo)}');background-position:${c.focus || 'center'}">
+      <div class="chip-logo"><img src="${LOGO.light}" alt=""></div>${page ? `<span class="page onphoto">${esc(c.page)}</span>` : ''}${credit}</div>
+    <div class="panel"><div class="main">${inner}</div>${foot}</div>`;
+  else if (layout === 'split') body = `
+    <div class="split"><div class="left"><div class="top"><img class="logo" src="${logoSrc}" alt="">${page}</div><div class="main">${inner}</div>${foot}</div>
+    <div class="right" style="background-image:url('${url(photo)}');background-position:${c.focus || 'center'}">${credit}</div></div>`;
+  else if (layout === 'duotone') body = `
+    <div class="duo" style="background-image:url('${url(photo)}');background-position:${c.focus || 'center'}"></div><div class="duo-tint"></div>
+    <div class="over"><div class="top"><img class="logo" src="${logoSrc}" alt="">${page}</div><div class="main end">${inner}</div>${foot}</div>${credit}`;
+  else if (layout === 'mosaic') { const ims = mosaic.slice(0, 4);
+    body = `<div class="mosaic">${ims.map(p => `<div style="background-image:url('${url(p)}')"></div>`).join('')}</div>
+    <div class="over mos"><div class="top"><img class="logo" src="${logoSrc}" alt="">${page}</div><div class="main ${T === 'cta' ? 'center' : 'end'}">${T === 'cta' ? `<img class="sym" src="${LOGO.symDark}" alt="">` : ''}${inner}</div>${foot}</div>
+    <span class="credit">${esc('Photos: ' + [...new Set(ims.map(p => (IMAGES[p] || {}).credit).filter(Boolean))].join(', '))}</span>`; }
+  else body = `<div class="plainwrap"><div class="top"><img class="logo" src="${logoSrc}" alt="">${page}</div><div class="main">${inner}</div>${foot}</div>`;
+
   return `<!doctype html><html lang="${ar ? 'ar' : 'en'}" dir="${ar ? 'rtl' : 'ltr'}"><head><meta charset="utf-8">${FONTS}<style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:${dark ? '#26246E' : '#F3F1EC'};--ink:${dark ? '#F3F1EC' : '#111216'};--muted:${dark ? '#C9C8E6' : '#5E6070'};--accent:${dark ? '#FFFFFF' : '#26246E'};--tint:${dark ? 'rgba(255,255,255,.12)' : '#E3E2F2'};--line:${dark ? 'rgba(255,255,255,.22)' : '#DEDBD3'}}
-html,body{width:${W}px;height:${H}px;overflow:hidden;background:var(--bg);color:var(--ink);font-family:${ar ? "'IBM Plex Sans Arabic','IBM Plex Sans'" : "'IBM Plex Sans','IBM Plex Sans Arabic'"},sans-serif;-webkit-font-smoothing:antialiased}
-.card{position:relative;width:100%;height:100%;padding:${padTop}px ${pad}px ${pad * 0.8}px;display:flex;flex-direction:column}
-${dark ? `.card:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 12%,rgba(143,141,201,.35),transparent 45%);pointer-events:none}` : `.card:before{content:'';position:absolute;${ar ? 'left' : 'right'}:0;top:0;width:${14 * u}px;height:100%;background:#26246E}`}
-.top{display:flex;align-items:center;justify-content:space-between;position:relative}
-.logo{height:${50 * u}px;width:auto}.page{font:600 ${24 * u}px 'IBM Plex Mono',monospace;color:var(--muted);letter-spacing:.08em}
-.main{flex:1;display:flex;flex-direction:column;justify-content:${c.template === 'cta' ? 'center' : c.image ? 'flex-start' : 'center'};gap:${30 * u}px;position:relative;min-height:0;padding:${36 * u}px 0}
-.kicker{align-self:flex-start;font:600 ${25 * u}px 'IBM Plex Mono',${ar ? "'IBM Plex Sans Arabic'," : ''}monospace;letter-spacing:${ar ? 0 : '.14em'};text-transform:${ar ? 'none' : 'uppercase'};color:var(--accent);background:var(--tint);padding:${10 * u}px ${18 * u}px}
-h1{font-weight:600;font-size:${76 * u}px;line-height:${ar ? 1.35 : 1.08};letter-spacing:${ar ? 0 : '-.025em'};color:var(--ink)}
-h1.big{font-size:${96 * u}px}h1.sm{font-size:${60 * u}px}h1 b{color:var(--accent);font-weight:700}
-.body{font-size:${36 * u}px;line-height:${ar ? 1.7 : 1.42};color:var(--muted)}.body b{color:var(--ink);font-weight:600}
-.value{font:700 ${230 * u}px/0.95 'IBM Plex Sans',sans-serif;letter-spacing:-.04em;color:var(--accent)}
-.label{font-size:${52 * u}px;line-height:1.2;font-weight:600}
-.bars{display:flex;flex-direction:column;gap:${16 * u}px}.row{display:grid;grid-template-columns:${230 * u}px 1fr ${90 * u}px;align-items:center;gap:${18 * u}px;font-size:${30 * u}px}
-.rl{font-weight:500}.rv{font:600 ${30 * u}px 'IBM Plex Mono',monospace;text-align:${ar ? 'left' : 'right'}}.track{height:${34 * u}px;background:var(--tint)}.bar{height:100%;background:${dark ? '#8F8DC9' : '#8F8DC9'}}.bar.top{background:var(--accent)}
-.items{list-style:none;counter-reset:i;display:flex;flex-direction:column;gap:${22 * u}px;font-size:${34 * u}px;line-height:1.35}
-.items li{counter-increment:i;display:grid;grid-template-columns:${70 * u}px 1fr;padding-bottom:${20 * u}px;border-bottom:1px solid var(--line)}.items li:before{content:counter(i,decimal-leading-zero);font:600 ${26 * u}px 'IBM Plex Mono',monospace;color:var(--accent);padding-top:${6 * u}px}
-.items li b{font-weight:600}
-.photo{height:${c.size === 'landscape' ? 0 : 520 * u}px;background-size:cover;background-position:center;position:relative;flex:none;margin-bottom:${8 * u}px}
-.photo span{position:absolute;${ar ? 'left' : 'right'}:${12 * u}px;bottom:${10 * u}px;font:500 ${18 * u}px 'IBM Plex Mono',monospace;color:#fff;background:rgba(17,18,22,.6);padding:${4 * u}px ${10 * u}px}
-.sym{width:${200 * u}px;height:auto;align-self:${c.size === 'landscape' ? 'flex-start' : 'center'}}
-${c.template === 'cta' ? `.main{align-items:center;text-align:center}h1{font-size:${80 * u}px}.handles{font:600 ${30 * u}px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:var(--accent);border:2px solid var(--line);padding:${16 * u}px ${28 * u}px}` : ''}
-.foot{display:flex;justify-content:space-between;align-items:flex-end;gap:${24 * u}px;border-top:2px solid var(--line);padding-top:${22 * u}px;font:500 ${22 * u}px 'IBM Plex Mono',${ar ? "'IBM Plex Sans Arabic'," : ''}monospace;color:var(--muted);position:relative}
+:root{--indigo:#26246E;--indigo-deep:#1C1A55;--indigo-300:#8F8DC9;--indigo-100:#E3E2F2;--paper:#F3F1EC;--ink:#111216;--muted:#5E6070;--line:#DEDBD3;
+  --bg:${dark ? 'var(--indigo)' : 'var(--paper)'};--fg:${dark ? 'var(--paper)' : 'var(--ink)'};--sub:${dark ? '#CFCDEB' : 'var(--muted)'};--accent:${dark ? '#FFFFFF' : 'var(--indigo)'};--tint:${dark ? 'rgba(255,255,255,.14)' : 'var(--indigo-100)'};--rule:${dark ? 'rgba(255,255,255,.24)' : 'var(--line)'}}
+html,body{width:${W}px;height:${H}px;overflow:hidden;background:var(--bg);color:var(--fg);font-family:${ar ? "'IBM Plex Sans Arabic','IBM Plex Sans'" : "'IBM Plex Sans','IBM Plex Sans Arabic'"},sans-serif;-webkit-font-smoothing:antialiased}
+.card{position:relative;width:100%;height:100%;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:${20 * u}px}
+.logo{height:${48 * u}px;width:auto}
+.page{font:600 ${23 * u}px 'IBM Plex Mono',monospace;color:var(--sub);letter-spacing:.08em}
+.main{flex:1;display:flex;flex-direction:column;justify-content:center;gap:${26 * u}px;min-height:0}
+.main.end{justify-content:flex-end}.main.center{align-items:center;text-align:center}
+.kicker{align-self:flex-start;font:600 ${24 * u}px 'IBM Plex Mono',${ar ? "'IBM Plex Sans Arabic'," : ''}monospace;letter-spacing:${ar ? 0 : '.14em'};text-transform:${ar ? 'none' : 'uppercase'};color:var(--accent);background:var(--tint);padding:${9 * u}px ${16 * u}px}
+h1{font-weight:600;font-size:${72 * u}px;line-height:${ar ? 1.35 : 1.06};letter-spacing:${ar ? 0 : '-.028em'};color:var(--fg);text-wrap:balance}
+h1.big{font-size:${94 * u}px}h1.sm{font-size:${58 * u}px}h1 b{color:${dark ? 'var(--indigo-300)' : 'var(--indigo)'};font-weight:700}
+.body{font-size:${34 * u}px;line-height:${ar ? 1.7 : 1.42};color:var(--sub)}.body b{color:var(--fg);font-weight:600}
+.value{font:700 ${220 * u}px/0.92 'IBM Plex Sans',sans-serif;letter-spacing:-.045em;color:var(--accent)}
+.label{font-size:${48 * u}px;line-height:1.2;font-weight:600}
+.bars{display:flex;flex-direction:column;gap:${14 * u}px}.row{display:grid;grid-template-columns:${230 * u}px 1fr ${84 * u}px;align-items:center;gap:${18 * u}px;font-size:${29 * u}px}
+.rl{font-weight:500}.rv{font:600 ${29 * u}px 'IBM Plex Mono',monospace;text-align:${ar ? 'left' : 'right'}}.track{height:${32 * u}px;background:var(--tint)}.bar{height:100%;background:var(--indigo-300)}.bar.top{background:var(--accent)}
+.items{list-style:none;counter-reset:i;display:flex;flex-direction:column;gap:${18 * u}px;font-size:${32 * u}px;line-height:1.35}
+.items li{counter-increment:i;display:grid;grid-template-columns:${66 * u}px 1fr;padding-bottom:${18 * u}px;border-bottom:1px solid var(--rule)}.items li:before{content:counter(i,decimal-leading-zero);font:600 ${25 * u}px 'IBM Plex Mono',monospace;color:var(--accent);padding-top:${5 * u}px}.items li b{font-weight:600}
+.handles{font:600 ${29 * u}px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:var(--fg);border:2px solid var(--rule);padding:${15 * u}px ${26 * u}px}
+.sym{width:${150 * u}px;height:auto}
+.foot{display:flex;justify-content:space-between;align-items:flex-end;gap:${24 * u}px;border-top:2px solid var(--rule);padding-top:${20 * u}px;font:500 ${21 * u}px 'IBM Plex Mono',${ar ? "'IBM Plex Sans Arabic'," : ''}monospace;color:var(--sub)}
 .foot .url{color:var(--accent);font-weight:600;white-space:nowrap}
-</style></head><body><div class="card"><div class="top">${logo}${c.page ? `<span class="page">${esc(c.page)}</span>` : ''}</div>
-<div class="main">${main}</div>
-<div class="foot"><span>${md(c.foot || '')}</span><span class="url">roboticsmena.com</span></div></div>
+.credit{position:absolute;${ar ? 'left' : 'right'}:${16 * u}px;bottom:${14 * u}px;font:500 ${17 * u}px 'IBM Plex Mono',monospace;color:#fff;background:rgba(17,18,22,.62);padding:${5 * u}px ${10 * u}px;max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index:3}
+/* band: photo on top, paper panel below */
+.band{position:relative;flex:none;background-size:cover;border-bottom:${10 * u}px solid var(--indigo)}
+.band:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,18,22,.35),transparent 28%)}
+.chip-logo{position:absolute;${ar ? 'right' : 'left'}:${padX}px;top:${(story ? 120 : 52) * u}px;background:var(--paper);padding:${12 * u}px ${16 * u}px;z-index:2;line-height:0}.chip-logo img{height:${40 * u}px}
+.page.onphoto{position:absolute;${ar ? 'left' : 'right'}:${padX}px;top:${(story ? 128 : 60) * u}px;color:#fff;background:rgba(17,18,22,.55);padding:${6 * u}px ${12 * u}px;z-index:2}
+.panel{flex:1;display:flex;flex-direction:column;padding:${36 * u}px ${padX}px ${(story ? 110 : 56) * u}px;min-height:0}
+/* split (landscape): text panel + photo */
+.split{display:grid;grid-template-columns:46% 54%;height:100%}${ar ? '.split{direction:rtl}' : ''}
+.left{display:flex;flex-direction:column;padding:${52 * u}px ${56 * u}px ${44 * u}px;min-height:0;background:var(--indigo)}
+.right{position:relative;background-size:cover}
+.right:before{content:'';position:absolute;inset:0;background:linear-gradient(${ar ? '270deg' : '90deg'},rgba(38,36,110,.55),transparent 22%)}
+/* duotone cover */
+.duo{position:absolute;inset:0;background-size:cover;filter:grayscale(1) contrast(1.15) brightness(1.05)}
+.duo-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,26,85,.55) 0%,rgba(38,36,110,.72) 45%,rgba(28,26,85,.96) 100%);mix-blend-mode:normal}
+.duo-tint:before{content:'';position:absolute;inset:0;background:#26246E;mix-blend-mode:multiply;opacity:.55}
+.over{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;padding:${(story ? 130 : 64) * u}px ${padX}px ${(story ? 110 : 60) * u}px}
+/* mosaic */
+.mosaic{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:${land ? '1fr' : '1fr 1fr'};${land ? 'grid-template-columns:repeat(4,1fr);' : ''}gap:${6 * u}px;background:var(--indigo)}
+.mosaic div{background-size:cover;background-position:center;filter:grayscale(1) contrast(1.1)}
+.over.mos{background:linear-gradient(180deg,rgba(38,36,110,.78),rgba(28,26,85,.95) 60%)}
+.plainwrap{display:flex;flex-direction:column;height:100%;padding:${(story ? 140 : 66) * u}px ${padX}px ${(story ? 110 : 56) * u}px;position:relative}
+${!dark && layout === 'plain' ? `.plainwrap:before{content:'';position:absolute;${ar ? 'left' : 'right'}:0;top:0;width:${14 * u}px;height:100%;background:var(--indigo)}` : ''}
+${dark && layout === 'plain' ? `.plainwrap:after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 10%,rgba(143,141,201,.32),transparent 45%);pointer-events:none}` : ''}
+${story && T === 'cover' ? `h1.big{font-size:${170 * u}px;line-height:.95}` : ''}
+${layout === 'split' ? `h1{font-size:${58 * u}px}h1.big{font-size:${70 * u}px}.body{font-size:${28 * u}px}.left .main{gap:${20 * u}px}` : ''}
+</style></head><body><div class="card">${body}</div>
 <script>
-// Shrink text until everything fits the card (titles of any length stay inside the frame).
-window.fit = () => { const m = document.querySelector('.main'); const els = [...document.querySelectorAll('.fit')]; let k = 1;
-  for (let i = 0; i < 40 && m.scrollHeight > m.clientHeight + 1; i++) { k *= 0.95; els.forEach(e => { e.style.fontSize = (parseFloat(getComputedStyle(e).fontSize) * 0.95) + 'px'; }); } return k; };
+window.fit = () => { const ms = [...document.querySelectorAll('.main')]; const els = [...document.querySelectorAll('.fit')];
+  for (let i = 0; i < 50 && ms.some(m => m.scrollHeight > m.clientHeight + 1); i++) els.forEach(e => { e.style.fontSize = (parseFloat(getComputedStyle(e).fontSize) * 0.95) + 'px'; }); };
 </script></body></html>`;
 }
 
@@ -88,7 +141,7 @@ async function shoot(page, html, size, out) {
   await page.goto('file://' + tmp, { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts.ready);
   await page.evaluate(() => window.fit && window.fit());
-  await page.screenshot({ path: out, type: 'png' });
+  await page.screenshot({ path: out, type: out.endsWith('.jpg') ? 'jpeg' : 'png', ...(out.endsWith('.jpg') ? { quality: 90 } : {}) });
   fs.unlinkSync(tmp);
 }
 
@@ -96,7 +149,7 @@ async function makePdf(pngs, out) {
   const { PDFDocument } = require('pdf-lib');
   const doc = await PDFDocument.create();
   for (const f of pngs) {
-    const img = await doc.embedPng(fs.readFileSync(f));
+    const img = /\.jpe?g$/.test(f) ? await doc.embedJpg(fs.readFileSync(f)) : await doc.embedPng(fs.readFileSync(f));
     const p = doc.addPage([img.width, img.height]);
     p.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
   }
@@ -115,7 +168,7 @@ function makeReel(pngs, out, secs = 3) {
 }
 
 async function renderWeek(week, only) {
-  const q = JSON.parse(fs.readFileSync(path.join(ROOT, 'social/queue', week + '.json'), 'utf8'));
+  const q = JSON.parse(fs.readFileSync(path.join(ROOT, 'social', /^\d{4}-w\d{2}$/.test(week) ? 'queue' : 'campaigns', week + '.json'), 'utf8'));
   const dir = path.join(ROOT, 'social/cards', week);
   fs.mkdirSync(dir, { recursive: true });
   const browser = await chromium.launch();
@@ -125,7 +178,7 @@ async function renderWeek(week, only) {
     const files = [];
     for (const [i, c] of p.cards.entries()) {
       const spec = { lang: p.lang === 'ar' ? 'ar' : 'en', ...c, page: c.page ?? (p.cards.length > 1 ? `${String(i + 1).padStart(2, '0')} / ${String(p.cards.length).padStart(2, '0')}` : '') };
-      const out = path.join(dir, `${p.id}-${i + 1}.png`);
+      const out = path.join(dir, `${p.id}-${i + 1}.jpg`);
       await shoot(page, cardHtml(spec), spec.size, out);
       files.push(out); n++;
     }
