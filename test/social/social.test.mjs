@@ -58,6 +58,14 @@ test('signals need sources; our links need utm (except Reddit)', () => {
   assert.ok(errs(q(rd)).some(e => /no utm tags on Reddit/.test(e)));
 });
 
+test('Reddit text is plain: no Markdown markers', () => {
+  const rd = text => ({ id: 'w47-rd-m', platform: 'reddit', format: 'text', pillar: 'community', slot: '2026-11-16T18:00+04:00', status: 'draft', subreddit: 'RoboticsMENA', title: 'Q', text });
+  assert.ok(errs(q(rd('**Egypt:** news'))).some(e => /must be plain/.test(e)));
+  assert.ok(errs(q(rd('See [Maspero](https://www.maspero.eg/a)'))).some(e => /must be plain/.test(e)));
+  assert.ok(errs(q(rd('- a bullet'))).some(e => /must be plain/.test(e)));
+  assert.deepEqual(errs(q(rd('Egypt: news.\nSource: Maspero, https://www.maspero.eg/a'))), []);
+});
+
 test('only one Reddit post a week outside our community links to our site', () => {
   const rd = i => ({ id: `w47-rd-${i}`, platform: 'reddit', format: 'text', pillar: 'community', slot: '2026-11-16T18:00+04:00', status: 'draft', subreddit: 'dubai', title: 'Q', text: 'https://roboticsmena.com/map' });
   assert.deepEqual(errs(q(rd(1))), []);

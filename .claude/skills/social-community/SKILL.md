@@ -31,7 +31,7 @@ For each item, a reply that **adds a verified fact** from our database or the so
   `utm_source=x&utm_medium=social&utm_campaign=<week>`). Put the most time-sensitive first. Replies are in English, also to Arabic posts.
 - **LinkedIn comments (3 to 5):** for company or operator announcements: 2 to 3 sentences with context from the database
   ("That makes it the 5th robotic-surgery deployment we've verified in Saudi Arabia this year…"). No links in comments.
-- **Reddit comments (3 to 5):** helpful and conversational, answering the actual question with sources. While u/RoboticsMENA is
+- **Reddit comments (3 to 5):** in plain text (no `**`, `[text](url)` or `-` bullets; bare links only), helpful and conversational, answering the actual question with sources. While u/RoboticsMENA is
   younger than 4 weeks (before `reddit.links_allowed_from` in `accounts.json`), no links to roboticsmena.com at all. After that, link only when it directly answers
   the question, and say it's our site. No more than one comment per thread.
 - **Breaking news:** if a major verified story broke (a new national programme, a large deployment, a first in the region), draft one

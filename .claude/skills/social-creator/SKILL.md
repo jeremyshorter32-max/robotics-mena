@@ -22,7 +22,8 @@ Create or update `social/queue/<week>.json` (copy the shape of the newest existi
   - X: `text` (post) or `thread` (list of posts), each 280 weighted characters or fewer (a link counts as 23). 0 to 2 hashtags. A country flag emoji leads a signal.
   - Instagram: `text` is the caption (hook first, in English, 5 to 8 specific hashtags, "link in bio"). Use `carousel` with 2 to 20
     `portrait` cards, or `reel`, which needs `story`-size cards and becomes an MP4 slideshow. Always add a `media_note` reminding the owner to add a trending audio track.
-  - Reddit: `subreddit`, `title` and `text` (markdown). It's a person talking: no hashtags, no emoji, no UTM tags. Disclose
+  - Reddit: `subreddit`, `title` and `text` in **plain text**: no `**bold**`, `[text](url)` links, `#` headings or `-` bullets, because the owner
+    pastes into Reddit's rich-text editor, which shows them literally. Write "Source: Name, https://…" on its own line (bare links auto-link). It's a person talking: no hashtags, no emoji, no UTM tags. Disclose
     that roboticsmena.com is ours. Outside r/RoboticsMENA, at most 1 post a week may link to our site, and only once the account is 4 weeks old.
 - **Links** to roboticsmena.com carry `utm_source=<platform>&utm_medium=social&utm_campaign=<week>` (except on Reddit). Deep-link to records:
   `/database?tab=deployments&id=<id>`, `/database?tab=companies&id=<id>`, `/policy?c=<CC>`, `/spotlight?s=<id>`, `/map`, `/events`.

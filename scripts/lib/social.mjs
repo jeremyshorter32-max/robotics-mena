@@ -189,6 +189,8 @@ export function validateQueue(q, opts = {}) {
       }
       if ((p.text || '').length > LIMITS.reddit_body) E(w, 'body is too long');
       if (/[\u{1F300}-\u{1FAFF}]/u.test(p.title || '')) W(w, 'emoji in a Reddit title usually reads as marketing');
+      // The owner pastes into Reddit's rich-text editor, which shows Markdown literally: plain text and bare links only.
+      if (/\*\*|__|\]\(https?:|^#{1,6} |^[-*] /m.test(p.text || '')) E(w, 'Reddit text must be plain (no **bold**, [links](url), # headings or - bullets): Reddit\'s editor pastes them literally');
     }
 
     (p.cards || []).forEach((c, j) => {
