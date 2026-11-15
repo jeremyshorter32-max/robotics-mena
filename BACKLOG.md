@@ -162,6 +162,25 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
 - [x] **Supplier map coordinates** (13 Nov 2026): Mountain View added; the build warns when an international
   supplier's HQ city has no coordinates.
 
+## Features
+
+- [ ] **Resources page: archive of past briefs and Spotlight reports, behind a sign-up wall** (requested 15 Nov 2026).
+  A new `/resources` page listing every past weekly brief (by week, with its five signals) and every Spotlight report
+  (interactive page + EN/AR PDFs), newest first, filterable by country and topic. Viewing anything needs an email sign-up
+  that **commits the reader to receive future briefs** (clear consent wording next to the button, linked privacy page).
+  Notes for the build:
+  - **Archive the briefs:** today `data/brief.json` is overwritten each week. Keep each week's brief in
+    `data/briefs/<YYYY>-w<NN>.json` (the weekly-brief skill writes it on approval); backfill week 45 (and week 46 from git).
+  - **Same wall as the reports:** reuse the existing Spotlight gate (sign-up → FormSubmit + Google Sheet → Kit once
+    connected), so one sign-up unlocks everything and returning readers stay unlocked.
+  - **Honest about protection:** the site is static, so the current gate is a soft wall (the content is in the page code).
+    That suits lead capture. If the archive must be truly private, serve it from the Cloudflare Worker with a signed
+    link sent by email (double opt-in), which also proves the address.
+  - **Consent:** the sign-up becomes a newsletter subscription; update the privacy page and the Kit form (double opt-in)
+    accordingly; record consent text and date in the Sheet.
+  - Add to nav and footer, the sitemap (the listing page only), the brief pop-up ("Browse past briefs"), and the portal Metrics
+    (archive sign-ups).
+
 ## Nice to have
 
 - [ ] Hide the inbox address in form URLs by switching FormSubmit to its random alias (offered in the
