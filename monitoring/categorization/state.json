@@ -15,8 +15,9 @@
         "category": null,
         "at": "2026-11-14T00:00:00.000Z"
       },
-      "checked_at": "2026-11-14T13:39:58.548Z",
-      "consecutive_blocked": 2
+      "checked_at": "2026-11-15T06:06:03.138Z",
+      "consecutive_blocked": 3,
+      "manual_check_alerted": true
     },
     "symantec|roboticsmena.com": {
       "raw_status": "browser strategy unavailable: Playwright is not installed",
@@ -51,5 +52,5 @@
       "consecutive_blocked": 2
     }
   },
-  "updated_at": "2026-11-14T17:50:23.112Z"
+  "updated_at": "2026-11-15T06:06:03.599Z"
 }
