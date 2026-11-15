@@ -14,6 +14,7 @@ Every push to `main` runs the **Deploy site** GitHub Action, which builds the si
 | Events | `pages/events.html` | `/events` |
 | Submit a record | `pages/submit.html` | `/submit` |
 | Spotlight analysis (email-gated) | `pages/spotlight.html` | `/spotlight?s=<story id>` |
+| Resources: past briefs and reports (email-gated) | `pages/resources.html` | `/resources` (archived briefs from `data/briefs/`, reports from `data/stories.json`) |
 
 ## How the site is put together
 
