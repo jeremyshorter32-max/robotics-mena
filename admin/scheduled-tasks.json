@@ -1,0 +1,53 @@
+{
+  "_note": "Claude scheduled tasks shown on the admin portal's Schedule tab. The portal reads this file from main at runtime, so edits show up without redeploying. Each run records itself in the 'Scheduled task log' issue (label agent-runs) with: node scripts/run-log.mjs <task id> <started|succeeded|failed|nothing-to-do> [--result URL] [--summary \"...\"]. tracking_since: runs expected before this time are not flagged as missed (no log existed then).",
+  "timezone": "Asia/Dubai",
+  "tracking_since": "2026-11-15T00:00:00Z",
+  "missed_after_minutes": 30,
+  "tasks": [
+    {
+      "id": "weekly-scan",
+      "name": "Weekly database scan",
+      "trigger": "trig_01RFmALxsUsGtQ8QEEt3JfZ7",
+      "cron": "CRON_TZ=Asia/Dubai 17 11 * * 6",
+      "when": "Saturdays 11:17 Gulf time",
+      "produces": "New companies, deployments and events, verified",
+      "results": "Pull request scan/<date> (Approvals tab)"
+    },
+    {
+      "id": "weekly-brief",
+      "name": "Weekly brief draft",
+      "trigger": "trig_01AjSUDEHtr2uJqdeLK7QYJ2",
+      "cron": "CRON_TZ=Asia/Dubai 43 13 * * 0",
+      "when": "Sundays 13:43 Gulf time",
+      "produces": "Five signals for the brief and newsletter",
+      "results": "Pull request brief/<year>-w<NN> (Approvals tab)"
+    },
+    {
+      "id": "weekly-social",
+      "name": "Weekly social run",
+      "trigger": "trig_014Y9SH2tyeZTVFkLo9ThPtz",
+      "cron": "CRON_TZ=Asia/Dubai 37 15 * * 0",
+      "when": "Sundays 15:37 Gulf time",
+      "produces": "Next week's LinkedIn, Instagram, X and Reddit posts with cards",
+      "results": "Pull request social/<year>-w<NN> (Approvals tab)"
+    },
+    {
+      "id": "daily-engagement",
+      "name": "Daily social engagement",
+      "trigger": "trig_01AzAthbDrP8dkihqE4dsAGn",
+      "cron": "CRON_TZ=Asia/Dubai 13 7 * * 1-5",
+      "when": "Weekdays 07:13 Gulf time",
+      "produces": "Draft replies, comments and Reddit threads to join",
+      "results": "Comment on the week's \"Social engagement\" issue"
+    },
+    {
+      "id": "portal-requests",
+      "name": "Portal requests",
+      "trigger": "trig_01JvTSRfFtMDDpwK6r5FqLhz",
+      "cron": "CRON_TZ=Asia/Dubai 23 21 * * *",
+      "when": "Daily 21:23 Gulf time",
+      "produces": "Work on requests sent from the Requests tab",
+      "results": "One pull request per request (Approvals tab)"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import { listInbox, getItem, approve, sendBack, reject } from './inbox.mjs';
 import { listRuns, startRun, WORKFLOWS } from './runs.mjs';
 import { getBacklog, setDone, addItem } from './backlog.mjs';
 import { getMetrics } from './metrics.mjs';
+import { getSchedule } from './schedule.mjs';
 import { createRequest, listRequests, KINDS } from './requests.mjs';
 import { requireRole as need } from './auth.mjs';
 import { page } from './ui.mjs';
@@ -70,6 +71,7 @@ export async function handle(request, env, deps = {}) {
     if (method === 'POST' && path === '/api/backlog/done') { requireRole(user, 'editor'); const b = await body(request); return json(await setDone(gh, { id: String(b.id || ''), done: !!b.done, email: user.email })); }
     if (method === 'POST' && path === '/api/backlog/add') { requireRole(user, 'editor'); const b = await body(request); return json(await addItem(gh, { section: String(b.section || ''), text: b.text, email: user.email })); }
     if (method === 'GET' && path === '/api/metrics') return json(await getMetrics(gh, env, deps.metrics));
+    if (method === 'GET' && path === '/api/schedule') return json(await getSchedule(gh, deps.schedule));
     return json({ error: 'Not found' }, 404);
   } catch (e) {
     const status = e.status || 500;

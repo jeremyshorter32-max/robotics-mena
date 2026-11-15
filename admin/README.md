@@ -14,6 +14,9 @@ Plan and later phases: `docs/admin-portal/PLAN.md`.
 - **Backlog:** `BACKLOG.md` by section; tick items off or add new ones (each change is a commit on main).
 - **Metrics:** site traffic (GoatCounter), waitlist sign-ups (Google Sheet, counts only), database growth per week and the
   latest additions, the brief on the site, the last deploy, and web-filter status.
+- **Schedule:** Claude's scheduled tasks: when each runs, the next run (Gulf time), the last run's result (succeeded, failed,
+  nothing to do, running, or **missed** when a scheduled time passes with no record), links to the result and the Claude session,
+  and the last 10 runs. Refreshes every minute.
 - **Runs:** GitHub Actions runs (deploys, the web-filter monitor).
 
 ## Zero running cost: Claude tasks instead of an API key
@@ -26,7 +29,23 @@ and cannot be started from the portal.
 |---|---|---|---|
 | Weekly database scan | Saturday 11:17 | `.claude/skills/weekly-scan` | `scan/<date>` pull request |
 | Weekly brief draft | Sunday 13:43 | `.claude/skills/weekly-brief` (portal mode) | `brief/<year>-w<NN>` pull request |
+| Weekly social run | Sunday 15:37 | `.claude/skills/social-{analyst,strategist,creator}` | `social/<year>-w<NN>` pull request |
+| Daily social engagement | weekdays 07:13 | `.claude/skills/social-community` | comment on the week's "Social engagement" issue |
 | Portal requests | daily 21:23 | `.claude/skills/agent-requests` | one pull request per request |
+
+**Tracking runs (Schedule tab).** The tasks are listed in `admin/scheduled-tasks.json` (read from main at runtime; edit it when
+a schedule changes). Each run records itself on the GitHub issue "Scheduled task log" (label `agent-runs`):
+
+```
+node scripts/run-log.mjs <task id> started
+node scripts/run-log.mjs <task id> succeeded --result <pull request or issue URL> --summary "one line"
+node scripts/run-log.mjs <task id> failed --summary "what went wrong"
+node scripts/run-log.mjs <task id> nothing-to-do --summary "No new requests"
+```
+
+`--session` defaults to the running Claude session. The script never fails a run: if GitHub can't be reached it prints a
+warning and exits 0. A scheduled time with no record after `missed_after_minutes` (30) shows as **missed**: the run never
+started, or it could not save and report its work (as on 15 Nov 2026, when the tasks had no repository access).
 
 They use the subscription's usage allowance (a busy day may make a run wait; nothing is charged). Manage them in the
 Claude app (scheduled tasks), or ask Claude to change the times. Everything else is on free plans: Cloudflare (portal and
