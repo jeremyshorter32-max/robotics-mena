@@ -65,21 +65,41 @@ function doGet(e) {
   return reply({ ok: true, stats: stats() });
 }
 
-// Counts per tab, unique sign-up addresses, and sign-ups per ISO week (last 12 weeks, by Received date).
+// Where a sign-up came from (the form's signed_up_from field), grouped into a few labels. Counts only.
+function sourceGroup(v) {
+  var s = String(v || '').trim();
+  if (!s) return 'Not recorded';
+  if (s === 'Resources archive') return 'Resources archive';
+  if (s.indexOf('Spotlight:') === 0) return 'Spotlight reports';
+  if (s === 'Home page newsletter') return 'Home page';
+  if (/waitlist pop-up/i.test(s)) return 'Waitlist pop-up';
+  return 'Other pages';
+}
+
+// Counts per tab, unique sign-up addresses, sign-ups per ISO week (last 12 weeks, by Received date),
+// sign-ups by source, and the Resources archive's own total, unique and weekly counts.
 function stats() {
-  var ss = book(), out = { tabs: {}, signups: { total: 0, unique: 0, repeat: 0, weekly: {} }, generated: new Date().toISOString() };
+  var ss = book(), out = { tabs: {}, signups: { total: 0, unique: 0, repeat: 0, weekly: {}, bySource: {} }, resources: { total: 0, unique: 0, weekly: {} }, generated: new Date().toISOString() };
   Object.keys(TABS).forEach(function (k) { var sh = ss.getSheetByName(TABS[k]); out.tabs[k] = sh ? Math.max(sh.getLastRow() - 1, 0) : 0; });
   var sheet = ss.getSheetByName(TABS.signup);
   if (sheet && sheet.getLastRow() > 1) {
     var head = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
-    var iR = head.indexOf('Received'), iE = head.indexOf('email'), iS = head.indexOf('Status'), seen = {};
+    var iR = head.indexOf('Received'), iE = head.indexOf('email'), iS = head.indexOf('Status'), iF = head.indexOf('signed_up_from'), seen = {}, seenRes = {};
     var since = new Date(Date.now() - 84 * 864e5);
     sheet.getRange(2, 1, sheet.getLastRow() - 1, head.length).getValues().forEach(function (r) {
       out.signups.total++;
       var em = String(r[iE] || '').trim().toLowerCase(); if (em && !seen[em]) { seen[em] = 1; out.signups.unique++; }
       if (String(r[iS]) === 'Repeat') out.signups.repeat++;
       var d = r[iR] instanceof Date ? r[iR] : new Date(r[iR]);
-      if (d >= since) { var wk = Utilities.formatDate(d, 'Etc/UTC', "YYYY-'W'ww"); out.signups.weekly[wk] = (out.signups.weekly[wk] || 0) + 1; }
+      var wk = d >= since ? Utilities.formatDate(d, 'Etc/UTC', "YYYY-'W'ww") : null;
+      if (wk) out.signups.weekly[wk] = (out.signups.weekly[wk] || 0) + 1;
+      var grp = sourceGroup(iF >= 0 ? r[iF] : '');
+      out.signups.bySource[grp] = (out.signups.bySource[grp] || 0) + 1;
+      if (grp === 'Resources archive') {
+        out.resources.total++;
+        if (em && !seenRes[em]) { seenRes[em] = 1; out.resources.unique++; }
+        if (wk) out.resources.weekly[wk] = (out.resources.weekly[wk] || 0) + 1;
+      }
     });
   }
   return out;

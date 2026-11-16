@@ -192,7 +192,10 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
     own words (Healthcare, Mobility, Delivery & logistics, Humanoids & embodied AI, Drones, Industry & energy, Service robots); a `topic`
     field on brief items would make that exact. Consent wording (English, plus the Arabic shown) and its time go to the Sheet as
     `consent` and `consent_at` columns, and to the FormSubmit email.
-- [ ] **Resources page, still to do:** archive sign-ups in the portal Metrics (signed_up_from = "Resources archive"); Kit double
+- [x] **Resources archive sign-ups in the portal Metrics** (16 Nov 2026): the Sheet's stats now count sign-ups by source and the
+  archive's own total, unique and weekly figures; Metrics shows them. Owner: paste the new `Code.gs` and deploy a new version
+  (integrations/google-sheets/README.md). Also fixed the weekly sign-ups chart, which never appeared.
+- [ ] **Resources page, still to do:** Kit double
   opt-in once Kit is connected; the signed-link (truly private) option if the archive ever needs to be private.
 
 ## Nice to have

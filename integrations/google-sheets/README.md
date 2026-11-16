@@ -56,3 +56,6 @@ The admin portal's Metrics tab can show sign-up counts (never names or emails). 
 2. Deploy → Manage deployments → edit the web app → Version: **New version** → Deploy (the URL stays the same).
 3. In Cloudflare (Workers → roboticsmena-admin → Settings → Variables and secrets) add the secrets `SHEET_STATS_URL`
    (the `/exec` URL) and `SHEET_STATS_KEY` (the same random value).
+
+**After `Code.gs` changes** (e.g. 16 Nov 2026: sign-ups by source and the Resources archive counts), paste the new
+`Code.gs` over the old one, save, and repeat step 2 (new version). Nothing in Cloudflare changes.
