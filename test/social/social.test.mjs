@@ -106,6 +106,16 @@ test('a campaign needs no week and no cadence', () => {
   assert.ok(errs({ ...c, kit: [{ id: 'k2', title: 'T', text: 'An Israeli startup' }] }).some(e => /excluded/.test(e)));
 });
 
+test('a week can leave a cadence slot empty on purpose, with a reason', () => {
+  const cadence = readJson(path.join(ROOT, 'social/cadence.json'));
+  const s = cadence.slots[0], key = `${s.platform} ${s.day} ${s.time}`;
+  const wk = { week: '2026-w50', posts: [] };
+  assert.ok(missingSlots(wk, cadence).some(m => `${m.platform} ${m.day} ${m.time}` === key));
+  assert.ok(!missingSlots({ ...wk, open_slots: [{ slot: key, reason: 'Repeats a launch post' }] }, cadence).some(m => `${m.platform} ${m.day} ${m.time}` === key));
+  assert.ok(validateQueue({ ...wk, open_slots: [{ slot: key }] }).errors.some(e => /needs a reason/.test(e)));
+  assert.ok(validateQueue({ ...wk, open_slots: [{ slot: 'x someday', reason: 'r' }] }).errors.some(e => /must look like/.test(e)));
+});
+
 test('every committed queue validates and fills the cadence', () => {
   const cadence = readJson(path.join(ROOT, 'social/cadence.json'));
   for (const f of fs.readdirSync(path.join(ROOT, 'social/queue')).filter(f => f.endsWith('.json'))) {

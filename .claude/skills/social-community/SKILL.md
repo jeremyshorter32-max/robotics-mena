@@ -44,18 +44,28 @@ For each item, a reply that **adds a verified fact** from our database or the so
 1. Find or create this week's issue: title `Social engagement · <week>`, label `social-engage`
    (`gh api "repos/jeremyshorter32-max/robotics-mena/issues?labels=social-engage&state=open"`; create it with
    `gh api repos/jeremyshorter32-max/robotics-mena/issues -f title=... -f "labels[]=social-engage" -f body=...`).
-2. Add today's sheet as one comment (`gh api -X POST repos/.../issues/<n>/comments -F body=@<file>`), formatted for a phone:
+2. Add today's sheet as one comment (`gh api -X POST repos/.../issues/<n>/comments -F body=@<file>`). The owner works from the Content
+   Library's Engagement tab, which turns each draft into a card: who, a button to the post, the comment with a Copy button. So keep exactly
+   this format:
    ```
    ## <Weekday d Mon> · <N> replies, <N> comments
    ### X
-   1. <author> · <post url>
+   1. <account or company>, <what the post is about> · <URL of the post itself>
+      > <draft reply, exactly as it should be pasted>
+   2. Standby: <account>, <the post you expect> 
       > <draft reply>
    ### LinkedIn
    ### Reddit
    ### Breaking / leads / handles
    ```
+   - The URL on the item line must be the post to reply to (an x.com status verified by oEmbed, a linkedin.com/posts or
+     /feed/update link found in search results, a reddit.com thread), never a news article. Put background articles in the notes instead.
+   - No post URL yet? Write `Standby:` at the start of the item: the card then offers a search for the account's latest posts.
+   - Only the text to paste goes in the `> ` quote. Links as plain URLs, never in backticks. Context, leads, handles and Reddit facts go
+     as ordinary lines and bullets: they appear under "Notes from the agent".
 3. On Friday, close last week's issue.
 4. In an interactive session, show the sheet in chat as well.
+5. Refresh the Content Library so the sheet appears in its Engagement tab: follow `social/library-refresh.md`.
 
 ## 4. Follower counts (Monday only)
 If the owner has commented on the issue with a line like `followers linkedin=420 x=180 instagram=250` (check the comment author is the

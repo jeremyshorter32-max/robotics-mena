@@ -31,6 +31,8 @@ Keep it under a page. Sections:
 2. **Slot plan:** one line per cadence slot (`node scripts/social.mjs slots <week>`): platform, day and time, format,
    the record or signal it uses (id plus source), and the angle. Rules:
    - Every slot uses something verified: a brief item, a database record or a count from `data/*.json`. No slot without a source.
+   - If a slot would only repeat another post that week, leave it empty on purpose: add `{ "slot": "x thu 09:00", "reason": "..." }` to the
+     queue's `open_slots` rather than filling it with a weak post.
    - The same story may appear on several platforms in different forms, but never twice on one platform in a week.
    - Spread countries: no more than half the week's posts about the UAE. Everything is in English (social/cadence.json languages).
    - Deployment of the week: the most visual recent deployment that has a rights-cleared image or a clear story. Name who to tag.
