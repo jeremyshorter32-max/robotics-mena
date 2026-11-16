@@ -197,6 +197,20 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
 - [ ] **Resources page, still to do:** Kit double
   opt-in once Kit is connected; the signed-link (truly private) option if the archive ever needs to be private.
 
+- [ ] **GitHub Pro: make the repository private** (owner decision, 15 Nov 2026). Today the repository is public, so the social
+  strategy, plans, backlog, portal code and agent instructions are readable by anyone (the live site is public anyway). GitHub Pages
+  on a private repository needs GitHub Pro (about $4 a month, billed to the jeremyshorter32-max account).
+  - **Owner:** upgrade at https://github.com/settings/billing (Pro), then repository Settings → General → Danger Zone →
+    Change visibility → Private. Check Settings → Pages still shows the site as published from Actions afterwards.
+  - **Actions minutes:** private repositories get 3,000 a month on Pro (public ones are unlimited). Current use is well inside
+    that: each deploy takes about 1 minute (about 15 to 25 a day on busy build days, fewer once things settle) and the
+    categorization monitor about 20 seconds twice a day. Expect a few hundred minutes a month.
+  - **Check after switching:** the site still deploys on the next push; the admin portal (GitHub App) still lists pull requests
+    and the Schedule tab still reads the run log; the Claude scheduled tasks still push (they use the attached repository, not
+    public access); anything that read public URLs on raw.githubusercontent.com or api.github.com without a token (none known
+    in the site) would stop working.
+  - The live site, its pages and media stay public; only the source becomes private.
+
 ## Nice to have
 
 - [ ] Hide the inbox address in form URLs by switching FormSubmit to its random alias (offered in the

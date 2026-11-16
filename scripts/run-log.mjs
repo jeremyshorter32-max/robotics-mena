@@ -18,7 +18,10 @@ export function parseArgs(argv, env = {}) {
   if (!task || !STATUSES.includes(status)) throw new Error(`usage: run-log.mjs <task> <${STATUSES.join('|')}> [--result URL] [--session URL] [--summary "..."]`);
   const sid = env.CLAUDE_CODE_REMOTE_SESSION_ID || '';
   const session = opt.session || (/^cse_\w+$/.test(sid) ? `https://claude.ai/code/session_${sid.slice(4)}` : '');
-  return { task, status, result: opt.result || '', session, summary: opt.summary || '', repo: opt.repo || env.GITHUB_REPO || 'jeremyshorter32-max/robotics-mena' };
+  // Agents sometimes wrap values in backticks or quotes from markdown; keep only the URL and plain text.
+  const url = v => ((String(v || '').match(/https?:\/\/[^\s`'"<>]+/) || [''])[0]);
+  const plain = v => String(v || '').replace(/[`]/g, '').replace(/\s+/g, ' ').trim();
+  return { task, status, result: url(opt.result), session: url(session) || session, summary: plain(opt.summary), repo: opt.repo || env.GITHUB_REPO || 'jeremyshorter32-max/robotics-mena' };
 }
 
 const gh = (args, input) => JSON.parse(execFileSync('gh', ['api', ...args], { input, encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'] }) || 'null');

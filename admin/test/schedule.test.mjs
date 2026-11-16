@@ -98,3 +98,10 @@ test('the page has a Schedule tab', async () => {
   const html = await res.text();
   assert.match(html, /data-tab="schedule"/); assert.match(html, /\/api\/schedule/);
 });
+
+test('run records with backtick-wrapped values still link correctly', async () => {
+  const body = '<!-- run {"task":"daily-engagement","status":"succeeded","at":"2026-11-16T03:18:28.870Z","result":"` https://github.com/o/r/issues/15#issuecomment-1","session":"https://claude.ai/code/session_x","summary":"X ` 0 replies"} -->';
+  const r = parseRunComment(body, { created_at: '2026-11-16T03:18:29Z', html_url: 'https://github.com/o/r/issues/11#c' });
+  assert.equal(r.result, 'https://github.com/o/r/issues/15#issuecomment-1');
+  assert.equal(r.summary, 'X 0 replies');
+});

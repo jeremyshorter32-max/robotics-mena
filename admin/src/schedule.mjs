@@ -13,7 +13,8 @@ const STARTED_TIMEOUT_MS = 3 * 3600e3; // "started" with no finish after this lo
 const MIN = 60e3, DAY = 864e5;
 
 // ---- Run records ---------------------------------------------------------------------------------------------
-const httpUrl = v => (typeof v === 'string' && /^https?:\/\/\S+$/.test(v) ? v : '');
+// Keep the first http(s) URL in the value (agents sometimes wrap it in backticks or quotes).
+const httpUrl = v => (typeof v === 'string' ? (v.match(/https?:\/\/[^\s`'"<>]+/) || [''])[0] : '');
 
 export function formatRunComment({ task, status, at, result = '', session = '', summary = '' }) {
   if (!/^[a-z0-9-]{1,40}$/.test(task || '')) throw new Error(`task "${task}" must be a short id like weekly-brief`);
@@ -34,7 +35,7 @@ export function parseRunComment(body, { created_at = '', html_url = '' } = {}) {
   if (!j || typeof j.task !== 'string' || !STATUSES.includes(j.status)) return null;
   const at = Number.isFinite(Date.parse(j.at)) ? new Date(j.at).toISOString() : created_at || null;
   if (!at) return null;
-  return { task: j.task, status: j.status, at, result: httpUrl(j.result), session: httpUrl(j.session), summary: String(j.summary || '').slice(0, 300), comment: httpUrl(html_url) };
+  return { task: j.task, status: j.status, at, result: httpUrl(j.result), session: httpUrl(j.session), summary: String(j.summary || '').replace(/`/g, '').replace(/\s+/g, ' ').trim().slice(0, 300), comment: httpUrl(html_url) };
 }
 
 // ---- Cron (minute hour day-of-month month day-of-week, optional CRON_TZ=…) ---------------------------------------
