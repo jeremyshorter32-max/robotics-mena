@@ -65,7 +65,7 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 - [ ] **Web-filter submissions:** pack and Claude-in-Chrome prompt in `docs/launch/web-filter-submissions.md`; log ticket
   numbers here when done.
 - [x] **Password turned off** (13 Nov 2026): the deploy builds with `PUBLIC_LAUNCH=true`; every other open item was deferred
-  by the owner. Owner to do: delete the `SITE_PASSWORD` repository secret (no longer used), then submit roboticsmena.com
+  by the owner. `SITE_PASSWORD` secret deleted (16 Nov 2026). Owner to do: submit roboticsmena.com
   for web-filter categorisation (Science/Technology or News): Zscaler (sitereview.zscaler.com), Palo Alto, Fortinet,
   Cisco Talos, Symantec/Broadcom, Netskope, Forcepoint, McAfee/Trellix, Check Point.
 
@@ -193,8 +193,7 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
     field on brief items would make that exact. Consent wording (English, plus the Arabic shown) and its time go to the Sheet as
     `consent` and `consent_at` columns, and to the FormSubmit email.
 - [x] **Resources archive sign-ups in the portal Metrics** (16 Nov 2026): the Sheet's stats now count sign-ups by source and the
-  archive's own total, unique and weekly figures; Metrics shows them. Owner: paste the new `Code.gs` and deploy a new version
-  (integrations/google-sheets/README.md). Also fixed the weekly sign-ups chart, which never appeared.
+  archive's own total, unique and weekly figures; Metrics shows them. Sheet script updated and redeployed by the owner (16 Nov). Also fixed the weekly sign-ups chart, which never appeared.
 - [ ] **Resources page, still to do:** Kit double
   opt-in once Kit is connected; the signed-link (truly private) option if the archive ever needs to be private.
 
