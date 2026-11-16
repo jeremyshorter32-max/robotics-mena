@@ -30,6 +30,22 @@ const MOSAIC = ['/media/spotlight/gecko-inspectors-thickness-map.jpg', '/media/b
 const url = p => 'file://' + path.join(ROOT, p);
 const creditOf = (c, p = c.image) => c.image_credit || (IMAGES[p] ? 'Photo: ' + IMAGES[p].credit + (c.caption ? ' · ' + IMAGES[p].shows : '') : '');
 
+// Accent experiment (optional, per card): `accent` is one of the site's map colours and `ground` swaps the dark indigo ground.
+// Indigo stays the frame (logo, footer link); the accent takes the kicker chip, the rule under a photo, big numbers, the leading bar and
+// list numerals. Each accent is [on paper, on dark]. Cards without `accent` render exactly as before.
+const ACCENTS = { coral: ['#C9472B', '#F08A70'], amber: ['#A86F08', '#E6B54E'], teal: ['#166773', '#92D4CB'], violet: ['#7A56C2', '#B39AF0'],
+  green: ['#23804A', '#7BD3A0'], blue: ['#2F74B5', '#6FAEE8'], pink: ['#B4417A', '#EC86B8'] };
+const GROUNDS = { ink: ['#111216', '#0A0B0E'], indigo: ['#26246E', '#1C1A55'], coral: ['#9E3520', '#7A2716'], amber: ['#7A5106', '#5C3D04'],
+  teal: ['#12525C', '#0C3A42'], violet: ['#4B3391', '#372470'], green: ['#1B6239', '#124628'], blue: ['#1F5488', '#163D64'], pink: ['#8A2F5C', '#682245'] };
+function accentCss(c, dark, u) {
+  const a = ACCENTS[c.accent], g = dark ? GROUNDS[c.ground] : null;   // grounds only recolour dark cards and panels
+  if (!a && !g) return '';
+  const same = a && g && c.ground === c.accent;   // accent used as the ground: details go white
+  const pop = a ? (dark ? (same ? '#FFFFFF' : a[1]) : a[0]) : null, on = dark ? (same ? g[0] : '#111216') : '#FFFFFF';
+  return (g ? `:root{--indigo:${g[0]};--indigo-deep:${g[1]}${dark && c.ground !== 'indigo' ? ';--sub:rgba(255,255,255,.78);--indigo-300:rgba(255,255,255,.55)' : ''}}.duo-tint{background:linear-gradient(180deg,${g[0]}8C 0%,${g[0]}B8 45%,${g[1]}F5 100%)}.duo-tint:before{background:${g[0]}}.over.mos{background:linear-gradient(180deg,${g[0]}C7,${g[1]}F2 60%)}.right:before{background:linear-gradient(90deg,${g[0]}8C,transparent 22%)}` : '')
+    + (pop ? `:root{--pop:${pop}}.kicker{background:var(--pop);color:${on}}.band{border-bottom-color:${a[0]}}.value{color:var(--pop)}.bar.top{background:var(--pop)}.items li:before{color:var(--pop)}h1 b{color:var(--pop)}.plainwrap:before{background:${a[0]}}.handles{border-color:var(--pop)}.left{border-${c.lang === 'ar' ? 'left' : 'right'}:${8 * u}px solid ${same ? '#FFFFFF' : a[1]}}` : '');
+}
+
 // v2 "field desk" design: photos lead wherever a cleared press image exists; data and lists stay typographic.
 function cardHtml(c) {
   const [W, H] = SIZES[c.size] || SIZES.portrait;
@@ -126,6 +142,7 @@ ${!dark && layout === 'plain' ? `.plainwrap:before{content:'';position:absolute;
 ${dark && layout === 'plain' ? `.plainwrap:after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 10%,rgba(143,141,201,.32),transparent 45%);pointer-events:none}` : ''}
 ${story && T === 'cover' ? `h1.big{font-size:${170 * u}px;line-height:.95}` : ''}
 ${layout === 'split' ? `h1{font-size:${58 * u}px}h1.big{font-size:${70 * u}px}.body{font-size:${28 * u}px}.left .main{gap:${20 * u}px}` : ''}
+${accentCss(c, dark, u)}
 </style></head><body><div class="card">${body}</div>
 <script>
 window.fit = () => { const ms = [...document.querySelectorAll('.main')]; const els = [...document.querySelectorAll('.fit')];
@@ -242,4 +259,4 @@ const [cmd, ...rest] = process.argv.slice(2);
 if (require.main === module) (cmd === 'week' && rest[0] ? renderWeek(rest[0], rest.slice(1)) : cmd === 'banners' ? renderBanners()
   : Promise.reject(new Error('usage: social-cards.cjs week <YYYY-wNN> [postId…] | banners'))).catch(e => { console.error(e.message); process.exit(1); });
 
-module.exports = { cardHtml };
+module.exports = { cardHtml, ACCENTS, GROUNDS, SIZES };
