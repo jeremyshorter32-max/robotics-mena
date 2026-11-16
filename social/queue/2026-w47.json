@@ -1,7 +1,7 @@
 {
   "week": "2026-w47",
   "theme": "Launch week: what the database shows, plus the fortnight's signals",
-  "notes": "Launch week. All four accounts are live. On each new account, post the launch item first and pin it (X: the thread; Instagram: the carousel; Reddit: the welcome post, posted 15 Nov). Thursday's LinkedIn carousel follows the week-47 brief (pull request #6), with the Glydways results in place of the Lootah showroom. Other signal posts use items from 6 to 12 Nov, which are in this week's brief too. The profile-filling posts for Sun 15 Nov are in the Launch to GITEX campaign. ADNOC report launch (added 15 Nov): LinkedIn carousel, X thread, Instagram carousel and an r/RoboticsMENA post on Wed 18 Nov, before the Dubai villa report goes live (approve PR #10 from Thu 19 Nov). Thursday's w47-x-spotlight repeats the report's hook; consider dropping it.",
+  "notes": "Launch week. All four accounts are live. On each new account, post the launch item first and pin it (X: the thread; Instagram: the carousel; Reddit: the welcome post, posted 15 Nov). Thursday's LinkedIn carousel follows the week-47 brief (pull request #6), with the Glydways results in place of the Lootah showroom. Other signal posts use items from 6 to 12 Nov, which are in this week's brief too. The profile-filling posts for Sun 15 Nov are in the Launch to GITEX campaign. ADNOC report launch (added 15 Nov): LinkedIn carousel, X thread, Instagram carousel and an r/RoboticsMENA post on Wed 18 Nov, before the Dubai villa report goes live (approve PR #10 from Thu 19 Nov). Thursday's w47-x-spotlight was dropped (16 Nov) because it repeated the report's hook; the X Thursday slot stays empty this week.",
   "posts": [
     {
       "id": "w47-li-launch",
@@ -788,33 +788,6 @@
           "title": "NAVER's NURI delivery robots launch in Riyadh in H1 2027",
           "foot": "Source: Seoul Economic Daily, 12 Nov 2026",
           "image": "/media/companies/naver-labs.jpg"
-        }
-      ]
-    },
-    {
-      "id": "w47-x-spotlight",
-      "platform": "x",
-      "format": "post",
-      "pillar": "explainer",
-      "lang": "en",
-      "status": "draft",
-      "slot": "2026-11-19T09:00+04:00",
-      "text": "ADNOC's real AI story at ADIPEC wasn't the OpenAI deal. It was the robots.\n\nWall-climbing crawlers, explosion-proof inspectors and remotely operated ships, bought as infrastructure after a year of war damage.\n\nOur analysis: https://roboticsmena.com/spotlight?s=gecko-adnoc-raptor&utm_source=x&utm_medium=social&utm_campaign=2026-w47",
-      "cards": [
-        {
-          "template": "signal",
-          "size": "landscape",
-          "kicker": "Spotlight · UAE · Energy",
-          "title": "ADNOC's real AI story at ADIPEC wasn't the OpenAI deal. It was the robots.",
-          "foot": "Robotics MENA analysis, 7 Nov 2026",
-          "image": "/media/spotlight/taurob-inspector-taweelah.jpg",
-          "caption": true
-        }
-      ],
-      "sources": [
-        {
-          "name": "Robotics MENA Spotlight",
-          "url": "https://roboticsmena.com/spotlight?s=gecko-adnoc-raptor"
         }
       ]
     },
