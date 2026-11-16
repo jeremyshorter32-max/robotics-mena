@@ -2,6 +2,9 @@
   "week": "2026-w47",
   "theme": "Launch week: what the database shows, plus the fortnight's signals",
   "notes": "Launch week. All four accounts are live. On each new account, post the launch item first and pin it (X: the thread; Instagram: the carousel; Reddit: the welcome post, posted 15 Nov). Thursday's LinkedIn carousel follows the week-47 brief (pull request #6), with the Glydways results in place of the Lootah showroom. Other signal posts use items from 6 to 12 Nov, which are in this week's brief too. The profile-filling posts for Sun 15 Nov are in the Launch to GITEX campaign. ADNOC report launch (added 15 Nov): LinkedIn carousel, X thread, Instagram carousel and an r/RoboticsMENA post on Wed 18 Nov, before the Dubai villa report goes live (approve PR #10 from Thu 19 Nov). Thursday's w47-x-spotlight was dropped (16 Nov) because it repeated the report's hook; the X Thursday slot stays empty this week.",
+  "open_slots": [
+    { "slot": "x thu 09:00", "reason": "w47-x-spotlight dropped on 16 Nov: it repeated the ADNOC report launch posts from Wed 18 Nov." }
+  ],
   "posts": [
     {
       "id": "w47-li-launch",

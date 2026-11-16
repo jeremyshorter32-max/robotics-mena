@@ -100,6 +100,10 @@ export function validateQueue(q, opts = {}) {
   if (!q || !Array.isArray(q.posts)) return { errors: ['queue: needs a "posts" list'], warnings };
   if (q.campaign !== undefined) { if (!/^[a-z0-9-]+$/.test(q.campaign)) errors.push('queue: campaign must be lowercase letters, digits and hyphens'); }
   else try { weekStart(q.week); } catch (e) { errors.push(`queue: ${e.message}`); }
+  (q.open_slots || []).forEach((o, i) => {
+    if (!o || !/^(linkedin|x|instagram|reddit) (mon|tue|wed|thu|fri|sat|sun) \d{2}:\d{2}$/.test(o.slot || '')) errors.push(`open_slots[${i}]: slot must look like "x thu 09:00"`);
+    else if (!String(o.reason || '').trim()) errors.push(`open_slots[${i}]: ${o.slot} needs a reason`);
+  });
   // Ready-to-paste copy that isn't a scheduled post (personal posts, emails, DMs): same editorial checks.
   (q.kit || []).forEach((k, i) => {
     const w = `kit[${i}] ${k.id || ''}`;
@@ -228,11 +232,13 @@ export function knownHandles(file = path.join(SOCIAL, 'handles.json')) {
   return out;
 }
 
-// Slots from social/cadence.json that a queue does not fill (same platform, day and format).
+// Slots from social/cadence.json that a queue does not fill (same platform, day and format). A queue can leave a slot empty on purpose
+// with "open_slots": [{ "slot": "x thu 09:00", "reason": "..." }] (validateQueue requires the reason).
 export function missingSlots(q, cadence) {
   if (q.campaign) return [];
   const have = new Set(q.posts.filter(p => p.status !== 'skipped').map(p => `${p.platform}|${p.slot.slice(0, 16)}`));
-  return cadence.slots.filter(s => !have.has(`${s.platform}|${slotDate(q.week, s.day, s.time, cadence.timezone).slice(0, 16)}`));
+  const open = new Set((q.open_slots || []).map(o => o.slot));
+  return cadence.slots.filter(s => !open.has(`${s.platform} ${s.day} ${s.time}`) && !have.has(`${s.platform}|${slotDate(q.week, s.day, s.time, cadence.timezone).slice(0, 16)}`));
 }
 
 export const readJson = f => JSON.parse(fs.readFileSync(f, 'utf8'));

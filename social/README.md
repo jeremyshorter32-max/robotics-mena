@@ -17,16 +17,19 @@ The agents draft. **The owner approves (in the admin portal) and posts.** Nothin
 ## The owner's routine
 - **Sun or Mon (15 to 20 min):** approve the "Social: week NN" pull request in the portal. Open the posting pack, load the week into Buffer
   (LinkedIn, Instagram, X) or the native schedulers, and add trending audio to Reels in Instagram.
-- **Every weekday (10 to 20 min):** open the week's "Social engagement" issue. Post the replies and comments you agree with, and post Reddit items by hand.
+- **Every weekday (10 to 20 min):** open the Content Library's **Engagement** tab (or the week's "Social engagement" issue). Post the replies and comments you agree with, and post Reddit items by hand.
 - **Monday:** comment `followers linkedin=N x=N instagram=N reddit=N` (reddit = r/RoboticsMENA members) on the engagement issue (the Analyst records it).
 - **1st of the month:** use LinkedIn's "Invite to follow" credits.
 
 ## Content Library (view and download everything)
-**https://claude.ai/artifact/VLvATizyqX8AuX4t3WtmM2** (private to the owner). It shows every post from last week onwards plus campaigns, with copy buttons,
-media previews, per-file downloads, a "Download all media (.zip)" button per collection, the profile kit, and a "Posted" tick per post
-(remembered in your browser). Rebuild it after any change with `node scripts/social-library.mjs` (writes `social/out/library/`, not committed),
-then republish `social/out/library/index.html` to that URL with `root: social/out/library`, the files listed in `social/out/library/files.json`
-and the `downloads` capability.
+**https://claude.ai/artifact/VLvATizyqX8AuX4t3WtmM2** (private to the owner): everything in one place. The **Engagement** tab shows the daily reply
+sheets from the last two `social-engage` issues (newest open, a Copy button and a Done tick on every draft). Then every post from last week onwards
+plus campaigns, with copy buttons, media previews, per-file downloads, a "Download all media (.zip)" button per collection, a "Posted" tick per post,
+and the profile kit. Ticks are remembered in your browser.
+
+It refreshes itself: the weekday-morning engagement run and the evening portal run rebuild it from `main` and republish it to the same URL, so
+merged posts appear the same evening and each sheet appears in the morning. The steps are in `library-refresh.md`
+(`node scripts/social-library.mjs` writes `social/out/library/`, not committed, including `publish-files.json` for the publish).
 
 ## Design v2 and images
 Cards are photo-led wherever a cleared press image exists (see `scripts/social-cards.cjs` for the layouts). Only images in `social/images.json`
@@ -44,7 +47,7 @@ post into its week's queue. Current: **launch-2026** (Launch to GITEX, 15 Nov to
 node scripts/social.mjs validate [week|all] [--media]   # limits, sources, utm, handles, excluded content
 node scripts/social.mjs slots 2026-w48                    # cadence slots and which are empty
 node scripts/social-cards.cjs week 2026-w47               # render cards → cards/<week>/ (+ PDF carousels, Reel MP4s); also a campaign id
-node scripts/social-library.mjs                           # rebuild the Content Library page → out/library/
+node scripts/social-library.mjs                           # rebuild the Content Library page → out/library/ (publish: library-refresh.md)
 node scripts/social.mjs preview 2026-w47                  # posting pack → out/2026-w47.html (copy buttons + images)
 node scripts/social.mjs pack 2026-w47                     # pull-request body
 node scripts/social.mjs metrics add linkedin=420 x=180    # record counts; `metrics report` for pace

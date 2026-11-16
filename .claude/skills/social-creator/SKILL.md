@@ -56,8 +56,9 @@ Each card in `cards` is a spec rendered by `scripts/social-cards.cjs` (the heade
    problems: text cut off, an empty slide, a wrong credit.
 4. `node scripts/social.mjs validate <week> --media` must pass.
 5. `node scripts/social.mjs preview <week>` writes the posting pack `social/out/<week>.html` (not committed).
-6. Rebuild the Content Library (`node scripts/social-library.mjs`, see `social/README.md`). In an interactive session, republish it to
-   the owner's existing Content Library artifact (its URL is in `social/README.md`).
+6. The Content Library is rebuilt from `main`, so new posts appear there once their pull request is merged: the evening portal run and
+   the weekday-morning engagement run refresh it (`social/library-refresh.md`). In an interactive session, after a merge, follow that file
+   to refresh it straight away.
 
 ## 4. Send for approval
 1. Commit `social/queue/<week>.json`, `social/cards/<week>/`, the plan and any reports to `social/<week>` (repository author, attribution trailer). Push.

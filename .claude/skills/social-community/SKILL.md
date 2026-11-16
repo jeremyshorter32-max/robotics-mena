@@ -56,6 +56,9 @@ For each item, a reply that **adds a verified fact** from our database or the so
    ```
 3. On Friday, close last week's issue.
 4. In an interactive session, show the sheet in chat as well.
+5. Refresh the Content Library so the sheet appears in its Engagement tab: follow `social/library-refresh.md`. Keep the sheet in the
+   format above (`## ` title, `### ` platform headings, numbered items, each draft as a `> ` quote) because the library renders it from
+   that, with a Copy button and a Done tick on every quoted draft. Put only text meant to be pasted in `> ` quotes.
 
 ## 4. Follower counts (Monday only)
 If the owner has commented on the issue with a line like `followers linkedin=420 x=180 instagram=250` (check the comment author is the

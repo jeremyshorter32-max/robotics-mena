@@ -89,6 +89,21 @@ h3.section{font:600 12px var(--mono);letter-spacing:.12em;text-transform:upperca
 .credits{font-size:13px;color:var(--muted)}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:14px;max-width:min(92vw,520px);z-index:20}
 .dlnote{font-size:13px;color:var(--muted);margin:0}
+/* Engagement tab: the daily sheets from the GitHub issue, newest first. */
+.sheet{display:flex;flex-direction:column;gap:10px;padding:16px;margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+details.sheet>summary{cursor:pointer;list-style:none}details.sheet>summary::-webkit-details-marker{display:none}
+details.sheet>summary h2::before{content:"▸ ";color:var(--muted)}details.sheet[open]>summary h2::before{content:"▾ "}
+.sheet h2{margin:0;font-size:18px;letter-spacing:-.01em}
+.sheet .when{font:500 12px var(--mono);color:var(--muted)}
+.sheet h3{margin:14px 0 0;display:flex;align-items:center;gap:8px;font-size:15px}
+.sheet h3 i{width:9px;height:9px;border-radius:50%;background:var(--c,var(--brand))}
+.sheet p,.sheet li{margin:0;font-size:14px;overflow-wrap:anywhere}
+.sheet ul{margin:0;padding-inline-start:20px;display:grid;gap:4px}
+.sheet .item{font-weight:500}
+.sheet code{font:13px var(--mono);background:var(--bg);padding:1px 4px;border-radius:4px}
+.reply.done{opacity:.55}
+.reply .lab label{display:inline-flex;align-items:center;gap:5px;cursor:pointer;color:var(--ink)}
+.reply .lab .acts{display:inline-flex;align-items:center;gap:10px}
 @media (max-width:640px){.post{grid-template-columns:minmax(0,1fr)}.meta{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 12px}.meta .time{font-size:16px}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
@@ -97,7 +112,7 @@ h3.section{font:600 12px var(--mono);letter-spacing:.12em;text-transform:upperca
   <header class="top">
     <span class="eyebrow">Robotics MENA · social desk</span>
     <h1>Content Library</h1>
-    <p class="sub" id="sub">Every post ready to go: copy it with one tap, download its images, PDFs and Reels, and tick it off when it's posted. Times are Gulf time (UTC+4).</p>
+    <p class="sub" id="sub">Everything for the social accounts in one place: today's replies to post, every post ready to go with its images, PDFs and Reels, and the profile kit. Copy with one tap and tick things off as you go. Times are Gulf time (UTC+4). Refreshed automatically each weekday morning and each evening.</p>
     <div class="accounts" id="accounts"></div>
   </header>
   <nav class="tabs" id="tabs" aria-label="Collections"></nav>
@@ -214,6 +229,55 @@ function renderProfile() {
     <h3 class="section">Files</h3><div class="grid">${DATA.profile.files.map(f => `<div class="m"><img src="${esc(f)}" alt="${esc(f.split('/').pop())}" loading="lazy"><span class="note">${esc(f.split('/').pop())}</span><button type="button" data-dl="${esc(f)}">Download PNG</button></div>`).join('')}</div>`;
 }
 
+// Engagement: each daily sheet is a GitHub issue comment in Markdown. Rendered here with every quoted draft as a copy block
+// with a Done tick (saved in this browser). Text is escaped before any formatting is applied.
+let engDone = new Set(store.get('rm-eng-done', []));
+const PF_HEAD = { x: 'x', 'x / twitter': 'x', linkedin: 'linkedin', instagram: 'instagram', reddit: 'reddit' };
+function inline(s) {
+  const codes = [];
+  s = s.replace(/`+\s*(https?:\/\/[^`\s]+?)\s*`+(\/[^\s)]*)?/g, (_, u, rest) => u + (rest || ''));   // a URL split by stray backticks
+  let h = esc(s).replace(/`+\s*([^`]+?)\s*`+/g, (_, c) => { codes.push(c); return `\u0000${codes.length - 1}\u0000`; });
+  const links = [];
+  h = h.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (_, t, u) => { links.push(`<a href="${u}" target="_blank" rel="noopener">${t}</a>`); return `\u0001${links.length - 1}\u0001`; });
+  h = h.replace(/https?:\/\/[^\s<>"]+[^\s<>".,;:)]/g, u => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
+  h = h.replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/(^|[\s(])[*_]([^*_\n]+)[*_](?=[\s).,:;]|$)/g, '$1<i>$2</i>');
+  return h.replace(/\u0001(\d+)\u0001/g, (_, i) => links[i]).replace(/\u0000(\d+)\u0000/g, (_, i) => /^https?:\/\/\S+$/.test(codes[i]) ? `<a href="${codes[i]}" target="_blank" rel="noopener">${codes[i]}</a>` : `<code>${codes[i]}</code>`);
+}
+function renderSheet(c, open) {
+  const lines = c.body.replace(/\r/g, '').split('\n'), out = [];
+  let title = '', list = null, n = 0;
+  const closeList = () => { if (list) { out.push(`<ul>${list.join('')}</ul>`); list = null; } };
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i];
+    if (/^\s*---\s*$/.test(l)) break;                                       // footer starts here
+    if (!l.trim()) { closeList(); continue; }
+    let m;
+    if ((m = l.match(/^##\s+(.*)/)) && !l.startsWith('###')) { title = m[1]; continue; }
+    if ((m = l.match(/^###\s+(.*)/))) { closeList(); const pf = PF_HEAD[m[1].toLowerCase()]; out.push(`<h3${pf ? ` style="--c:var(${PF[pf][1]})"` : ''}>${pf ? '<i></i>' : ''}${inline(m[1])}</h3>`); continue; }
+    if (/^\s*>/.test(l)) {                                                    // a draft: gather the whole quote
+      closeList(); const q = [];
+      while (i < lines.length && /^\s*>/.test(lines[i])) q.push(lines[i++].replace(/^\s*>\s?/, ''));
+      i--; const key = `${c.id}:${n++}`, done = engDone.has(key);
+      out.push(`<div class="copy reply${done ? ' done' : ''}"><div class="lab"><span>Draft</span><span class="acts"><label><input type="checkbox" data-eng="${esc(key)}"${done ? ' checked' : ''}> Done</label><button type="button" data-copy>Copy</button></span></div><pre>${esc(q.join('\n'))}</pre></div>`);
+      continue;
+    }
+    if ((m = l.match(/^\s*[-*]\s+(.*)/))) { (list ||= []).push(`<li>${inline(m[1])}</li>`); continue; }
+    closeList();
+    out.push(`<p${/^\s*\d+\.\s/.test(l) ? ' class="item"' : ''}>${inline(l.trim())}</p>`);
+  }
+  closeList();
+  const when = new Date(c.at).toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Dubai' });
+  const head = `<h2>${inline(title || 'Engagement sheet')}</h2><span class="when">Posted ${esc(when)} Gulf time · <a href="${esc(c.url)}" target="_blank" rel="noopener">open on GitHub</a></span>`;
+  return open ? `<section class="sheet">${head}${out.join('')}</section>` : `<details class="sheet"><summary>${head}</summary>${out.join('')}</details>`;
+}
+function renderEngagement() {
+  const E = DATA.engagement, sheets = E.issues.flatMap(i => i.comments.map(c => ({ ...c, issue: i }))).sort((a, b) => b.at.localeCompare(a.at));
+  const cur = E.issues[0];
+  return `<div class="intro"><h2>Engagement</h2><p>Each weekday morning the Community agent finds conversations worth joining and drafts replies. Copy a draft, post it by hand, and tick it Done. Check the post is still live and from the official account before you reply.</p>
+    <p>${cur ? `This week's sheets come from <a href="${esc(cur.url)}" target="_blank" rel="noopener">${esc(cur.title)}</a> on GitHub. ` : ''}To log follower counts, comment there with a line like <code>followers linkedin=420 x=180 instagram=250</code>.</p></div>
+    ${sheets.length ? sheets.map((c, i) => renderSheet(c, i === 0)).join('') : '<p class="note" style="margin-top:12px">No sheets yet. The next one arrives at about 07:15 Gulf time on the next weekday.</p>'}`;
+}
+
 // Sign-off: one document per post in the artifact's db (reviews/<post id>), read back by Claude.
 let reviews = {}, rdb = null, dbState = DATA.review ? 'loading' : 'off';
 function reviewBlock(id) {
@@ -252,12 +316,15 @@ if (DATA.review) {
 }
 
 function route() {
-  const ids = DATA.collections.map(c => c.name).concat('profile');
-  const want = location.hash.slice(1), current = ids.includes(want) ? want : (DATA.collections.find(c => c.kind === 'campaign') || DATA.collections[0] || { name: 'profile' }).name;
-  $('#tabs').innerHTML = DATA.collections.map(c => `<a href="#${c.name}"${c.name === current ? ' aria-current="page"' : ''}>${esc(c.title)}<small>${c.posts.length}</small></a>`).join('') + `<a href="#profile"${current === 'profile' ? ' aria-current="page"' : ''}>Profile kit</a>`;
+  const eng = !!(DATA.engagement && !DATA.review);
+  const ids = (eng ? ['engagement'] : []).concat(DATA.collections.map(c => c.name), 'profile');
+  const want = location.hash.slice(1), current = ids.includes(want) ? want : eng ? 'engagement' : (DATA.collections.find(c => c.kind === 'campaign') || DATA.collections[0] || { name: 'profile' }).name;
+  const tab = (id, label, small = '') => `<a href="#${id}"${id === current ? ' aria-current="page"' : ''}>${esc(label)}${small !== '' ? `<small>${small}</small>` : ''}</a>`;
+  const sheetN = eng ? DATA.engagement.issues.reduce((s, i) => s + i.comments.length, 0) : 0;
+  $('#tabs').innerHTML = (eng ? tab('engagement', 'Engagement', sheetN) : '') + DATA.collections.map(c => tab(c.name, c.title, c.posts.length)).join('') + tab('profile', 'Profile kit');
   const c = DATA.collections.find(x => x.name === current);
   const active = document.activeElement && document.activeElement.id;
-  $('#view').innerHTML = (DATA.intro ? `<div class="changes">${DATA.intro}</div>` : '') + tallyHtml() + (c ? renderCollection(c) : renderProfile());
+  $('#view').innerHTML = (DATA.intro ? `<div class="changes">${DATA.intro}</div>` : '') + tallyHtml() + (current === 'engagement' ? renderEngagement() : c ? renderCollection(c) : renderProfile());
   if (active && document.getElementById(active)) { const el = document.getElementById(active); el.focus(); if (el.setSelectionRange) el.setSelectionRange(el.value.length, el.value.length); }
 }
 
@@ -271,6 +338,8 @@ document.addEventListener('click', e => {
   else if (b.hasAttribute('data-hide')) { hideDone = !hideDone; store.set('rm-hide', hideDone); route(); }
 });
 document.addEventListener('change', e => {
+  const key = e.target.dataset && e.target.dataset.eng;
+  if (key) { e.target.checked ? engDone.add(key) : engDone.delete(key); store.set('rm-eng-done', [...engDone]); e.target.closest('.reply').classList.toggle('done', e.target.checked); return; }
   const id = e.target.dataset && e.target.dataset.done; if (!id) return;
   e.target.checked ? posted.add(id) : posted.delete(id); store.set('rm-posted', [...posted]);
   e.target.closest('.post').classList.toggle('done', e.target.checked);
@@ -284,6 +353,6 @@ window.addEventListener('hashchange', route);
 
 const acc = DATA.accounts;
 $('#accounts').innerHTML = [['linkedin', 'LinkedIn'], ['x', 'X'], ['instagram', 'Instagram'], ['reddit', 'r/RoboticsMENA']].filter(([k]) => acc[k] && acc[k].status === 'live')
-  .map(([k, n]) => `<a href="${esc(acc[k].community_url || acc[k].url)}" target="_blank" rel="noopener">${n}</a>`).join('') + `<span style="color:var(--muted)">Built ${esc(DATA.built)}</span>`;
+  .map(([k, n]) => `<a href="${esc(acc[k].community_url || acc[k].url)}" target="_blank" rel="noopener">${n}</a>`).join('') + `<span style="color:var(--muted)">Updated ${esc(DATA.built)}</span>`;
 route();
 </script>

@@ -37,8 +37,8 @@
       "trigger": "trig_01AzAthbDrP8dkihqE4dsAGn",
       "cron": "CRON_TZ=Asia/Dubai 13 7 * * 1-5",
       "when": "Weekdays 07:13 Gulf time",
-      "produces": "Draft replies, comments and Reddit threads to join",
-      "results": "Comment on the week's \"Social engagement\" issue"
+      "produces": "Draft replies, comments and Reddit threads to join; refreshes the Content Library",
+      "results": "Comment on the week's \"Social engagement\" issue, shown in the Content Library's Engagement tab"
     },
     {
       "id": "portal-requests",
@@ -46,7 +46,7 @@
       "trigger": "trig_01JvTSRfFtMDDpwK6r5FqLhz",
       "cron": "CRON_TZ=Asia/Dubai 23 21 * * *",
       "when": "Daily 21:23 Gulf time",
-      "produces": "Work on requests sent from the Requests tab",
+      "produces": "Work on requests sent from the Requests tab; refreshes the Content Library",
       "results": "One pull request per request (Approvals tab)"
     }
   ]
