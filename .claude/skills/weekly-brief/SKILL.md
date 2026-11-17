@@ -39,6 +39,11 @@ without the owner's explicit approval in this conversation.**
      time: `node -e "console.log(new Date(Number((BigInt('<id>')>>22n)+1288834974657n)).toISOString())"`. The
      validator rejects a `date` that doesn't match the id, and a post added more than 30 days after it was posted.
      The home page also hides posts older than 30 days by itself, so stale posts never show as current.
+   - **One post per account** (owner, 17 Nov 2026): 5 to 8 different organisations, mixing governments, suppliers,
+     investors and events. The home page shows only each account's newest post, so a second post from the same account
+     never appears; pick the strongest one per account.
+   - **English only** (owner, 17 Nov 2026): never surface a post written in Arabic, even from an official account. If an
+     organisation posts both, use the English one; if it only posts in Arabic, skip it. The validator rejects Arabic excerpts.
    - **About robotics:** a robot, drone, autonomous vehicle or physical-AI deployment, deal, regulation, programme or
      event in a MENA country in `data/countries.json`. **Money counts too** (owner, 17 Nov 2026): robotics funds and
      ETFs, investments, listings and contracts by MENA investors, exchanges and sovereign funds (e.g. Lunate's humanoid
@@ -61,7 +66,7 @@ without the owner's explicit approval in this conversation.**
      Never log in to X or get around a block; if the embed feed refuses, use search only that week. Add new official
      accounts to `scripts/x-sources.json` when you find them.
    - **How many:** 5 to 8 live at any time. Posts approved earlier that are still within 30 days count. Pick one post per
-     story (English over Arabic when both exist) and spread across countries and accounts. If fewer than 5 qualify, add
+     story (English only) and spread across countries and accounts. If fewer than 5 qualify, add
      what does and say so in the pull request: never pad with older or off-topic posts.
    - Add them to `data/xposts.json` with `status: "suggested"`, `added: <today>`, a short excerpt (first sentence,
      under 240 characters) and a one-line `note`/`note_ar`. On approval they become `"approved"`. Older posts can stay

@@ -1,47 +1,5 @@
 [
   {
-    "id": "2121894757178003855",
-    "url": "https://x.com/AutonomousAD/status/2121894757178003855",
-    "author": "Abu Dhabi Autonomous",
-    "handle": "AutonomousAD",
-    "date": "2026-11-15",
-    "excerpt": "على هامش الدورة الثامنة من المهرجان الوطني للعلوم والتكنولوجيا والابتكار في مركز أدنيك العين، جمع معرض دوري أبوظبي للسباقات المستقلة والمسيّرة الطلبة والعائلات…",
-    "note": "Abu Dhabi's autonomous and drone racing league brings driverless tech to students and families at the national science festival in Al Ain.",
-    "note_ar": "دوري أبوظبي للسباقات المستقلة والمسيّرة يعرّف الطلبة والعائلات بالتقنيات ذاتية التشغيل في المهرجان الوطني للعلوم بالعين.",
-    "country": "AE",
-    "type": "drone",
-    "status": "approved",
-    "added": "2026-11-17"
-  },
-  {
-    "id": "2121127125361348684",
-    "url": "https://x.com/AutonomousAD/status/2121127125361348684",
-    "author": "Abu Dhabi Autonomous",
-    "handle": "AutonomousAD",
-    "date": "2026-11-13",
-    "excerpt": "نظّم مركز النقل المتكامل (أبوظبي للتنقل)، بالتعاون مع شركتي نون ولوود، تجربة لنقل البضائع باستخدام الطائرات بدون طيار…",
-    "note": "Abu Dhabi Mobility trials drone cargo delivery with noon and Lood, overseen by the emirate's Smart and Autonomous Systems Council.",
-    "note_ar": "أبوظبي للتنقل تجرّب نقل البضائع بالطائرات بدون طيار مع نون ولوود، بإشراف مجلس الأنظمة الذكية وذاتية التحكم.",
-    "country": "AE",
-    "type": "drone",
-    "status": "approved",
-    "added": "2026-11-17"
-  },
-  {
-    "id": "2118980359421599806",
-    "url": "https://x.com/AutonomousAD/status/2118980359421599806",
-    "author": "Abu Dhabi Autonomous",
-    "handle": "AutonomousAD",
-    "date": "2026-11-07",
-    "excerpt": "ساهمت المركبات ذاتية القيادة في تسهيل التنقّل بين أدنوك ومركز أدنيك أبوظبي خلال معرض ومؤتمر أديبك…",
-    "note": "Driverless vehicles shuttled visitors between ADNOC and ADNEC during ADIPEC: autonomous transport tested at a major international event.",
-    "note_ar": "مركبات ذاتية القيادة نقلت الزوار بين أدنوك ومركز أدنيك خلال أديبك: اختبار للنقل الذاتي في فعالية دولية كبرى.",
-    "country": "AE",
-    "type": "av",
-    "status": "approved",
-    "added": "2026-11-17"
-  },
-  {
     "id": "2118279593908142426",
     "url": "https://x.com/ADNOCGroup/status/2118279593908142426",
     "author": "ADNOC Group",

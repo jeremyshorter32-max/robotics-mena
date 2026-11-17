@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { pick, postedAt, parseTimeline } from '../../scripts/x-candidates.mjs';
+import { pick, postedAt, parseTimeline, isEnglish } from '../../scripts/x-candidates.mjs';
 
 const id = d => String((BigInt(Date.parse(d)) - 1288834974657n) << 22n);
 const tw = (screen, text, d, extra = {}) => ({ id_str: id(d), full_text: text, user: { screen_name: screen }, lang: 'en', ...extra });
@@ -20,7 +20,7 @@ test('keeps recent robotics posts from MENA accounts and drops old, off-topic, r
     tw('rta_dubai', 'Robot reply', '2026-11-10T08:00:00Z', { in_reply_to_screen_name: 'other' }),
     tw('rta_dubai', 'تجربة مركبات ذاتية القيادة في دبي', '2026-11-12T08:00:00Z'),
   ], gov, since);
-  assert.deepEqual(got.map(g => g.text.slice(0, 12)), ['RTA launches', 'تجربة مركبات']);
+  assert.deepEqual(got.map(g => g.text.slice(0, 12)), ['RTA launches']); // the Arabic-only post is dropped
   assert.equal(got[0].url, `https://x.com/rta_dubai/status/${got[0].id}`);
   assert.equal(got[0].date, '2026-11-10');
 });
@@ -40,4 +40,14 @@ test('parses the embed feed page', () => {
   const html = `<script id="__NEXT_DATA__" type="application/json">${JSON.stringify({ props: { pageProps: { timeline: { entries: [{ content: { tweet: { id_str: '1' } } }] } } } })}</script>`;
   assert.deepEqual(parseTimeline(html), [{ id_str: '1' }]);
   assert.equal(parseTimeline('<html></html>'), null);
+});
+
+test('only English posts are kept', () => {
+  const gov = { handle: 'AutonomousAD', name: 'Abu Dhabi Autonomous', mena: true };
+  const got = pick([
+    tw('AutonomousAD', 'تجربة لنقل البضائع باستخدام الطائرات بدون طيار في أبوظبي', '2026-11-13T08:00:00Z', { lang: 'ar' }),
+    tw('AutonomousAD', 'Abu Dhabi Mobility trials drone cargo delivery with noon and Lood', '2026-11-13T08:00:00Z', { lang: 'en' }),
+  ], gov, since);
+  assert.equal(got.length, 1);
+  assert.match(got[0].text, /^Abu Dhabi Mobility/);
 });
