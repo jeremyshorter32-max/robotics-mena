@@ -18,11 +18,17 @@ or private key into a chat.** Where a key is needed, the step moves it straight 
 | 5 | Admin portal (Cloudflare + GitHub App) | 20 min | Approving Claude's work from your phone |
 | 6 | Search engines (after launch) | 10 min | Google and Bing indexing |
 | 7 | Web filters (after launch) | 20 min | The site opening on office networks |
-| 8 | Newsletter (Kit) | 20 min | Sending the brief by email |
+| 8 | Newsletter (Kit), optional, can wait until after launch | 20 min | Sending the brief by email |
 
 Tick each one off in `BACKLOG.md` (or tell Claude "step 3 done") as you go.
 
 ---
+
+## Before step 1: the repository
+
+If https://github.com/{{REPO}} doesn't exist yet: create it at https://github.com/new (owner {{REPO_OWNER}}, no
+README or licence, so it starts empty), then add it to the Claude Code session so Claude can push to it. Public
+repositories get free hosting; a private one needs a paid GitHub plan.
 
 ## 1. Domain and GitHub Pages
 
@@ -46,7 +52,7 @@ asks me to sign in, confirm my password or enter a code.
       A      @     185.199.109.153
       A      @     185.199.110.153
       A      @     185.199.111.153
-      CNAME  www   <the owner part of {{REPO}}>.github.io
+      CNAME  www   {{REPO_OWNER}}.github.io
     If an old A record or a "parked page" record for @ exists, show it to me and ask before removing it.
 1e. Go back to https://github.com/{{REPO}}/settings/pages. If the DNS check has passed and "Enforce HTTPS" can be
     ticked, tick it. If it is still greyed out, tell me: the certificate can take up to an hour.
@@ -114,8 +120,7 @@ Help me create a GoatCounter account for my website. Use a new tab and stop for 
 1. Open https://www.goatcounter.com/signup.
 2. Code: {{GOATCOUNTER_CODE}} (if it is taken, try {{GOATCOUNTER_CODE}}-site and tell me which one worked).
    Site domain: {{DOMAIN}}. Email: {{CONTACT_EMAIL}}. Leave the password box for me to fill in.
-3. After I submit, open Settings and make sure "Allow adding visitor counts on your website" style options are off
-   and the site is not public.
+3. After I submit, open Settings and check that the statistics are not set to be publicly viewable.
 
 Finish by telling me the code that was accepted.
 ```
@@ -234,7 +239,7 @@ tell Claude in Chrome to continue. **Keep the tag in the site**: removing it un-
 ## 7. Web filters (after the password comes off)
 
 Office networks block sites their web filter has never classified. Each vendor keeps its own database, so the site
-is submitted to each. Reviews take 1 to 5 working days. Details and a results log: `docs/launch/web-filter-submissions.md`.
+is submitted to each. Reviews take 1 to 5 working days. Claude logs each vendor's answer in `BACKLOG.md`.
 
 ```
 Please check how each web-filter vendor below categorises {{DOMAIN}}, one at a time, each in a new tab. If it is
@@ -243,9 +248,9 @@ nothing.
 
 Details for every form:
 - URL: {{DOMAIN}} (or https://{{DOMAIN}}/ if a full address is required)
-- Category: WEB_FILTER_CATEGORY, or the closest equivalent listed next to the vendor.
+- Category: {{WEB_FILTER_CATEGORY}}, or the closest equivalent listed next to the vendor.
 - Email: {{CONTACT_EMAIL}}   Name/company: {{PROJECT_NAME}}
-- Comment: "WEB_FILTER_DESCRIPTION"
+- Comment: "{{WEB_FILTER_DESCRIPTION}}"
 
 Vendors:
 1. Fortinet: https://www.fortiguard.com/webfilter

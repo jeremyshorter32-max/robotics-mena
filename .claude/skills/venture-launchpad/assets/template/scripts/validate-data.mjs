@@ -14,12 +14,18 @@
 //       "files": ["logo", "image"],                site paths (/media/...) that must exist in the repository
 //       "translated": ["title", "summary"],        for every extra language in site.json: <field>_<lang> must be present
 //       "source": ["source_url"],                  at least one of these must be present (every record needs a source)
+//       "numbers": ["capacity_mw"],                finite numbers
+//       "lists": ["developers"],                   non-empty lists
 //       "banned": [{ "fields": ["country"], "values": ["XX"], "why": "not covered" }]
 //     }
 //   },
 //   "banned_terms": ["old brand name"]             text that must not appear anywhere in data/ (any case)
 // }
-// Domain rules that don't fit the schema go in scripts/validate-extra.mjs:  export default function (data, errors) { ... }
+// Placeholders: a record with "placeholder": true (sample content from the design, not yet sourced) is excused from the
+// "source" rule, and the build refuses to publish it: with PUBLIC_LAUNCH=true any placeholder is an error.
+// Sub-folders of data/ (e.g. data/briefs/2026-w47.json) are read as lists named after the folder.
+// Domain rules that don't fit the schema go in scripts/validate-extra.mjs:
+//   export default function (data, errors, { site, env }) { ... }
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -28,9 +34,9 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const readJson = f => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
-export function validate({ schema, site, data, fileExists = p => fs.existsSync(path.join(ROOT, p)), rawText = '' }) {
+export function validate({ schema, site, data, fileExists = p => fs.existsSync(path.join(ROOT, p)), rawText = '', publicLaunch = false }) {
   const errors = [];
-  const empty = v => v === undefined || v === null || v === '';
+  const empty = v => v === undefined || v === null || v === '' || (Array.isArray(v) && !v.length);
   const extraLangs = (site.languages || ['en']).slice(1);
   for (const [name, rules] of Object.entries(schema.collections || {})) {
     const rows = data[name];
@@ -53,7 +59,10 @@ export function validate({ schema, site, data, fileExists = p => fs.existsSync(p
       }
       for (const f of rules.files || []) if (!empty(r[f]) && !(String(r[f]).startsWith('/') && fileExists(String(r[f]).slice(1)))) errors.push(`${w}: ${f} file "${r[f]}" does not exist`);
       for (const f of rules.translated || []) for (const l of extraLangs) if (!empty(r[f]) && empty(r[`${f}_${l}`])) errors.push(`${w}: missing "${f}_${l}" (${l} text for ${f})`);
-      if (rules.source && rules.source.every(f => empty(r[f]))) errors.push(`${w}: needs a source (${rules.source.join(' or ')})`);
+      for (const f of rules.numbers || []) if (!empty(r[f]) && !(typeof r[f] === 'number' && Number.isFinite(r[f]))) errors.push(`${w}: ${f} must be a number`);
+      for (const f of rules.lists || []) if (r[f] !== undefined && !(Array.isArray(r[f]) && r[f].length)) errors.push(`${w}: ${f} must be a non-empty list`);
+      if (r.placeholder === true) { if (publicLaunch) errors.push(`${w}: is still a placeholder; source it or remove it before launch`); }
+      else if (rules.source && rules.source.every(f => empty(r[f]))) errors.push(`${w}: needs a source (${rules.source.join(' or ')})`);
       for (const b of rules.banned || []) for (const f of b.fields) for (const v of [].concat(r[f] ?? [])) if (b.values.includes(v)) errors.push(`${w}: ${f} "${v}" is not allowed (${b.why || 'excluded'})`);
     });
   }
@@ -69,9 +78,16 @@ async function main() {
     const txt = fs.readFileSync(path.join(ROOT, 'data', f), 'utf8'); rawText += txt;
     try { data[f.slice(0, -5)] = JSON.parse(txt); } catch (e) { console.error(`data/${f}: not valid JSON (${e.message})`); process.exit(1); }
   }
-  const errors = validate({ schema, site, data, rawText });
+  for (const d of fs.readdirSync(path.join(ROOT, 'data'), { withFileTypes: true }).filter(e => e.isDirectory())) {
+    data[d.name] = fs.readdirSync(path.join(ROOT, 'data', d.name)).filter(f => f.endsWith('.json')).sort().reverse().map(f => {
+      const txt = fs.readFileSync(path.join(ROOT, 'data', d.name, f), 'utf8'); rawText += txt;
+      try { return JSON.parse(txt); } catch (e) { console.error(`data/${d.name}/${f}: not valid JSON (${e.message})`); process.exit(1); }
+    });
+  }
+  const publicLaunch = process.env.PUBLIC_LAUNCH === 'true';
+  const errors = validate({ schema, site, data, rawText, publicLaunch });
   const extra = path.join(ROOT, 'scripts/validate-extra.mjs');
-  if (fs.existsSync(extra)) await (await import(pathToFileURL(extra))).default(data, errors);
+  if (fs.existsSync(extra)) await (await import(pathToFileURL(extra))).default(data, errors, { site, env: process.env });
   if (errors.length) { console.error(`Data check failed (${errors.length}):\n` + errors.map(e => '  - ' + e).join('\n')); process.exit(1); }
   console.log('Data check passed: ' + Object.keys(schema.collections || {}).map(n => `${data[n].length} ${n}`).join(', ') + '.');
 }

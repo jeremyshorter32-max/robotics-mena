@@ -14,6 +14,14 @@ test('each rule reports its own problem', () => {
   for (const part of ['missing "name"', 'category "z"', 'not a YYYY-MM-DD date', 'not a valid URL', '"QA" is not in countries.json', 'does not exist', 'missing "name_ar"', 'not allowed (not covered)', 'duplicate id "x"'])
     assert.ok(e.includes(part), `expected: ${part}\n${e}`);
 });
+test('placeholders skip the source rule locally and block a public build; numbers and lists are checked', () => {
+  const ph = { ...good, source_url: '', placeholder: true };
+  assert.deepEqual(run([ph]), []);
+  assert.ok(validate({ schema, site, data: { items: [ph], countries: [{ code: 'AE' }] }, fileExists: () => true, publicLaunch: true }).some(e => e.includes('still a placeholder')));
+  const s2 = { collections: { items: { numbers: ['mw'], lists: ['devs'] } } };
+  const e = validate({ schema: s2, site, data: { items: [{ id: 'a', mw: '12', devs: [] }] } }).join('\n');
+  assert.ok(e.includes('mw must be a number') && e.includes('devs must be a non-empty list'), e);
+});
 test('records need a source, and banned terms are caught anywhere in the data', () => {
   assert.ok(run([{ ...good, source_url: '' }]).some(e => e.includes('needs a source')));
   assert.ok(run([good], '{"note":"the old name"}').some(e => e.includes('banned term')));

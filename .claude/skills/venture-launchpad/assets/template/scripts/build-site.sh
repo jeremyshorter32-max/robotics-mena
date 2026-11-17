@@ -10,6 +10,7 @@ cd "$(dirname "$0")/.."
 # Fixed salt (not secret) so "Remember me" keeps working across pages and deploys.
 SALT="{{STATICRYPT_SALT}}"
 
+node scripts/validate-data.mjs   # first, so a bad record leaves the previous build untouched
 rm -rf _site
 mkdir _site
 # Copy whatever this site has: root-level scripts (design runtime, widgets), vendored libraries, media, brand pack.
@@ -17,7 +18,6 @@ for f in *.js favicon.ico CNAME .nojekyll; do [ -e "$f" ] && cp "$f" _site/; don
 for d in vendor media brand; do [ -d "$d" ] && cp -r "$d" _site/; done
 [ -d redirects ] && cp redirects/*.html _site/ 2>/dev/null || true
 cp static/*.txt _site/ 2>/dev/null || true   # IndexNow key file (see scripts/indexnow.mjs)
-node scripts/validate-data.mjs
 node scripts/assemble.cjs _site
 
 # Public crawl rules (replaced below with "Disallow: /" while the site is password-protected).

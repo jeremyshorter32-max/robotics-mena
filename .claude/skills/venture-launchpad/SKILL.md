@@ -52,36 +52,43 @@ with these.
 ## How to run it
 
 Work through the phases in order, but start the owner track at the end of Phase 0 and never wait idle for it.
-`LAUNCHPAD.md` in the project records progress: read it first in every session, tick lines as they are verified,
-and log decisions there. If it exists, resume from the first unticked line instead of starting over.
+`LAUNCHPAD.md` in the project records progress (the scaffold creates it). If it exists, read it first and resume
+from the first unticked line; if it doesn't, this is a new project: start at Phase 0. Tick lines as they are
+verified and log decisions there.
+
+The session's skill list may include another project's agents (for example Robotics MENA's `weekly-scan`). Those
+belong to that project: don't run them here. This project gets its own in Phase 4.
 
 If the user asks for only one part ("add the admin portal to this repo"), do that part: scaffold with
 `--only`, read the matching reference, and skip the rest.
 
 ### Phase 0: intake (one sitting)
 
-Read `references/intake.md`. In short:
-1. Inventory what came from Claude Design (pages, brand pack, runtime files) without changing it.
+Read `references/intake.md`. In short, in this order:
+1. Inventory what came from Claude Design (pages, brand pack, runtime files) and keep an untouched copy under
+   `docs/design/`.
 2. Write the concept brief from what the design already says. Ask the owner only for what you can't infer and
    only they can decide: the domain, the contact address, the languages, what the records are, what is in and out
    of scope, the update rhythm, and the time zone. Ask these together, once.
 3. Write `launchpad.json` (`node <skill>/scripts/scaffold.mjs --example` shows every field).
-4. Scaffold, then **send the owner their set-up page straight away** (`docs/launch/owner-setup.md`, filled in by
-   the scaffold): it has each step in the order that unblocks you, with a Claude in Chrome prompt for each. Fill
-   in the two `WEB_FILTER_*` placeholders in step 7 from the brief. Tell them step 1 (domain and Pages) is the
-   one to do today.
+4. Scaffold once (below), then **send the owner their set-up page straight away**
+   (`docs/launch/owner-setup.md`, filled in by the scaffold): it has each step in the order that unblocks you,
+   with a Claude in Chrome prompt for each. Tell them step 1 (domain and Pages) is the one to do today.
+
+```bash
+node <skill>/scripts/scaffold.mjs --config launchpad.json --out .     # in the project's git repository
+npm run build && npm test
+```
+The scaffold writes the build pipeline, validator, deploy workflow, admin portal, Sheets script, backlog, notes and
+progress file, with a placeholder page and record so the pipeline works before any real content exists. It never
+overwrites existing files, so it is safe to re-run.
 
 ### Phase 1: foundation
 
-```bash
-node <skill>/scripts/scaffold.mjs --config launchpad.json --out .
-npm run build && npm test
-```
-The scaffold writes the build pipeline, validator, deploy workflow, admin portal, Sheets script, backlog and notes,
-with a placeholder page and record so the pipeline works before any real content exists. It never overwrites
-existing files. Then, following `references/site.md`:
+Following `references/site.md`:
 1. Move the design's pages into `pages/`, its brand files into `brand/`, and wire the pages to `window.SITE_DATA`.
-2. Replace the starter schema and sample record with the project's collections.
+2. Replace the starter schema, sample record and placeholder logic with the project's own. Sample records taken
+   from the design are marked `"placeholder": true` until Phase 2 sources them; the build refuses to publish them.
 3. Commit, push, and confirm the Deploy site action publishes the password-protected site once owner step 1 is done.
 4. Check every page in a real browser (Playwright): each language, a 390px phone, dark theme if the design has
    one, no console errors, no horizontal scroll.

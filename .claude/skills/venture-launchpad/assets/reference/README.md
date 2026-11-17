@@ -12,3 +12,5 @@ for structure and wording, then write the new project's own version. Don't copy 
   its workflow and config). `tests/` has matching tests.
 - `docs/`: the pre-launch editorial audit, the admin portal plan, the web-filter submission pack.
 - `partials/signup-modal.example.html`: the "get the brief" pop-up.
+
+Anything here that conflicts with `references/` is superseded by `references/`.

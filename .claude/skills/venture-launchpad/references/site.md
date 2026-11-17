@@ -53,7 +53,22 @@ with `scripts/serve-site.py`, which serves clean URLs the way GitHub Pages does.
 
 The aim is to keep the design pixel-for-pixel and change only where its content comes from.
 
-1. Copy each real page into `pages/<name>.html` (`index.html` is the home page). Copy the design's runtime scripts
+**Always:**
+- Name pages in lowercase; the home page is `pages/index.html`. Rewrite links between pages to clean root-relative
+  addresses (`Projects.html` → `/projects`) and asset paths to root-relative ones (`../brand/logo.svg` →
+  `/brand/logo.svg`).
+- Keep the layout as designed, but fix real defects you find (overflow on phones, a font named but never loaded)
+  with the smallest change, and note each under Decisions in `LAUNCHPAD.md`.
+- Things the design promises but nothing delivers yet (an API link, "corrections are logged") stay visible during
+  private preview and go into `BACKLOG.md` under "Must do before going public"; each is built or removed before
+  launch.
+
+**If the design is plain HTML with no script:** give each element that holds content an id, empty it, and fill it
+from `window.SITE_DATA` in `src/logic.js` (one small render function per page, switched on
+`window.SITE_PAGE.page`). Move the sample content into `data/*.json` with `"placeholder": true`.
+
+**If the design ships its own runtime** (as Robotics MENA's did):
+1. Copy each real page into `pages/<name>.html`. Copy the design's runtime scripts
    to the repository root and its libraries into `vendor/`. Change CDN script tags to the local copies and add
    `integrity` hashes. Keep Google Fonts links (or self-host the fonts in `brand/`).
 2. Give each page a specific `<title>` and `<meta name="description">`, and add the `@config` marker in the head.
@@ -63,10 +78,12 @@ The aim is to keep the design pixel-for-pixel and change only where its content 
    page had it; use `window.SITE_PAGE.page` for per-page differences. If pages are independent, leave their logic
    in place.
 4. Replace hard-coded sample content with reads from `window.SITE_DATA`. Move the sample records into `data/*.json`
-   as the first draft of the schema, flagged as unsourced until Phase 2 replaces them.
+   as the first draft of the schema, each with `"placeholder": true`: the validator excuses a placeholder from
+   the source rule, and a public build (`PUBLIC_LAUNCH=true`) fails while any remain.
 5. Derive anything that can go stale from the data or `builtAt`: counts, "this week" labels, "new" badges (expire
    them a fixed number of days after `added`), dates in sample newsletters. Hard-coded dates were the most common
-   bug found in Robotics MENA's pre-launch audit.
+   bug found in Robotics MENA's pre-launch audit. Labels like "this week" come from the newest item's date, and
+   anything relative to today ("new", "upcoming") is computed in the browser, since `builtAt` only moves on deploy.
 6. Language and theme: remember the visitor's choice in `localStorage` under a project prefix and keep URLs clean.
    For a right-to-left language set `dir="rtl"` and use logical CSS properties; check number and plural agreement.
 7. Replace design-time image placeholders with real, cleared images (Phase 2) or remove the slot.
@@ -83,15 +100,22 @@ diffs are readable. Conventions that paid off:
 - `added: YYYY-MM-DD` on every record (drives "new" badges, growth metrics, and the portal's preview).
 - A source on every record: `source` (name) and `source_url` (a page the agent opened).
 - Translated text as `<field>` and `<field>_<lang>` (`title`, `title_ar`).
-- Categories as short keys with labels defined once (in `data/` or the logic), never free text.
+- Categories as short keys, never free text. Put the labels in a small data file (`data/statuses.json`:
+  `[{ "id": "operating", "label": "Operating" }]`) and reference it with `refs`, so pages can show them;
+  `schema.json` itself is not sent to the browser.
+- Sub-folders (`data/briefs/2026-w47.json`) are read as a list named after the folder, by both the build and the
+  validator. The portal's record-by-record preview covers top-level files only; a sub-folder file shows as a
+  changed file.
+- The portal's Metrics tab expects, until you edit it, `companies`, `deployments`, `events` and a `brief` list with
+  a `date` on each item (`admin-portal.md`, adapt points).
 - References by id or code (`country: "AE"`), checked against the referenced collection.
 - Site paths for files (`/media/logos/<id>.png`) that must exist in the repository.
 - A corrections log (`data/corrections.json`) if the site promises corrections.
 
 `data/schema.json` expresses these per collection (`required`, `enums`, `dates`, `urls`, `refs`, `files`,
-`translated`, `source`, `banned`) plus `banned_terms` for text that must never appear (an old brand name, an
+`translated`, `source`, `numbers`, `lists`, `banned`) plus `banned_terms` for text that must never appear (an old brand name, an
 excluded subject). The header of `scripts/validate-data.mjs` documents every key. Rules that don't fit go in
-`scripts/validate-extra.mjs` (`export default function (data, errors) {}`): coordinate ranges, a required image on
+`scripts/validate-extra.mjs` (`export default function (data, errors, { site, env }) {}`): coordinate ranges, a required image on
 every featured item, date-matches-id checks, anything specific. Add a test for each custom rule.
 
 When a rule is decided in conversation ("we don't list X"), put it in the validator the same day and in `CLAUDE.md`.

@@ -34,6 +34,7 @@ data.site = Object.fromEntries(Object.entries(site).filter(([k]) => PUBLIC_SITE_
 const logic = exists('src/logic.js') ? read('src/logic.js') : '';
 if (logic.includes('</script')) throw new Error('src/logic.js must not contain "</script"');
 const headBrand = exists('partials/head-brand.html') ? read('partials/head-brand.html').trim() : '';
+for (const m of headBrand.matchAll(/(?:href|content)="(?:https:\/\/[^\/"]+)?(\/brand\/[^"]+)"/g)) if (!exists(m[1].slice(1))) console.warn(`Warning: partials/head-brand.html points at ${m[1]}, which does not exist yet.`);
 const safeJson = v => JSON.stringify(v).replace(/</g, '\\u003c');
 const attr = v => v.replace(/&(?!amp;|lt;|gt;|quot;|#)/g, '&amp;').replace(/"/g, '&quot;');
 

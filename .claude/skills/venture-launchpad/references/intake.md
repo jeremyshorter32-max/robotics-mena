@@ -1,8 +1,12 @@
 # Phase 0: intake
 
 The input is a concept and brand made in Claude Design and brought into this Claude Code session. The output of this
-phase is three files and one message: `docs/launch/concept-brief.md`, `launchpad.json`, `LAUNCHPAD.md`, and the
-owner set-up page sent to the owner.
+phase is `docs/launch/concept-brief.md`, `launchpad.json`, the scaffolded repository (which includes
+`LAUNCHPAD.md`), and the owner set-up page sent to the owner. Order: inventory and copy the design, write the
+brief, ask the owner, write `launchpad.json`, scaffold once.
+
+Work in the project's own git repository. If there is only an empty folder, `git init -b main`; the owner creates
+the empty GitHub repository and attaches it to the session (the set-up page's first section), and you push then.
 
 ## 1. Find and inventory the design
 
@@ -29,7 +33,12 @@ List what you find without editing it:
 - **Promises the design makes:** an "API" link, an "About the team" page, "corrections are logged", a newsletter.
   Each is either built, or removed before launch. List them now; the pre-launch audit will look for them.
 
-Keep the original design files under `docs/brand/` (or `docs/design/`) so there is always an untouched copy.
+Keep the original design files under `docs/design/` so there is always an untouched copy.
+
+If the brand pack has no favicon set or share image (`brand/icons/favicon.ico`, `favicon.svg`,
+`apple-touch-icon.png`, `site.webmanifest`, `brand/social/og-image.png`), make them from the logo and brand colours
+(Playwright renders SVG or HTML to PNG at any size), or trim `partials/head-brand.html` to what exists. The build
+warns about each missing file.
 
 ## 2. Write the concept brief
 
@@ -66,6 +75,9 @@ decide and you could not find:
 6. **Which optional parts** they want in version one: admin portal and scheduled agents (recommended), newsletter,
    social desk.
 
+If the owner already answered these in their first message, don't ask again: the brief counts as agreed once you
+have shown it to them and they haven't objected; tick it then.
+
 Don't ask about technology choices: those are fixed by the playbook. Don't ask about anything that can be changed
 cheaply later; pick a default and note it under "Decisions" in `LAUNCHPAD.md`.
 
@@ -92,11 +104,16 @@ Commit `launchpad.json`; it holds no secrets.
 ## 5. Send the owner their set-up page
 
 `docs/launch/owner-setup.md` now has the project's real values in every step and prompt. Before sending:
-- replace `WEB_FILTER_CATEGORY` and `WEB_FILTER_DESCRIPTION` in step 7 with the closest standard category
-  (Science/Technology, News/Media, Business, Education...) and a three-sentence neutral description from the brief
-  (what the site is, that it has no ads, user-generated content or downloads, and the category you want);
-- delete steps for parts the owner declined;
-- check what you can do yourself with the session's connected services and move those out of the owner's list.
+- check step 7's category and description (from `web_filter_category` and `web_filter_description` in
+  `launchpad.json`; the default is generic): use the closest standard category (Science/Technology, News/Media,
+  Business, Education...) and three neutral sentences from the brief;
+- remove what the owner declined: no admin portal and agents → delete step 5 and the two "for the portal" notes
+  in steps 3 and 4; no newsletter → delete step 8 (if they haven't said, keep it; it is marked optional). The
+  social desk has no step here: its account checklist is written in Phase 6;
+- move out what you can do yourself. Look at the session's tools and connected services: with GitHub tools you
+  can usually create labels and pull requests but not change Pages settings; with a Cloudflare connection you can
+  deploy the Worker and set every secret except the GitHub App's private key. Anything needing a sign-up, a
+  sign-in, a captcha or a card stays with the owner.
 
 Send the file (or publish it as a private page if the owner will follow it on another device) with a three-line
 message: what you are building now, that step 1 is the one to do today because DNS takes time, and that the other

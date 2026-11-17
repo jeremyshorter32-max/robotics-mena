@@ -1,5 +1,5 @@
 {
-  "_note": "Starter schema: replace 'items' with the project's own collections (see references/architecture.md in the launchpad skill). Checked by scripts/validate-data.mjs on every build.",
+  "_note": "Starter schema: replace 'items' with the project's own collections (see the header of scripts/validate-data.mjs for every rule). Checked by scripts/validate-data.mjs on every build.",
   "collections": {
     "items": {
       "key": "id",

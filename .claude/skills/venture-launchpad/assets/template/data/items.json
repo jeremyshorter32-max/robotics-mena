@@ -4,7 +4,7 @@
     "name": "Example record",
     "category": "example",
     "summary": "A placeholder so the first build passes. Replace it with real, sourced records.",
-    "source_url": "https://example.com/",
+    "placeholder": true,
     "added": "{{TODAY}}"
   }
 ]

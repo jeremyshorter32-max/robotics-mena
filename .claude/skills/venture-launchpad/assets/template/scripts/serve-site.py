@@ -9,6 +9,16 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.path = p + '.html' + self.path[len(p):]
         return super().send_head()
 
+    def send_error(self, code, message=None, explain=None):
+        # Like GitHub Pages: unknown addresses get the site's own 404 page.
+        if code == 404 and os.path.exists('404.html'):
+            body = open('404.html', 'rb').read()
+            self.send_response(404); self.send_header('Content-Type', 'text/html; charset=utf-8')
+            self.send_header('Content-Length', str(len(body))); self.end_headers()
+            if self.command != 'HEAD': self.wfile.write(body)
+            return
+        super().send_error(code, message, explain)
+
     def log_message(self, *a):
         pass
 

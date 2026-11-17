@@ -26,6 +26,10 @@ result, missed runs, links) · Runs (GitHub Actions runs).
 
 ## Adapt points (small, but do them before deploying)
 
+The security core (`auth.mjs`, `github.mjs`, `index.mjs`, `schedule.mjs`, `backlog.mjs`) is project-neutral. The
+files below still carry Robotics MENA's collections and wording, and the first three rows are required: without
+the metrics edit the Metrics tab shows zeros.
+
 | File | What to change for a new project |
 |---|---|
 | `admin/src/inbox.mjs` | `AGENT_BRANCH` and `KIND`: the branch prefixes and their labels. `PUBLISHABLE_PATH`: the content folders a portal approval may touch. Keep both tight. |
