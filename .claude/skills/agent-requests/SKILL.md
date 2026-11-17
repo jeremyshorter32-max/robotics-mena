@@ -29,7 +29,7 @@ You do the work in this session (the owner's Claude subscription). Never call th
    - `build` → branch `claude/req-<n>`; make the site or portal change with tests. Say in the pull request that it
      changes code, so it must be reviewed on GitHub (the portal only approves data changes).
 4. `PUBLIC_LAUNCH=true ./scripts/build-site.sh` and `npm test` must pass. Commit as the repository's usual author
-   (copy it from `git log -1 --format='%an <%ae>'`) with the session's attribution trailer, then push.
+   (copy it from `git log --author='Jeremy Shorter' -1 --format='%an <%ae>'`) with the session's attribution trailer, then push.
 5. Open the pull request with `gh api repos/jeremyshorter32-max/robotics-mena/pulls -f title=... -f head=... -f base=main
    -f body=...`. Put `Closes #<n>` in the body so approving it closes the request. Summarise what changed and list sources.
 6. On the issue: remove `in-progress`, add `awaiting-approval`, comment with the pull request link and a two-line summary.

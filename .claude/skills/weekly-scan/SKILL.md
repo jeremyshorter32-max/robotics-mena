@@ -34,7 +34,7 @@ API key), never merge anything. The owner approves in the admin portal (Approval
 
 ## 3. Check and open the pull request
 1. `PUBLIC_LAUNCH=true ./scripts/build-site.sh` must pass, and `npm test` must pass.
-2. Commit as the repository's usual author (copy it from `git log -1 --format='%an <%ae>'`) with the session's
+2. Commit as the repository's usual author (copy it from `git log --author='Jeremy Shorter' -1 --format='%an <%ae>'`) with the session's
    attribution trailer, then push the branch.
 3. Open the pull request with the REST API (GraphQL is not available):
    `gh api repos/jeremyshorter32-max/robotics-mena/pulls -f title="Weekly scan: <n> new entries (<date>)" -f head=scan/<date> -f base=main -f body="$(cat summary.md)"`

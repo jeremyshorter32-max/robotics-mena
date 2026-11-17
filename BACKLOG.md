@@ -222,6 +222,12 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
 
 ## Nice to have
 
+- [ ] **Smoke test before deploy** (17 Nov 2026): a one-character slip in `src/logic.js` (a comment that hid a declaration)
+  passed the build and tests and blanked every page for about 13 minutes. Add a check to `deploy.yml` that renders each
+  page in a headless browser and fails the deploy on a script error.
+- [ ] Image placeholders such as `{{ x.flag }}` are requested once before the page fills them in (harmless 404s in the
+  browser console, present since before 15 Nov); switch those `src` attributes to a data attribute.
+
 - [x] **"From X" kept current** (17 Nov 2026): the home strip is now "Latest from X" and shows only posts from the last
   14 days (older ones drop off by themselves and stay on company and country pages); the validator checks each post's date
   against its id and rejects posts added more than 14 days after posting; the weekly-brief skill has the rules (recent,
