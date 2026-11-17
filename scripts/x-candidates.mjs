@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Finds recent robotics posts by official accounts for the home page's "Latest from X".
-//   node scripts/x-candidates.mjs [--days 14] [--json]
+//   node scripts/x-candidates.mjs [--days 30] [--json] [--cache <dir>]
 // Reads each account in scripts/x-sources.json through X's public timeline embed (the feed websites embed; no login,
 // one request per account, read only), keeps posts from the last N days that are about robots, drones, autonomous
 // vehicles or physical AI (and, for suppliers, name a MENA place), then confirms each with X's oEmbed endpoint.
@@ -9,7 +9,8 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 
 const args = process.argv.slice(2);
-const days = Number(args[args.indexOf('--days') + 1]) || 14;
+const days = Number(args[args.indexOf('--days') + 1]) || 30;
+const cacheDir = args.includes('--cache') ? args[args.indexOf('--cache') + 1] : '';
 const asJson = args.includes('--json');
 const { accounts } = JSON.parse(fs.readFileSync(new URL('./x-sources.json', import.meta.url), 'utf8'));
 
@@ -29,7 +30,16 @@ function curl(url, withHeaders = false) {
 }
 
 // X allows about 30 timeline reads per 15 minutes. On a 429, wait for X's reset time (at most 16 minutes) and retry once.
+// With --cache, each account's feed is saved for 6 hours, so a run cut short by X's limit can resume without re-reading.
 async function timeline(handle) {
+  const cached = cacheDir && `${cacheDir}/${handle}.json`;
+  if (cached && fs.existsSync(cached) && Date.now() - fs.statSync(cached).mtimeMs < 6 * 3600e3) return JSON.parse(fs.readFileSync(cached, 'utf8'));
+  const t = await fetchTimeline(handle);
+  if (cached && t) { fs.mkdirSync(cacheDir, { recursive: true }); fs.writeFileSync(cached, JSON.stringify(t)); }
+  return t;
+}
+
+async function fetchTimeline(handle) {
   for (let attempt = 0; attempt < 2; attempt++) {
     const r = curl(`https://syndication.twitter.com/srv/timeline-profile/screen-name/${handle}`, true);
     if (r.status === 429 && attempt === 0) {

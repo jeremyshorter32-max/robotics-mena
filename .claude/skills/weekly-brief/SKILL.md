@@ -35,10 +35,10 @@ without the owner's explicit approval in this conversation.**
    `is_new: true`, and clear last week's `is_new`). Link new deployments to policy programmes where a source
    shows the programme drives them: `node scripts/link-programmes.mjs --new`, then `--apply <id>=<CC>:<n>`.
 5. **From X** (the home page's "Latest from X"): **5 to 8 posts every week** (required). Rules (owner, 17 Nov 2026):
-   - **Recent:** posted within the last 7 days, never more than 14 days before the brief. The post id encodes its
+   - **Recent:** posted within the last month (30 days) before the brief; the newer the better. The post id encodes its
      time: `node -e "console.log(new Date(Number((BigInt('<id>')>>22n)+1288834974657n)).toISOString())"`. The
-     validator rejects a `date` that doesn't match the id, and a post added more than 14 days after it was posted.
-     The home page also hides posts older than 14 days by itself, so stale posts never show as current.
+     validator rejects a `date` that doesn't match the id, and a post added more than 30 days after it was posted.
+     The home page also hides posts older than 30 days by itself, so stale posts never show as current.
    - **About robotics:** a robot, drone, autonomous vehicle or physical-AI deployment, deal, regulation, programme or
      event in a MENA country in `data/countries.json`. **Money counts too** (owner, 17 Nov 2026): robotics funds and
      ETFs, investments, listings and contracts by MENA investors, exchanges and sovereign funds (e.g. Lunate's humanoid
@@ -52,14 +52,15 @@ without the owner's explicit approval in this conversation.**
      No news outlets reposting, no influencers, no personal accounts of private individuals.
    - **How to find them:** run `node scripts/x-candidates.mjs` first. It reads each official account in
      `scripts/x-sources.json` through X's public embed feed (the feed websites embed; no login, read only, it respects
-     X's limit of about 30 reads per 15 minutes, so it can take 20 minutes), keeps robotics posts from the last 14 days
+     X's limit of about 30 reads per 15 minutes, so it can take up to an hour; run it with `--cache /tmp/xcache` so a
+     cut-short run resumes), keeps robotics posts from the last 30 days
      (suppliers' posts must also name a MENA place) and checks each with oEmbed. Then add posts the script can't see:
      this week's verified stories, searched with `site:x.com` plus the organisation and topic, and company newsrooms or
      news articles that link or embed the organisation's own post. Verify every post with X's oEmbed endpoint
      (`curl -sL "https://publish.twitter.com/oembed?url=<post url>&omit_script=1"`): author, wording and date must match.
      Never log in to X or get around a block; if the embed feed refuses, use search only that week. Add new official
      accounts to `scripts/x-sources.json` when you find them.
-   - **How many:** 5 to 8 live at any time. Posts approved earlier that are still within 14 days count. Pick one post per
+   - **How many:** 5 to 8 live at any time. Posts approved earlier that are still within 30 days count. Pick one post per
      story (English over Arabic when both exist) and spread across countries and accounts. If fewer than 5 qualify, add
      what does and say so in the pull request: never pad with older or off-topic posts.
    - Add them to `data/xposts.json` with `status: "suggested"`, `added: <today>`, a short excerpt (first sentence,
