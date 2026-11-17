@@ -1,41 +1,195 @@
 {
   "_note": "Official X accounts checked each week by scripts/x-candidates.mjs for the home page's 'Latest from X'. mena: true = a MENA government, regulator, operator or event (every robotics post counts); mena: false = a supplier whose posts must also name a MENA place. A handle that no longer exists is reported and skipped. Add accounts here; never add news outlets, influencers or private individuals.",
   "accounts": [
-    { "handle": "DXBMediaOffice", "name": "Dubai Media Office", "mena": true },
-    { "handle": "HamdanMohammed", "name": "Hamdan bin Mohammed", "mena": true },
-    { "handle": "sheikhmansoor", "name": "Mansoor bin Mohammed", "mena": true },
-    { "handle": "rta_dubai", "name": "RTA Dubai", "mena": true },
-    { "handle": "DubaiPoliceHQ", "name": "Dubai Police", "mena": true },
-    { "handle": "DubaiFuture", "name": "Dubai Future Foundation", "mena": true },
-    { "handle": "ADMediaOffice", "name": "Abu Dhabi Media Office", "mena": true },
-    { "handle": "AutonomousAD", "name": "Abu Dhabi Autonomous Systems Council", "mena": true },
-    { "handle": "ad_mobility", "name": "Abu Dhabi Mobility", "mena": true },
-    { "handle": "InvestAbuDhabi", "name": "Abu Dhabi Investment Office", "mena": true },
-    { "handle": "ADNOCGroup", "name": "ADNOC Group", "mena": true },
-    { "handle": "wamnews", "name": "WAM", "mena": true },
-    { "handle": "UAEmediaoffice", "name": "UAE Government Media Office", "mena": true },
-    { "handle": "spagov", "name": "Saudi Press Agency", "mena": true },
-    { "handle": "NEOM", "name": "NEOM", "mena": true },
-    { "handle": "aramco", "name": "Aramco", "mena": true },
-    { "handle": "SDAIA_SA", "name": "SDAIA", "mena": true },
-    { "handle": "Saudi_RRC", "name": "Saudi Federation for Robotics and Wireless Sports", "mena": true },
-    { "handle": "QNAEnglish", "name": "Qatar News Agency", "mena": true },
-    { "handle": "MCITQatar", "name": "Qatar Ministry of Communications and IT", "mena": true },
-    { "handle": "EgyptCabinet", "name": "Egypt Cabinet IDSC", "mena": true },
-    { "handle": "GITEX_GLOBAL", "name": "GITEX GLOBAL", "mena": true },
-    { "handle": "SADEX_SA1", "name": "SADEX", "mena": true },
-    { "handle": "PoliceSummit", "name": "World Police Summit", "mena": true },
-    { "handle": "ADIPECOfficial", "name": "ADIPEC", "mena": true },
-    { "handle": "Big5Exhibitions", "name": "Big 5 Exhibitions", "mena": true },
-    { "handle": "WeRide_ai", "name": "WeRide", "mena": false },
-    { "handle": "Baidu_Inc", "name": "Baidu", "mena": false },
-    { "handle": "Uber", "name": "Uber", "mena": false },
-    { "handle": "geckorobotics", "name": "Gecko Robotics", "mena": false },
-    { "handle": "glydways", "name": "Glydways", "mena": false },
-    { "handle": "AGIBOTofficial", "name": "AgiBot", "mena": false },
-    { "handle": "UnitreeRobotics", "name": "Unitree Robotics", "mena": false },
-    { "handle": "PonyAI_tech", "name": "Pony.ai", "mena": false },
-    { "handle": "NVIDIARobotics", "name": "NVIDIA Robotics", "mena": false },
-    { "handle": "AiroboticsUAV", "name": "Airobotics", "mena": false }
+    {
+      "handle": "DXBMediaOffice",
+      "name": "Dubai Media Office",
+      "mena": true
+    },
+    {
+      "handle": "HamdanMohammed",
+      "name": "Hamdan bin Mohammed",
+      "mena": true
+    },
+    {
+      "handle": "sheikhmansoor",
+      "name": "Mansoor bin Mohammed",
+      "mena": true
+    },
+    {
+      "handle": "rta_dubai",
+      "name": "RTA Dubai",
+      "mena": true
+    },
+    {
+      "handle": "DubaiPoliceHQ",
+      "name": "Dubai Police",
+      "mena": true
+    },
+    {
+      "handle": "DubaiFuture",
+      "name": "Dubai Future Foundation",
+      "mena": true
+    },
+    {
+      "handle": "ADMediaOffice",
+      "name": "Abu Dhabi Media Office",
+      "mena": true
+    },
+    {
+      "handle": "AutonomousAD",
+      "name": "Abu Dhabi Autonomous Systems Council",
+      "mena": true
+    },
+    {
+      "handle": "ad_mobility",
+      "name": "Abu Dhabi Mobility",
+      "mena": true
+    },
+    {
+      "handle": "InvestAbuDhabi",
+      "name": "Abu Dhabi Investment Office",
+      "mena": true
+    },
+    {
+      "handle": "ADNOCGroup",
+      "name": "ADNOC Group",
+      "mena": true
+    },
+    {
+      "handle": "wamnews",
+      "name": "WAM",
+      "mena": true
+    },
+    {
+      "handle": "UAEmediaoffice",
+      "name": "UAE Government Media Office",
+      "mena": true
+    },
+    {
+      "handle": "spagov",
+      "name": "Saudi Press Agency",
+      "mena": true
+    },
+    {
+      "handle": "NEOM",
+      "name": "NEOM",
+      "mena": true
+    },
+    {
+      "handle": "aramco",
+      "name": "Aramco",
+      "mena": true
+    },
+    {
+      "handle": "SDAIA_SA",
+      "name": "SDAIA",
+      "mena": true
+    },
+    {
+      "handle": "Saudi_RRC",
+      "name": "Saudi Federation for Robotics and Wireless Sports",
+      "mena": true
+    },
+    {
+      "handle": "QNAEnglish",
+      "name": "Qatar News Agency",
+      "mena": true
+    },
+    {
+      "handle": "MCITQatar",
+      "name": "Qatar Ministry of Communications and IT",
+      "mena": true
+    },
+    {
+      "handle": "EgyptCabinet",
+      "name": "Egypt Cabinet IDSC",
+      "mena": true
+    },
+    {
+      "handle": "GITEX_GLOBAL",
+      "name": "GITEX GLOBAL",
+      "mena": true
+    },
+    {
+      "handle": "SADEX_SA1",
+      "name": "SADEX",
+      "mena": true
+    },
+    {
+      "handle": "PoliceSummit",
+      "name": "World Police Summit",
+      "mena": true
+    },
+    {
+      "handle": "ADIPECOfficial",
+      "name": "ADIPEC",
+      "mena": true
+    },
+    {
+      "handle": "Big5Exhibitions",
+      "name": "Big 5 Exhibitions",
+      "mena": true
+    },
+    {
+      "handle": "ADX_AE",
+      "name": "Abu Dhabi Securities Exchange",
+      "mena": true
+    },
+    {
+      "handle": "LunateETFs",
+      "name": "Lunate ETFs",
+      "mena": true
+    },
+    {
+      "handle": "WeRide_ai",
+      "name": "WeRide",
+      "mena": false
+    },
+    {
+      "handle": "Baidu_Inc",
+      "name": "Baidu",
+      "mena": false
+    },
+    {
+      "handle": "Uber",
+      "name": "Uber",
+      "mena": false
+    },
+    {
+      "handle": "geckorobotics",
+      "name": "Gecko Robotics",
+      "mena": false
+    },
+    {
+      "handle": "glydways",
+      "name": "Glydways",
+      "mena": false
+    },
+    {
+      "handle": "AGIBOTofficial",
+      "name": "AgiBot",
+      "mena": false
+    },
+    {
+      "handle": "UnitreeRobotics",
+      "name": "Unitree Robotics",
+      "mena": false
+    },
+    {
+      "handle": "PonyAI_tech",
+      "name": "Pony.ai",
+      "mena": false
+    },
+    {
+      "handle": "NVIDIARobotics",
+      "name": "NVIDIA Robotics",
+      "mena": false
+    },
+    {
+      "handle": "AiroboticsUAV",
+      "name": "Airobotics",
+      "mena": false
+    }
   ]
 }

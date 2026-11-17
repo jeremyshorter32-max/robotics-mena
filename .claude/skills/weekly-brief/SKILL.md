@@ -40,7 +40,9 @@ without the owner's explicit approval in this conversation.**
      validator rejects a `date` that doesn't match the id, and a post added more than 14 days after it was posted.
      The home page also hides posts older than 14 days by itself, so stale posts never show as current.
    - **About robotics:** a robot, drone, autonomous vehicle or physical-AI deployment, deal, regulation, programme or
-     event in a MENA country in `data/countries.json`. Not general AI, cloud or company news. Set `type` (a robot type)
+     event in a MENA country in `data/countries.json`. **Money counts too** (owner, 17 Nov 2026): robotics funds and
+     ETFs, investments, listings and contracts by MENA investors, exchanges and sovereign funds (e.g. Lunate's humanoid
+     robots ETF on ADX). Not general AI, cloud or company news. Set `type` (a robot type)
      and `company` (when it is in the database).
    - **Official accounts only:** governments and media offices (e.g. @DXBMediaOffice, @HamdanMohammed, the Abu Dhabi
      Media Office, WAM, SPA, QNA; confirm any other handle with oEmbed before using it), regulators and operators (@rta_dubai, Abu Dhabi's autonomous systems council, @ADNOCGroup, NEOM,
