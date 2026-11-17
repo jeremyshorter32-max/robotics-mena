@@ -55,10 +55,13 @@ function cardHtml(c) {
   const T = c.template;
   const mosaic = T === 'cta' || (T === 'cover' && !c.image && c.images) ? (c.images || MOSAIC) : null;
   const photo = c.image && !mosaic ? c.image : null;
-  const layout = mosaic ? 'mosaic' : photo ? (T === 'cover' ? 'duotone' : land ? 'split' : 'band') : 'plain';
-  const dark = c.theme ? c.theme === 'dark' : ['cover', 'cta'].includes(T) || layout === 'duotone' || layout === 'split';
+  // Cover styles (c.cover): default indigo duotone; 'photo' keeps the photo in full colour; 'paper' puts the photo over a light panel
+  // (or, with no photo, a light typographic cover); 'colour' is the duotone on the accent's ground (set through c.ground).
+  const paperCover = T === 'cover' && c.cover === 'paper' && !land;
+  const layout = mosaic ? 'mosaic' : photo ? (T === 'cover' && !paperCover ? 'duotone' : land ? 'split' : 'band') : 'plain';
+  const dark = c.theme ? c.theme === 'dark' : paperCover ? false : ['cover', 'cta'].includes(T) || layout === 'duotone' || layout === 'split';
   const padX = (story ? 92 : 76) * u;
-  const bandH = story ? 820 : c.size === 'square' ? 520 : 660;   // story: 820 × 1.14 ≈ 935px   // never taller than the press images can fill without heavy upscaling
+  const bandH = paperCover ? (story ? 760 : c.size === 'square' ? 440 : 560) : story ? 820 : c.size === 'square' ? 520 : 660;   // story: 820 × 1.14 ≈ 935px   // never taller than the press images can fill without heavy upscaling
 
   const kicker = c.kicker ? `<div class="kicker">${esc(c.kicker)}</div>` : '';
   let inner = '';
@@ -142,6 +145,7 @@ ${!dark && layout === 'plain' ? `.plainwrap:before{content:'';position:absolute;
 ${dark && layout === 'plain' ? `.plainwrap:after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 10%,rgba(143,141,201,.32),transparent 45%);pointer-events:none}` : ''}
 ${story && T === 'cover' ? `h1.big{font-size:${170 * u}px;line-height:.95}` : ''}
 ${layout === 'split' ? `h1{font-size:${58 * u}px}h1.big{font-size:${70 * u}px}.body{font-size:${28 * u}px}.left .main{gap:${20 * u}px}` : ''}
+${layout === 'duotone' && c.cover === 'photo' ? `.duo{filter:none}.duo-tint{background:linear-gradient(180deg,rgba(17,18,22,.42) 0%,rgba(17,18,22,0) 24%,rgba(17,18,22,0) 38%,rgba(17,18,22,.80) 62%,rgba(17,18,22,.96) 100%)!important}.duo-tint:before{display:none}` : ''}
 ${accentCss(c, dark, u)}
 </style></head><body><div class="card">${body}</div>
 <script>
@@ -186,6 +190,21 @@ function makeReel(pngs, out, secs = 3) {
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', ...inputs, '-filter_complex', filter, '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-movflags', '+faststart', out]);
 }
 
+// Design defaults (social/design.json): each content pillar has an accent and a cover style, and a platform can have its own dark
+// ground. A card's own accent, ground or cover always wins; "accent": "none" keeps a card indigo.
+const DESIGN = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'social/design.json'), 'utf8')); } catch { return { pillars: {}, platforms: {} }; } })();
+function designFor(post, card) {
+  const pl = (DESIGN.pillars || {})[post.pillar] || {}, pf = (DESIGN.platforms || {})[post.platform] || {};
+  const d = {};
+  if (pl.accent) d.accent = pl.accent;
+  if (pl.cover && card.template === 'cover') d.cover = pl.cover;
+  if (pf.ground) d.ground = pf.ground; else if (pl.cover === 'colour' && pl.accent) d.ground = pl.accent;
+  const out = { ...d, ...card };
+  if (out.accent === 'none') delete out.accent;
+  if (out.ground === 'none') delete out.ground;
+  return out;
+}
+
 async function renderWeek(week, only) {
   const q = JSON.parse(fs.readFileSync(path.join(ROOT, 'social', /^\d{4}-w\d{2}$/.test(week) ? 'queue' : 'campaigns', week + '.json'), 'utf8'));
   const dir = path.join(ROOT, 'social/cards', week);
@@ -196,7 +215,7 @@ async function renderWeek(week, only) {
   for (const p of q.posts.filter(p => (p.cards || []).length && (!only.length || only.includes(p.id)))) {
     const files = [];
     for (const [i, c] of p.cards.entries()) {
-      const spec = { lang: p.lang === 'ar' ? 'ar' : 'en', ...c, page: c.page ?? (p.cards.length > 1 ? `${String(i + 1).padStart(2, '0')} / ${String(p.cards.length).padStart(2, '0')}` : '') };
+      const spec = { lang: p.lang === 'ar' ? 'ar' : 'en', ...designFor(p, c), page: c.page ?? (p.cards.length > 1 ? `${String(i + 1).padStart(2, '0')} / ${String(p.cards.length).padStart(2, '0')}` : '') };
       const out = path.join(dir, `${p.id}-${i + 1}.jpg`);
       await shoot(page, cardHtml(spec), spec.size, out);
       files.push(out); n++;
@@ -259,4 +278,4 @@ const [cmd, ...rest] = process.argv.slice(2);
 if (require.main === module) (cmd === 'week' && rest[0] ? renderWeek(rest[0], rest.slice(1)) : cmd === 'banners' ? renderBanners()
   : Promise.reject(new Error('usage: social-cards.cjs week <YYYY-wNN> [postId…] | banners'))).catch(e => { console.error(e.message); process.exit(1); });
 
-module.exports = { cardHtml, ACCENTS, GROUNDS, SIZES };
+module.exports = { cardHtml, designFor, ACCENTS, GROUNDS, SIZES };
