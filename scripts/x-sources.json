@@ -52,6 +52,21 @@
       "mena": true
     },
     {
+      "handle": "DMunicipality",
+      "name": "Dubai Municipality",
+      "mena": true
+    },
+    {
+      "handle": "keeta_drone",
+      "name": "Keeta Drone",
+      "mena": true
+    },
+    {
+      "handle": "A2RLeague",
+      "name": "Abu Dhabi Autonomous Racing League",
+      "mena": true
+    },
+    {
       "handle": "ADNOCGroup",
       "name": "ADNOC Group",
       "mena": true
