@@ -37,7 +37,9 @@ jobs:
         env:
           PUBLIC_LAUNCH: 'true'
       - name: Smoke test (every page renders in headless Chrome without script errors; stops the deploy if not)
-        run: node scripts/smoke-test.mjs _site
+        run: |
+          echo "Chrome: $(command -v google-chrome || command -v chromium || echo none)"
+          node scripts/smoke-test.mjs _site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

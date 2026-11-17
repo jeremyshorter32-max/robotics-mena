@@ -50,12 +50,15 @@ async function main() {
   const pages = pagesToCheck(site);
   const server = spawn('python3', [path.join(path.dirname(new URL(import.meta.url).pathname), 'serve-site.py'), site, String(PORT)], { stdio: 'ignore' });
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'smoke-'));
-  const chrome = spawn(findChrome(), ['--headless=new', '--no-sandbox', '--disable-gpu', '--no-first-run', `--remote-debugging-port=${DEBUG_PORT}`, `--user-data-dir=${profile}`, 'about:blank'], { stdio: 'ignore' });
+  const bin = findChrome(); let chromeLog = '';
+  const chrome = spawn(bin, ['--headless=new', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage', '--no-first-run', '--no-default-browser-check',
+    '--remote-debugging-address=127.0.0.1', `--remote-debugging-port=${DEBUG_PORT}`, `--user-data-dir=${profile}`, 'about:blank'], { stdio: ['ignore', 'ignore', 'pipe'] });
+  chrome.stderr.on('data', d => { chromeLog = (chromeLog + d).slice(-2000); });
   const failures = [];
   try {
     let ver;
-    for (let i = 0; i < 50 && !ver; i++) { await sleep(200); ver = await fetch(`http://127.0.0.1:${DEBUG_PORT}/json/version`).then(r => r.json()).catch(() => null); }
-    if (!ver) throw new Error('Chrome did not start');
+    for (let i = 0; i < 150 && !ver; i++) { await sleep(200); ver = await fetch(`http://127.0.0.1:${DEBUG_PORT}/json/version`).then(r => r.json()).catch(() => null); }
+    if (!ver) throw new Error(`Chrome (${bin}) did not start within 30 seconds. Its output:\n${chromeLog}`);
     for (let i = 0; i < 25; i++) { if (await fetch(`http://127.0.0.1:${PORT}/`).then(r => r.ok).catch(() => false)) break; await sleep(200); }
     const cdp = new CDP(ver.webSocketDebuggerUrl); await cdp.open();
     for (const page of pages) {
