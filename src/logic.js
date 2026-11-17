@@ -951,13 +951,15 @@ class Component extends DCLogic {
       })(),
       // Hand-picked X posts: a plain card first; X's own code loads only when the reader asks for the post.
       ...(() => {
-        const XP = (window.RM_DATA.xposts || []).slice(0, 6), CO = window.RM_DATA.companies;
+        // Only recent posts on the home page: anything older than 14 days drops off by itself, even without a rebuild.
+        const xSince = new Date(Date.now() - 14 * 864e5).toISOString().slice(0, 10);
+        const XP = (window.RM_DATA.xposts || []).filter(x => x.date >= xSince).slice(0, 6), CO = window.RM_DATA.companies;
         const open = XP.find(x => x.id === S.xOpen);
         return {
           xOpen: !!open, xOpenUrl: open ? open.url : '', xClose: () => this.setState({ xOpen: null }), xKeep: e => e.stopPropagation(),
           hasX: this.PAGE === 'home' && XP.length > 0,
-          xT: ar ? { title: 'من منصة X هذا الأسبوع', sub: 'منشورات مختارة من حسابات رسمية، يختارها محرّرونا. لا يُحمَّل أي شيء من X إلا عندما تختار «اعرض المنشور».', show: 'اعرض المنشور', view: 'اعرضه على X', dlg: 'منشور من X', loading: 'جارٍ تحميل المنشور من X…', priv: 'عند عرض منشور، يُحمّل متصفحك محتوى من X، وقد تضع X ملفات تعريف ارتباط وفق سياستها.' }
-            : { title: 'From X this week', sub: 'Posts from official accounts, picked by our editors. Nothing loads from X until you choose “Show post”.', show: 'Show post', view: 'View on X', dlg: 'Post from X', loading: 'Loading the post from X…', priv: 'Showing a post loads it from X, which may set cookies under its own policy.' },
+          xT: ar ? { title: 'أحدث المنشورات من منصة X', sub: 'منشورات من آخر أسبوعين من حسابات رسمية، يختارها محرّرونا. لا يُحمَّل أي شيء من X إلا عندما تختار «اعرض المنشور».', show: 'اعرض المنشور', view: 'اعرضه على X', dlg: 'منشور من X', loading: 'جارٍ تحميل المنشور من X…', priv: 'عند عرض منشور، يُحمّل متصفحك محتوى من X، وقد تضع X ملفات تعريف ارتباط وفق سياستها.' }
+            : { title: 'Latest from X', sub: 'Posts from the last two weeks by official accounts, picked by our editors. Nothing loads from X until you choose “Show post”.', show: 'Show post', view: 'View on X', dlg: 'Post from X', loading: 'Loading the post from X…', priv: 'Showing a post loads it from X, which may set cookies under its own policy.' },
           xposts: XP.map(x => { const co = x.company && CO.find(c => c.id === x.company); return {
             id: x.id, author: x.author, handle: x.handle, date: fdate(x.date), excerpt: x.excerpt, note: ar ? (x.note_ar || x.note) : x.note, url: x.url,
             flag: this.flagUrl(x.country), cname: this.CC[x.country] ? this.CC[x.country][L] : x.country, hasType: !!(x.type && this.TYPES[x.type]), typeLabel: x.type && this.TYPES[x.type] ? this.TYPES[x.type][L] : '',

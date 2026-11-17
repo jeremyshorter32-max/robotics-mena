@@ -171,6 +171,15 @@ xposts.forEach((x, i) => {
   if (x.type && !(x.type in ROBOT_TYPES)) errors.push(`${w}: unknown robot type ${x.type}`);
   if (x.company && !coIds.has(x.company)) errors.push(`${w}: unknown company ${x.company}`);
   if ((x.excerpt || '').length > 240) errors.push(`${w}: excerpt longer than 240 characters (quote briefly, the embed shows the rest)`);
+  // The post id encodes when it was posted (X "snowflake" ids): the date must match it, so an old post can't pass as new.
+  if (/^\d{15,25}$/.test(x.id || '') && x.date) {
+    const posted = new Date(Number((BigInt(x.id) >> 22n) + 1288834974657n)).toISOString().slice(0, 10);
+    if (Math.abs(Date.parse(posted) - Date.parse(x.date)) > 864e5) errors.push(`${w}: date ${x.date} does not match the post id, which says it was posted on ${posted}`);
+  }
+  // Only recent posts may be added: a post added from 17 Nov 2026 on must be at most 14 days old on the day it was added.
+  if (x.added && x.added >= '2026-11-17' && x.date && Date.parse(x.added) - Date.parse(x.date) > 14 * 864e5)
+    errors.push(`${w}: posted ${x.date} but added ${x.added}; only posts from the last 14 days can be added (see the weekly-brief skill)`);
+  if (x.status !== 'hidden' && !x.type && !x.company) console.warn(`Warning: ${w}: give it a robot type or company so it is clearly about robotics`);
 });
 uniq(xposts, 'id', 'xposts.json');
 // Arabic brand name: the logo's «روبوتات الشرق الأوسط وشمال أفريقيا», never the old «روبوتكس مينا».

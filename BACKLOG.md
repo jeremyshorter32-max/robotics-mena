@@ -222,6 +222,12 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
 
 ## Nice to have
 
+- [x] **"From X" kept current** (17 Nov 2026): the home strip is now "Latest from X" and shows only posts from the last
+  14 days (older ones drop off by themselves and stay on company and country pages); the validator checks each post's date
+  against its id and rejects posts added more than 14 days after posting; the weekly-brief skill has the rules (recent,
+  about robotics, official accounts, how to find them). The three posts from Jul 2025 to Feb 2026 no longer show on the home page.
+
+
 - [ ] Hide the inbox address in form URLs by switching FormSubmit to its random alias (offered in the
   FormSubmit dashboard after activation), so scrapers can't harvest contact@roboticsmena.com from the code.
 - [x] Home-page map runs an ambient looping tour while in view; stops at first interaction; off with reduced motion (13 Nov 2026).

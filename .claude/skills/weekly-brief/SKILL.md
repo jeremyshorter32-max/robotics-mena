@@ -34,13 +34,29 @@ without the owner's explicit approval in this conversation.**
 4. Add any new deployments, companies or events to `data/*.json` with `added: <today>` (deployments also
    `is_new: true`, and clear last week's `is_new`). Link new deployments to policy programmes where a source
    shows the programme drives them: `node scripts/link-programmes.mjs --new`, then `--apply <id>=<CC>:<n>`.
-5. **From X**: suggest 2–4 posts from official accounts (governments, regulators, operators, the companies
-   themselves) about this week's news. Verify each with X's oEmbed endpoint
-   (`curl -sL "https://publish.twitter.com/oembed?url=<post url>&omit_script=1"`): author, wording and date
-   must match. Never scrape x.com. Add them to `data/xposts.json` with `status: "suggested"`, a short excerpt
-   (first sentence, under 240 characters), and a one-line `note`/`note_ar`. On approval they become
-   `"approved"`; set older ones to `"hidden"` so the strip shows the latest 3–6. Never pick posts with
-   content the site excludes (Israeli companies or flag) or personal accounts of private individuals.
+5. **From X** (the home page's "Latest from X"): suggest 2–4 posts. Rules (owner, 17 Nov 2026):
+   - **Recent:** posted within the last 7 days, never more than 14 days before the brief. The post id encodes its
+     time: `node -e "console.log(new Date(Number((BigInt('<id>')>>22n)+1288834974657n)).toISOString())"`. The
+     validator rejects a `date` that doesn't match the id, and a post added more than 14 days after it was posted.
+     The home page also hides posts older than 14 days by itself, so stale posts never show as current.
+   - **About robotics:** a robot, drone, autonomous vehicle or physical-AI deployment, deal, regulation, programme or
+     event in a MENA country in `data/countries.json`. Not general AI, cloud or company news. Set `type` (a robot type)
+     and `company` (when it is in the database).
+   - **Official accounts only:** governments and media offices (e.g. @DXBMediaOffice, @HamdanMohammed, the Abu Dhabi
+     Media Office, WAM, SPA, QNA; confirm any other handle with oEmbed before using it), regulators and operators (@rta_dubai, Abu Dhabi's autonomous systems council, @ADNOCGroup, NEOM,
+     Aramco, airports, police), the companies in the database (start with the biggest suppliers: WeRide, Baidu Apollo
+     Go, Pony.ai, Uber, Gecko Robotics, Unitree, AgiBot, NAVER LABS, Glydways, Pudu, KUKA, ABB, FANUC, Lootah,
+     QSS/Humanoid) and MENA robotics events (GITEX GLOBAL and its robotics strand, UMEX, LEAP, ADIPEC, Big 5).
+     No news outlets reposting, no influencers, no personal accounts of private individuals.
+   - **How to find them** (never scrape x.com or log in): start from this week's verified stories and look for the
+     organisation's own post (web search with `site:x.com` plus the organisation and topic, company newsrooms and
+     press releases that link or embed their X post, news articles that embed it). Then verify each with X's oEmbed
+     endpoint (`curl -sL "https://publish.twitter.com/oembed?url=<post url>&omit_script=1"`): author, wording and date
+     must match. If nothing recent and relevant turns up, suggest none: an empty week is better than an old post.
+   - Add them to `data/xposts.json` with `status: "suggested"`, `added: <today>`, a short excerpt (first sentence,
+     under 240 characters) and a one-line `note`/`note_ar`. On approval they become `"approved"`. Older posts can stay
+     approved (they still show on company and country pages); set a post to `"hidden"` only if it should not show anywhere.
+     Never pick posts with content the site excludes (Israeli companies or flag).
 6. Optional: `data/newsletter.json` with `subject`, `preview_text` and a one-paragraph `intro`
    (the editor's note). Leave it out if there is nothing to add; the defaults are fine.
 7. **Archive the brief** (for the resources page): `node scripts/archive-brief.mjs --published <the Monday it goes out, YYYY-MM-DD>`.
