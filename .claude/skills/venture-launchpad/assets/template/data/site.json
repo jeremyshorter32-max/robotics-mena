@@ -1,0 +1,15 @@
+{
+  "name": "{{PROJECT_NAME}}",
+  "tagline": "{{TAGLINE}}",
+  "url": "https://{{DOMAIN}}",
+  "languages": {{LANGUAGES_JSON}},
+  "logo": "{{LOGO_PATH}}",
+  "contact_email": "{{CONTACT_EMAIL}}",
+  "signup_url": "",
+  "form_url": "",
+  "sheet_url": "",
+  "goatcounter": "",
+  "indexnow_key": "",
+  "social": [],
+  "require_on_every_page": []
+}

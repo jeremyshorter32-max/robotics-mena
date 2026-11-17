@@ -1,0 +1,49 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'monitoring/**'   # monitor history; not part of the site
+      - 'social/**'       # social desk (not published on the site)
+      - 'admin/**'        # admin portal (deployed to Cloudflare separately)
+      - 'docs/**'
+      - 'BACKLOG.md'
+      - '.claude/**'
+      - 'test/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # Private preview: every page is encrypted behind SITE_PASSWORD (a repository secret).
+      # At launch, replace the env line with   PUBLIC_LAUNCH: 'true'   and delete the secret.
+      - name: Build
+        run: ./scripts/build-site.sh
+        env:
+          SITE_PASSWORD: ${{ secrets.SITE_PASSWORD }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Tell search engines about the pages (IndexNow)
+        run: sleep 30 && node scripts/indexnow.mjs
+        continue-on-error: true

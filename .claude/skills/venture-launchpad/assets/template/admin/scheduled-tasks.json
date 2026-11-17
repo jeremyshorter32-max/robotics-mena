@@ -1,0 +1,14 @@
+{
+  "_note": "Claude scheduled tasks shown on the admin portal's Schedule tab. The portal reads this file from main at runtime, so edits show up without redeploying. Each run records itself in the 'Scheduled task log' issue (label agent-runs) with: node scripts/run-log.mjs <task id> <started|succeeded|failed|nothing-to-do> [--result URL] [--summary \"...\"]. Fill in each \"trigger\" with the id returned when the scheduled task is created. tracking_since: runs expected before this time are not flagged as missed.",
+  "timezone": "{{TIMEZONE}}",
+  "tracking_since": "{{TODAY}}T00:00:00Z",
+  "missed_after_minutes": 30,
+  "tasks": [
+    { "id": "weekly-scan", "name": "Weekly database scan", "trigger": "", "cron": "CRON_TZ={{TIMEZONE}} 17 11 * * 6", "when": "Saturdays 11:17 {{TZ_LABEL}}",
+      "produces": "New verified records", "results": "Pull request scan/<date> (Approvals tab)" },
+    { "id": "weekly-brief", "name": "Weekly brief draft", "trigger": "", "cron": "CRON_TZ={{TIMEZONE}} 43 13 * * 0", "when": "Sundays 13:43 {{TZ_LABEL}}",
+      "produces": "This week's brief and newsletter", "results": "Pull request brief/<year>-w<NN> (Approvals tab)" },
+    { "id": "portal-requests", "name": "Portal requests", "trigger": "", "cron": "CRON_TZ={{TIMEZONE}} 23 21 * * *", "when": "Daily 21:23 {{TZ_LABEL}}",
+      "produces": "Work on requests sent from the Requests tab", "results": "One pull request per request (Approvals tab)" }
+  ]
+}

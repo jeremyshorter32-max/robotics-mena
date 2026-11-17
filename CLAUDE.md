@@ -10,5 +10,8 @@
   assembled by `scripts/assemble.cjs`; shared pop-up in `partials/brief-modal.html`.
 - Israeli companies and the Israeli flag must never appear on the site (enforced by
   `EXCLUDED_COUNTRIES` in the validator).
+- **Launchpad:** `.claude/skills/venture-launchpad/` is the playbook for building a new project the way this one was built
+  (templates, owner checklist with Claude in Chrome prompts, lessons). When something here changes how a new project should
+  be set up, update it there too. Its `assets/reference/` files are snapshots, not the live code.
 - **Social:** plan, voice and set-up in `social/` (start with `social/README.md`); agents are the `social-*` skills. Posts are drafted into
   `social/queue/<week>.json`, checked by `node scripts/social.mjs validate`, and approved in the admin portal. The agents never post, reply or follow.

@@ -1,0 +1,16 @@
+# {{PROJECT_NAME}}: notes for Claude
+
+- **Backlog:** open development items live in `BACKLOG.md`. Keep it current: tick items off when they are done
+  and add new ones when work is deferred ("add this to the backlog").
+- **Private preview:** the site is behind a password until launch. Before the password comes off, list the open
+  `BACKLOG.md` items, grouped as they are there, and ask the owner which ones to finish first.
+- Build: `npm run build` (local, no password), serve with `python3 scripts/serve-site.py _site 8767`.
+  Pages are `pages/*.html` + `src/logic.js` + `data/*.json`, assembled by `scripts/assemble.cjs`.
+  `npm run validate` checks `data/` against `data/schema.json`; `npm test` runs the tests.
+- **Editorial rules** (enforced by the validator where possible):
+  - Every record needs a source the agent opened and a date. Never invent or round up.
+  - Images: only ones we have the right to use (the organisation's own press images, or the owner's), each credited.
+  - <!-- add the project's own inclusions and exclusions here -->
+- **Agents:** the scheduled tasks follow the skills in `.claude/skills/`. They open pull requests; the owner approves
+  in the admin portal (`admin/README.md`). Agents never merge, post, send or publish on their own.
+- **Launchpad:** this project was set up with the `venture-launchpad` skill; `LAUNCHPAD.md` records which phases are done.

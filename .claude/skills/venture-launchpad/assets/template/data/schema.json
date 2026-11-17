@@ -1,0 +1,15 @@
+{
+  "_note": "Starter schema: replace 'items' with the project's own collections (see references/architecture.md in the launchpad skill). Checked by scripts/validate-data.mjs on every build.",
+  "collections": {
+    "items": {
+      "key": "id",
+      "required": ["id", "name", "summary", "added"],
+      "enums": { "category": ["example"] },
+      "dates": ["added"],
+      "urls": ["website", "source_url"],
+      "files": ["logo"],
+      "source": ["source_url"]
+    }
+  },
+  "banned_terms": []
+}

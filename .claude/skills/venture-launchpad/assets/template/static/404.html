@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — {{PROJECT_NAME}}</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{FONT_MONO_URL}}:wght@500&family={{FONT_SANS_URL}}:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap">
+<style>
+:root{--bg:{{BRAND_PAPER}};--fg:{{BRAND_INK}};--muted:#5E6070;--line:#DEDBD3;--accent:{{BRAND_PRIMARY}};--on-accent:{{BRAND_PAPER}};--mark:{{BRAND_PRIMARY}};color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:{{BRAND_INK}};--fg:{{BRAND_PAPER}};--muted:#A3A5B3;--line:#2A2C35;--accent:#A9A7DE;--on-accent:{{BRAND_INK}};--mark:{{BRAND_PAPER}};color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.55 '{{FONT_SANS}}','IBM Plex Sans Arabic',system-ui,sans-serif;display:flex;flex-direction:column}
+header,main{width:100%;max-width:1120px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+header{padding-block:20px;border-bottom:1px solid var(--line);max-width:none}
+header div{max-width:1120px;margin:0 auto}
+header a{display:inline-block}
+main{flex:1;display:flex;flex-direction:column;justify-content:center;gap:20px;padding-block:64px}
+.code{font:500 13px/1 '{{FONT_MONO}}',ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font-weight:600;font-size:clamp(32px,6vw,56px);line-height:1.05;letter-spacing:-.03em;max-width:18ch;text-wrap:balance}
+p{margin:0;max-width:60ch;color:var(--muted)}
+[lang=ar]{font-family:'IBM Plex Sans Arabic','{{FONT_SANS}}',sans-serif}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.links a{display:inline-flex;align-items:center;height:44px;padding:0 18px;border:1px solid var(--line);border-radius:3px;color:var(--fg);text-decoration:none;font-weight:600;font-size:15px}
+.links a:first-child{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.links a:hover{border-color:var(--fg)}
+.links a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ar{border-top:1px solid var(--line);padding-top:20px;margin-top:12px;display:flex;flex-direction:column;gap:8px}
+</style>
+</head>
+<body>
+<header><div><a href="/" aria-label="{{PROJECT_NAME}} home"><img src="{{LOGO_PATH}}" alt="{{PROJECT_NAME}}" height="36"></a></div></header>
+<main>
+  <span class="code">404 · Page not found</span>
+  <h1>This page doesn’t exist.</h1>
+  <p>The link may be old or mistyped.</p>
+  <div class="links">
+    <a href="/">Home</a>
+  </div>
+  <!-- Add the site's main sections as links here, and a second-language block if the site is bilingual. -->
+</main>
+</body>
+</html>

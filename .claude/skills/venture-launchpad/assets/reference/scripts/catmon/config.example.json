@@ -1,0 +1,99 @@
+{
+  "domains": ["roboticsmena.com"],
+  "userAgent": "RoboticsMENA-CategoryMonitor/1.0 (+https://roboticsmena.com/editorial; contact@roboticsmena.com)",
+  "requestTimeoutMs": 30000,
+  "maxRetries": 2,
+  "blockedAlertAfter": 3,
+  "notifications": [
+    { "type": "console" },
+    { "type": "email", "to": "contact@roboticsmena.com", "endpointEnv": "CATMON_FORMSUBMIT_ENDPOINT" },
+    { "type": "github-issue", "tokenEnv": "GITHUB_TOKEN", "repoEnv": "GITHUB_REPOSITORY", "label": "categorization" },
+    { "type": "webhook", "urlEnv": "CATMON_WEBHOOK_URL" }
+  ],
+  "vendors": [
+    {
+      "id": "fortinet",
+      "name": "Fortinet (FortiGuard)",
+      "enabled": true,
+      "module": "fortinet",
+      "strategy": "http",
+      "lookupUrl": "https://www.fortiguard.com/webfilter?q={domain}&version=9",
+      "manualCheckUrl": "https://www.fortiguard.com/webfilter?q={domain}",
+      "targetCategory": "Information Technology",
+      "cadenceHours": 12,
+      "afterTargetCadenceHours": 168,
+      "requiresLogin": false,
+      "notes": "robots.txt currently disallows /*?* (all query URLs), so the agent records 'needs manual check' instead of fetching."
+    },
+    {
+      "id": "symantec",
+      "name": "Symantec / Broadcom (WebPulse Site Review)",
+      "enabled": true,
+      "module": "symantec",
+      "strategy": "browser",
+      "lookupUrl": "https://sitereview.bluecoat.com/#/lookup-result/{domain}",
+      "manualCheckUrl": "https://sitereview.bluecoat.com/#/lookup-result/{domain}",
+      "targetCategory": "Technology/Internet",
+      "cadenceHours": 24,
+      "afterTargetCadenceHours": 168,
+      "requiresLogin": false,
+      "notes": "Single-page app behind a human-verification interstitial; needs Playwright and usually ends as 'needs manual check'."
+    },
+    {
+      "id": "mcafee",
+      "name": "McAfee / Trellix (TrustedSource)",
+      "enabled": true,
+      "module": "mcafee",
+      "strategy": "http",
+      "lookupUrl": "https://sitelookup.mcafee.com/en/feedback/url?action=checksingle&url={domain}",
+      "manualCheckUrl": "https://sitelookup.mcafee.com/",
+      "targetCategory": "Technical Information",
+      "cadenceHours": 24,
+      "afterTargetCadenceHours": 168,
+      "requiresLogin": false,
+      "notes": "The public lookup is normally a form; v1 only tries a GET and otherwise records 'needs manual check'."
+    },
+    {
+      "id": "paloalto",
+      "name": "Palo Alto Networks (URL Filtering)",
+      "enabled": false,
+      "module": null,
+      "strategy": "http",
+      "lookupUrl": "https://urlfiltering.paloaltonetworks.com/",
+      "manualCheckUrl": "https://urlfiltering.paloaltonetworks.com/",
+      "targetCategory": "Computer and Internet Info",
+      "cadenceHours": 24,
+      "afterTargetCadenceHours": 168,
+      "requiresLogin": true,
+      "notes": "Login-gated; out of scope for v1."
+    },
+    {
+      "id": "talos",
+      "name": "Cisco Talos",
+      "enabled": false,
+      "module": null,
+      "strategy": "http",
+      "lookupUrl": "https://talosintelligence.com/reputation_center/lookup?search={domain}",
+      "manualCheckUrl": "https://talosintelligence.com/reputation_center/lookup?search={domain}",
+      "targetCategory": "Science and Technology",
+      "cadenceHours": 24,
+      "afterTargetCadenceHours": 168,
+      "requiresLogin": true,
+      "notes": "Login-gated; out of scope for v1."
+    },
+    {
+      "id": "checkpoint",
+      "name": "Check Point",
+      "enabled": false,
+      "module": null,
+      "strategy": "http",
+      "lookupUrl": "https://usercenter.checkpoint.com/ucapps/urlcat/",
+      "manualCheckUrl": "https://usercenter.checkpoint.com/ucapps/urlcat/",
+      "targetCategory": "Computers / Internet",
+      "cadenceHours": 24,
+      "afterTargetCadenceHours": 168,
+      "requiresLogin": true,
+      "notes": "Login-gated; out of scope for v1."
+    }
+  ]
+}

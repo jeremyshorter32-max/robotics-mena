@@ -1,0 +1,14 @@
+{
+  "name": "{{SLUG}}",
+  "private": true,
+  "type": "module",
+  "description": "{{PROJECT_NAME}} website, data and agents",
+  "scripts": {
+    "build": "DEV=1 ./scripts/build-site.sh",
+    "validate": "node scripts/validate-data.mjs",
+    "test": "node --test test/*/*.test.mjs admin/test/*.test.mjs",
+    "preview": "DEV=1 ./scripts/build-site.sh && python3 scripts/serve-site.py _site 8767",
+    "admin:demo": "node admin/dev-server.mjs --demo"
+  },
+  "engines": { "node": ">=20" }
+}

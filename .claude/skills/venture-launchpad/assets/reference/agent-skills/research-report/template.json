@@ -1,0 +1,63 @@
+{
+ "id": "short-kebab-id",
+ "date": "YYYY-MM-DD",
+ "read_min": 8,
+ "kicker": {"en": "Sector · Company · Event", "ar": "القطاع · الشركة · الحدث"},
+ "title": {"en": "Headline that states the argument", "ar": "عنوان يطرح الحجة"},
+ "dek": {"en": "One or two sentences: what happened and what we think.", "ar": "جملة أو جملتان: ما الذي حدث وما رأينا."},
+ "by": {"en": "Robotics MENA analysis", "ar": "تحليل روبوتكس مينا"},
+ "hero": {"src": "/media/spotlight/hero-file.jpg", "alt": {"en": "", "ar": ""}, "cap": {"en": "", "ar": ""}, "credit": {"en": "Photo: Name / Outlet", "ar": "تصوير: الاسم / الوسيلة"}},
+ "pdf": {"en": "/media/reports/short-kebab-id-en.pdf", "ar": "/media/reports/short-kebab-id-ar.pdf"},
+ "sources": [
+  {"name": "Outlet", "title": "Exact headline", "date": "YYYY-MM-DD", "url": "https://..."}
+ ],
+ "related": [
+  {"en": "Company name", "ar": "اسم الشركة", "href": "/database?tab=companies&id=company-id"}
+ ],
+ "report": {
+  "label": {"en": "Research report", "ar": "تقرير بحثي"},
+  "gate_after": 1,
+  "glance": [
+   {"n": 70, "en": "What the number counts, and who says so", "ar": "ما يعدّه الرقم ومن يقوله"},
+   {"n": 110, "pre": {"en": "AED", "ar": ""}, "suf": {"en": "m", "ar": " مليون درهم"}, "en": "", "ar": ""}
+  ],
+  "findings": [
+   {"title": {"en": "Finding headline", "ar": ""}, "en": "One-sentence explanation.", "ar": ""}
+  ],
+  "chapters": [
+   {"id": "chapter-slug", "n": "01", "title": {"en": "Chapter title", "ar": "عنوان الفصل"}, "blocks": [
+    {"t": "p", "en": "Paragraph.", "ar": "فقرة."},
+    {"t": "p", "lead": true, "en": "A large pull paragraph (use once, for the verdict).", "ar": ""},
+    {"t": "quote", "en": "“Quote.”", "ar": "«اقتباس.»", "who": {"en": "Name, role (Outlet, Month YYYY)", "ar": ""}},
+    {"t": "img", "src": "/media/spotlight/file.jpg", "alt": {"en": "", "ar": ""}, "cap": {"en": "", "ar": ""}, "credit": {"en": "Photo: Name / Outlet", "ar": ""}, "maxw": "380px"},
+    {"t": "stats", "items": [{"v": "AED110m", "en": "Label", "ar": ""}]},
+    {"t": "list", "items": [{"en": "Item", "ar": ""}]},
+    {"t": "w", "w": "timeline"}
+   ]}
+  ],
+  "compare": [
+   {"tag": {"en": "", "ar": ""}, "title": {"en": "", "ar": ""}, "sub": {"en": "", "ar": ""}, "items": [{"en": "", "ar": ""}], "physical": false},
+   {"tag": {"en": "", "ar": ""}, "title": {"en": "", "ar": ""}, "sub": {"en": "", "ar": ""}, "items": [{"en": "", "ar": ""}], "physical": true}
+  ],
+  "attacks": {"items": [{"date": "YYYY-MM-DD", "en": "", "ar": "", "src": 1, "recovery": false}], "now": 60, "target": 80, "gaugeLbl": {"en": "", "ar": ""}, "nowLbl": {"en": "Restored", "ar": "مُستعادة"}, "targetLbl": {"en": "Target", "ar": "الهدف"}},
+  "timeline": [
+   {"date": "YYYY-MM-DD", "title": {"en": "", "ar": ""}, "en": "", "ar": "", "src": 1, "img": "/media/spotlight/optional.jpg", "future": false}
+  ],
+  "fleet": [
+   {"id": "robot-id", "name": {"en": "", "ar": ""}, "maker": "Company", "kind": {"en": "", "ar": ""}, "status": "live", "where": {"en": "", "ar": ""}, "en": "", "ar": "", "fact": {"en": "", "ar": ""}, "img": "", "src": 1, "co": "company-id"}
+  ],
+  "status": {"live": {"en": "Live", "ar": "قيد التشغيل"}, "deploying": {"en": "Deploying", "ar": "قيد النشر"}, "delivered": {"en": "Delivered", "ar": "سُلّمت"}, "due": {"en": "Due", "ar": "مرتقب"}, "ordered": {"en": "Ordered", "ar": "مطلوبة"}, "trial": {"en": "Trial agreed", "ar": "تجربة متفق عليها"}},
+  "claims": [
+   {"id": "c1", "claim": {"en": "“The headline number”", "ar": ""}, "who": {"en": "Who says it", "ar": ""}, "level": 1, "tag": {"en": "Company claim", "ar": "ادعاء الشركة"}, "en": "What we found.", "ar": "", "src": 1}
+  ],
+  "levels": [{"en": "Company claim", "ar": "ادعاء الشركة"}, {"en": "Single source or projection", "ar": "مصدر واحد أو توقع"}, {"en": "Documented, with caveats", "ar": "موثّق مع تحفّظات"}, {"en": "Reported by several outlets", "ar": "منقول عن عدة وسائل"}],
+  "watch": [
+   {"status": "due", "due": "YYYY-MM-DD", "when": {"en": "By end-YYYY", "ar": ""}, "en": "What we are watching for.", "ar": ""}
+  ],
+  "watchStatus": {"due": {"en": "Due", "ar": "مرتقب"}, "open": {"en": "Open question", "ar": "سؤال مفتوح"}, "trial": {"en": "Trial", "ar": "تجربة"}},
+  "providers": [
+   {"id": "company-id-in-companies-json", "en": "Its role in this story.", "ar": "", "fleet": ["robot-id"]}
+  ],
+  "ui": "COPY THE WHOLE \"ui\" OBJECT FROM THE EXISTING REPORT IN data/stories.json, then change \"timeline\" and \"attacks\" labels to fit the topic"
+ }
+}
