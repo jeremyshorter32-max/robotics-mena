@@ -222,9 +222,9 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
 
 ## Nice to have
 
-- [ ] **Smoke test before deploy** (17 Nov 2026): a one-character slip in `src/logic.js` (a comment that hid a declaration)
-  passed the build and tests and blanked every page for about 13 minutes. Add a check to `deploy.yml` that renders each
-  page in a headless browser and fails the deploy on a script error.
+- [x] **Smoke test before deploy** (17 Nov 2026): after a one-character slip in `src/logic.js` blanked every page for about
+  13 minutes, `scripts/smoke-test.mjs` opens every built page in headless Chrome (no new dependencies) and the deploy stops if
+  any page throws a script error, logs a console error, or renders without its heading. Checked: it fails on that bug.
 - [ ] Image placeholders such as `{{ x.flag }}` are requested once before the page fills them in (harmless 404s in the
   browser console, present since before 15 Nov); switch those `src` attributes to a data attribute.
 
