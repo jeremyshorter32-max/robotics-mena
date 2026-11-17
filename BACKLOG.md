@@ -62,8 +62,17 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   three currently report "needs manual check" (Fortinet robots.txt disallows the lookup; Symantec needs its own POST after
   a human check; McAfee returns 403), so it alerts once per vendor to check by hand.
 - [x] **Categorization monitor** (decided 14 Nov 2026): no Playwright dependency; blocked vendors stay "needs manual check".
-- [ ] **Web-filter submissions:** pack and Claude-in-Chrome prompt in `docs/launch/web-filter-submissions.md`; log ticket
-  numbers here when done.
+- [ ] **Web-filter submissions:** pack and Claude-in-Chrome prompt in `docs/launch/web-filter-submissions.md`. Results of the
+  16–17 Nov 2026 run (checked by hand):
+  - Fortinet: already **Information Technology**; Symantec/Broadcom: already **Technology/Internet** (no submission needed).
+  - McAfee/Trellix: was "Uncategorized URL"; **submitted** Technical Information (+ General News), 3–5 business days, no ticket number.
+  - Palo Alto: **Unknown / Newly-Registered-Domain (High-Risk)**; requesting a change needs a (free) Palo Alto login. Most important
+    of the open ones: "high-risk" is blocked by many corporate networks. The newly-registered tag usually lapses about 30 days after
+    registration, but the Unknown category stays until someone requests a change.
+  - Cisco Talos and Check Point: need a (free) Cisco / Check Point UserCenter login; not submitted yet.
+  - Zscaler and Netskope: lookup tools are now customer-only; nothing to submit without an account (an office on those can ask
+    its IT team).
+  - Forcepoint: customer support portal only; skipped.
 - [x] **Password turned off** (13 Nov 2026): the deploy builds with `PUBLIC_LAUNCH=true`; every other open item was deferred
   by the owner. `SITE_PASSWORD` secret deleted (16 Nov 2026). Owner to do: submit roboticsmena.com
   for web-filter categorisation (Science/Technology or News): Zscaler (sitereview.zscaler.com), Palo Alto, Fortinet,
