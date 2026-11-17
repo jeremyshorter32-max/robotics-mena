@@ -76,7 +76,7 @@ export function pick(tweets, account, since) {
     if (!account.mena && !MENA.test(text)) return false;
     if (!isEnglish(t)) return false; // English posts only (owner, 17 Nov 2026)
     return true;
-  }).map(t => ({ id: t.id_str, url: `https://x.com/${account.handle}/status/${t.id_str}`, handle: account.handle, author: account.name,
+  }).map(t => ({ id: t.id_str, url: `https://x.com/${account.handle}/status/${t.id_str}`, handle: account.handle, author: account.name, company: account.company || null,
     date: postedAt(t.id_str).toISOString().slice(0, 10), lang: t.lang, text: (t.full_text || t.text || '').replace(/\s+/g, ' ').trim() }));
 }
 

@@ -1,5 +1,5 @@
 {
-  "_note": "Official X accounts checked each week by scripts/x-candidates.mjs for the home page's 'Latest from X'. mena: true = a MENA government, regulator, operator or event (every robotics post counts); mena: false = a supplier whose posts must also name a MENA place. A handle that no longer exists is reported and skipped. Add accounts here; never add news outlets, influencers or private individuals.",
+  "_note": "Official X accounts checked each week by scripts/x-candidates.mjs for the home page's 'Latest from X'. mena: true = a MENA government, regulator, operator or event (every robotics post counts); mena: false = a supplier whose posts must also name a MENA place. A handle that no longer exists is reported and skipped. Company accounts (with \"company\": the database id) come from the X links on each company's own website; re-run the harvest when companies are added. Add accounts here; never add news outlets, influencers or private individuals.",
   "accounts": [
     {
       "handle": "DXBMediaOffice",
@@ -190,6 +190,324 @@
       "handle": "AiroboticsUAV",
       "name": "Airobotics",
       "mena": false
+    },
+    {
+      "handle": "Analogio_",
+      "name": "Analog",
+      "mena": true,
+      "company": "analog"
+    },
+    {
+      "handle": "MicropolisMCRP",
+      "name": "Micropolis Robotics",
+      "mena": true,
+      "company": "micropolis-robotics"
+    },
+    {
+      "handle": "9tenthsco",
+      "name": "NineTenths",
+      "mena": true,
+      "company": "ninetenths"
+    },
+    {
+      "handle": "TheHumanoidAI",
+      "name": "Humanoid",
+      "mena": false,
+      "company": "humanoid"
+    },
+    {
+      "handle": "FalconViz",
+      "name": "FalconViz",
+      "mena": true,
+      "company": "falconviz"
+    },
+    {
+      "handle": "esbaar_om",
+      "name": "ESBAAR",
+      "mena": true,
+      "company": "esbaar"
+    },
+    {
+      "handle": "Sagerdrone",
+      "name": "Sager Drones",
+      "mena": true,
+      "company": "sager-drones"
+    },
+    {
+      "handle": "jobyaviation",
+      "name": "Joby Aviation",
+      "mena": false,
+      "company": "joby-aviation"
+    },
+    {
+      "handle": "matternet",
+      "name": "Matternet",
+      "mena": false,
+      "company": "matternet"
+    },
+    {
+      "handle": "einrideofficial",
+      "name": "Einride",
+      "mena": false,
+      "company": "einride"
+    },
+    {
+      "handle": "ehang",
+      "name": "EHang",
+      "mena": false,
+      "company": "ehang"
+    },
+    {
+      "handle": "ocean__infinity",
+      "name": "Ocean Infinity",
+      "mena": false,
+      "company": "ocean-infinity"
+    },
+    {
+      "handle": "tier_iv_global",
+      "name": "TIER IV",
+      "mena": false,
+      "company": "tier-iv"
+    },
+    {
+      "handle": "Momenta_AI",
+      "name": "Momenta",
+      "mena": false,
+      "company": "momenta"
+    },
+    {
+      "handle": "geekplusrobot",
+      "name": "Geek+",
+      "mena": false,
+      "company": "geekplus"
+    },
+    {
+      "handle": "BostonDynamics",
+      "name": "Boston Dynamics",
+      "mena": false,
+      "company": "boston-dynamics"
+    },
+    {
+      "handle": "1x_tech",
+      "name": "1X Technologies",
+      "mena": false,
+      "company": "1x-technologies"
+    },
+    {
+      "handle": "Addverb_Tech",
+      "name": "Addverb",
+      "mena": false,
+      "company": "addverb"
+    },
+    {
+      "handle": "innotech_om",
+      "name": "InnoTech",
+      "mena": true,
+      "company": "innotech"
+    },
+    {
+      "handle": "YutongGlobal",
+      "name": "Yutong",
+      "mena": false,
+      "company": "yutong"
+    },
+    {
+      "handle": "kody_robots",
+      "name": "Falcon Tech Robotics",
+      "mena": true,
+      "company": "falcon-tech-robotics"
+    },
+    {
+      "handle": "legendrobottech",
+      "name": "Legend Robot",
+      "mena": false,
+      "company": "legend-robot"
+    },
+    {
+      "handle": "UBTECHRobotics",
+      "name": "UBTech Robotics",
+      "mena": false,
+      "company": "ubtech-robotics"
+    },
+    {
+      "handle": "EananOfficial",
+      "name": "EANAN",
+      "mena": true,
+      "company": "eanan"
+    },
+    {
+      "handle": "gisdrones",
+      "name": "GIS Drones",
+      "mena": true,
+      "company": "gis-drones"
+    },
+    {
+      "handle": "ATARobotics",
+      "name": "Action To Action Robotics",
+      "mena": true,
+      "company": "action-to-action-robotics"
+    },
+    {
+      "handle": "solution_proven",
+      "name": "PROVEN Robotics",
+      "mena": true,
+      "company": "proven-robotics"
+    },
+    {
+      "handle": "SigmaTWT",
+      "name": "Sigma Enterprises",
+      "mena": true,
+      "company": "sigma-enterprises"
+    },
+    {
+      "handle": "alat_tech",
+      "name": "Alat",
+      "mena": true,
+      "company": "alat"
+    },
+    {
+      "handle": "roboticktick",
+      "name": "Roboticktick",
+      "mena": true,
+      "company": "roboticktick"
+    },
+    {
+      "handle": "Ankaaom",
+      "name": "Ankaa Space & Technologies",
+      "mena": true,
+      "company": "ankaa-space-technologies"
+    },
+    {
+      "handle": "stardrones",
+      "name": "Star Drones",
+      "mena": true,
+      "company": "star-drones"
+    },
+    {
+      "handle": "AtlanSpace",
+      "name": "ATLAN Space",
+      "mena": true,
+      "company": "atlan-space"
+    },
+    {
+      "handle": "zimmerbiomet",
+      "name": "Zimmer Biomet",
+      "mena": false,
+      "company": "zimmer-biomet"
+    },
+    {
+      "handle": "CMRSurgical",
+      "name": "CMR Surgical",
+      "mena": false,
+      "company": "cmr-surgical"
+    },
+    {
+      "handle": "AppliedInt",
+      "name": "Applied Intuition",
+      "mena": false,
+      "company": "applied-intuition"
+    },
+    {
+      "handle": "Wingtra",
+      "name": "Wingtra",
+      "mena": false,
+      "company": "wingtra"
+    },
+    {
+      "handle": "TerraDrone_JP",
+      "name": "Terra Drone",
+      "mena": false,
+      "company": "terra-drone"
+    },
+    {
+      "handle": "VerticalAero",
+      "name": "Vertical Aerospace",
+      "mena": false,
+      "company": "vertical-aerospace"
+    },
+    {
+      "handle": "fugro",
+      "name": "Fugro",
+      "mena": false,
+      "company": "fugro"
+    },
+    {
+      "handle": "deeptrekker",
+      "name": "Deep Trekker",
+      "mena": false,
+      "company": "deep-trekker"
+    },
+    {
+      "handle": "IGSfarm",
+      "name": "Intelligent Growth Solutions",
+      "mena": false,
+      "company": "intelligent-growth-solutions"
+    },
+    {
+      "handle": "QuicktronRobots",
+      "name": "Quicktron Robotics",
+      "mena": false,
+      "company": "quicktron-robotics"
+    },
+    {
+      "handle": "Omnicell",
+      "name": "Omnicell",
+      "mena": false,
+      "company": "omnicell"
+    },
+    {
+      "handle": "Skydrive_Global",
+      "name": "SkyDrive",
+      "mena": false,
+      "company": "skydrive"
+    },
+    {
+      "handle": "draganflyinc",
+      "name": "Draganfly",
+      "mena": false,
+      "company": "draganfly"
+    },
+    {
+      "handle": "furhatrobotics",
+      "name": "Furhat Robotics",
+      "mena": false,
+      "company": "furhat-robotics"
+    },
+    {
+      "handle": "CYBERDYNE_PR",
+      "name": "Cyberdyne",
+      "mena": false,
+      "company": "cyberdyne"
+    },
+    {
+      "handle": "_unique_group",
+      "name": "Unique Group",
+      "mena": true,
+      "company": "unique-group"
+    },
+    {
+      "handle": "avidbots",
+      "name": "Avidbots",
+      "mena": false,
+      "company": "avidbots"
+    },
+    {
+      "handle": "JackysBiz",
+      "name": "Jacky's Business Solutions",
+      "mena": true,
+      "company": "jackys-business-solutions"
+    },
+    {
+      "handle": "Universal_Robot",
+      "name": "Universal Robots",
+      "mena": false,
+      "company": "universal-robots"
+    },
+    {
+      "handle": "planystech",
+      "name": "Planys Technologies",
+      "mena": false,
+      "company": "planys-technologies"
     }
   ]
 }
