@@ -953,7 +953,7 @@ class Component extends DCLogic {
       ...(() => {
         // Only recent posts on the home page: anything older than 14 days drops off by itself, even without a rebuild.
         const xSince = new Date(Date.now() - 14 * 864e5).toISOString().slice(0, 10);
-        const XP = (window.RM_DATA.xposts || []).filter(x => x.date >= xSince).slice(0, 6), CO = window.RM_DATA.companies;
+        const XP = (window.RM_DATA.xposts || []).filter(x => x.date >= xSince).slice(0, 8), CO = window.RM_DATA.companies;
         const open = XP.find(x => x.id === S.xOpen);
         return {
           xOpen: !!open, xOpenUrl: open ? open.url : '', xClose: () => this.setState({ xOpen: null }), xKeep: e => e.stopPropagation(),
