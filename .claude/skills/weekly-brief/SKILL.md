@@ -42,14 +42,20 @@ without the owner's explicit approval in this conversation.**
    - **One post per account** (owner, 17 Nov 2026): 5 to 8 different organisations, mixing governments, suppliers,
      investors and events. The home page shows only each account's newest post, so a second post from the same account
      never appears; pick the strongest one per account.
-   - **English only** (owner, 17 Nov 2026): never surface a post written in Arabic, even from an official account. If an
-     organisation posts both, use the English one; if it only posts in Arabic, skip it. The validator rejects Arabic excerpts.
+   - **Shown in English** (owner, 18 Nov 2026): Arabic posts are welcome (many Gulf government accounts post in Arabic),
+     but the site shows them in English: write an accurate English translation of the post's opening as the `excerpt`
+     and add `translated_from: "ar"`; the card says "Translated from Arabic". The validator rejects Arabic excerpts.
    - **About robotics:** a robot, drone, autonomous vehicle or physical-AI deployment, deal, regulation, programme or
      event in a MENA country in `data/countries.json`. **Money counts too** (owner, 17 Nov 2026): robotics funds and
      ETFs, investments, listings and contracts by MENA investors, exchanges and sovereign funds (e.g. Lunate's humanoid
      robots ETF on ADX). Not general AI, cloud or company news. Set `type` (a robot type)
      and `company` (when it is in the database).
-   - **Official accounts only:** governments and media offices (e.g. @DXBMediaOffice, @HamdanMohammed, the Abu Dhabi
+   - **A mix of accounts** (owner, 18 Nov 2026): governments and agencies, operators, hospitals, universities, the
+     companies in the database, investors, events, and established regional news outlets (The National, Gulf News, Khaleej
+     Times, Arab News, Al Arabiya English, Zawya). There is always enough MENA robotics news for 5 posts a week: if the
+     script finds fewer, search the week's stories and their outlets' posts until there are 5. Still never influencers,
+     anonymous aggregators or private individuals.
+   - **Accounts to start from:** governments and media offices (e.g. @DXBMediaOffice, @HamdanMohammed, the Abu Dhabi
      Media Office, WAM, SPA, QNA; confirm any other handle with oEmbed before using it), regulators and operators (@rta_dubai, Abu Dhabi's autonomous systems council, @ADNOCGroup, NEOM,
      Aramco, airports, police), the companies in the database (start with the biggest suppliers: WeRide, Baidu Apollo
      Go, Pony.ai, Uber, Gecko Robotics, Unitree, AgiBot, NAVER LABS, Glydways, Pudu, KUKA, ABB, FANUC, Lootah,
@@ -66,8 +72,8 @@ without the owner's explicit approval in this conversation.**
      Never log in to X or get around a block; if the embed feed refuses, use search only that week. Add new official
      accounts to `scripts/x-sources.json` when you find them.
    - **How many:** 5 to 8 live at any time. Posts approved earlier that are still within 30 days count. Pick one post per
-     story (English only) and spread across countries and accounts. If fewer than 5 qualify, add
-     what does and say so in the pull request: never pad with older or off-topic posts.
+     account and spread across countries and accounts. Never fewer than 5; never pad with older or
+     off-topic posts.
    - Add them to `data/xposts.json` with `status: "suggested"`, `added: <today>`, a short excerpt (first sentence,
      under 240 characters) and a one-line `note`/`note_ar`. On approval they become `"approved"`. Older posts can stay
      approved (they still show on company and country pages); set a post to `"hidden"` only if it should not show anywhere.

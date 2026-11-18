@@ -18,7 +18,7 @@ export const ROBOTICS = /\b(robot\w*|humanoid\w*|drones?|uavs?|unmanned|autonomo
 export const MENA = /\b(uae|emirates?|dubai|abu dhabi|sharjah|ajman|ras al khaimah|fujairah|saudi|ksa|riyadh|jeddah|dammam|neom|qatar|doha|egypt|cairo|oman|muscat|bahrain|manama|kuwait|jordan|amman|morocco|casablanca|rabat|tunisia|algeria|mena|middle east|gulf|gcc)\b|الإمارات|دبي|أبوظبي|السعودية|الرياض|جدة|نيوم|قطر|الدوحة|مصر|القاهرة|عُ?مان|البحرين|الكويت|الأردن|المغرب|تونس|الجزائر|الخليج/i;
 const EXCLUDE = /israel|إسرائيل|weapon|missile|munition|counter-uas|c-uas|kamikaze|loitering|سلاح|صاروخ/i;
 
-// English only: X's language tag says en and the text is mostly Latin letters (no Arabic-only posts).
+// English or not: Arabic posts are allowed but must be shown as an English translation (owner, 18 Nov 2026).
 export const isEnglish = t => {
   const text = t.full_text || t.text || '', ar = (text.match(/[\u0600-\u06FF]/g) || []).length, lat = (text.match(/[A-Za-z]/g) || []).length;
   return (t.lang ? t.lang === 'en' : true) && lat > 20 && ar < lat / 10;
@@ -74,9 +74,8 @@ export function pick(tweets, account, since) {
     if (postedAt(t.id_str) < since) return false;
     if (!ROBOTICS.test(text) || EXCLUDE.test(text)) return false;
     if (!account.mena && !MENA.test(text)) return false;
-    if (!isEnglish(t)) return false; // English posts only (owner, 17 Nov 2026)
     return true;
-  }).map(t => ({ id: t.id_str, url: `https://x.com/${account.handle}/status/${t.id_str}`, handle: account.handle, author: account.name, company: account.company || null,
+  }).map(t => ({ id: t.id_str, url: `https://x.com/${account.handle}/status/${t.id_str}`, handle: account.handle, author: account.name, company: account.company || null, english: isEnglish(t),
     date: postedAt(t.id_str).toISOString().slice(0, 10), lang: t.lang, text: (t.full_text || t.text || '').replace(/\s+/g, ' ').trim() }));
 }
 

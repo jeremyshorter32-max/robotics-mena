@@ -958,10 +958,10 @@ class Component extends DCLogic {
         return {
           xOpen: !!open, xOpenUrl: open ? open.url : '', xClose: () => this.setState({ xOpen: null }), xKeep: e => e.stopPropagation(),
           hasX: this.PAGE === 'home' && XP.length > 0,
-          xT: ar ? { title: 'أحدث المنشورات من منصة X', sub: 'منشورات عن الروبوتات من الشهر الأخير من حسابات رسمية، يختارها محرّرونا. لا يُحمَّل أي شيء من X إلا عندما تختار «اعرض المنشور».', show: 'اعرض المنشور', view: 'اعرضه على X', dlg: 'منشور من X', loading: 'جارٍ تحميل المنشور من X…', priv: 'عند عرض منشور، يُحمّل متصفحك محتوى من X، وقد تضع X ملفات تعريف ارتباط وفق سياستها.' }
-            : { title: 'Latest from X', sub: 'Robotics posts from the last month by official accounts, picked by our editors. Nothing loads from X until you choose “Show post”.', show: 'Show post', view: 'View on X', dlg: 'Post from X', loading: 'Loading the post from X…', priv: 'Showing a post loads it from X, which may set cookies under its own policy.' },
+          xT: ar ? { title: 'أحدث المنشورات من منصة X', sub: 'منشورات عن الروبوتات من الشهر الأخير من جهات حكومية وشركات ووسائل إعلام إقليمية، يختارها محرّرونا. لا يُحمَّل أي شيء من X إلا عندما تختار «اعرض المنشور».', show: 'اعرض المنشور', view: 'اعرضه على X', dlg: 'منشور من X', loading: 'جارٍ تحميل المنشور من X…', priv: 'عند عرض منشور، يُحمّل متصفحك محتوى من X، وقد تضع X ملفات تعريف ارتباط وفق سياستها.' }
+            : { title: 'Latest from X', sub: 'Robotics posts from the last month by governments, companies and regional media, picked by our editors. Arabic posts are shown in English translation. Nothing loads from X until you choose “Show post”.', show: 'Show post', view: 'View on X', dlg: 'Post from X', loading: 'Loading the post from X…', priv: 'Showing a post loads it from X, which may set cookies under its own policy.' },
           xposts: XP.map(x => { const co = x.company && CO.find(c => c.id === x.company); return {
-            id: x.id, author: x.author, handle: x.handle, date: fdate(x.date), excerpt: x.excerpt, note: ar ? (x.note_ar || x.note) : x.note, url: x.url,
+            id: x.id, author: x.author, handle: x.handle, date: fdate(x.date), excerpt: x.excerpt, translated: x.translated_from === 'ar', trLbl: ar ? 'ترجمة من العربية' : 'Translated from Arabic', note: ar ? (x.note_ar || x.note) : x.note, url: x.url,
             flag: this.flagUrl(x.country), cname: this.CC[x.country] ? this.CC[x.country][L] : x.country, hasType: !!(x.type && this.TYPES[x.type]), typeLabel: x.type && this.TYPES[x.type] ? this.TYPES[x.type][L] : '',
             hasCo: !!co, coName: co ? (ar ? (co.name_ar || co.name) : co.name) : '', coHref: co ? '/database?tab=companies&id=' + co.id : '',
             show: () => this.showX(x.id, theme) }; })

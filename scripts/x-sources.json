@@ -1,5 +1,5 @@
 {
-  "_note": "Official X accounts checked each week by scripts/x-candidates.mjs for the home page's 'Latest from X'. mena: true = a MENA government, regulator, operator or event (every robotics post counts); mena: false = a supplier whose posts must also name a MENA place. A handle that no longer exists is reported and skipped. Company accounts (with \"company\": the database id) come from the X links on each company's own website; re-run the harvest when companies are added. Add accounts here; never add news outlets, influencers or private individuals.",
+  "_note": "Official X accounts checked each week by scripts/x-candidates.mjs for the home page's 'Latest from X'. mena: true = a MENA government, regulator, operator or event (every robotics post counts); mena: false = a supplier whose posts must also name a MENA place. A handle that no longer exists is reported and skipped. Company accounts (with \"company\": the database id) come from the X links on each company's own website; re-run the harvest when companies are added. Add accounts here; established regional news outlets are fine (owner, 18 Nov 2026); never influencers, anonymous aggregators or private individuals.",
   "accounts": [
     {
       "handle": "DXBMediaOffice",
@@ -523,6 +523,116 @@
       "name": "Planys Technologies",
       "mena": false,
       "company": "planys-technologies"
+    },
+    {
+      "handle": "Saudi_TGA",
+      "name": "Saudi Transport General Authority",
+      "mena": true
+    },
+    {
+      "handle": "admobility",
+      "name": "Abu Dhabi Mobility",
+      "mena": true
+    },
+    {
+      "handle": "ADPoliceHQ",
+      "name": "Abu Dhabi Police",
+      "mena": true
+    },
+    {
+      "handle": "DEWAOfficial",
+      "name": "DEWA",
+      "mena": true
+    },
+    {
+      "handle": "DubaiAirports",
+      "name": "Dubai Airports",
+      "mena": true
+    },
+    {
+      "handle": "HIAQatar",
+      "name": "Hamad International Airport",
+      "mena": true
+    },
+    {
+      "handle": "KFSHRC",
+      "name": "King Faisal Specialist Hospital",
+      "mena": true
+    },
+    {
+      "handle": "ClevelandClinicAD",
+      "name": "Cleveland Clinic Abu Dhabi",
+      "mena": true
+    },
+    {
+      "handle": "DHA_Dubai",
+      "name": "Dubai Health Authority",
+      "mena": true
+    },
+    {
+      "handle": "KhalifaUni",
+      "name": "Khalifa University",
+      "mena": true
+    },
+    {
+      "handle": "MBZUAI",
+      "name": "MBZUAI",
+      "mena": true
+    },
+    {
+      "handle": "KAUST_News",
+      "name": "KAUST",
+      "mena": true
+    },
+    {
+      "handle": "QSTP",
+      "name": "Qatar Science & Technology Park",
+      "mena": true
+    },
+    {
+      "handle": "MOTQatar",
+      "name": "Qatar Ministry of Transport",
+      "mena": true
+    },
+    {
+      "handle": "Hub71ad",
+      "name": "Hub71",
+      "mena": true
+    },
+    {
+      "handle": "ArabianBusiness",
+      "name": "Arabian Business",
+      "mena": true
+    },
+    {
+      "handle": "TheNationalNews",
+      "name": "The National",
+      "mena": true
+    },
+    {
+      "handle": "arabnews",
+      "name": "Arab News",
+      "mena": true
+    },
+    {
+      "handle": "AlArabiya_Eng",
+      "name": "Al Arabiya English",
+      "mena": true
+    },
+    {
+      "handle": "gulf_news",
+      "name": "Gulf News",
+      "mena": true
+    },
+    {
+      "handle": "khaleejtimes",
+      "name": "Khaleej Times",
+      "mena": true
+    },
+    {
+      "handle": "ZawyaNews",
+      "name": "Zawya",
+      "mena": true
     }
   ]
 }

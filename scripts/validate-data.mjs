@@ -179,7 +179,9 @@ xposts.forEach((x, i) => {
   // Only recent posts may be added: a post added from 17 Nov 2026 on must be at most 30 days old on the day it was added.
   if (x.added && x.added >= '2026-11-17' && x.date && Date.parse(x.added) - Date.parse(x.date) > 30 * 864e5)
     errors.push(`${w}: posted ${x.date} but added ${x.added}; only posts from the last 30 days can be added (see the weekly-brief skill)`);
-  if (/[\u0600-\u06FF]/.test(x.excerpt || '')) errors.push(`${w}: the post must be in English (owner, 17 Nov 2026); its excerpt is in Arabic`);
+  // Shown in English only (owner, 18 Nov 2026): an Arabic post's excerpt is an English translation, marked translated_from: "ar".
+  if (/[\u0600-\u06FF]/.test(x.excerpt || '')) errors.push(`${w}: the excerpt must be in English; for an Arabic post, translate it and add translated_from: "ar"`);
+  if (x.translated_from && x.translated_from !== 'ar') errors.push(`${w}: translated_from must be "ar"`);
   if (x.status !== 'hidden' && !x.type && !x.company) console.warn(`Warning: ${w}: give it a robot type or company so it is clearly about robotics`);
 });
 uniq(xposts, 'id', 'xposts.json');

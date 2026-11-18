@@ -1,5 +1,20 @@
 [
   {
+    "id": "2121127125361348684",
+    "url": "https://x.com/AutonomousAD/status/2121127125361348684",
+    "author": "Abu Dhabi Autonomous",
+    "handle": "AutonomousAD",
+    "date": "2026-11-13",
+    "excerpt": "Under the supervision of the Smart and Autonomous Systems Council, the Integrated Transport Centre (Abu Dhabi Mobility), with noon and Lood, ran a trial of goods delivery by drone at its innovation exhibition…",
+    "translated_from": "ar",
+    "note": "Abu Dhabi trials drone delivery of goods with e-commerce firm noon and drone operator Lood: a step towards drone logistics in the city.",
+    "note_ar": "أبوظبي تجرّب توصيل البضائع بالطائرات بدون طيار مع نون ولوود: خطوة نحو الخدمات اللوجستية بالدرون في المدينة.",
+    "country": "AE",
+    "type": "drone",
+    "status": "approved",
+    "added": "2026-11-18"
+  },
+  {
     "id": "2118279593908142426",
     "url": "https://x.com/ADNOCGroup/status/2118279593908142426",
     "author": "ADNOC Group",
@@ -25,7 +40,7 @@
     "note_ar": "دوري أبوظبي للسباقات ذاتية القيادة ينقل السباقات بلا سائق إلى أوروبا، بمشاركة فريق إماراتي، والبرمجيات هي التي تحسم النتيجة.",
     "country": "AE",
     "type": "av",
-    "status": "approved",
+    "status": "hidden",
     "added": "2026-11-17"
   },
   {
