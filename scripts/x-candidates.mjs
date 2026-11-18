@@ -14,7 +14,7 @@ const cacheDir = args.includes('--cache') ? args[args.indexOf('--cache') + 1] : 
 const asJson = args.includes('--json');
 const { accounts } = JSON.parse(fs.readFileSync(new URL('./x-sources.json', import.meta.url), 'utf8'));
 
-export const ROBOTICS = /\b(robot\w*|humanoid\w*|drones?|uavs?|unmanned|autonomous|driverless|self-driving|robotaxis?|robobus\w*|physical ai|embodied|automat\w+|cobots?|crawlers?|evtol|air taxis?)\b|روبوت|ذاتية القيادة|ذاتي القيادة|بدون سائق|طائرات? بدون طيار|المسي[ّ]?رات?|مسي[ّ]?رة|الأتمتة|التاكسي الجوي/i;
+export const ROBOTICS = /\b(robot\w*|humanoid\w*|drones?|uavs?|unmanned|autonomous|driverless|self-driving|robotaxis?|robobus\w*|physical ai|embodied|automat\w+|cobots?|crawlers?|evtol|air taxis?)\b|روبوت|ذاتية القيادة|ذاتي القيادة|بدون سائق|طائرات? بدون طيار|(?:الطائرات|طائرات|طائرة|الطائرة) ال?مسي[ّ]?رة|الدرون|درون|الأتمتة|الجراحة الروبوتية|التاكسي الجوي/i;
 export const MENA = /\b(uae|emirates?|dubai|abu dhabi|sharjah|ajman|ras al khaimah|fujairah|saudi|ksa|riyadh|jeddah|dammam|neom|qatar|doha|egypt|cairo|oman|muscat|bahrain|manama|kuwait|jordan|amman|morocco|casablanca|rabat|tunisia|algeria|mena|middle east|gulf|gcc)\b|الإمارات|دبي|أبوظبي|السعودية|الرياض|جدة|نيوم|قطر|الدوحة|مصر|القاهرة|عُ?مان|البحرين|الكويت|الأردن|المغرب|تونس|الجزائر|الخليج/i;
 const EXCLUDE = /israel|إسرائيل|weapon|missile|munition|counter-uas|c-uas|kamikaze|loitering|سلاح|صاروخ/i;
 

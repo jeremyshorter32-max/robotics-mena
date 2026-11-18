@@ -633,6 +633,96 @@
       "handle": "ZawyaNews",
       "name": "Zawya",
       "mena": true
+    },
+    {
+      "handle": "HMC_Qatar",
+      "name": "Hamad Medical Corporation",
+      "mena": true
+    },
+    {
+      "handle": "SEHAHealth",
+      "name": "SEHA",
+      "mena": true
+    },
+    {
+      "handle": "DoHSocial",
+      "name": "Abu Dhabi Department of Health",
+      "mena": true
+    },
+    {
+      "handle": "MOHAPUAE",
+      "name": "UAE Ministry of Health",
+      "mena": true
+    },
+    {
+      "handle": "Amanat_Riyadh",
+      "name": "Riyadh Municipality",
+      "mena": true
+    },
+    {
+      "handle": "KACST",
+      "name": "KACST",
+      "mena": true
+    },
+    {
+      "handle": "MOTFuture",
+      "name": "Museum of the Future",
+      "mena": true
+    },
+    {
+      "handle": "etisalatand",
+      "name": "e&",
+      "mena": true
+    },
+    {
+      "handle": "stc",
+      "name": "stc",
+      "mena": true
+    },
+    {
+      "handle": "Ooredoo",
+      "name": "Ooredoo",
+      "mena": true
+    },
+    {
+      "handle": "MCITEgypt",
+      "name": "Egypt Ministry of ICT",
+      "mena": true
+    },
+    {
+      "handle": "ITIDA",
+      "name": "ITIDA Egypt",
+      "mena": true
+    },
+    {
+      "handle": "QF",
+      "name": "Qatar Foundation",
+      "mena": true
+    },
+    {
+      "handle": "MubadalaHealth",
+      "name": "Mubadala Health",
+      "mena": true
+    },
+    {
+      "handle": "PureHealthUAE",
+      "name": "PureHealth",
+      "mena": true
+    },
+    {
+      "handle": "ADCivilDefence",
+      "name": "Abu Dhabi Civil Defence",
+      "mena": true
+    },
+    {
+      "handle": "MOI_KSA",
+      "name": "Saudi Ministry of Interior",
+      "mena": true
+    },
+    {
+      "handle": "ADQ_",
+      "name": "ADQ",
+      "mena": true
     }
   ]
 }
