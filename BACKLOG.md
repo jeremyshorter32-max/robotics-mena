@@ -225,8 +225,8 @@ Plan: `social/STRATEGY.md`. Agents: `.claude/skills/social-{analyst,strategist,c
 - [x] **Smoke test before deploy** (17 Nov 2026): after a one-character slip in `src/logic.js` blanked every page for about
   13 minutes, `scripts/smoke-test.mjs` opens every built page in headless Chrome (no new dependencies) and the deploy stops if
   any page throws a script error, logs a console error, or renders without its heading. Checked: it fails on that bug.
-- [ ] Image placeholders such as `{{ x.flag }}` are requested once before the page fills them in (harmless 404s in the
-  browser console, present since before 15 Nov); switch those `src` attributes to a data attribute.
+- [x] Image placeholders such as `{{ x.flag }}` were requested before the page filled them in (harmless 404s). Fixed 18 Nov 2026:
+  the build writes them as `data-tpl-src` and `support.js` restores `src` when it reads the template; no failed requests left.
 
 - [x] **"From X" kept current** (17 Nov 2026): the home strip is now "Latest from X" and shows only posts from the last
   14 days (older ones drop off by themselves and stay on company and country pages); the validator checks each post's date

@@ -60,6 +60,10 @@ for (const file of fs.readdirSync(path.join(root, 'pages')).filter(f => f.endsWi
   const gc = (data.site || {}).goatcounter;
   if (gc) html = html.replace('</body>', () => `<script>if(!/^(www\\.)?roboticsmena\\.com$/.test(location.hostname))window.goatcounter={no_onload:true};</script><script data-goatcounter="https://${gc}.goatcounter.com/count" async src="/vendor/goatcounter-count.js"></script>\n</body>`);
   if (html.includes('<!--@brief-modal-->') || !html.includes('rm-brief-panel')) throw new Error(`${file}: missing the Get the brief pop-up`);
+  // Image placeholders such as src="{{ x.flag }}" would be fetched by the browser before the page fills them in (a 404
+  // each). Inside the template they are written as data-tpl-src, which browsers don't fetch; support.js turns them back
+  // into src when it reads the template.
+  html = html.replace(/(<x-dc[\s>][\s\S]*<\/x-dc>)/, block => block.replace(/(\s)src="(\{\{[^"]*\}\})"/g, '$1data-tpl-src="$2"'));
   fs.writeFileSync(path.join(out, file), bust(html));
 }
 // Branded "page not found" page (served by GitHub Pages for any missing address) and the sitemap for search engines.
