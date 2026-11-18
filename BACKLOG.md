@@ -66,9 +66,8 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
   16–17 Nov 2026 run (checked by hand):
   - Fortinet: already **Information Technology**; Symantec/Broadcom: already **Technology/Internet** (no submission needed).
   - McAfee/Trellix: was "Uncategorized URL"; **submitted** Technical Information (+ General News), 3–5 business days, no ticket number.
-  - Palo Alto: **Unknown / Newly-Registered-Domain (High-Risk)**; requesting a change needs a (free) Palo Alto login. Most important
-    of the open ones: "high-risk" is blocked by many corporate networks. The newly-registered tag usually lapses about 30 days after
-    registration, but the Unknown category stays until someone requests a change.
+  - Palo Alto: was **Unknown / Newly-Registered-Domain (High-Risk)**; **submitted 18 Nov 2026** (owner's login) for
+    Computer-and-Internet-Info, request reference eb23696f-1341-4c00-9149-df4eff7550c7. Check the category again after a few days.
   - Cisco Talos and Check Point: need a (free) Cisco / Check Point UserCenter login; not submitted yet.
   - Zscaler and Netskope: lookup tools are now customer-only; nothing to submit without an account (an office on those can ask
     its IT team).
