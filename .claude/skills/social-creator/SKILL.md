@@ -33,6 +33,10 @@ Create or update `social/queue/<week>.json` (copy the shape of the newest existi
   does. Arabic comes back only when `social/cadence.json` languages includes "ar"; then use the site's Arabic spellings (`title_ar`, `operator_ar`).
 
 ## 2. Cards (images)
+
+**Colour and covers:** don't set colours on cards. `social/design.json` gives each pillar its accent and cover style at render time, so set each
+post's `pillar` correctly and make sure a carousel's first card uses the `cover` template. Before opening the pull request, check the week's
+Instagram covers in posting order: no two neighbours should share a pillar. If they do, swap days or change one post's angle.
 Each card in `cards` is a spec rendered by `scripts/social-cards.cjs` (the header of that file lists the fields):
 `cover` (dark, carousel opener), `signal` (kicker, title, body, source), `stat` (big `value` and `label`), `bars` (ranked `rows` from the database),
 `list` (up to 5 `items`), `cta` (closing slide). Sizes: `portrait` (LinkedIn and Instagram feed), `story` (Reels and Stories),

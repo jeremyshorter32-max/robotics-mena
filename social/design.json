@@ -1,0 +1,13 @@
+{
+  "_note": "Colour rules for social cards (scripts/social-cards.cjs applies them at render time). Indigo stays the frame: logo, footer link, weekly signals. Each content pillar has an accent (a map colour from the site) and a cover style, so the Instagram grid and each feed alternate instead of repeating one indigo tile. cover: 'photo' = full-colour photo, 'paper' = light cover, 'colour' = the accent's own dark ground; none = indigo duotone. A platform can have its own dark ground. A card can override with its own accent, ground or cover ('none' switches one off).",
+  "pillars": {
+    "signals":    {},
+    "deployment": { "accent": "coral", "cover": "photo" },
+    "data":       { "accent": "amber", "cover": "paper" },
+    "explainer":  { "accent": "teal",  "cover": "colour" },
+    "community":  { "accent": "green", "cover": "colour" }
+  },
+  "platforms": {
+    "x": { "ground": "ink" }
+  }
+}

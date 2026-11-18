@@ -32,6 +32,10 @@ merged posts appear the same evening and each sheet appears in the morning. The 
 (`node scripts/social-library.mjs` writes `social/out/library/`, not committed, including `publish-files.json` for the publish).
 
 ## Design v2 and images
+Colour comes from `social/design.json`, applied when cards are rendered: each content pillar has an accent and a cover style (deployment: coral,
+full-colour photo cover; data: amber, light cover; explainer: teal ground; community: green ground; signals: indigo, unchanged), and X uses
+black panels where the other platforms use indigo. The point is that neighbouring posts in a feed or the Instagram grid don't look alike. A card
+can override with its own `accent`, `ground` or `cover` (`"none"` switches one off). Posts need the right `pillar` for this to work.
 Cards are photo-led wherever a cleared press image exists (see `scripts/social-cards.cjs` for the layouts). Only images in `social/images.json`
 can appear on a card: company or government press images and the owner's own, never newspaper or agency photos, each credited on the card.
 The v2 sign-off page is https://claude.ai/artifact/Ao2fSzm4HETqS8Toybg9EU (`node scripts/social-library.mjs --review --intro <file>` builds it;
