@@ -723,6 +723,81 @@
       "handle": "ADQ_",
       "name": "ADQ",
       "mena": true
+    },
+    {
+      "handle": "DTC_Dubai",
+      "name": "Dubai Taxi",
+      "mena": true
+    },
+    {
+      "handle": "RAKTransport",
+      "name": "RAK Transport Authority",
+      "mena": true
+    },
+    {
+      "handle": "SharjahRTA",
+      "name": "Sharjah RTA",
+      "mena": true
+    },
+    {
+      "handle": "Mowasalat",
+      "name": "Mowasalat (Karwa)",
+      "mena": true
+    },
+    {
+      "handle": "talabat",
+      "name": "talabat",
+      "mena": true
+    },
+    {
+      "handle": "noon",
+      "name": "noon",
+      "mena": true
+    },
+    {
+      "handle": "careem",
+      "name": "Careem",
+      "mena": true
+    },
+    {
+      "handle": "ITIEgypt",
+      "name": "ITI Egypt",
+      "mena": true
+    },
+    {
+      "handle": "siwaresystems",
+      "name": "Si-Ware Systems",
+      "mena": true
+    },
+    {
+      "handle": "Etihad",
+      "name": "Etihad",
+      "mena": true
+    },
+    {
+      "handle": "emirates",
+      "name": "Emirates",
+      "mena": true
+    },
+    {
+      "handle": "DubaiChamber",
+      "name": "Dubai Chambers",
+      "mena": true
+    },
+    {
+      "handle": "ADGlobalMarket",
+      "name": "ADGM",
+      "mena": true
+    },
+    {
+      "handle": "DIFC",
+      "name": "DIFC",
+      "mena": true
+    },
+    {
+      "handle": "dubaiholding",
+      "name": "Dubai Holding",
+      "mena": true
     }
   ]
 }
