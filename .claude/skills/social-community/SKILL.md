@@ -14,10 +14,13 @@ Repository as in the other social skills (read-only is fine: you don't change fi
 
 ## 1. Find (last 24 hours, 72 on Monday)
 Use web search in English and Arabic. Do not scrape x.com, linkedin.com or instagram.com, and never get around a login wall or bot check.
-- **Official posts on X:** search for robotics, drone, autonomous-vehicle and AI announcements from government and company accounts
-  (Dubai Media Office, RTA, the ministries, SDAIA, NEOM, ADNOC, Aramco, KACST, Mowasalat, the companies in `data/companies.json`).
-  Confirm each candidate post with X's oEmbed (`curl -sL "https://publish.twitter.com/oembed?url=<post url>&omit_script=1"`):
-  the author, wording and date must match.
+- **Official posts on X:** start with `node scripts/social-x-posts.mjs --days 2 --json` (`--days 3` on Monday). It reads the accounts in
+  `social/x-watch.json` through X's public embed feed and returns their recent robotics posts, each with its direct
+  `https://x.com/<handle>/status/<id>` link, already confirmed with oEmbed. Use these as the X items, link on the item line. It may wait
+  up to 16 minutes once if X's read limit is reached; let it. Its `problems` list says which accounts it could not check: name them in the
+  notes. Only for stories it didn't cover, fall back to web search, and confirm any post you find with X's oEmbed
+  (`curl -sL "https://publish.twitter.com/oembed?url=<post url>&omit_script=1"`): the author, wording and date must match.
+  To watch another official account, propose adding it to `social/x-watch.json` (28 at most) in the notes.
 - **Company news** that will be on LinkedIn: newsroom releases from the companies and operators in our database.
 - **Reddit:** new threads in r/robotics, r/dubai, r/UAE, r/saudiarabia, r/qatar, r/Egypt, r/oman, r/Morocco, r/Jordan, r/drones,
   r/SelfDrivingCars, r/humanoidrobots and r/Futurology that mention robots, drones, robotaxis or automation in MENA. Find them with
