@@ -1,0 +1,9 @@
+{
+  "_note": "Official X accounts the daily engagement run checks for posts to reply to (scripts/social-x-posts.mjs). Keep it to 28 or fewer: X allows about 30 feed reads per 15 minutes and the run does not wait for more. Every handle should also be in scripts/x-sources.json, which says whether the account is a MENA body (every robotics post counts) or a supplier (the post must also name a MENA place). Governments, regulators, operators, events and companies only: no news outlets, influencers or private individuals.",
+  "handles": [
+    "rta_dubai", "DubaiFuture", "DXBMediaOffice", "ADMediaOffice", "AutonomousAD", "ad_mobility", "DMunicipality",
+    "DubaiPoliceHQ", "DubaiAirports", "ADNOCGroup", "A2RLeague", "GITEX_GLOBAL", "keeta_drone", "talabat",
+    "NEOM", "aramco", "SDAIA_SA", "Saudi_TGA", "MCITQatar",
+    "WeRide_ai", "Baidu_Inc", "Uber", "PonyAI_tech", "geckorobotics", "glydways", "AGIBOTofficial", "UnitreeRobotics", "MicropolisMCRP"
+  ]
+}

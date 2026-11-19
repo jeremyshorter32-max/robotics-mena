@@ -54,7 +54,7 @@ Keep it under a page. Sections:
 
 ## 4. Hand over
 Commit the plan (and any strategy changes) to `social/<week>` with the repository's usual author
-(`git log -1 --format='%an <%ae>'`) and the session's attribution trailer. Then run the `social-creator` skill on the same branch.
+(`git log --author='Jeremy Shorter' -1 --format='%an <%ae>'`, never the latest commit's author: bots commit to main too) and the session's attribution trailer. Then run the `social-creator` skill on the same branch.
 If you run alone (not in the Sunday chain), push and say which week is planned.
 
 ## Rules

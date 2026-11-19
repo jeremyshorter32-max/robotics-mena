@@ -131,3 +131,15 @@ test('the portal can approve social/ pull requests', () => {
   assert.ok(PUBLISHABLE_PATH.test('social/queue/2026-w47.json'));
   assert.ok(!PUBLISHABLE_PATH.test('scripts/social.mjs'));
 });
+
+test('the engagement X watch list is small enough for one read window and only names official accounts', async () => {
+  const { watchList } = await import('../../scripts/social-x-posts.mjs');
+  const watch = readJson(path.join(ROOT, 'social/x-watch.json')).handles;
+  const sources = readJson(path.join(ROOT, 'scripts/x-sources.json')).accounts.map(a => a.handle.toLowerCase());
+  assert.ok(watch.length > 0 && watch.length <= 28, 'at most 28 handles');
+  assert.equal(new Set(watch.map(h => h.toLowerCase())).size, watch.length, 'no duplicates');
+  assert.deepEqual(watch.filter(h => !sources.includes(h.toLowerCase())), [], 'every watched handle is in scripts/x-sources.json');
+  // An unknown handle is treated as a supplier, so its posts must name a MENA place.
+  assert.deepEqual(watchList(['SomeNewCo'], {}), [{ handle: 'SomeNewCo', name: 'SomeNewCo', mena: false }]);
+  assert.equal(watchList(Array.from({ length: 40 }, (_, i) => 'h' + i), {}).length, 28);
+});
