@@ -15,8 +15,8 @@
         "category": null,
         "at": "2026-11-14T00:00:00.000Z"
       },
-      "checked_at": "2026-11-19T06:17:13.977Z",
-      "consecutive_blocked": 10,
+      "checked_at": "2026-11-19T18:06:45.789Z",
+      "consecutive_blocked": 11,
       "manual_check_alerted": true
     },
     "symantec|roboticsmena.com": {
@@ -32,8 +32,8 @@
         "category": null,
         "at": "2026-11-14T00:00:00.000Z"
       },
-      "checked_at": "2026-11-18T18:06:09.902Z",
-      "consecutive_blocked": 6,
+      "checked_at": "2026-11-19T18:06:46.049Z",
+      "consecutive_blocked": 7,
       "manual_check_alerted": true
     },
     "mcafee|roboticsmena.com": {
@@ -49,10 +49,10 @@
         "category": null,
         "at": "2026-11-14T00:00:00.000Z"
       },
-      "checked_at": "2026-11-18T18:06:10.115Z",
-      "consecutive_blocked": 6,
+      "checked_at": "2026-11-19T18:06:46.190Z",
+      "consecutive_blocked": 7,
       "manual_check_alerted": true
     }
   },
-  "updated_at": "2026-11-19T06:17:13.978Z"
+  "updated_at": "2026-11-19T18:06:46.191Z"
 }
