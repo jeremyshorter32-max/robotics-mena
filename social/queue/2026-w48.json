@@ -1,0 +1,1018 @@
+{
+  "week": "2026-w48",
+  "theme": "Big 5 week: robots that build, plus the week-48 brief",
+  "notes": "Big 5 Global runs 23 to 26 Nov at Dubai World Trade Centre. Construction and site robots fill the data, deployment and explainer slots; Monday carries the week-48 brief (branch brief/2026-w48). No launch-2026 campaign posts fall this week. The Dubai robotic villa report (PR #10) is still queued, so the villa appears only in passing; if PR #10 is merged this week, swap LI Thu and X Thu 09:00 for the report posts. Experiment: Instagram Reel first frame, number (Tue) vs question (Thu). Brief photos are on the unmerged brief branch and not in social/images.json, so the brief cards are typographic apart from the Keeta company image.",
+  "open_slots": [],
+  "posts": [
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-li-signals",
+      "platform": "linkedin",
+      "format": "document",
+      "pillar": "signals",
+      "slot": "2026-11-23T08:30+04:00",
+      "text": "Private money is now backing Gulf robotics: Uber's $50m for Dubai robotaxis, a humanoid-robot ETF on ADX, and Oman's sovereign fund in a $200m round.\n\nThis week's 5 verified signals (15 to 19 Nov):\n▸ UAE: Uber commits $50m over two years to take driverless rides door to door in Jumeirah and Umm Suqeim, then Downtown, DIFC and Business Bay\n▸ UAE: Lunate's Boreas VettaFi Humanoid Robots ETF (ticker ROBOTS) is due to list on ADX on 8 Dec, holding 41 companies at a 0.49% fee\n▸ UAE: Keeta Drone's M-Drone 4L lowers orders of up to 4.5 kg on a winch, for villa communities like Sobha Hartland\n▸ UAE: Sheikh Shakhbout Medical City passes 1,300 robot-assisted surgeries, now 500+ a year\n▸ Oman: the Oman Investment Authority joins a ~$200m round for Chinese lab-robot maker MegaRobo\n\nSwipe for the detail. Sources in the comments.\n\n#Robotics #UAE #Oman #AutonomousVehicles #Humanoids",
+      "first_comment": "Sources: The National (Uber, 18 Nov) https://www.thenationalnews.com/news/uae/2026/11/18/uber-commits-50m-to-expand-autonomous-vehicle-services-across-dubai-by-2027/\nLunate (17 Nov) https://lunate.com/en/news-insights/announcements/lunate-expands-boreas-range-with-launch-of-gccs-first-humanoid-robots-etf/\nKeeta Drone release (18 Nov) https://www.zawya.com/en/press-release/events-conferences/keeta-drone-unveils-its-latest-delivery-solutions-at-dubai-future-week-2348805\nGulf News (SSMC, 15 Nov) https://gulfnews.com/uae/health/sheikh-shakhbout-medical-city-performs-1300-robotic-assisted-surgeries-1.500748148\nThe AI Insider (MegaRobo, 19 Nov) https://theaiinsider.tech/2026/11/19/megarobo-raises-nearly-200m-to-fund-expansion-of-ai-powered-laboratory-automation/\n\nThe weekly brief: https://roboticsmena.com/?utm_source=linkedin&utm_medium=social&utm_campaign=2026-w48#brief",
+      "tags": [
+        "Uber",
+        "Lunate",
+        "Keeta Drone",
+        "Sheikh Shakhbout Medical City",
+        "Oman Investment Authority (pick the company pages from LinkedIn's list)"
+      ],
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "Weekly brief · 23 Nov",
+          "title": "Private money moves into **Gulf robotics**",
+          "body": "Five verified signals from 15 to 19 November.",
+          "foot": "Swipe →",
+          "image": "/media/brand/hero-delivery-robots.jpg",
+          "caption": true
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "UAE · Mobility",
+          "title": "Uber commits $50m to driverless rides across Dubai",
+          "body": "Door-to-door trips in Jumeirah and Umm Suqeim, then Downtown, DIFC and Business Bay by end-2027, with a specialist on board at first.",
+          "foot": "Source: The National, 18 Nov 2026",
+          "page": "1/5"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "UAE · Markets",
+          "title": "The GCC's first humanoid-robot ETF lists on ADX on 8 Dec",
+          "body": "Lunate's fund (ticker ROBOTS) starts with 41 chip, component, robot and software makers, at a 0.49% annual fee.",
+          "foot": "Source: Lunate, 17 Nov 2026",
+          "page": "2/5"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "UAE · Delivery",
+          "title": "Keeta's new drone lowers orders on a winch",
+          "body": "The M-Drone 4L carries up to 4.5 kg and needs no landing pad. Sobha Hartland is set to be one of the first communities served.",
+          "foot": "Source: Keeta Drone via Zawya, 18 Nov 2026",
+          "image": "/media/companies/keeta-drone.jpg",
+          "caption": true,
+          "page": "3/5"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "UAE · Healthcare",
+          "value": "1,300+",
+          "label": "robot-assisted surgeries at Sheikh Shakhbout Medical City",
+          "body": "Now 500+ a year, with 42% growth in the first half of 2026.",
+          "foot": "Source: Gulf News, 15 Nov 2026",
+          "page": "4/5"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Oman · Investment",
+          "title": "Oman's sovereign fund backs lab-robot maker MegaRobo",
+          "body": "The Oman Investment Authority joined a round of nearly $200m. No operations in Oman have been announced.",
+          "foot": "Source: The AI Insider, 19 Nov 2026",
+          "page": "5/5"
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Get 5 verified signals every Monday",
+          "body": "Follow Robotics MENA and join the weekly brief at roboticsmena.com"
+        }
+      ],
+      "sources": [
+        {
+          "name": "The National",
+          "url": "https://www.thenationalnews.com/news/uae/2026/11/18/uber-commits-50m-to-expand-autonomous-vehicle-services-across-dubai-by-2027/"
+        },
+        {
+          "name": "Lunate",
+          "url": "https://lunate.com/en/news-insights/announcements/lunate-expands-boreas-range-with-launch-of-gccs-first-humanoid-robots-etf/"
+        },
+        {
+          "name": "Zawya (Keeta Drone press release)",
+          "url": "https://www.zawya.com/en/press-release/events-conferences/keeta-drone-unveils-its-latest-delivery-solutions-at-dubai-future-week-2348805"
+        },
+        {
+          "name": "Gulf News",
+          "url": "https://gulfnews.com/uae/health/sheikh-shakhbout-medical-city-performs-1300-robotic-assisted-surgeries-1.500748148"
+        },
+        {
+          "name": "The AI Insider",
+          "url": "https://theaiinsider.tech/2026/11/19/megarobo-raises-nearly-200m-to-fund-expansion-of-ai-powered-laboratory-automation/"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-li-doha-schools",
+      "platform": "linkedin",
+      "format": "image",
+      "pillar": "deployment",
+      "slot": "2026-11-24T08:30+04:00",
+      "text": "Deployment of the week: two public schools in Doha, printed on site by robots.\n\n▸ Who: UCC Holding with Qatar's Public Works Authority (Ashghal), on COBOD BOD XL printers\n▸ What it does: gantry printers lay the concrete walls layer by layer, at night to avoid the heat\n▸ Scale: two two-storey schools of 20,000 m² each, 40,000 m² in all, part of a 14-school package\n▸ Why it matters: UCC calls it the world's largest 3D-printed construction project, 40 times the largest printed building before it\n\nBig 5 Global opens in Dubai today. Construction is now the No. 3 sector in our database, with 10 of 70 verified deployments. Full record in the comments.\n\n#Robotics #Construction #Qatar #3DPrinting #Big5Global",
+      "first_comment": "The record: https://roboticsmena.com/database?tab=deployments&id=d29&utm_source=linkedin&utm_medium=social&utm_campaign=2026-w48\nSource: UCC Holding, 11 Jun 2025 https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences",
+      "tags": [
+        "UCC Holding",
+        "COBOD",
+        "Ashghal (Public Works Authority Qatar)"
+      ],
+      "cards": [
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "Deployment of the week · Qatar",
+          "value": "40,000 m²",
+          "label": "of public schools printed on site in Doha",
+          "body": "UCC Holding and Ashghal, on two COBOD BOD XL printers. Billed as the world's largest 3D-printed construction project.",
+          "foot": "Source: UCC Holding, 11 Jun 2025"
+        }
+      ],
+      "sources": [
+        {
+          "name": "UCC Holding",
+          "url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-li-construction",
+      "platform": "linkedin",
+      "format": "image",
+      "pillar": "data",
+      "slot": "2026-11-25T08:30+04:00",
+      "text": "Half of the construction robots in our database are in Saudi Arabia, not the UAE.\n\nOf 70 verified MENA deployments, 10 are in construction:\n▸ Saudi Arabia (5): NEOM's rebar-cage automation venture, a 3D-printed mosque in Jeddah, culvert, drain and bridge inspection robots\n▸ UAE (4): a 3D-printing factory in KEZAD, Dubai Municipality's robotic villa challenge, a block-laying pilot with ALEC, a survey robot\n▸ Qatar (1): the 3D-printed schools in Doha\n\nPrinting and inspection are already on sites. Block-laying and full robotic builds are still pilots and challenges.\n\nAt Big 5 Global this week? Tell us which robots you see working. Records in the comments.\n\n#Robotics #Construction #SaudiArabia #UAE #Big5Global",
+      "first_comment": "All construction records: https://roboticsmena.com/database?tab=deployments&utm_source=linkedin&utm_medium=social&utm_campaign=2026-w48\nSource: roboticsmena.com database, 22 Nov 2026",
+      "cards": [
+        {
+          "template": "bars",
+          "size": "portrait",
+          "kicker": "10 of 70 deployments",
+          "title": "Where construction robots are working",
+          "rows": [
+            {
+              "label": "Saudi Arabia",
+              "value": 5
+            },
+            {
+              "label": "UAE",
+              "value": 4
+            },
+            {
+              "label": "Qatar",
+              "value": 1
+            }
+          ],
+          "body": "Printing, rebar automation, block-laying, survey and inspection.",
+          "foot": "Source: roboticsmena.com, 22 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database?tab=deployments"
+        },
+        {
+          "name": "Asharq Al-Awsat (SPA)",
+          "url": "https://english.aawsat.com/business/5093451-neom-samsung-ct-commit-worlds-largest-deployment-rebar-construction-automation"
+        },
+        {
+          "name": "Gulf Construction Online",
+          "url": "https://www.gulfconstructiononline.com/Article/386820/Jeddah_hosts_world%E2%80%99s_first_3D_printed_mosque"
+        },
+        {
+          "name": "Gulf News",
+          "url": "https://gulfnews.com/business/corporate-news/nanjing-kenyo-group-launches-middle-easts-largest-3d-printing-factory-in-abu-dhabi-1.500296159"
+        },
+        {
+          "name": "Dubai Municipality",
+          "url": "https://www.dm.gov.ae/dubai-municipality-launches-global-robotic-villa-challenge/"
+        },
+        {
+          "name": "MENA Startup Digest",
+          "url": "https://menastartupdigest.com/uaes-buildroid-ai-emerges-from-stealth-with-2-million-to-revolutionize-construction-robotics/"
+        },
+        {
+          "name": "UCC Holding",
+          "url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-li-jeddah-cranes",
+      "platform": "linkedin",
+      "format": "image",
+      "pillar": "explainer",
+      "slot": "2026-11-26T08:30+04:00",
+      "text": "What does \"automated\" mean at a container port? Jeddah's South Container Terminal is a good answer.\n\n▸ The machines: rubber-tyred gantry (RTG) cranes that stack and move containers in the yard\n▸ The change: DP World added 17 automated electric RTGs in a $56m investment, so 50 of the terminal's 77 are now electric and automated (about 65%)\n▸ Who drives: operators work from dedicated control stations, with intelligent positioning doing the precise moves\n▸ Why it matters: no diesel exhaust at the crane and steadier yard work\n\nIt's one of 17 Saudi deployments in our database. Record in the comments.\n\n#Robotics #Ports #SaudiArabia #Logistics",
+      "first_comment": "The record: https://roboticsmena.com/database?tab=deployments&id=d12&utm_source=linkedin&utm_medium=social&utm_campaign=2026-w48\nSource: Transport & Logistics Middle East, 21 Oct 2026 https://www.transportandlogisticsme.com/smart-sea-freight/dp-world-south-container-terminal-in-jeddah-deploys-new-automated-electric-cranes",
+      "tags": [
+        "DP World"
+      ],
+      "cards": [
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "Explainer · Saudi Arabia",
+          "value": "50 of 77",
+          "label": "yard cranes at Jeddah's South Container Terminal are electric and automated",
+          "body": "DP World added 17 in a $56m investment. Operators run them from control stations.",
+          "foot": "Source: Transport & Logistics Middle East, 21 Oct 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Transport & Logistics Middle East",
+          "url": "https://www.transportandlogisticsme.com/smart-sea-freight/dp-world-south-container-terminal-in-jeddah-deploys-new-automated-electric-cranes"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-li-poll",
+      "platform": "linkedin",
+      "format": "poll",
+      "pillar": "community",
+      "slot": "2026-11-27T08:30+04:00",
+      "text": "Big 5 Global wraps up in Dubai after four days. One question for the people who build things:\n\nWhich construction robot will Gulf sites use most by 2030?\n\nWhat we've verified so far: 3D printers on schools in Doha and a mosque in Jeddah, a rebar-automation venture at NEOM worth more than SAR 1.3bn, a block-laying pilot with ALEC, and inspection robots in Riyadh's drains.\n\nVote, and tell us in the comments what you saw on the show floor.\n\n#Robotics #Construction #Big5Global #GCC",
+      "poll": {
+        "question": "Which robot will Gulf sites use most by 2030?",
+        "options": [
+          "3D concrete printers",
+          "Rebar-cage robots",
+          "Block-laying robots",
+          "Inspection robots"
+        ]
+      },
+      "tags": [
+        "Big 5 Global (event page)"
+      ],
+      "sources": [
+        {
+          "name": "Big 5 Global",
+          "url": "https://www.big5global.com/"
+        },
+        {
+          "name": "UCC Holding",
+          "url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences"
+        },
+        {
+          "name": "Asharq Al-Awsat (SPA)",
+          "url": "https://english.aawsat.com/business/5093451-neom-samsung-ct-commit-worlds-largest-deployment-rebar-construction-automation"
+        },
+        {
+          "name": "MENA Startup Digest",
+          "url": "https://menastartupdigest.com/uaes-buildroid-ai-emerges-from-stealth-with-2-million-to-revolutionize-construction-robotics/"
+        },
+        {
+          "name": "Gulf Construction Online",
+          "url": "https://www.gulfconstructiononline.com/Article/386820/Jeddah_hosts_world%E2%80%99s_first_3D_printed_mosque"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-ig-signals",
+      "platform": "instagram",
+      "format": "carousel",
+      "pillar": "signals",
+      "slot": "2026-11-23T19:30+04:00",
+      "text": "Uber's $50m for Dubai robotaxis. A humanoid-robot fund on Abu Dhabi's exchange. A drone that lowers your order on a cable.\n\nThis week's 5 verified signals, from 15 to 19 November. Swipe through, then follow for 5 every Monday.\n\nSources on each slide. Link in bio.\n\n#robotics #dubairobotics #uae #oman #robotaxi #dronedelivery #abudhabi",
+      "media_note": "Carousel: post the JPGs in order. Optional: share slide 2 to Stories with a poll sticker (\"Would you take a driverless taxi?\").",
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "Weekly brief",
+          "title": "Private money moves into **Gulf robotics**",
+          "foot": "Swipe →",
+          "image": "/media/brand/hero-delivery-robots.jpg",
+          "caption": true
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "UAE · Mobility",
+          "title": "Uber commits $50m to driverless rides across Dubai",
+          "body": "Door to door in Jumeirah and Umm Suqeim first, then Downtown, DIFC and Business Bay by end-2027.",
+          "foot": "Source: The National, 18 Nov 2026"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "UAE · Markets",
+          "title": "A humanoid-robot ETF lists on ADX on 8 Dec",
+          "body": "Lunate's fund holds 41 companies, from chips to robot makers.",
+          "foot": "Source: Lunate, 17 Nov 2026"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "UAE · Delivery",
+          "title": "Keeta's new drone lowers orders on a winch",
+          "body": "Up to 4.5 kg, no landing pad needed. Sobha Hartland is set to be among the first communities.",
+          "foot": "Source: Keeta Drone via Zawya, 18 Nov 2026",
+          "image": "/media/companies/keeta-drone.jpg",
+          "caption": true
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "UAE · Healthcare",
+          "value": "1,300+",
+          "label": "robot-assisted surgeries at Sheikh Shakhbout Medical City",
+          "foot": "Source: Gulf News, 15 Nov 2026"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Oman · Investment",
+          "title": "Oman's sovereign fund backs lab-robot maker MegaRobo",
+          "body": "Part of a round of nearly $200m. No operations in Oman announced yet.",
+          "foot": "Source: The AI Insider, 19 Nov 2026"
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Follow for 5 verified signals every Monday",
+          "handles": "@roboticsmena"
+        }
+      ],
+      "sources": [
+        {
+          "name": "The National",
+          "url": "https://www.thenationalnews.com/news/uae/2026/11/18/uber-commits-50m-to-expand-autonomous-vehicle-services-across-dubai-by-2027/"
+        },
+        {
+          "name": "Lunate",
+          "url": "https://lunate.com/en/news-insights/announcements/lunate-expands-boreas-range-with-launch-of-gccs-first-humanoid-robots-etf/"
+        },
+        {
+          "name": "Zawya (Keeta Drone press release)",
+          "url": "https://www.zawya.com/en/press-release/events-conferences/keeta-drone-unveils-its-latest-delivery-solutions-at-dubai-future-week-2348805"
+        },
+        {
+          "name": "Gulf News",
+          "url": "https://gulfnews.com/uae/health/sheikh-shakhbout-medical-city-performs-1300-robotic-assisted-surgeries-1.500748148"
+        },
+        {
+          "name": "The AI Insider",
+          "url": "https://theaiinsider.tech/2026/11/19/megarobo-raises-nearly-200m-to-fund-expansion-of-ai-powered-laboratory-automation/"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-ig-doha-reel",
+      "platform": "instagram",
+      "format": "reel",
+      "pillar": "deployment",
+      "slot": "2026-11-24T19:30+04:00",
+      "text": "40,000 m² of school, printed by robots. 🏗️\n\nIn Doha, UCC Holding and Ashghal are printing two public schools on site with COBOD's giant gantry printers, working at night to beat the heat. The curved walls are modelled on desert dunes.\n\nDeployment of the week. The full record is linked in bio.\n\n#robotics #qatar #doha #3dprinting #construction #architecture #big5global",
+      "media_note": "Experiment arm A (number in the first frame): keep the \"40,000 m²\" frame first. Add a trending audio track in the Instagram app before posting. If COBOD or UCC Holding share printing footage, put it first, with credit (ask by DM).",
+      "tags": [
+        "UCC Holding, COBOD and Ashghal: tag as collaborators only once their Instagram handles are confirmed (not in social/handles.json yet)"
+      ],
+      "reel_seconds": 3,
+      "cards": [
+        {
+          "template": "stat",
+          "size": "story",
+          "kicker": "Deployment of the week · Qatar",
+          "value": "40,000 m²",
+          "label": "of public schools, printed on site by robots"
+        },
+        {
+          "template": "signal",
+          "size": "story",
+          "kicker": "Doha · Construction",
+          "title": "Two two-storey schools, 20,000 m² each",
+          "body": "UCC Holding and Qatar's Public Works Authority (Ashghal), on two COBOD BOD XL printers."
+        },
+        {
+          "template": "signal",
+          "size": "story",
+          "kicker": "How",
+          "title": "Printed at night, walls shaped like dunes",
+          "body": "Night shifts avoid the heat and give better concrete performance. UCC calls it the world's largest 3D-printed construction project.",
+          "foot": "Source: UCC Holding, 11 Jun 2025"
+        },
+        {
+          "template": "cta",
+          "size": "story",
+          "title": "Every robot at work in MENA, verified",
+          "handles": "@roboticsmena"
+        }
+      ],
+      "sources": [
+        {
+          "name": "UCC Holding",
+          "url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-ig-construction-reel",
+      "platform": "instagram",
+      "format": "reel",
+      "pillar": "data",
+      "slot": "2026-11-26T19:30+04:00",
+      "text": "Where do robots build in the Middle East? Not where you'd guess. 🇸🇦\n\nOf the 70 robot deployments we've verified across MENA, 10 are on construction sites, and half of those are in Saudi Arabia: rebar automation at NEOM, a 3D-printed mosque in Jeddah, and inspection robots in Riyadh's drains and culverts.\n\nBig 5 Global is on in Dubai this week. Full list linked in bio.\n\n#robotics #construction #saudiarabia #uae #qatar #big5global #neom",
+      "media_note": "Experiment arm B (question in the first frame): keep the question frame first. Add a trending audio track in the Instagram app before posting.",
+      "reel_seconds": 3,
+      "cards": [
+        {
+          "template": "signal",
+          "size": "story",
+          "kicker": "Big 5 week",
+          "title": "Where do robots **build** in the Middle East?"
+        },
+        {
+          "template": "bars",
+          "size": "story",
+          "kicker": "10 of 70 deployments",
+          "title": "Construction robots by country",
+          "rows": [
+            {
+              "label": "Saudi Arabia",
+              "value": 5
+            },
+            {
+              "label": "UAE",
+              "value": 4
+            },
+            {
+              "label": "Qatar",
+              "value": 1
+            }
+          ],
+          "foot": "Source: roboticsmena.com, 22 Nov 2026"
+        },
+        {
+          "template": "list",
+          "size": "story",
+          "kicker": "Saudi Arabia · 5",
+          "title": "The five records",
+          "items": [
+            "**NEOM:** rebar-cage automation venture",
+            "**Jeddah:** 3D-printed mosque",
+            "**Riyadh:** robots and drones inspect drains and bridges",
+            "**Roads:** culvert-inspection robot",
+            "**AM Unique:** 3D concrete printers"
+          ],
+          "foot": "Source: roboticsmena.com, 22 Nov 2026"
+        },
+        {
+          "template": "cta",
+          "size": "story",
+          "title": "Every robot at work in MENA, verified",
+          "handles": "@roboticsmena"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database?tab=deployments"
+        },
+        {
+          "name": "Asharq Al-Awsat (SPA)",
+          "url": "https://english.aawsat.com/business/5093451-neom-samsung-ct-commit-worlds-largest-deployment-rebar-construction-automation"
+        },
+        {
+          "name": "Gulf Construction Online",
+          "url": "https://www.gulfconstructiononline.com/Article/386820/Jeddah_hosts_world%E2%80%99s_first_3D_printed_mosque"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-ig-cranes",
+      "platform": "instagram",
+      "format": "carousel",
+      "pillar": "explainer",
+      "slot": "2026-11-28T12:00+04:00",
+      "text": "Who drives a container crane? At Jeddah's port, more and more, an operator at a control station.\n\nDP World has made 50 of the 77 yard cranes at its South Container Terminal electric and automated. Swipe for how it works and what changed.\n\nSource: Transport & Logistics Middle East, 21 Oct 2026. Link in bio.\n\n#robotics #saudiarabia #jeddah #ports #logistics #automation",
+      "media_note": "Carousel: post the JPGs in order.",
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "Explainer · Saudi Arabia",
+          "title": "Who drives a **port crane** in Jeddah?",
+          "foot": "Swipe →"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "The machine",
+          "title": "Rubber-tyred gantry cranes stack the yard",
+          "body": "RTGs straddle rows of containers and lift them between trucks and the stacks."
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "The change",
+          "value": "17",
+          "label": "new automated electric cranes, a $56m investment",
+          "body": "50 of the terminal's 77 RTGs, about 65%, are now electric and automated.",
+          "foot": "Source: Transport & Logistics Middle East, 21 Oct 2026"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Who drives",
+          "title": "Operators sit at control stations",
+          "body": "Automatic positioning handles the precise moves. Fully electric drives mean no diesel exhaust at the crane.",
+          "foot": "Source: Transport & Logistics Middle East, 21 Oct 2026"
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Every robot at work in MENA, verified",
+          "handles": "@roboticsmena"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Transport & Logistics Middle East",
+          "url": "https://www.transportandlogisticsme.com/smart-sea-freight/dp-world-south-container-terminal-in-jeddah-deploys-new-automated-electric-cranes"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-x-brief",
+      "platform": "x",
+      "format": "thread",
+      "pillar": "signals",
+      "slot": "2026-11-23T09:00+04:00",
+      "thread": [
+        "This week's 5 verified MENA robotics signals: private money moves in, from Uber's robotaxis to a humanoid-robot ETF 🧵",
+        "1/ 🇦🇪 Uber commits $50m over two years to take driverless rides door to door in Jumeirah and Umm Suqeim, then Downtown, DIFC and Business Bay by end-2027. Source: The National",
+        "2/ 🇦🇪 Lunate's humanoid-robot ETF (ticker ROBOTS) is due to list on ADX on 8 Dec: 41 companies, 0.49% a year. Source: Lunate",
+        "3/ 🇦🇪 Keeta Drone's M-Drone 4L lowers orders of up to 4.5 kg on a winch, no landing pad needed. Sobha Hartland is set to be among the first communities. Source: Keeta Drone",
+        "4/ 🇦🇪 Sheikh Shakhbout Medical City has passed 1,300 robot-assisted surgeries and now does 500+ a year. Source: Gulf News",
+        "5/ 🇴🇲 The Oman Investment Authority joined a ~$200m round for Chinese lab-robot maker MegaRobo. Source: The AI Insider\n\nThe full brief: https://roboticsmena.com/?utm_source=x&utm_medium=social&utm_campaign=2026-w48#brief"
+      ],
+      "cards": [
+        {
+          "template": "cover",
+          "size": "landscape",
+          "kicker": "Weekly brief · 23 Nov",
+          "title": "Private money moves into **Gulf robotics**",
+          "image": "/media/brand/hero-delivery-robots.jpg",
+          "caption": true
+        }
+      ],
+      "sources": [
+        {
+          "name": "The National",
+          "url": "https://www.thenationalnews.com/news/uae/2026/11/18/uber-commits-50m-to-expand-autonomous-vehicle-services-across-dubai-by-2027/"
+        },
+        {
+          "name": "Lunate",
+          "url": "https://lunate.com/en/news-insights/announcements/lunate-expands-boreas-range-with-launch-of-gccs-first-humanoid-robots-etf/"
+        },
+        {
+          "name": "Zawya (Keeta Drone press release)",
+          "url": "https://www.zawya.com/en/press-release/events-conferences/keeta-drone-unveils-its-latest-delivery-solutions-at-dubai-future-week-2348805"
+        },
+        {
+          "name": "Gulf News",
+          "url": "https://gulfnews.com/uae/health/sheikh-shakhbout-medical-city-performs-1300-robotic-assisted-surgeries-1.500748148"
+        },
+        {
+          "name": "The AI Insider",
+          "url": "https://theaiinsider.tech/2026/11/19/megarobo-raises-nearly-200m-to-fund-expansion-of-ai-powered-laboratory-automation/"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-x-countries",
+      "platform": "x",
+      "format": "post",
+      "pillar": "data",
+      "slot": "2026-11-23T17:00+04:00",
+      "text": "Our database now has 70 verified robot deployments across MENA, up from 66 a week ago.\n\n🇦🇪 30 · 🇸🇦 17 · 🇪🇬 6 · 🇶🇦 5 · 🇴🇲 4\n\nEvery one has a primary source and a date. https://roboticsmena.com/map?utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "cards": [
+        {
+          "template": "bars",
+          "size": "landscape",
+          "kicker": "70 verified deployments",
+          "title": "Where the robots are working",
+          "rows": [
+            {
+              "label": "UAE",
+              "value": 30
+            },
+            {
+              "label": "Saudi Arabia",
+              "value": 17
+            },
+            {
+              "label": "Egypt",
+              "value": 6
+            },
+            {
+              "label": "Qatar",
+              "value": 5
+            },
+            {
+              "label": "Oman",
+              "value": 4
+            }
+          ],
+          "foot": "Source: roboticsmena.com, 22 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database?tab=deployments"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-x-doha-schools",
+      "platform": "x",
+      "format": "post",
+      "pillar": "deployment",
+      "slot": "2026-11-24T09:00+04:00",
+      "text": "🇶🇦 Deployment of the week: UCC Holding and Ashghal are printing two 20,000 m² public schools in Doha on site, with COBOD printers.\n\nUCC calls it the world's largest 3D-printed construction project. https://roboticsmena.com/database?tab=deployments&id=d29&utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "tags": [
+        "tag if confirmed: UCC Holding, COBOD, Ashghal"
+      ],
+      "cards": [
+        {
+          "template": "stat",
+          "size": "landscape",
+          "kicker": "Deployment of the week · Qatar",
+          "value": "40,000 m²",
+          "label": "of public schools printed on site in Doha",
+          "foot": "Source: UCC Holding, 11 Jun 2025"
+        }
+      ],
+      "sources": [
+        {
+          "name": "UCC Holding",
+          "url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-x-indoor-robots",
+      "platform": "x",
+      "format": "post",
+      "pillar": "signals",
+      "slot": "2026-11-24T17:00+04:00",
+      "text": "🇦🇪 Dubai Future Labs signed 8 delivery firms, incl. talabat, Keeta, Careem, Aramex and noon, to a programme where couriers hand orders to robots at the entrance for the last stretch to the door.\n\nTarget: 100 robot-ready buildings by 2029. https://roboticsmena.com/database?tab=deployments&id=d69&utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "tags": [
+        "tag if confirmed: Dubai Future Foundation (DubaiFuture, proposed 17 Nov, not in handles.json yet)"
+      ],
+      "cards": [
+        {
+          "template": "stat",
+          "size": "landscape",
+          "kicker": "UAE · Delivery",
+          "value": "100",
+          "label": "robot-ready buildings in Dubai by 2029",
+          "foot": "Source: Entrepreneur Middle East, 20 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Entrepreneur Middle East",
+          "url": "https://mena.entrepreneur.com/business-news/dubai-future-foundation-targets-robotic-deliveries-in-100-buildings-by-2029"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-x-construction",
+      "platform": "x",
+      "format": "post",
+      "pillar": "data",
+      "slot": "2026-11-25T09:00+04:00",
+      "text": "Big 5 week: 10 of our 70 verified MENA deployments are construction robots, and half are in Saudi Arabia.\n\n🇸🇦 5 · 🇦🇪 4 · 🇶🇦 1\n\nPrinters and inspection robots are on sites; block-laying is still a pilot. https://roboticsmena.com/database?tab=deployments&utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "cards": [
+        {
+          "template": "bars",
+          "size": "landscape",
+          "kicker": "10 of 70 deployments",
+          "title": "Where construction robots are working",
+          "rows": [
+            {
+              "label": "Saudi Arabia",
+              "value": 5
+            },
+            {
+              "label": "UAE",
+              "value": 4
+            },
+            {
+              "label": "Qatar",
+              "value": 1
+            }
+          ],
+          "foot": "Source: roboticsmena.com, 22 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database?tab=deployments"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-x-jeddah-cranes",
+      "platform": "x",
+      "format": "post",
+      "pillar": "signals",
+      "slot": "2026-11-25T17:00+04:00",
+      "text": "🇸🇦 DP World added 17 automated electric yard cranes at Jeddah's South Container Terminal, a $56m investment.\n\n50 of its 77 RTG cranes (about 65%) are now electric and automated, run from control stations. https://roboticsmena.com/database?tab=deployments&id=d12&utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "tags": [
+        "tag if confirmed: DP World"
+      ],
+      "cards": [
+        {
+          "template": "stat",
+          "size": "landscape",
+          "kicker": "Saudi Arabia · Ports",
+          "value": "50 of 77",
+          "label": "yard cranes in Jeddah now electric and automated",
+          "foot": "Source: Transport & Logistics Middle East, 21 Oct 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Transport & Logistics Middle East",
+          "url": "https://www.transportandlogisticsme.com/smart-sea-freight/dp-world-south-container-terminal-in-jeddah-deploys-new-automated-electric-cranes"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-x-neom-rebar",
+      "platform": "x",
+      "format": "post",
+      "pillar": "explainer",
+      "slot": "2026-11-26T09:00+04:00",
+      "text": "Why NEOM is automating rebar cages: robots weld and tie the steel cages that go inside concrete, pre-made before they reach the site.\n\nNEOM and Samsung C&T's venture starts at SAR 1.3bn+; they say it cuts manual hours by up to 80%. https://roboticsmena.com/database?tab=deployments&id=d30&utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "Explainer · Saudi Arabia",
+          "title": "Robots that build the steel inside concrete",
+          "body": "NEOM and Samsung C&T: a SAR 1.3bn+ venture. NEOM's fund has also invested in GMT Robotics.",
+          "image": "/media/companies/gmt-robotics.jpg",
+          "caption": true,
+          "foot": "Source: Asharq Al-Awsat (SPA), Dec 2024"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Asharq Al-Awsat (SPA)",
+          "url": "https://english.aawsat.com/business/5093451-neom-samsung-ct-commit-worlds-largest-deployment-rebar-construction-automation"
+        },
+        {
+          "name": "Asharq Al-Awsat (SPA)",
+          "url": "https://english.aawsat.com/technology/5091024-neom-investment-fund-ventures-automated-robotic-technology-construction-projects"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-x-big5",
+      "platform": "x",
+      "format": "post",
+      "pillar": "community",
+      "slot": "2026-11-26T17:00+04:00",
+      "text": "At Big 5 Global (Dubai World Trade Centre, to 26 Nov)?\n\nReply with the construction robot you saw and the company's stand. If it's working on a site in the region, we'll verify it and add it to the database. https://roboticsmena.com/events?utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "tags": [
+        "tag if confirmed: Big 5 Global"
+      ],
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "Big 5 Global · 23 to 26 Nov",
+          "title": "Seen a construction robot on the floor?",
+          "body": "Tell us the robot and the stand. We verify, then add it.",
+          "foot": "Dubai World Trade Centre. Source: big5global.com"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Big 5 Global",
+          "url": "https://www.big5global.com/"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-x-bahrain",
+      "platform": "x",
+      "format": "post",
+      "pillar": "signals",
+      "slot": "2026-11-27T11:00+04:00",
+      "text": "🇧🇭 Hercules Robots plans an AI and Robotics Centre of Excellence in Bahrain to develop the software and skills to deploy humanoids in GCC manufacturing, with local universities.\n\nAnnounced at Gateway Gulf on 1 Nov. https://roboticsmena.com/database?tab=deployments&id=d06&utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "tags": [
+        "tag if confirmed: Hercules Robots, Bahrain EDB"
+      ],
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "Bahrain · Humanoids",
+          "title": "A humanoid-robot centre of excellence for Bahrain",
+          "body": "Hercules Robots: software and skills to deploy humanoids in Bahrain, Saudi Arabia and other GCC factories.",
+          "foot": "Source: The24X7News, 1 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "The24X7News",
+          "url": "https://twentyfoursevennews.com/2026/11/hercules-robots-to-establish-ai-and-robotics-centre-of-excellence-in-bahrain/"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-x-companies",
+      "platform": "x",
+      "format": "post",
+      "pillar": "data",
+      "slot": "2026-11-28T12:00+04:00",
+      "text": "175 robotics companies with a sourced MENA presence, by country:\n\n🇦🇪 84 · 🇸🇦 41 · 🇶🇦 9 · 🇪🇬 8 · 🇴🇲 8 · 🇲🇦 7 · 🇰🇼 6\n\nWho are we missing in your country? https://roboticsmena.com/database?tab=companies&utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "cards": [
+        {
+          "template": "bars",
+          "size": "landscape",
+          "kicker": "175 companies",
+          "title": "Where MENA's robotics companies are",
+          "rows": [
+            {
+              "label": "UAE",
+              "value": 84
+            },
+            {
+              "label": "Saudi Arabia",
+              "value": 41
+            },
+            {
+              "label": "Qatar",
+              "value": 9
+            },
+            {
+              "label": "Egypt",
+              "value": 8
+            },
+            {
+              "label": "Oman",
+              "value": 8
+            },
+            {
+              "label": "Morocco",
+              "value": 7
+            },
+            {
+              "label": "Kuwait",
+              "value": 6
+            }
+          ],
+          "foot": "Source: roboticsmena.com, 22 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database?tab=companies"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-rd-roundup",
+      "platform": "reddit",
+      "format": "text",
+      "pillar": "signals",
+      "slot": "2026-11-23T18:00+04:00",
+      "subreddit": "RoboticsMENA",
+      "title": "MENA robotics this week (15 to 19 Nov): Uber's $50m for Dubai robotaxis, a humanoid-robot ETF on ADX, and 3 more",
+      "text": "This week's roundup. I run roboticsmena.com, the database these come from, and every item has a source you can check.\n\nUAE: Uber says it will spend $50m over two years to expand driverless rides in Dubai: door to door in Jumeirah and Umm Suqeim, then Downtown, DIFC and Business Bay by the end of 2027, with a safety specialist on board at first.\nSource: The National, https://www.thenationalnews.com/news/uae/2026/11/18/uber-commits-50m-to-expand-autonomous-vehicle-services-across-dubai-by-2027/\n\nUAE: Lunate's Boreas VettaFi Humanoid Robots ETF (ticker ROBOTS) is due to list on the Abu Dhabi exchange on 8 Dec. It starts with 41 companies across chips, parts, robot makers and software, at 0.49% a year.\nSource: Lunate, https://lunate.com/en/news-insights/announcements/lunate-expands-boreas-range-with-launch-of-gccs-first-humanoid-robots-etf/\n\nUAE: Keeta Drone showed the M-Drone 4L at Dubai Future Week. It hovers and lowers orders of up to 4.5 kg on a cable, so it needs no landing pad. Sobha Hartland is expected to be one of the first communities. No start date yet.\nSource: Keeta Drone press release on Zawya, https://www.zawya.com/en/press-release/events-conferences/keeta-drone-unveils-its-latest-delivery-solutions-at-dubai-future-week-2348805\n\nUAE: Sheikh Shakhbout Medical City in Abu Dhabi has passed 1,300 robot-assisted surgeries and now does more than 500 a year.\nSource: Gulf News, https://gulfnews.com/uae/health/sheikh-shakhbout-medical-city-performs-1300-robotic-assisted-surgeries-1.500748148\n\nOman: the Oman Investment Authority joined a round of nearly $200m for MegaRobo, a Chinese maker of robotic lab systems. Nothing has been announced about operations in Oman.\nSource: The AI Insider, https://theaiinsider.tech/2026/11/19/megarobo-raises-nearly-200m-to-fund-expansion-of-ai-powered-laboratory-automation/\n\nBig 5 Global (the construction show) is at Dubai World Trade Centre from 23 to 26 Nov. If you go and see robots on the floor, post them here.\n\nWhat did we miss in your country this week?",
+      "sources": [
+        {
+          "name": "The National",
+          "url": "https://www.thenationalnews.com/news/uae/2026/11/18/uber-commits-50m-to-expand-autonomous-vehicle-services-across-dubai-by-2027/"
+        },
+        {
+          "name": "Lunate",
+          "url": "https://lunate.com/en/news-insights/announcements/lunate-expands-boreas-range-with-launch-of-gccs-first-humanoid-robots-etf/"
+        },
+        {
+          "name": "Zawya (Keeta Drone press release)",
+          "url": "https://www.zawya.com/en/press-release/events-conferences/keeta-drone-unveils-its-latest-delivery-solutions-at-dubai-future-week-2348805"
+        },
+        {
+          "name": "Gulf News",
+          "url": "https://gulfnews.com/uae/health/sheikh-shakhbout-medical-city-performs-1300-robotic-assisted-surgeries-1.500748148"
+        },
+        {
+          "name": "The AI Insider",
+          "url": "https://theaiinsider.tech/2026/11/19/megarobo-raises-nearly-200m-to-fund-expansion-of-ai-powered-laboratory-automation/"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-rd-construction",
+      "platform": "reddit",
+      "format": "text",
+      "pillar": "data",
+      "slot": "2026-11-25T18:00+04:00",
+      "subreddit": "RoboticsMENA",
+      "title": "[Data] Construction robots in MENA: 10 verified deployments, and half of them are in Saudi Arabia",
+      "text": "With Big 5 on in Dubai this week I pulled every construction record from our database (roboticsmena.com, which I run). 10 of the 70 deployments we've verified so far are construction. Here they are, with what's actually on a site and what's still a plan.\n\nSaudi Arabia (5)\nNEOM and Samsung C&T: a rebar-cage automation joint venture, initial investment of more than SAR 1.3bn (Dec 2024). The robots weld and tie pre-manufactured cages.\nSource: Asharq Al-Awsat, https://english.aawsat.com/business/5093451-neom-samsung-ct-commit-worlds-largest-deployment-rebar-construction-automation\nJeddah: a 5,600 m² mosque printed with four Guanli printers. Reports say the printing covered non-structural parts.\nSource: Gulf Construction Online, https://www.gulfconstructiononline.com/Article/386820/Jeddah_hosts_world%E2%80%99s_first_3D_printed_mosque\nAlso: Riyadh Municipality's robots and drones for drains and bridges, a Roads General Authority culvert-inspection robot, and AM Unique adding Black Buffalo 3D concrete printers.\n\nUAE (4)\nA 3D concrete printing factory in KEZAD, Abu Dhabi, about $30m (groundbreaking Oct 2025).\nSource: Gulf News, https://gulfnews.com/business/corporate-news/nanjing-kenyo-group-launches-middle-easts-largest-3d-printing-factory-in-abu-dhabi-1.500296159\nDubai Municipality's challenge to build a villa entirely with robots, with Zacua Ventures, Wurth and 25+ companies and universities. Still described as planned.\nSource: Dubai Municipality, https://www.dm.gov.ae/dubai-municipality-launches-global-robotic-villa-challenge/\nAlso: Buildroid AI's block-laying robot piloted by ALEC, and a Dubai Municipality LiDAR survey robot.\n\nQatar (1)\nUCC Holding and Ashghal printing two 20,000 m² public schools in Doha on COBOD printers.\nSource: UCC Holding, https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences\n\nCaveats: we only count what has a primary source and a date, so this undercounts.\n\nIf you work on sites here: what robots have you actually seen in use, and which of these look like PR rather than practice?",
+      "sources": [
+        {
+          "name": "Robotics MENA database",
+          "url": "https://roboticsmena.com/database?tab=deployments"
+        },
+        {
+          "name": "Asharq Al-Awsat (SPA)",
+          "url": "https://english.aawsat.com/business/5093451-neom-samsung-ct-commit-worlds-largest-deployment-rebar-construction-automation"
+        },
+        {
+          "name": "Gulf Construction Online",
+          "url": "https://www.gulfconstructiononline.com/Article/386820/Jeddah_hosts_world%E2%80%99s_first_3D_printed_mosque"
+        },
+        {
+          "name": "Gulf News",
+          "url": "https://gulfnews.com/business/corporate-news/nanjing-kenyo-group-launches-middle-easts-largest-3d-printing-factory-in-abu-dhabi-1.500296159"
+        },
+        {
+          "name": "Dubai Municipality",
+          "url": "https://www.dm.gov.ae/dubai-municipality-launches-global-robotic-villa-challenge/"
+        },
+        {
+          "name": "UCC Holding",
+          "url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-rd-question",
+      "platform": "reddit",
+      "format": "text",
+      "pillar": "community",
+      "slot": "2026-11-28T16:00+04:00",
+      "subreddit": "RoboticsMENA",
+      "title": "Dubai wants 100 buildings ready for indoor delivery robots by 2029. Would your building let them in?",
+      "text": "Dubai Future Labs has signed eight delivery firms (talabat, Keeta, Deliveroo, Careem, Quiqup, EMX, Aramex and noon) to a programme where the courier hands your order to a robot at the building entrance, and the robot takes it up to your door. The target is 100 robot-ready buildings by 2029.\nSource: Entrepreneur Middle East, https://mena.entrepreneur.com/business-news/dubai-future-foundation-targets-robotic-deliveries-in-100-buildings-by-2029\n\nQuestions for anyone living in a tower here, or in Riyadh, Doha or Cairo:\nWould you want this in your building, or would you rather the courier came up?\nWhat would building management worry about: lifts, security, lobbies?\nHas anyone already had a delivery robot in their building?\n\n(I run roboticsmena.com, where we track these programmes. No link needed, I'm just curious what residents think.)",
+      "sources": [
+        {
+          "name": "Entrepreneur Middle East",
+          "url": "https://mena.entrepreneur.com/business-news/dubai-future-foundation-targets-robotic-deliveries-in-100-buildings-by-2029"
+        }
+      ]
+    }
+  ]
+}
