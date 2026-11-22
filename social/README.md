@@ -21,6 +21,15 @@ The agents draft. **The owner approves (in the admin portal) and posts.** Nothin
 - **Monday:** comment `followers linkedin=N x=N instagram=N reddit=N` (reddit = r/RoboticsMENA members) on the engagement issue (the Analyst records it).
 - **1st of the month:** use LinkedIn's "Invite to follow" credits.
 
+## The Sunday pipeline
+1. **13:43, weekly brief:** researches the week and picks five verified signals. As soon as they're pushed to `brief/<year>-w<NN>`, it
+   starts the weekly social run, then finishes the brief's X posts and opens its pull request.
+2. **Weekly social run (started by the brief; 17:37 fallback):** Analyst, Strategist and Creator build next week around that brief: the
+   roundup of the five signals, one post of its own per brief story (`"brief": "<item id>"`), the week's events and the rest of the cadence.
+   It opens one "Social: week NN" pull request; the fallback does nothing if that already exists.
+3. **You approve both** in the admin portal.
+4. **18:47, library refresh:** republishes the Content Library once they're approved (the 21:23 evening refresh catches later approvals).
+
 ## Content Library (view and download everything)
 **https://claude.ai/artifact/VLvATizyqX8AuX4t3WtmM2** (private to the owner): everything in one place. The **Engagement** tab shows the daily reply
 sheets from the last two `social-engage` issues (newest open, a Copy button and a Done tick on every draft). Then every post from last week onwards
