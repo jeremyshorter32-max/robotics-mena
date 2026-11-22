@@ -6,7 +6,8 @@
 // Card spec (in the queue): { template: cover|signal|stat|bars|list|cta, size: portrait|square|story|landscape,
 //   theme?: light|dark, kicker?, title, body?, foot?, value?, label?, rows?: [{label, value, note?}], items?: [..],
 //   image?: a path listed in social/images.json (credit printed automatically), caption?: true (also say what it shows),
-//   focus?: CSS background-position, images?: [paths] (cta/cover mosaic), lang?: en|ar, page?: '2/6' }
+//   focus?: CSS background-position, fit?: 'contain' (product cut-outs on white, shown whole), images?: [paths] (cta/cover mosaic),
+//   lang?: en|ar, page?: '2/6' }
 // Layouts: photo band over text (portrait, square, story), split text and photo (landscape), indigo-toned full-bleed
 // cover, and a photo mosaic for closing slides. Cards without an image keep the typographic layouts.
 const fs = require('fs');
@@ -79,17 +80,17 @@ function cardHtml(c) {
 
   let body;
   if (layout === 'band') body = `
-    <div class="band" style="height:${bandH * u}px;background-image:url('${url(photo)}');background-position:${c.focus || 'center'}">
+    <div class="band" style="height:${bandH * u}px;background-image:url('${url(photo)}');background-position:${c.focus || 'center'}${c.fit === 'contain' ? ';background-size:contain;background-repeat:no-repeat;background-color:#fff' : ''}">
       <div class="chip-logo"><img src="${LOGO.light}" alt=""></div>${page ? `<span class="page onphoto">${esc(c.page)}</span>` : ''}${credit}</div>
     <div class="panel"><div class="main">${inner}</div>${foot}</div>`;
   else if (layout === 'split') body = `
     <div class="split"><div class="left"><div class="top"><img class="logo" src="${logoSrc}" alt="">${page}</div><div class="main">${inner}</div>${foot}</div>
-    <div class="right" style="background-image:url('${url(photo)}');background-position:${c.focus || 'center'}">${credit}</div></div>`;
+    <div class="right" style="background-image:url('${url(photo)}');background-position:${c.focus || 'center'}${c.fit === 'contain' ? ';background-size:contain;background-repeat:no-repeat;background-color:#fff' : ''}">${credit}</div></div>`;
   else if (layout === 'duotone') body = `
     <div class="duo" style="background-image:url('${url(photo)}');background-position:${c.focus || 'center'}"></div><div class="duo-tint"></div>
     <div class="over"><div class="top"><img class="logo" src="${logoSrc}" alt="">${page}</div><div class="main end">${inner}</div>${foot}</div>${credit}`;
   else if (layout === 'mosaic') { const ims = mosaic.slice(0, 4);
-    body = `<div class="mosaic">${ims.map(p => `<div style="background-image:url('${url(p)}')"></div>`).join('')}</div>
+    body = `<div class="mosaic">${ims.map(p => `<div style="background-image:url('${url(p)}')${c.fit === 'contain' ? ';background-size:contain;background-repeat:no-repeat;background-color:#fff' : ''}"></div>`).join('')}</div>
     <div class="over mos"><div class="top"><img class="logo" src="${logoSrc}" alt="">${page}</div><div class="main ${T === 'cta' ? 'center' : 'end'}">${T === 'cta' ? `<img class="sym" src="${LOGO.symDark}" alt="">` : ''}${inner}</div>${foot}</div>
     <span class="credit">${esc('Photos: ' + [...new Set(ims.map(p => (IMAGES[p] || {}).credit).filter(Boolean))].join(', '))}</span>`; }
   else body = `<div class="plainwrap"><div class="top"><img class="logo" src="${logoSrc}" alt="">${page}</div><div class="main">${inner}</div>${foot}</div>`;
@@ -145,6 +146,7 @@ ${!dark && layout === 'plain' ? `.plainwrap:before{content:'';position:absolute;
 ${dark && layout === 'plain' ? `.plainwrap:after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 10%,rgba(143,141,201,.32),transparent 45%);pointer-events:none}` : ''}
 ${story && T === 'cover' ? `h1.big{font-size:${170 * u}px;line-height:.95}` : ''}
 ${layout === 'split' ? `h1{font-size:${58 * u}px}h1.big{font-size:${70 * u}px}.body{font-size:${28 * u}px}.left .main{gap:${20 * u}px}.value{font-size:${Math.min(220, Math.floor(1050 / Math.max(4, String(c.value || '').length))) * u}px}` : ''}
+${layout === 'split' && c.fit === 'contain' ? '.right:before{display:none}' : ''}
 ${layout === 'mosaic' && T === 'cover' ? `.mosaic div{filter:saturate(.9)!important}.over.mos{background:linear-gradient(180deg,color-mix(in srgb,var(--indigo) 62%,transparent) 0%,color-mix(in srgb,var(--indigo) 48%,transparent) ${land ? 30 : 38}%,color-mix(in srgb,var(--indigo) 86%,transparent) ${land ? 62 : 68}%,color-mix(in srgb,var(--indigo-deep) 96%,transparent) 100%)!important}` : ''}
 ${layout === 'duotone' && c.cover === 'photo' ? `.duo{filter:none}.duo-tint{background:linear-gradient(180deg,color-mix(in srgb,var(--indigo) 55%,transparent) 0%,color-mix(in srgb,var(--indigo) 35%,transparent) 36%,color-mix(in srgb,var(--indigo) 84%,transparent) 64%,color-mix(in srgb,var(--indigo-deep) 96%,transparent) 100%)!important}.duo-tint:before{display:none}` : ''}
 ${accentCss(c, dark, u)}
