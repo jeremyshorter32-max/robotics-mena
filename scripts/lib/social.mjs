@@ -104,6 +104,11 @@ export function validateQueue(q, opts = {}) {
     if (!o || !/^(linkedin|x|instagram|reddit) (mon|tue|wed|thu|fri|sat|sun) \d{2}:\d{2}$/.test(o.slot || '')) errors.push(`open_slots[${i}]: slot must look like "x thu 09:00"`);
     else if (!String(o.reason || '').trim()) errors.push(`open_slots[${i}]: ${o.slot} needs a reason`);
   });
+  // Each brief story should get at least one expansion post ("brief": "<item id>"). A warning, not an error.
+  const brief = q.campaign ? null : (opts.brief !== undefined ? opts.brief : weekBrief(q.week));
+  const briefIds = new Set((brief?.items || []).map(i => i.id));
+  q.posts.forEach(p => { if (p.brief && brief && !briefIds.has(p.brief)) errors.push(`${p.id}: brief "${p.brief}" is not a story in this week's brief (${[...briefIds].join(', ')})`); });
+  briefGaps(q, brief).forEach(i => warnings.push(`queue: brief story "${i.id}" (${i.country}) has no expansion post yet; add one with "brief": "${i.id}"`));
   // Ready-to-paste copy that isn't a scheduled post (personal posts, emails, DMs): same editorial checks.
   (q.kit || []).forEach((k, i) => {
     const w = `kit[${i}] ${k.id || ''}`;
@@ -230,6 +235,24 @@ export function knownHandles(file = path.join(SOCIAL, 'handles.json')) {
     if (o.x) out.x.add(o.x.toLowerCase()); if (o.instagram) out.instagram.add(o.instagram.toLowerCase());
   });
   return out;
+}
+
+// The weekly brief a queue week goes out with: the archive in data/briefs/ whose publish date falls in that week
+// (the brief archived as 2026-w47 is published on Mon 23 Nov, so it belongs to queue week 2026-w48).
+export function weekBrief(week, dir = path.join(ROOT, 'data/briefs')) {
+  if (!fs.existsSync(dir)) return null;
+  for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.json')).sort().reverse()) {
+    const b = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+    if (b.published && weekOf(new Date(b.published + 'T12:00:00Z')) === week) return b;
+  }
+  return null;
+}
+// Brief stories with no expansion post yet. An expansion is a post of its own about one story, marked "brief": "<item id>";
+// the roundup posts that list all five don't count.
+export function briefGaps(q, brief) {
+  if (q.campaign || !brief) return [];
+  const covered = new Set(q.posts.filter(p => p.status !== 'skipped' && p.brief).map(p => p.brief));
+  return brief.items.filter(i => !covered.has(i.id));
 }
 
 // Slots from social/cadence.json that a queue does not fill (same platform, day and format). A queue can leave a slot empty on purpose

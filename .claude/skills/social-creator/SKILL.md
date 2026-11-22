@@ -14,6 +14,8 @@ run the `social-strategist` skill first.
 
 ## 1. Write the queue
 Create or update `social/queue/<week>.json` (copy the shape of the newest existing week). One entry per planned slot:
+- `brief`: on a post that expands one of the week's brief stories, the brief item's `id` (see the Strategist's plan). The library shows these
+  under "This week's brief", and `validate` warns for any brief story without one.
 - `id` `w<NN>-<platform short>-<slug>` (li, ig, x, rd), `platform`, `format`, `pillar`, `slot` (`YYYY-MM-DDTHH:MM+04:00`),
   `lang` (`en`; posts are English only while `social/cadence.json` languages is ["en"]), `status: "draft"`, the copy, `cards`, `sources` (`{name, url}`), and optionally `tags`, `media_note` and `first_comment`.
 - **Copy per platform** (the limits are checked by the validator):

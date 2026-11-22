@@ -143,3 +143,13 @@ test('the engagement X watch list is small enough for one read window and only n
   assert.deepEqual(watchList(['SomeNewCo'], {}), [{ handle: 'SomeNewCo', name: 'SomeNewCo', mena: false }]);
   assert.equal(watchList(Array.from({ length: 40 }, (_, i) => 'h' + i), {}).length, 28);
 });
+
+test('each brief story needs an expansion post of its own, marked with its id', async () => {
+  const { briefGaps } = await import('../../scripts/lib/social.mjs');
+  const brief = { items: [{ id: 'a', country: 'AE' }, { id: 'b', country: 'OM' }] };
+  const wk = { week: '2026-w50', posts: [post({ id: 'w50-x-a', slot: '2026-12-08T13:00+04:00', brief: 'a' })] };
+  assert.deepEqual(briefGaps(wk, brief).map(i => i.id), ['b']);
+  assert.ok(validateQueue(wk, { brief }).warnings.some(w => /"b" .*no expansion post/.test(w)));
+  assert.ok(validateQueue({ ...wk, posts: [post({ id: 'w50-x-z', slot: '2026-12-08T13:00+04:00', brief: 'zzz' })] }, { brief }).errors.some(e => /not a story in this week's brief/.test(e)));
+  assert.deepEqual(briefGaps({ campaign: 'c', posts: [] }, brief), []);
+});

@@ -41,6 +41,15 @@
       "results": "Comment on the week's \"Social engagement\" issue, shown in the Content Library's Engagement tab"
     },
     {
+      "id": "library-refresh",
+      "name": "Content Library refresh after the brief",
+      "trigger": "trig_01XAf7FRPtfSNnSjZeRznuCx",
+      "cron": "CRON_TZ=Asia/Dubai 47 18 * * 0",
+      "when": "Sundays 18:47 Gulf time",
+      "produces": "Republishes the Content Library once the week's brief and social posts are approved",
+      "results": "The Content Library (Engagement and week tabs, This week's brief panel)"
+    },
+    {
       "id": "portal-requests",
       "name": "Portal requests",
       "trigger": "trig_01JvTSRfFtMDDpwK6r5FqLhz",

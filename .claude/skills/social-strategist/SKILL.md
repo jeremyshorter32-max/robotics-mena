@@ -33,7 +33,13 @@ Keep it under a page. Sections:
    - Every slot uses something verified: a brief item, a database record or a count from `data/*.json`. No slot without a source.
    - If a slot would only repeat another post that week, leave it empty on purpose: add `{ "slot": "x thu 09:00", "reason": "..." }` to the
      queue's `open_slots` rather than filling it with a weak post.
-   - The same story may appear on several platforms in different forms, but never twice on one platform in a week.
+   - **Brief stories:** the week goes out with the weekly brief published that Monday (`data/briefs/` archive whose `published` date is in
+     the week; `data/brief.json` or the open `brief/...` pull request if it isn't archived yet). Besides the roundup posts that list all
+     five, plan at least one post of its own for EACH brief story: a fresh angle, a number or a "what it means", on whichever platform
+     suits it, ideally spread Tuesday to Saturday. Mark each with `"brief": "<brief item id>"`. These can sit outside the cadence slots.
+     `node scripts/social.mjs validate` warns for any story still without one.
+   - The same story may appear on several platforms in different forms, but never twice on one platform in a week (a brief story's
+     roundup mention plus its own expansion post is fine).
    - Spread countries: no more than half the week's posts about the UAE. Everything is in English (social/cadence.json languages).
    - Deployment of the week: the most visual recent deployment that has a rights-cleared image or a clear story. Name who to tag.
 3. **Event coverage:** for each event in the window, decide: preview post, live thread (X), Stories (Instagram), recap (LinkedIn).

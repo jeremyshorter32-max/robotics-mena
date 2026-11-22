@@ -2,7 +2,7 @@
 // Records a scheduled-task run on the "Scheduled task log" issue (label agent-runs), which the admin portal's
 // Schedule tab reads. Never fails the run: on any error it prints a warning and exits 0.
 //   node scripts/run-log.mjs <task> <started|succeeded|failed|nothing-to-do> [--result URL] [--session URL] [--summary "..."] [--repo owner/name]
-// <task> is an id from admin/scheduled-tasks.json (weekly-scan, weekly-brief, weekly-social, daily-engagement, portal-requests).
+// <task> is an id from admin/scheduled-tasks.json (weekly-scan, weekly-brief, weekly-social, library-refresh, daily-engagement, portal-requests).
 // --session defaults to this Claude session (from CLAUDE_CODE_REMOTE_SESSION_ID) when available.
 import { execFileSync } from 'node:child_process';
 import { formatRunComment, LOG_TITLE, LOG_LABEL, STATUSES } from '../admin/src/schedule.mjs';
