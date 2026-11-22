@@ -144,9 +144,9 @@ h1.big{font-size:${94 * u}px}h1.sm{font-size:${58 * u}px}h1 b{color:${dark ? 'va
 ${!dark && layout === 'plain' ? `.plainwrap:before{content:'';position:absolute;${ar ? 'left' : 'right'}:0;top:0;width:${14 * u}px;height:100%;background:var(--indigo)}` : ''}
 ${dark && layout === 'plain' ? `.plainwrap:after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 10%,rgba(143,141,201,.32),transparent 45%);pointer-events:none}` : ''}
 ${story && T === 'cover' ? `h1.big{font-size:${170 * u}px;line-height:.95}` : ''}
-${layout === 'split' ? `h1{font-size:${58 * u}px}h1.big{font-size:${70 * u}px}.body{font-size:${28 * u}px}.left .main{gap:${20 * u}px}` : ''}
-${layout === 'mosaic' && T === 'cover' ? `.mosaic div{filter:saturate(1.05)}.over.mos{background:${land ? 'linear-gradient(180deg,rgba(17,18,22,.35) 0%,rgba(17,18,22,0) 20%,rgba(17,18,22,.05) 38%,rgba(17,18,22,.78) 62%,rgba(17,18,22,.94) 100%)' : 'linear-gradient(180deg,rgba(17,18,22,.45) 0%,rgba(17,18,22,.05) 22%,rgba(17,18,22,.10) 45%,rgba(17,18,22,.82) 68%,rgba(17,18,22,.95) 100%)'}!important}.mosaic div{filter:saturate(1.05)!important}` : ''}
-${layout === 'duotone' && c.cover === 'photo' ? `.duo{filter:none}.duo-tint{background:linear-gradient(180deg,rgba(17,18,22,.42) 0%,rgba(17,18,22,0) 24%,rgba(17,18,22,0) 38%,rgba(17,18,22,.80) 62%,rgba(17,18,22,.96) 100%)!important}.duo-tint:before{display:none}` : ''}
+${layout === 'split' ? `h1{font-size:${58 * u}px}h1.big{font-size:${70 * u}px}.body{font-size:${28 * u}px}.left .main{gap:${20 * u}px}.value{font-size:${Math.min(220, Math.floor(1050 / Math.max(4, String(c.value || '').length))) * u}px}` : ''}
+${layout === 'mosaic' && T === 'cover' ? `.mosaic div{filter:saturate(.9)!important}.over.mos{background:linear-gradient(180deg,color-mix(in srgb,var(--indigo) 62%,transparent) 0%,color-mix(in srgb,var(--indigo) 48%,transparent) ${land ? 30 : 38}%,color-mix(in srgb,var(--indigo) 86%,transparent) ${land ? 62 : 68}%,color-mix(in srgb,var(--indigo-deep) 96%,transparent) 100%)!important}` : ''}
+${layout === 'duotone' && c.cover === 'photo' ? `.duo{filter:none}.duo-tint{background:linear-gradient(180deg,color-mix(in srgb,var(--indigo) 55%,transparent) 0%,color-mix(in srgb,var(--indigo) 35%,transparent) 36%,color-mix(in srgb,var(--indigo) 84%,transparent) 64%,color-mix(in srgb,var(--indigo-deep) 96%,transparent) 100%)!important}.duo-tint:before{display:none}` : ''}
 ${accentCss(c, dark, u)}
 </style></head><body><div class="card">${body}</div>
 <script>

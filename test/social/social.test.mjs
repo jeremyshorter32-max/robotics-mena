@@ -153,3 +153,13 @@ test('each brief story needs an expansion post of its own, marked with its id', 
   assert.ok(validateQueue({ ...wk, posts: [post({ id: 'w50-x-z', slot: '2026-12-08T13:00+04:00', brief: 'zzz' })] }, { brief }).errors.some(e => /not a story in this week's brief/.test(e)));
   assert.deepEqual(briefGaps({ campaign: 'c', posts: [] }, brief), []);
 });
+
+test('a post about an old deployment must say when it happened', () => {
+  const deployments = { d29: { id: 'd29', date: '2025-06-11' }, d70: { id: 'd70', date: '2026-11-18' } };
+  const link = id => `https://roboticsmena.com/database?tab=deployments&id=${id}&utm_source=x&utm_medium=social&utm_campaign=2026-w48`;
+  const wk = text => ({ week: '2026-w48', posts: [post({ id: 'w48-x-t', slot: '2026-11-24T09:00+04:00', text })] });
+  const warns = text => validateQueue(wk(text), { deployments, brief: null }).warnings.filter(w => /looks back/.test(w));
+  assert.equal(warns(`UCC is printing two schools in Doha. ${link('d29')}`).length, 1);
+  assert.equal(warns(`In June 2025, UCC started printing two schools in Doha. Still the biggest? ${link('d29')}`).length, 0);
+  assert.equal(warns(`Keeta's new drone. ${link('d70')}`).length, 0);
+});

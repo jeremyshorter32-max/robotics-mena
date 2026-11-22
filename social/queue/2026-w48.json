@@ -1,7 +1,7 @@
 {
   "week": "2026-w48",
   "theme": "Big 5 week: robots that build, plus the week-48 brief",
-  "notes": "Big 5 Global runs 23 to 26 Nov at Dubai World Trade Centre. Construction and site robots fill the data, deployment and explainer slots; Monday carries the week-48 brief (branch brief/2026-w48). No launch-2026 campaign posts fall this week. The Dubai robotic villa report (PR #10) is still queued, so the villa appears only in passing; if PR #10 is merged this week, swap LI Thu and X Thu 09:00 for the report posts. Experiment: Instagram Reel first frame, number (Tue) vs question (Thu). Brief photos are on the unmerged brief branch and not in social/images.json, so the brief cards are typographic apart from the Keeta company image. Brief expansions (added 22 Nov): one X post of its own for each of the five brief stories, Tue to Sat at 13:00 (Sat 15:00), between the cadence slots. Visual pass (22 Nov): every brief signal now carries its story photo (company press images, cleared in social/images.json; Lunate's illustrative render replaced by Lootah's humanoid showroom, captioned), the signals covers and closing slides are photo mosaics, and the Doha and construction posts use UCC, COBOD, Hilti and Abyan site photos.",
+  "notes": "Big 5 Global runs 23 to 26 Nov at Dubai World Trade Centre. Construction and site robots fill the data, deployment and explainer slots; Monday carries the week-48 brief (branch brief/2026-w48). No launch-2026 campaign posts fall this week. The Dubai robotic villa report (PR #10) is still queued, so the villa appears only in passing; if PR #10 is merged this week, swap LI Thu and X Thu 09:00 for the report posts. Experiment: Instagram Reel first frame, number (Tue) vs question (Thu). Brief photos are on the unmerged brief branch and not in social/images.json, so the brief cards are typographic apart from the Keeta company image. Brief expansions (added 22 Nov): one X post of its own for each of the five brief stories, Tue to Sat at 13:00 (Sat 15:00), between the cadence slots. Visual pass (22 Nov): every brief signal now carries its story photo (company press images, cleared in social/images.json; Lunate's illustrative render replaced by Lootah's humanoid showroom, captioned), the signals covers and closing slides are photo mosaics, and the Doha and construction posts use UCC, COBOD, Hilti and Abyan site photos. Doha schools (22 Nov): reframed as a dated Big 5 week look back (printing began June 2025; COBOD said in June 2026 the first school is underway), ending on a question.",
   "open_slots": [],
   "posts": [
     {
@@ -133,8 +133,8 @@
       "format": "image",
       "pillar": "deployment",
       "slot": "2026-11-24T08:30+04:00",
-      "text": "Deployment of the week: two public schools in Doha, printed on site by robots.\n\n▸ Who: UCC Holding with Qatar's Public Works Authority (Ashghal), on COBOD BOD XL printers\n▸ What it does: gantry printers lay the concrete walls layer by layer, at night to avoid the heat\n▸ Scale: two two-storey schools of 20,000 m² each, 40,000 m² in all, part of a 14-school package\n▸ Why it matters: UCC calls it the world's largest 3D-printed construction project, 40 times the largest printed building before it\n\nBig 5 Global opens in Dubai today. Construction is now the No. 3 sector in our database, with 10 of 70 verified deployments. Full record in the comments.\n\n#Robotics #Construction #Qatar #3DPrinting #Big5Global",
-      "first_comment": "The record: https://roboticsmena.com/database?tab=deployments&id=d29&utm_source=linkedin&utm_medium=social&utm_campaign=2026-w48\nSource: UCC Holding, 11 Jun 2025 https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences",
+      "text": "Big 5 Global opens in Dubai today, so we're looking back at the region's biggest 3D-printing project.\n\nIn June 2025, UCC Holding and Qatar's Public Works Authority (Ashghal) started printing two public schools in Doha, 20,000 m² each, on COBOD BOD XL gantry printers. UCC called it the world's largest 3D-printed construction project.\n\n▸ Printed at night, to avoid the heat\n▸ Two schools in a 14-school package\n▸ Where it stands: COBOD's project page, updated in June 2026, says the first school is underway. We haven't seen a completion announcement yet.\n\nSeventeen months on: is it still the largest 3D-printed project in the world, or has something overtaken it in 2026? Tell us in the comments.\n\n#Robotics #Construction #Qatar #3DPrinting #Big5Global",
+      "first_comment": "The record: https://roboticsmena.com/database?tab=deployments&id=d29&utm_source=linkedin&utm_medium=social&utm_campaign=2026-w48\nStart of printing: UCC Holding, 11 Jun 2025 https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences\nCurrent status: COBOD, June 2026 https://cobod.com/ucc-holding/",
       "tags": [
         "UCC Holding",
         "COBOD",
@@ -144,19 +144,23 @@
         {
           "template": "stat",
           "size": "portrait",
-          "kicker": "Deployment of the week · Qatar",
+          "kicker": "Big 5 week · Look back · Qatar",
           "value": "40,000 m²",
-          "label": "of public schools printed on site in Doha",
-          "body": "UCC Holding and Ashghal, on two COBOD BOD XL printers. Billed as the world's largest 3D-printed construction project.",
-          "foot": "Source: UCC Holding, 11 Jun 2025",
+          "label": "of public schools, printing in Doha since June 2025",
+          "body": "Billed as the world’s largest 3D-printed construction project. Still the biggest in 2026?",
+          "foot": "Sources: UCC Holding, Jun 2025; COBOD, Jun 2026",
           "image": "/media/companies/cobod.jpg",
           "caption": true
         }
       ],
       "sources": [
         {
-          "name": "UCC Holding",
+          "name": "UCC Holding, 11 Jun 2025",
           "url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences"
+        },
+        {
+          "name": "COBOD project page (updated June 2026)",
+          "url": "https://cobod.com/ucc-holding/"
         }
       ]
     },
@@ -417,7 +421,7 @@
       "format": "reel",
       "pillar": "deployment",
       "slot": "2026-11-24T19:30+04:00",
-      "text": "40,000 m² of school, printed by robots. 🏗️\n\nIn Doha, UCC Holding and Ashghal are printing two public schools on site with COBOD's giant gantry printers, working at night to beat the heat. The curved walls are modelled on desert dunes.\n\nDeployment of the week. The full record is linked in bio.\n\n#robotics #qatar #doha #3dprinting #construction #architecture #big5global",
+      "text": "The world's largest 3D-printed building project, 17 months on. 🏗️\n\nIn June 2025, UCC Holding and Ashghal started printing two public schools in Doha, 40,000 m² in all, with COBOD's giant gantry printers working at night to beat the heat. In June 2026, COBOD said the first school was underway.\n\nIt's Big 5 week, so we're looking back at the region's biggest printed project. Is it still the world's largest in 2026, or has something overtaken it? Tell us below.\n\n#robotics #qatar #doha #3dprinting #construction #architecture #big5global",
       "media_note": "Experiment arm A (number in the first frame): keep the \"40,000 m²\" frame first. Add a trending audio track in the Instagram app before posting. If COBOD or UCC Holding share printing footage, put it first, with credit (ask by DM).",
       "tags": [
         "UCC Holding, COBOD and Ashghal: tag as collaborators only once their Instagram handles are confirmed (not in social/handles.json yet)"
@@ -427,46 +431,52 @@
         {
           "template": "cover",
           "size": "story",
-          "kicker": "Deployment of the week · Qatar",
-          "title": "**40,000 m²** of public schools, printed on site by robots",
+          "kicker": "Big 5 week · Look back · Qatar",
+          "title": "**40,000 m²** of schools, printing since **June 2025**",
           "image": "/media/companies/cobod.jpg",
           "caption": true
         },
         {
           "template": "signal",
           "size": "story",
-          "kicker": "Doha · Construction",
-          "title": "Two two-storey schools, 20,000 m² each",
-          "body": "UCC Holding and Qatar's Public Works Authority (Ashghal), on two COBOD BOD XL printers.",
-          "image": "/media/companies/ucc-holding.jpg"
+          "kicker": "June 2025 · Doha",
+          "title": "Two schools, 20,000 m² each",
+          "body": "UCC Holding and Qatar’s Public Works Authority (Ashghal) start printing on two COBOD BOD XL printers.",
+          "image": "/media/companies/ucc-holding.jpg",
+          "foot": "Source: UCC Holding, 11 Jun 2025"
         },
         {
           "template": "signal",
           "size": "story",
-          "kicker": "How",
-          "title": "Printed at night, walls shaped like dunes",
-          "body": "Night shifts avoid the heat and give better concrete performance. UCC calls it the world's largest 3D-printed construction project.",
-          "foot": "Source: UCC Holding, 11 Jun 2025",
+          "kicker": "June 2026 · Where it stands",
+          "title": "The first school is underway",
+          "body": "COBOD’s project page, updated in June 2026. No completion announcement yet.",
+          "foot": "Source: COBOD, June 2026",
           "image": "/media/companies/cobod.jpg",
           "focus": "center 30%"
         },
         {
           "template": "cta",
           "size": "story",
-          "title": "Every robot at work in MENA, verified",
+          "title": "Still the world’s largest in 2026?",
           "handles": "@roboticsmena",
           "images": [
             "/media/companies/cobod.jpg",
             "/media/companies/ucc-holding.jpg",
             "/media/companies/abyan.jpg",
             "/media/companies/hilti.jpg"
-          ]
+          ],
+          "body": "Tell us in the comments."
         }
       ],
       "sources": [
         {
-          "name": "UCC Holding",
+          "name": "UCC Holding, 11 Jun 2025",
           "url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences"
+        },
+        {
+          "name": "COBOD project page (updated June 2026)",
+          "url": "https://cobod.com/ucc-holding/"
         }
       ]
     },
@@ -718,7 +728,7 @@
       "format": "post",
       "pillar": "deployment",
       "slot": "2026-11-24T09:00+04:00",
-      "text": "🇶🇦 Deployment of the week: UCC Holding and Ashghal are printing two 20,000 m² public schools in Doha on site, with COBOD printers.\n\nUCC calls it the world's largest 3D-printed construction project. https://roboticsmena.com/database?tab=deployments&id=d29&utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "text": "🇶🇦 Big 5 week look back: in June 2025, UCC Holding and Ashghal started printing two 20,000 m² schools in Doha with COBOD printers, billed as the world's largest 3D-printed project.\n\nCOBOD said in June 2026 the first is underway. Still the biggest in 2026? https://roboticsmena.com/database?tab=deployments&id=d29&utm_source=x&utm_medium=social&utm_campaign=2026-w48",
       "tags": [
         "tag if confirmed: UCC Holding, COBOD, Ashghal"
       ],
@@ -726,18 +736,22 @@
         {
           "template": "stat",
           "size": "landscape",
-          "kicker": "Deployment of the week · Qatar",
-          "value": "40,000 m²",
-          "label": "of public schools printed on site in Doha",
-          "foot": "Source: UCC Holding, 11 Jun 2025",
+          "kicker": "Big 5 week · Look back · Qatar",
+          "value": "40,000",
+          "label": "m² of schools, printing in Doha since June 2025",
+          "foot": "Sources: UCC Holding, Jun 2025; COBOD, Jun 2026",
           "image": "/media/companies/cobod.jpg",
           "caption": true
         }
       ],
       "sources": [
         {
-          "name": "UCC Holding",
+          "name": "UCC Holding, 11 Jun 2025",
           "url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences"
+        },
+        {
+          "name": "COBOD project page (updated June 2026)",
+          "url": "https://cobod.com/ucc-holding/"
         }
       ]
     },
