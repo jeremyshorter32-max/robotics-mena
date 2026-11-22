@@ -28,6 +28,16 @@ The highest-risk newspaper photos were replaced with company images on 13 Nov 20
 |---|---|---|
 | glydways-bluewaters.jpg | Glydways (company press image, 800×500 crop) | https://www.glydways.com/wp-content/uploads/2026/11/Glydcars_Bluewaters-Dubai.webp (Glydways newsroom, https://www.glydways.com/news/) |
 
+## Brief published 23 Nov 2026 (archived as week 47; signals 15 – 19 Nov)
+
+| File | Credit | Source |
+|---|---|---|
+| uber-dubai-50m.jpg | Uber (company press image: WeRide robotaxis on the Uber network at Jumeirah Mosque, 800×500 crop) | https://tb-static.uber.com/prod/udam-assets/2051296e-94d1-5af6-afea-f29f224310c9.jpg (Uber newsroom, https://www.uber.com/en-AE/newsroom/launch-autonomous-dubai/) |
+| lunate-humanoid-etf.jpg | Lunate (company press image for the ETF launch; an illustrative image, 800×500 crop) | https://lunate.com/media/qx4on053/prl-1260-x-550-robot.jpg |
+| keeta-m-drone-4l.jpg | Keeta Drone (press release image, M-Drone 4L launch at Dubai Future Week, 800×500 crop) | https://media.zawya.com/prod/images/gm_preview/feee5fdc78f0-1.jpg (Keeta Drone release on Zawya) |
+| ssmc-robotic-surgery.jpg | Sheikh Shakhbout Medical City (hospital press image, 800×500 crop) | https://ssmc.ae/assets/uploads/2026/09/FavIcon.jpg (SSMC newsroom, 1,200 robotic procedures release) |
+| megarobo-lab-automation.jpg | MegaRobo (company product image, 800×500 crop) | https://imgs-data-brwq.bcdn8.com/meijia1210/uploads/20250621/0ca59b13716e7243cd523d28182a9577.jpg (megarobo.tech) |
+
 ## Spotlight analysis images (`media/spotlight/`)
 
 | File | Credit | Source |
