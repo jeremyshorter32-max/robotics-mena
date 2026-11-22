@@ -1,9 +1,12 @@
 {
   "week": "2026-w47",
   "theme": "Launch week: what the database shows, plus the fortnight's signals",
-  "notes": "Launch week. All four accounts are live. On each new account, post the launch item first and pin it (X: the thread; Instagram: the carousel; Reddit: the welcome post, posted 15 Nov). Thursday's LinkedIn carousel follows the week-47 brief (pull request #6), with the Glydways results in place of the Lootah showroom. Other signal posts use items from 6 to 12 Nov, which are in this week's brief too. The profile-filling posts for Sun 15 Nov are in the Launch to GITEX campaign. ADNOC report launch (added 15 Nov): LinkedIn carousel, X thread, Instagram carousel and an r/RoboticsMENA post on Wed 18 Nov, before the Dubai villa report goes live (approve PR #10 from Thu 19 Nov). Thursday's w47-x-spotlight was dropped (16 Nov) because it repeated the report's hook; the X Thursday slot stays empty this week.",
+  "notes": "Launch week. All four accounts are live. On each new account, post the launch item first and pin it (X: the thread; Instagram: the carousel; Reddit: the welcome post, posted 15 Nov). Thursday's LinkedIn carousel follows the week-47 brief (pull request #6), with the Glydways results in place of the Lootah showroom. Other signal posts use items from 6 to 12 Nov, which are in this week's brief too. The profile-filling posts for Sun 15 Nov are in the Launch to GITEX campaign. ADNOC report launch (added 15 Nov): LinkedIn carousel, X thread, Instagram carousel and an r/RoboticsMENA post on Wed 18 Nov, before the Dubai villa report goes live (approve PR #10 from Thu 19 Nov). Thursday's w47-x-spotlight was dropped (16 Nov) because it repeated the report's hook; the X Thursday slot stays empty this week. Big 5 warm-up (22 Nov evening): exhibitors confirmed in the official Big 5 Global 2026 directory, with the product images each exhibitor uploaded there.",
   "open_slots": [
-    { "slot": "x thu 09:00", "reason": "w47-x-spotlight dropped on 16 Nov: it repeated the ADNOC report launch posts from Wed 18 Nov." }
+    {
+      "slot": "x thu 09:00",
+      "reason": "w47-x-spotlight dropped on 16 Nov: it repeated the ADNOC report launch posts from Wed 18 Nov."
+    }
   ],
   "posts": [
     {
@@ -1256,6 +1259,257 @@
         {
           "name": "Riviera, 18 Dec 2025",
           "url": "https://www.rivieramm.com/news-content-hub/adnoc-targets-5m-barrels-per-day-with-ai-fleet-efficiency-gains-87210"
+        }
+      ]
+    },
+    {
+      "id": "w47-ig-big5-warmup",
+      "platform": "instagram",
+      "format": "carousel",
+      "pillar": "community",
+      "slot": "2026-11-22T21:30+04:00",
+      "lang": "en",
+      "status": "draft",
+      "text": "Big 5 Global opens tomorrow at Dubai World Trade Centre, and these are the robots we're heading to see. 🏗️\n\n▸ Bright Master Robotics: construction robots, best known for painting walls (Hall 2, 2B99)\n▸ Cloudwalker Robotics: robots that clean high-rise glass façades (Trade Centre Arena, H204)\n▸ Kenyo: 3D concrete printers, with a regional base in Abu Dhabi (Sheikh Saeed Hall 3, E70)\n▸ DJI Enterprise via AERONEX: drone docks and inspection drones (Hall 4, 4D191)\n\n23 to 26 November. Going? Tell us what you see on the floor, and which of these is already working on a real site.\n\n#big5global #dubai #constructiontech #robotics #3dprinting #drones #uae",
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "Big 5 Global · 23 to 26 Nov · Dubai",
+          "title": "The **robots** we’re going to see",
+          "body": "Four stands on our list at Dubai World Trade Centre.",
+          "images": [
+            "/media/social/big5-2026/bright-master-robot.jpg",
+            "/media/social/big5-2026/cloudwalker-facade-robot.jpg",
+            "/media/social/big5-2026/kenyo-gantry-printer.jpg",
+            "/media/social/big5-2026/aeronex-dji-dock.jpg"
+          ],
+          "fit": "contain",
+          "foot": "Swipe →"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Hall 2 · Stand 2B99",
+          "title": "Bright Master Robotics",
+          "body": "Construction robots, best known for painting walls.",
+          "image": "/media/social/big5-2026/bright-master-robot.jpg",
+          "fit": "contain",
+          "foot": "Source: Big 5 Global exhibitor directory"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Trade Centre Arena · H204",
+          "title": "Cloudwalker Robotics",
+          "body": "Robots that clean high-rise glass façades, already at work on buildings in Foshan, Shenzhen and Hefei.",
+          "image": "/media/social/big5-2026/cloudwalker-facade-robot.jpg",
+          "fit": "contain",
+          "foot": "Source: Big 5 Global exhibitor directory"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Sheikh Saeed Hall 3 · E70",
+          "title": "Kenyo",
+          "body": "3D concrete printers and their own printing materials, from a regional base in Abu Dhabi since 2023.",
+          "image": "/media/social/big5-2026/kenyo-gantry-printer.jpg",
+          "fit": "contain",
+          "foot": "Source: Big 5 Global exhibitor directory"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Hall 4 · Stand 4D191",
+          "title": "DJI Enterprise, via AERONEX",
+          "body": "Drone docks and inspection drones for surveys, mapping and site safety.",
+          "image": "/media/social/big5-2026/aeronex-dji-dock.jpg",
+          "fit": "contain",
+          "foot": "Source: Big 5 Global exhibitor directory"
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Going to Big 5? Tell us what’s **working on real sites**",
+          "body": "A demo isn’t a deployment. We verify, then add it.",
+          "handles": "@roboticsmena",
+          "images": [
+            "/media/social/big5-2026/bright-master-robot.jpg",
+            "/media/social/big5-2026/cloudwalker-facade-robot.jpg",
+            "/media/social/big5-2026/kenyo-gantry-printer.jpg",
+            "/media/social/big5-2026/aeronex-dji-dock.jpg"
+          ],
+          "fit": "contain"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Big 5 Global 2026 exhibitor directory",
+          "url": "https://exhibitors.big5global.com/Big-5-Global-2026/Exhibitor"
+        },
+        {
+          "name": "Big 5 Global (organiser, via WAM, 1,800 exhibitors from 60 countries)",
+          "url": "https://www.wam.ae/en/article/c3cn5o0-big-global-opens-next-week-dubai-uniting-measas"
+        }
+      ],
+      "tags": [
+        "Tag exhibitors as collaborators only once their Instagram handles are confirmed (not in social/handles.json)"
+      ]
+    },
+    {
+      "id": "w47-li-big5-warmup",
+      "platform": "linkedin",
+      "format": "document",
+      "pillar": "community",
+      "slot": "2026-11-22T21:50+04:00",
+      "lang": "en",
+      "status": "draft",
+      "text": "Big 5 Global opens tomorrow in Dubai, and these are the robot stands we're heading to first.\n\n1,800+ exhibitors from 60 countries are at Dubai World Trade Centre from 23 to 26 November. Most of the floor is materials and machinery, but a few robot makers are on the list:\n\n▸ Bright Master Robotics (Hall 2, 2B99): construction robots, best known for painting walls\n▸ Cloudwalker Robotics (Trade Centre Arena, H204): robots that clean high-rise glass façades, already at work on buildings in Foshan, Shenzhen and Hefei\n▸ Kenyo (Sheikh Saeed Hall 3, E70): 3D concrete printers and materials, with a regional base in Abu Dhabi since 2023\n▸ DJI Enterprise via AERONEX (Hall 4, 4D191): drone docks and inspection drones for surveys and site safety\n\nThe question we'll ask on every stand: where in the region is this working today? A demo isn't a deployment, and only verified projects go in our database.\n\nGoing this week? Tell us which stand we shouldn't miss.\n\n#Big5Global #Robotics #Construction #Dubai #UAE",
+      "first_comment": "Robotics events in the region, including Big 5 Global: https://roboticsmena.com/events?utm_source=linkedin&utm_medium=social&utm_campaign=2026-w47",
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "Big 5 Global · 23 to 26 Nov · Dubai",
+          "title": "The **robots** we’re going to see",
+          "body": "Four stands on our list at Dubai World Trade Centre.",
+          "images": [
+            "/media/social/big5-2026/bright-master-robot.jpg",
+            "/media/social/big5-2026/cloudwalker-facade-robot.jpg",
+            "/media/social/big5-2026/kenyo-gantry-printer.jpg",
+            "/media/social/big5-2026/aeronex-dji-dock.jpg"
+          ],
+          "fit": "contain",
+          "foot": "Swipe →"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Hall 2 · Stand 2B99",
+          "title": "Bright Master Robotics",
+          "body": "Construction robots, best known for painting walls.",
+          "image": "/media/social/big5-2026/bright-master-robot.jpg",
+          "fit": "contain",
+          "foot": "Source: Big 5 Global exhibitor directory"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Trade Centre Arena · H204",
+          "title": "Cloudwalker Robotics",
+          "body": "Robots that clean high-rise glass façades, already at work on buildings in Foshan, Shenzhen and Hefei.",
+          "image": "/media/social/big5-2026/cloudwalker-facade-robot.jpg",
+          "fit": "contain",
+          "foot": "Source: Big 5 Global exhibitor directory"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Sheikh Saeed Hall 3 · E70",
+          "title": "Kenyo",
+          "body": "3D concrete printers and their own printing materials, from a regional base in Abu Dhabi since 2023.",
+          "image": "/media/social/big5-2026/kenyo-gantry-printer.jpg",
+          "fit": "contain",
+          "foot": "Source: Big 5 Global exhibitor directory"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Hall 4 · Stand 4D191",
+          "title": "DJI Enterprise, via AERONEX",
+          "body": "Drone docks and inspection drones for surveys, mapping and site safety.",
+          "image": "/media/social/big5-2026/aeronex-dji-dock.jpg",
+          "fit": "contain",
+          "foot": "Source: Big 5 Global exhibitor directory"
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Going to Big 5? Tell us what’s **working on real sites**",
+          "body": "A demo isn’t a deployment. We verify, then add it.",
+          "handles": "@roboticsmena",
+          "images": [
+            "/media/social/big5-2026/bright-master-robot.jpg",
+            "/media/social/big5-2026/cloudwalker-facade-robot.jpg",
+            "/media/social/big5-2026/kenyo-gantry-printer.jpg",
+            "/media/social/big5-2026/aeronex-dji-dock.jpg"
+          ],
+          "fit": "contain"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Big 5 Global 2026 exhibitor directory",
+          "url": "https://exhibitors.big5global.com/Big-5-Global-2026/Exhibitor"
+        },
+        {
+          "name": "Big 5 Global (organiser, via WAM, 1,800 exhibitors from 60 countries)",
+          "url": "https://www.wam.ae/en/article/c3cn5o0-big-global-opens-next-week-dubai-uniting-measas"
+        }
+      ],
+      "tags": [
+        "Bright Master Robotics, Cloudwalker Robotics, Kenyo, AERONEX: tag their company pages if they come up in LinkedIn’s list"
+      ]
+    },
+    {
+      "id": "w47-x-big5-warmup",
+      "platform": "x",
+      "format": "post",
+      "pillar": "community",
+      "slot": "2026-11-22T21:40+04:00",
+      "lang": "en",
+      "status": "draft",
+      "text": "Big 5 Global opens tomorrow in Dubai. Robots on our list:\n\n🎨 Bright Master Robotics, Hall 2\n🪟 Cloudwalker façade robots, Arena H204\n🏗️ Kenyo 3D concrete printers, Hall SS3\n🚁 DJI drone docks via AERONEX, Hall 4\n\nGoing? Tell us what works on real sites. https://roboticsmena.com/events?utm_source=x&utm_medium=social&utm_campaign=2026-w47",
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "Hall 2 · Stand 2B99",
+          "title": "Bright Master Robotics",
+          "body": "Construction robots, best known for painting walls.",
+          "image": "/media/social/big5-2026/bright-master-robot.jpg",
+          "fit": "contain",
+          "foot": "Source: Big 5 Global exhibitor directory"
+        },
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "Trade Centre Arena · H204",
+          "title": "Cloudwalker Robotics",
+          "body": "Robots that clean high-rise glass façades, already at work on buildings in Foshan, Shenzhen and Hefei.",
+          "image": "/media/social/big5-2026/cloudwalker-facade-robot.jpg",
+          "fit": "contain",
+          "foot": "Source: Big 5 Global exhibitor directory"
+        },
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "Sheikh Saeed Hall 3 · E70",
+          "title": "Kenyo",
+          "body": "3D concrete printers and their own printing materials, from a regional base in Abu Dhabi since 2023.",
+          "image": "/media/social/big5-2026/kenyo-gantry-printer.jpg",
+          "fit": "contain",
+          "foot": "Source: Big 5 Global exhibitor directory"
+        },
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "Hall 4 · Stand 4D191",
+          "title": "DJI Enterprise, via AERONEX",
+          "body": "Drone docks and inspection drones for surveys, mapping and site safety.",
+          "image": "/media/social/big5-2026/aeronex-dji-dock.jpg",
+          "fit": "contain",
+          "foot": "Source: Big 5 Global exhibitor directory"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Big 5 Global 2026 exhibitor directory",
+          "url": "https://exhibitors.big5global.com/Big-5-Global-2026/Exhibitor"
+        },
+        {
+          "name": "Big 5 Global (organiser, via WAM, 1,800 exhibitors from 60 countries)",
+          "url": "https://www.wam.ae/en/article/c3cn5o0-big-global-opens-next-week-dubai-uniting-measas"
         }
       ]
     }
