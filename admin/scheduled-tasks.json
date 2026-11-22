@@ -19,16 +19,16 @@
       "trigger": "trig_01AjSUDEHtr2uJqdeLK7QYJ2",
       "cron": "CRON_TZ=Asia/Dubai 43 13 * * 0",
       "when": "Sundays 13:43 Gulf time",
-      "produces": "Five signals for the brief and newsletter",
+      "produces": "Five signals for the brief and newsletter; then starts the weekly social run",
       "results": "Pull request brief/<year>-w<NN> (Approvals tab)"
     },
     {
       "id": "weekly-social",
       "name": "Weekly social run",
       "trigger": "trig_014Y9SH2tyeZTVFkLo9ThPtz",
-      "cron": "CRON_TZ=Asia/Dubai 37 15 * * 0",
-      "when": "Sundays 15:37 Gulf time",
-      "produces": "Next week's LinkedIn, Instagram, X and Reddit posts with cards",
+      "cron": "CRON_TZ=Asia/Dubai 37 17 * * 0",
+      "when": "Sundays, started by the brief run once its five signals are pushed (17:37 Gulf time fallback)",
+      "produces": "Next week's LinkedIn, Instagram, X and Reddit posts built around the new brief, with cards",
       "results": "Pull request social/<year>-w<NN> (Approvals tab)"
     },
     {
