@@ -38,6 +38,11 @@ Keep it under a page. Sections:
      five, plan at least one post of its own for EACH brief story: a fresh angle, a number or a "what it means", on whichever platform
      suits it, ideally spread Tuesday to Saturday. Mark each with `"brief": "<brief item id>"`. These can sit outside the cadence slots.
      `node scripts/social.mjs validate` warns for any story still without one.
+   - **Be date-specific, and say why we're looking back.** Anything that happened before the brief's window (more than about 30 days
+     ago), including a "Deployment of the week" from the database, must give the month and year it happened, say why we're revisiting
+     it now (an event that week, an anniversary, a new update), give its latest verified status with that source's date, and end with a
+     question for the audience about where it stands today ("Still the largest in 2026?"). Never write an old story in the present tense
+     as if it were this week's news. Prefer a deployment of the week from the last 30 days; use an older one only with a reason.
    - The same story may appear on several platforms in different forms, but never twice on one platform in a week (a brief story's
      roundup mention plus its own expansion post is fine).
    - Spread countries: no more than half the week's posts about the UAE. Everything is in English (social/cadence.json languages).

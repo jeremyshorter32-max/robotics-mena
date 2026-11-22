@@ -36,6 +36,10 @@ Create or update `social/queue/<week>.json` (copy the shape of the newest existi
 
 ## 2. Cards (images)
 
+**Dates:** follow the Strategist's date rule in the copy and on the cards: an older story names its month and year (in the kicker too,
+for example "Big 5 week · Look back · Qatar" with "since June 2025" in the title), its latest status with that source's date, and closes
+on a question. `validate` warns when a post links a database deployment more than 60 days old without naming its month and year.
+
 **Photos from the brief:** every brief story already has a headline image on the website (`image` in the brief item, provenance in
 `media/brief/SOURCES.md`). Use it on that story's slide in the signals carousel and on its expansion post, so the week looks like the brief.
 Before using one, add it to `social/images.json` with its credit, what it actually shows and its source page, but only if it is a real

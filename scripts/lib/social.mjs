@@ -104,6 +104,21 @@ export function validateQueue(q, opts = {}) {
     if (!o || !/^(linkedin|x|instagram|reddit) (mon|tue|wed|thu|fri|sat|sun) \d{2}:\d{2}$/.test(o.slot || '')) errors.push(`open_slots[${i}]: slot must look like "x thu 09:00"`);
     else if (!String(o.reason || '').trim()) errors.push(`open_slots[${i}]: ${o.slot} needs a reason`);
   });
+  // Look-backs: a post that links a database deployment more than 60 days older than the week must say when it happened (month and year).
+  if (!q.campaign) {
+    const recs = opts.deployments || deploymentsById();
+    let start; try { start = weekStart(q.week); } catch { start = null; }
+    if (start) q.posts.forEach(p => {
+      const words = [p.text, p.title, p.first_comment, ...(p.thread || []), ...(p.cards || []).flatMap(c => [c.kicker, c.title, c.label, c.body, c.foot])].filter(Boolean).join(' ');
+      for (const id of new Set([...words.matchAll(/[?&]id=(d\d+)/g)].map(m => m[1]))) {
+        const r = recs[id]; if (!r || !r.date) continue;
+        const d = new Date(r.date + 'T12:00:00Z');
+        if ((start - d) / 864e5 <= 60) continue;
+        const month = d.toLocaleString('en-GB', { month: 'long', timeZone: 'UTC' }), year = String(d.getUTCFullYear());
+        if (!new RegExp(`(${month}|${month.slice(0, 3)})\\s+${year}`).test(words)) W(p.id, `looks back at ${id} from ${month} ${year}: say when it happened ("${month} ${year}"), why we're looking back now, and ask where it stands today`);
+      }
+    });
+  }
   // Each brief story should get at least one expansion post ("brief": "<item id>"). A warning, not an error.
   const brief = q.campaign ? null : (opts.brief !== undefined ? opts.brief : weekBrief(q.week));
   const briefIds = new Set((brief?.items || []).map(i => i.id));
@@ -235,6 +250,15 @@ export function knownHandles(file = path.join(SOCIAL, 'handles.json')) {
     if (o.x) out.x.add(o.x.toLowerCase()); if (o.instagram) out.instagram.add(o.instagram.toLowerCase());
   });
   return out;
+}
+
+// Database deployments by id (for the look-back check).
+let _deps = null;
+export function deploymentsById(file = path.join(ROOT, 'data/deployments.json')) {
+  if (_deps) return _deps;
+  try { const d = JSON.parse(fs.readFileSync(file, 'utf8')); _deps = Object.fromEntries((Array.isArray(d) ? d : Object.values(d).find(Array.isArray) || []).map(r => [r.id, r])); }
+  catch { _deps = {}; }
+  return _deps;
 }
 
 // The weekly brief a queue week goes out with: the archive in data/briefs/ whose publish date falls in that week
