@@ -36,6 +36,15 @@ Create or update `social/queue/<week>.json` (copy the shape of the newest existi
 
 ## 2. Cards (images)
 
+**Photos from the brief:** every brief story already has a headline image on the website (`image` in the brief item, provenance in
+`media/brief/SOURCES.md`). Use it on that story's slide in the signals carousel and on its expansion post, so the week looks like the brief.
+Before using one, add it to `social/images.json` with its credit, what it actually shows and its source page, but only if it is a real
+photo or product image published by the company, government or hospital itself. Never use an illustrative render, stock image, AI image or
+a newspaper or agency photo: for those, use a cleared photo that honestly shows the subject (with `caption: true`) or a typographic card.
+If the brief's file is a small crop, download the original from the source URL in SOURCES.md, resize it to at most 1800 px wide and save
+it under `media/social/`. Covers and closing slides of the signals posts are photo mosaics of the week's brief images (`images: [...]`).
+Aim for a photo on every card that has a cleared image for its story.
+
 **Colour and covers:** don't set colours on cards. `social/design.json` gives each pillar its accent and cover style at render time, so set each
 post's `pillar` correctly and make sure a carousel's first card uses the `cover` template. Before opening the pull request, check the week's
 Instagram covers in posting order: no two neighbours should share a pillar. If they do, swap days or change one post's angle.
