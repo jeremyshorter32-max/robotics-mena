@@ -10,7 +10,7 @@ import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { ROOT } from './lib/taxonomy.mjs';
-import { allQueues, readJson, queuePath, folderOf, cardFiles, extraFiles, isWeek, weekOf, xLength } from './lib/social.mjs';
+import { allQueues, readJson, queuePath, folderOf, cardFiles, extraFiles, isWeek, weekOf, xLength, weekBrief } from './lib/social.mjs';
 
 // --review builds the sign-off version (approve / request changes per post, saved in the artifact's db) into social/out/review/.
 const REVIEW = process.argv.includes('--review');
@@ -53,12 +53,16 @@ const collections = allQueues().filter(n => !isWeek(n) || n >= since).map(name =
       id: p.id, platform: p.platform, format: p.format, slot: p.slot, lang: p.lang || 'en', status: p.status, template: !!p.template,
       subreddit: p.subreddit || '', title: p.title || '', text: p.text || '', thread: (p.thread || []).map(t => ({ t, n: xLength(t) })),
       xlen: p.platform === 'x' && p.text ? xLength(p.text) : 0, first_comment: p.first_comment || '', poll: p.poll || null,
-      media_note: p.media_note || '', tags: p.tags || [], sources: p.sources || [], refresh: p.refresh || '', media,
+      media_note: p.media_note || '', tags: p.tags || [], sources: p.sources || [], refresh: p.refresh || '', brief: p.brief || '', media,
     };
   });
   // The page zips a collection's media in the browser (an Artifact can't serve .zip files).
   const files = posts.flatMap(p => p.media);
-  return { name, kind: isWeek(name) ? 'week' : 'campaign', title: q.title || (isWeek(name) ? `Week ${+name.slice(6)}` : name), theme: q.theme || '', notes: q.notes || '',
+  // The brief this week goes out with, and which posts expand each of its stories.
+  const wb = isWeek(name) ? weekBrief(name) : null;
+  const brief = wb && { label: wb.label, published: wb.published, items: wb.items.map(i => ({ id: i.id, title: i.title, country: i.country, url: i.source_url || '',
+    posts: posts.filter(p => p.brief === i.id).map(p => p.id) })) };
+  return { name, brief, kind: isWeek(name) ? 'week' : 'campaign', title: q.title || (isWeek(name) ? `Week ${+name.slice(6)}` : name), theme: q.theme || '', notes: q.notes || '',
     range: q.range || [posts[0]?.slot.slice(0, 10), posts.at(-1)?.slot.slice(0, 10)], kit: q.kit || [], posts, files };
 });
 

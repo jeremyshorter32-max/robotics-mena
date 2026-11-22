@@ -2,8 +2,10 @@
 
 The Content Library (**https://claude.ai/artifact/VLvATizyqX8AuX4t3WtmM2**, private to the owner) is the one place the owner works from:
 the **Engagement** tab (the daily reply sheets), every week's posts, the campaigns and the profile kit. It is rebuilt from `main` and the
-`social-engage` issues, then republished to the same URL. Two scheduled runs do this on their own: the daily engagement run (weekday
-mornings, after it posts the sheet) and the evening portal-requests run (so posts approved during the day appear the same evening).
+`social-engage` issues, then republished to the same URL. Three scheduled runs do this on their own: the daily engagement run (weekday
+mornings, after it posts the sheet), the evening portal-requests run (so posts approved during the day appear the same evening), and a
+Sunday 18:47 run once the week's brief and social posts are approved, so the new week and its "This week's brief" panel (the five
+stories and the posts that expand each) are ready the evening before they go out.
 Any interactive session that changes social content can do it too.
 
 ## Steps

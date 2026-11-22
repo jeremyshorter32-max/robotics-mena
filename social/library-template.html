@@ -89,6 +89,13 @@ h3.section{font:600 12px var(--mono);letter-spacing:.12em;text-transform:upperca
 .credits{font-size:13px;color:var(--muted)}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:14px;max-width:min(92vw,520px);z-index:20}
 .dlnote{font-size:13px;color:var(--muted);margin:0}
+/* This week's brief: the five stories and the posts that expand each one. */
+.brief{display:grid;gap:8px;padding:14px 16px;margin-top:12px;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:8px;background:var(--surface)}
+.brief h3{margin:0;font-size:16px}
+.brief ol{margin:0;padding-inline-start:20px;display:grid;gap:8px;font-size:14px}
+.brief li span{display:block;color:var(--muted);font-size:13px}
+.brief li a{margin-inline-end:8px}
+.tag.brieftag{background:var(--warn-tint);color:var(--warn)}
 /* Engagement tab: one card per reply. Who and where at the top with a button to the post, the comment to copy below. */
 .eng-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;margin:24px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
 .eng-head h2{margin:0;font-size:17px}
@@ -211,11 +218,16 @@ function postCard(p) {
   const rv = reviews[p.id] || {};
   return `<article class="post${done ? ' done' : ''}${rv.status === 'approved' ? ' ok' : rv.status === 'changes' ? ' ch' : ''}" id="p-${esc(p.id)}">
     <div class="meta"><span class="pf" style="--c:var(${pfVar})"><i></i>${pfName}</span><span class="time">${p.slot.slice(11, 16)}</span>
-      <span>${esc(p.format)} · ${esc(p.lang)}</span>${p.template ? '<span class="tag tpl">Template</span>' : `<span class="tag">${esc(p.status)}</span>`}
+      <span>${esc(p.format)} · ${esc(p.lang)}</span>${p.brief ? '<span class="tag brieftag">Brief story</span>' : ''}${p.template ? '<span class="tag tpl">Template</span>' : `<span class="tag">${esc(p.status)}</span>`}
       <label class="donebox"><input type="checkbox" data-done="${esc(p.id)}"${done ? ' checked' : ''}> Posted</label></div>
     <div class="body">${parts.join('')}${DATA.review ? reviewBlock(p.id) : ''}</div></article>`;
 }
 
+function briefHtml(c) {
+  const title = id => (c.posts.find(p => p.id === id) || {}).platform;
+  return `<div class="brief"><h3>This week's brief</h3><p class="note">${esc(c.brief.label)}, published ${shortDay(c.brief.published)}. Each story should have at least one post of its own this week.</p><ol>${c.brief.items.map(i =>
+    `<li>${esc(i.title)}<span>${i.posts.length ? i.posts.map(id => `<a href="#p-${esc(id)}" data-jump="${esc(id)}">${esc(PF[title(id)] ? PF[title(id)][0] : id)} post</a>`).join('') : 'Only in the roundup posts so far'}</span></li>`).join('')}</ol></div>`;
+}
 function renderCollection(c) {
   const posts = c.posts.filter(p => (filter === 'all' || p.platform === filter) && !(hideDone && posted.has(p.id)));
   const byDay = {}; posts.forEach(p => (byDay[p.slot.slice(0, 10)] ||= []).push(p));
@@ -228,6 +240,7 @@ function renderCollection(c) {
       <span class="spacer"></span>${c.files.length ? `<button class="btn" data-zip="${esc(c.name)}">Download all media (.zip, ${c.files.length} files)</button>` : ''}
     </div>
     <div class="intro"><h2>${esc(c.title)}</h2><p>${esc(c.theme)}</p>${c.range[0] ? `<p>${shortDay(c.range[0])} to ${shortDay(c.range[1])} · ${c.posts.length} posts${c.kit.length ? ` · ${c.kit.length} ready-to-paste extras` : ''}</p>` : ''}${c.notes ? `<p>${esc(c.notes)}</p>` : ''}</div>
+    ${c.brief && filter === 'all' ? briefHtml(c) : ''}
     ${c.kit.length && filter === 'all' ? `<h3 class="section">Ready to paste: emails, messages and checklists</h3><div class="kit">${c.kit.map(k => `<div class="kitcard"><h4>${esc(k.title)}</h4><span class="ch">${esc(k.channel || '')}</span>${k.note ? `<p class="note">${esc(k.note)}</p>` : ''}<div class="copy"><div class="lab"><span>Text</span><button type="button" data-copy>Copy</button></div><pre>${esc(k.text)}</pre></div></div>`).join('')}</div>` : ''}
     <h3 class="section">Posts by day</h3>
     ${Object.keys(byDay).length ? Object.entries(byDay).map(([d, ps]) => `<h4 class="day">${dayFmt(d)}</h4>${ps.map(postCard).join('')}`).join('') : '<p class="note">Nothing to show with these filters.</p>'}`;

@@ -1,7 +1,7 @@
 {
   "week": "2026-w48",
   "theme": "Big 5 week: robots that build, plus the week-48 brief",
-  "notes": "Big 5 Global runs 23 to 26 Nov at Dubai World Trade Centre. Construction and site robots fill the data, deployment and explainer slots; Monday carries the week-48 brief (branch brief/2026-w48). No launch-2026 campaign posts fall this week. The Dubai robotic villa report (PR #10) is still queued, so the villa appears only in passing; if PR #10 is merged this week, swap LI Thu and X Thu 09:00 for the report posts. Experiment: Instagram Reel first frame, number (Tue) vs question (Thu). Brief photos are on the unmerged brief branch and not in social/images.json, so the brief cards are typographic apart from the Keeta company image.",
+  "notes": "Big 5 Global runs 23 to 26 Nov at Dubai World Trade Centre. Construction and site robots fill the data, deployment and explainer slots; Monday carries the week-48 brief (branch brief/2026-w48). No launch-2026 campaign posts fall this week. The Dubai robotic villa report (PR #10) is still queued, so the villa appears only in passing; if PR #10 is merged this week, swap LI Thu and X Thu 09:00 for the report posts. Experiment: Instagram Reel first frame, number (Tue) vs question (Thu). Brief photos are on the unmerged brief branch and not in social/images.json, so the brief cards are typographic apart from the Keeta company image. Brief expansions (added 22 Nov): one X post of its own for each of the five brief stories, Tue to Sat at 13:00 (Sat 15:00), between the cadence slots.",
   "open_slots": [],
   "posts": [
     {
@@ -1011,6 +1011,142 @@
         {
           "name": "Entrepreneur Middle East",
           "url": "https://mena.entrepreneur.com/business-news/dubai-future-foundation-targets-robotic-deliveries-in-100-buildings-by-2029"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "platform": "x",
+      "format": "post",
+      "id": "w48-x-brief-uber",
+      "brief": "uber-dubai-av-50m",
+      "pillar": "signals",
+      "slot": "2026-11-24T13:00+04:00",
+      "text": "🇦🇪 Uber is putting $50m into driverless rides in Dubai over two years: door-to-door trips in Jumeirah and Umm Suqeim, then Downtown, DIFC and Business Bay by the end of 2027.\n\nPrivate money is now backing the 25% autonomous-trips target. https://roboticsmena.com/database?tab=deployments&id=d68&utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "From the brief · UAE · Mobility",
+          "title": "Uber puts **$50m** into driverless rides across Dubai",
+          "body": "Door-to-door trips first, then Downtown, DIFC and Business Bay by the end of 2027.",
+          "foot": "Source: The National, 18 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "The National",
+          "url": "https://www.thenationalnews.com/news/uae/2026/11/18/uber-commits-50m-to-expand-autonomous-vehicle-services-across-dubai-by-2027/"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "platform": "x",
+      "format": "post",
+      "id": "w48-x-brief-keeta",
+      "brief": "keeta-m-drone-4l-dubai",
+      "pillar": "deployment",
+      "slot": "2026-11-25T13:00+04:00",
+      "text": "🇦🇪 Keeta's new delivery drone doesn't land. The M-Drone 4L hovers and lowers orders of up to 4.5 kg on a 15 m cable, so villas need no landing pad.\n\nDubai's civil aviation authority says it has passed flight testing. Sobha Hartland is first in line. https://roboticsmena.com/database?tab=deployments&id=d70&utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "From the brief · UAE · Drones",
+          "title": "A delivery drone that **never lands**",
+          "body": "Keeta’s M-Drone 4L lowers orders of up to 4.5 kg on a 15 m cable to villa doorsteps.",
+          "foot": "Source: Keeta Drone press release, 18 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Zawya (Keeta Drone press release)",
+          "url": "https://www.zawya.com/en/press-release/events-conferences/keeta-drone-unveils-its-latest-delivery-solutions-at-dubai-future-week-2348805"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "platform": "x",
+      "format": "post",
+      "id": "w48-x-brief-ssmc",
+      "brief": "ssmc-1300-robotic-surgeries",
+      "pillar": "data",
+      "slot": "2026-11-26T13:00+04:00",
+      "text": "🇦🇪 Sheikh Shakhbout Medical City in Abu Dhabi has passed 1,300 robot-assisted surgeries. It now does more than 500 a year, and volumes grew 42% in the first half of 2026.\n\nRobotic surgery is becoming routine in Gulf public hospitals.\n\nSource: Gulf News https://gulfnews.com/uae/health/sheikh-shakhbout-medical-city-performs-1300-robotic-assisted-surgeries-1.500748148",
+      "cards": [
+        {
+          "template": "stat",
+          "size": "landscape",
+          "kicker": "From the brief · UAE · Healthcare",
+          "value": "1,300+",
+          "label": "robot-assisted surgeries at Sheikh Shakhbout Medical City",
+          "body": "500+ a year, up 42% in the first half of 2026.",
+          "foot": "Source: Gulf News, 15 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Gulf News",
+          "url": "https://gulfnews.com/uae/health/sheikh-shakhbout-medical-city-performs-1300-robotic-assisted-surgeries-1.500748148"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "platform": "x",
+      "format": "post",
+      "id": "w48-x-brief-lunate",
+      "brief": "lunate-humanoid-robots-etf",
+      "pillar": "explainer",
+      "slot": "2026-11-27T13:00+04:00",
+      "text": "🇦🇪 The GCC's first humanoid-robot ETF lists on ADX on 8 Dec. Lunate's Boreas fund (ticker ROBOTS) holds 41 chip, component, robot and software makers at a 0.49% fee.\n\nGulf investors can now buy the humanoid theme locally.\n\nSource: Lunate https://lunate.com/en/news-insights/announcements/lunate-expands-boreas-range-with-launch-of-gccs-first-humanoid-robots-etf/",
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "From the brief · UAE · Investment",
+          "title": "The GCC’s first **humanoid-robot ETF**",
+          "body": "Lunate’s Boreas fund holds 41 makers of chips, components, robots and software. Listing on ADX on 8 December.",
+          "foot": "Source: Lunate, 17 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Lunate",
+          "url": "https://lunate.com/en/news-insights/announcements/lunate-expands-boreas-range-with-launch-of-gccs-first-humanoid-robots-etf/"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "platform": "x",
+      "format": "post",
+      "id": "w48-x-brief-megarobo",
+      "brief": "oia-megarobo-round",
+      "pillar": "signals",
+      "slot": "2026-11-28T15:00+04:00",
+      "text": "🇴🇲 Oman's sovereign fund has joined a ~$200m round for MegaRobo, a Beijing maker of robotic labs that run experiments designed by AI.\n\nOmani state money is going into robotics, though no operations in Oman have been announced yet.\n\nSource: The AI Insider https://theaiinsider.tech/2026/11/19/megarobo-raises-nearly-200m-to-fund-expansion-of-ai-powered-laboratory-automation/",
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "From the brief · Oman · Investment",
+          "title": "Oman’s sovereign fund backs a **robotic-lab** maker",
+          "body": "A ~$200m round for MegaRobo, whose robots run experiments that AI designs. No operations in Oman announced yet.",
+          "foot": "Source: The AI Insider, 19 Nov 2026"
+        }
+      ],
+      "sources": [
+        {
+          "name": "The AI Insider",
+          "url": "https://theaiinsider.tech/2026/11/19/megarobo-raises-nearly-200m-to-fund-expansion-of-ai-powered-laboratory-automation/"
         }
       ]
     }
