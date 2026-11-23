@@ -163,8 +163,10 @@ covered, events in the next 90 days) plus a standout figure; two may share an it
    to test the template or a half-filled input.
 5. **Look at it.** Put the body into `newsletter/kit-template.html` in place of `{{ message_content }}`, screenshot it at 700px and 390px
    wide, and once with images blocked. Read the screenshots.
-6. **Report** the checklist (below) with a tick or cross on each line, send the owner both files (SendUserFile), and commit the input and
-   outputs to the working branch. Then stop: the owner pastes the body into Kit and sends it.
+6. **Report** the checklist (below) with a tick or cross on each line, send the owner the body, subject file and
+   `newsletter/out/week-NN-kit-prompt.txt` (SendUserFile), and commit the input and outputs to the working branch. Then stop.
+   The owner pastes the kit-prompt into Claude in Chrome, which builds a Kit **draft** with the body in an HTML block on the Robotics MENA
+   template and sends a test to the owner. The owner reviews the test and clicks Send in Kit themselves.
 
 ## VALIDATION CHECKLIST (run and report on before finishing)
 

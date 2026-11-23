@@ -182,6 +182,35 @@ function deadImages(html) {
   });
 }
 
+// The prompt the owner pastes into Claude in Chrome to put this issue into Kit as a draft (it never sends).
+export function kitPrompt(doc, html) {
+  const S = doc._sections.subjects;
+  return `Put this week's Robotics MENA email into Kit as a DRAFT. I'm logged in to Kit in this browser.
+Never click Send, Schedule or Publish, and don't change any other broadcast, template, form or subscriber.
+
+1. Open a new tab at https://app.kit.com/campaigns and look at the drafts. If one called "Weekly brief · ${doc.dates}" or similar already
+   exists, leave it alone and mention it in your report. Then click "New broadcast" (pick "Email" if asked).
+2. Choose our custom email template: the "Robotics MENA" HTML template (dark frame, logo, "THE BRIEF" masthead). If it isn't
+   in the template list, stop and tell me.
+3. Subject: ${S._items[0][0]}
+   Preview text: ${S.preview}
+   (If there's a field for the internal name, use: Week ${doc.week} · ${doc.dates})
+4. Clear any starter text in the body. Insert an HTML block (the "+" insert menu → HTML, or type /html in the body). Paste the HTML
+   between the BEGIN and END lines below into that block exactly as it is: no edits, no retyping. Don't paste it into the normal text
+   area: that strips the formatting. If the editor has no HTML block, stop and tell me what options it shows.
+5. Save, then open Preview (desktop and mobile). Check: a small indigo uppercase label above each section; five photos, each with a grey
+   credit line under it; five large headlines; links underlined in indigo; the footer with Unsubscribe. Note anything that looks wrong.
+6. Send a test email to the account's own address (Kit's "Send test email"). Don't type any other address.
+7. Stop. Tell me: the draft's URL, what the preview looked like, and anything that didn't match. Don't send or schedule it.
+
+Other subject options if I want to swap: ${S._items.slice(1).map(x => x[0]).join(' / ')}
+
+=== BEGIN HTML ===
+${html.trim()}
+=== END HTML ===
+`;
+}
+
 const report = R => { R.forEach(r => console.log(`[${r.pass ? 'x' : ' '}] ${r.name}${r.detail ? '  (' + r.detail + ')' : ''}`)); return R.every(r => r.pass); };
 
 function main() {
@@ -205,9 +234,9 @@ function main() {
     const subject = S._items.map((s, i) => `Subject ${i + 1}: ${s[0]}`).join('\n') + `\nPreview: ${S.preview}\n`;
     const outDir = dry ? fs.mkdtempSync(path.join(os.tmpdir(), 'brief-dry-run-')) : OUT;
     fs.mkdirSync(outDir, { recursive: true });
-    const bodyPath = path.join(outDir, `week-${nn}-body.html`), subjPath = path.join(outDir, `week-${nn}-subject.txt`);
-    fs.writeFileSync(bodyPath, html); fs.writeFileSync(subjPath, subject);
-    console.log(dry ? `Dry run: wrote ${bodyPath} and ${subjPath} (newsletter/out untouched)\n` : `Wrote ${path.relative(ROOT, bodyPath)} and ${path.relative(ROOT, subjPath)}\n`);
+    const bodyPath = path.join(outDir, `week-${nn}-body.html`), subjPath = path.join(outDir, `week-${nn}-subject.txt`), promptPath = path.join(outDir, `week-${nn}-kit-prompt.txt`);
+    fs.writeFileSync(bodyPath, html); fs.writeFileSync(subjPath, subject); fs.writeFileSync(promptPath, kitPrompt(doc, html));
+    console.log(dry ? `Dry run: wrote ${bodyPath} and ${subjPath} (newsletter/out untouched)\n` : `Wrote ${path.relative(ROOT, bodyPath)}, ${path.basename(subjPath)} and ${path.basename(promptPath)} (paste into Claude in Chrome)\n`);
     if (dry && stale.length) console.log(`[ ] By the numbers matches the live data  (${stale.map(([k, v]) => `${k}=${v}`).join(', ')})`);
     else console.log('[x] By the numbers matches the live data');
     const R = check(html, subject);

@@ -6,3 +6,4 @@ newsletter/out/*
 social/out/
 !newsletter/out/week-*-body.html
 !newsletter/out/week-*-subject.txt
+!newsletter/out/week-*-kit-prompt.txt
