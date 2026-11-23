@@ -97,7 +97,11 @@ Template: `.claude/skills/robotics-mena-brief/assets/body.template.html`. `scrip
 ## INPUT: `newsletter/input/week-NN.md`
 
 Plain text. `## Section` headings, `key: value` lines (one line each), and `- a | b | c` list items. `#` titles and `<!-- -->` comments are
-ignored. `newsletter/input/week-47.md` is a complete example.
+ignored, wherever they sit (a comment after `key:` is not part of the value). Blank template bullets (`-  |  |`) are skipped.
+
+**Start each week from `assets/week-template.md`** (copy it to `newsletter/input/week-NN.md`): it has every key, a comment on
+each saying what goes there and where to copy it from, and the right number of blank list items. `newsletter/input/week-47.md` is a
+complete filled example.
 
 **Header (before the first `##`)**
 
@@ -141,7 +145,7 @@ covered, events in the next 90 days) plus a standout figure; two may share an it
 
 ## STEPS
 
-1. **Read the input.** If `newsletter/input/week-NN.md` doesn't exist, build it from the repo: the five signals from
+1. **Read the input.** If `newsletter/input/week-NN.md` doesn't exist, copy `assets/week-template.md` there and fill it from the repo: the five signals from
    `data/briefs/<year>-wNN.json` (country, date, title, takeaway, source, source_url, image, image_credit); the Spotlight from the newest
    `data/stories.json` entry; policy from `data/policy.json` and official posts in `data/xposts.json`; events from `data/events.json`;
    also-noted from `data/deployments.json` entries dated in the week that aren't already signals. Get the live counts with
@@ -154,7 +158,9 @@ covered, events in the next 90 days) plus a standout figure; two may share an it
    - Preview: max 90 characters, not repeating the subject.
 4. **Generate the body and run the checks**: `node scripts/brief-body.mjs build newsletter/input/week-NN.md`. It validates the input,
    refuses stale "By the numbers" values, writes `newsletter/out/week-NN-body.html` and `newsletter/out/week-NN-subject.txt`, and prints
-   the checklist. Fix the input and rebuild until every box is ticked.
+   the checklist. Fix the input and rebuild until every box is ticked. Missing fields are listed per section before anything is built.
+   `--dry-run` does the same but writes to a temp folder (never `newsletter/out`) and reports stale numbers instead of stopping; use it
+   to test the template or a half-filled input.
 5. **Look at it.** Put the body into `newsletter/kit-template.html` in place of `{{ message_content }}`, screenshot it at 700px and 390px
    wide, and once with images blocked. Read the screenshots.
 6. **Report** the checklist (below) with a tick or cross on each line, send the owner both files (SendUserFile), and commit the input and
@@ -167,7 +173,7 @@ covered, events in the next 90 days) plus a standout figure; two may share an it
 - [ ] no `<html>`/`<head>`/`<body>`/`<style>` tags in output
 - [ ] every signal has exactly one h2, one kicker, one image, one credit p and one source p
 - [ ] every `<a>` has an absolute https href; zero bare or placeholder hrefs
-- [ ] every `<img>` has alt and width, and resolves to a roboticsmena.com URL
+- [ ] every `<img>` has alt and width, and resolves to a roboticsmena.com URL (`build` also fetches each one and needs HTTP 200)
 - [ ] no invented CSS classes outside email-button and blockquotes
 - [ ] takeaways are exactly 2 sentences
 - [ ] headlines are 95 characters or fewer
@@ -175,5 +181,5 @@ covered, events in the next 90 days) plus a standout figure; two may share an it
 - [ ] no banned hype words
 - [ ] subject is 55 characters or fewer, preview 90 or fewer, with no duplication
 
-The script also checks for inline styles outside tables, exclamation marks, flex/grid/position/background images/scripts/web fonts and
+The script also checks that "By the numbers" matches the live data, and for unfilled placeholders (TODO, TBC, `[..]`), inline styles outside tables, exclamation marks, flex/grid/position/background images/scripts/web fonts and
 Israeli content. The checker cannot judge tone or accuracy: re-read every line against its source before reporting.

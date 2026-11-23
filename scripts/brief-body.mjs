@@ -4,11 +4,15 @@
 //   node scripts/brief-body.mjs stats <YYYY-MM-DD>       Print the live "By the numbers" values for an issue date
 //   node scripts/brief-body.mjs build <newsletter/input/week-NN.md>
 //        Validates the input, writes newsletter/out/week-NN-body.html and week-NN-subject.txt, then runs the checks.
+//   node scripts/brief-body.mjs build <input.md> --dry-run
+//        Same, but writes to a temp folder (never newsletter/out) and reports stale numbers instead of stopping.
 //   node scripts/brief-body.mjs check <body.html> [subject.txt]
 //        Runs the validation checklist on existing files. Exit code 1 if any check fails.
 //
 // It only writes files. It never sends, schedules or publishes anything.
 import fs from 'node:fs';
+import os from 'node:os';
+import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -49,9 +53,10 @@ function stats(dateIso) {
 // Signals are "## Signal 1" … "## Signal 5".
 export function parseInput(md) {
   const doc = { _sections: {} }; let cur = doc;
-  for (const raw of md.split(/\r?\n/)) {
+  // Comments may sit anywhere (on their own lines or after a value) and may span lines.
+  for (const raw of md.replace(/<!--[\s\S]*?-->/g, '').split(/\r?\n/)) {
     const line = raw.trimEnd();
-    if (/^#\s/.test(line) || /^<!--/.test(line.trim()) || !line.trim()) continue;
+    if (/^#\s/.test(line) || !line.trim() || /^\s*-[\s|]*$/.test(line)) continue; // blank template bullets are skipped
     const h = line.match(/^##\s+(.+)$/);
     if (h) { cur = { _name: h[1].trim(), _items: [] }; doc._sections[h[1].trim().toLowerCase()] = cur; continue; }
     const li = line.match(/^\s*-\s+(.+)$/);
@@ -67,7 +72,7 @@ export function parseInput(md) {
 
 function validateInput(doc) {
   const errs = []; const S = doc._sections;
-  const need = (o, keys, where) => keys.forEach(k => { if (!o || !String(o[k] ?? '').trim()) errs.push(`${where}: missing "${k}"`); });
+  const need = (o, keys, where) => { const miss = keys.filter(k => !o || !String(o[k] ?? '').trim()); if (miss.length) errs.push(`${where}: fill in ${miss.join(', ')}`); };
   need(doc, ['week', 'dates', 'published', 'standfirst', 'take'], 'header');
   const st = S['by the numbers'];
   if (!st || st._items.length < 3 || st._items.length > 4) errs.push('By the numbers: needs 3–4 items');
@@ -84,6 +89,12 @@ function validateInput(doc) {
   const n = (k, lo, hi) => { const x = S[k]?._items.length || 0; if (x < lo || x > hi) errs.push(`${S[k]?._name || k}: needs ${lo}–${hi} items, has ${x}`); };
   n('policy watch', 2, 3); n('on the calendar', 3, 5); n('also noted', 4, 6); n('subjects', 3, 3);
   if (!S.subjects?.preview) errs.push('Subjects: missing "preview"');
+  const shape = (k, cols, urlCol) => (S[k]?._items || []).forEach((it, i) => {
+    if (it.length !== cols || it.some(x => !x)) errs.push(`${S[k]._name} item ${i + 1}: needs ${cols} fields separated by " | "`);
+    else if (urlCol != null && !/^https:\/\//.test(it[urlCol])) errs.push(`${S[k]._name} item ${i + 1}: link must start with https://`);
+  });
+  shape('by the numbers', 2); shape('policy watch', 3, 2); shape('on the calendar', 4, 3); shape('also noted', 3, 2); shape('subjects', 1);
+  for (let i = 1; i <= 5; i++) { const s = S['signal ' + i]; if (s?.image && !s.image.startsWith(IMG_PREFIX)) errs.push(`Signal ${i}: image must start with ${IMG_PREFIX}`); }
   return errs;
 }
 
@@ -148,6 +159,8 @@ export function check(html, subjectTxt) {
   const hype = BANNED.filter(w => new RegExp(`\\b${w}\\b`).test(text));
   ok('No banned hype words or exclamation marks', !hype.length && !/!/.test(strip(html) + (subjectTxt || '')), hype.join(', '));
   ok('No background images, flex, grid, position, scripts or web fonts', !/background(-image)?:\s*url|display:\s*(flex|grid)|position:|<script|@font-face|@import|fonts\.googleapis/i.test(html));
+  const todo = strip(html).match(/\b(TODO|TBC|TBD|XXX|lorem ipsum)\b|\[[^\]]*\]|\{\{[^}]*\}\}/gi) || [];
+  ok('No unfilled placeholders (TODO, TBC, [..], {{..}})', !todo.length, todo.slice(0, 5).join(', '));
   ok('No Israeli companies or flag', !/israel|🇮🇱/i.test(html));
   if (subjectTxt != null) {
     const subj = [...subjectTxt.matchAll(/^Subject \d: (.+)$/gm)].map(m => m[1].trim());
@@ -161,32 +174,47 @@ export function check(html, subjectTxt) {
   return R;
 }
 
+// HEAD each image (curl uses the session proxy); returns the ones that don't answer 200.
+function deadImages(html) {
+  return [...html.matchAll(/<img\b[^>]*src="([^"]+)"/g)].map(m => m[1]).filter(u => {
+    try { return execFileSync('curl', ['-s', '-o', '/dev/null', '-I', '-L', '--max-time', '15', '-w', '%{http_code}', u]).toString() !== '200'; }
+    catch { return true; }
+  });
+}
+
 const report = R => { R.forEach(r => console.log(`[${r.pass ? 'x' : ' '}] ${r.name}${r.detail ? '  (' + r.detail + ')' : ''}`)); return R.every(r => r.pass); };
 
 function main() {
-  const [cmd, a, b] = process.argv.slice(2);
+  const args = process.argv.slice(2), dry = args.includes('--dry-run');
+  const [cmd, a, b] = args.filter(x => x !== '--dry-run');
   if (cmd === 'stats') { console.log(JSON.stringify(stats(a || new Date().toISOString().slice(0, 10)), null, 2)); return; }
   if (cmd === 'check') { const ok = report(check(fs.readFileSync(a, 'utf8'), b ? fs.readFileSync(b, 'utf8') : null)); process.exit(ok ? 0 : 1); }
   if (cmd === 'build') {
     const doc = parseInput(fs.readFileSync(a, 'utf8'));
     const errs = validateInput(doc);
-    if (errs.length) { console.error('Input problems:\n- ' + errs.join('\n- ')); process.exit(1); }
+    if (errs.length) { console.error(`Input problems (${errs.length}):\n- ` + errs.join('\n- ')); process.exit(1); }
     const nn = String(doc.week).padStart(2, '0');
     const live = stats(doc.published);
     console.log(`Live counts for ${doc.published}: ${JSON.stringify(live)}`);
     const statText = doc._sections["by the numbers"]._items.map(x => x.join(" ")).join(" ");
     const stale = Object.entries(live).filter(([, v]) => !new RegExp(`\\b${v.toLocaleString("en-GB")}\\b`).test(statText));
-    if (stale.length) { console.error(`By the numbers does not match the live data: ${stale.map(([k, v]) => `${k}=${v}`).join(", ")}. Update the input.`); process.exit(1); }
+    if (stale.length && dry) console.log(`WARNING: By the numbers does not match the live data: ${stale.map(([k, v]) => `${k}=${v}`).join(', ')}`);
+    else if (stale.length) { console.error(`By the numbers does not match the live data: ${stale.map(([k, v]) => `${k}=${v}`).join(", ")}. Update the input.`); process.exit(1); }
     const html = render(doc);
     const S = doc._sections.subjects;
     const subject = S._items.map((s, i) => `Subject ${i + 1}: ${s[0]}`).join('\n') + `\nPreview: ${S.preview}\n`;
-    fs.mkdirSync(OUT, { recursive: true });
-    const bodyPath = path.join(OUT, `week-${nn}-body.html`), subjPath = path.join(OUT, `week-${nn}-subject.txt`);
+    const outDir = dry ? fs.mkdtempSync(path.join(os.tmpdir(), 'brief-dry-run-')) : OUT;
+    fs.mkdirSync(outDir, { recursive: true });
+    const bodyPath = path.join(outDir, `week-${nn}-body.html`), subjPath = path.join(outDir, `week-${nn}-subject.txt`);
     fs.writeFileSync(bodyPath, html); fs.writeFileSync(subjPath, subject);
-    console.log(`Wrote ${path.relative(ROOT, bodyPath)} and ${path.relative(ROOT, subjPath)}\n`);
-    const ok = report(check(html, subject));
-    process.exit(ok ? 0 : 1);
+    console.log(dry ? `Dry run: wrote ${bodyPath} and ${subjPath} (newsletter/out untouched)\n` : `Wrote ${path.relative(ROOT, bodyPath)} and ${path.relative(ROOT, subjPath)}\n`);
+    if (dry && stale.length) console.log(`[ ] By the numbers matches the live data  (${stale.map(([k, v]) => `${k}=${v}`).join(', ')})`);
+    else console.log('[x] By the numbers matches the live data');
+    const R = check(html, subject);
+    const dead = deadImages(html);
+    R.splice(4, 0, { name: 'Every image loads (HTTP 200)', pass: !dead.length, detail: dead.length ? 'not found: ' + dead.join(', ') : '' });
+    process.exit(report(R) ? 0 : 1);
   }
-  console.log('Usage: node scripts/brief-body.mjs stats <date> | build <input.md> | check <body.html> [subject.txt]');
+  console.log('Usage: node scripts/brief-body.mjs stats <date> | build <input.md> [--dry-run] | check <body.html> [subject.txt]');
 }
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) main();
