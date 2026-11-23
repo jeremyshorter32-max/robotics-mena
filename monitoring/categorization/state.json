@@ -15,8 +15,8 @@
         "category": null,
         "at": "2026-11-14T00:00:00.000Z"
       },
-      "checked_at": "2026-11-22T13:24:58.793Z",
-      "consecutive_blocked": 15,
+      "checked_at": "2026-11-23T16:04:34.228Z",
+      "consecutive_blocked": 16,
       "manual_check_alerted": true
     },
     "symantec|roboticsmena.com": {
@@ -54,5 +54,5 @@
       "manual_check_alerted": true
     }
   },
-  "updated_at": "2026-11-22T22:30:17.302Z"
+  "updated_at": "2026-11-23T16:04:34.229Z"
 }
