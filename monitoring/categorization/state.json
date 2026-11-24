@@ -32,8 +32,8 @@
         "category": null,
         "at": "2026-11-14T00:00:00.000Z"
       },
-      "checked_at": "2026-11-22T22:30:16.950Z",
-      "consecutive_blocked": 10,
+      "checked_at": "2026-11-24T03:21:49.674Z",
+      "consecutive_blocked": 11,
       "manual_check_alerted": true
     },
     "mcafee|roboticsmena.com": {
@@ -49,10 +49,10 @@
         "category": null,
         "at": "2026-11-14T00:00:00.000Z"
       },
-      "checked_at": "2026-11-22T22:30:17.301Z",
-      "consecutive_blocked": 10,
+      "checked_at": "2026-11-24T03:21:49.695Z",
+      "consecutive_blocked": 11,
       "manual_check_alerted": true
     }
   },
-  "updated_at": "2026-11-23T16:04:34.229Z"
+  "updated_at": "2026-11-24T03:21:49.696Z"
 }
