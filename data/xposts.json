@@ -10,7 +10,7 @@
     "note_ar": "قطر تنقل تجربة سيارات الأجرة ذاتية القيادة مع مواصلات إلى مرحلة ثانية على مسارات معتمدة في الدوحة.",
     "country": "QA",
     "type": "av",
-    "status": "suggested",
+    "status": "approved",
     "added": "2026-11-22"
   },
   {
@@ -25,7 +25,7 @@
     "country": "AE",
     "type": "drone",
     "company": "joby-aviation",
-    "status": "suggested",
+    "status": "approved",
     "added": "2026-11-22"
   },
   {
@@ -39,7 +39,7 @@
     "note_ar": "ولي عهد دبي يطّلع على خطة أوبر بقيمة 184 مليون درهم لتوسيع الرحلات ذاتية القيادة في المدينة بحلول نهاية 2027.",
     "country": "AE",
     "type": "av",
-    "status": "suggested",
+    "status": "approved",
     "added": "2026-11-22"
   },
   {

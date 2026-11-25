@@ -75,7 +75,9 @@ without the owner's explicit approval in this conversation.**
      account and spread across countries and accounts. Never fewer than 5; never pad with older or
      off-topic posts.
    - Add them to `data/xposts.json` with `status: "suggested"`, `added: <today>`, a short excerpt (first sentence,
-     under 240 characters) and a one-line `note`/`note_ar`. On approval they become `"approved"`. Older posts can stay
+     under 240 characters) and a one-line `note`/`note_ar`. In a scheduled (portal) run, add them as `"approved"`: the owner's
+     approval of the pull request is what publishes them, and nothing flips them afterwards. In a chat run, add them as
+     `"suggested"` and set the ones the owner keeps to `"approved"` on "approve". Older posts can stay
      approved (they still show on company and country pages); set a post to `"hidden"` only if it should not show anywhere.
      Never pick posts with content the site excludes (Israeli companies or flag).
 6. Optional: `data/newsletter.json` with `subject`, `preview_text` and a one-paragraph `intro`
