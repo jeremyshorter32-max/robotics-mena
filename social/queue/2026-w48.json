@@ -1,7 +1,7 @@
 {
   "week": "2026-w48",
-  "theme": "Big 5 week: robots that build, plus the week-48 brief",
-  "notes": "Big 5 Global runs 23 to 26 Nov at Dubai World Trade Centre. Construction and site robots fill the data, deployment and explainer slots; Monday carries the week-48 brief (branch brief/2026-w48). No launch-2026 campaign posts fall this week. The Dubai robotic villa report (PR #10) is still queued, so the villa appears only in passing; if PR #10 is merged this week, swap LI Thu and X Thu 09:00 for the report posts. Experiment: Instagram Reel first frame, number (Tue) vs question (Thu). Brief photos are on the unmerged brief branch and not in social/images.json, so the brief cards are typographic apart from the Keeta company image. Brief expansions (added 22 Nov): one X post of its own for each of the five brief stories, Tue to Sat at 13:00 (Sat 15:00), between the cadence slots. Visual pass (22 Nov): every brief signal now carries its story photo (company press images, cleared in social/images.json; Lunate's illustrative render replaced by Lootah's humanoid showroom, captioned), the signals covers and closing slides are photo mosaics, and the Doha and construction posts use UCC, COBOD, Hilti and Abyan site photos. Doha schools (22 Nov): reframed as a dated Big 5 week look back (printing began June 2025; COBOD said in June 2026 the first school is underway), ending on a question.",
+  "theme": "Robots that build and move things, plus the week-48 brief",
+  "notes": "Big 5 Global runs 23 to 26 Nov at Dubai World Trade Centre. Construction and site robots fill the data, deployment and explainer slots; Monday carries the week-48 brief (branch brief/2026-w48). No launch-2026 campaign posts fall this week. The Dubai robotic villa report (PR #10) is still queued, so the villa appears only in passing; if PR #10 is merged this week, swap LI Thu and X Thu 09:00 for the report posts. Experiment: Instagram Reel first frame, number (Tue) vs question (Thu). Brief photos are on the unmerged brief branch and not in social/images.json, so the brief cards are typographic apart from the Keeta company image. Brief expansions (added 22 Nov): one X post of its own for each of the five brief stories, Tue to Sat at 13:00 (Sat 15:00), between the cadence slots. Visual pass (22 Nov): every brief signal now carries its story photo (company press images, cleared in social/images.json; Lunate's illustrative render replaced by Lootah's humanoid showroom, captioned), the signals covers and closing slides are photo mosaics, and the Doha and construction posts use UCC, COBOD, Hilti and Abyan site photos. Doha schools (22 Nov): reframed as a dated Big 5 week look back (printing began June 2025; COBOD said in June 2026 the first school is underway), ending on a question. Uplift (25 Nov, owner): no more Big 5 mentions from Thu 26 Nov on (the Thu 17:00 X slot is now a Sobha Hartland question; the Fri poll no longer names the show). LinkedIn Thu and Instagram Sat Jeddah cranes became 6-card photo carousels with DP World's own Jeddah media-kit photos; the Thu Instagram reel is photo-led with a dated Qatar and UAE slide each. Four extra posts on the brief: LinkedIn Sat 28 Nov 10:00 (three kinds of money), Instagram Fri 27 Nov 19:30 (SSMC robotic surgery), X Sun 29 Nov 12:00 (Qatar robotaxi phase two), Reddit Sun 29 Nov 16:00 (Sobha Hartland robots). Reels now hold each slide for its reading time (at least 4.5 s).",
   "open_slots": [],
   "posts": [
     {
@@ -236,31 +236,104 @@
       "status": "draft",
       "id": "w48-li-jeddah-cranes",
       "platform": "linkedin",
-      "format": "image",
+      "format": "document",
       "pillar": "explainer",
       "slot": "2026-11-26T08:30+04:00",
-      "text": "What does \"automated\" mean at a container port? Jeddah's South Container Terminal is a good answer.\n\n▸ The machines: rubber-tyred gantry (RTG) cranes that stack and move containers in the yard\n▸ The change: DP World added 17 automated electric RTGs in a $56m investment, so 50 of the terminal's 77 are now electric and automated (about 65%)\n▸ Who drives: operators work from dedicated control stations, with intelligent positioning doing the precise moves\n▸ Why it matters: no diesel exhaust at the crane and steadier yard work\n\nIt's one of 17 Saudi deployments in our database. Record in the comments.\n\n#Robotics #Ports #SaudiArabia #Logistics",
-      "first_comment": "The record: https://roboticsmena.com/database?tab=deployments&id=d12&utm_source=linkedin&utm_medium=social&utm_campaign=2026-w48\nSource: Transport & Logistics Middle East, 21 Oct 2026 https://www.transportandlogisticsme.com/smart-sea-freight/dp-world-south-container-terminal-in-jeddah-deploys-new-automated-electric-cranes",
+      "text": "Who drives a container crane at Jeddah's port? Increasingly, an operator at a control station.\n\nDP World has spent the year automating its South Container Terminal, one piece at a time:\n\n▸ Oct 2026: 17 automated electric yard cranes (RTGs), a $56m investment, so 50 of the 77 are now electric and automated\n▸ Jul 2026: 35 electric terminal tractors\n▸ Mar 2026: three semi-automated quay cranes\n▸ By 2030: the target is 100% electric equipment\n\nThe result so far: more than 221,200 containers (TEU) in July 2026, the terminal's busiest month since 1999.\n\nIt's one of 17 Saudi deployments in our database. Sources and the record are in the comments. Which Gulf port automates its yard next?\n\n#Robotics #Ports #SaudiArabia #Logistics #Automation",
+      "first_comment": "The record: https://roboticsmena.com/database?tab=deployments&id=d12&utm_source=linkedin&utm_medium=social&utm_campaign=2026-w48\nSources: Transport & Logistics Middle East, 21 Oct 2026 https://www.transportandlogisticsme.com/smart-sea-freight/dp-world-south-container-terminal-in-jeddah-deploys-new-automated-electric-cranes\nDP World, 15 Jul 2026 https://www.dpworld.com/en/news/dp-world-advances-jeddah-terminal-transformation-with-35-new-electric-tractors\nDP World, 25 Mar 2026 https://www.dpworld.com/en/news/dp-world-adds-three-quay-cranes-at-jeddah-to-support-red-sea-trade\nDP World, July 2026 throughput https://www.dpworld.com/en/news/releases/uae/dp-world-records-highest-monthly-throughput-in-jeddah-since-operations-began-in-1999",
       "tags": [
         "DP World"
       ],
       "cards": [
         {
-          "template": "stat",
+          "template": "cover",
           "size": "portrait",
           "kicker": "Explainer · Saudi Arabia",
+          "title": "Who drives the cranes at **Jeddah's port**?",
+          "image": "/media/social/dpworld-jeddah-quay-crane.jpg",
+          "caption": true,
+          "foot": "Swipe →"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "The change · Oct 2026",
           "value": "50 of 77",
-          "label": "yard cranes at Jeddah's South Container Terminal are electric and automated",
-          "body": "DP World added 17 in a $56m investment. Operators run them from control stations.",
-          "foot": "Source: Transport & Logistics Middle East, 21 Oct 2026"
+          "label": "yard cranes at Jeddah's South Container Terminal are now electric and automated",
+          "body": "DP World added 17 automated electric RTG cranes, a $56m investment. That is about 65% of the yard fleet.",
+          "foot": "Source: Transport & Logistics Middle East, 21 Oct 2026",
+          "image": "/media/social/dpworld-jeddah-aerial.jpg",
+          "caption": true
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Who drives",
+          "title": "An operator at a **control station**, not in the cab",
+          "body": "Rubber-tyred gantry cranes straddle rows of containers and move them between trucks and the stacks. Automatic positioning does the precise moves; fully electric drives mean no diesel exhaust at the crane.",
+          "foot": "Source: Transport & Logistics Middle East, 21 Oct 2026",
+          "image": "/media/social/dpworld-jeddah-terminal.jpg",
+          "caption": true,
+          "focus": "70% 50%"
+        },
+        {
+          "template": "list",
+          "size": "portrait",
+          "kicker": "One terminal, one year",
+          "title": "The rest of the upgrade",
+          "items": [
+            "**Mar 2026:** three semi-automated quay cranes; ship-to-shore fleet reaches 17",
+            "**Jul 2026:** 35 electric terminal tractors, a fleet over 20% bigger",
+            "**Oct 2026:** 17 automated electric yard cranes",
+            "**By 2030:** target of 100% electric equipment"
+          ],
+          "foot": "Sources: DP World, 25 Mar and 15 Jul 2026; T&L Middle East, 21 Oct 2026",
+          "image": "/media/social/dpworld-jeddah-electric-tractors.jpg",
+          "caption": true
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "The result so far",
+          "value": "221,200+",
+          "label": "containers (TEU) handled in July 2026",
+          "body": "The terminal's busiest month since DP World began running it in 1999.",
+          "foot": "Source: DP World, Aug 2026",
+          "image": "/media/social/dpworld-jeddah-quay-crane.jpg",
+          "caption": true
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Which Gulf port automates its **yard** next?",
+          "handles": "@roboticsmena",
+          "images": [
+            "/media/social/dpworld-jeddah-terminal.jpg",
+            "/media/social/dpworld-jeddah-aerial.jpg",
+            "/media/social/dpworld-jeddah-electric-tractors.jpg",
+            "/media/social/dpworld-jeddah-quay-crane.jpg"
+          ]
         }
       ],
       "sources": [
         {
           "name": "Transport & Logistics Middle East",
           "url": "https://www.transportandlogisticsme.com/smart-sea-freight/dp-world-south-container-terminal-in-jeddah-deploys-new-automated-electric-cranes"
+        },
+        {
+          "name": "DP World, 15 Jul 2026",
+          "url": "https://www.dpworld.com/en/news/dp-world-advances-jeddah-terminal-transformation-with-35-new-electric-tractors"
+        },
+        {
+          "name": "DP World, 25 Mar 2026",
+          "url": "https://www.dpworld.com/en/news/dp-world-adds-three-quay-cranes-at-jeddah-to-support-red-sea-trade"
+        },
+        {
+          "name": "DP World (July 2026 throughput)",
+          "url": "https://www.dpworld.com/en/news/releases/uae/dp-world-records-highest-monthly-throughput-in-jeddah-since-operations-began-in-1999"
         }
-      ]
+      ],
+      "media_note": "Document post: upload the PDF (6 pages). Photos are DP World press images from its Jeddah media kits."
     },
     {
       "lang": "en",
@@ -270,7 +343,7 @@
       "format": "poll",
       "pillar": "community",
       "slot": "2026-11-27T08:30+04:00",
-      "text": "Big 5 Global wraps up in Dubai after four days. One question for the people who build things:\n\nWhich construction robot will Gulf sites use most by 2030?\n\nWhat we've verified so far: 3D printers on schools in Doha and a mosque in Jeddah, a rebar-automation venture at NEOM worth more than SAR 1.3bn, a block-laying pilot with ALEC, and inspection robots in Riyadh's drains.\n\nVote, and tell us in the comments what you saw on the show floor.\n\n#Robotics #Construction #Big5Global #GCC",
+      "text": "One question for the people who build things:\n\nWhich construction robot will Gulf sites use most by 2030?\n\nWhat we've verified so far: 3D printers on schools in Doha and a mosque in Jeddah, a rebar-automation venture at NEOM worth more than SAR 1.3bn, a block-laying pilot with ALEC, and inspection robots in Riyadh's drains.\n\nVote, and tell us in the comments what you're seeing on site.\n\n#Robotics #Construction #3DPrinting #GCC",
       "poll": {
         "question": "Which robot will Gulf sites use most by 2030?",
         "options": [
@@ -280,14 +353,8 @@
           "Inspection robots"
         ]
       },
-      "tags": [
-        "Big 5 Global (event page)"
-      ],
+      "tags": [],
       "sources": [
-        {
-          "name": "Big 5 Global",
-          "url": "https://www.big5global.com/"
-        },
         {
           "name": "UCC Holding",
           "url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences"
@@ -305,6 +372,106 @@
           "url": "https://www.gulfconstructiononline.com/Article/386820/Jeddah_hosts_world%E2%80%99s_first_3D_printed_mosque"
         }
       ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-li-money",
+      "platform": "linkedin",
+      "format": "document",
+      "pillar": "signals",
+      "slot": "2026-11-28T10:00+04:00",
+      "brief": "lunate-humanoid-robots-etf",
+      "text": "Three different kinds of money backed robots with a Gulf link in a single week. That says more about the market than any one deal.\n\n▸ Private: Uber will spend AED 184m ($50m) over two years on driverless rides in Dubai\n▸ Public markets: Lunate's humanoid-robot ETF (ticker ROBOTS) lists on ADX on 8 December, holding 41 companies\n▸ Sovereign: the Oman Investment Authority joined a round of nearly $200m for MegaRobo, a Beijing lab-robot maker\n\nThe money is the easy part. What we'll watch: rides with no safety specialist on board, and whether any MegaRobo work actually lands in Oman.\n\nSources in the comments.\n\n#Robotics #Investment #GCC #UAE #Oman",
+      "first_comment": "The week's brief: https://roboticsmena.com/?utm_source=linkedin&utm_medium=social&utm_campaign=2026-w48\nSources: The National, 18 Nov 2026 https://www.thenationalnews.com/news/uae/2026/11/18/uber-commits-50m-to-expand-autonomous-vehicle-services-across-dubai-by-2027/\nLunate, 17 Nov 2026 https://lunate.com/en/news-insights/announcements/lunate-expands-boreas-range-with-launch-of-gccs-first-humanoid-robots-etf/\nThe AI Insider, 19 Nov 2026 https://theaiinsider.tech/2026/11/19/megarobo-raises-nearly-200m-to-fund-expansion-of-ai-powered-laboratory-automation/",
+      "tags": [
+        "Uber",
+        "Lunate",
+        "Oman Investment Authority",
+        "MegaRobo"
+      ],
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "From the brief",
+          "title": "Three kinds of money, **one week**",
+          "foot": "Swipe →",
+          "images": [
+            "/media/social/uber-dubai-robotaxis.jpg",
+            "/media/brief/lootah-humanoid-studio.jpg",
+            "/media/social/megarobo-lab-systems.jpg",
+            "/media/social/keeta-m-drone-4l.jpg"
+          ]
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Private · UAE",
+          "title": "Uber: **$50m** for driverless rides in Dubai",
+          "body": "AED 184m over two years: Jumeirah and Umm Suqeim first, then Downtown, DIFC and Business Bay by end-2027, with a safety specialist on board at first.",
+          "foot": "Source: The National, 18 Nov 2026",
+          "image": "/media/social/uber-dubai-robotaxis.jpg"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Public markets · UAE",
+          "title": "A **humanoid-robot ETF** lists on ADX",
+          "body": "Lunate's Boreas fund (ticker ROBOTS) holds 41 chip, component, robot and software makers at a 0.49% fee. Listing date: 8 December.",
+          "foot": "Source: Lunate, 17 Nov 2026",
+          "image": "/media/brief/lootah-humanoid-studio.jpg",
+          "caption": true
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Sovereign · Oman",
+          "title": "Oman's fund backs a **lab-robot** maker",
+          "body": "The Oman Investment Authority joined a round of nearly $200m for MegaRobo of Beijing. No operations in Oman have been announced.",
+          "foot": "Source: The AI Insider, 19 Nov 2026",
+          "image": "/media/social/megarobo-lab-systems.jpg"
+        },
+        {
+          "template": "list",
+          "size": "portrait",
+          "kicker": "What we will watch",
+          "title": "Money is the easy part",
+          "items": [
+            "Driverless rides in Dubai with **no safety specialist** on board",
+            "How many people buy **ROBOTS** after 8 December",
+            "Any **MegaRobo** work that lands in Oman"
+          ],
+          "foot": "Robotics MENA, 28 Nov 2026"
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Every robot deal and deployment in MENA, **verified**",
+          "handles": "roboticsmena.com",
+          "images": [
+            "/media/social/uber-dubai-robotaxis.jpg",
+            "/media/social/megarobo-lab-systems.jpg",
+            "/media/social/ssmc-robotic-surgery.jpg",
+            "/media/social/keeta-m-drone-4l.jpg"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "The National, 18 Nov 2026",
+          "url": "https://www.thenationalnews.com/news/uae/2026/11/18/uber-commits-50m-to-expand-autonomous-vehicle-services-across-dubai-by-2027/"
+        },
+        {
+          "name": "Lunate, 17 Nov 2026",
+          "url": "https://lunate.com/en/news-insights/announcements/lunate-expands-boreas-range-with-launch-of-gccs-first-humanoid-robots-etf/"
+        },
+        {
+          "name": "The AI Insider, 19 Nov 2026",
+          "url": "https://theaiinsider.tech/2026/11/19/megarobo-raises-nearly-200m-to-fund-expansion-of-ai-powered-laboratory-automation/"
+        }
+      ],
+      "media_note": "Document post: upload the PDF (6 pages)."
     },
     {
       "lang": "en",
@@ -488,21 +655,31 @@
       "format": "reel",
       "pillar": "data",
       "slot": "2026-11-26T19:30+04:00",
-      "text": "Where do robots build in the Middle East? Not where you'd guess. 🇸🇦\n\nOf the 70 robot deployments we've verified across MENA, 10 are on construction sites, and half of those are in Saudi Arabia: rebar automation at NEOM, a 3D-printed mosque in Jeddah, and inspection robots in Riyadh's drains and culverts.\n\nBig 5 Global is on in Dubai this week. Full list linked in bio.\n\n#robotics #construction #saudiarabia #uae #qatar #big5global #neom",
+      "text": "Where do robots build in the Middle East? Not where you'd guess. 🇸🇦\n\nOf the 70 robot deployments we've verified across MENA, 10 are on construction sites, and half of those are in Saudi Arabia: rebar automation at NEOM, a 3D-printed mosque in Jeddah, and inspection robots in Riyadh's drains and culverts. Qatar is printing schools; a 3D-printing factory broke ground in Abu Dhabi in October 2025.\n\nFull list linked in bio.\n\n#robotics #construction #3dprinting #saudiarabia #uae #qatar #neom",
       "media_note": "Experiment arm B (question in the first frame): keep the question frame first. Add a trending audio track in the Instagram app before posting.",
-      "reel_seconds": 3,
       "cards": [
         {
           "template": "cover",
           "size": "story",
-          "kicker": "Big 5 week",
+          "kicker": "Data · Construction",
           "title": "Where do robots **build** in the Middle East?",
-          "image": "/media/companies/hilti.jpg"
+          "image": "/media/companies/cobod.jpg",
+          "caption": true
+        },
+        {
+          "template": "stat",
+          "size": "story",
+          "kicker": "Our database · 25 Nov 2026",
+          "value": "10 of 70",
+          "label": "robot deployments we have verified in MENA are on building sites",
+          "foot": "Source: roboticsmena.com, 25 Nov 2026",
+          "image": "/media/companies/hilti.jpg",
+          "caption": true
         },
         {
           "template": "bars",
           "size": "story",
-          "kicker": "10 of 70 deployments",
+          "kicker": "By country",
           "title": "Construction robots by country",
           "rows": [
             {
@@ -518,23 +695,38 @@
               "value": 1
             }
           ],
-          "foot": "Source: roboticsmena.com, 22 Nov 2026",
-          "image": "/media/companies/abyan.jpg",
-          "caption": true
+          "foot": "Source: roboticsmena.com, 25 Nov 2026"
+        },
+        {
+          "template": "signal",
+          "size": "story",
+          "kicker": "Qatar · Since June 2025",
+          "title": "Printing **public schools** in Doha",
+          "body": "UCC Holding and COBOD began 3D-printing schools for Ashghal on site in June 2025.",
+          "foot": "Source: UCC Holding, June 2025",
+          "image": "/media/companies/ucc-holding.jpg"
+        },
+        {
+          "template": "signal",
+          "size": "story",
+          "kicker": "UAE · Since Oct 2025",
+          "title": "A 3D concrete printing **factory** in Abu Dhabi",
+          "body": "Kenyo broke ground on a printing factory in KEZAD in October 2025, worth about $30m.",
+          "foot": "Source: Gulf News, Oct 2025"
         },
         {
           "template": "list",
           "size": "story",
           "kicker": "Saudi Arabia · 5",
-          "title": "The five records",
+          "title": "The five Saudi records",
           "items": [
-            "**NEOM:** rebar-cage automation venture",
-            "**Jeddah:** 3D-printed mosque",
+            "**NEOM:** rebar-cage automation venture (Dec 2024)",
+            "**Jeddah:** 3D-printed mosque (Mar 2024)",
             "**Riyadh:** robots and drones inspect drains and bridges",
             "**Roads:** culvert-inspection robot",
             "**AM Unique:** 3D concrete printers"
           ],
-          "foot": "Source: roboticsmena.com, 22 Nov 2026"
+          "foot": "Source: roboticsmena.com, 25 Nov 2026"
         },
         {
           "template": "cta",
@@ -544,8 +736,8 @@
           "images": [
             "/media/companies/cobod.jpg",
             "/media/companies/hilti.jpg",
-            "/media/companies/abyan.jpg",
-            "/media/companies/gmt-robotics.jpg"
+            "/media/companies/ucc-holding.jpg",
+            "/media/companies/abyan.jpg"
           ]
         }
       ],
@@ -561,6 +753,96 @@
         {
           "name": "Gulf Construction Online",
           "url": "https://www.gulfconstructiononline.com/Article/386820/Jeddah_hosts_world%E2%80%99s_first_3D_printed_mosque"
+        },
+        {
+          "name": "Gulf News",
+          "url": "https://gulfnews.com/business/corporate-news/nanjing-kenyo-group-launches-middle-easts-largest-3d-printing-factory-in-abu-dhabi-1.500296159"
+        },
+        {
+          "name": "UCC Holding",
+          "url": "https://uccholding.com/media/read/worlds-largest-3d-printed-construction-project-commences"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-ig-ssmc",
+      "platform": "instagram",
+      "format": "carousel",
+      "pillar": "deployment",
+      "slot": "2026-11-27T19:30+04:00",
+      "brief": "ssmc-1300-robotic-surgeries",
+      "text": "1,300 operations with a robot at the surgeon's side, at one Abu Dhabi public hospital. 🇦🇪\n\nSheikh Shakhbout Medical City says it now does more than 500 robot-assisted operations a year, with volumes up 42% in the first half of 2026. In Riyadh, KFSHRC passed 100 single-port robotic operations in nine months. Robotic surgery in the Gulf is becoming routine, not a showcase. Swipe for the numbers.\n\nSources: Gulf News, 15 Nov 2026; KFSHRC, 12 Nov 2026. Link in bio.\n\n#robotics #roboticsurgery #healthcare #abudhabi #uae #riyadh #medtech",
+      "media_note": "Carousel: post the 6 JPGs in order. Photo: Sheikh Shakhbout Medical City press image.",
+      "tags": [
+        "tag if confirmed: Sheikh Shakhbout Medical City",
+        "tag if confirmed: KFSHRC"
+      ],
+      "cards": [
+        {
+          "template": "cover",
+          "size": "portrait",
+          "kicker": "Deployment · UAE",
+          "title": "**1,300** robot-assisted operations at one Abu Dhabi hospital",
+          "image": "/media/social/ssmc-robotic-surgery.jpg",
+          "foot": "Swipe →"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "Sheikh Shakhbout Medical City",
+          "value": "1,300+",
+          "label": "robot-assisted surgeries so far, by the hospital’s count",
+          "foot": "Source: Gulf News, 15 Nov 2026",
+          "image": "/media/social/ssmc-robotic-surgery.jpg",
+          "focus": "30% 50%"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "Every year",
+          "value": "500+",
+          "label": "robotic operations a year at SSMC now",
+          "foot": "Source: Gulf News, 15 Nov 2026"
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "First half of 2026",
+          "value": "+42%",
+          "label": "growth in robotic surgery volumes",
+          "foot": "Source: Gulf News, 15 Nov 2026"
+        },
+        {
+          "template": "signal",
+          "size": "portrait",
+          "kicker": "Saudi Arabia · Riyadh",
+          "title": "KFSHRC passes **100** single-port robotic operations in nine months",
+          "body": "Single-port surgery works through one small incision. The hospital reported the milestone on 12 Nov 2026.",
+          "foot": "Source: KFSHRC, 12 Nov 2026"
+        },
+        {
+          "template": "cta",
+          "size": "portrait",
+          "title": "Every robot at work in MENA, **verified**",
+          "handles": "@roboticsmena",
+          "images": [
+            "/media/social/ssmc-robotic-surgery.jpg",
+            "/media/brief/egypt-da-vinci-sofmedica.jpg",
+            "/media/social/uber-dubai-robotaxis.jpg",
+            "/media/social/keeta-m-drone-4l.jpg"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "Gulf News, 15 Nov 2026",
+          "url": "https://gulfnews.com/uae/health/sheikh-shakhbout-medical-city-performs-1300-robotic-assisted-surgeries-1.500748148"
+        },
+        {
+          "name": "KFSHRC on X, 12 Nov 2026",
+          "url": "https://x.com/KFSHRC/status/2120842058889916845"
         }
       ]
     },
@@ -572,51 +854,95 @@
       "format": "carousel",
       "pillar": "explainer",
       "slot": "2026-11-28T12:00+04:00",
-      "text": "Who drives a container crane? At Jeddah's port, more and more, an operator at a control station.\n\nDP World has made 50 of the 77 yard cranes at its South Container Terminal electric and automated. Swipe for how it works and what changed.\n\nSource: Transport & Logistics Middle East, 21 Oct 2026. Link in bio.\n\n#robotics #saudiarabia #jeddah #ports #logistics #automation",
-      "media_note": "Carousel: post the JPGs in order.",
+      "text": "Who drives a container crane in Jeddah? More and more, someone at a control station. 🇸🇦\n\nDP World has made 50 of the 77 yard cranes at its South Container Terminal electric and automated, after a year of upgrades: new quay cranes in March, electric tractors in July and 17 automated cranes in October. Swipe for how it works.\n\nSources: Transport & Logistics Middle East, 21 Oct 2026; DP World. Link in bio.\n\n#robotics #saudiarabia #jeddah #ports #logistics #automation #dpworld",
+      "media_note": "Carousel: post the 6 JPGs in order. Photos are DP World press images.",
       "cards": [
         {
           "template": "cover",
           "size": "portrait",
           "kicker": "Explainer · Saudi Arabia",
           "title": "Who drives a **port crane** in Jeddah?",
+          "image": "/media/social/dpworld-jeddah-quay-crane.jpg",
+          "caption": true,
           "foot": "Swipe →"
-        },
-        {
-          "template": "signal",
-          "size": "portrait",
-          "kicker": "The machine",
-          "title": "Rubber-tyred gantry cranes stack the yard",
-          "body": "RTGs straddle rows of containers and lift them between trucks and the stacks."
         },
         {
           "template": "stat",
           "size": "portrait",
-          "kicker": "The change",
-          "value": "17",
-          "label": "new automated electric cranes, a $56m investment",
-          "body": "50 of the terminal's 77 RTGs, about 65%, are now electric and automated.",
-          "foot": "Source: Transport & Logistics Middle East, 21 Oct 2026"
+          "kicker": "The change · Oct 2026",
+          "value": "50 of 77",
+          "label": "yard cranes at Jeddah's South Container Terminal are now electric and automated",
+          "body": "DP World added 17 automated electric RTG cranes, a $56m investment. That is about 65% of the yard fleet.",
+          "foot": "Source: Transport & Logistics Middle East, 21 Oct 2026",
+          "image": "/media/social/dpworld-jeddah-aerial.jpg",
+          "caption": true
         },
         {
           "template": "signal",
           "size": "portrait",
           "kicker": "Who drives",
-          "title": "Operators sit at control stations",
-          "body": "Automatic positioning handles the precise moves. Fully electric drives mean no diesel exhaust at the crane.",
-          "foot": "Source: Transport & Logistics Middle East, 21 Oct 2026"
+          "title": "An operator at a **control station**, not in the cab",
+          "body": "Rubber-tyred gantry cranes straddle rows of containers and move them between trucks and the stacks. Automatic positioning does the precise moves; fully electric drives mean no diesel exhaust at the crane.",
+          "foot": "Source: Transport & Logistics Middle East, 21 Oct 2026",
+          "image": "/media/social/dpworld-jeddah-terminal.jpg",
+          "caption": true,
+          "focus": "70% 50%"
+        },
+        {
+          "template": "list",
+          "size": "portrait",
+          "kicker": "One terminal, one year",
+          "title": "The rest of the upgrade",
+          "items": [
+            "**Mar 2026:** three semi-automated quay cranes; ship-to-shore fleet reaches 17",
+            "**Jul 2026:** 35 electric terminal tractors, a fleet over 20% bigger",
+            "**Oct 2026:** 17 automated electric yard cranes",
+            "**By 2030:** target of 100% electric equipment"
+          ],
+          "foot": "Sources: DP World, 25 Mar and 15 Jul 2026; T&L Middle East, 21 Oct 2026",
+          "image": "/media/social/dpworld-jeddah-electric-tractors.jpg",
+          "caption": true
+        },
+        {
+          "template": "stat",
+          "size": "portrait",
+          "kicker": "The result so far",
+          "value": "221,200+",
+          "label": "containers (TEU) handled in July 2026",
+          "body": "The terminal's busiest month since DP World began running it in 1999.",
+          "foot": "Source: DP World, Aug 2026",
+          "image": "/media/social/dpworld-jeddah-quay-crane.jpg",
+          "caption": true
         },
         {
           "template": "cta",
           "size": "portrait",
-          "title": "Every robot at work in MENA, verified",
-          "handles": "@roboticsmena"
+          "title": "Which Gulf port automates its **yard** next?",
+          "handles": "@roboticsmena",
+          "images": [
+            "/media/social/dpworld-jeddah-terminal.jpg",
+            "/media/social/dpworld-jeddah-aerial.jpg",
+            "/media/social/dpworld-jeddah-electric-tractors.jpg",
+            "/media/social/dpworld-jeddah-quay-crane.jpg"
+          ]
         }
       ],
       "sources": [
         {
           "name": "Transport & Logistics Middle East",
           "url": "https://www.transportandlogisticsme.com/smart-sea-freight/dp-world-south-container-terminal-in-jeddah-deploys-new-automated-electric-cranes"
+        },
+        {
+          "name": "DP World, 15 Jul 2026",
+          "url": "https://www.dpworld.com/en/news/dp-world-advances-jeddah-terminal-transformation-with-35-new-electric-tractors"
+        },
+        {
+          "name": "DP World, 25 Mar 2026",
+          "url": "https://www.dpworld.com/en/news/dp-world-adds-three-quay-cranes-at-jeddah-to-support-red-sea-trade"
+        },
+        {
+          "name": "DP World (July 2026 throughput)",
+          "url": "https://www.dpworld.com/en/news/releases/uae/dp-world-records-highest-monthly-throughput-in-jeddah-since-operations-began-in-1999"
         }
       ]
     },
@@ -887,35 +1213,41 @@
     {
       "lang": "en",
       "status": "draft",
-      "id": "w48-x-big5",
+      "id": "w48-x-sobha-hartland",
       "platform": "x",
       "format": "post",
       "pillar": "community",
       "slot": "2026-11-26T17:00+04:00",
-      "text": "At Big 5 Global (Dubai World Trade Centre, to 26 Nov)?\n\nReply with the construction robot you saw and the company's stand. If it's working on a site in the region, we'll verify it and add it to the database. https://roboticsmena.com/events?utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "brief": "keeta-m-drone-4l-dubai",
+      "text": "🇦🇪 One Dubai neighbourhood, two kinds of delivery robot.\n\nSince Dec 2025, Yango robots have carried noon Minutes orders around Sobha Hartland. Keeta says its winch-drop drone serves the community next (no date yet).\n\nLive there? Used either? https://roboticsmena.com/database?tab=deployments&id=d53&utm_source=x&utm_medium=social&utm_campaign=2026-w48",
       "tags": [
-        "tag if confirmed: Big 5 Global"
+        "tag if confirmed: Yango Group",
+        "tag if confirmed: noon",
+        "tag if confirmed: Keeta Drone"
       ],
       "cards": [
         {
-          "template": "cover",
+          "template": "signal",
           "size": "landscape",
-          "kicker": "Big 5 Global · 23 to 26 Nov",
-          "title": "Seen a construction robot on the floor?",
-          "body": "Tell us the robot and the stand. We verify, then add it.",
-          "foot": "Dubai World Trade Centre. Source: big5global.com",
-          "images": [
-            "/media/companies/cobod.jpg",
-            "/media/companies/hilti.jpg",
-            "/media/companies/abyan.jpg",
-            "/media/companies/gmt-robotics.jpg"
-          ]
+          "kicker": "UAE · Sobha Hartland",
+          "title": "Robots on the pavement, a **drone** overhead next",
+          "body": "Yango robots deliver noon Minutes orders since Dec 2025 (10 by May 2026). Keeta’s M-Drone 4L is planned; no start date yet.",
+          "foot": "Sources: Yango Group and noon, Dec 2025; tbreak, May 2026; Keeta Drone, 18 Nov 2026",
+          "image": "/media/social/keeta-m-drone-4l.jpg"
         }
       ],
       "sources": [
         {
-          "name": "Big 5 Global",
-          "url": "https://www.big5global.com/"
+          "name": "Zawya (Yango Group and noon), 9 Dec 2025",
+          "url": "https://www.zawya.com/en/press-release/companies-news/yango-group-and-noon-announce-strategic-partnership-to-scale-autonomous-robot-delivery-across-the-gcc-uh6o73ja"
+        },
+        {
+          "name": "tbreak, 9 May 2026",
+          "url": "https://tbreak.com/yango-delivery-robots-dubai-scale-100/"
+        },
+        {
+          "name": "Zawya (Keeta Drone press release), 18 Nov 2026",
+          "url": "https://www.zawya.com/en/press-release/events-conferences/keeta-drone-unveils-its-latest-delivery-solutions-at-dubai-future-week-2348805"
         }
       ]
     },
@@ -1006,6 +1338,42 @@
     {
       "lang": "en",
       "status": "draft",
+      "id": "w48-x-qatar-robotaxi",
+      "platform": "x",
+      "format": "post",
+      "pillar": "signals",
+      "slot": "2026-11-29T12:00+04:00",
+      "text": "🇶🇦 Qatar started phase two of its electric robotaxi tests on 22 Nov.\n\nPhase one (from Aug 2025): 2,500 trips with a safety officer at the wheel, 94% with no human intervention.\n\nPhase two aims for no one at the wheel, one route at a time. https://roboticsmena.com/policy?c=QA&utm_source=x&utm_medium=social&utm_campaign=2026-w48",
+      "tags": [
+        "tag if confirmed: Ministry of Transport Qatar (@MOTQatar)",
+        "tag if confirmed: Mowasalat"
+      ],
+      "cards": [
+        {
+          "template": "signal",
+          "size": "landscape",
+          "kicker": "Qatar · Robotaxis · 22 Nov 2026",
+          "title": "Phase two: aiming for **no one at the wheel**",
+          "body": "Phase one (from Aug 2025): 2,500 trips, 94% with no human intervention. Phase two rolls out one route at a time.",
+          "foot": "Sources: Ministry of Transport, 22 Nov 2026; Gulf Times, Jul 2026",
+          "image": "/media/companies/pony-ai.jpg",
+          "caption": true
+        }
+      ],
+      "sources": [
+        {
+          "name": "Ministry of Transport (Qatar) on X, 22 Nov 2026",
+          "url": "https://x.com/MOTQatar/status/2124459398579851384"
+        },
+        {
+          "name": "Gulf Times, Jul 2026",
+          "url": "https://www.gulf-times.com/article/728814/qatar/driverless-robotaxis-move-a-step-closer-to-dohas-roads"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
       "id": "w48-rd-roundup",
       "platform": "reddit",
       "format": "text",
@@ -1090,6 +1458,32 @@
         {
           "name": "Entrepreneur Middle East",
           "url": "https://mena.entrepreneur.com/business-news/dubai-future-foundation-targets-robotic-deliveries-in-100-buildings-by-2029"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "status": "draft",
+      "id": "w48-rd-sobha",
+      "platform": "reddit",
+      "format": "text",
+      "pillar": "community",
+      "slot": "2026-11-29T16:00+04:00",
+      "subreddit": "RoboticsMENA",
+      "title": "Sobha Hartland now has robot deliveries on the pavement and a drone service on the way. Anyone actually used them?",
+      "text": "Since December 2025, Yango's delivery robots have been carrying noon Minutes orders around Sobha Hartland. You pick the robot option in the noon app, track it on the map and unlock it with your phone. By May 2026 there were 10 of them, and Yango said it wanted 100 across the UAE within a year.\n\nLast week Keeta Drone said Sobha Hartland will be one of the first communities for its new M-Drone 4L, which hovers and lowers orders of up to 4.5 kg on a 15 m cable instead of landing. No start date yet.\n\nIf you live there: how long does a robot delivery actually take, do they get stuck, and would you use a drone drop? Trying to work out how well this works day to day versus the press releases.\n\n(Disclosure: I run roboticsmena.com, which tracks robot deployments in the region.)\n\nSource: Yango Group and noon, 9 Dec 2025, https://www.zawya.com/en/press-release/companies-news/yango-group-and-noon-announce-strategic-partnership-to-scale-autonomous-robot-delivery-across-the-gcc-uh6o73ja\nSource: tbreak, May 2026, https://tbreak.com/yango-delivery-robots-dubai-scale-100/\nSource: Keeta Drone, 18 Nov 2026, https://www.zawya.com/en/press-release/events-conferences/keeta-drone-unveils-its-latest-delivery-solutions-at-dubai-future-week-2348805",
+      "sources": [
+        {
+          "name": "Zawya (Yango Group and noon), 9 Dec 2025",
+          "url": "https://www.zawya.com/en/press-release/companies-news/yango-group-and-noon-announce-strategic-partnership-to-scale-autonomous-robot-delivery-across-the-gcc-uh6o73ja"
+        },
+        {
+          "name": "tbreak, 9 May 2026",
+          "url": "https://tbreak.com/yango-delivery-robots-dubai-scale-100/"
+        },
+        {
+          "name": "Zawya (Keeta Drone press release), 18 Nov 2026",
+          "url": "https://www.zawya.com/en/press-release/events-conferences/keeta-drone-unveils-its-latest-delivery-solutions-at-dubai-future-week-2348805"
         }
       ]
     },
