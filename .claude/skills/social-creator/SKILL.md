@@ -23,7 +23,9 @@ Create or update `social/queue/<week>.json` (copy the shape of the newest existi
     post is a carousel (3 or more cards, which becomes a PDF). A `poll` needs `poll.question` and 2 to 4 `poll.options` of 30 characters or fewer.
   - X: `text` (post) or `thread` (list of posts), each 280 weighted characters or fewer (a link counts as 23). 0 to 2 hashtags. A country flag emoji leads a signal.
   - Instagram: `text` is the caption (hook first, in English, 5 to 8 specific hashtags, "link in bio"). Use `carousel` with 2 to 20
-    `portrait` cards, or `reel`, which needs `story`-size cards and becomes an MP4 slideshow. Always add a `media_note` reminding the owner to add a trending audio track.
+    `portrait` cards, or `reel`, which needs `story`-size cards and becomes an MP4 slideshow. **Reels are paced for reading** (owner, 25 Nov 2026):
+    the renderer holds each slide for its reading time (1.5 s plus 3 words a second, at least 4.5 s, at most 8 s), so keep reel slides
+    short (a title and one line) rather than relying on speed. `reel_seconds` only lengthens slides, never shortens them. Always add a `media_note` reminding the owner to add a trending audio track.
   - Reddit: `subreddit`, `title` and `text` in **plain text**: no `**bold**`, `[text](url)` links, `#` headings or `-` bullets, because the owner
     pastes into Reddit's rich-text editor, which shows them literally. Write "Source: Name, https://…" on its own line (bare links auto-link). It's a person talking: no hashtags, no emoji, no UTM tags. Disclose
     that roboticsmena.com is ours. Outside r/RoboticsMENA, at most 1 post a week may link to our site, and only once the account is 4 weeks old.
