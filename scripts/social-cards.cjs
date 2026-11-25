@@ -183,12 +183,24 @@ async function makePdf(pngs, out) {
   fs.writeFileSync(out, await doc.save());
 }
 
+// Reading time per reel slide (owner, 25 Nov 2026: reels moved too fast to read). Every slide stays up long enough to read its
+// words at a relaxed pace: 1.5 s to take in the frame plus 3 words a second (source lines not counted), never under REEL_MIN_SECONDS (4.5 s) or over
+// REEL_MAX_SECONDS (8 s). A post's reel_seconds can only lengthen slides (it is a floor), never shorten them below the rule.
+const REEL_MIN_SECONDS = 4.5, REEL_MAX_SECONDS = 8;
+function readingSeconds(card, floor = 0) {
+  const text = [card.kicker, card.title, card.body, card.value, card.label, ...(card.items || []),
+    ...(card.rows || []).map(r => `${r.label} ${r.value} ${r.note || ''}`)].filter(Boolean).join(' ').replace(/\*\*/g, '');
+  const words = text.split(/\s+/).filter(Boolean).length;
+  return Math.min(REEL_MAX_SECONDS, Math.max(REEL_MIN_SECONDS, floor, 1.5 + words / 3));
+}
+
 // Slideshow with cross-fades. Instagram adds the audio track (chosen in the app, so it can be a trending one).
-function makeReel(pngs, out, secs = 3) {
-  const fade = 0.5, n = pngs.length;
-  const inputs = pngs.flatMap(f => ['-loop', '1', '-t', String(secs + fade), '-i', f]);
-  let chain = '', last = '[0:v]';
-  for (let i = 1; i < n; i++) { const o = i === n - 1 ? '[v]' : `[x${i}]`; chain += `${last}[${i}:v]xfade=transition=fade:duration=${fade}:offset=${(secs * i).toFixed(2)}${o};`; last = o; }
+// durations: seconds each slide is fully on screen (see readingSeconds).
+function makeReel(pngs, out, durations) {
+  const fade = 0.6, n = pngs.length;
+  const inputs = pngs.flatMap((f, i) => ['-loop', '1', '-t', String(durations[i] + fade), '-i', f]);
+  let chain = '', last = '[0:v]', at = 0;
+  for (let i = 1; i < n; i++) { at += durations[i - 1]; const o = i === n - 1 ? '[v]' : `[x${i}]`; chain += `${last}[${i}:v]xfade=transition=fade:duration=${fade}:offset=${at.toFixed(2)}${o};`; last = o; }
   const filter = n > 1 ? chain + '[v]format=yuv420p,fps=30[out]' : '[0:v]format=yuv420p,fps=30[out]';
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', ...inputs, '-filter_complex', filter, '-map', '[out]', '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-movflags', '+faststart', out]);
 }
@@ -224,8 +236,13 @@ async function renderWeek(week, only) {
       files.push(out); n++;
     }
     if (p.platform === 'linkedin' && p.format === 'document') await makePdf(files, path.join(dir, `${p.id}.pdf`));
-    if (p.format === 'reel') makeReel(files, path.join(dir, `${p.id}.mp4`), p.reel_seconds || 3);
-    console.log(`✓ ${p.id}: ${files.length} card${files.length > 1 ? 's' : ''}${p.format === 'document' ? ' + pdf' : ''}${p.format === 'reel' ? ' + mp4' : ''}`);
+    let reelNote = '';
+    if (p.format === 'reel') {
+      const secs = p.cards.map(c => readingSeconds(c, p.reel_seconds || 0));
+      makeReel(files, path.join(dir, `${p.id}.mp4`), secs);
+      reelNote = ` + mp4 (${secs.reduce((a, b) => a + b, 0).toFixed(1)} s: ${secs.map(x => x.toFixed(1)).join('/')})`;
+    }
+    console.log(`✓ ${p.id}: ${files.length} card${files.length > 1 ? 's' : ''}${p.format === 'document' ? ' + pdf' : ''}${reelNote}`);
   }
   await browser.close();
   console.log(`${n} images in social/cards/${week}/`);

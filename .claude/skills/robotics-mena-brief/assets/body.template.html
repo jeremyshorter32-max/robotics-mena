@@ -1,0 +1,71 @@
+<!--
+  Robotics MENA weekly brief: Kit body fragment template.
+  Paste target: the {{ message_content }} cell of newsletter/kit-template.html.
+  scripts/brief-body.mjs fills the {{tokens}} and repeats the blocks marked BEGIN/END.
+  Element semantics only. No classes except email-button and blockquotes. No inline font or colour.
+  This comment is stripped from the output.
+-->
+<p><strong>{{week_line}}</strong></p>
+<h3>{{standfirst}}</h3>
+
+<p><strong>The Take</strong></p>
+<p>{{take}}</p>
+<p><em>— Robotics MENA</em></p>
+
+<hr>
+
+<p><strong>By the numbers</strong></p>
+<ul>
+<!-- BEGIN stat -->
+<li><b>{{value}}</b> {{label}}</li>
+<!-- END stat -->
+</ul>
+
+<hr>
+
+<p><strong>This week's five signals</strong></p>
+<!-- BEGIN signal (joined with <hr>) -->
+<img src="{{image}}" alt="{{alt}}" width="504">
+<p>{{credit}}</p>
+<p><strong>{{nn}} · {{country}} · {{date}}</strong></p>
+<h2>{{headline}}</h2>
+<p>{{takeaway}}</p>
+<p><a href="{{url}}">Source: {{source}} →</a></p>
+<!-- END signal -->
+
+<hr>
+
+<p><strong>Spotlight</strong></p>
+<h3>{{spotlight_title}}</h3>
+<p>{{spotlight_body}}</p>
+<blockquote>{{quote}}<br>— {{quote_by}}</blockquote>
+<p><a href="{{spotlight_url}}">Read the full analysis on roboticsmena.com →</a></p>
+
+<hr>
+
+<p><strong>Policy watch</strong></p>
+<ul>
+<!-- BEGIN policy -->
+<li>{{text}} <a href="{{url}}">{{source}}</a></li>
+<!-- END policy -->
+</ul>
+
+<p><strong>On the calendar</strong></p>
+<ul>
+<!-- BEGIN event -->
+<li><a href="{{url}}">{{name}}</a> · {{city}} · {{dates}}</li>
+<!-- END event -->
+</ul>
+
+<p><strong>Also noted</strong></p>
+<ul>
+<!-- BEGIN noted -->
+<li>{{text}} <a href="{{url}}">{{source}}</a></li>
+<!-- END noted -->
+</ul>
+
+<hr>
+
+<p>Every past issue is in the <a href="https://roboticsmena.com/resources">archive</a>. Every deployment is on the <a href="https://roboticsmena.com/map">map</a>, and every company is in the <a href="https://roboticsmena.com/database">database</a>.</p>
+<p><em>Robotics MENA is independent and ad-free. Every item is sourced to a named primary source.</em></p>
+<p><a href="https://roboticsmena.com/">Forward this to someone tracking the region →</a></p>

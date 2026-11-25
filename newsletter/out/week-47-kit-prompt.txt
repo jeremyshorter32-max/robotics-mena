@@ -1,0 +1,124 @@
+Put this week's Robotics MENA email into Kit as a DRAFT. I'm logged in to Kit in this browser.
+Never click Send, Schedule or Publish, and don't change any other broadcast, template, form or subscriber.
+
+1. Open a new tab at https://app.kit.com/campaigns and look at the drafts. If one called "Weekly brief · 16–22 November 2026" or similar already
+   exists, leave it alone and mention it in your report. Then click "New broadcast" (pick "Email" if asked).
+2. Choose our custom email template: the "Robotics MENA" HTML template (dark frame, logo, "THE BRIEF" masthead). If it isn't
+   in the template list, stop and tell me.
+3. Subject: Uber puts $50m behind Dubai's driverless rides
+   Preview text: Also: a winch-drop drone, Oman's fund in lab robots and Qatar's next robotaxi phase
+   (If there's a field for the internal name, use: Week 47 · 16–22 November 2026)
+4. Clear any starter text in the body. Insert an HTML block (the "+" insert menu → HTML, or type /html in the body). Paste the HTML
+   between the BEGIN and END lines below into that block exactly as it is: no edits, no retyping. Don't paste it into the normal text
+   area: that strips the formatting. If the editor has no HTML block, stop and tell me what options it shows.
+5. Save, then open Preview (desktop and mobile). Check: a small indigo uppercase label above each section; five photos, each with a grey
+   credit line under it; five large headlines; links underlined in indigo; the footer with Unsubscribe. Note anything that looks wrong.
+6. Send a test email to the account's own address (Kit's "Send test email"). Don't type any other address.
+7. Stop. Tell me: the draft's URL, what the preview looked like, and anything that didn't match. Don't send or schedule it.
+
+Other subject options if I want to swap: Lunate's ROBOTS ETF lists on ADX on 8 December / $50m for Dubai robotaxis, 1,300 surgeries at SSMC
+
+=== BEGIN HTML ===
+<p><strong>Week 47 · 16–22 November 2026</strong></p>
+<h3>Dubai Future Week put private money behind the city's autonomy targets, while Gulf capital kept buying into robotics abroad.</h3>
+
+<p><strong>The Take</strong></p>
+<p>Three of this week's five signals are about money, not machines. Uber's $50 million puts private capital behind Dubai's autonomy targets, and Lunate and Oman's sovereign fund are buying robotics exposure abroad. Capital is the easy part. The numbers worth watching are rides without a safety specialist on board, drone drops completed in Sobha Hartland, and any MegaRobo work that actually lands in Oman.</p>
+<p><em>— Robotics MENA</em></p>
+
+<hr>
+
+<p><strong>By the numbers</strong></p>
+<ul>
+<li><b>175</b> companies tracked across the region</li>
+<li><b>70</b> deployments mapped in 12 countries</li>
+<li><b>13</b> events in the next 90 days</li>
+<li><b>1,300+</b> robot-assisted surgeries at Sheikh Shakhbout Medical City, by the hospital's count</li>
+</ul>
+
+<hr>
+
+<p><strong>This week's five signals</strong></p>
+<img src="https://roboticsmena.com/media/brief/uber-dubai-50m.jpg" alt="WeRide robotaxis on the Uber network outside Jumeirah Mosque, Dubai" width="504">
+<p>Photo: Uber</p>
+<p><strong>01 · UAE · 18 NOV 2026</strong></p>
+<h2>Uber commits $50 million over two years to expand driverless rides across Dubai</h2>
+<p>Uber will spend AED 184 million to bring door-to-door autonomous rides to Jumeirah, Umm Suqeim, Downtown, DIFC and Business Bay by the end of 2027, with a safety specialist on board at first. Private money is now backing Dubai's target of 25% autonomous trips by 2030, not just government pilots.</p>
+<p><a href="https://www.thenationalnews.com/news/uae/2026/11/18/uber-commits-50m-to-expand-autonomous-vehicle-services-across-dubai-by-2027/">Source: The National →</a></p>
+
+<hr>
+
+<img src="https://roboticsmena.com/media/brief/lunate-humanoid-etf.jpg" alt="Lunate's illustrative launch image for its humanoid-robot ETF" width="504">
+<p>Image: Lunate (illustrative)</p>
+<p><strong>02 · UAE · 17 NOV 2026</strong></p>
+<h2>Lunate lists what it calls the GCC's first humanoid-robot ETF on ADX on 8 December</h2>
+<p>The Boreas VettaFi Humanoid Robots ETF (ticker ROBOTS) holds 41 chip, component, robot and software makers at a 0.49% fee. Gulf investors can now buy the humanoid theme on a local exchange instead of abroad.</p>
+<p><a href="https://lunate.com/en/news-insights/announcements/lunate-expands-boreas-range-with-launch-of-gccs-first-humanoid-robots-etf/">Source: Lunate →</a></p>
+
+<hr>
+
+<img src="https://roboticsmena.com/media/brief/keeta-m-drone-4l.jpg" alt="Keeta Drone's M-Drone 4L delivery drone at its Dubai Future Week launch" width="504">
+<p>Photo: Keeta Drone</p>
+<p><strong>03 · UAE · 18 NOV 2026</strong></p>
+<h2>Keeta Drone unveils a winch-drop delivery drone for Dubai's villa communities</h2>
+<p>The M-Drone 4L hovers and lowers orders of up to 4.5 kg on a 15 m cable, so it needs no landing pad, and Dubai's civil aviation authority says it has passed flight testing. Sobha Hartland is set to be one of the first communities to order through the Keeta app, though no start date has been given.</p>
+<p><a href="https://www.zawya.com/en/press-release/events-conferences/keeta-drone-unveils-its-latest-delivery-solutions-at-dubai-future-week-2348805">Source: Zawya (Keeta Drone press release) →</a></p>
+
+<hr>
+
+<img src="https://roboticsmena.com/media/brief/ssmc-robotic-surgery.jpg" alt="Surgical team at Sheikh Shakhbout Medical City, Abu Dhabi" width="504">
+<p>Photo: Sheikh Shakhbout Medical City</p>
+<p><strong>04 · UAE · 15 NOV 2026</strong></p>
+<h2>Sheikh Shakhbout Medical City passes 1,300 robot-assisted surgeries, by its own count</h2>
+<p>The Abu Dhabi hospital says it now performs more than 500 robotic operations a year, with volumes up 42% in the first half of 2026. Robotic surgery is becoming routine in Gulf public hospitals rather than a showcase.</p>
+<p><a href="https://gulfnews.com/uae/health/sheikh-shakhbout-medical-city-performs-1300-robotic-assisted-surgeries-1.500748148">Source: Gulf News →</a></p>
+
+<hr>
+
+<img src="https://roboticsmena.com/media/brief/megarobo-lab-automation.jpg" alt="MegaRobo automated laboratory system with robotic arms" width="504">
+<p>Photo: MegaRobo</p>
+<p><strong>05 · OMAN · 19 NOV 2026</strong></p>
+<h2>Oman's sovereign fund joins a near-$200 million round for robotic-lab maker MegaRobo</h2>
+<p>The Oman Investment Authority backed the Beijing company, whose robots run lab experiments that AI designs, after the Sultan's state visit to China earlier this month. Omani state money is now going into robotics, though no operations in Oman have been announced.</p>
+<p><a href="https://theaiinsider.tech/2026/11/19/megarobo-raises-nearly-200m-to-fund-expansion-of-ai-powered-laboratory-automation/">Source: The AI Insider →</a></p>
+
+<hr>
+
+<p><strong>Spotlight</strong></p>
+<h3>ADNOC's real AI story at ADIPEC wasn't the OpenAI deal. It was the robots.</h3>
+<p>The ADIPEC headlines went to ADNOC's OpenAI agreement. The bigger shift was on steel. After strikes on Shah, Habshan and Ruwais, every damaged metre of pipe and vessel has to be checked before it carries pressure again, and ADNOC is buying robots to do it: Gecko's wall-climbing crawlers under a contract worth up to AED 110 million, an explosion-proof inspector at the Taweelah gas compression plant, two 60-metre remotely operated vessels steered from Mussafah, and a trial of Unitree robots in onshore fields. Most of the figures attached are company claims, projections or contract ceilings. Gecko says its pilot raised asset coverage by 99.6%, and ADNOC Gas projects more than $300 million in savings over five years. Neither has been independently tested.</p>
+<blockquote>Most headline figures are company claims, projections or contract ceilings. ADNOC should publish measured results.<br>— Robotics MENA Spotlight, 7 November 2026</blockquote>
+<p><a href="https://roboticsmena.com/spotlight?s=gecko-adnoc-raptor">Read the full analysis on roboticsmena.com →</a></p>
+
+<hr>
+
+<p><strong>Policy watch</strong></p>
+<ul>
+<li>Qatar: the Ministry of Transport and Mowasalat (Karwa) started the second phase of electric robotaxi test operations on 22 November. <a href="https://mot.gov.qa/en/news/mot-kicks-phase-two-electric-robotaxis-test-runs">Ministry of Transport</a></li>
+<li>Dubai: the RTA signed an MoU with Dubai Future Foundation on 19 November to support operational trials of self-driving vehicles; an MoU, not a licence. <a href="https://x.com/rta_dubai/status/2123422923406852146">RTA on X</a></li>
+<li>Saudi Arabia: the passenger autonomous-vehicle licensing regulation takes effect on 6 January 2027; until then, road operation runs on case-by-case TGA sandbox permits. <a href="https://www.albiladpress.com/news/2026/6598/finance/1029871.html">Al Bilad</a></li>
+</ul>
+
+<p><strong>On the calendar</strong></p>
+<ul>
+<li><a href="https://www.big5global.com/">Big 5 Global</a> · Dubai · 23–26 Nov</li>
+<li><a href="https://www.gitex.com/gitex-global-2026">GITEX Global</a> · Dubai · 7–11 Dec</li>
+<li><a href="https://saudimakesfuture.com/">Saudi Makes Future</a> · Riyadh · 14–16 Dec</li>
+<li><a href="https://www.worldhealthexpo.com/events/healthcare/dubai">WHX Dubai</a> · Dubai · 25–28 Jan</li>
+<li><a href="https://qatar.websummit.com/">Web Summit Qatar</a> · Doha · 31 Jan–3 Feb</li>
+</ul>
+
+<p><strong>Also noted</strong></p>
+<ul>
+<li>UAE: BD and Pharmatrade installed a BD Rowa robotic storage and retrieval system at CHS Pharmacy in Wafi Mall, billed as the UAE's first robot-automated retail pharmacy (16 Nov). <a href="https://menatech.net/en/uae-launches-first-robot-automated-pharmacy-for-medication-management/">MENA TECH</a></li>
+<li>UAE: Dubai Future Labs signed eight delivery firms, including talabat, Keeta, noon and Aramex, to a programme in which robots carry orders from the lobby to the door; the aim is 100 robot-ready buildings by 2029 (18 Nov). <a href="https://mena.entrepreneur.com/business-news/dubai-future-foundation-targets-robotic-deliveries-in-100-buildings-by-2029">Entrepreneur Middle East</a></li>
+<li>UAE: Skyports and the RTA completed the Dubai Marina vertiport, which they say is certified for commercial eVTOL operations (18 Nov). <a href="https://x.com/rta_dubai/status/2123007293289615531">RTA on X</a></li>
+<li>Egypt: ITI and Si-Ware Systems opened applications for a Physical AI Fellowship for ITI's AI and ML graduates from 2021 to 2026 (15 Nov). <a href="https://x.com/MCITEgypt/status/2121935021422342447">Egypt's ICT ministry on X</a></li>
+</ul>
+
+<hr>
+
+<p>Every past issue is in the <a href="https://roboticsmena.com/resources">archive</a>. Every deployment is on the <a href="https://roboticsmena.com/map">map</a>, and every company is in the <a href="https://roboticsmena.com/database">database</a>.</p>
+<p><em>Robotics MENA is independent and ad-free. Every item is sourced to a named primary source.</em></p>
+<p><a href="https://roboticsmena.com/">Forward this to someone tracking the region →</a></p>
+=== END HTML ===
