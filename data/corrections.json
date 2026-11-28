@@ -1,5 +1,13 @@
 [
   {
+    "date": "2026-11-28",
+    "record": {"en": "Doha robotaxi trial (deployment record) and Pony.ai (company record)", "ar": "تجربة سيارات الأجرة الآلية في الدوحة (سجل نشر) و«بوني إيه آي» (سجل شركة)"},
+    "href": "/database?tab=deployments&id=d24",
+    "was": {"en": "Said Pony.ai and Mowasalat showed Doha’s first fully driverless robotaxi rides in September 2026 and that phase 2 was already running.", "ar": "ذكر أن «بوني إيه آي» و«مواصلات» قدّمتا أول رحلات أجرة آلية دون سائق بالكامل في الدوحة في سبتمبر 2026 وأن المرحلة الثانية كانت قد بدأت."},
+    "now": {"en": "The September rides were a forum demonstration. Phase 2 began on 22 November 2026 with remote operators and a supervisor in the front passenger seat.", "ar": "كانت رحلات سبتمبر عرضاً تجريبياً في منتدى. وبدأت المرحلة الثانية في 22 نوفمبر 2026 بمشغّلين عن بُعد ومشرف في المقعد الأمامي للراكب."},
+    "source": "https://thepeninsulaqatar.com/article/22/11/2026/qatar-begins-phase-two-of-electric-robotaxi-test-runs"
+  },
+  {
     "date": "2026-11-11",
     "record": {"en": "Doha driverless robotaxi (deployment record)", "ar": "سيارات الأجرة ذاتية القيادة في الدوحة (سجل نشر)"},
     "href": "/database?tab=deployments&id=d24",
