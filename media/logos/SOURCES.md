@@ -230,3 +230,4 @@ No usable logo found for FalconViz, Sager Drones, AutoGo, Sinaha Technology, Apo
 | darbco.png | https://new.darbco.com/images/Navbar-Logo.svg |
 | jackys-business-solutions.png | https://www.jackys.com (site icon) |
 | atlab.png, inc-robotics.png, albariq-equipment.png, bk-fire.png, hollyway.png | Name tiles (no usable logo found) |
+| caocao.png | CaoCao | https://cdncc-frontend.caocaokeji.cn/2/marketing-frontend/caocao-official/logo_svg_white.svg (white logo on a navy tile) |

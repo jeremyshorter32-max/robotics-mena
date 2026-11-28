@@ -5262,5 +5262,32 @@
     "mena_source_url": "https://economymiddleeast.com/news/wurth-professional-solutions-partners-with-dubai-municipality-and-zacua-ventures-to-drive-humanoid-robotics-at-expo-city-contech-innovation-hub/",
     "mena_date": "2026-01-29",
     "logo": "/media/logos/wurth-professional-solutions.png"
+  },
+  {
+    "id": "caocao",
+    "name": "CaoCao",
+    "name_ar": "كاوكاو",
+    "country": "AE",
+    "category": "av",
+    "stage": "corp",
+    "summary": "Hong Kong-listed ride-hailing platform of China's Geely group and its robotaxi arm; it has MoUs to pilot robotaxis in Abu Dhabi and Ras Al Khaimah.",
+    "summary_ar": "منصة نقل الركاب التابعة لمجموعة جيلي الصينية والمدرجة في بورصة هونغ كونغ، وذراعها للروبوتاكسي؛ ولديها مذكرتا تفاهم لتجربة الروبوتاكسي في أبوظبي ورأس الخيمة.",
+    "website": "https://www.caocaokeji.cn/",
+    "logo": "/media/logos/caocao.png",
+    "source": "Gasgoo",
+    "source_url": "https://autonews.gasgoo.com/articles/news/caocao-signs-agreement-with-ras-al-khaimah-transport-authority-robotaxi-pilot-tests-to-launch-in-uae-2126552538568392704",
+    "added": "2026-11-28",
+    "hq": "CN",
+    "hq_city": "Hangzhou",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "Signed an MoU with the Abu Dhabi Investment Office at DRIFTx in November 2025 to explore robotaxi services in Abu Dhabi, and an MoU with the Ras Al Khaimah Transport Authority in November 2026 for robotaxi pilots in designated zones of the emirate. Both are agreements; no passenger service has started.",
+      "ar": "وقّعت مذكرة تفاهم مع مكتب أبوظبي للاستثمار خلال «دريفت إكس» في نوفمبر 2025 لاستكشاف خدمات الروبوتاكسي في أبوظبي، ومذكرة مع هيئة المواصلات في رأس الخيمة في نوفمبر 2026 لتجارب الروبوتاكسي في مناطق محددة من الإمارة. وكلتاهما اتفاقيتان، ولم تبدأ أي خدمة للركاب بعد."
+    },
+    "mena_source": "PR Newswire (CaoCao press release)",
+    "mena_source_url": "https://www.prnewswire.com/apac/news-releases/caocao-inc-and-abu-dhabi-investment-office-sign-mou-to-advance-autonomous-driving-and-launch-robotaxi-in-the-middle-east-302610133.html",
+    "mena_date": "2025-11-10"
   }
 ]
