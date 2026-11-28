@@ -65,9 +65,12 @@ Open items for roboticsmena.com. Tick items off (`[x]`) as they are done and add
 - [ ] **Web-filter submissions:** pack and Claude-in-Chrome prompt in `docs/launch/web-filter-submissions.md`. Results of the
   16–17 Nov 2026 run (checked by hand):
   - Fortinet: already **Information Technology**; Symantec/Broadcom: already **Technology/Internet** (no submission needed).
-  - McAfee/Trellix: was "Uncategorized URL"; **submitted** Technical Information (+ General News), 3–5 business days, no ticket number.
-  - Palo Alto: was **Unknown / Newly-Registered-Domain (High-Risk)**; **submitted 18 Nov 2026** (owner's login) for
-    Computer-and-Internet-Info, request reference eb23696f-1341-4c00-9149-df4eff7550c7. Check the category again after a few days.
+  - McAfee/Trellix: was "Uncategorized URL"; **submitted** Technical Information (+ General News) on 16–17 Nov, no ticket number.
+    **Still "Uncategorized URL (Unverified)" on 28 Nov**, past its 3–5 business days: resubmit (prompt in the 28 Nov chat).
+  - Palo Alto: was Unknown / Newly-Registered-Domain (High-Risk). **Done, 28 Nov:** now **Computer-and-Internet-Info, Low-Risk**
+    (request eb23696f-1341-4c00-9149-df4eff7550c7). The Newly-Registered-Domain tag remains; the domain was registered
+    1 Nov 2026, and the tag normally lapses about 30 days after registration (around 1 Dec). Recheck in early December.
+  - Symantec/Broadcom: still **Technology/Internet** (28 Nov). Fortinet: not rechecked 28 Nov (image captcha); was Information Technology.
   - Cisco Talos and Check Point: need a (free) Cisco / Check Point UserCenter login; not submitted yet.
   - Zscaler and Netskope: lookup tools are now customer-only; nothing to submit without an account (an office on those can ask
     its IT team).
