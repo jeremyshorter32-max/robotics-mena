@@ -177,6 +177,33 @@
     "mena_date": "2026-07-17"
   },
   {
+    "id": "glydways",
+    "name": "Glydways",
+    "name_ar": "غلايدوايز",
+    "country": "AE",
+    "category": "av",
+    "stage": "growth",
+    "summary": "Makes small driverless electric pods that run on dedicated lanes; trialled at Bluewaters, Dubai, in October 2026.",
+    "summary_ar": "تصنع كبسولات كهربائية صغيرة دون سائق تسير على مسارات مخصصة، وقد جُرّبت في بلوواترز بدبي في أكتوبر 2026.",
+    "website": "https://www.glydways.com/",
+    "logo": "/media/logos/glydways.png",
+    "source": "Government of Dubai Media Office",
+    "source_url": "https://www.mediaoffice.ae/en/news/2026/october/11-10/rta-dubai-glydways",
+    "added": "2026-11-28",
+    "hq": "US",
+    "hq_city": "South San Francisco",
+    "mena_countries": [
+      "AE"
+    ],
+    "mena_link": {
+      "en": "Its pods ran Dubai’s first automated transit network trial on a dedicated Bluewaters route for the RTA from 11 October 2026; the company reported more than 3,000 rides in four weeks.",
+      "ar": "شغّلت كبسولاتها أول تجربة لشبكة نقل آلية في دبي على مسار مخصص في بلوواترز لصالح هيئة الطرق والمواصلات اعتباراً من 11 أكتوبر 2026، وأعلنت الشركة أكثر من 3,000 رحلة خلال أربعة أسابيع."
+    },
+    "mena_source": "Government of Dubai Media Office",
+    "mena_source_url": "https://www.mediaoffice.ae/en/news/2026/october/11-10/rta-dubai-glydways",
+    "mena_date": "2026-10-11"
+  },
+  {
     "id": "keeta-drone",
     "name": "Keeta Drone",
     "name_ar": "كيتا درون",
@@ -723,8 +750,8 @@
     "country": "QA",
     "category": "av",
     "stage": "corp",
-    "summary": "Operates commercial robotaxi service in Doha with Mowasalat via the Karwa app, piloting fully driverless rides.",
-    "summary_ar": "تشغّل خدمة سيارات أجرة ذاتية القيادة تجارية في الدوحة مع مواصلات عبر تطبيق كروة، وتجرّب رحلات دون سائق.",
+    "summary": "Technology partner for Mowasalat’s Karwa robotaxis in Doha, now in a supervised phase two, and testing driverless robotaxis in Dubai.",
+    "summary_ar": "الشريك التقني لسيارات الأجرة الآلية «كروة» من «مواصلات» في الدوحة، التي تمر الآن بمرحلة ثانية بإشراف، وتختبر سيارات أجرة آلية دون سائق في دبي.",
     "website": "https://www.pony.ai",
     "logo": "/media/logos/pony-ai.png",
     "source": "Gasgoo",
@@ -737,12 +764,12 @@
       "AE"
     ],
     "mena_link": {
-      "en": "Has run commercial robotaxi service in Doha with national transport company Mowasalat through the Karwa app since late 2025, and in September 2026 launched Doha's first fully driverless robotaxi ride programme.",
-      "ar": "تشغّل خدمة أجرة ذاتية القيادة تجارية في الدوحة مع شركة مواصلات الوطنية عبر تطبيق كروة منذ أواخر 2025، وأطلقت في سبتمبر 2026 أول برنامج رحلات أجرة ذاتية القيادة دون سائق بالكامل في الدوحة."
+      "en": "Has run robotaxis in Doha with Mowasalat through the Karwa app since December 2025, with a safety officer aboard; phase two from 22 November 2026 keeps a supervisor in the front passenger seat. It began driverless testing in Dubai in April 2026.",
+      "ar": "تشغّل سيارات أجرة آلية في الدوحة مع «مواصلات» عبر تطبيق «كروة» منذ ديسمبر 2025 بوجود مسؤول سلامة على متنها، وتُبقي المرحلة الثانية منذ 22 نوفمبر 2026 مشرفاً في المقعد الأمامي للراكب. وبدأت اختبارات دون سائق في دبي في أبريل 2026."
     },
-    "mena_source": "Gasgoo",
-    "mena_source_url": "https://autonews.gasgoo.com/articles/market-industry/2097907362995453952",
-    "mena_date": "2026-09-10",
+    "mena_source": "The Peninsula",
+    "mena_source_url": "https://thepeninsulaqatar.com/article/22/11/2026/qatar-begins-phase-two-of-electric-robotaxi-test-runs",
+    "mena_date": "2026-11-22",
     "image": "/media/companies/pony-ai.jpg",
     "image_cap": {
       "en": "Pony.ai × Karwa robotaxi in Doha",

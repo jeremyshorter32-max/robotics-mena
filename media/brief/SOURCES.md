@@ -58,3 +58,19 @@ The highest-risk newspaper photos were replaced with company images on 13 Nov 20
 | /media/companies/unitree.jpg | Unitree Robotics (press image) | Slide 3: robot dogs in a refinery |
 | /media/companies/ys-lootah-robotics.jpg | YS Lootah Robotics (press image) | Slide 4: humanoid showroom, Dubai |
 | /media/companies/fieldai.jpg | Field AI (press image) | Slide 5: robot dog on a construction site |
+
+## Gulf robotaxi scorecard report (`media/spotlight/robotaxi-*.jpg`, 28 Nov 2026)
+Company or government press images only; resized to 1600 px wide.
+
+| File | Credit (what it shows) | Source page |
+|---|---|---|
+| robotaxi-weride-dubai-skyline.jpg | Government of Dubai Media Office (WeRide robotaxi on a Dubai street, RTA commercial launch, 30 Mar 2026) | https://www.mediaoffice.ae/en/news/2026/march/30-3/rta-launches-commercial-operations-involving-autonomous-taxis |
+| robotaxi-apollo-go-dubai-road.jpg | Government of Dubai Media Office (Apollo Go robotaxi on a Dubai road, 30 Mar 2026) | https://www.mediaoffice.ae/en/news/2026/march/30-3/rta-launches-commercial-operations-involving-autonomous-taxis |
+| robotaxi-apollo-go-dtc-dubai.jpg | Government of Dubai Media Office (Apollo Go robotaxi, Dubai Taxi launch, 2 Apr 2026) | https://www.mediaoffice.ae/en/news/2026/april/02-04/dubai-taxi-company-and-baidus-apollo-go |
+| robotaxi-apollo-go-control-centre.jpg | Government of Dubai Media Office (Apollo Go operations centre, Dubai Science Park, 8 Jan 2026) | https://www.mediaoffice.ae/en/news/2026/january/08-01/al-tayer-and-wang-officially |
+| robotaxi-glydways-bluewaters.jpg | Government of Dubai Media Office (Glydways pods on the Bluewaters ramp, 11 Oct 2026) | https://www.mediaoffice.ae/en/news/2026/october/11-10/rta-dubai-glydways |
+| robotaxi-weride-jumeirah-mosque.jpg | Uber (WeRide robotaxis on Uber outside Jumeirah Mosque, Dubai) | https://www.uber.com/ae/en/newsroom/launch-autonomous-dubai/ |
+| robotaxi-weride-abu-dhabi-fleet.jpg | Uber (WeRide robotaxis with Abu Dhabi plates, available on Uber) | https://www.uber.com/ae/en/newsroom/uber-weride-fullydriverless-abudhabi/ |
+| robotaxi-ponyai-dubai.jpg | Pony.ai (Pony.ai robotaxi on a Dubai road, Apr 2026) | https://blog.pony.ai/pony-ai-advances-dual-engine-strategy-with-dubai-driverless-robotaxi-deployment-eyes-commercial-service-in-2026/ |
+| robotaxi-karwa-ponyai-aemob.jpg | Pony.ai (Karwa robotaxi at the AEMOB forum demo hall, Doha, Sep 2026; indoors, not a street) | https://blog.pony.ai/pony-ai-highlights-progress-of-doha-robotaxi-commercial-operations-at-aemob-forum/ |
+| robotaxi-rakta-marjan.jpg | Ras Al Khaimah Transport Authority (WeRide robotaxi and robobuses at the Al Marjan Island pilot launch, Oct 2025) | https://www.rakta.gov.ae/news/rakta-launches-pilot-phase-of-autonomous-vehicles-in-ras-al-khaimah/ |

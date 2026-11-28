@@ -1,5 +1,1760 @@
 [
  {
+  "id": "gulf-robotaxi-scorecard",
+  "date": "2026-11-29",
+  "read_min": 9,
+  "kicker": {
+   "en": "Autonomous mobility · Dubai · Abu Dhabi · Doha · Riyadh",
+   "ar": "التنقل الذاتي · دبي · أبوظبي · الدوحة · الرياض"
+  },
+  "title": {
+   "en": "Robotaxis with nobody in the car run in only two Gulf cities",
+   "ar": "سيارات الأجرة الآلية بلا أحد على متنها تعمل في مدينتين خليجيتين فقط"
+  },
+  "dek": {
+   "en": "We scored 13 robotaxi services and plans on one question: who is in the car? Paying riders travel with no one aboard only in parts of Dubai and Abu Dhabi. Doha, Riyadh and Ras Al Khaimah still put a person in the vehicle, whatever the headlines say.",
+   "ar": "قيّمنا 13 خدمة وخطة لسيارات الأجرة الآلية بسؤال واحد: من يجلس في المركبة؟ لا يتنقل الركاب بأجر من دون أي شخص على متن المركبة إلا في أجزاء من دبي وأبوظبي. أما الدوحة والرياض ورأس الخيمة فما زالت تضع شخصاً في المركبة، مهما قالت العناوين."
+  },
+  "by": {
+   "en": "Robotics MENA analysis",
+   "ar": "تحليل روبوتات الشرق الأوسط وشمال أفريقيا"
+  },
+  "hero": {
+   "src": "/media/spotlight/robotaxi-weride-dubai-skyline.jpg",
+   "alt": {
+    "en": "A grey WeRide robotaxi in Uber and RTA livery on a residential Dubai street, with Burj Khalifa and the Sheikh Zayed Road towers behind",
+    "ar": "مركبة أجرة آلية رمادية من «وي رايد» بشعارات «أوبر» وهيئة الطرق في شارع سكني بدبي، وخلفها برج خليفة وأبراج شارع الشيخ زايد"
+   },
+   "cap": {
+    "en": "A WeRide robotaxi in Dubai on the day the RTA launched commercial robotaxi operations, 30 March 2026",
+    "ar": "مركبة أجرة آلية من «وي رايد» في دبي يوم أطلقت هيئة الطرق التشغيل التجاري لسيارات الأجرة الآلية، 30 مارس 2026"
+   },
+   "credit": {
+    "en": "Photo: Government of Dubai Media Office",
+    "ar": "الصورة: المكتب الإعلامي لحكومة دبي"
+   }
+  },
+  "pdf": {
+   "en": "/media/reports/gulf-robotaxi-scorecard-en.pdf",
+   "ar": "/media/reports/gulf-robotaxi-scorecard-ar.pdf"
+  },
+  "sources": [
+   {
+    "name": "WeRide",
+    "title": "WeRide and Uber launch fully driverless Robotaxi fare-charging operations in Dubai",
+    "date": "2026-03-31",
+    "url": "https://ir.weride.ai/news-releases/news-release-details/weride-and-uber-launch-fully-driverless-robotaxi-fare-charging"
+   },
+   {
+    "name": "Dubai Media Office",
+    "title": "Dubai accelerates autonomous mobility as Robotaxi hits 4 m km, 97% satisfaction",
+    "date": "2026-08-19",
+    "url": "https://mediaoffice.ae/en/news/2026/august/19-08/dubai-accelerates-autonomous-mobility-as-robotaxi-hits-4-million-km"
+   },
+   {
+    "name": "The National",
+    "title": "Uber commits $50m to expand autonomous vehicle services across Dubai by 2027",
+    "date": "2026-11-18",
+    "url": "https://www.thenationalnews.com/news/uae/2026/11/18/uber-commits-50m-to-expand-autonomous-vehicle-services-across-dubai-by-2027/"
+   },
+   {
+    "name": "Uber",
+    "title": "Q3 2026 prepared remarks",
+    "date": "2026-11-04",
+    "url": "https://s23.q4cdn.com/407969754/files/doc_earnings/2026/q3/transcript/Uber-Q3-26-Prepared-Remarks.pdf"
+   },
+   {
+    "name": "The Peninsula",
+    "title": "Qatar begins phase two of electric robotaxi test runs",
+    "date": "2026-11-22",
+    "url": "https://thepeninsulaqatar.com/article/22/11/2026/qatar-begins-phase-two-of-electric-robotaxi-test-runs"
+   },
+   {
+    "name": "QNA",
+    "title": "MoT supervises Mowasalat's successful electric robotaxis pilot",
+    "date": "2026-07-07",
+    "url": "https://qna.org.qa/en/News-Area/News/2026-7/7/mot-supervises-mowasalats-successful-electric-robotaxis-pilot"
+   },
+   {
+    "name": "Gasgoo",
+    "title": "Pony.ai, Mowasalat launch fully driverless Robotaxi rides in Doha",
+    "date": "2026-09-09",
+    "url": "https://autonews.gasgoo.com/articles/icv/ponyai-mowasalat-launch-fully-driverless-robotaxi-rides-in-doha-2097526497610125313"
+   },
+   {
+    "name": "Umm Al-Qura (official gazette)",
+    "title": "Implementing Regulations for Passenger Transport by Autonomous Vehicles",
+    "date": "2026-11-06",
+    "url": "https://www.uqn.gov.sa/decisions-and-regulations/4002330"
+   },
+   {
+    "name": "Uber",
+    "title": "Uber and WeRide begin offering autonomous robotaxi passenger rides in Saudi Arabia",
+    "date": "2025-10-24",
+    "url": "https://investor.uber.com/news-events/news/press-release-details/2025/Uber-and-WeRide-Begin-Offering-Autonomous-Robotaxi-Passenger-Rides-in-Saudi-Arabia"
+   },
+   {
+    "name": "Abu Dhabi Mobility",
+    "title": "Abu Dhabi operates fully autonomous vehicles",
+    "date": "2025-11-13",
+    "url": "https://admobility.gov.ae/en/news/abu-dhabi-operates-fully-autonomous-vehicles"
+   },
+   {
+    "name": "Uber",
+    "title": "Uber and WeRide launch fully driverless rides in Abu Dhabi",
+    "date": "2025-11-26",
+    "url": "https://www.uber.com/ae/en/newsroom/uber-weride-fullydriverless-abudhabi/"
+   },
+   {
+    "name": "Dubai Media Office",
+    "title": "Al Tayer and Wang officially open Apollo Go operations centre",
+    "date": "2026-01-08",
+    "url": "https://www.mediaoffice.ae/en/news/2026/january/08-01/al-tayer-and-wang-officially"
+   },
+   {
+    "name": "Dubai Media Office",
+    "title": "Dubai Taxi Company and Baidu's Apollo Go launch driverless commercial ride-hailing",
+    "date": "2026-04-02",
+    "url": "https://mediaoffice.ae/en/news/2026/april/02-04/dubai-taxi-company-and-baidus-apollo-go"
+   },
+   {
+    "name": "Khaleej Times",
+    "title": "Dubai: Uber launches Baidu's driverless Apollo Go taxis",
+    "date": "2026-08-20",
+    "url": "https://www.khaleejtimes.com/uae/transport/dubai-uber-launches-baidu-driverless-apollo-go-taxis"
+   },
+   {
+    "name": "Gulf News",
+    "title": "Dubai driverless taxis now have a fare: here's how much a ride costs",
+    "date": "2026-07-15",
+    "url": "https://gulfnews.com/uae/transport/dubai-driverless-taxis-now-have-a-fare-heres-how-much-a-ride-costs-1.500608884"
+   },
+   {
+    "name": "WeRide (SEC filing)",
+    "title": "WeRide third quarter 2026 results",
+    "date": "2026-11-20",
+    "url": "https://www.sec.gov/Archives/edgar/data/0001867729/000110465926130438/tm2630019d1_ex99-1.htm"
+   },
+   {
+    "name": "Emarat Al Youm",
+    "title": "أكثر من 160 مركبة ذاتية القيادة في دبي",
+    "date": "2026-10-29",
+    "url": "https://www.emaratalyoum.com/local-section/other/2026-10-29-1.2097255"
+   },
+   {
+    "name": "Khaleej Times",
+    "title": "Dubai's driverless pod trial at Bluewaters completed",
+    "date": "2026-11-10",
+    "url": "https://www.khaleejtimes.com/transport/dubais-driverless-pod-trial-bluewaters-completed"
+   },
+   {
+    "name": "The National",
+    "title": "Abu Dhabi launches driverless taxi service on Yas Island with free rides for a month",
+    "date": "2026-03-13",
+    "url": "https://www.thenationalnews.com/news/uae/2026/03/13/abu-dhabi-launches-driverless-taxi-service-on-yas-island-with-free-rides-for-a-month"
+   },
+   {
+    "name": "Gulf News",
+    "title": "Ras Al Khaimah launches autonomous vehicle testing hub, expands robotaxi trials",
+    "date": "2026-10-30",
+    "url": "https://gulfnews.com/uae/transport/ras-al-khaimah-launches-autonomous-vehicle-testing-hub-expands-robotaxi-trials-1.500730268"
+   },
+   {
+    "name": "Pony.ai",
+    "title": "Pony.ai advances dual-engine strategy with Dubai driverless Robotaxi deployment",
+    "date": "2026-04-20",
+    "url": "https://blog.pony.ai/pony-ai-advances-dual-engine-strategy-with-dubai-driverless-robotaxi-deployment-eyes-commercial-service-in-2026/"
+   },
+   {
+    "name": "Yicai Global",
+    "title": "China's top three robotaxi firms suspend some services in Middle East",
+    "date": "2026-03-03",
+    "url": "https://www.yicaiglobal.com/news/chinas-top-three-robotaxi-firms-suspend-some-services-in-middle-east"
+   },
+   {
+    "name": "Abu Dhabi Media Office",
+    "title": "New autonomous mobility testing hub to support smart mobility sector in Abu Dhabi",
+    "date": "2026-11-23",
+    "url": "https://www.mediaoffice.abudhabi/en/transport/under-supervision-of-smart-and-autonomous-systems-council-new-autonomous-mobility-testing-hub-to-support-smart-mobility-sector-in-abu-dhabi/"
+   },
+   {
+    "name": "Gasgoo",
+    "title": "CaoCao signs agreement with Ras Al Khaimah Transport Authority",
+    "date": "2026-11-28",
+    "url": "https://autonews.gasgoo.com/articles/news/caocao-signs-agreement-with-ras-al-khaimah-transport-authority-robotaxi-pilot-tests-to-launch-in-uae-2126552538568392704"
+   },
+   {
+    "name": "Arab News",
+    "title": "Riyadh launches new self-driving vehicle route",
+    "date": "2026-03-30",
+    "url": "https://www.arabnews.com/node/2638206/saudi-arabia"
+   },
+   {
+    "name": "Dubai Legal Portal",
+    "title": "Administrative Resolution No. 939 of 2025 on the operation of autonomous vehicles",
+    "date": "2025-11-10",
+    "url": "https://dlp.dubai.gov.ae/Legislation%20Reference/2025/Administrative%20Resolution%20No.%20(939)%20of%202025%20Issuing%20the%20Operation%20of%20Autonomous%20Vehicles.html"
+   },
+   {
+    "name": "Gulf News",
+    "title": "Abu Dhabi records 31,075 autonomous vehicle trips in first half of 2026",
+    "date": "2026-07-04",
+    "url": "https://gulfnews.com/uae/transport/abu-dhabi-records-31075-autonomous-vehicle-trips-in-first-half-of-2026-1.500596664"
+   },
+   {
+    "name": "WeRide",
+    "title": "WeRide and Uber to deploy 1,200 robotaxis in the Middle East",
+    "date": "2026-02-06",
+    "url": "https://www.weride.ai/posts/q6narfqgnl66bgf3mdakvxp9"
+   },
+   {
+    "name": "ChinaEVHome",
+    "title": "Pony.ai Q3 revenue climbs 75.2% to $44.6m",
+    "date": "2026-11-18",
+    "url": "https://chinaevhome.com/2026/11/18/pony-ai-q3-revenue-climbs-75-2-to-44-6m-robotaxi-revenue-grows-165-4/"
+   },
+   {
+    "name": "Zag Daily",
+    "title": "WeRide scales Abu Dhabi robotaxi service to 70% of core districts",
+    "date": "2026-02-12",
+    "url": "https://zagdaily.com/connected/weride-scales-abu-dhabi-robotaxi-service-to-70-of-core-districts/"
+   },
+   {
+    "name": "Euronews",
+    "title": "Qatar takes step toward driverless future with first public robotaxi trials in Doha",
+    "date": "2026-01-26",
+    "url": "https://www.euronews.com/2026/01/26/qatar-takes-step-toward-driverless-future-with-first-public-robotaxi-trials-in-doha"
+   }
+  ],
+  "related": [
+   {
+    "en": "WeRide",
+    "ar": "وي رايد",
+    "href": "/database?tab=companies&id=weride"
+   },
+   {
+    "en": "Apollo Go",
+    "ar": "أبولو جو",
+    "href": "/database?tab=companies&id=apollo-go"
+   },
+   {
+    "en": "Pony.ai",
+    "ar": "بوني إيه آي",
+    "href": "/database?tab=companies&id=pony-ai"
+   },
+   {
+    "en": "Doha robotaxi record (corrected)",
+    "ar": "سجل الأجرة الآلية في الدوحة (مصحّح)",
+    "href": "/database?tab=deployments&id=d24"
+   },
+   {
+    "en": "UAE policy dossier",
+    "ar": "ملف سياسات الإمارات",
+    "href": "/policy?c=AE"
+   },
+   {
+    "en": "Saudi policy dossier",
+    "ar": "ملف سياسات السعودية",
+    "href": "/policy?c=SA"
+   },
+   {
+    "en": "Map of every deployment",
+    "ar": "خريطة جميع عمليات النشر",
+    "href": "/map"
+   }
+  ],
+  "report": {
+   "label": {
+    "en": "Research report",
+    "ar": "تقرير بحثي"
+   },
+   "gate_after": 1,
+   "glance": [
+    {
+     "n": 2,
+     "en": "Gulf cities where paying riders travel with nobody in the car",
+     "ar": "مدينتان خليجيتان يركب فيهما الركاب بأجر من دون أي شخص في المركبة"
+    },
+    {
+     "n": 13,
+     "en": "Robotaxi services and plans scored in this report",
+     "ar": "خدمة وخطة لسيارات الأجرة الآلية يقيّمها هذا التقرير"
+    },
+    {
+     "n": 48,
+     "en": "Dubai robotaxis in active operation in August, out of a fleet of 144 (RTA)",
+     "ar": "سيارة أجرة آلية في الخدمة الفعلية بدبي في أغسطس، من أسطول قوامه 144 (هيئة الطرق)"
+    },
+    {
+     "n": 25,
+     "suf": {
+      "en": "%",
+      "ar": "%"
+     },
+     "en": "Share of Dubai trips meant to be autonomous by 2030",
+     "ar": "نسبة رحلات دبي المستهدف أن تكون ذاتية القيادة بحلول 2030"
+    }
+   ],
+   "findings": [
+    {
+     "title": {
+      "en": "Driverless is real, in two places",
+      "ar": "القيادة دون سائق حقيقية، في مكانين"
+     },
+     "en": "Paying riders travel with no one aboard only in Jumeirah and Umm Suqeim in Dubai, and on Yas Island in Abu Dhabi.",
+     "ar": "لا يركب الركاب بأجر من دون أي شخص على متن المركبة إلا في جميرا وأم سقيم بدبي، وفي جزيرة ياس بأبوظبي."
+    },
+    {
+     "title": {
+      "en": "Doha is not driverless yet",
+      "ar": "الدوحة ليست دون سائق بعد"
+     },
+     "en": "Phase two, which began on 22 November, keeps a supervisor in the front passenger seat. September’s “fully driverless” headline described a forum demonstration.",
+     "ar": "تُبقي المرحلة الثانية، التي بدأت في 22 نوفمبر، مشرفاً في المقعد الأمامي المجاور للسائق. أما عنوان «دون سائق بالكامل» في سبتمبر فوصف عرضاً تجريبياً في منتدى."
+    },
+    {
+     "title": {
+      "en": "Saudi rules open a door on 6 January",
+      "ar": "القواعد السعودية تفتح باباً في 6 يناير"
+     },
+     "en": "Riyadh still puts an operator in every car. The new passenger rules let a safety officer supervise remotely, and let the transport authority approve cars with no officer inside.",
+     "ar": "ما زالت الرياض تضع مشغّلاً في كل مركبة. وتسمح القواعد الجديدة لنقل الركاب بأن يشرف مسؤول السلامة عن بُعد، وتتيح للهيئة الموافقة على تشغيل مركبات دون مسؤول سلامة داخلها."
+    },
+    {
+     "title": {
+      "en": "The numbers measure different things",
+      "ar": "الأرقام تقيس أشياء مختلفة"
+     },
+     "en": "Dubai’s fleet figures range from 48 active cars to 160 registered vehicles, and no Gulf regulator publishes intervention or incident rates.",
+     "ar": "تتراوح أرقام أسطول دبي بين 48 مركبة عاملة فعلياً و160 مركبة مسجلة، ولا تنشر أي جهة تنظيمية خليجية معدلات التدخل البشري أو الحوادث."
+    }
+   ],
+   "chapters": [
+    {
+     "id": "one-word",
+     "n": "01",
+     "title": {
+      "en": "One word, five meanings",
+      "ar": "كلمة واحدة وخمسة معانٍ"
+     },
+     "blocks": [
+      {
+       "t": "p",
+       "en": "In September a trade headline announced that Pony.ai and Qatar’s national transport company Mowasalat had launched “fully driverless Robotaxi rides in Doha”. Two months later, Qatar’s Ministry of Transport started the next phase of the same programme with two robotaxis, a control room of remote operators and, as an extra precaution, a supervisor “seated inside each vehicle, in the front passenger seat rather than the driver’s”.",
+       "ar": "في سبتمبر أعلن عنوان في موقع متخصص أن «بوني إيه آي» وشركة مواصلات القطرية أطلقتا «رحلات أجرة آلية دون سائق بالكامل في الدوحة». وبعد شهرين بدأت وزارة المواصلات القطرية المرحلة التالية من البرنامج نفسه بمركبتين، وغرفة تحكم يعمل فيها مشغّلون عن بُعد، ومشرف «يجلس داخل كل مركبة في المقعد الأمامي للراكب بدلاً من مقعد السائق» كإجراء احترازي إضافي."
+      },
+      {
+       "t": "p",
+       "en": "Both statements can be true. The September rides were a demonstration at a forum; the November phase is a public-road trial. But the word “driverless” is doing too much work. Across the Gulf it now describes cars with nobody aboard and paying passengers, cars with a safety officer in the passenger seat, cars with a specialist ready to take the wheel, closed test tracks and agreements that have not put a single car on the road.",
+       "ar": "قد يكون التصريحان صحيحين. فرحلات سبتمبر كانت عرضاً في منتدى، ومرحلة نوفمبر تجربة على طرق عامة. لكن كلمة «دون سائق» تحمل أكثر مما تحتمل. فهي تصف اليوم في الخليج مركبات بلا أحد على متنها تنقل ركاباً بأجر، ومركبات فيها مسؤول سلامة في مقعد الراكب، وأخرى فيها مختص مستعد لاستلام المقود، ومسارات اختبار مغلقة، واتفاقيات لم تضع مركبة واحدة على الطريق."
+      },
+      {
+       "t": "p",
+       "en": "So we asked one question of every robotaxi service and plan in the region: who is in the car? The answer sorts 13 services into six levels, from paying riders with nobody aboard to announcements only. Two cities reach the top. The rest of this report shows how, what the numbers really count, and what changes next.",
+       "ar": "لذلك طرحنا سؤالاً واحداً على كل خدمة وخطة لسيارات الأجرة الآلية في المنطقة: من يجلس في المركبة؟ والإجابة توزّع 13 خدمة على ستة مستويات، من ركاب يدفعون الأجرة بلا أحد على متن المركبة إلى مجرد إعلانات. مدينتان فقط تبلغان القمة. ويشرح باقي التقرير كيف حدث ذلك، وما الذي تعدّه الأرقام فعلاً، وما الذي سيتغير لاحقاً."
+      },
+      {
+       "t": "w",
+       "w": "compare"
+      }
+     ]
+    },
+    {
+     "id": "scorecard",
+     "n": "02",
+     "title": {
+      "en": "The scorecard",
+      "ar": "بطاقة التقييم"
+     },
+     "blocks": [
+      {
+       "t": "p",
+       "en": "We place each service on a six-step ladder, using the latest published source for who is aboard and whether riders pay. Where a source does not say, we take the lower level.",
+       "ar": "نضع كل خدمة على سلّم من ست درجات، اعتماداً على أحدث مصدر منشور يبيّن من على متن المركبة وما إذا كان الركاب يدفعون. وحين لا يذكر المصدر ذلك نعتمد الدرجة الأدنى."
+      },
+      {
+       "t": "list",
+       "items": [
+        {
+         "en": "Nobody on board, paying: the public pays a fare and no employee rides along.",
+         "ar": "لا أحد على متن المركبة، بأجر: يدفع الجمهور الأجرة ولا يرافقه أي موظف."
+        },
+        {
+         "en": "Nobody on board, free: the same, but rides are free or limited.",
+         "ar": "لا أحد على متن المركبة، مجاناً: الأمر نفسه، لكن الرحلات مجانية أو محدودة."
+        },
+        {
+         "en": "Supervisor, not driving: someone sits in the passenger seat, with remote operators watching.",
+         "ar": "مشرف لا يقود: يجلس شخص في مقعد الراكب، ويراقب مشغّلون عن بُعد."
+        },
+        {
+         "en": "Person on board: a safety driver or specialist ready to take control.",
+         "ar": "شخص على متن المركبة: سائق سلامة أو مختص مستعد لاستلام التحكم."
+        },
+        {
+         "en": "Testing only: no public service.",
+         "ar": "اختبار فقط: لا خدمة للجمهور."
+        },
+        {
+         "en": "Announced: an agreement or plan, no cars on the road.",
+         "ar": "مُعلنة: اتفاق أو خطة، بلا مركبات على الطريق."
+        }
+       ]
+      },
+      {
+       "t": "w",
+       "w": "fleet"
+      },
+      {
+       "t": "stats",
+       "items": [
+        {
+         "v": "6",
+         "en": "Services with nobody at the wheel",
+         "ar": "خدمات لا أحد فيها خلف المقود"
+        },
+        {
+         "v": "4",
+         "en": "With nobody in the car and paying riders",
+         "ar": "بلا أحد في المركبة وبركاب يدفعون"
+        },
+        {
+         "v": "0",
+         "en": "Of those four outside the UAE",
+         "ar": "من هذه الأربع خارج الإمارات",
+         "v_ar": "0"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "how",
+     "n": "03",
+     "title": {
+      "en": "How Dubai and Abu Dhabi got there",
+      "ar": "كيف وصلت دبي وأبوظبي"
+     },
+     "blocks": [
+      {
+       "t": "p",
+       "en": "Abu Dhabi moved first. On 13 November 2025 the Integrated Transport Centre granted the region’s first two permits for commercial operation without anyone in the car, to WeRide with Uber and the fleet operator Tawasul, and to K2’s AutoGo with Baidu’s Apollo Go. Thirteen days later Uber riders on Yas Island could be matched with a WeRide car that had no vehicle specialist inside.",
+       "ar": "سبقت أبوظبي الجميع. ففي 13 نوفمبر 2025 منح مركز النقل المتكامل أول تصريحين في المنطقة للتشغيل التجاري دون أي شخص داخل المركبة، أحدهما لـ«وي رايد» مع «أوبر» ومشغّل الأسطول «تواصل»، والآخر لـ«أوتو جو» التابعة لـ«كيه 2» مع «أبولو جو» من «بايدو». وبعد ثلاثة عشر يوماً صار بإمكان ركاب «أوبر» في جزيرة ياس أن يُطابَقوا مع مركبة من «وي رايد» لا مختص فيها."
+      },
+      {
+       "t": "p",
+       "en": "Dubai followed in stages. Apollo Go received the emirate’s first permit to run on public roads without a safety driver in January 2026 and opened an operations centre at Dubai Science Park. On 31 March WeRide and Uber began charging fares in Jumeirah and Umm Suqeim. Apollo Go’s own app, run with Dubai Taxi Company, followed in April, with free rides until a Dh5 fare arrived in July, and its cars joined Uber on 20 August.",
+       "ar": "تبعتها دبي على مراحل. فقد حصلت «أبولو جو» في يناير 2026 على أول تصريح في الإمارة للسير على الطرق العامة من دون سائق سلامة، وافتتحت مركز عمليات في مجمع دبي للعلوم. وفي 31 مارس بدأت «وي رايد» و«أوبر» تحصيل الأجرة في جميرا وأم سقيم. ثم تبعها تطبيق «أبولو جو» الخاص الذي تشغّله مع «تاكسي دبي» في أبريل برحلات مجانية حتى فُرضت أجرة قدرها 5 دراهم في يوليو، وانضمت مركباتها إلى «أوبر» في 20 أغسطس."
+      },
+      {
+       "t": "quote",
+       "en": "“Public commercial operations began today without a vehicle operator on board along routes in Jumeirah and Umm Suqeim.”",
+       "ar": "«بدأت العمليات التجارية العامة اليوم دون مشغّل على متن المركبة على مسارات في جميرا وأم سقيم.»",
+       "who": {
+        "en": "WeRide and Uber announcement (31 March 2026)",
+        "ar": "إعلان «وي رايد» و«أوبر» (31 مارس 2026)"
+       }
+      },
+      {
+       "t": "w",
+       "w": "timeline"
+      },
+      {
+       "t": "p",
+       "en": "Three things explain the lead. Dubai has a law: Law No. 9 of 2023 and its 2025 regulations make the operator liable and require local test runs, but do not require a safety driver. Both emirates license specific zones rather than whole cities, so the first driverless rides run on tourist districts and an island with wide roads. And the operators are well funded: WeRide reports roughly 600 vehicles in the Middle East, up 50% in a quarter, and says its regional robotaxi business has been operationally profitable since 2025, a company claim with no figures attached.",
+       "ar": "ثلاثة أسباب تفسّر هذا التقدم. فلدى دبي قانون: القانون رقم 9 لسنة 2023 ولائحته لعام 2025 يحمّلان المشغّل المسؤولية ويشترطان تجارب تشغيل محلية، لكنهما لا يشترطان وجود سائق سلامة. وتمنح الإمارتان تراخيص لمناطق محددة لا لمدن كاملة، لذا تجري أولى الرحلات دون سائق في أحياء سياحية وعلى جزيرة ذات طرق واسعة. كما أن المشغّلين يملكون تمويلاً جيداً: إذ تقول «وي رايد» إن لديها نحو 600 مركبة في الشرق الأوسط، بزيادة 50% خلال ربع واحد، وإن أعمالها الإقليمية في سيارات الأجرة الآلية تحقق ربحية تشغيلية منذ 2025، وهو ادعاء للشركة لم ترفقه بأرقام."
+      },
+      {
+       "t": "img",
+       "src": "/media/spotlight/robotaxi-weride-jumeirah-mosque.jpg",
+       "alt": {
+        "en": "Two black WeRide robotaxis marked Available on Uber parked outside Jumeirah Mosque in Dubai",
+        "ar": "مركبتا أجرة آلية سوداوان من «وي رايد» تحملان عبارة متاحة على «أوبر» أمام مسجد جميرا في دبي"
+       },
+       "cap": {
+        "en": "WeRide robotaxis on the Uber network in Jumeirah, where paying riders have travelled with no operator aboard since 31 March 2026",
+        "ar": "مركبات «وي رايد» على شبكة «أوبر» في جميرا، حيث يتنقل الركاب بأجر دون مشغّل على متن المركبة منذ 31 مارس 2026"
+       },
+       "credit": {
+        "en": "Photo: Uber",
+        "ar": "الصورة: أوبر"
+       }
+      },
+      {
+       "t": "w",
+       "w": "attacks"
+      },
+      {
+       "t": "p",
+       "en": "The pace is real but small. In August the RTA said the service had a fleet of 144 vehicles, of which 48 were in active operation, completing around 50 trips a day. Dubai’s target is 25% of all trips autonomous by 2030, and more than 4,000 self-driving vehicles in the taxi and limousine sectors.",
+       "ar": "الوتيرة حقيقية لكنها صغيرة. ففي أغسطس قالت هيئة الطرق والمواصلات إن أسطول الخدمة يضم 144 مركبة، منها 48 في الخدمة الفعلية، تنجز نحو 50 رحلة يومياً. وتستهدف دبي أن تكون 25% من جميع الرحلات ذاتية القيادة بحلول 2030، وأن يتجاوز عدد المركبات ذاتية القيادة 4,000 في قطاعي الأجرة والليموزين."
+      }
+     ]
+    },
+    {
+     "id": "someone-aboard",
+     "n": "04",
+     "title": {
+      "en": "Doha, Riyadh and Ras Al Khaimah: someone is still in the car",
+      "ar": "الدوحة والرياض ورأس الخيمة: ما زال هناك شخص في المركبة"
+     },
+     "blocks": [
+      {
+       "t": "p",
+       "en": "Doha. Phase one of the Karwa robotaxi programme, run by Mowasalat with Pony.ai from August 2025, took public riders through the Karwa app from December with a trained safety officer in the driver’s seat. The ministry reports 2,500 trips, 94% of them with no human intervention. Its July plan said phase two would run two cars remotely with no safety officer aboard. The phase that began on 22 November is more cautious: remote operators in a control centre, plus a supervisor in the front passenger seat. That is a real step, because nobody is at the wheel, but it is not driverless.",
+       "ar": "الدوحة. نقلت المرحلة الأولى من برنامج «كروة» للأجرة الآلية، الذي تشغّله «مواصلات» مع «بوني إيه آي» منذ أغسطس 2025، ركاباً من الجمهور عبر تطبيق «كروة» اعتباراً من ديسمبر، مع مسؤول سلامة مدرّب في مقعد السائق. وتقول الوزارة إن المرحلة سجّلت 2,500 رحلة، 94% منها دون أي تدخل بشري. وكانت خطة يوليو تنص على تشغيل مركبتين عن بُعد في المرحلة الثانية دون مسؤول سلامة على متنهما. لكن المرحلة التي بدأت في 22 نوفمبر أكثر حذراً: مشغّلون عن بُعد في مركز تحكم، ومشرف في المقعد الأمامي المجاور للسائق. هذه خطوة حقيقية لأن أحداً لا يجلس خلف المقود، لكنها ليست قيادة دون سائق."
+      },
+      {
+       "t": "img",
+       "src": "/media/spotlight/robotaxi-karwa-ponyai-aemob.jpg",
+       "alt": {
+        "en": "A guest opening the rear door of a turquoise Karwa robotaxi in an indoor exhibition hall in Doha",
+        "ar": "ضيف يفتح الباب الخلفي لمركبة أجرة آلية فيروزية من «كروة» في قاعة عرض داخلية بالدوحة"
+       },
+       "cap": {
+        "en": "The Karwa robotaxi shown with Pony.ai at the AEMOB forum in Doha, September 2026. The forum rides were a demonstration; on public roads, phase two keeps a supervisor aboard.",
+        "ar": "مركبة «كروة» الآلية التي عُرضت مع «بوني إيه آي» في منتدى AEMOB بالدوحة، سبتمبر 2026. كانت رحلات المنتدى عرضاً تجريبياً، أما على الطرق العامة فتُبقي المرحلة الثانية مشرفاً على متن المركبة."
+       },
+       "credit": {
+        "en": "Photo: Pony.ai",
+        "ar": "الصورة: بوني إيه آي"
+       }
+      },
+      {
+       "t": "p",
+       "en": "Our own record of the September rides said they were “fully driverless” and that phase two was already running. Both were wrong, and we have corrected them in the database.",
+       "ar": "كان سجلّنا لرحلات سبتمبر يصفها بأنها «دون سائق بالكامل» ويذكر أن المرحلة الثانية كانت قد بدأت. وكلا الأمرين غير دقيق، وقد صحّحناهما في قاعدة البيانات."
+      },
+      {
+       "t": "p",
+       "en": "Riyadh. WeRide holds Saudi Arabia’s first robotaxi permit, and Uber riders have been able to book its cars since October 2025, with “a vehicle operator” in each. We found no report of a ride without one in 2026. That may change soon. Saudi Arabia’s new rules for passenger transport by autonomous vehicles, published in the official gazette on 6 November, take effect on 6 January 2027. They require licensed local operators with at least five vehicles and a licensed safety officer for each car, but define that officer as someone who supervises “from inside the vehicle or remotely”, and Article 10 lets the Transport General Authority approve operation with no safety officer inside.",
+       "ar": "الرياض. تحمل «وي رايد» أول تصريح لسيارات الأجرة الآلية في السعودية، ويستطيع ركاب «أوبر» حجز مركباتها منذ أكتوبر 2025، مع «مشغّل للمركبة» في كل منها. ولم نجد أي تقرير عن رحلة من دونه في 2026. وقد يتغير ذلك قريباً. فلائحة نقل الركاب بالمركبات ذاتية القيادة الجديدة، المنشورة في الجريدة الرسمية في 6 نوفمبر، تدخل حيز التنفيذ في 6 يناير 2027. وتشترط مشغّلين محليين مرخصين بخمس مركبات على الأقل ومسؤول سلامة مرخصاً لكل مركبة، لكنها تعرّف هذا المسؤول بأنه من يشرف على المركبة «سواء من داخل المركبة أو عن بعد»، وتجيز المادة العاشرة للهيئة العامة للنقل الموافقة على التشغيل دون مسؤول سلامة داخلها."
+      },
+      {
+       "t": "quote",
+       "en": "“The service provider may apply to the Authority to operate the vehicle without a safety officer inside it.”",
+       "ar": "«يجوز لمقدم الخدمة التقدم إلى الهيئة بطلب تشغيل المركبة دون وجود مسؤول سلامة داخلها.»",
+       "who": {
+        "en": "Article 10, Saudi Implementing Regulations for Passenger Transport by Autonomous Vehicles (Umm Al-Qura, 6 November 2026; our translation)",
+        "ar": "المادة العاشرة، اللائحة التنفيذية لنقل الركاب بالمركبات ذاتية القيادة في السعودية (أم القرى، 6 نوفمبر 2026)"
+       }
+      },
+      {
+       "t": "p",
+       "en": "Ras Al Khaimah and the rest. RAKTA has tested robotaxis on Al Marjan Island and now Al Dhait South, more than 21,000 km in all, and launched an autonomous-vehicle sandbox on 30 October, but has given no date for a public service. An early-2026 commercial target set in 2025 has passed. Pony.ai began driverless testing in Dubai in April and said it expected fare-charging service “later in 2026”; we found no launch. Glydways’ four-week pod trial at Bluewaters logged more than 3,000 rides, by the company’s count, and has ended without a service date. CaoCao’s agreement with RAKTA, signed on 25 November, has no fleet or timeline.",
+       "ar": "رأس الخيمة والبقية. اختبرت هيئة المواصلات في رأس الخيمة سيارات أجرة آلية في جزيرة المرجان ثم في الظيت الجنوبي، بأكثر من 21,000 كيلومتر إجمالاً، وأطلقت بيئة تجريبية للمركبات ذاتية القيادة في 30 أكتوبر، لكنها لم تحدد موعداً لخدمة عامة. وقد مضى موعد تجاري حُدد لأوائل 2026 في عام 2025. وبدأت «بوني إيه آي» اختبارات دون سائق في دبي في أبريل وقالت إنها تتوقع خدمة مدفوعة «لاحقاً في 2026»، ولم نجد أي إطلاق. وسجّلت تجربة كبسولات «غلايدوايز» في بلوواترز على مدى أربعة أسابيع أكثر من 3,000 رحلة بحسب الشركة، وانتهت دون موعد للخدمة. أما اتفاق «كاوكاو» مع هيئة المواصلات في رأس الخيمة، الموقّع في 25 نوفمبر، فلا يتضمن أسطولاً ولا جدولاً زمنياً."
+      },
+      {
+       "t": "img",
+       "src": "/media/spotlight/robotaxi-rakta-marjan.jpg",
+       "alt": {
+        "en": "A black WeRide robotaxi in RAKTA livery and WeRide robobuses at a hotel forecourt on Al Marjan Island, with officials walking past",
+        "ar": "مركبة أجرة آلية سوداء من «وي رايد» بشعار هيئة المواصلات في رأس الخيمة وحافلات «وي رايد» الآلية أمام فندق في جزيرة المرجان، ويمر بجانبها مسؤولون"
+       },
+       "cap": {
+        "en": "The launch of Ras Al Khaimah’s autonomous-vehicle pilot on Al Marjan Island, October 2025. Trials there still carry safety supervision.",
+        "ar": "إطلاق المرحلة التجريبية للمركبات ذاتية القيادة في رأس الخيمة بجزيرة المرجان، أكتوبر 2025. وما زالت التجارب هناك تتم بإشراف سلامة."
+       },
+       "credit": {
+        "en": "Photo: Ras Al Khaimah Transport Authority",
+        "ar": "الصورة: هيئة المواصلات في رأس الخيمة"
+       }
+      }
+     ]
+    },
+    {
+     "id": "claims",
+     "n": "05",
+     "title": {
+      "en": "Claim check",
+      "ar": "تدقيق الادعاءات"
+     },
+     "blocks": [
+      {
+       "t": "p",
+       "en": "Most headline numbers in this market come from the companies themselves, and Dubai’s official figures use different definitions from month to month. We rated each one.",
+       "ar": "معظم الأرقام البارزة في هذه السوق مصدرها الشركات نفسها، وأرقام دبي الرسمية تستخدم تعريفات مختلفة من شهر إلى آخر. وقد قيّمنا كل رقم منها."
+      },
+      {
+       "t": "w",
+       "w": "claims"
+      }
+     ]
+    },
+    {
+     "id": "view",
+     "n": "06",
+     "title": {
+      "en": "Our view",
+      "ar": "رأينا"
+     },
+     "blocks": [
+      {
+       "t": "p",
+       "lead": true,
+       "en": "The Gulf now has genuinely driverless taxis, and the UAE got there faster than almost anywhere outside the US and China. But the word is being stretched to cover services that still put a person in the car, and regulators publish ride counts while saying nothing about how often humans step in.",
+       "ar": "أصبح لدى الخليج الآن سيارات أجرة دون سائق فعلاً، ووصلت إليها الإمارات أسرع من أي مكان تقريباً خارج الولايات المتحدة والصين. لكن الكلمة تُمدّ لتشمل خدمات ما زالت تضع شخصاً في المركبة، فيما تنشر الجهات التنظيمية أعداد الرحلات ولا تقول شيئاً عن عدد مرات تدخل البشر."
+      },
+      {
+       "t": "p",
+       "en": "Three fixes would help. Every announcement should say who is aboard and in which seat. Regulators should publish the same core figures every quarter: vehicles in active service, paid trips, interventions and incidents, as California’s regulator does. And Uber’s $50m Dubai expansion, which starts its new districts with a specialist on board, should say what has to be true before that specialist leaves.",
+       "ar": "ثلاثة إصلاحات ستساعد. يجب أن يذكر كل إعلان من على متن المركبة وفي أي مقعد. ويجب أن تنشر الجهات التنظيمية الأرقام الأساسية نفسها كل ربع سنة: المركبات في الخدمة الفعلية، والرحلات المدفوعة، ومرات التدخل، والحوادث، كما تفعل الجهة المنظمة في كاليفورنيا. ويجب أن توضح خطة «أوبر» للتوسع في دبي بقيمة 50 مليون دولار، التي تبدأ أحياءها الجديدة بمختص على متن المركبة، ما الذي يجب أن يتحقق قبل أن يغادرها هذا المختص."
+      },
+      {
+       "t": "img",
+       "src": "/media/spotlight/robotaxi-apollo-go-control-centre.jpg",
+       "alt": {
+        "en": "RTA director-general Mattar Al Tayer and Baidu staff beside a remote-monitoring station in Apollo Go’s Dubai operations centre",
+        "ar": "مطر الطاير المدير العام لهيئة الطرق وموظفون من «بايدو» بجانب محطة مراقبة عن بُعد في مركز عمليات «أبولو جو» بدبي"
+       },
+       "cap": {
+        "en": "Inside Apollo Go’s operations centre at Dubai Science Park, opened in January 2026. Remote monitoring is where the intervention data we want published is generated.",
+        "ar": "داخل مركز عمليات «أبولو جو» في مجمع دبي للعلوم، الذي افتُتح في يناير 2026. فالمراقبة عن بُعد هي المكان الذي تُنتج فيه بيانات التدخل التي نطالب بنشرها."
+       },
+       "credit": {
+        "en": "Photo: Government of Dubai Media Office",
+        "ar": "الصورة: المكتب الإعلامي لحكومة دبي"
+       }
+      }
+     ]
+    },
+    {
+     "id": "watch",
+     "n": "07",
+     "title": {
+      "en": "What we’re watching",
+      "ar": "ما نتابعه"
+     },
+     "blocks": [
+      {
+       "t": "w",
+       "w": "watch"
+      },
+      {
+       "t": "p",
+       "en": "We will update the scorecard as each of these lands. If you run, regulate or ride one of these services and our level is wrong, tell us: the scorecard is only as good as its evidence.",
+       "ar": "سنحدّث بطاقة التقييم كلما تحقق أحد هذه البنود. وإن كنت تشغّل إحدى هذه الخدمات أو تنظّمها أو تستخدمها ورأيت أن تقييمنا خاطئ، فأخبرنا: فبطاقة التقييم لا تساوي أكثر من أدلتها."
+      },
+      {
+       "t": "img",
+       "src": "/media/spotlight/robotaxi-glydways-bluewaters.jpg",
+       "alt": {
+        "en": "Two small Glydways pods on the curved Bluewaters bridge ramp, with Dubai Marina towers behind",
+        "ar": "كبسولتان صغيرتان من «غلايدوايز» على منحدر جسر بلوواترز، وخلفهما أبراج دبي مارينا"
+       },
+       "cap": {
+        "en": "Glydways pods on the Bluewaters trial route, October 2026. The trial has ended without a date for public service.",
+        "ar": "كبسولات «غلايدوايز» على مسار تجربة بلوواترز، أكتوبر 2026. انتهت التجربة دون موعد لخدمة عامة."
+       },
+       "credit": {
+        "en": "Photo: Government of Dubai Media Office",
+        "ar": "الصورة: المكتب الإعلامي لحكومة دبي"
+       }
+      }
+     ]
+    },
+    {
+     "id": "providers",
+     "n": "08",
+     "title": {
+      "en": "About the providers",
+      "ar": "عن المزوّدين"
+     },
+     "blocks": [
+      {
+       "t": "w",
+       "w": "providers"
+      }
+     ]
+    }
+   ],
+   "compare": [
+    {
+     "tag": {
+      "en": "The headline",
+      "ar": "العنوان"
+     },
+     "title": {
+      "en": "“Fully driverless rides in Doha”",
+      "ar": "«رحلات دون سائق بالكامل في الدوحة»"
+     },
+     "sub": {
+      "en": "Gasgoo, 9 September 2026",
+      "ar": "غاسغو، 9 سبتمبر 2026"
+     },
+     "items": [
+      {
+       "en": "A ride experience for forum guests at AEMOB",
+       "ar": "تجربة ركوب لضيوف منتدى AEMOB"
+      },
+      {
+       "en": "Reported as a service on the Karwa app",
+       "ar": "قُدّمت على أنها خدمة عبر تطبيق كروة"
+      },
+      {
+       "en": "No figures on riders, cars or who was aboard later",
+       "ar": "لا أرقام عن الركاب أو المركبات أو من كان على متنها لاحقاً"
+      }
+     ],
+     "physical": false
+    },
+    {
+     "tag": {
+      "en": "Who is in the car",
+      "ar": "من في المركبة"
+     },
+     "title": {
+      "en": "A supervisor in the passenger seat",
+      "ar": "مشرف في مقعد الراكب"
+     },
+     "sub": {
+      "en": "Qatar Ministry of Transport, phase two, 22 November 2026",
+      "ar": "وزارة المواصلات القطرية، المرحلة الثانية، 22 نوفمبر 2026"
+     },
+     "items": [
+      {
+       "en": "Two Level 4 robotaxis for 12 months",
+       "ar": "مركبتا أجرة آلية من المستوى الرابع لمدة 12 شهراً"
+      },
+      {
+       "en": "Remote operators in a control centre",
+       "ar": "مشغّلون عن بُعد في مركز تحكم"
+      },
+      {
+       "en": "Supervisor in the front passenger seat, not the driver’s",
+       "ar": "مشرف في المقعد الأمامي للراكب لا في مقعد السائق"
+      }
+     ],
+     "physical": true
+    }
+   ],
+   "attacks": {
+    "items": [
+     {
+      "date": "2025-11-26",
+      "en": "Abu Dhabi: WeRide cars on Uber carry riders on Yas Island with no specialist inside.",
+      "ar": "أبوظبي: مركبات «وي رايد» على «أوبر» تنقل الركاب في جزيرة ياس دون مختص داخلها.",
+      "src": 11,
+      "recovery": true
+     },
+     {
+      "date": "2026-02-28",
+      "en": "Regional conflict: WeRide parks its Dubai fleet; Apollo Go and Pony.ai pause testing. Abu Dhabi and Riyadh services continue.",
+      "ar": "صراع إقليمي: «وي رايد» تركن أسطولها في دبي، و«أبولو جو» و«بوني إيه آي» توقفان الاختبارات. وتستمر الخدمة في أبوظبي والرياض.",
+      "src": 22,
+      "recovery": false
+     },
+     {
+      "date": "2026-03-31",
+      "en": "Dubai: WeRide and Uber charge fares with no operator aboard in Jumeirah and Umm Suqeim.",
+      "ar": "دبي: «وي رايد» و«أوبر» تحصّلان الأجرة دون مشغّل على متن المركبة في جميرا وأم سقيم.",
+      "src": 1,
+      "recovery": true
+     },
+     {
+      "date": "2026-07-15",
+      "en": "Dubai: Apollo Go’s free rides end and a Dh5 fare begins.",
+      "ar": "دبي: تنتهي رحلات «أبولو جو» المجانية وتبدأ أجرة قدرها 5 دراهم.",
+      "src": 15,
+      "recovery": true
+     },
+     {
+      "date": "2026-08-19",
+      "en": "Dubai: the RTA reports 48 of 144 robotaxis in active operation, about 50 trips a day.",
+      "ar": "دبي: هيئة الطرق تعلن أن 48 من أصل 144 مركبة أجرة آلية في الخدمة الفعلية، بنحو 50 رحلة يومياً.",
+      "src": 2,
+      "recovery": false
+     },
+     {
+      "date": "2026-10-30",
+      "en": "Ras Al Khaimah: sandbox launched after 21,000 km of trials; no public service date.",
+      "ar": "رأس الخيمة: إطلاق بيئة تجريبية بعد 21,000 كيلومتر من التجارب، دون موعد لخدمة عامة.",
+      "src": 20,
+      "recovery": false
+     },
+     {
+      "date": "2026-11-22",
+      "en": "Doha: phase two starts with a supervisor in the passenger seat, not the plan’s empty car.",
+      "ar": "الدوحة: تبدأ المرحلة الثانية بمشرف في مقعد الراكب، لا بمركبة خالية كما في الخطة.",
+      "src": 5,
+      "recovery": false
+     }
+    ],
+    "now": 33,
+    "target": 100,
+    "gaugeLbl": {
+     "en": "Dubai robotaxis in active operation, August 2026 (48 of 144)",
+     "ar": "مركبات الأجرة الآلية في الخدمة الفعلية بدبي، أغسطس 2026 (48 من 144)"
+    },
+    "nowLbl": {
+     "en": "Active",
+     "ar": "عاملة"
+    },
+    "targetLbl": {
+     "en": "Whole fleet",
+     "ar": "الأسطول كاملاً"
+    }
+   },
+   "timeline": [
+    {
+     "date": "2025-10-24",
+     "title": {
+      "en": "Riyadh rides begin, operator aboard",
+      "ar": "بدء الرحلات في الرياض بوجود مشغّل"
+     },
+     "en": "Uber riders can book WeRide robotaxis in Riyadh; each car carries a vehicle operator.",
+     "ar": "يستطيع ركاب «أوبر» حجز مركبات «وي رايد» في الرياض، وفي كل مركبة مشغّل.",
+     "src": 9
+    },
+    {
+     "date": "2025-11-13",
+     "title": {
+      "en": "Abu Dhabi’s first driverless permits",
+      "ar": "أول تصاريح دون سائق في أبوظبي"
+     },
+     "en": "The ITC grants the first two permits for commercial operation with no one in the car: WeRide with Uber and Tawasul, and AutoGo with Apollo Go.",
+     "ar": "يمنح مركز النقل المتكامل أول تصريحين للتشغيل التجاري دون أي شخص في المركبة: «وي رايد» مع «أوبر» و«تواصل»، و«أوتو جو» مع «أبولو جو».",
+     "src": 10
+    },
+    {
+     "date": "2025-11-26",
+     "title": {
+      "en": "Yas Island goes driverless",
+      "ar": "جزيرة ياس دون سائق"
+     },
+     "en": "WeRide cars on Uber carry riders on Yas Island without a vehicle specialist inside.",
+     "ar": "مركبات «وي رايد» على «أوبر» تنقل الركاب في جزيرة ياس دون مختص داخلها.",
+     "src": 11,
+     "img": "/media/spotlight/robotaxi-weride-abu-dhabi-fleet.jpg"
+    },
+    {
+     "date": "2026-01-08",
+     "title": {
+      "en": "Dubai’s first driverless permit",
+      "ar": "أول تصريح دون سائق في دبي"
+     },
+     "en": "Apollo Go receives Dubai’s first permit to run on public roads without a safety driver and opens an operations centre.",
+     "ar": "تحصل «أبولو جو» على أول تصريح في دبي للسير على الطرق العامة دون سائق سلامة، وتفتتح مركز عمليات.",
+     "src": 12,
+     "img": "/media/spotlight/robotaxi-apollo-go-control-centre.jpg"
+    },
+    {
+     "date": "2026-03-13",
+     "title": {
+      "en": "AutoGo opens on Yas",
+      "ar": "إطلاق «أوتو جو» في ياس"
+     },
+     "en": "K2’s AutoGo opens five robotaxis to the public on Yas Island, free for a month.",
+     "ar": "تفتح «أوتو جو» التابعة لـ«كيه 2» خمس مركبات أجرة آلية للجمهور في جزيرة ياس، مجاناً لمدة شهر.",
+     "src": 19
+    },
+    {
+     "date": "2026-03-31",
+     "title": {
+      "en": "Dubai fares with nobody aboard",
+      "ar": "أجرة في دبي بلا أحد على متن المركبة"
+     },
+     "en": "WeRide and Uber begin fare-charging service in Jumeirah and Umm Suqeim without a vehicle operator.",
+     "ar": "تبدأ «وي رايد» و«أوبر» خدمة مدفوعة في جميرا وأم سقيم دون مشغّل على متن المركبة.",
+     "src": 1,
+     "img": "/media/spotlight/robotaxi-weride-jumeirah-mosque.jpg"
+    },
+    {
+     "date": "2026-04-02",
+     "title": {
+      "en": "Apollo Go’s own app",
+      "ar": "تطبيق «أبولو جو» الخاص"
+     },
+     "en": "Dubai Taxi Company and Apollo Go launch driverless ride-hailing, planning 50 cars in year one.",
+     "ar": "تطلق «تاكسي دبي» و«أبولو جو» خدمة نقل دون سائق، مع خطة لـ50 مركبة في السنة الأولى.",
+     "src": 13,
+     "img": "/media/spotlight/robotaxi-apollo-go-dtc-dubai.jpg"
+    },
+    {
+     "date": "2026-08-20",
+     "title": {
+      "en": "Apollo Go joins Uber",
+      "ar": "«أبولو جو» تنضم إلى «أوبر»"
+     },
+     "en": "Uber adds Apollo Go’s driverless RT6 cars in Umm Suqeim and Jumeirah, operated by New Horizon.",
+     "ar": "تضيف «أوبر» مركبات RT6 من «أبولو جو» دون سائق في أم سقيم وجميرا، بتشغيل «نيو هورايزن».",
+     "src": 14
+    },
+    {
+     "date": "2026-09-09",
+     "title": {
+      "en": "Doha’s “fully driverless” headline",
+      "ar": "عنوان «دون سائق بالكامل» في الدوحة"
+     },
+     "en": "A forum ride experience at AEMOB is reported as fully driverless rides in Doha.",
+     "ar": "تُنقل تجربة ركوب في منتدى AEMOB على أنها رحلات دون سائق بالكامل في الدوحة.",
+     "src": 7
+    },
+    {
+     "date": "2026-11-18",
+     "title": {
+      "en": "Uber’s $50m plan",
+      "ar": "خطة «أوبر» بـ50 مليون دولار"
+     },
+     "en": "Uber plans AED 184m over two years for door-to-door rides and new districts, starting with a specialist aboard.",
+     "ar": "تخطط «أوبر» لإنفاق 184 مليون درهم على مدى عامين لرحلات من الباب إلى الباب وأحياء جديدة، تبدأ بمختص على متن المركبة.",
+     "src": 3
+    },
+    {
+     "date": "2026-11-22",
+     "title": {
+      "en": "Doha phase two",
+      "ar": "المرحلة الثانية في الدوحة"
+     },
+     "en": "Two robotaxis, remote operators and a supervisor in the front passenger seat.",
+     "ar": "مركبتا أجرة آلية، ومشغّلون عن بُعد، ومشرف في المقعد الأمامي للراكب.",
+     "src": 5,
+     "img": "/media/spotlight/robotaxi-karwa-ponyai-aemob.jpg"
+    },
+    {
+     "date": "2027-01-06",
+     "title": {
+      "en": "Saudi passenger rules take effect",
+      "ar": "نفاذ اللائحة السعودية لنقل الركاب"
+     },
+     "en": "Operators may apply to run cars with no safety officer inside; the authority decides.",
+     "ar": "يحق للمشغّلين التقدم بطلب تشغيل المركبات دون مسؤول سلامة داخلها، وتقرر الهيئة.",
+     "src": 8,
+     "future": true
+    }
+   ],
+   "fleet": [
+    {
+     "id": "weride-uber-dubai",
+     "name": {
+      "en": "WeRide on Uber, Dubai",
+      "ar": "«وي رايد» على «أوبر»، دبي"
+     },
+     "maker": "WeRide",
+     "kind": {
+      "en": "Robotaxi (WeRide GXR)",
+      "ar": "أجرة آلية (WeRide GXR)"
+     },
+     "status": "live",
+     "where": {
+      "en": "Jumeirah and Umm Suqeim, Dubai",
+      "ar": "جميرا وأم سقيم، دبي"
+     },
+     "en": "Fare-charging since 31 March 2026 with no vehicle operator aboard. Fleet operator: Tawasul.",
+     "ar": "خدمة مدفوعة منذ 31 مارس 2026 دون مشغّل على متن المركبة. مشغّل الأسطول: «تواصل».",
+     "fact": {
+      "en": "Nobody aboard since 31 Mar 2026",
+      "ar": "لا أحد على متنها منذ 31 مارس 2026"
+     },
+     "img": "/media/spotlight/robotaxi-weride-jumeirah-mosque.jpg",
+     "src": 1,
+     "co": "weride"
+    },
+    {
+     "id": "apollo-dtc-dubai",
+     "name": {
+      "en": "Apollo Go with Dubai Taxi",
+      "ar": "«أبولو جو» مع «تاكسي دبي»"
+     },
+     "maker": "Apollo Go (Baidu)",
+     "kind": {
+      "en": "Robotaxi (RT6)",
+      "ar": "أجرة آلية (RT6)"
+     },
+     "status": "live",
+     "where": {
+      "en": "Umm Suqeim and Jumeirah, Dubai",
+      "ar": "أم سقيم وجميرا، دبي"
+     },
+     "en": "Driverless ride-hailing on the Apollo Go app since April 2026; free at first, Dh5 fare from July.",
+     "ar": "خدمة نقل دون سائق عبر تطبيق «أبولو جو» منذ أبريل 2026، مجانية في البداية ثم بأجرة 5 دراهم منذ يوليو.",
+     "fact": {
+      "en": "Dh5 fare since July 2026",
+      "ar": "أجرة 5 دراهم منذ يوليو 2026"
+     },
+     "img": "/media/spotlight/robotaxi-apollo-go-dtc-dubai.jpg",
+     "src": 13,
+     "co": "apollo-go"
+    },
+    {
+     "id": "apollo-uber-dubai",
+     "name": {
+      "en": "Apollo Go on Uber, Dubai",
+      "ar": "«أبولو جو» على «أوبر»، دبي"
+     },
+     "maker": "Apollo Go (Baidu)",
+     "kind": {
+      "en": "Robotaxi (RT6)",
+      "ar": "أجرة آلية (RT6)"
+     },
+     "status": "live",
+     "where": {
+      "en": "Umm Suqeim and Jumeirah, Dubai",
+      "ar": "أم سقيم وجميرا، دبي"
+     },
+     "en": "Fully driverless cars on UberX and Comfort since 20 August 2026, operated by New Horizon.",
+     "ar": "مركبات دون سائق بالكامل على UberX وComfort منذ 20 أغسطس 2026، بتشغيل «نيو هورايزن».",
+     "fact": {
+      "en": "On Uber since 20 Aug 2026",
+      "ar": "على «أوبر» منذ 20 أغسطس 2026"
+     },
+     "src": 14,
+     "co": "apollo-go"
+    },
+    {
+     "id": "weride-uber-yas",
+     "name": {
+      "en": "WeRide on Uber, Yas Island",
+      "ar": "«وي رايد» على «أوبر»، جزيرة ياس"
+     },
+     "maker": "WeRide",
+     "kind": {
+      "en": "Robotaxi",
+      "ar": "أجرة آلية"
+     },
+     "status": "live",
+     "where": {
+      "en": "Yas Island, Abu Dhabi",
+      "ar": "جزيرة ياس، أبوظبي"
+     },
+     "en": "The Gulf’s first commercial rides with no specialist inside, since 26 November 2025.",
+     "ar": "أول رحلات تجارية في الخليج دون مختص داخل المركبة، منذ 26 نوفمبر 2025.",
+     "fact": {
+      "en": "Nobody aboard since 26 Nov 2025",
+      "ar": "لا أحد على متنها منذ 26 نوفمبر 2025"
+     },
+     "img": "/media/spotlight/robotaxi-weride-abu-dhabi-fleet.jpg",
+     "src": 11,
+     "co": "weride"
+    },
+    {
+     "id": "autogo-yas",
+     "name": {
+      "en": "AutoGo with Apollo Go, Yas Island",
+      "ar": "«أوتو جو» مع «أبولو جو»، جزيرة ياس"
+     },
+     "maker": "AutoGo (K2) / Apollo Go",
+     "kind": {
+      "en": "Robotaxi",
+      "ar": "أجرة آلية"
+     },
+     "status": "deploying",
+     "where": {
+      "en": "Yas Island, Abu Dhabi",
+      "ar": "جزيرة ياس، أبوظبي"
+     },
+     "en": "Five cars with no safety operator inside opened to the public on 13 March 2026, free for a month. We could not confirm paid service since.",
+     "ar": "فُتحت خمس مركبات بلا مسؤول سلامة داخلها للجمهور في 13 مارس 2026، مجاناً لمدة شهر. ولم نتمكن من تأكيد خدمة مدفوعة بعد ذلك.",
+     "fact": {
+      "en": "Free rides from 13 Mar 2026",
+      "ar": "رحلات مجانية منذ 13 مارس 2026"
+     },
+     "src": 19,
+     "co": "autogo"
+    },
+    {
+     "id": "karwa-pony-doha",
+     "name": {
+      "en": "Karwa with Pony.ai, Doha",
+      "ar": "«كروة» مع «بوني إيه آي»، الدوحة"
+     },
+     "maker": "Pony.ai / Mowasalat",
+     "kind": {
+      "en": "Robotaxi (Level 4)",
+      "ar": "أجرة آلية (المستوى الرابع)"
+     },
+     "status": "delivered",
+     "where": {
+      "en": "Old Doha Port, Souq Waqif, MIA and West Bay",
+      "ar": "ميناء الدوحة القديم وسوق واقف ومتحف الفن الإسلامي والخليج الغربي"
+     },
+     "en": "Phase two from 22 November 2026: two cars, remote operators, a supervisor in the front passenger seat.",
+     "ar": "المرحلة الثانية منذ 22 نوفمبر 2026: مركبتان، ومشغّلون عن بُعد، ومشرف في المقعد الأمامي للراكب.",
+     "fact": {
+      "en": "Supervisor in passenger seat",
+      "ar": "مشرف في مقعد الراكب"
+     },
+     "img": "/media/spotlight/robotaxi-karwa-ponyai-aemob.jpg",
+     "src": 5,
+     "co": "pony-ai"
+    },
+    {
+     "id": "weride-abudhabi-downtown",
+     "name": {
+      "en": "WeRide on Uber, central Abu Dhabi",
+      "ar": "«وي رايد» على «أوبر»، وسط أبوظبي"
+     },
+     "maker": "WeRide",
+     "kind": {
+      "en": "Robotaxi",
+      "ar": "أجرة آلية"
+     },
+     "status": "trial",
+     "where": {
+      "en": "Corniche, Khalifa City, Masdar and other core districts",
+      "ar": "الكورنيش ومدينة خليفة ومصدر وأحياء رئيسية أخرى"
+     },
+     "en": "Expanded in February 2026 to about 70% of core districts, with a vehicle specialist on board. The seat is not stated.",
+     "ar": "توسعت في فبراير 2026 لتغطي نحو 70% من الأحياء الرئيسية، مع مختص على متن المركبة. ولم يُذكر مقعده.",
+     "fact": {
+      "en": "Specialist on board",
+      "ar": "مختص على متن المركبة"
+     },
+     "src": 30,
+     "co": "weride"
+    },
+    {
+     "id": "weride-uber-riyadh",
+     "name": {
+      "en": "WeRide on Uber, Riyadh",
+      "ar": "«وي رايد» على «أوبر»، الرياض"
+     },
+     "maker": "WeRide",
+     "kind": {
+      "en": "Robotaxi",
+      "ar": "أجرة آلية"
+     },
+     "status": "trial",
+     "where": {
+      "en": "Riyadh routes incl. Roshn Front and Princess Nourah University",
+      "ar": "مسارات في الرياض تشمل واجهة روشن وجامعة الأميرة نورة"
+     },
+     "en": "Public rides since October 2025 with a vehicle operator in each car. No driverless ride reported in 2026.",
+     "ar": "رحلات عامة منذ أكتوبر 2025 مع مشغّل في كل مركبة. ولم تُسجَّل أي رحلة دون سائق في 2026.",
+     "fact": {
+      "en": "Operator in every car",
+      "ar": "مشغّل في كل مركبة"
+     },
+     "src": 9,
+     "co": "weride"
+    },
+    {
+     "id": "pony-dubai",
+     "name": {
+      "en": "Pony.ai, Dubai",
+      "ar": "«بوني إيه آي»، دبي"
+     },
+     "maker": "Pony.ai",
+     "kind": {
+      "en": "Robotaxi",
+      "ar": "أجرة آلية"
+     },
+     "status": "due",
+     "where": {
+      "en": "Dubai",
+      "ar": "دبي"
+     },
+     "en": "Driverless testing since April 2026. The company expected fare-charging service “later in 2026”; none launched by 28 November.",
+     "ar": "اختبارات دون سائق منذ أبريل 2026. وتوقعت الشركة خدمة مدفوعة «لاحقاً في 2026»، ولم يُطلق شيء حتى 28 نوفمبر.",
+     "fact": {
+      "en": "Testing only",
+      "ar": "اختبار فقط"
+     },
+     "img": "/media/spotlight/robotaxi-ponyai-dubai.jpg",
+     "src": 21,
+     "co": "pony-ai"
+    },
+    {
+     "id": "glydways-bluewaters",
+     "name": {
+      "en": "Glydways pods, Bluewaters",
+      "ar": "كبسولات «غلايدوايز»، بلوواترز"
+     },
+     "maker": "Glydways",
+     "kind": {
+      "en": "Automated transit pod",
+      "ar": "كبسولة نقل آلية"
+     },
+     "status": "due",
+     "where": {
+      "en": "Bluewaters, Dubai",
+      "ar": "بلوواترز، دبي"
+     },
+     "en": "Four-week trial with two pods on a dedicated route; more than 3,000 rides by the company’s count. Who was aboard is not stated.",
+     "ar": "تجربة لأربعة أسابيع بكبسولتين على مسار مخصص، وأكثر من 3,000 رحلة بحسب الشركة. ولم يُذكر من كان على متنها.",
+     "fact": {
+      "en": "Trial ended, no service date",
+      "ar": "انتهت التجربة دون موعد للخدمة"
+     },
+     "img": "/media/spotlight/robotaxi-glydways-bluewaters.jpg",
+     "src": 18,
+     "co": "glydways"
+    },
+    {
+     "id": "rak-robotaxi",
+     "name": {
+      "en": "RAKTA robotaxi trials",
+      "ar": "تجارب الأجرة الآلية في رأس الخيمة"
+     },
+     "maker": "RAKTA",
+     "kind": {
+      "en": "Robotaxi",
+      "ar": "أجرة آلية"
+     },
+     "status": "due",
+     "where": {
+      "en": "Al Marjan Island and Al Dhait South",
+      "ar": "جزيرة المرجان والظيت الجنوبي"
+     },
+     "en": "More than 21,000 km of trials with safety supervision; sandbox launched 30 October 2026; no public service date.",
+     "ar": "أكثر من 21,000 كيلومتر من التجارب بإشراف سلامة، وإطلاق بيئة تجريبية في 30 أكتوبر 2026، دون موعد لخدمة عامة.",
+     "fact": {
+      "en": "21,000 km of trials",
+      "ar": "21,000 كيلومتر من التجارب"
+     },
+     "img": "/media/spotlight/robotaxi-rakta-marjan.jpg",
+     "src": 20
+    },
+    {
+     "id": "uber-new-districts",
+     "name": {
+      "en": "Uber expansion, Downtown, DIFC, Business Bay",
+      "ar": "توسع «أوبر»: وسط المدينة ومركز دبي المالي والخليج التجاري"
+     },
+     "maker": "Uber",
+     "kind": {
+      "en": "Robotaxi expansion plan",
+      "ar": "خطة توسع للأجرة الآلية"
+     },
+     "status": "ordered",
+     "where": {
+      "en": "Dubai",
+      "ar": "دبي"
+     },
+     "en": "AED 184m ($50m) planned over two years; new districts by end-2027, starting with a specialist on board.",
+     "ar": "خطة بقيمة 184 مليون درهم (50 مليون دولار) على مدى عامين، وأحياء جديدة بحلول نهاية 2027، تبدأ بمختص على متن المركبة.",
+     "fact": {
+      "en": "Plan, by end-2027",
+      "ar": "خطة بحلول نهاية 2027"
+     },
+     "src": 3
+    },
+    {
+     "id": "caocao-rak",
+     "name": {
+      "en": "CaoCao with RAKTA",
+      "ar": "«كاوكاو» مع هيئة المواصلات في رأس الخيمة"
+     },
+     "maker": "CaoCao",
+     "kind": {
+      "en": "Robotaxi pilot agreement",
+      "ar": "اتفاق تجريبي للأجرة الآلية"
+     },
+     "status": "ordered",
+     "where": {
+      "en": "Ras Al Khaimah",
+      "ar": "رأس الخيمة"
+     },
+     "en": "MoU signed 25 November 2026 for pilots in designated zones, with LUMO as operator. No fleet or timeline.",
+     "ar": "مذكرة تفاهم وُقعت في 25 نوفمبر 2026 لتجارب في مناطق محددة، مع «لومو» مشغّلاً. دون أسطول أو جدول زمني.",
+     "fact": {
+      "en": "MoU only",
+      "ar": "مذكرة تفاهم فقط"
+     },
+     "src": 24
+    }
+   ],
+   "status": {
+    "live": {
+     "en": "Nobody on board, paying",
+     "ar": "لا أحد على متنها، بأجر"
+    },
+    "deploying": {
+     "en": "Nobody on board, free",
+     "ar": "لا أحد على متنها، مجاناً"
+    },
+    "delivered": {
+     "en": "Supervisor, not driving",
+     "ar": "مشرف لا يقود"
+    },
+    "trial": {
+     "en": "Person on board",
+     "ar": "شخص على متنها"
+    },
+    "due": {
+     "en": "Testing only",
+     "ar": "اختبار فقط"
+    },
+    "ordered": {
+     "en": "Announced",
+     "ar": "مُعلنة"
+    }
+   },
+   "claims": [
+    {
+     "id": "c1",
+     "claim": {
+      "en": "“Nearly 200 fully driverless cars” in the UAE by year-end",
+      "ar": "«نحو 200 مركبة دون سائق بالكامل» في الإمارات بنهاية العام"
+     },
+     "who": {
+      "en": "Uber, Q3 2026 results (4 November 2026)",
+      "ar": "أوبر، نتائج الربع الثالث 2026 (4 نوفمبر 2026)"
+     },
+     "level": 1,
+     "tag": {
+      "en": "Company projection",
+      "ar": "توقع الشركة"
+     },
+     "en": "A target, not a count. The latest official Dubai figure is 48 robotaxis in active operation (August). Some reports turned it into “29% of Uber’s global fleet”; that share is press arithmetic, not an Uber figure.",
+     "ar": "هدف وليس عدداً. وآخر رقم رسمي في دبي هو 48 مركبة أجرة آلية في الخدمة الفعلية (أغسطس). وحوّلته بعض التقارير إلى «29% من أسطول أوبر العالمي»، وهذه نسبة حسبتها الصحافة لا رقم صادر عن أوبر.",
+     "src": 4
+    },
+    {
+     "id": "c2",
+     "claim": {
+      "en": "“Fully driverless Robotaxi rides in Doha”",
+      "ar": "«رحلات أجرة آلية دون سائق بالكامل في الدوحة»"
+     },
+     "who": {
+      "en": "Gasgoo, on Pony.ai and Mowasalat (9 September 2026)",
+      "ar": "غاسغو عن «بوني إيه آي» و«مواصلات» (9 سبتمبر 2026)"
+     },
+     "level": 1,
+     "tag": {
+      "en": "Not borne out",
+      "ar": "غير مؤكد"
+     },
+     "en": "The rides were a demonstration for forum guests. Pony.ai’s own November results still describe a fully driverless pilot in Doha as something it aims to launch, and phase two keeps a supervisor aboard.",
+     "ar": "كانت الرحلات عرضاً لضيوف المنتدى. وما زالت نتائج «بوني إيه آي» نفسها في نوفمبر تصف تجربة دون سائق بالكامل في الدوحة بأنها أمر تسعى إلى إطلاقه، كما تُبقي المرحلة الثانية مشرفاً على متن المركبة.",
+     "src": 29
+    },
+    {
+     "id": "c3",
+     "claim": {
+      "en": "“A fleet of 144 vehicles, including 48 in active operation”",
+      "ar": "«أسطول من 144 مركبة، منها 48 في الخدمة الفعلية»"
+     },
+     "who": {
+      "en": "Ahmed Bahrozyan, RTA (19 August 2026)",
+      "ar": "أحمد بهروزيان، هيئة الطرق (19 أغسطس 2026)"
+     },
+     "level": 3,
+     "tag": {
+      "en": "Documented, with caveats",
+      "ar": "موثّق مع تحفّظات"
+     },
+     "en": "Official and specific, but self-reported. Two months later the RTA spoke of more than 160 registered vehicles with 70 on the roads. These count different things and should not be compared directly.",
+     "ar": "رقم رسمي ومحدد، لكنه ذاتي الإبلاغ. وبعد شهرين تحدثت الهيئة عن أكثر من 160 مركبة مسجلة منها 70 على الطرق. وهذه أرقام تعدّ أشياء مختلفة ولا تصح مقارنتها مباشرة.",
+     "src": 2
+    },
+    {
+     "id": "c4",
+     "claim": {
+      "en": "About 600 robotaxis in the Middle East",
+      "ar": "نحو 600 مركبة أجرة آلية في الشرق الأوسط"
+     },
+     "who": {
+      "en": "WeRide, Q3 2026 results (20 November 2026)",
+      "ar": "وي رايد، نتائج الربع الثالث 2026 (20 نوفمبر 2026)"
+     },
+     "level": 2,
+     "tag": {
+      "en": "Company filing",
+      "ar": "إفصاح الشركة"
+     },
+     "en": "Filed with the US SEC, but there is no split by city and it includes cars that still carry a specialist.",
+     "ar": "مقدّم إلى هيئة الأوراق المالية الأمريكية، لكنه لا يوزّع الأسطول حسب المدن، ويشمل مركبات ما زال فيها مختص.",
+     "src": 16
+    },
+    {
+     "id": "c5",
+     "claim": {
+      "en": "94% of trips with no human intervention",
+      "ar": "94% من الرحلات دون تدخل بشري"
+     },
+     "who": {
+      "en": "Qatar Ministry of Transport, phase one (7 July 2026)",
+      "ar": "وزارة المواصلات القطرية، المرحلة الأولى (7 يوليو 2026)"
+     },
+     "level": 2,
+     "tag": {
+      "en": "Single source",
+      "ar": "مصدر واحد"
+     },
+     "en": "The only intervention figure published in the Gulf, which is to the ministry’s credit. It gives no definition of an intervention and no count of the other 6%.",
+     "ar": "الرقم الوحيد المنشور في الخليج عن التدخل البشري، وهذا يُحسب للوزارة. لكنها لا تعرّف التدخل ولا تذكر عدد الـ6% الباقية.",
+     "src": 6
+    },
+    {
+     "id": "c6",
+     "claim": {
+      "en": "More than 4 million kilometres",
+      "ar": "أكثر من 4 ملايين كيلومتر"
+     },
+     "who": {
+      "en": "RTA (19 August 2026)",
+      "ar": "هيئة الطرق (19 أغسطس 2026)"
+     },
+     "level": 2,
+     "tag": {
+      "en": "Includes testing",
+      "ar": "يشمل الاختبارات"
+     },
+     "en": "Set beside 7,613 passenger trips, that is more than 500 km a trip, so the total must include testing and empty running. It says little about passenger service.",
+     "ar": "إذا قورن بـ7,613 رحلة ركاب، فهو يعني أكثر من 500 كيلومتر للرحلة، لذا لا بد أنه يشمل الاختبارات والتشغيل دون ركاب. ولا يقول الكثير عن خدمة الركاب.",
+     "src": 2
+    },
+    {
+     "id": "c7",
+     "claim": {
+      "en": "More than 3,000 rides in four weeks at Bluewaters",
+      "ar": "أكثر من 3,000 رحلة في أربعة أسابيع في بلوواترز"
+     },
+     "who": {
+      "en": "Glydways, via Khaleej Times (10 November 2026)",
+      "ar": "غلايدوايز عبر خليج تايمز (10 نوفمبر 2026)"
+     },
+     "level": 1,
+     "tag": {
+      "en": "Company claim",
+      "ar": "ادعاء الشركة"
+     },
+     "en": "Two pods between two stations on a dedicated route. Neither who rode nor who was aboard is stated.",
+     "ar": "كبسولتان بين محطتين على مسار مخصص. ولم يُذكر من ركب ولا من كان على متنها.",
+     "src": 18
+    },
+    {
+     "id": "c8",
+     "claim": {
+      "en": "AED 184m ($50m) for Dubai",
+      "ar": "184 مليون درهم (50 مليون دولار) لدبي"
+     },
+     "who": {
+      "en": "Uber (18 November 2026)",
+      "ar": "أوبر (18 نوفمبر 2026)"
+     },
+     "level": 4,
+     "tag": {
+      "en": "Reported widely, still a plan",
+      "ar": "منقول على نطاق واسع، وما زال خطة"
+     },
+     "en": "Confirmed by the Dubai Media Office and several outlets. It is planned spending over two years, and the new districts start with a specialist on board.",
+     "ar": "أكده المكتب الإعلامي لحكومة دبي وعدة وسائل إعلام. لكنه إنفاق مخطط على مدى عامين، والأحياء الجديدة تبدأ بمختص على متن المركبة.",
+     "src": 3
+    }
+   ],
+   "levels": [
+    {
+     "en": "Company claim",
+     "ar": "ادعاء الشركة"
+    },
+    {
+     "en": "Single source or projection",
+     "ar": "مصدر واحد أو توقع"
+    },
+    {
+     "en": "Documented, with caveats",
+     "ar": "موثّق مع تحفّظات"
+    },
+    {
+     "en": "Reported by several outlets",
+     "ar": "منقول عن عدة وسائل"
+    }
+   ],
+   "watch": [
+    {
+     "status": "due",
+     "due": "2026-12-31",
+     "when": {
+      "en": "By 31 December 2026",
+      "ar": "بحلول 31 ديسمبر 2026"
+     },
+     "en": "Uber’s “nearly 200” fully driverless cars in the UAE, and Pony.ai’s promised fare-charging service in Dubai.",
+     "ar": "مركبات «أوبر» «التي تقارب 200» دون سائق بالكامل في الإمارات، وخدمة «بوني إيه آي» المدفوعة الموعودة في دبي."
+    },
+    {
+     "status": "due",
+     "due": "2027-01-06",
+     "when": {
+      "en": "6 January 2027",
+      "ar": "6 يناير 2027"
+     },
+     "en": "Saudi passenger rules take effect. Does any operator apply under Article 10 to remove the safety officer from the car?",
+     "ar": "نفاذ اللائحة السعودية لنقل الركاب. هل يتقدم أي مشغّل بموجب المادة العاشرة لإزالة مسؤول السلامة من المركبة؟"
+    },
+    {
+     "status": "trial",
+     "when": {
+      "en": "Phase two runs 12 months",
+      "ar": "تستمر المرحلة الثانية 12 شهراً"
+     },
+     "en": "Doha: does the supervisor leave the passenger seat, and do public riders get access?",
+     "ar": "الدوحة: هل يغادر المشرف مقعد الراكب، وهل يُتاح الركوب للجمهور؟"
+    },
+    {
+     "status": "due",
+     "due": "2027-12-31",
+     "when": {
+      "en": "By end-2027",
+      "ar": "بحلول نهاية 2027"
+     },
+     "en": "Uber in Downtown, DIFC and Business Bay, and when the on-board specialist leaves.",
+     "ar": "«أوبر» في وسط المدينة ومركز دبي المالي والخليج التجاري، وموعد مغادرة المختص للمركبة."
+    },
+    {
+     "status": "open",
+     "when": {
+      "en": "Open question",
+      "ar": "سؤال مفتوح"
+     },
+     "en": "Will any Gulf regulator publish interventions and incidents, not just trips and kilometres?",
+     "ar": "هل ستنشر أي جهة تنظيمية خليجية أرقام التدخل البشري والحوادث، لا الرحلات والكيلومترات فقط؟"
+    }
+   ],
+   "watchStatus": {
+    "due": {
+     "en": "Due",
+     "ar": "مرتقب"
+    },
+    "open": {
+     "en": "Open question",
+     "ar": "سؤال مفتوح"
+    },
+    "trial": {
+     "en": "Trial",
+     "ar": "تجربة"
+    }
+   },
+   "providers": [
+    {
+     "id": "weride",
+     "en": "Runs fully driverless fare-charging service with Uber in Dubai and on Yas Island, a service with a specialist aboard in central Abu Dhabi, and Riyadh rides with an operator in each car.",
+     "ar": "تشغّل خدمة مدفوعة دون سائق بالكامل مع «أوبر» في دبي وجزيرة ياس، وخدمة بمختص على متن المركبة في وسط أبوظبي، ورحلات في الرياض بمشغّل في كل مركبة.",
+     "fleet": [
+      "weride-uber-dubai",
+      "weride-uber-yas",
+      "weride-abudhabi-downtown",
+      "weride-uber-riyadh"
+     ]
+    },
+    {
+     "id": "apollo-go",
+     "en": "Baidu’s robotaxi unit: Dubai’s first driverless permit, its own app with Dubai Taxi, cars on Uber, and the technology behind AutoGo on Yas.",
+     "ar": "وحدة سيارات الأجرة الآلية في «بايدو»: أول تصريح دون سائق في دبي، وتطبيقها الخاص مع «تاكسي دبي»، ومركبات على «أوبر»، والتقنية وراء «أوتو جو» في ياس.",
+     "fleet": [
+      "apollo-dtc-dubai",
+      "apollo-uber-dubai",
+      "autogo-yas"
+     ]
+    },
+    {
+     "id": "autogo",
+     "en": "K2’s robotaxi operator, running Apollo Go cars on Yas Island under one of Abu Dhabi’s first two driverless permits.",
+     "ar": "مشغّل سيارات الأجرة الآلية التابع لـ«كيه 2»، يشغّل مركبات «أبولو جو» في جزيرة ياس بموجب أحد أول تصريحين دون سائق في أبوظبي.",
+     "fleet": [
+      "autogo-yas"
+     ]
+    },
+    {
+     "id": "pony-ai",
+     "en": "Technology partner for Mowasalat’s Karwa robotaxis in Doha, and driverless testing in Dubai.",
+     "ar": "الشريك التقني لسيارات الأجرة الآلية «كروة» من «مواصلات» في الدوحة، وتجري اختبارات دون سائق في دبي.",
+     "fleet": [
+      "karwa-pony-doha",
+      "pony-dubai"
+     ]
+    },
+    {
+     "id": "glydways",
+     "en": "Built the driverless electric pods tested at Bluewaters, Dubai’s first automated transit network trial.",
+     "ar": "صنعت الكبسولات الكهربائية دون سائق التي اختُبرت في بلوواترز، أول تجربة لشبكة نقل آلية في دبي.",
+     "fleet": [
+      "glydways-bluewaters"
+     ]
+    }
+   ],
+   "ui": {
+    "glance": {
+     "en": "At a glance",
+     "ar": "لمحة سريعة"
+    },
+    "findings": {
+     "en": "Key findings",
+     "ar": "أبرز النتائج"
+    },
+    "contents": {
+     "en": "Contents",
+     "ar": "المحتويات"
+    },
+    "chapter": {
+     "en": "Chapter",
+     "ar": "الفصل"
+    },
+    "vs": {
+     "en": "vs",
+     "ar": "مقابل"
+    },
+    "attacks": {
+     "en": "Rollout log",
+     "ar": "سجلّ التشغيل"
+    },
+    "timeline": {
+     "en": "Gulf robotaxi timeline",
+     "ar": "الخط الزمني لسيارات الأجرة الآلية في الخليج"
+    },
+    "tlHint": {
+     "en": "Select a milestone",
+     "ar": "اختر محطة"
+    },
+    "fleet": {
+     "en": "Robotaxi scorecard",
+     "ar": "بطاقة تقييم سيارات الأجرة الآلية"
+    },
+    "fleetHint": {
+     "en": "Filter by who is at the wheel, then open a service for the evidence",
+     "ar": "صفِّ حسب من يجلس خلف المقود، ثم افتح أي خدمة لترى الأدلة"
+    },
+    "all": {
+     "en": "All",
+     "ar": "الكل"
+    },
+    "inService": {
+     "en": "Nobody at the wheel",
+     "ar": "لا أحد خلف المقود"
+    },
+    "coming": {
+     "en": "Someone at the wheel, or not running yet",
+     "ar": "شخص خلف المقود، أو لم تبدأ بعد"
+    },
+    "claims": {
+     "en": "Claim check",
+     "ar": "تدقيق الادعاءات"
+    },
+    "claimsHint": {
+     "en": "How strong is the evidence behind each headline number? Open a card to see what we found.",
+     "ar": "ما مدى قوة الأدلة وراء كل رقم بارز؟ افتح أي بطاقة لترى ما وجدناه."
+    },
+    "found": {
+     "en": "What we found",
+     "ar": "ما وجدناه"
+    },
+    "evidence": {
+     "en": "Evidence",
+     "ar": "الأدلة"
+    },
+    "watch": {
+     "en": "Watchlist",
+     "ar": "قائمة المتابعة"
+    },
+    "daysLeft": {
+     "en": "{n} days left",
+     "ar": "متبقٍ {n} يوماً"
+    },
+    "overdue": {
+     "en": "Overdue",
+     "ar": "متأخر"
+    },
+    "providers": {
+     "en": "Providers in this report",
+     "ar": "المزوّدون في هذا التقرير"
+    },
+    "inDir": {
+     "en": "View in directory",
+     "ar": "عرض في الدليل"
+    },
+    "robots": {
+     "en": "In the scorecard",
+     "ar": "في بطاقة التقييم"
+    },
+    "source": {
+     "en": "Source",
+     "ar": "المصدر"
+    },
+    "showAll": {
+     "en": "Show all {n} sources",
+     "ar": "عرض كل المصادر ({n})"
+    },
+    "showFewer": {
+     "en": "Show fewer",
+     "ar": "عرض أقل"
+    },
+    "enlarge": {
+     "en": "Enlarge image",
+     "ar": "تكبير الصورة"
+    },
+    "close": {
+     "en": "Close",
+     "ar": "إغلاق"
+    },
+    "prev": {
+     "en": "Previous",
+     "ar": "السابق"
+    },
+    "next": {
+     "en": "Next",
+     "ar": "التالي"
+    },
+    "progress": {
+     "en": "Reading progress",
+     "ar": "تقدّم القراءة"
+    },
+    "where": {
+     "en": "Where",
+     "ar": "الموقع"
+    },
+    "maker": {
+     "en": "Maker",
+     "ar": "الصانع"
+    }
+   }
+  },
+  "home": {
+   "kicker": {
+    "en": "Research report",
+    "ar": "تقرير بحثي"
+   },
+   "title": {
+    "en": "Robotaxis with nobody in the car run in only two Gulf cities",
+    "ar": "سيارات الأجرة الآلية بلا أحد على متنها تعمل في مدينتين خليجيتين فقط"
+   },
+   "dek": {
+    "en": "We asked one question of every robotaxi service in the region: who is in the car? Dubai and Abu Dhabi carry paying riders with nobody aboard. Doha, Riyadh and Ras Al Khaimah still put a person in the vehicle.",
+    "ar": "طرحنا سؤالاً واحداً على كل خدمة أجرة آلية في المنطقة: من يجلس في المركبة؟ تنقل دبي وأبوظبي ركاباً بأجر بلا أحد على متن المركبة، فيما تضع الدوحة والرياض ورأس الخيمة شخصاً فيها."
+   },
+   "quote": {
+    "en": "“Public commercial operations began today without a vehicle operator on board.”",
+    "ar": "«بدأت العمليات التجارية العامة اليوم دون مشغّل على متن المركبة.»"
+   },
+   "who": {
+    "en": "WeRide and Uber, Dubai, 31 March 2026",
+    "ar": "«وي رايد» و«أوبر»، دبي، 31 مارس 2026"
+   },
+   "stats": [
+    {
+     "v": "2",
+     "en": "Cities with paying riders and nobody aboard",
+     "ar": "مدينتان بركاب يدفعون ولا أحد على متن المركبة"
+    },
+    {
+     "v": "48 of 144",
+     "v_ar": "48 من 144",
+     "en": "Dubai robotaxis in active operation (RTA, Aug 2026)",
+     "ar": "مركبات أجرة آلية عاملة فعلياً في دبي (هيئة الطرق، أغسطس 2026)"
+    },
+    {
+     "v": "6 Jan",
+     "v_ar": "6 يناير",
+     "en": "Saudi rules allow cars with no officer inside, if approved",
+     "ar": "القواعد السعودية تجيز مركبات دون مسؤول بداخلها إذا وافقت الهيئة"
+    }
+   ],
+   "src": {
+    "en": "Sources: WeRide, RTA, Qatar Ministry of Transport, Umm Al-Qura. Scorecard as of 28 Nov 2026.",
+    "ar": "المصادر: وي رايد، هيئة الطرق، وزارة المواصلات القطرية، أم القرى. بطاقة التقييم حتى 28 نوفمبر 2026."
+   },
+   "img": "/media/spotlight/robotaxi-weride-dubai-skyline.jpg",
+   "cap": {
+    "en": "A WeRide robotaxi in Dubai, 30 March 2026",
+    "ar": "مركبة أجرة آلية من «وي رايد» في دبي، 30 مارس 2026"
+   },
+   "credit": {
+    "en": "Image: Government of Dubai Media Office",
+    "ar": "الصورة: المكتب الإعلامي لحكومة دبي"
+   }
+  }
+ },
+ {
   "id": "gecko-adnoc-raptor",
   "date": "2026-11-07",
   "read_min": 9,

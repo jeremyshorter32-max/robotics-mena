@@ -530,8 +530,8 @@
   },
   {
     "id": "d24",
-    "title": "Fully driverless robotaxi trial rides begin in Doha",
-    "title_ar": "بدء رحلات تجريبية لسيارات أجرة ذاتية القيادة بالكامل في الدوحة",
+    "title": "Karwa robotaxi trial with Pony.ai in Doha, supervisor aboard",
+    "title_ar": "تجربة سيارات الأجرة الآلية «كروة» مع «بوني إيه آي» في الدوحة بوجود مشرف",
     "operator": "Mowasalat (Karwa) with Pony.ai",
     "operator_ar": "مواصلات (كروة) مع بوني إيه آي",
     "logo": "",
@@ -543,12 +543,12 @@
     "site_ar": "الدوحة، قطر (بما في ذلك الربط مع مطار حمد الدولي)",
     "lat": 25.29,
     "lon": 51.53,
-    "date": "2026-09-09",
+    "date": "2026-11-22",
     "is_new": false,
-    "summary": "At Qatar's AEMOB forum (7–9 Sept), Pony.ai and Mowasalat showed Doha's first fully driverless robotaxi rides. Rides can be booked in the Karwa app, but the service still runs as phase 2 of a Ministry of Transport trial: we found no approval for a commercial driverless service.",
-    "summary_ar": "في منتدى AEMOB في قطر (7–9 سبتمبر)، قدّمت بوني إيه آي وشركة مواصلات أول رحلات أجرة ذاتية القيادة بالكامل في الدوحة. ويمكن حجز الرحلات عبر تطبيق كروة، لكن الخدمة ما زالت تعمل ضمن المرحلة الثانية من تجربة وزارة المواصلات، إذ لم نعثر على موافقة لتشغيل خدمة تجارية بلا سائق.",
-    "source": "Gasgoo",
-    "source_url": "https://autonews.gasgoo.com/articles/icv/ponyai-mowasalat-launch-fully-driverless-robotaxi-rides-in-doha-2097526497610125313",
+    "summary": "Mowasalat (Karwa) and Pony.ai have run robotaxis in Doha since August 2025: phase one took public riders via the Karwa app from December 2025 with a safety officer in the driver’s seat (2,500 trips). Phase two began on 22 November 2026 with two Level 4 cars, remote operators and a supervisor in the front passenger seat. The “fully driverless” rides shown at the AEMOB forum in September 2026 were a demonstration.",
+    "summary_ar": "تشغّل «مواصلات» (كروة) و«بوني إيه آي» سيارات أجرة آلية في الدوحة منذ أغسطس 2025: نقلت المرحلة الأولى ركاباً من الجمهور عبر تطبيق «كروة» اعتباراً من ديسمبر 2025 مع مسؤول سلامة في مقعد السائق (2,500 رحلة). وبدأت المرحلة الثانية في 22 نوفمبر 2026 بمركبتين من المستوى الرابع ومشغّلين عن بُعد ومشرف في المقعد الأمامي للراكب. أما رحلات «دون سائق بالكامل» التي عُرضت في منتدى AEMOB في سبتمبر 2026 فكانت عرضاً تجريبياً.",
+    "source": "The Peninsula",
+    "source_url": "https://thepeninsulaqatar.com/article/22/11/2026/qatar-begins-phase-two-of-electric-robotaxi-test-runs",
     "added": "2026-11-07"
   },
   {
