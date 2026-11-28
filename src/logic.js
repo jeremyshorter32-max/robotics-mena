@@ -183,13 +183,15 @@ class Component extends DCLogic {
   rsVals(S, lang, ar, L, fdate) {
     const loc = ar ? 'ar' : 'en-GB', tx = o => (o && typeof o === 'object') ? (ar ? (o.ar || o.en) : (o.en || o.ar)) : (o || '');
     const cname = c => this.CC[c] ? this.CC[c][L] : c;
-    const wkLabel = a => { const n = +a.week.slice(6), m = new Date(a.covers[0] + 'T12:00:00Z'), su = new Date(a.covers[1] + 'T12:00:00Z');
+    const wkRange = a => { const m = new Date(a.covers[0] + 'T12:00:00Z'), su = new Date(a.covers[1] + 'T12:00:00Z');
       const f = o => new Intl.DateTimeFormat(loc, { ...o, timeZone: 'UTC' }).format; const same = m.getUTCMonth() === su.getUTCMonth();
-      return (ar ? 'الأسبوع ' : 'Week ') + n + ' · ' + (same ? f({ day: 'numeric' })(m) : f({ day: 'numeric', month: 'short' })(m)) + ' – ' + f({ day: 'numeric', month: 'short', year: 'numeric' })(su); };
+      return (same ? f({ day: 'numeric' })(m) : f({ day: 'numeric', month: 'short' })(m)) + ' – ' + f({ day: 'numeric', month: 'short', year: 'numeric' })(su); };
+    const wkNo = a => (ar ? 'الأسبوع ' : 'Week ') + (+a.week.slice(6));
+    const wkLabel = a => wkNo(a) + ' · ' + wkRange(a);
     const briefs = (window.RM_DATA.briefs || []).map(a => {
       const sig = a.items.map(b => ({ cc: b.country, country: cname(b.country), flag: this.flagUrl(b.country), title: ar ? (b.title_ar || b.title) : b.title, take: ar ? (b.takeaway_ar || b.takeaway) : b.takeaway,
         src: b.source, href: b.source_url || '', hasHref: !!b.source_url, img: b.image || '', hasImg: !!b.image, credit: b.image_credit || '', date: fdate(b.date), topics: this.rsTopics(b.title + ' ' + b.takeaway) }));
-      return { kind: 'brief', key: 'b-' + a.week, sort: a.published || a.covers[1], label: wkLabel(a), pub: fdate(a.published), sig, countries: [...new Set(sig.map(x => x.cc))], topics: [...new Set(sig.flatMap(x => x.topics))] };
+      return { kind: 'brief', key: 'b-' + a.week, sort: a.published || a.covers[1], label: wkLabel(a), wk: wkNo(a), range: wkRange(a), pub: fdate(a.published), sig, countries: [...new Set(sig.map(x => x.cc))], topics: [...new Set(sig.flatMap(x => x.topics))] };
     });
     const reports = (this.STORIES || []).map(st => { const blob = [tx(st.title), tx(st.dek), tx(st.kicker)].join(' ') + ' ' + [st.title && st.title.en, st.dek && st.dek.en, st.kicker && st.kicker.en].join(' ');
       const cc = Object.keys(this.CC).filter(c => new RegExp('\\b(' + this.CC[c][0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')\\b', 'i').test(blob) || (c === 'AE' && /adnoc|dubai|abu dhabi|emirat/i.test(blob)));
